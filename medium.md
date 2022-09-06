@@ -2,7 +2,7 @@ layout: page
 title: "Medium Articles"
 permalink: /medium/
 
-<h2> Latest Blog Posts </h2>
+<h2> Medium Blog Posts </h2>
 
 {% for e in site.medium_posts %}
 
