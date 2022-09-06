@@ -28,7 +28,7 @@ twitter_username: christian_tail
 github_username:  christian-taillon
 
 # Build settings
-theme: minima
+theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
 
