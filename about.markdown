@@ -32,14 +32,14 @@ And finally, I recently joined the CRI as a <b>Solutions Architect</b>. Addition
 <a target="_blank"><img alt="readme-stats" src="https://github-readme-stats.vercel.app/api?username=christian-taillon&show_icons=true&theme=vue-dark"/></a>
 
 <a target="_blank"><img alt="Azure" src="https://github-readme-stats.vercel.app/api/top-langs/?username=christian-taillon&layout=compact&theme=vue-dark"/></a>
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=christian-taillon&theme=vue-dark" alt="christian-taillon" /></p>
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=christian-taillon&theme=vue-dark" alt="christian-taillon"/></p>
 </br>
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=christian-taillon&theme=chalk&no-frame=true&column=4)](https://github.com/ryo-ma/github-profile-trophy)
 
 <hr style="width:75%;text-align:center">
-<h4>⚒ Favorite Tools:</h3>
-<p  >
+<h4>⚒ Favorite Tools:</h4>
+<p>
 <a target="_blank"><img alt="Atom" src="https://img.shields.io/badge/Atom-15FF70?logo=atom&logoColor=white&style=flat"/></a>
 <a target="_blank"><img alt="Visual Studio" src="https://img.shields.io/badge/Visual%20Studio-white?logo=visual-studio&style=flat&logoColor=purple"/></a>
 <a target="_blank"><img alt="Vim" src="https://img.shields.io/badge/Vim-00AB42?logo=vim&logoColor=white&style=flat"/></a> </br>
@@ -113,87 +113,3 @@ src="https://img.shields.io/badge/Twitter-white?&style=flat&logo=twitter&logoCol
 src="https://img.shields.io/badge/OpenThreatExchange-black?&style=flat&logo=atom&logoColor=white" /></a> <br></a>
 </p>
  </div>
-
-
-
-<!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-0%20secs-blue)
-
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-11%20Thousand%20lines%20of%20code-blue)
-
-**🐱 My GitHub Data**
-
-> 🏆 101 Contributions in the Year 2022
- >
-> 📦 187.3 kB Used in GitHub's Storage
- >
-> 🚫 Not Opted to Hire
- >
-> 📜 36 Public Repositories
- >
-> 🔑 7 Private Repositories
- >
-**I'm an Early 🐤**
-
-```text
-🌞 Morning    58 commits     ████████░░░░░░░░░░░░░░░░░   34.12%
-🌆 Daytime    77 commits     ███████████░░░░░░░░░░░░░░   45.29%
-🌃 Evening    30 commits     ████░░░░░░░░░░░░░░░░░░░░░   17.65%
-🌙 Night      5 commits      ░░░░░░░░░░░░░░░░░░░░░░░░░   2.94%
-
-```
-📅 **I'm Most Productive on Friday**
-
-```text
-Monday       34 commits     █████░░░░░░░░░░░░░░░░░░░░   20.0%
-Tuesday      24 commits     ███░░░░░░░░░░░░░░░░░░░░░░   14.12%
-Wednesday    36 commits     █████░░░░░░░░░░░░░░░░░░░░   21.18%
-Thursday     19 commits     ██░░░░░░░░░░░░░░░░░░░░░░░   11.18%
-Friday       39 commits     █████░░░░░░░░░░░░░░░░░░░░   22.94%
-Saturday     12 commits     █░░░░░░░░░░░░░░░░░░░░░░░░   7.06%
-Sunday       6 commits      █░░░░░░░░░░░░░░░░░░░░░░░░   3.53%
-
-```
-
-
-📊 **This Week I Spent My Time On**
-
-```text
-⌚︎ Time Zone: America/Phoenix
-
-💬 Programming Languages:
-Markdown                 3 hrs 26 mins       ████████████░░░░░░░░░░░░░   50.32%
-sh                       2 hrs 16 mins       ████████░░░░░░░░░░░░░░░░░   33.32%
-Other                    50 mins             ███░░░░░░░░░░░░░░░░░░░░░░   12.34%
-YAML                     14 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   3.51%
-JSON                     1 min               ░░░░░░░░░░░░░░░░░░░░░░░░░   0.42%
-
-🔥 Editors:
-Atom                     4 hrs 33 mins       ████████████████░░░░░░░░░   66.68%
-Zsh                      2 hrs 16 mins       ████████░░░░░░░░░░░░░░░░░   33.32%
-Vim                      0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   0.0%
-
-💻 Operating System:
-Linux                    6 hrs 49 mins       █████████████████████████   100.0%
-
-```
-
-**I Mostly Code in Shell**
-
-```text
-Shell                    6 repos             ████████░░░░░░░░░░░░░░░░░   31.58%
-Python                   6 repos             ████████░░░░░░░░░░░░░░░░░   31.58%
-PHP                      2 repos             ██░░░░░░░░░░░░░░░░░░░░░░░   10.53%
-R                        1 repo              █░░░░░░░░░░░░░░░░░░░░░░░░   5.26%
-YARA                     1 repo              █░░░░░░░░░░░░░░░░░░░░░░░░   5.26%
-
-```
-
-
-**Timeline**
-
-![Chart not found](https://raw.githubusercontent.com/christian-taillon/christian-taillon/main/charts/bar_graph.png)
-
-
- Last Updated on 03/09/2022 20:45:14 UTC
-<!--END_SECTION:waka-->
