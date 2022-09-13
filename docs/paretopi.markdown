@@ -31,7 +31,7 @@ step6_run_pareto-anywhere-pi_as_service.sh
 ```
 
 ## To collect data with Elastic Stack or others review
-Review [REAME](https://github.com/reelyactive/pareto-anywhere)
+Review [README](https://github.com/reelyactive/pareto-anywhere)
 
 ## Examples
 ### Machine to Machine Example <br>
