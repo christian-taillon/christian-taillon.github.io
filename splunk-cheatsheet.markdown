@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Splunk SPL Cheat Sheet"
-permalink: /spl-cheat
+title: "Splunk Cheatsheet"
+permalink: /spl
 ---
 
 ## Splunk Quick Cheat Sheet
