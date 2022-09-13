@@ -23,7 +23,8 @@ navbar-links:
   Interview Resources:
     - Interview: "interview"
     - SOC Interview: "socinterview"
-
+    - Security Engineer: "securityengineer"
+  About: "about"
 # Build settings
 # theme: minima
 remote_theme: daattali/beautiful-jekyll
