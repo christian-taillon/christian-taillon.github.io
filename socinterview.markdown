@@ -26,7 +26,6 @@ Confidentiality | Integrity | Availability
 ```
 
 What are some types of Malware that you can tell me about?
-  - followup: ...besides ransomware.
 ```
 Malware - Malicious Software
 PUP - Potentially Unwanted Program

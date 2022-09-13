@@ -20,10 +20,10 @@ navbar-links:
     - Atom Conf: "atomconf"
     - Splunk Docker: "splunkdocker"
     - ParetoPi: "paretopi"
-  Interview Resources
+  Interview Resources:
     - Interview: "interview"
     - SOC Interview: "socinterview"
-    
+
 # Build settings
 # theme: minima
 remote_theme: daattali/beautiful-jekyll
