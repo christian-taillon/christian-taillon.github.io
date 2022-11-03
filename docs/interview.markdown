@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Cyber Interview"
-permalink: /socinterview
+permalink: /interview
 ---
 
 
