@@ -1,9 +1,3 @@
----
-layout: page
-title: "Security Engineer"
-permalink: /securityengineer
----
-
 # Engineering
 
 Tell us about some controls that are commonly used to secure a company.
@@ -27,10 +21,16 @@ How does Anti-Malware work?
 
 Describe Dynamic Analysis vs. Static.
 
-```
-What is the CIA Triad?
+
+What is the CIA Triad? Explain.
 ```
 Confidentiality | Integrity | Availability
+```
+
+What is AAA? Explain.
+```
+Authentication | Authorization | Accounting
+```
 
 ## Controlls
 ```
