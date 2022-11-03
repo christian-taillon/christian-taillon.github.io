@@ -1,3 +1,9 @@
+---
+layout: page
+title: "SOC L1 Inteview"
+permalink: /socinterview
+---
+
 # SOC L1
 
 ### Basic Vocab
