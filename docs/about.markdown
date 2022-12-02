@@ -9,7 +9,7 @@ permalink: /about/
 <h2 align="center"> My name is Christian Taillon</h2>
 
 
-I am a Christian first, a husband to a wonderful wife second, a Cyber Security Practitioner third, and an novice developer fourth.
+I am a Christian, a husband to a wonderful wife, a Cyber Security Practitioner, and a very novice developer.
 
 In my day job, I contribute to Grand Canyon Education's IT Security team as a Threat Response Engineer. My efforts focus on improving the Security team's operational tools and capabilities to efficiently detect and effectively respond to threats. This is done primarily through work relating to <b>SIEM</b>, <b>EDR</b>, <b>NTA</b>, and an evolving <b>Threat Intelligence</b> program.
 
@@ -79,11 +79,14 @@ And finally, I recently joined the CRI as a <b>Solutions Architect</b>. Addition
 <a target="_blank"><img alt="Azure" src="https://img.shields.io/badge/Azure-white?logo=microsoft-azure&logoColor=blue&style=flat"/></a>
 <a target="_blank"><img alt="AWS" src="https://img.shields.io/badge/AWS-orange ?logo=amazon-aws&logoColor=black&style=flat"/></a>
 </p>
-<h4> ‍🖼️ Topics I Present </h4>
+<h4> ‍🖼️ Topics I Can Readily Present On</h4>
 <p>
 <a target="_blank"><img alt="Hunting" src="https://img.shields.io/badge/-🐺%20Threat%20Hunting%20Effectively%20-orange?logo=&logoColor=white&style=flat"/></a>
+<a target="_blank"><img alt="CTIHunting" src="https://img.shields.io/badge/-🐺%20CTI%20Driven%20Threat%20Hunting-darkred?logo=&logoColor=white&style=flat"/></a>
 <a target="_blank"><img alt="Hunting" src="https://img.shields.io/badge/-📈%20Threat%20Intelligence:Make%20Data%20Work%20for%20You-yellow?logo=&logoColor=white&style=flat"/></a> <br>
-<a target="_blank"><img alt="SupplyChain" src="https://img.shields.io/badge/-🗡️Supply%20Chain%20Attacks:%20OpenSource-red?logo=&logoColor=white&style=flat"/></a>
+<a target="_blank"><img alt="SupplyChain" src="https://img.shields.io/badge/-🗡️Supply%20Chain%20Attacks:%20OpenSource-lightred?logo=&logoColor=white&style=flat"/></a>
+<a target="_blank"><img alt="Forensics" src="https://img.shields.io/badge/-🖫Forensics:%20OpenSource-green?logo=&logoColor=white&style=flat"/></a>
+<a target="_blank"><img alt="MallardSpider: QakBot" src="https://img.shields.io/badge/-🕷Mallard%20Spider:%20QakBot-brown?logo=&logoColor=white&style=flat"/></a>
 <a target="_blank"><img alt="ModernSoc" src="https://img.shields.io/badge/-📟%20Modernizing%20The%20SOC-purple?logo=&logoColor=white&style=flat"/></a> <br>
 <a target="_blank"><img alt="Hunting" src="https://img.shields.io/badge/-📱%20SIEM:%20Centralizing%20SecOps-blue?logo=&logoColor=white&style=flat"/></a>
 </p>
