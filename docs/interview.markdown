@@ -6,7 +6,7 @@ permalink: /interview
 
 
 # infosec-interview-questions
-Content Hosted at: [github.com/christian-taillon/infosec-interview-questoins](https://github.com/christian-taillon/infosec-interview-questions/)
+Content hosted at: [github.com/christian-taillon/infosec-interview-questoins](https://github.com/christian-taillon/infosec-interview-questions/)
 Lists of interview questions for those in cyber security are intended to help both the interviewer and the interviewee.
 
 ## [SOC Questions](https://github.com/christian-taillon/infosec-interview-questions/blob/main/itsec-soc.md)

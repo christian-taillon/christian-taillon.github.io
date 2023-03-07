@@ -1,11 +1,15 @@
 ---
 layout: page
-title: "Atom IDE Conf"
+title: "Atom/Pulsar IDE Conf"
 permalink: /atomconf
 ---
 
-# atom-conf
+# Pulsar and Atom Conf
 
-Available on GitHub at [christian-taillon/atom-sync](https://github.com/christian-taillon/atom-sync) is the configuration I use for what is objectively the very best IDE, Atom [Atom Community Edition](https://github.com/atom-community).  <a target="_blank"><img alt="Atom" src="https://img.shields.io/badge/Atom-15FF70?logo=atom&logoColor=white&style=flat"/></a>
+Although [GitHub sunset Atom](https://github.blog/2022-06-08-sunsetting-atom/), the project lives on!
 
-Just kidding. Much of what makes a good IDE for someone comes down to personal preference, and many developers use multiple. Atom, sadly, is being ["sunset"](https://github.blog/2022-06-08-sunsetting-atom/). Microsoft supports their open-source alternative, VS Code. Although it is Microsoft, it is a strong alternative, and it may be the one I end up using most if a community atom isn't supported. 
+<a target="_blank"><img alt="Atom" src="https://avatars.githubusercontent.com/u/108445160?s=200&v=4"/></a>
+
+The community has rallied and is continuing to support the ide at [pulsar-edit.dev](https://pulsar-edit.dev/). Check it out! I also have made available my configuration for Pulsar Edit. It is available on GitHub as a Gist at [christian-taillon/pulsar-conf](https://gist.github.com/christian-taillon/618980c972776181974c6c062d7e8408).
+
+This may be a great starting place for you.
