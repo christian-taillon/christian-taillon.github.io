@@ -3,6 +3,9 @@ layout: page
 title: About Me
 permalink: /about/
 ---
+<head>
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+</head>
 
 <h1 align = "center"> Hello  world! ☕</h1>
 
