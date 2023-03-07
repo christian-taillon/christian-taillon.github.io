@@ -3,7 +3,7 @@ layout: page
 title: "Sith CheatSheet"
 permalink: /sith-cheatsheet
 ---
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <h2>Recon and Enumeration</h2>
 <h3>NMAP Commands</h3>
 <table>

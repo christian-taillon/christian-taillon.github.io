@@ -2,11 +2,9 @@
 layout: page
 title: About Me
 permalink: /about/
+
 ---
-<head>
-  <link rel="shortcut icon" type="image/png"
-        href="{{ "image/favicon.png"  | https://christiant.io/image/favicon.png }}">
-</head>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 <h1 align = "center"> Hello  world! ☕</h1>
 

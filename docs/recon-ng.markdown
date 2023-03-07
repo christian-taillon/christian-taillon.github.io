@@ -3,7 +3,7 @@ layout: page
 title: "Recon-ng"
 permalink: /recon-ng
 ---
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 Some asked about the modules used for Recon-ng. Here is a list of modules I have set up and modules that I used in the exercises. These aren't so much endorsements or a list of the best modules as much as they are some of the modules I use that use services that are cheap or free.
 
 #### Appendix
@@ -127,7 +127,7 @@ Some asked about the modules used for Recon-ng. Here is a list of modules I have
 
   Reporting
   ---------
-  
+
     reporting/csv
     reporting/html
     reporting/json

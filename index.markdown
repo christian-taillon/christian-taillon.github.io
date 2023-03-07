@@ -5,6 +5,8 @@
 layout: home
 ---
 
+<link rel="shortcut icon" type="image/png" href="{{ "image/favicon.png" }}">
+
 <h1 align = "center"> Welcome ☕</h1>
 
 It is recommended that you brew a cup of coffee to enjoy while accessing this site. It dramatically improves the experience on the web. 😉

@@ -3,7 +3,7 @@ layout: page
 title: "Cyber Security Resources"
 permalink: /cyberresources
 ---
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 # General Infosec
 
 ### MITRE Att&ck Framework

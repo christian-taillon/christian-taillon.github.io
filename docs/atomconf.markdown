@@ -3,7 +3,7 @@ layout: page
 title: "Atom/Pulsar IDE Conf"
 permalink: /atomconf
 ---
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 # Pulsar and Atom Conf
 
 Although [GitHub sunset Atom](https://github.blog/2022-06-08-sunsetting-atom/), the project lives on!

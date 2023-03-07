@@ -3,7 +3,7 @@ layout: page
 title: "Security Engineer"
 permalink: /securityengineer
 ---
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 # Engineering
 
 Tell us about some controls that are commonly used to secure a company.

@@ -3,7 +3,7 @@ layout: page
 title: "Cyber Interview"
 permalink: /interview
 ---
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 # infosec-interview-questions
 Content hosted at: [github.com/christian-taillon/infosec-interview-questoins](https://github.com/christian-taillon/infosec-interview-questions/)
