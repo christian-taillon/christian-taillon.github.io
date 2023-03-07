@@ -40,7 +40,7 @@ navbar-links:
     - Cyber Security Resources: "cyberresources"
     - "Sith CheatSheet: Kali" : "sith-cheatsheet"
     - Recon-ng Guide: "recon-ng"
-    - DNS OSINT PDF: "https://https://christiant.io/download/dns-guide-awnsers.pdf"
+    - DNS OSINT PDF: "https://christiant.io/download/dns-guide-awnsers.pdf"
     - Endpoint Forensics: "ep-forensics"
   Interview Resources:
     - Interview: "interview"
