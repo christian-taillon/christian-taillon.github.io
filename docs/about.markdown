@@ -9,7 +9,7 @@ permalink: /about/
 <h1 align = "center"> Hello  world! ☕</h1>
 
 <h2 align="center"> My name is Christian Taillon</h2>
-
+![christian](/image/ctaillon_presenting.jpg)
 
 I am a Christian first, a husband to a wonderful wife second, a Cyber Security Practitioner third.
 
@@ -47,7 +47,7 @@ src="https://img.shields.io/badge/OpenThreatExchange-black?&style=flat&logo=atom
 </p>
 <br>
 <br>
-
+![desktop](/image/desktop.jpg)
 
 #### Current Roles
 In Cybersecurity, we don't have the luxury of time. Our work demands persistence, proactivity, and collaboration. I believe that you don't need to work at the same company to be on the same team.

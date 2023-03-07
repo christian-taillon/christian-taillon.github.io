@@ -11,7 +11,7 @@ layout: home
 
 It is recommended that you brew a cup of coffee to enjoy while accessing this site. It dramatically improves the experience on the web. 😉
 
-![christian](/image/ctaillon_presenting.jpg)
+![coffee](/image/coffee.jpg)
 
 If you are here hoping to access resources related to a talk I gave, you can likely find what you are looking for through the navigation bar. While most of my resources are hosted in repositories on GitHub, I direct people to relevant content through this site.
 

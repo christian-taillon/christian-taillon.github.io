@@ -100,14 +100,14 @@ collections:
 # Footer
 
 social-network-links:
-  email: "	christiantaillon@pm.me "
+  email: "	cpublic@christiant.io "
   #rss: true  # remove this line if you don't want to show an RSS link at the bottom
   facebook: christianjtaillon
   github: christian-taillon
   twitter_username: christian_tail
   medium: christiantaillon
   linkedin: christiantaillon
-  stackoverflow: christian-taillon
+  stackoverflow: 15532834
 
 
   #rss: true  # remove this line if you don't want to show an RSS link at the bottom
