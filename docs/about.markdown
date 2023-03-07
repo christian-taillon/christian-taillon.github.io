@@ -24,7 +24,7 @@ When AFK, I try to get out and hike, kayak, or explore God's green earth in some
 
 Encrypt your Email: [PGP Public Key][1]
 
-[1]:christiant.io/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc
+[1]:/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc
 <br>
 
 <h3 style="text-align:center">Follow me...</h3>

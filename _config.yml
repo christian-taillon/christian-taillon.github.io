@@ -27,7 +27,7 @@ navbar-links:
   Threat Hunting:
     - Log4j: https://github.com/christian-taillon/log4shell-hunting
     - Sunburst: https://github.com/christian-taillon/sunburst-hunting
-    - Various Search Hypothesis: https://github.com/christian-taillon/threat-hunting-searches
+    - Various Search Leads: https://github.com/christian-taillon/threat-hunting-searches
   Configurations:
     - RC Files: "rc-files"
     - Atom/Pulsar Conf: "atomconf"
