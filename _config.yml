@@ -39,6 +39,9 @@ navbar-links:
     - InfoSec: "infosec"
     - Cyber Security Resources: "cyberresources"
     - "Sith CheatSheet: Kali" : "sith-cheatsheet"
+    - Recon-ng Guide: "recon-ng"
+    - DNS OSINT PDF: "https://https://christiant.io/download/dns-guide-awnsers.pdf"
+    - Endpoint Forensics: "ep-forensics"
   Interview Resources:
     - Interview: "interview"
     - SOC Interview: "socinterview"
