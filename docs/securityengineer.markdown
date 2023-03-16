@@ -39,11 +39,11 @@ Authentication | Authorization | Accounting
 ```
 
 ## Controlls
-```
+
 Tell us about some controls that are commonly used to secure a company.
 ```
 Firewall|Anti-Virus|EDR|NDR|Proxy|ESG|IDS/IPS|secret managers|SIEM|App Whitelisting|Script Control|UBA/UEBA|CASB|Vulnerability Scanners|MFA/2FA|SOAR|etc
-
+```
 
 What is the difference been a SIEM and IDS, and IPS?
 
@@ -162,8 +162,7 @@ encrypting - (CONFIDENTIALITY) secure encoding of data to allow only authorized 
 hashing - (INTEGRITY) one way unique(ish) summary of data used for integrity
 ```
 
-How does encryption work?
-  - Symmetric and Asymmetric
+How does encryption work? (Symmetric and Asymmetric)
 ```
 Symmetric - private key used to encrypt and decrypt
 Asymmetric - a public key is used to encrypt, and a separate private key is used to decrypt
