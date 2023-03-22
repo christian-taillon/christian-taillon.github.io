@@ -14,6 +14,7 @@ github_username:  christian-taillon
 # Navigation Bar
 navbar-links:
   Splunk Cheatsheet: "spl"
+  Gists: https://gist.github.com/christian-taillon
   Medium Blog:
     - Home: https://medium.com/@christiantaillon
     - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
