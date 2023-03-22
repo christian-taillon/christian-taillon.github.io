@@ -14,7 +14,6 @@ github_username:  christian-taillon
 # Navigation Bar
 navbar-links:
   Splunk Cheatsheet: "spl"
-  Gists: https://gist.github.com/christian-taillon
   Medium Blog:
     - Home: https://medium.com/@christiantaillon
     - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
@@ -37,6 +36,7 @@ navbar-links:
     - DockerPihole: "https://github.com/christian-taillon/docker-pihole"
     - Splunk Windows Forwarder: "https://github.com/christian-taillon/splunk_win_uf"
   InfoSec Resources:
+    - Gist/christian-taillon: https://gist.github.com/christian-taillon
     - InfoSec: "infosec"
     - Cyber Security Resources: "cyberresources"
     - "Sith CheatSheet: Kali" : "sith-cheatsheet"
