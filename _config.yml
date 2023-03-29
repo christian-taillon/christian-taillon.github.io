@@ -30,7 +30,6 @@ navbar-links:
     - Various Search Leads: https://github.com/christian-taillon/threat-hunting-searches
   Configurations:
     - RC Files: "rc-files"
-    - Atom/Pulsar Conf: "atomconf"
     - Splunk Docker: "splunkdocker"
     - ParetoPi: "paretopi"
     - DockerPihole: "https://github.com/christian-taillon/docker-pihole"
