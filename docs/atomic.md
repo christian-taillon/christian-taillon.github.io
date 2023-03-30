@@ -9,8 +9,6 @@ For binary to not be quarantined, Windows Defender must be disabled on Windows H
 
 Activity should be run from Windows 10 lab.
 
-If the binary was quarantined from the Atomic read team tool kit, you may see the following:
-![[Pasted image 20230329101359.png]]
 Disable windows defender on the Host and VM and run the following command to rebuilt the binary:
 
 ## Set up Tools (and disable Windows Defender)
@@ -45,48 +43,48 @@ T1053.005-1 Scheduled Task Startup Script
 ```powershell
 Invoke-AtomicTest T1053.005-1
 ```
-T1012.1 Query a Registry
-T1112-1	Modify Registry
-T1615-1 Group Policy Discovery
-T1615-2 Group Policy Discovery
-T1082-1	System Information Discovery
-T1003.001-1 OS Credential Dumping: LSASS
+T1012.1 Query a Registry <br>
+T1112-1	Modify Registry<br>
+T1615-1 Group Policy Discovery<br>
+T1615-2 Group Policy Discovery<br>
+T1082-1	System Information Discovery<br>
+T1003.001-1 OS Credential Dumping: LSASS<br>
 
 
 ## IcedID Emulation
 IcedID is a banking trojan with three major variants that is currently making the news.
 
-T1553.005
+T1553.005<br>
 Mount an ISO image and run executable from the ISO
 ```powershell
 Invoke-AtomicTest T1553.005-1
 ```
-T1016
+T1016<br>
 System Network Configuration Discovery on Windows
 ```powershell
 Invoke-AtomicTest T1016
 ```
-T1518.001
+T1518.001<br>
 Security Software Discovery - AV Discovery via WMI
 ```powershell
 Invoke-AtomicTest T1518.001
 ```
-T1082
+T1082<br>
 System Information Discovery
 ```powershell
 Invoke-AtomicTest T1082
 ```
-T1482
+T1482<br>
 Windows - Discover domain trusts with nltest
 ```powershell
 Invoke-AtomicTest T1482
 ```
-T1053.005
+T1053.005<br>
 Scheduled Task Startup Script
 ```powershell
 Invoke-AtomicTest T1053.005
 ```
-T1055.012
+T1055.012<br>
 Process Hollowing using PowerShell
 ```powershell
 Invoke-AtomicTest T1055.012
@@ -104,6 +102,7 @@ Invoke-AtomicTest T1055.012
 ```
 
 ### Extended
+```powershell
 T1082-1	System Information Discovery
 T1105-7 Ingress Tool Transfer
 T1069.002-1 Domain Groups
@@ -121,6 +120,7 @@ T1546.013-1 Event Triggered Execution: PowerShell Profile
 T1564.003 Hide Artifacts: Hidden Window
 T1105-7 Ingress Tool Transfer
 T1027.002-1	Software Packing
+```
 
 ## Simple Path
 Fail a Password Logon
