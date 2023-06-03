@@ -3,9 +3,11 @@ layout: page
 title: "Sigma Rule Guide"
 permalink: /sigma-rule-guide
 ---
+
+## Summary
 Sigma is a generic and open signature format that allows you to describe relevant log events in a straightforward manner. The rules are easy to write and can be applied to various log management solutions or SIEM systems.
 
-Here's a short guide to fill out your provided template:
+Here is a template that has comments to explain how each attribute is used. Full documentation can be found [here](https://github.com/SigmaHQ/sigma/wiki/Rule-Creation-Guide).
 
 ```YAML
 title: "your sigma rule title" # It should be descriptive and succinct.
