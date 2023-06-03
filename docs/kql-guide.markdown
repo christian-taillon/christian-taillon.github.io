@@ -3,8 +3,6 @@ layout: page
 title: "KQL Beginner Guide"
 permalink: /kql-guide
 ---
-Absolutely, here is the entire guide inside a Markdown code block:
-
 ```markdown
 # Kibana Query Language (KQL) Beginner's Guide
 
