@@ -190,3 +190,12 @@ search | join type=inner
 | rename installed_software as cpe
 | table agent_names product vendor version service_pack cpe
 ```
+
+**Pass IPS CVE Strings to Vulnerability Index**
+Tenable and Corelight are chosen for example.
+```
+index=tenable
+    [| search earliest=-2h latest=now index=corelight uid IN (123456789)
+    | rex "(?<CVE>CVE-\d{4}-\d{4,7})"
+    | table CVE | rename CVE as cve]
+```

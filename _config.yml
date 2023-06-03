@@ -14,7 +14,10 @@ github_username:  christian-taillon
 # Navigation Bar
 navbar-links:
   Cyber Security Resources: "cyberresources"
-  Splunk Cheatsheet: "spl"
+  Splunk & KQL:
+    Splunk Cheatsheet: "spl"
+    Splunk Beginner Cheatsheet: "spl-beginner"
+    KQL Guide: "kql-guide"
   Configurations:
     - RC Files: "rc-files"
     - Atom Conf: "atomconf"
@@ -24,7 +27,9 @@ navbar-links:
     - Interview: "interview"
     - SOC Interview: "socinterview"
     - Security Engineer: "securityengineer"
+    - Threat Hunter: "th-interview"
   About: "about"
+
 # Build settings
 # theme: minima
 remote_theme: daattali/beautiful-jekyll
