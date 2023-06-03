@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Cyber Security Resources"
-permalink: /cyberresources
+title: "Infosec"
+permalink: /infosec
 ---
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 # General Infosec
@@ -121,31 +121,3 @@ Splunk UF is used to Collect Logs + run scripts
   A simple $30 TP link switch allows me to select one network interface to use as a mirror for the rest of my networking interfaces. This allows me to use Corelight with a home client to send Zeek and Suricata logs to my Splunk and ELK stack.
 
   *Note: I had also performed packet captures with this device in the past; however, am unaware if that would interfere with Corelight currently.*
-
-**File Extension Cheat Sheet**
-- 7zip : 7-zip archive format
-- bzip2 : bzip2 archive format
-- cab : cab file format
-- dat : data file format
-- dmp : memory dump
-- docx : microsoft word
-- dwg : drawings
-- dxf : cad file format for autodesk
-- ese : database file format
-- idw : image file format for autodesk
-- jar : java archive
-- macho : binary executable format
-- ole : object linking and embedding
-- ooxml : office open xml
-- pdf : pdf
-- pe : pe
-- pptx : microsoft powerpoint
-- rar : rar archive format
-- rtf : rich text format
-- script : script file
-- sld : slide format for autocad
-- tar : tar archive format
-- vsdx : microsoft visio
-- xar : xar archive format
-- xlsx : microsoft excel
-- zip : zip archive

@@ -13,23 +13,54 @@ github_username:  christian-taillon
 
 # Navigation Bar
 navbar-links:
+<<<<<<< HEAD
   Cyber Security Resources: "cyberresources"
   Splunk & KQL:
     Splunk Cheatsheet: "spl"
     Splunk Beginner Cheatsheet: "spl-beginner"
     KQL Guide: "kql-guide"
+=======
+  Splunk Cheatsheet: "spl"
+  Atomic: "atomic"
+  Medium Blog:
+    - Home: https://medium.com/@christiantaillon
+    - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
+    - "Prophet Spider Exploits Citrix ShareFile to Deploy Webshell" : https://christiantaillon.medium.com/prophet-spider-exploits-citrix-sharefile-to-deploy-webshell-d2689abd4301
+    - "What do we actually know about the Darkside Ransomware operators?" : https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
+    - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
+  Threat Hunting:
+    - "QakBot Detection: DUCK HUNT" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-aa0cadb398a7
+    - "QakBot Hunting: Autumn Spice" : https://christiantaillon.medium.com/qakbot-part-3-6497bd412d39
+    - "QakBot Detection: DUCK HUNT Part 2 — The .LNK" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-part-2-a93ea2498211
+    - Log4j: https://github.com/christian-taillon/log4shell-hunting
+    - Sunburst: https://github.com/christian-taillon/sunburst-hunting
+    - Various Search Leads: https://github.com/christian-taillon/threat-hunting-searches
+>>>>>>> 116f5b2092aa27da06ed252429a5240c32f4157b
   Configurations:
     - RC Files: "rc-files"
-    - Atom Conf: "atomconf"
     - Splunk Docker: "splunkdocker"
     - ParetoPi: "paretopi"
+    - DockerPihole: "https://github.com/christian-taillon/docker-pihole"
+    - Splunk Windows Forwarder: "https://github.com/christian-taillon/splunk_win_uf"
+  InfoSec Resources:
+    - Gist/christian-taillon: https://gist.github.com/christian-taillon
+    - InfoSec: "infosec"
+    - Cyber Security Resources: "cyberresources"
+    - "Sith CheatSheet: Kali" : "sith-cheatsheet"
+    - Recon-ng Guide: "recon-ng"
+    - DNS OSINT PDF: "https://christiant.io/download/dns-guide-awnsers.pdf"
+    - Endpoint Forensics: "ep-forensics"
   Interview Resources:
     - Interview: "interview"
     - SOC Interview: "socinterview"
     - Security Engineer: "securityengineer"
+<<<<<<< HEAD
     - Threat Hunter: "th-interview"
   About: "about"
 
+=======
+  About Me: "about"
+>>>>>>> 116f5b2092aa27da06ed252429a5240c32f4157b
 # Build settings
 # theme: minima
 remote_theme: daattali/beautiful-jekyll
@@ -83,14 +114,14 @@ collections:
 # Footer
 
 social-network-links:
-  email: "	christiantaillon@pm.me "
+  email: "	cpublic@christiant.io "
   #rss: true  # remove this line if you don't want to show an RSS link at the bottom
   facebook: christianjtaillon
   github: christian-taillon
   twitter_username: christian_tail
   medium: christiantaillon
   linkedin: christiantaillon
-  stackoverflow: christian-taillon
+  stackoverflow: 15532834
 
 
   #rss: true  # remove this line if you don't want to show an RSS link at the bottom

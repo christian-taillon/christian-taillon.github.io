@@ -3,7 +3,7 @@ layout: page
 title: "Splunk Cheatsheet"
 permalink: /spl
 ---
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 ## Splunk Quick Cheat Sheet
 
 **DNS Lookup**
