@@ -113,6 +113,15 @@ I work on the Cyber Observable Threat Hunting team with [Sports-ISAO](https://sp
 </p>
 <h4> ‍🖼️ Topics I Present & 🧰 Workshops I Run</h4>
 <p>
+<a target="_blank"><img alt="ChatGPT for Your Sanity" src="https://img.shields.io/badge/-💬%20ChatGPT%20for%20Your%20Sanity-lightblue?logo=&logoColor=white&style=flat"/></a>
+<a target="_blank"><img alt="Sigma" src="https://img.shields.io/badge/-🔎%20Sigma-orange?logo=&logoColor=white&style=flat"/></a>
+<a target="_blank"><img alt="Detection Engineering" src="https://img.shields.io/badge/-🛡️%20Detection%20Engineering-darkgreen?logo=&logoColor=white&style=flat"/></a>
+<a target="_blank"><img alt="Splunk for InfoSec" src="https://img.shields.io/badge/-🔒%20Splunk%20for%20InfoSec-blue?logo=&logoColor=white&style=flat"/></a>
+<a target="_blank"><img alt="Obsidian: Knowledge Management" src="https://img.shields.io/badge/-📚%20Obsidian:%20Knowledge%20Management-darkorange?logo=&logoColor=white&style=flat"/></a>
+<a target="_blank"><img alt="Home Lab" src="https://img.shields.io/badge/-🏠%20Home%20Lab-purple?logo=&logoColor=white&style=flat"/></a> <br>
+<a target="_blank"><img alt="Linux CLI" src="https://img.shields.io/badge/-🐧%20Linux%20CLI-lightgray?logo=&logoColor=white&style=flat"/></a>
+<a target="_blank"><img alt="Using a Linux Workstation in an Enterprise Environment" src="https://img.shields.io/badge/-🖥️%20Using%20Linux%20in%20Enterprise-blueviolet?logo=&logoColor=white&style=flat"/></a>
+<a target="_blank"><img alt="Meet the Enemy: Adversary Profiling" src="https://img.shields.io/badge/-🎯%20Meet%20the%20Enemy:%20Adversary%20Profiling-red?logo=&logoColor=white&style=flat"/></a>
 <a target="_blank"><img alt="Hunting" src="https://img.shields.io/badge/-🐺%20Becoming%20The%20Predator:%20Threat%20Hunting%20-orange?logo=&logoColor=white&style=flat"/></a>
 <a target="_blank"><img alt="Hunting" src="https://img.shields.io/badge/-🦆%20Can%20Ducks%20Teach%20US%20to%20Share: Mallard%20Spider's%20Qakbot-darkblue?logo=&logoColor=white&style=flat"/></a>
 <a target="_blank"><img alt="Hunting" src="https://img.shields.io/badge/-📈%20Operationalizing%20Threat%20Intelligence:%20Make%20Data%20Work%20for%20You-yellow?logo=&logoColor=white&style=flat"/></a> <br>
