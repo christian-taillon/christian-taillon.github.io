@@ -13,14 +13,10 @@ github_username:  christian-taillon
 
 # Navigation Bar
 navbar-links:
-<<<<<<< HEAD
-  Cyber Security Resources: "cyberresources"
   Splunk & KQL:
-    Splunk Cheatsheet: "spl"
-    Splunk Beginner Cheatsheet: "spl-beginner"
-    KQL Guide: "kql-guide"
-=======
-  Splunk Cheatsheet: "spl"
+  - Splunk Cheatsheet: "spl"
+  - Splunk Beginner Guide: "spl-beginner"
+  - KQL Beginner Guide: "kql-guide"
   Atomic: "atomic"
   Medium Blog:
     - Home: https://medium.com/@christiantaillon
@@ -35,7 +31,6 @@ navbar-links:
     - Log4j: https://github.com/christian-taillon/log4shell-hunting
     - Sunburst: https://github.com/christian-taillon/sunburst-hunting
     - Various Search Leads: https://github.com/christian-taillon/threat-hunting-searches
->>>>>>> 116f5b2092aa27da06ed252429a5240c32f4157b
   Configurations:
     - RC Files: "rc-files"
     - Splunk Docker: "splunkdocker"
@@ -54,13 +49,8 @@ navbar-links:
     - Interview: "interview"
     - SOC Interview: "socinterview"
     - Security Engineer: "securityengineer"
-<<<<<<< HEAD
     - Threat Hunter: "th-interview"
-  About: "about"
-
-=======
   About Me: "about"
->>>>>>> 116f5b2092aa27da06ed252429a5240c32f4157b
 # Build settings
 # theme: minima
 remote_theme: daattali/beautiful-jekyll
