@@ -14,10 +14,12 @@ github_username:  christian-taillon
 # Navigation Bar
 navbar-links:
   Splunk & KQL:
-  - Splunk Cheatsheet: "spl"
-  - Splunk Beginner Guide: "spl-beginner"
-  - KQL Beginner Guide: "kql-guide"
-  Atomic: "atomic"
+    - Splunk Cheatsheet: "spl"
+    - Splunk Beginner Guide: "spl-beginner"
+    - KQL Beginner Guide: "kql-guide"
+  Red Team:
+    -  Atomic: "atomic"
+    - "Sith CheatSheet: Kali" : "sith-cheatsheet"
   Medium Blog:
     - Home: https://medium.com/@christiantaillon
     - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
@@ -42,7 +44,6 @@ navbar-links:
     - Gist/christian-taillon: https://gist.github.com/christian-taillon
     - InfoSec: "infosec"
     - Cyber Security Resources: "cyberresources"
-    - "Sith CheatSheet: Kali" : "sith-cheatsheet"
     - Recon-ng Guide: "recon-ng"
     - DNS OSINT PDF: "https://christiant.io/download/dns-guide-awnsers.pdf"
     - Endpoint Forensics: "ep-forensics"
