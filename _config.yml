@@ -13,43 +13,40 @@ github_username:  christian-taillon
 
 # Navigation Bar
 navbar-links:
-  Splunk & KQL:
-    - Splunk Cheatsheet: "spl"
-    - Splunk Beginner Guide: "spl-beginner"
-    - KQL Beginner Guide: "kql-guide"
   Red Team:
     -  Atomic: "atomic"
     - "Sith CheatSheet: Kali" : "sith-cheatsheet"
-  Detection Engineering:
+    - Recon-ng Guide: "recon-ng"
+    - DNS OSINT PDF: "https://christiant.io/download/dns-guide-awnsers.pdf"
+  Blue Team:
+    - Splunk Cheatsheet: "spl"
+    - Splunk Beginner Guide: "spl-beginner"
+    - KQL Beginner Guide: "kql-guide"
     - Sigma Rule Guide: "sigma-rule-guide"
     - YARA Rule Guide: "yara-rule-guide"
     - SNORT Rule Guide: "snort-suricata-guide"
-  Medium Blog:
-    - Home: https://medium.com/@christiantaillon
+    - Gist/christian-taillon: https://gist.github.com/christian-taillon
+    - InfoSec: "infosec"
+    - Cyber Security Resources: "cyberresources"
+    - Endpoint Forensics: "ep-forensics"
+  Threat Hunting:
     - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
     - "Prophet Spider Exploits Citrix ShareFile to Deploy Webshell" : https://christiantaillon.medium.com/prophet-spider-exploits-citrix-sharefile-to-deploy-webshell-d2689abd4301
-    - "What do we actually know about the Darkside Ransomware operators?" : https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
-    - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
-  Threat Hunting:
     - "QakBot Detection: DUCK HUNT" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-aa0cadb398a7
     - "QakBot Hunting: Autumn Spice" : https://christiantaillon.medium.com/qakbot-part-3-6497bd412d39
     - "QakBot Detection: DUCK HUNT Part 2 — The .LNK" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-part-2-a93ea2498211
     - Log4j: https://github.com/christian-taillon/log4shell-hunting
     - Sunburst: https://github.com/christian-taillon/sunburst-hunting
     - Various Search Leads: https://github.com/christian-taillon/threat-hunting-searches
-  Configurations:
+    - "What do we actually know about the Darkside Ransomware operators?" : https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
+    - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
+  Configs & Dev:
     - RC Files: "rc-files"
     - Splunk Docker: "splunkdocker"
     - ParetoPi: "paretopi"
     - DockerPihole: "https://github.com/christian-taillon/docker-pihole"
     - Splunk Windows Forwarder: "https://github.com/christian-taillon/splunk_win_uf"
-  InfoSec Resources:
-    - Gist/christian-taillon: https://gist.github.com/christian-taillon
-    - InfoSec: "infosec"
-    - Cyber Security Resources: "cyberresources"
-    - Recon-ng Guide: "recon-ng"
-    - DNS OSINT PDF: "https://christiant.io/download/dns-guide-awnsers.pdf"
-    - Endpoint Forensics: "ep-forensics"
+    - Simple Guide to Python3 Virtual Environments: "pyhon3virt"
   Interview Resources:
     - Interview: "interview"
     - SOC Interview: "socinterview"
