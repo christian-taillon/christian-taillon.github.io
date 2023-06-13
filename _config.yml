@@ -13,6 +13,7 @@ github_username:  christian-taillon
 
 # Navigation Bar
 navbar-links:
+  ML/AI For Infosec: "ai-infosec"
   Red Team:
     -  Atomic: "atomic"
     - "Sith CheatSheet: Kali" : "sith-cheatsheet"
