@@ -14,11 +14,6 @@ github_username:  christian-taillon
 # Navigation Bar
 navbar-links:
   ML/AI For Infosec: "ai-infosec"
-  Red Team:
-    -  Atomic: "atomic"
-    - "Sith CheatSheet: Kali" : "sith-cheatsheet"
-    - Recon-ng Guide: "recon-ng"
-    - DNS OSINT PDF: "https://christiant.io/download/dns-guide-awnsers.pdf"
   Blue Team:
     - Splunk Cheatsheet: "spl"
     - Splunk Beginner Guide: "spl-beginner"
@@ -41,6 +36,11 @@ navbar-links:
     - Various Search Leads: https://github.com/christian-taillon/threat-hunting-searches
     - "What do we actually know about the Darkside Ransomware operators?" : https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
     - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
+  Red Team:
+    -  Atomic: "atomic"
+    - "Sith CheatSheet: Kali" : "sith-cheatsheet"
+    - Recon-ng Guide: "recon-ng"
+    - DNS OSINT PDF: "https://christiant.io/download/dns-guide-awnsers.pdf"
   Configs & Dev:
     - RC Files: "rc-files"
     - Splunk Docker: "splunkdocker"
