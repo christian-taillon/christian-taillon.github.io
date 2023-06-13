@@ -201,6 +201,8 @@ Write a sigma rule to identify a new key or modification of an existing key that
 ---
 
 ## Helpful Resources
+[gandalf.lakera.ai](https://gandalf.lakera.ai/)
 [openai.com](https://openai.com/security)
 [HuggingFace](https://huggingface.co/Pi3141)
 [openai.com](https://openai.com/security)
+[awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts)
