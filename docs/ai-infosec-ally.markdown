@@ -63,7 +63,7 @@ How can one verify the output of a large lanauge model?
 
 ---
 
-![[Pasted image 20230509144044.png]]
+![Pasted image 20230509144044.png](/image/Pasted image 20230509144044.png)
 
 ---
 ## Data Problems in Models
@@ -82,7 +82,7 @@ We will spend some time on other options.
 
 ---
 
-![[Pasted image 20230509144055.png]]
+![Pasted image 20230509144055.png](/image/Pasted image 20230509144055.png)
 
 ---
 ## AI Anonymity
@@ -94,7 +94,7 @@ ChatGPT design presents operational threat to consumers, both individually and c
 ---
 
 ## Local Large Language Model (Alpaca)
-![[Pasted image 20230613081050.png]]
+![Pasted image 20230613081050.png](/image/Pasted image 20230613081050.png)
 [HuggingFace](https://huggingface.co/Pi3141)
 
 ---
