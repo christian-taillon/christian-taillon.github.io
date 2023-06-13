@@ -1,3 +1,9 @@
+---
+layout: page
+title: Ally for Infosec
+permalink: /ai-infosec
+
+---
 ## Generative Txt for InforSec
 
 InforSec's optimized use of the newest product lineup of Machine Learning.
@@ -173,7 +179,7 @@ Write a sysmon rule to identify the creation of a registry-key that starts a pro
 ---
 layout: page
 title: InfoSec Ally: AI
-permalink: /ai/
+permalink: /ai-infosec/
 
 ---
 ## Tips: Anecdotal Experience
