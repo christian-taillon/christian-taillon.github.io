@@ -57,7 +57,8 @@ Just as our ML models give a probability prediction on a file's resemblance of m
 ## Read the Agreement: Don't Trust and Verify
 Remember how "AI" was the engine to every solution and the solution to every problem in 2018? There will be tasks that generative AI is simply not well suited to solve.
 
-```How can one verify the output of a large lanauge model?
+```
+How can one verify the output of a large lanauge model?
 ```
 
 ---
