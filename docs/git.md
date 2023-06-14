@@ -5,13 +5,13 @@ permalink: /git-cheatsheet
 ---
 
 ## What is Git?
-Git is a widely-used version control system. In the context of Information Technology, Git allows multiple developers to work on a same project without stepping on each other's toes. It can keep track of changes to your files (known as commits), so you can always recall specific versions of your project at any point in the future.
+Git is a widely-used version control system. In the context of Information Technology, Git allows multiple developers to work on the same project without stepping on each other's toes. It can keep track of changes to your files (known as commits), so you can always recall specific versions of your project at any point in the future.
 
-It can be used by developers for collaborative programming, but also for those in IT to manage configs collaboratively, or even to preserve your own sanity.
+Developers can use it for collaborative programming and for those in IT to manage configs collaboratively or to preserve your sanity when working with configurations across multiple devices.
 
-If you're looking for something specific `Ctrl + F` and search for it. If you're just here to learn, grab a coffee, sit back, and lets learn together.
+If you're looking for something specific, `Ctrl + F` and search for it. If you're just here to learn, grab a coffee, sit back, and let's learn together.
 
-I'd normally add a joke in this opening, but I am riffraff you might not `git` it.
+I'd normally add a joke in this opening, but I am afraid you might not `git` it.
 
 ## Git Commands
 
