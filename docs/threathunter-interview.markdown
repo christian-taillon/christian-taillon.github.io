@@ -14,7 +14,7 @@ permalink: /th-interview
 
 - **Temporary Files**: Malware often hides in the temporary files folder. The location for this folder is typically:
     - `C:\Users\[Username]\AppData\Local\Temp`
-
+    - 'C:\Temp'
 - **AppData Folder**: This folder is used by applications to store settings, files, and data and is another common location for malware. The typical path is:
     - `C:\Users\[Username]\AppData`
 
