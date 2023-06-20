@@ -25,3 +25,36 @@ This list is a work in progress as I have never conducted an interview for a Thr
 9. Can you discuss your experience with sandboxing and how it aids in threat hunting? Can you give an example of a situation where it was particularly effective?
 
 10. Given a situation where a threat bypassed existing security measures, what steps would you take to identify, isolate, and mitigate it? How would you prevent similar threats in the future?
+
+
+## What are some common malware locations?
+- **Startup Folder**: Malware often places shortcuts or files in the Startup folder to run automatically every time Windows starts up. The path to this folder is typically:
+    - `C:\Users\[Username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`
+    - `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`
+
+- **System Folder**: The System32 folder contains files that are essential to your Windows OS. Some malware tries to disguise itself by using similar names to legitimate files in this folder. The path is:
+    - `C:\Windows\System32`
+
+- **Temporary Files**: Malware often hides in the temporary files folder. The location for this folder is typically:
+    - `C:\Users\[Username]\AppData\Local\Temp`
+
+- **AppData Folder**: This folder is used by applications to store settings, files, and data and is another common location for malware. The typical path is:
+    - `C:\Users\[Username]\AppData`
+
+- **Download Folder**: This is the default location for downloads from the internet. Always be cautious about what is in this folder.
+    - `C:\Users\[Username]\Downloads`
+
+- **Program Files and Program Files (x86)**: These folders are where applications are typically installed. Malware often hides in these locations, especially in less commonly used subfolders. The paths are:
+    - `C:\Program Files`
+    - `C:\Program Files (x86)`
+
+- **Browser Profiles**: Malware can also hide in the user data or profile directories of web browsers. Here are locations for some common browsers:
+    - Chrome: `C:\Users\[Username]\AppData\Local\Google\Chrome\User Data\Default`
+    - Firefox: `C:\Users\[Username]\AppData\Roaming\Mozilla\Firefox\Profiles`
+    - Edge: `C:\Users\[Username]\AppData\Local\Microsoft\Edge\User Data\Default`
+
+- **Documents Folder**: This is a common location where users store files. Malware can sometimes be found here, often disguised as a document or hidden in a subfolder. The typical path is:
+    - `C:\Users\[Username]\Documents`
+
+- **Windows PowerShell Modules**: Malware might attempt to use PowerShell scripts and could leave traces in PowerShell module directories. A common location to check is:
+    - `C:\Users\[Username]\Documents\WindowsPowerShell\Modules`
