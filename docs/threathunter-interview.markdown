@@ -77,25 +77,25 @@ permalink: /th-interview
     - `HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers`
     - `HKEY_CLASSES_ROOT\Drive\shell\open\command`
 
-    ## Ten Open Ended Threat Hunting Questions
-    This list is a work in progress as I have never conducted an interview for a Threat Hunting postion on any of my teams. Initial thoughts were to keep it very open ended, but I'd like to add true / false and multiple choice questions. Ping me if you have thoughts at [christiantaillon@pm.me](mailto:christiantaillon@pm.me).
+## Ten Open Ended Threat Hunting Questions
+This list is a work in progress as I have never conducted an interview for a Threat Hunting postion on any of my teams. Initial thoughts were to keep it very open ended, but I'd like to add true / false and multiple choice questions. Ping me if you have thoughts at [christiantaillon@pm.me](mailto:christiantaillon@pm.me).
 
-    1. Can you explain the difference between Threat Hunting and Incident Response and Traditional SOC Triage? How do they work together?
+1. Can you explain the difference between Threat Hunting and Incident Response and Traditional SOC Triage? How do they work together?
 
-    2. In your experience, which are the most reliable indicators of compromise (IoCs)? What are some of the least reliable?
+2. In your experience, which are the most reliable indicators of compromise (IoCs)? What are some of the least reliable?
 
-    3. Can you explain a situation where you used behavioral analysis to identify a potential threat? What techniques or tools did you use?
+3. Can you explain a situation where you used behavioral analysis to identify a potential threat? What techniques or tools did you use?
 
-    4. How do you use threat intelligence feeds in your threat hunting process? Can you provide an example of how you've used this data to improve your organization's security posture?
+4. How do you use threat intelligence feeds in your threat hunting process? Can you provide an example of how you've used this data to improve your organization's security posture?
 
-    5. How would you go about investigating a potential Advanced Persistent Threat (APT)? What are some unique challenges associated with hunting for these threats and how do you address them?
+5. How would you go about investigating a potential Advanced Persistent Threat (APT)? What are some unique challenges associated with hunting for these threats and how do you address them?
 
-    6. How familiar are you with creating custom scripts or using automation to assist with threat hunting? Can you share a specific example where this improved your work?
+6. How familiar are you with creating custom scripts or using automation to assist with threat hunting? Can you share a specific example where this improved your work?
 
-    7. Can you talk about a time when your hunt resulted in a false positive or multiple false positives? How did you determine it was a false positive and what was your subsequent action?
+7. Can you talk about a time when your hunt resulted in a false positive or multiple false positives? How did you determine it was a false positive and what was your subsequent action?
 
-    8. How do you ensure that threat hunting activities don't are effective and that you're not duplicating SOC Traige work?
+8. How do you ensure that threat hunting activities don't are effective and that you're not duplicating SOC Traige work?
 
-    9. Can you discuss some of your favorite tools to use in any domain of threat hunting?
+9. Can you discuss some of your favorite tools to use in any domain of threat hunting?
 
-    10. Assume a situation where a threat bypassed existing security control, you can choose what type of control has been bypassed. What steps would you take to identify, isolate, and mitigate it? How would you prevent threats of a similar nature in the future?
+10. Assume a situation where a threat bypassed existing security control, you can choose what type of control has been bypassed. What steps would you take to identify, isolate, and mitigate it? How would you prevent threats of a similar nature in the future?
