@@ -42,7 +42,7 @@ permalink: /th-interview
 - `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce`
 - `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce`
 
-## List other locations that may be interesting or useful to a Threat Hunter.
+## List other locations that may be intersting or useful to a Threat Hunter.
 - **Auto-start Extension Points (ASEPs)**: Registry keys used to automatically start a program during or after booting. In addition to the `Run` and `RunOnce` keys mentioned earlier, you might want to check these locations as well:
     - `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders`
     - `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders`
@@ -78,8 +78,6 @@ permalink: /th-interview
     - `HKEY_CLASSES_ROOT\Drive\shell\open\command`
 
 ## Ten Open Ended Threat Hunting Questions
-This list is a work in progress as I have never conducted an interview for a Threat Hunting postion on any of my teams. Initial thoughts were to keep it very open ended, but I'd like to add true / false and multiple choice questions. Ping me if you have thoughts at [christiantaillon@pm.me](mailto:christiantaillon@pm.me).
-
 1. Can you explain the difference between Threat Hunting and Incident Response and Traditional SOC Triage? How do they work together?
 
 2. In your experience, which are the most reliable indicators of compromise (IoCs)? What are some of the least reliable?
@@ -99,3 +97,7 @@ This list is a work in progress as I have never conducted an interview for a Thr
 9. Can you discuss some of your favorite tools to use in any domain of threat hunting?
 
 10. Assume a situation where a threat bypassed existing security control, you can choose what type of control has been bypassed. What steps would you take to identify, isolate, and mitigate it? How would you prevent threats of a similar nature in the future?
+
+
+## Open to PRs!!
+This list is a work in progress as I have never conducted an interview for a Threat Hunting position on any of my teams. Initial thoughts were to keep it very open ended, but I'd like to add true / false and multiple choice questions. Ping me if you have thoughts at [christiantaillon@pm.me](mailto:christiantaillon@pm.me).
