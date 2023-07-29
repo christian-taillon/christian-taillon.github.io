@@ -22,7 +22,7 @@ I have been a mentor on the [Cyber Mentor Dojo](https://cybermentordojo.com/) fo
 When AFK, I try to get out and hike, kayak, or explore God's green earth in some capacity with my best friend and biggest supporter, my amazing and wonderful wife. <br> <br>
 
 <h3 style="text-align:center">Contact me...</h3>
-<body style="text-align:center">email: <b>public@christiant.io</b></body>
+<body style="text-align:center">email: <b>public[@]christiant.io</b></body>
 
 Encrypt your Email: [PGP Public Key][1]
 
