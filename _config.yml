@@ -16,7 +16,7 @@ navbar-links:
   Generative AI for InfoSec:
     - AI Ally: "ai-infosec"
     - OpenAI-CL Tool: "https://github.com/christian-taillon/openai-cl"
-    Threat Hunting:
+  Threat Hunting:
     - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
     - "Prophet Spider Exploits Citrix ShareFile to Deploy Webshell" : https://christiantaillon.medium.com/prophet-spider-exploits-citrix-sharefile-to-deploy-webshell-d2689abd4301
     - "QakBot Detection: DUCK HUNT" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-aa0cadb398a7
@@ -33,14 +33,14 @@ navbar-links:
     - Cyber Security Resources: "cyberresources"
     - Gist/christian-taillon: https://gist.github.com/christian-taillon
     - Endpoint Forensics: "ep-forensics"
-  subfolderitems2:
-    - Splunk Cheatsheet: "spl"
-    - Splunk Beginner Guide: "spl-beginner"
-    - KQL Beginner Guide: "kql-guide"
-    - Sigma Rule Guide: "sigma-rule-guide"
-    - ClamAV Guide: "clamav-guide"
-    - YARA Rule Guide: "yara-rule-guide"
-    - SNORT Rule Guide: "snort-suricata-guide"
+      subfolderitems2:
+        - Splunk Cheatsheet: "spl"
+        - Splunk Beginner Guide: "spl-beginner"
+        - KQL Beginner Guide: "kql-guide"
+        - Sigma Rule Guide: "sigma-rule-guide"
+        - ClamAV Guide: "clamav-guide"
+        - YARA Rule Guide: "yara-rule-guide"
+        - SNORT Rule Guide: "snort-suricata-guide"
   Red Team:
     -  Atomic: "atomic"
     - "Sith CheatSheet: Kali" : "sith-cheatsheet"
