@@ -13,7 +13,9 @@ github_username:  christian-taillon
 
 # Navigation Bar
 navbar-links:
-  ML/AI For Infosec: "ai-infosec"
+  Generative AI for InfoSec:
+    - AI Ally: "ai-infosec"
+    - OpenAI-CL Tool: "https://github.com/christian-taillon/openai-cl"
   Blue Team:
     - Splunk Cheatsheet: "spl"
     - Splunk Beginner Guide: "spl-beginner"
