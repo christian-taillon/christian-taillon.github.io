@@ -28,11 +28,12 @@ navbar-links:
     - "What do we actually know about the Darkside Ransomware operators?" : https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
     - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
   Blue Team Tools:
+  subfolderitems:
     - InfoSec: "infosec"
     - Cyber Security Resources: "cyberresources"
     - Gist/christian-taillon: https://gist.github.com/christian-taillon
     - Endpoint Forensics: "ep-forensics"
-  Detection Engineering:
+  subfolderitems2:
     - Splunk Cheatsheet: "spl"
     - Splunk Beginner Guide: "spl-beginner"
     - KQL Beginner Guide: "kql-guide"
