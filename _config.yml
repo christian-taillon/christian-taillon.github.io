@@ -21,7 +21,7 @@ navbar-links:
     - Splunk Beginner Guide: "spl-beginner"
     - KQL Beginner Guide: "kql-guide"
     - Sigma Rule Guide: "sigma-rule-guide"
-    - ClamAV Guide: "clamav"
+    - ClamAV Guide: "clamav-guide"
     - YARA Rule Guide: "yara-rule-guide"
     - SNORT Rule Guide: "snort-suricata-guide"
     - Gist/christian-taillon: https://gist.github.com/christian-taillon

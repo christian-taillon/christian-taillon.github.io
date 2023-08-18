@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Clam AV Guide"
+permalink: /clamav-guide
+---
+
 ### ClamAV Guide
 
 ---
@@ -172,4 +178,4 @@ To commence with ClamTK, install it through your distribution's package manager 
 
 ---
 
-This guide aims to equip entry-level information security professionals with the knowledge to proficiently utilize ClamAV, ensuring robust security measures against potential threats.
+This guide aims to equip entry-level information security professionals with the knowledge to proficiently utilize ClamAV.
