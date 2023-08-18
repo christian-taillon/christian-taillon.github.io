@@ -28,19 +28,17 @@ navbar-links:
     - "What do we actually know about the Darkside Ransomware operators?" : https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
     - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
   Blue Team Tools:
-  subfolderitems:
+    - Splunk Cheatsheet: "spl"
+    - Splunk Beginner Guide: "spl-beginner"
+    - KQL Beginner Guide: "kql-guide"
+    - Sigma Rule Guide: "sigma-rule-guide"
+    - ClamAV Guide: "clamav-guide"
+    - YARA Rule Guide: "yara-rule-guide"
+    - SNORT Rule Guide: "snort-suricata-guide"
     - InfoSec: "infosec"
     - Cyber Security Resources: "cyberresources"
     - Gist/christian-taillon: https://gist.github.com/christian-taillon
     - Endpoint Forensics: "ep-forensics"
-      subfolderitems2:
-        - Splunk Cheatsheet: "spl"
-        - Splunk Beginner Guide: "spl-beginner"
-        - KQL Beginner Guide: "kql-guide"
-        - Sigma Rule Guide: "sigma-rule-guide"
-        - ClamAV Guide: "clamav-guide"
-        - YARA Rule Guide: "yara-rule-guide"
-        - SNORT Rule Guide: "snort-suricata-guide"
   Red Team:
     -  Atomic: "atomic"
     - "Sith CheatSheet: Kali" : "sith-cheatsheet"
