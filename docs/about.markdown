@@ -17,7 +17,7 @@ In my day job, I contribute to Grand Canyon Education's Information Security tea
 
 I would love to spend most of my days working out of vim or [Pulsar Edit](https://pulsar-edit.dev/), a few SSH sessions, and a web browser and build cool dashboards, searches, and tools in <b>Splunk</b>. However, my day job involves supporting a fantastic SOC in both solutions and operations, so I don't always get what I want. 😉 When not helping lead response for escalated incidents, I find myself  deploying or improving various security detection, prevention, monitoring, and response controls.
 
-I have been a mentor on the [Cyber Mentor Dojo](https://cybermentordojo.com/) for some time and find it an affective platform to montor those interested in developing as a cyber practitioner.
+I have been a mentor on the [Cyber Mentor Dojo](https://cybermentordojo.com/) for some time and find it an effective platform to montor those interested in developing as a cyber practitioner.
 
 When AFK, I try to get out and hike, kayak, or explore God's green earth in some capacity with my best friend and biggest supporter, my amazing and wonderful wife. <br> <br>
 
