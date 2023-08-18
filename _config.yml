@@ -16,7 +16,12 @@ navbar-links:
   Generative AI for InfoSec:
     - AI Ally: "ai-infosec"
     - OpenAI-CL Tool: "https://github.com/christian-taillon/openai-cl"
-  Blue Team:
+  Blue Team Tools:
+    - InfoSec: "infosec"
+    - Cyber Security Resources: "cyberresources"
+    - Gist/christian-taillon: https://gist.github.com/christian-taillon
+    - Endpoint Forensics: "ep-forensics"
+  Detection Engineering:
     - Splunk Cheatsheet: "spl"
     - Splunk Beginner Guide: "spl-beginner"
     - KQL Beginner Guide: "kql-guide"
@@ -24,10 +29,6 @@ navbar-links:
     - ClamAV Guide: "clamav-guide"
     - YARA Rule Guide: "yara-rule-guide"
     - SNORT Rule Guide: "snort-suricata-guide"
-    - Gist/christian-taillon: https://gist.github.com/christian-taillon
-    - InfoSec: "infosec"
-    - Cyber Security Resources: "cyberresources"
-    - Endpoint Forensics: "ep-forensics"
   Threat Hunting:
     - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
     - "Prophet Spider Exploits Citrix ShareFile to Deploy Webshell" : https://christiantaillon.medium.com/prophet-spider-exploits-citrix-sharefile-to-deploy-webshell-d2689abd4301
