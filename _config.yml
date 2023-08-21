@@ -13,6 +13,7 @@ github_username:  christian-taillon
 
 # Navigation Bar
 navbar-links:
+  My Fancy New Website: "https://sites.gcu.edu/a-christian-taillon/"
   Generative AI for InfoSec:
     - AI Ally: "ai-infosec"
     - OpenAI-CL Tool: "https://github.com/christian-taillon/openai-cl"
