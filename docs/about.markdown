@@ -65,6 +65,10 @@ I sit on the Board of Directors for this chapter as the Edcuation Director.
 I work on the Cyber Observable Threat Hunting team with [Sports-ISAO](https://sports-isao.org/) for our "Popup SOC".
 
 #### Github
+<a target="_blank"><img alt="Azure" src="https://github-readme-stats.vercel.app/api/top-langs/?username=christian-taillon&layout=compact&theme=vue-dark"/></a>
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=christian-taillon&theme=vue-dark" alt="christian-taillon"/></p>
+<br>
+
 [![trophy](https://github-profile-trophy.vercel.app/?username=christian-taillon&theme=chalk&no-frame=true&column=4)](https://github.com/ryo-ma/github-profile-trophy)
 
 <hr style="width:75%;text-align:center">
