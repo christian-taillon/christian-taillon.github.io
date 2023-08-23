@@ -23,11 +23,9 @@ When AFK, I try to get out and hike, kayak, or explore God's green earth in some
 
 <h3 style="text-align:center">Contact me...</h3>
 <body style="text-align:center">email: <b>public(AT)christiant.io</b></body>
-
 Encrypt your Email: [PGP Public Key][1]
 
 [1]:/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc
-<br>
 
 <h3 style="text-align:center">Follow me...</h3>
 <p style="text-align:center"> <a href="https://github.com/christian-taillon" target="_blank"><img alt="Github"
