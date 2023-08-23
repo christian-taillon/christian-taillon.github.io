@@ -58,19 +58,13 @@ My day job is as a <b> Threat Response Engineer </b> working out of the <b>Phoen
 [Arizona Cyber Threat Response Alliance](https://www.actraaz.org/) <br>
 I lead a team of threat intel team as a <b>Global Watch Center Lead</b> and Core Contributor for ACTRA. I also lead our Threat Intelligence Exchanges, help develop tools for our operations, and I am an instructor at ACTRA's Academy.
 
-[Phoenix ISSA Chapter]
-
+[Phoenix ISSA Chapter](https://phoenix.issa.org/) <br>
+I sit on the Board of Directors for this chapter as the Edcuation Director.
 
 [Cyber Resilience Institute](https://www.cyberresilienceinstitute.org/)<br>
 I work on the Cyber Observable Threat Hunting team with [Sports-ISAO](https://sports-isao.org/) for our "Popup SOC".
 
 #### Github
-<a target="_blank"><img alt="readme-stats" src="https://github-readme-stats.vercel.app/api?username=christian-taillon&show_icons=true&theme=vue-dark"/></a>
-
-<a target="_blank"><img alt="Azure" src="https://github-readme-stats.vercel.app/api/top-langs/?username=christian-taillon&layout=compact&theme=vue-dark"/></a>
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=christian-taillon&theme=vue-dark" alt="christian-taillon"/></p>
-<br>
-
 [![trophy](https://github-profile-trophy.vercel.app/?username=christian-taillon&theme=chalk&no-frame=true&column=4)](https://github.com/ryo-ma/github-profile-trophy)
 
 <hr style="width:75%;text-align:center">
