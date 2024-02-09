@@ -37,6 +37,12 @@ permalink: /spl
 | eval lastTime=strftime(lastTime,"%Y-%m-%d %H:%M:%S")
 ```
 
+**Day of Month and Week of Year Fields**
+```
+| eval dayMonth=strftime(_time, "%d") + " " + strftime(_time, "%B")
+| eval weekYear=strftime(_time, "%U") 
+```
+
 **List All Available Indexes with Events**
 ```
 | eventcount summarize=false index=*
