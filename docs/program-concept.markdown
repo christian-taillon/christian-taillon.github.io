@@ -1,3 +1,8 @@
+---
+layout: page
+title: "program-concept"
+permalink: /program-concept
+---
 ### Programming Concepts Explained with Code Examples
 
 #### Variable Assignments
