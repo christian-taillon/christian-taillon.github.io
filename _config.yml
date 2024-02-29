@@ -53,7 +53,8 @@ navbar-links:
     - ParetoPi: "paretopi"
     - DockerPihole: "https://github.com/christian-taillon/docker-pihole"
     - Splunk Windows Forwarder: "https://github.com/christian-taillon/splunk_win_uf"
-    - Simple Guide to Python3 Virtual Environments: "pyhon3virt"
+    - Programing Basics: "program-concept"
+    - Python3 Virtual Environments: "pyhon3virt"
   Interview Resources:
     - Interview: "interview"
     - SOC Interview: "socinterview"
