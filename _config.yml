@@ -28,6 +28,8 @@ navbar-links:
     - "What do we actually know about the Darkside Ransomware operators?" : https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
     - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
   Blue Team Tools:
+    - LogScale : "logscale_beg_guide"
+    - LogScale Cheatsheet : "logscale"
     - Splunk Cheatsheet: "spl"
     - Splunk Beginner Guide: "spl-beginner"
     - KQL Beginner Guide: "kql-guide"
