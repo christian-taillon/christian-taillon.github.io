@@ -62,4 +62,4 @@ Combine filters to refine searches.
 - **Exclude Specific Subnet**: `!cidr(ip, subnet="10.10.0.0/16")`
 - **Exclude Specific Values**: `!in(Beverage, values=["Decaf", "Instant"])`
 
-Remember, this cheat sheet is a quick reference guide. For more complex queries and functions, refer to the detailed LogScale documentation. 
+Remember, this cheat sheet is a quick reference guide. For more complex queries and functions, refer to the detailed LogScale documentation.
