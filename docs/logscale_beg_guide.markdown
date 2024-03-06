@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Logscal Query Language: Beginner"
+title: "LogScale Query Language: Beginner"
 permalink: /logscale_beg_guide
 ---
 # LogScale Query Language (LQL) Guide for SOC Analysts
