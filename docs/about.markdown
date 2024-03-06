@@ -11,15 +11,23 @@ permalink: /about/
 <h2 align="center"> My name is Christian Taillon</h2>
 ![christian](/image/ctaillon_presenting.jpg)
 
-I am a Christian first, a husband to a wonderful wife second, a Cyber Security Practitioner third.
+### Personal Life
+At my core, I am guided by my personal relationship with **Jesus Christ**. Supported by my best friend and wonderful wife, we navigate the joys of new parenthood with our beautiful baby girl.
 
-In my day job, I contribute to Grand Canyon Education's Information Security team as a <b>Threat Response Engineer</b>. My efforts focus on improving the Security team's operational tools and capabilities to efficiently detect and effectively respond to threats. This is done primarily through work relating to <b>SIEM</b>, <b>EDR</b>, <b>NTA</b>, and an evolving <b>Threat Intelligence</b> program.
+### Professional Life
+Professionally, I serve as a **senior member** of the IT Security Engineering team at **Grand Canyon Education**, where my focus lies on enhancing our **Detection, Prevention, and Visibility tools** to bolster the capabilities of our SOC.
 
-I would love to spend most of my days working out of vim or [Pulsar Edit](https://pulsar-edit.dev/), a few SSH sessions, and a web browser and build cool dashboards, searches, and tools in <b>Splunk</b>. However, my day job involves supporting a fantastic SOC in both solutions and operations, so I don't always get what I want. 😉 When not helping lead response for escalated incidents, I find myself  deploying or improving various security detection, prevention, monitoring, and response controls.
+I am an advocate for **Threat Intelligence** sharing **Sigma**, **YARA**, and **Snort/Suricata rules** within our security community. I'm also a big advocate of **Linux** as a primary workstation. I lead efforts in **SIEM**, **centralized logging**, **NDR**, **EDR**, custom logging, integration, detection tools, event correlation, and the development of intelligent, actionable alerts.
 
-I have been a mentor on the [Cyber Mentor Dojo](https://cybermentordojo.com/) for some time and find it an effective platform to montor those interested in developing as a cyber practitioner.
+### Contributions and Advocacy
+Beyond my responsibilities at Grand Canyon Education, I contribute as a **Solutions Architect** at **Sports-ISAO**. My work here includes pivotal protection efforts for major sporting events such as the **Super Bowl** and the **Olympics**. Furthermore, I serve on the board for the **Phoenix ISSA Chapter**.
 
-When AFK, I try to get out and hike, kayak, or explore God's green earth in some capacity with my best friend and biggest supporter, my amazing and wonderful wife. <br> <br>
+I am a core contributor to the **Arizona Cyber Threat Response Alliance (ACTRA)** where I lead at the **Global Watch Center** and apply my expertise as a **Solutions Engineer** working with both open and close source technologies.
+
+### Personal Interests
+When stepping away from my keyboard, my family and I seek to explore the outdoors. Whether hiking, kayaking, or simply enjoying nature's beauty.
+
+ <br> <br>
 
 <h3 style="text-align:center">Contact me...</h3>
 <body style="text-align:center">email: <b>public(AT)christiant.io</b></body>
