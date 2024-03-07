@@ -105,9 +105,9 @@ gtag: "G-R34BHCHXE0"
 ######################################
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
-navbar-col: "#f89c1a"
-navbar-text-col: "#424242"
-navbar-border-col: "#f89c1a"
+# navbar-col: "#f89c1a"
+# navbar-text-col: "#424242"
+# navbar-border-col: "#f89c1a"
 # page-col: "#FFFFFF"
 # text-col: "#404040"
 # link-col: "#008AFF"
