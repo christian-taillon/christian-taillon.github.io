@@ -139,8 +139,9 @@ docker run -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gatew
 
 If you only need OpenWebUI for the OpenAI API, use the command below and replace `your_secret_key` with your actual API key:
 
+Note: Consider setting your OpenAI key to an environment varriable rather than your cli input which may save the secret to your cli history.
 ```bash
-docker run -d -p 3000:8080 -e OPENAI_API_KEY=your_secret_key -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+docker run -d -p 3000:8080 -e OPENAI_API_KEY=$OPENAI_API_KEY -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
 ```
 
 ### Installing OpenWebUI with Bundled Ollama Support
