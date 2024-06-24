@@ -127,24 +127,6 @@ Using a GPU significantly speeds up the processing of LLMs. It allows efficient 
     docker pull ghcr.io/open-webui/open-webui:main
     ```
 
-### Running OpenWebUI with Ollama
-
-#### If Ollama is on Your Computer:
-
-Use the following command to run OpenWebUI, ensuring it connects to Ollama on your local machine:
-
-```bash
-docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-```
-
-#### If Ollama is on a Different Server:
-
-To connect to Ollama on a remote server, replace `https://example.com` with the actual server URL:
-
-```bash
-docker run -d -p 3000:8080 -e OLLAMA_BASE_URL=https://example.com -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-```
-
 ### Running OpenWebUI with GPU Support
 
 For enhanced performance using an NVIDIA GPU, run:
