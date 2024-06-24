@@ -4,22 +4,21 @@ title: "Local LLM: Llama 3 and OpenUI"
 permalink: /localllm
 ---
 
-# Running Llama 3 with OpenUI Locally
+# Running Llama 3 with OpenWebUI Locally
 
 ## Introduction
 
-This guide helps you set up and run Llama 3 with OpenUI on Linux and Windows (using WSL). Running large language models (LLMs) locally provides benefits such as enhanced privacy, security, and performance. It is especially suited for users with powerful GPUs.
+This guide will help you set up and run Llama 3 with OpenWebUI using Docker. Running large language models (LLMs) locally provides enhanced privacy, security, and performance. It is particularly beneficial for users with powerful GPUs.
 
 ## Why Use a GPU?
 
-GPUs accelerate the processing of LLMs, which are computationally intensive tasks. Utilizing a GPU allows for efficient handling of large data and complex computations required by models like Llama 3 70B.
+Using a GPU significantly speeds up the processing of LLMs. It allows efficient handling of large data and complex computations required by models like Llama 3 70B, making it an ideal choice for users who need powerful computational resources.
 
 ## Prerequisites
 
 - **Powerful NVIDIA GPU**: Required for running Llama 3 70B efficiently.
-- **Linux OS**: Primary instructions target Linux.
-- **Windows 10/11 with WSL**: Additional notes for users using WSL 2 on Windows.
-- **Docker**: Required for containerized application deployment.
+- **Linux OS or Windows with WSL**: This guide covers both platforms.
+- **Docker**: Necessary for containerized application deployment.
 - **NVIDIA Drivers and CUDA Toolkit**: Needed for GPU support in Docker containers.
 
 ## Installation Guide
@@ -113,40 +112,75 @@ GPUs accelerate the processing of LLMs, which are computationally intensive task
     ```bash
     docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
     ```
-    - This command should show your GPU details if configured correctly.
+    - This command should display your GPU details if configured correctly.
 
-### 4. Pull and Run Llama 3 Docker Image
+### 4. Pull and Run OpenWebUI Docker Image
 
-1. **Create a Directory for Llama 3**:
+1. **Create a Directory for OpenWebUI**:
     ```bash
-    mkdir -p ~/llama3
-    cd ~/llama3
+    mkdir -p ~/open-webui
+    cd ~/open-webui
     ```
 
 2. **Pull the Docker Image**:
     ```bash
-    docker pull <llama3-docker-image>  # Replace <llama3-docker-image> with the actual image name
+    docker pull ghcr.io/open-webui/open-webui:main
     ```
 
-3. **Run the Docker Container**:
-    ```bash
-    # For Linux
-    docker run --gpus all -v ~/llama3:/data <llama3-docker-image>
+### Running OpenWebUI with Ollama
 
-    # For Windows (WSL)
-    docker run --gpus all -v /mnt/c/Users/<YourUsername>/llama3:/data <llama3-docker-image>
-    ```
-    - Replace `<llama3-docker-image>` with the actual Docker image name.
-    - Replace `<YourUsername>` with your Windows username if using WSL.
+#### If Ollama is on Your Computer:
 
-### 5. Access OpenUI
+Use the following command to run OpenWebUI, ensuring it connects to Ollama on your local machine:
 
-1. **Open a Web Browser** and go to `http://localhost:<port>`, replacing `<port>` with the port used by your Docker container.
+```bash
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+```
 
-## Alternative Models
+#### If Ollama is on a Different Server:
 
-- **Hugging Face Models**: Explore various models on [Hugging Face](https://huggingface.co/models) for different needs and computational requirements. They offer a range of models that can be more suitable for diverse tasks and hardware configurations.
+To connect to Ollama on a remote server, replace `https://example.com` with the actual server URL:
+
+```bash
+docker run -d -p 3000:8080 -e OLLAMA_BASE_URL=https://example.com -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+```
+
+### Running OpenWebUI with GPU Support
+
+For enhanced performance using an NVIDIA GPU, run:
+
+```bash
+docker run -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:cuda
+```
+
+### Installation for OpenAI API Usage Only
+
+If you only need OpenWebUI for the OpenAI API, use the command below and replace `your_secret_key` with your actual API key:
+
+```bash
+docker run -d -p 3000:8080 -e OPENAI_API_KEY=your_secret_key -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+```
+
+### Installing OpenWebUI with Bundled Ollama Support
+
+For a streamlined setup that includes both OpenWebUI and Ollama, choose the appropriate command based on your hardware setup:
+
+#### With GPU Support:
+
+Utilize GPU resources by running the following command:
+
+```bash
+docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+```
+
+#### For CPU Only:
+
+If you don't have a GPU, use this command instead:
+
+```bash
+docker run -d -p 3000:8080 -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama
+```
 
 ## Conclusion
 
-By following this guide, you can efficiently run Llama 3 with OpenUI locally on both Linux and Windows using WSL, leveraging your NVIDIA GPU for optimal performance while ensuring data privacy and security.
+By following this guide, you can efficiently set up and run Llama 3 with OpenWebUI locally on both Linux and Windows using WSL. Leveraging your NVIDIA GPU will provide optimal performance and ensure you maintain control over your data privacy and security. 
