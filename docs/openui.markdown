@@ -134,6 +134,11 @@ For enhanced performance using an NVIDIA GPU, run:
 ```bash
 docker run -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:cuda
 ```
+### Running Along Side Ollama
+For installation if you Have Ollama Running on the System, run: 
+```bash
+docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+```
 
 ### Installation for OpenAI API Usage Only
 
