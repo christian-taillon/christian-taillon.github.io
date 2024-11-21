@@ -19,6 +19,7 @@ navbar-links:
     - AI Ally: "ai-infosec"
     - Models: "models"
     - Local LLM: "localllm"
+    - Building a Private GenAI Team: "https://christiant.io/download/Building a Private GenAI Team with Open-Source Mode.pdf"
     - OpenAI-CL Tool: "https://github.com/christian-taillon/openai-cl"
     - vLLM: "vLLM"
   Threat Hunting Guides:
