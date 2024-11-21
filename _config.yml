@@ -17,6 +17,7 @@ github_username:  christian-taillon
 navbar-links:
   Generative AI:
     - AI Ally: "ai-infosec"
+    - Models: "models"
     - Local LLM: "localllm"
     - OpenAI-CL Tool: "https://github.com/christian-taillon/openai-cl"
     - vLLM: "vLLM"
