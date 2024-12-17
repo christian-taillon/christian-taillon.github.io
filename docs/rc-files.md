@@ -3,7 +3,7 @@ layout: page
 title: "RC-Files"
 permalink: /rc-files
 ---
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 # rc-files
 Available on GitHub at [christian-taillon/rc-files](https://github.com/christian-taillon/rc-files) are the RC configurations I use for my Linux environments for some Quality of Life improvements. I primarily work out of Gnome Shell in a Debian 10 environment. My servers are all CentOS Stream. These RC files work well for both for me.
 

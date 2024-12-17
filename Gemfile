@@ -18,8 +18,7 @@ gem "github-pages", "227", group: :jekyll_plugins
 gem 'dotenv-rails'
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
-  gem "jekyll-display-medium-posts"
+  gem "jekyll-feed"
   gem "jemoji"
 end
 

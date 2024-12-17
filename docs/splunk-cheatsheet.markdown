@@ -3,7 +3,7 @@ layout: page
 title: "Splunk Cheatsheet"
 permalink: /spl
 ---
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 ## Splunk Quick Cheat Sheet
 
 **DNS Lookup**
@@ -35,6 +35,13 @@ permalink: /spl
 | stats earliest(_time) as firstTime latest(_time) as lastTime by dest
 | eval firstTime=strftime(firstTime,"%Y-%m-%d %H:%M:%S")
 | eval lastTime=strftime(lastTime,"%Y-%m-%d %H:%M:%S")
+```
+
+**Create Unique Time Fields for `stats` Searches**
+```
+| eval dayMonth=strftime(_time, "%d") + " " + strftime(_time, "%B")
+| eval hourDay=strftime(_time, "%H") + " " + strftime(_time, "%j")
+| eval weekYear=strftime(_time, "%U")
 ```
 
 **List All Available Indexes with Events**
@@ -189,4 +196,13 @@ search | join type=inner
 | eval service_pack = mvindex(installed_software1,5)
 | rename installed_software as cpe
 | table agent_names product vendor version service_pack cpe
+```
+
+**Pass IPS CVE Strings to Vulnerability Index**
+Tenable and Corelight are chosen for example.
+```
+index=tenable
+    [| search earliest=-2h latest=now index=corelight uid IN (123456789)
+    | rex "(?<CVE>CVE-\d{4}-\d{4,7})"
+    | table CVE | rename CVE as cve]
 ```
