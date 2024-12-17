@@ -11,23 +11,66 @@ url: "https://christiant.io/" # the base hostname & protocol for your site, e.g.
 twitter_username: christian_tail
 github_username:  christian-taillon
 
+# avatar: "/image/linux_logo2.png"
+
 # Navigation Bar
 navbar-links:
-  Cyber Security Resources: "cyberresources"
-  Splunk Cheatsheet: "spl"
-  Configurations:
+  Generative AI:
+    - AI Ally: "ai-infosec"
+    - Models: "models"
+    - Local LLM: "localllm"
+    - Building a Private GenAI Team: "https://christiant.io/download/Building a Private GenAI Team with Open-Source Mode.pdf"
+    - OpenAI-CL Tool: "https://github.com/christian-taillon/openai-cl"
+    - vLLM: "vLLM"
+  Threat Hunting Guides:
+    - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
+    - "Prophet Spider Exploits Citrix ShareFile to Deploy Webshell" : https://christiantaillon.medium.com/prophet-spider-exploits-citrix-sharefile-to-deploy-webshell-d2689abd4301
+    - "QakBot Detection: DUCK HUNT" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-aa0cadb398a7
+    - "QakBot Hunting: Autumn Spice" : https://christiantaillon.medium.com/qakbot-part-3-6497bd412d39
+    - "QakBot Detection: DUCK HUNT Part 2 — The .LNK" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-part-2-a93ea2498211
+    - Log4j: https://github.com/christian-taillon/log4shell-hunting
+    - Sunburst: https://github.com/christian-taillon/sunburst-hunting
+    - Various Search Leads: https://github.com/christian-taillon/threat-hunting-searches
+    - "What do we actually know about the Darkside Ransomware operators?" : https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
+    - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
+  InfoSec Resources:
+    - LogScale : "logscale_beg_guide"
+    - LogScale Cheatsheet : "logscale"
+    - Splunk Cheatsheet: "spl"
+    - Splunk Beginner Guide: "spl-beginner"
+    - KQL Beginner Guide: "kql-guide"
+    - Sigma Rule Guide: "sigma-rule-guide"
+    - ClamAV Guide: "clamav-guide"
+    - YARA Rule Guide: "yara-rule-guide"
+    - SNORT Rule Guide: "snort-suricata-guide"
+    - InfoSec: "infosec"
+    - Cyber Security Resources: "cyberresources"
+    - Gist/christian-taillon: https://gist.github.com/christian-taillon
+    - Endpoint Forensics: "ep-forensics"
+    - Atomic: "atomic"
+    - "Sith CheatSheet: Kali" : "sith-cheatsheet"
+    - Recon-ng Guide: "recon-ng"
+    - DNS OSINT PDF: "https://christiant.io/download/dns-guide-awnsers.pdf"
+  Conf & Dev:
+    - Git CheatSheet: "git-cheatsheet"
     - RC Files: "rc-files"
-    - Atom Conf: "atomconf"
     - Splunk Docker: "splunkdocker"
     - ParetoPi: "paretopi"
+    - DockerPihole: "https://github.com/christian-taillon/docker-pihole"
+    - Splunk Windows Forwarder: "https://github.com/christian-taillon/splunk_win_uf"
+    - Programing Basics: "program-concept"
+    - Python3 Virtual Environments: "pyhon3virt"
   Interview Resources:
     - Interview: "interview"
     - SOC Interview: "socinterview"
     - Security Engineer: "securityengineer"
-  About: "about"
+    - Threat Hunter: "th-interview"
+  About Me: "about"
 # Build settings
 # theme: minima
 remote_theme: daattali/beautiful-jekyll
+# remote_theme: pages-themes/midnight@v0.2.0
+# remote_theme: pages-themes/hacker@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
@@ -46,6 +89,7 @@ collections:
 #   - spl
 
 # General
+share-links-active:
   twitter: true
   facebook: true
   linkedin: true
@@ -57,35 +101,36 @@ collections:
   feed_show_tags: true
   post_search: true
 
+# --- Google Analytics --- #
+gtag: "G-R34BHCHXE0"
+
 ######################################
 # --- Colours / background image --- #
 ######################################
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
-
-# navbar-col: "#EAEAEA"
-# navbar-text-col: "#404040"
-# navbar-border-col: "#DDDDDD"
+# navbar-col: "#f89c1a"
+# navbar-text-col: "#424242"
+# navbar-border-col: "#f89c1a"
 # page-col: "#FFFFFF"
 # text-col: "#404040"
 # link-col: "#008AFF"
-# hover-col: "#0085A1"
+hover-col: "#fffef8"
 # footer-col: "#EAEAEA"
 # footer-text-col: "#777777"
 # footer-link-col: "#404040"
 # footer-hover-col: "#0085A1"
 
-# Footer
-
+# --- Footer options --- #
 social-network-links:
-  email: "	christiantaillon@pm.me "
+  email: "public@christiant.io "
   #rss: true  # remove this line if you don't want to show an RSS link at the bottom
   facebook: christianjtaillon
   github: christian-taillon
   twitter_username: christian_tail
   medium: christiantaillon
   linkedin: christiantaillon
-  stackoverflow: christian-taillon
+  stackoverflow: 15532834
 
 
   #rss: true  # remove this line if you don't want to show an RSS link at the bottom
@@ -101,14 +146,26 @@ social-network-links:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+prose:
+  ignore:
+    - 404.html
+    - LICENSE
+    - feed.xml
+    - /_includes
+    - /_layouts
+    - /css
+    - /img
+    - /js

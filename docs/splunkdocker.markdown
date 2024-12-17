@@ -3,7 +3,7 @@ layout: page
 title: "Splunk Docker"
 permalink: /splunkdocker
 ---
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 # splunk-docker
 
 

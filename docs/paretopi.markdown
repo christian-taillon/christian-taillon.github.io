@@ -3,7 +3,7 @@ layout: page
 title: "ParetoPi"
 permalink: /paretopi
 ---
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 # pareto-pi
 Simple script for running Open Source Pareto's Anywhere Pi for Bluetooth beacon tracking.
 
