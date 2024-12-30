@@ -3,13 +3,7 @@ layout: page
 title: "2025 Events"
 permalink: /2025
 ---
-# Contents
-
-- 2025 ISSA Phoenix Chapter Events
-- Call for Volunteers
-- 2025 Phoenix Partner Security Events
-- RSA & BlackHat USA Events
-- Sister organizations
+# Phoenix ISSA
 
 ## 2025 ISSA Phoenix Chapter Events
 
@@ -19,8 +13,7 @@ permalink: /2025
   - Free to ISSA paid chapter members, $25 to non-members.
   - Register here: https://issaphoenix-q124-event.eventbrite.com
 
-**February 27, 2025**
-- MEMBERS-ONLY Member Appreciation Dinner @the Capital Grille.
+Note: If you are current student, email me at `eduphxissa(at)christiant.io` for information about checking out the chapter for free. 
 
 **April 24, 2025**
 - Q2 ISSA Phoenix Chapter Event @UAT. TBD.
@@ -33,53 +26,36 @@ permalink: /2025
 
 _Annual PhxSAC Conference in the fall, date TBD_
 
-## Call for Volunteers
+## Local Sister Events
+
+### ACP Association of Contingency Planners
+https://acp-international.com/central-arizona
+
+### Arizona Technology Council
+www.aztechcouncil.org/events/
+
+### ASIS Phoenix
+https://asisphoenix.org/
+
+### DAMA Phoenix
+https://dama-phoenix.org
+
+### IEEE Computer Society Phoenix
+https://r6.ieee.org/phoenix-cs/
+
+### Infragard Arizona
+https://azinfragard.org
+
+### ISACA Phoenix
+https://engage.isaca.org/phoenixchapter/
+
+### OWASP Phoenix
+https://owasp.org/www-chapter-phoenix/
+
+## Volunteer Opportunities
+
+Interested in volunteering for ISSA Phoenix? Please email me at public(at)christiant.io to inquire about available opportunities.
 
 ### Board Members
-- Secretary
 - Facilities Director (venue and catering)
 - Sponsorship Director
-
-### Conference planning team
-- 2025 Fall PhxSAC
-- Committees: Speakers, Sponsors, Executive Planning, Onsite Support
-
-### Phoenix ISSA Chapter “Event Assistants”
-- Photos & social media posts
-- Greet or sign-in attendees
-- Distribute Agendas and CPE Certificates
-
-## 2025 Phoenix Partner Security Events
-- **February 14-15, 2025**: CactusCon 13 @Mesa Convention Center. Register: https://www.eventbrite.com/e/cactuscon-13-tickets-1090345034349
-
-**Calendar Events**
-- March 19, Elevate IT Conference
-- June 12, Data Connectors Conference
-- June 13, F2F Interface Phoenix Security Conference
-- September 11, Arizona Technology Summit
-- October 5-7, Innovate Cybersecurity Summit (CISOs & Executives)
-- November 13, FutureCon Phoenix Conference
-- December 5, The Cybersecurity Summit
-
-## RSA & BlackHat USA Events
-- **RSA US**: April 28 – May 1, 2025, www.rsaconference.com/events/2025-usa
-- **BlackHat US**: August 2-7, 2025, www.blackhat.com
-
-## Sister organizations
-- ACP Association of Contingency Planners: https://acp-international.com/central-arizona
-- AITP
-- Arizona Technology Council: www.aztechcouncil.org/events/
-- ASIS Phoenix: https://asisphoenix.org/
-- CSA Southwest
-- DAMA Phoenix: https://dama-phoenix.org
-- Fraud Examiners: ACFE Phoenix, ACFE Tucson
-- IAPP Phoenix Knowledgenet (Privacy)
-- IEEE Computer Society Phoenix: https://r6.ieee.org/phoenix-cs/
-- Infragard Arizona: https://azinfragard.org
-- ISACA Phoenix: https://engage.isaca.org/phoenixchapter/
-- ISC2 Phoenix: https://isc2chapter-phoenix.org
-- OWASP Phoenix: https://owasp.org/www-chapter-phoenix/
-- SIM: https://chapter.simnet.org/arizona/
-- SWCSF (joint SDUG events): www.swcsf.org
-- WiCys Phoenix: www.wicys.org/wicys-phoenix-az/
-
