@@ -4,6 +4,9 @@ title: Ally for Infosec
 permalink: /ai-infosec
 
 ---
+# ❗❗ NOTICE OF ARCHIVE ❗❗
+This article remains available for review regarding InfoSec's role in the evolution of Generative AI (and to reflect on any predictions that may have aged interestingly). The content was written during the early days of Generative AI's popularity surge, shortly after GPT-3.5's release, when our understanding of Large Language Models' capabilities was still developing and before many of today's advancements.
+
 ## Generative Txt for InforSec
 
 InforSec's optimized use of the newest product lineup of Machine Learning.
