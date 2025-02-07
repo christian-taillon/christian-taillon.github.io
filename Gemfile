@@ -20,6 +20,10 @@ gem 'dotenv-rails'
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jemoji"
+
+# Custom Theme
+gem 'jekyll-include-cache'
+
 end
 
 
