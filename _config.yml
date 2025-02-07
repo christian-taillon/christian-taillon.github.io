@@ -86,9 +86,9 @@ markdown: kramdown
 collections:
 #   - medium_posts
 #   - infosecresources
-#   - spl-cheat
-#   - "Splunk SPL Cheat Sheet"
-#   - spl
+   - spl-cheat
+   - "Splunk SPL Cheat Sheet"
+   - spl
 
 # General
 share-links-active:
