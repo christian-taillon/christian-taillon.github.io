@@ -70,8 +70,9 @@ navbar-links:
   About Me: "about"
 # Build settings
 # theme: minima
-# remote_theme: mmistakes/minimal-mistakes
-remote_theme: daattali/beautiful-jekyll
+remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# remote_theme: daattali/beautiful-jekyll
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
