@@ -6,18 +6,22 @@ permalink: /about/
 ---
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-<h1 align = "center"> Hello  world! ☕</h1>
+<div style="display: flex; flex-direction: row; align-items: flex-start; margin-bottom: 20px;">
+  <img src="/image/professional_circle.png" alt="christian" style="width: 200px; margin-right: 20px;">
+  <div>
+    <h1>Hello world! ☕</h1>
+    <h2>My name is Christian Taillon</h2>
+  </div>
+</div>
 
-<h2 align="center"> My name is Christian Taillon</h2>
-![christian](/image/ctaillon_presenting.jpg)
 
 ### Personal Life
 At my core, I am guided by my personal relationship with **Jesus Christ**, whom I follow to the best of my ability. Supported by my **best friend** and **wonderful wife**, we navigate the joys of new parenthood with our **beautiful baby girl**. I am **highly curious** and motivated by interest, the responsibility of providing for my family, and a concern but also an optimism for the future.
 
 ### Professional Life
-Professionally, I serve as a **Threat Response Engineer** on the IT Security team at [Grand Canyon Education](https://www.gce.com/), where my focus lies on deploying, maintaining, and enhancing our **Detection, Prevention, and Response tools**. This includes working with **[SIEM](https://christiant.io/spl)**, **[EDR](https://christiant.io/logscale_beg_guide)**, and **[NTA](https://christiant.io/snort-suricata-guide)** systems to bolster the capabilities of our SOC.
+Professionally, I serve as a **Threat Response Engineer** on the IT Security team at [Grand Canyon Education](https://www.gce.com/), where my focus lies on deploying, maintaining, and enhancing our Detection, Prevention, and Response tools. This includes working with [SIEM](https://christiant.io/spl), [EDR](https://christiant.io/logscale_beg_guide), and [NTA](https://christiant.io/snort-suricata-guide) systems to bolster the capabilities of our SOC.
 
-I lead security efforts in several **Vulnerability** areas: **Code Security**, **Cloud Security**, and **Host Vulnerability Detection**. We maintain a small **[Threat Hunting](https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339)** practice and rely on a growing **Threat Intelligence** program.
+I lead security efforts in several **Vulnerability** areas: **Code Security**, **Cloud Security**, and **Host Vulnerability Detection**. We maintain a small [Threat Hunting](https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339) practice and rely on a growing **Threat Intelligence** program.
 
 I am an advocate for **Threat Intelligence** sharing, including **Sigma**, **YARA**, and **Snort/Suricata rules** within our security community. I'm also a big advocate of **Linux** as a primary workstation and **open-source** solutions.
 
@@ -33,16 +37,12 @@ I'm a strong believer in the efficacy and efficiency of **open-source** software
 
 ### Personal Interests
 When stepping away from my keyboard, my family and I seek to explore the outdoors. Whether **hiking**, **kayaking**, or simply enjoying nature's beauty, we make the most of God's green earth.
+ <br> 
+### Contact me...
+**EMAIL**: **`public(AT)christiant.io`** <br>
+**Encrypt your Email**: [pgp_publicy_key](/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc)
 
- <br> <br>
-
-<h3 style="text-align:center">Contact me...</h3>
-<body style="text-align:center">email: <b>public(AT)christiant.io</b></body>
-Encrypt your Email: [PGP Public Key][1]
-
-[1]:/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc
-
-<h3 style="text-align:center">Follow me...</h3>
+### Follow me...
 <p style="text-align:center"> <a href="https://github.com/christian-taillon" target="_blank"><img alt="Github"
 src="https://img.shields.io/badge/GitHub-black?&style=flat&logo=Github&logoColor=white" /></a>
 <a href="https://github.com/christian-taillon" target="_blank"><img alt="Medium"
@@ -60,27 +60,26 @@ src="https://img.shields.io/badge/OpenThreatExchange-black?&style=flat&logo=atom
 </p>
 <br>
 <br>
-![desktop](/image/desktop.jpg)
+![ct-round](/image/ct-round.png)
 
 #### Current Roles
 In Cybersecurity, we don't have the luxury of time. Our work demands persistence, proactivity, and collaboration. I believe that you don't need to work at the same company to be on the same team.
 
-[Grand Canyon Education](https://www.gce.com/) <br>
+#### [Grand Canyon Education](https://www.gce.com/) <br>
 My day job is as a <b> Threat Response Engineer </b> working out of the <b>Phoenix, Arizona</b> area. I was also responsible for developing a Threat Intelligence and now Threat Hunting program. In this role, I am also responsible for handling most of our <b>Cyber Forensic Analysis</b>.
 
-[Arizona Cyber Threat Response Alliance](https://www.actraaz.org/) <br>
+#### [Arizona Cyber Threat Response Alliance](https://www.actraaz.org/) <br>
 I lead a team of threat intel team as a <b>Global Watch Center Lead</b> and Core Contributor for ACTRA. I also lead our Threat Intelligence Exchanges, help develop tools for our operations, and I am an instructor at ACTRA's Academy.
 
-[Phoenix ISSA Chapter](https://phoenix.issa.org/) <br>
+#### [Phoenix ISSA Chapter](https://phoenix.issa.org/) <br>
 I sit on the Board of Directors for this chapter as the Edcuation Director.
 
-[Cyber Resilience Institute](https://www.cyberresilienceinstitute.org/)<br>
+#### [Cyber Resilience Institute](https://www.cyberresilienceinstitute.org/)<br>
 I work on the Cyber Observable Threat Hunting team with [Sports-ISAO](https://sports-isao.org/) for our "Popup SOC".
 
-#### Github
-<a target="_blank"><img alt="Azure" src="https://github-readme-stats.vercel.app/api/top-langs/?username=christian-taillon&layout=compact&theme=vue-dark"/></a>
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=christian-taillon&theme=vue-dark" alt="christian-taillon"/></p>
-<br>
+## [Github](https://github.com/christian-taillon)
+
+[![github](/image/github.png)](https://github.com/christian-taillon)
 
 <hr style="width:75%;text-align:center">
 <h4>⚒ Favorite Tools:</h4>
