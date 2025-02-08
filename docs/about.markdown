@@ -60,6 +60,8 @@ src="https://img.shields.io/badge/OpenThreatExchange-black?&style=flat&logo=atom
 </p>
 <br>
 <br>
+
+### My Happy Place...
 ![ct-round](/image/ct-round.png)
 
 #### Current Roles
