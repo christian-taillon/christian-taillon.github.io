@@ -12,21 +12,35 @@ permalink: /about/
 ![christian](/image/ctaillon_presenting.jpg)
 
 ### Personal Life
-At my core, I am guided by my personal relationship with **Jesus Christ**. Supported by my best friend and wonderful wife, we navigate the joys of new parenthood with our beautiful baby girl.
+At my core, I am guided by my personal relationship with **Jesus Christ**, whom I follow to the best of my ability. Supported by my **best friend** and **wonderful wife**, we navigate the joys of new parenthood with our **beautiful baby girl**. I am **highly curious** and motivated by interest, the responsibility of providing for my family, and a concern but also an optimism for the future.
 
 ### Professional Life
-Professionally, I serve as a **senior member** of the IT Security Engineering team at **Grand Canyon Education**, where my focus lies on enhancing our **Detection, Prevention, and Visibility tools** to bolster the capabilities of our SOC.
+Professionally, I serve as a **Threat Response Engineer** on the IT Security team at [Grand Canyon Education](https://www.gce.com/), where my focus lies on deploying, maintaining, and enhancing our **Detection, Prevention, and Response tools**. This includes working with **[SIEM](https://christiant.io/spl)**, **[EDR](https://christiant.io/logscale_beg_guide)**, and **[NTA](https://christiant.io/snort-suricata-guide)** systems to bolster the capabilities of our SOC.
 
-I am an advocate for **Threat Intelligence** sharing **Sigma**, **YARA**, and **Snort/Suricata rules** within our security community. I'm also a big advocate of **Linux** as a primary workstation. I lead efforts in **SIEM**, **centralized logging**, **NDR**, **EDR**, custom logging, integration, detection tools, event correlation, and the development of intelligent, actionable alerts.
+I lead security efforts in several **Vulnerability** areas: **Code Security**, **Cloud Security**, and **Host Vulnerability Detection**. We maintain a small **[Threat Hunting](https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339)** practice and rely on a growing **Threat Intelligence** program.
+
+I am an advocate for **Threat Intelligence** sharing, including **Sigma**, **YARA**, and **Snort/Suricata rules** within our security community. I'm also a big advocate of **Linux** as a primary workstation and **open-source** solutions.
 
 ### Contributions and Advocacy
-Beyond my responsibilities at Grand Canyon Education, I contribute as a **Solutions Architect** at **Sports-ISAO**. My work here includes pivotal protection efforts for major sporting events such as the **Super Bowl** and the **Olympics**. Furthermore, I serve on the board for the **Phoenix ISSA Chapter**.
+Beyond my responsibilities at Grand Canyon Education, I contribute to the **Threat Intelligence** community through various roles:
 
-I am a core contributor to the **Arizona Cyber Threat Response Alliance (ACTRA)** where I lead at the **Global Watch Center** and apply my expertise as a **Solutions Engineer** working with both open and close source technologies.
+- Leader at the [Arizona Cyber Threat Response Alliance (ACTRA)](https://actraaz.org/)
+- Presenter on Threat Hunting topics:
+  - [Becoming the Predator and Not the Prey](https://www.youtube.com/watch?v=f4kPxj9jzqU)
+  - [Qbot: Can Ducks Teach us to Share](https://www.youtube.com/live/UDQAMxdofkY?si=B9sX04JDvrZsltn5)
+- Researcher and content developer:
+  - [Log4Shell Hunt](https://github.com/christian-taillon/log4shell-hunting)
+  - [Sunburst Hunt](https://github.com/christian-taillon/sunburst-hunting)
+
+I support a growing student Threat Intelligence Academy and Apprenticeship Program called [TISU](https://www.youtube.com/watch?v=_4uO6nu93I8) in both a [Grand Canyon University](https://www.gcu.edu/) capacity and an ACTRA capacity.
+
+### Open Source and Community Involvement
+I'm a strong believer in the efficacy and efficiency of **open-source** software. I make minor contributions to the [OpenWebUI](https://openwebui.com/u/christiant/) community and maintain an active [GitHub profile](https://github.com/christian-taillon) with most of my repositories being public (MIT/Apache Licensed).
 
 ### Personal Interests
-When stepping away from my keyboard, my family and I seek to explore the outdoors. Whether hiking, kayaking, or simply enjoying nature's beauty.
+When stepping away from my keyboard, my family and I seek to explore the outdoors. Whether **hiking**, **kayaking**, or simply enjoying nature's beauty, we make the most of God's green earth.
 
+For more information, check out my website at [christiant.io](https://christiant.io/).
  <br> <br>
 
 <h3 style="text-align:center">Contact me...</h3>
