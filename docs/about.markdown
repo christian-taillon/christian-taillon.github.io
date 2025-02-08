@@ -59,7 +59,6 @@ src="https://img.shields.io/badge/Twitter-white?&style=flat&logo=twitter&logoCol
 src="https://img.shields.io/badge/OpenThreatExchange-black?&style=flat&logo=atom&logoColor=white" /></a>
 </p>
 <br>
-<br>
 
 ### My Happy Place...
 ![ct-round](/image/ct-round.png)
