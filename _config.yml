@@ -11,22 +11,19 @@ url: "https://christiant.io/" # the base hostname & protocol for your site, e.g.
 twitter_username: christian_tail
 github_username:  christian-taillon
 
-# avatar: "/image/linux_logo2.png"
-# avatag: "/ima"
 # Navigation Bar
 navbar-links:
   Information Security:
     - Phoenix2025 : "2025"
-    - LogScale : "logscale_beg_guide"
-    - LogScale Cheatsheet : "logscale"
     - Splunk Cheatsheet: "spl"
     - Splunk Beginner Guide: "spl-beginner"
     - KQL Beginner Guide: "kql-guide"
+    - LogScale : "logscale_beg_guide"
+    - LogScale Cheatsheet : "logscale"
     - Sigma Rule Guide: "sigma-rule-guide"
     - ClamAV Guide: "clamav-guide"
     - YARA Rule Guide: "yara-rule-guide"
     - SNORT Rule Guide: "snort-suricata-guide"
-    - InfoSec: "infosec"
     - Cyber Security Resources: "cyberresources"
     - Gist/christian-taillon: https://gist.github.com/christian-taillon
     - Endpoint Forensics: "ep-forensics"
@@ -95,12 +92,12 @@ highlighter: rouge
 markdown: kramdown
 
 # Collections
-collections:
+#collections:
 #   - medium_posts
 #   - infosecresources
- - spl-cheat
- - "Splunk SPL Cheat Sheet"
- - spl
+# - spl-cheat
+# - "Splunk SPL Cheat Sheet"
+# - spl
 
 # General
 share-links-active:
