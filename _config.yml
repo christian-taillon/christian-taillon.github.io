@@ -15,26 +15,7 @@ github_username:  christian-taillon
 # avatag: "/ima"
 # Navigation Bar
 navbar-links:
-  Generative AI:
-    - AI Ally: "ai-infosec"
-    - Models: "models"
-    - Local LLM: "localllm"
-    - Building a Private GenAI Team: "https://christiant.io/download/Building a Private GenAI Team with Open-Source Models.pdf"
-    - Corporate Generative AI Risk Mitigation: "https://christiant.io/download/GenerativeAI Risk Mitigation.pdf"
-    - OpenAI-CL Tool: "https://github.com/christian-taillon/openai-cl"
-    - vLLM: "vLLM"
-  Threat Hunting Guides:
-    - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
-    - "Prophet Spider Exploits Citrix ShareFile to Deploy Webshell" : https://christiantaillon.medium.com/prophet-spider-exploits-citrix-sharefile-to-deploy-webshell-d2689abd4301
-    - "QakBot Detection: DUCK HUNT" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-aa0cadb398a7
-    - "QakBot Hunting: Autumn Spice" : https://christiantaillon.medium.com/qakbot-part-3-6497bd412d39
-    - "QakBot Detection: DUCK HUNT Part 2 — The .LNK" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-part-2-a93ea2498211
-    - Log4j: https://github.com/christian-taillon/log4shell-hunting
-    - Sunburst: https://github.com/christian-taillon/sunburst-hunting
-    - Various Search Leads: https://github.com/christian-taillon/threat-hunting-searches
-    - "What do we actually know about the Darkside Ransomware operators?" : https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
-    - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
-  InfoSec Resources:
+  Information Security:
     - Phoenix2025 : "2025"
     - LogScale : "logscale_beg_guide"
     - LogScale Cheatsheet : "logscale"
@@ -53,27 +34,59 @@ navbar-links:
     - "Sith CheatSheet: Kali" : "sith-cheatsheet"
     - Recon-ng Guide: "recon-ng"
     - DNS OSINT PDF: "https://christiant.io/download/dns-guide-awnsers.pdf"
-  Conf & Dev:
+  Threat Hunting and Intel:
+    - APTTracker.md: "https://github.com/christian-taillon/apt-tracker-md"
+    - Detect-AutoIT: "https://github.com/christian-taillon/detect-autoit"
+    - SigmaGUI: "https://github.com/christian-taillon/SigmaGUI"
+    - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
+    - "Prophet Spider Exploits Citrix ShareFile to Deploy Webshell" : https://christiantaillon.medium.com/prophet-spider-exploits-citrix-sharefile-to-deploy-webshell-d2689abd4301
+    - "QakBot Detection: DUCK HUNT" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-aa0cadb398a7
+    - "QakBot Hunting: Autumn Spice" : https://christiantaillon.medium.com/qakbot-part-3-6497bd412d39
+    - "QakBot Detection: DUCK HUNT Part 2 — The .LNK" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-part-2-a93ea2498211
+    - Log4j: https://github.com/christian-taillon/log4shell-hunting
+    - Sunburst: https://github.com/christian-taillon/sunburst-hunting
+    - Various Search Leads: https://github.com/christian-taillon/threat-hunting-searches
+    - "What do we actually know about the Darkside Ransomware operators?" : https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
+    - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400 
+  Dev and Projects:
+    - Splunk Docker: "splunkdocker"
     - Git CheatSheet: "git-cheatsheet"
     - RC Files: "rc-files"
-    - Splunk Docker: "splunkdocker"
+    - AutoIT-Seeker: "https://github.com/christian-taillon/AutoIT-Seeker"
     - ParetoPi: "paretopi"
     - DockerPihole: "https://github.com/christian-taillon/docker-pihole"
     - Splunk Windows Forwarder: "https://github.com/christian-taillon/splunk_win_uf"
     - Programing Basics: "program-concept"
     - Python3 Virtual Environments: "pyhon3virt"
+    - File Arramgeent and Sorting Tool: "https://github.com/christian-taillon/fast"
+    - APTTracker.md: "https://github.com/christian-taillon/apt-tracker-md"
+    - Detect-AutoIT: "https://github.com/christian-taillon/detect-autoit"
+    - SigmaGUI: "https://github.com/christian-taillon/SigmaGUI"
+  Machine Learning and AI:
+    - OpenWebUI Releases: "https://openwebui.com/u/christiant/"
+    - AI Pipelines: "https://github.com/christian-taillon/openweb_ui_dev"
+    - LLM Distillery: "https://github.com/christian-taillon/llm-distillery"
+    - Bean-Counter: "https://github.com/christian-taillon/bean-counter"
+    - OpenAI-CL Tool: "https://github.com/christian-taillon/openai-cl"
+    - Scanned Models: "models"
+    - Guide Running Local LLMs: "localllm"
+    - Generative AI Use in InfoSec: "ai-infosec"
+    - Building a Private GenAI Team: "https://christiant.io/download/Building a Private GenAI Team with Open-Source Models.pdf"
+    - Corporate Generative AI Risk Mitigation: "https://christiant.io/download/GenerativeAI Risk Mitigation.pdf"
+    - vLLM: "vLLM"
   Interview Resources:
     - Interview: "interview"
     - SOC Interview: "socinterview"
     - Security Engineer: "securityengineer"
     - Threat Hunter: "th-interview"
+    - InfoSec Resources: "https://github.com/christian-taillon/infosec-resources"
   About Me: "about"
 # Build settings
 # theme: minima
 # remote_theme: mmistakes/minimal-mistakes
 remote_theme: daattali/beautiful-jekyll
 plugins:
-  - jekyll-feed
+#  - jekyll-feed
   - jekyll-remote-theme
   - jekyll-include-cache
 # markdown processor
@@ -82,12 +95,12 @@ highlighter: rouge
 markdown: kramdown
 
 # Collections
-#collections:
+collections:
 #   - medium_posts
 #   - infosecresources
-#  - spl-cheat
-#  - "Splunk SPL Cheat Sheet"
-#  - spl
+ - spl-cheat
+ - "Splunk SPL Cheat Sheet"
+ - spl
 
 # General
 share-links-active:
@@ -105,22 +118,29 @@ share-links-active:
 # --- Google Analytics --- #
 gtag: "G-R34BHCHXE0"
 
+keywords: "cyber,infosec,splunk,christian,christian-taillon,taillon,ai,llm,information,security,information security"
+
 ######################################
 # --- Colours / background image --- #
 ######################################
 
-# Personalize the colours in your website. Colour values can be any valid CSS colour
-# navbar-col: "#f89c1a"
-# navbar-text-col: "#424242"
-# navbar-border-col: "#f89c1a"
-# page-col: "#FFFFFF"
-# text-col: "#404040"
-# link-col: "#008AFF"
-hover-col: "#fffef8"
-# footer-col: "#EAEAEA"
-# footer-text-col: "#777777"
-# footer-link-col: "#404040"
-# footer-hover-col: "#0085A1"
+navbar-col: "#0e0e0e"
+navbar-text-col: "#FFFFFF"
+navbar-border-col: "#0e0e0e"
+page-col: "#FFFFFF"
+text-col: "#0e0e0e"
+link-col: "#1a1a1a"
+hover-col: "#fcc624"
+footer-col: "#0e0e0e"
+footer-text-col: "#FFFFFF"
+footer-link-col: "#FFFFFF"
+footer-hover-col: "#1a1a1a"
+
+################
+# --- Logo --- #
+################
+
+# avatar: "/image/coffee_logo.jpeg"
 
 # --- Footer options --- #
 social-network-links:
@@ -131,7 +151,7 @@ social-network-links:
   twitter_username: christian_tail
   medium: christiantaillon
   linkedin: christiantaillon
-  stackoverflow: 15532834
+  #stackoverflow: 15532834
 
 
   #rss: true  # remove this line if you don't want to show an RSS link at the bottom
