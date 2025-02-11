@@ -60,6 +60,7 @@ navbar-links:
     - Detect-AutoIT: "https://github.com/christian-taillon/detect-autoit"
     - SigmaGUI: "https://github.com/christian-taillon/SigmaGUI"
   Machine Learning and AI:
+    - Llama Guard: "llama_guard"
     - OpenWebUI Releases: "https://openwebui.com/u/christiant/"
     - AI Pipelines: "https://github.com/christian-taillon/openweb_ui_dev"
     - LLM Distillery: "https://github.com/christian-taillon/llm-distillery"
