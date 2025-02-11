@@ -11,7 +11,7 @@ LLamaGuard is Meta's LLM GuardRail model designed to detect harmful or inappropr
 
 Demo 1: Privacy Protection in Action
 ----------------------------------
-![llama-guard](/videos/LlamaGuard-hq.gif)
+![llama-guard](/video/LlamaGuard-hq.gif)
 In this demonstration, we see LLamaGuard's privacy protection capabilities:
 - Initially, a user attempts to send sensitive personal information to an external model
 - With LLamaGuard enabled, the system intercepts and blocks the request
@@ -20,7 +20,7 @@ In this demonstration, we see LLamaGuard's privacy protection capabilities:
 
 Demo 2: Customizable Security Controls
 ------------------------------------
-![llama-guard_customization](/videos/LlamaGuard_customization-hq.gif)
+![llama-guard_customization](/video/LlamaGuard_customization-hq.gif)
 
 The second demonstration showcases LLamaGuard Filters's flexibility. Not everyone will require the same use cases. I am primarily interested in LlamaGaurd for the probabilitic Privacy features as a second layer of preventing privacy related details from being sent to third party inference providers if my [TokenGuard](https://github.com/christian-taillon/open-webui-pipelines/blob/main/function/tokeGuard.py) fails to properly sanitize the data. 
 
