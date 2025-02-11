@@ -29,3 +29,4 @@ Here's the complete table with GGUF included, organized by common usage:
 | MOJO               | Binary | H2O                           | ⚠️                  | Optimized Java model format                                               |
 
 
+![pickle](/image/pickle.png)
