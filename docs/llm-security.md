@@ -29,4 +29,19 @@ Here's the complete table with GGUF included, organized by common usage:
 | MOJO               | Binary | H2O                           | ⚠️                  | Optimized Java model format                                               |
 
 
+## Pickle Serialization
+## Pickle Serialization
+
+**Overview:**
+Pickle is a Python serialization module that converts objects to a binary byte stream using opcodes. These opcodes are low-level instructions that reconstruct objects during deserialization.
+
+**Security Warning:**
+The pickle format is inherently risky because its opcodes can execute arbitrary code. An attacker could craft a malicious pickle stream that runs harmful Python commands when unpickled, making it a significant security vulnerability.
+
+## PyTorch Framework
+
+**Technical Description:**
+PyTorch is a computational framework for neural network development, enabling dynamic computational graph construction and efficient machine learning model training. Its flexible Python-native architecture supports advanced research in deep learning, computer vision, and artificial intelligence by providing sophisticated tensor manipulation and GPU-accelerated computational capabilities.
+
+
 ![pickle](/image/pickle.png)
