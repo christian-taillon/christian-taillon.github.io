@@ -66,6 +66,7 @@ navbar-links:
     - Bean-Counter: "https://github.com/christian-taillon/bean-counter"
     - OpenAI-CL Tool: "https://github.com/christian-taillon/openai-cl"
     - Scanned Models: "models"
+    - LLM Security: "llm_security"
     - Guide Running Local LLMs: "localllm"
     - Generative AI Use in InfoSec: "ai-infosec"
     - Building a Private GenAI Team: "https://christiant.io/download/Building a Private GenAI Team with Open-Source Models.pdf"
@@ -78,6 +79,8 @@ navbar-links:
     - Threat Hunter: "th-interview"
     - InfoSec Resources: "https://github.com/christian-taillon/infosec-resources"
   About Me: "about"
+  # Resume: resume
+
 # Build settings
 # theme: minima
 # remote_theme: mmistakes/minimal-mistakes
@@ -126,12 +129,12 @@ navbar-text-col: "#FFFFFF"
 navbar-border-col: "#0e0e0e"
 page-col: "#FFFFFF"
 text-col: "#0e0e0e"
-link-col: "#1a1a1a"
+link-col: "#fcc624"
 hover-col: "#fcc624"
 footer-col: "#0e0e0e"
 footer-text-col: "#FFFFFF"
-footer-link-col: "#FFFFFF"
-footer-hover-col: "#1a1a1a"
+footer-link-col: "#fcc624"
+footer-hover-col: "#fcc624"
 
 ################
 # --- Logo --- #
