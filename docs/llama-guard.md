@@ -52,7 +52,7 @@ A second example shows permitted content (how to adopt a Llama) vs. blocked cont
 
 The second demonstration showcases the OpenWebUI Filter Installation process and configuration options.
 
-Not everyone will require the same use cases. Personally, I was primarily interested in LlamaGaurd for the probabilitic Privacy features as a second layer of preventing privacy related details from being sent to third party inference providers if my [TokenGuard](https://github.com/christian-taillon/open-webui-pipelines/blob/main/function/tokeGuard.py) fails to properly sanitize the data. 
+Not everyone will require the same use cases. Personally, I was primarily interested in LlamaGaurd for the probabilitic Privacy features as a second layer of preventing privacy related details from being sent to third party inference providers if my [TokenGuard](https://github.com/christian-taillon/open-webui-pipelines/blob/main/function/tokenGuard.py) fails to properly sanitize the data. 
 
 The abilit to enable to disable certain filters therefore seemed to me to be a required feature. 
 - Users can choose which LlamaGuard model they use (default= llama-guard3:8b).
