@@ -1,7 +1,7 @@
 ---
 layout: page
 title: OpenWebUI Full Stack
-permalink: /llm_fullstack
+permalink: /llm_stack
 
 ---
 
