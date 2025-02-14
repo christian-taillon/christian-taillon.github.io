@@ -44,7 +44,7 @@ navbar-links:
     - Sunburst: https://github.com/christian-taillon/sunburst-hunting
     - Various Search Leads: https://github.com/christian-taillon/threat-hunting-searches
     - "What do we actually know about the Darkside Ransomware operators?" : https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
-    - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400 
+    - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
   Dev and Projects:
     - Splunk Docker: "splunkdocker"
     - Git CheatSheet: "git-cheatsheet"
@@ -64,6 +64,7 @@ navbar-links:
     - Token Guard: "token_guard"
     - OpenWebUI Community: "https://openwebui.com/u/christiant/"
     - Chat-CLI GitHub: "https://github.com/christian-taillon/chat-cli"
+    - OpenWebUI Stack Guide: "llm_stack"
     - AI Pipelines GitHub: "https://github.com/christian-taillon/open-webui-pipelines"
     - LLM Distillery GitHub: "https://github.com/christian-taillon/llm-distillery"
     - Bean-Counter: "https://github.com/christian-taillon/bean-counter"

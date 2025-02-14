@@ -28,6 +28,7 @@ Here's the complete table with GGUF included, organized by common usage:
 | POJO               | Binary | H2O                           | ⚠️                  | Basic Java object export format                                           |
 | MOJO               | Binary | H2O                           | ⚠️                  | Optimized Java model format                                               |
 
+
 ## Pickle Serialization
 
 **Overview:**
