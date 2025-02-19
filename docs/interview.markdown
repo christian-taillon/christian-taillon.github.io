@@ -14,10 +14,8 @@ Lists of interview questions for those in cyber security are intended to help bo
 ## [IT Security Admin Questions](https://github.com/christian-taillon/infosec-interview-questions/blob/main/itsec-admin.md)
 
 
-## Soft Skills to Assess
-So regarding soft, squishy, pudgy, non-hard skills...
+## Professional Skills to Assess
 1. Inquisitiveness
-2. Calling it soft skills
 3. Collaboration
 4. Fundamental IT / Cyber Knowledge
 5. Critical Thinking
