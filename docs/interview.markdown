@@ -15,7 +15,7 @@ Lists of interview questions for those in cyber security are intended to help bo
 
 
 ## Soft Skills to Assess
-So regarding soft, squishy, non-hard skills...
+So regarding soft, squishy, pudgy, non-hard skills...
 1. Inquisitiveness
 2. Calling it soft skills
 3. Collaboration
