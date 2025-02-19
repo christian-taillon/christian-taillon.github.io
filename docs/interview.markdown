@@ -15,11 +15,13 @@ Lists of interview questions for those in cyber security are intended to help bo
 
 
 ## Soft Skills to Assess
+So regarding soft, squishy, non-hard skills...
 1. Inquisitiveness
-2. Collaboration
-3. Fundamental IT / Cyber Knowledge
-4. Critical Thinking
-5. Ability to work under pressure
+2. Calling it soft skills
+3. Collaboration
+4. Fundamental IT / Cyber Knowledge
+5. Critical Thinking
+6. Ability to work under pressure
 
 ## General Open-ended Questions
 What makes you want to pursue a career in Cybersecurity?
