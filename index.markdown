@@ -12,7 +12,7 @@ If you're looking for the slides from my **DIY AI: Build Your Own Digital InfoSe
 
 Here is my [OpenWebUI community profile](https://openwebui.com/u/christiant/) with all my **models**, **filters**, and **manifold pipes**. Here is the [CLI tool from the demo](https://github.com/christian-taillon/chat-cli). Here is the [LLM Security Guide](https://christiant.io/llm_security) along with the list of scanned **models** [here](https://christiant.io/models). You can find my original [local LLM page](https://christiant.io/localllm) and my guide to running models through [vLLM](https://christiant.io/vLLM). You can find other **GitHub Projects**, **Slides** to other presentations, and other **resources** under the Machine Learning and AI tab on this site.  
 
-![CACTUSCON_CHRISTIAN](/image/cactuscon.jpeg)
+![CACTUSCON_CHRISTIAN](/image/cactuscon.png)
 
 I hope you enjoy it!
 
