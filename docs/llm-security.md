@@ -15,7 +15,7 @@ Here's the complete table with GGUF included, organized by common usage:
 | H5/HDF5            | Binary | Keras                         | ⚠️                  | Popular format for storing large scientific datasets and arrays           |
 | Protobuf           | Binary | Interoperable                 | -                  | Google's efficient data serialization system                              |
 | ONNX               | Binary | Interoperable                 | ⚠️ (rare scenarios) | Standard format for exchanging ML models between frameworks               |
-| GGUF               | Binary | llama.cpp                     | ⚠️ (theoretically) | Optimized format for LLMs, successor to GGML                              |
+| GGUF               | Binary | llama.cpp                     | ⚠️ (Jinja Template) | Optimized format for LLMs, successor to GGML                              |
 | TorchScript        | Binary | PyTorch                       | ⚠️                  | PyTorch's system for serializing and optimizing models                    |
 | PMML               | XML    | Interoperable                 | -                  | Legacy standard for sharing predictive models between systems             |
 | Arrow              | Binary | Spark                         | -                  | Modern format for high-performance data transfer                          |
