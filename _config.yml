@@ -50,7 +50,7 @@ navbar-links:
     - Git CheatSheet: "git-cheatsheet"
     - RC Files: "rc-files"
     - AutoIT-Seeker: "https://github.com/christian-taillon/AutoIT-Seeker"
-    - Container Device Interface : cdi
+    - Container Device Interface: "cdi"
     - ParetoPi: "paretopi"
     - DockerPihole: "https://github.com/christian-taillon/docker-pihole"
     - Splunk Windows Forwarder: "https://github.com/christian-taillon/splunk_win_uf"
@@ -69,7 +69,7 @@ navbar-links:
     - AI Pipelines GitHub: "https://github.com/christian-taillon/open-webui-pipelines"
     - LLM Distillery GitHub: "https://github.com/christian-taillon/llm-distillery"
     - Bean-Counter: "https://github.com/christian-taillon/bean-counter"
-    - Container Device Interface : cdi
+    - Container Device Interface: "cdi"
     - Scanned Models List: "models"
     - LLM Security Guide: "llm_security"
     - Local GPT Guide: "localllm"
