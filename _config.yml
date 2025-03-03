@@ -27,7 +27,6 @@ navbar-links:
     - Cyber Security Resources: "cyberresources"
     - Gist/christian-taillon: https://gist.github.com/christian-taillon
     - Endpoint Forensics: "ep-forensics"
-    - Atomic: "atomic"
     - "Sith CheatSheet: Kali" : "sith-cheatsheet"
     - Recon-ng Guide: "recon-ng"
     - DNS OSINT PDF: "https://christiant.io/download/dns-guide-awnsers.pdf"
@@ -35,6 +34,7 @@ navbar-links:
     - APTTracker.md: "https://github.com/christian-taillon/apt-tracker-md"
     - Detect-AutoIT: "https://github.com/christian-taillon/detect-autoit"
     - SigmaGUI: "https://github.com/christian-taillon/SigmaGUI"
+    - Atomic Guide: "atomic"
     - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
     - "Prophet Spider Exploits Citrix ShareFile to Deploy Webshell" : https://christiantaillon.medium.com/prophet-spider-exploits-citrix-sharefile-to-deploy-webshell-d2689abd4301
     - "QakBot Detection: DUCK HUNT" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-aa0cadb398a7

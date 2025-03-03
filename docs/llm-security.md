@@ -2,6 +2,7 @@
 layout: page
 title: "LLM Security Guide"
 permalink: /llm_security
+full-width: true
 ---
 
 ## Formats 
