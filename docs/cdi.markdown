@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Container Device Interface" : cdi
+title: "Container Device Interface" 
 permalink: /cdi
 ---
 
