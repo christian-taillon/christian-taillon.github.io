@@ -55,7 +55,6 @@ At my core, I am guided by my personal relationship with **Jesus Christ**, whom 
       <a href="https://github.com/christian-taillon" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-black?&style=for-the-badge&logo=Github&logoColor=white" style="border-radius: 8px;" /></a>
       <a href="https://medium.com/@christiantaillon" target="_blank"><img alt="Medium" src="https://img.shields.io/badge/Medium-white?&style=for-the-badge&logo=medium&logoColor=black" style="border-radius: 8px; border: 1px solid black;" /></a>
       <a href="https://www.virustotal.com/gui/user/christianblueteam/graphs" target="_blank"><img alt="VirusTotal" src="https://img.shields.io/badge/VirusTotal-white?&style=for-the-badge&logo=virustotal&logoColor=blue" style="border-radius: 8px; border: 1px solid black;" /></a>
-      <a href="https://exchange.xforce.ibmcloud.com/user/me/aboutme" target="_blank"><img alt="IBM" src="https://img.shields.io/badge/XForce-004BA8?&style=for-the-badge&logo=ibm&logoColor=white" style="border-radius: 8px;" /></a>
       <a href="https://twitter.com/christian_tail" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/Twitter-white?&style=for-the-badge&logo=twitter&logoColor=blue" style="border-radius: 8px; border: 1px solid black;" /></a>
       <a href="https://otx.alienvault.com/user/tufteam67/pulses" target="_blank"><img alt="OTX" src="https://img.shields.io/badge/OpenThreatExchange-black?&style=for-the-badge&logo=atom&logoColor=white" style="border-radius: 8px;" /></a>
     </div>
