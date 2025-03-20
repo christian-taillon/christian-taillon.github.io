@@ -117,22 +117,20 @@ I work on the Cyber Observable Threat Hunting team with <a href="https://sports-
 ## [Github](https://github.com/christian-taillon)
 
 [![github](/image/github.png)](https://github.com/christian-taillon)
-
 <h3 style="text-align: center;">⚒ Favorite Tools</h3>
-<div style="text-align: center; margin-bottom: 30px;">
+<div style="text-align: center; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px;">
 <a target="_blank"><img alt="Cloudflare" src="https://img.shields.io/badge/-Cloudflare-F38020?logo=cloudflare&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 <a target="_blank"><img alt="Ollama" src="https://img.shields.io/badge/-Ollama-000000?logo=ollama&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/-Hugging%20Face-FFD21E?logo=huggingface&logoColor=black&style=for-the-badge" style="border-radius: 8px;"/></a>
 <a target="_blank"><img alt="Obsidian" src="https://img.shields.io/badge/-Obsidian-7C3AED?logo=obsidian&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
-<a target="_blank"><img alt="Atom" src="https://img.shields.io/badge/Atom-15FF70?logo=atom&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 <a target="_blank"><img alt="Visual Studio" src="https://img.shields.io/badge/VSCodium-2F80ED?logo=vscodium&style=for-the-badge&logoColor=white" style="border-radius: 8px;"/></a>
 <a target="_blank"><img alt="Vim" src="https://img.shields.io/badge/Vim-00AB42?logo=vim&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
-<br>
 <a target="_blank"><img alt="Splunk Enterprise" src="https://img.shields.io/badge/Splunk-FF375F?logo=splunk&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 <a target="_blank"><img alt="Kali" src="https://img.shields.io/badge/Katoolin-000911?logo=kali-linux&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 <a target="_blank"><img alt="ELK" src="https://img.shields.io/badge/ELK-white?logo=elastic&logoColor=pink&style=for-the-badge" style="border-radius: 8px; border: 1px solid black;"/></a> 
 <a target="_blank"><img alt="Podman" src="https://img.shields.io/badge/Podman-white?logo=podman&logoColor=purple&style=for-the-badge" style="border-radius: 8px; border: 1px solid black;"/></a>
 <a target="_blank"><img alt="Slack" src="https://img.shields.io/badge/Slack-purple?logo=slack&logoColor=yellow&style=for-the-badge" style="border-radius: 8px;"/></a>
-<br>
 <a target="_blank"><img alt="IBM Threat Exchange" src="https://img.shields.io/badge/XForce-004BA8?logo=IBM&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 <a target="_blank"><img alt="VirusTotal" src="https://img.shields.io/badge/VirusTotal%20Graphs-white?logo=virustotal&logoColor=blue&style=for-the-badge" style="border-radius: 8px; border: 1px solid black;"/></a>
 </div>
@@ -147,13 +145,14 @@ I work on the Cyber Observable Threat Hunting team with <a href="https://sports-
 
 <h3 style="text-align: center;">☁ Cloud Experience</h3>
 <div style="text-align: center; margin-bottom: 30px;">
-<a target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/-Hugging%20Face-FFD21E?logo=huggingface&logoColor=black&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="Cloudflare Workers" src="https://img.shields.io/badge/cloudflareworkers-F38020?logo=cloudflareworkers&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 <a target="_blank"><img alt="DigitalOcean" src="https://img.shields.io/badge/DigitalOcean-white?logo=digitalocean&logoColor=blue&style=for-the-badge" style="border-radius: 8px; border: 1px solid black;"/></a>
-<a target="_blank"><img alt="Azure" src="https://img.shields.io/badge/Azure-white?logo=microsoft-azure&logoColor=blue&style=for-the-badge" style="border-radius: 8px; border: 1px solid black;"/></a>
-<a target="_blank"><img alt="AWS" src="https://img.shields.io/badge/AWS-orange?logo=amazon-aws&logoColor=black&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="GitHub Pages" src="https://img.shields.io/badge/GitHub_Pages-222222?logo=github-pages&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="AWS" src="https://img.shields.io/badge/AWS-orange?logo=amazonwebservices&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 </div>
 
-<h3 style="text-align: center;">‍🖼️ Topics I Can Readily Present On</h3>
+<h3 style="text-align: center;">Previous Presentations</h3>
 <div style="text-align: left; padding: 0 20px; margin-bottom: 30px;">
 I love to share what little knowledge I've collected as others doing the same has been a big part of what's allowed me to enjoy a successful career in Cyber and IT. Please reach out if I can share on any of the following topics:
 </div>
@@ -180,4 +179,23 @@ I love to share what little knowledge I've collected as others doing the same ha
 <a target="_blank"><img alt="Git4Ops" src="https://img.shields.io/badge/-%20Git4Ops-black?logo=github&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 <a target="_blank"><img alt="RPi-MineCraft" src="https://img.shields.io/badge/-🥧%20Raspbery%20Pi%20Minecraft-pink?logo=&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 <a target="_blank"><img alt="MemoryForensics" src="https://img.shields.io/badge/-🔍%20Memory%20Forensics-gray?logo=&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="Malware Dev: Scripting/Automation Tools" src="https://img.shields.io/badge/-🦠%20Malware%20Development-darkred?logo=&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+
+<a target="_blank"><img alt="EDREvasion" src="https://img.shields.io/badge/-🎭%20EDR%20Evasion%20Techniques-purple?logo=&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+
+<a target="_blank"><img alt="ZeekHunting" src="https://img.shields.io/badge/-🔍%20Zeek%20Network%20Hunting-blue?logo=&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+
+<a target="_blank"><img alt="TimeAnalysis" src="https://img.shields.io/badge/-📊%20Statistical%20Time%20Analysis-green?logo=&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+
+<a target="_blank"><img alt="GenAITask" src="https://img.shields.io/badge/-🤖%20GenAI%20Task%20Abstraction-blueviolet?logo=&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+
+<a target="_blank"><img alt="RedTeaming" src="https://img.shields.io/badge/-🎯%20Modern%20Red%20Team%20Ops-crimson?logo=&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+
+<a target="_blank"><img alt="ThreatEmulation" src="https://img.shields.io/badge/-🎭%20Threat%20Actor%20Emulation-navy?logo=&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+
+<a target="_blank"><img alt="AISecOps" src="https://img.shields.io/badge/-🤖%20AI%20Powered%20SecOps-teal?logo=&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+
+<a target="_blank"><img alt="OSINT" src="https://img.shields.io/badge/-🔎%20OSINT%20Techniques-indigo?logo=&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+
+<a target="_blank"><img alt="CloudSecurity" src="https://img.shields.io/badge/-☁️%20Cloud%20Native%20Security-skyblue?logo=&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 </div>
