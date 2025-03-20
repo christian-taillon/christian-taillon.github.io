@@ -71,12 +71,16 @@ At my core, I am guided by my personal relationship with **Jesus Christ**, whom 
 </div>
 </div>
 
-### Professional Life
-Professionally, I serve as a **Threat Response Engineer** on the IT Security team at [Grand Canyon Education](https://www.gce.com/), where my focus lies on deploying, maintaining, and enhancing our Detection, Prevention, and Response tools. This includes working with [SIEM](https://christiant.io/spl), [EDR](https://christiant.io/logscale_beg_guide), and [NTA](https://christiant.io/snort-suricata-guide) systems to bolster the capabilities of our SOC.
+---
 
-I lead security efforts in several **Vulnerability** areas: **Code Security**, **Cloud Security**, and **Host Vulnerability Detection**. We maintain a small [Threat Hunting](https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339) practice and rely on a growing **Threat Intelligence** program.
+### Professional Life
+Professionally, I serve as a as a senior member of the IT Security team as a **Threat Response Engineer** on reporting to the CISO at [Grand Canyon Education](https://www.gce.com/), where my focus lies on deploying, maintaining, and enhancing our Detection, Prevention, and Response tools. This includes working with [SIEM](https://christiant.io/spl), [EDR](https://christiant.io/logscale_beg_guide), and [NTA](https://christiant.io/snort-suricata-guide) systems to bolster the capabilities of our SOC.
+
+I lead security efforts in several **Vulnerability** areas: **Code Security**, **Cloud Security**, and **Host Vulnerability Detection**. We maintain an ad-hoc [Threat Hunting](https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339) practice and rely on a growing **Threat Intelligence** program.
 
 I am an advocate for **Threat Intelligence** sharing, including **Sigma**, **YARA**, and **Snort/Suricata rules** within our security community. I'm also a big advocate of **Linux** as a primary workstation and **open-source** solutions.
+
+---
 
 ### Contributions and Advocacy
 Beyond my professional responsibilities, I am deeply involved in the **Threat Intelligence** community. As a leader at the [Arizona Cyber Threat Response Alliance (ACTRA)](https://actraaz.org/), I contribute to our collective cybersecurity efforts. I frequently share my knowledge through presentations, such as "[Becoming the Predator and Not the Prey](https://www.youtube.com/watch?v=f4kPxj9jzqU)" and "[Qbot: Can Ducks Teach us to Share](https://www.youtube.com/live/UDQAMxdofkY?si=B9sX04JDvrZsltn5)".
@@ -91,32 +95,44 @@ I'm a strong believer in the efficacy and efficiency of **open-source** software
 ### My Happy Place...
 ![ct-round](/image/ct-round.png)
 
-#### Current Roles
+---
+
+## Current Roles
 In Cybersecurity, we don't have the luxury of time. Our work demands persistence, proactivity, and collaboration. I believe that you don't need to work at the same company to be on the same team.
 
-<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #007bff; padding: 15px; margin: 15px 0; border-radius: 5px;">
-<b>Grand Canyon Education</b><br>
-My day job is as a <b>Threat Response Engineer</b> working out of the <b>Phoenix, Arizona</b> area. I was also responsible for developing a Threat Intelligence and now Threat Hunting program. In this role, I am also responsible for handling most of our <b>Cyber Forensic Analysis</b>.
+<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #522398; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
+  <h3>Security Engineer@<a href="https://www.gce.com/">GCE</a></h3>
+  <p>Security Engineer reporting directly to the <b>CISO</b>. My decade at GCE has included various <b>technical and leadership roles</b> in <b>security architecture</b>, <b>threat detection</b>, and <b>incident response</b>. I've developed security programs, implemented detection systems, and built resilient infrastructure. See my <a href="https://www.linkedin.com/in/christiantaillon/">LinkedIn profile</a> for details on my roles and responsibilities.</p>
 </div>
 
-<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #28a745; padding: 15px; margin: 15px 0; border-radius: 5px;">
-<b>Arizona Cyber Threat Response Alliance</b><br>
-I lead a team of threat intel team as a <b>Global Watch Center Lead</b> and Core Contributor for ACTRA. I also lead our Threat Intelligence Exchanges, help develop tools for our operations, and I am an instructor at ACTRA's Academy.
+<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #ff0000; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
+  <h3>Threat Intelligence Lead@<a href="https://www.actraaz.org/">ACTRA</a></h3>
+  <p>I lead and support a team of <b>threat intelligence analysts</b> at ACTRA's <b>Global Watch Center</b>. I regularly organize and present at <b>threat intelligence exchanges</b>, develop <b>operational tools</b> and <b>automation</b>, and provide instruction on <b>emerging threats</b> and methodologies to protect <b>critical infrastructure</b>.</p>
 </div>
 
-<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #dc3545; padding: 15px; margin: 15px 0; border-radius: 5px;">
-<b>Phoenix ISSA Chapter</b><br>
-I sit on the Board of Directors for this chapter as the Education Director.
+<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #007bff; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
+  <h3>Board Member@<a href="https://www.phoenixissa.org/">Phoenix ISSA</a></h3>
+  <p>Board member for Phoenix ISSA, which was recognized as <b>ISSA Medium Chapter of the Year 2025</b>. I present on <b>security topics</b>, organize <b>educational events</b>, and help shape our chapter's direction to foster <b>professional development</b> and <b>community engagement</b>.</p>
 </div>
 
-<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #ffc107; padding: 15px; margin: 15px 0; border-radius: 5px;">
-<b>Cyber Resilience Institute</b><br>
-I work on the Cyber Observable Threat Hunting team with <a href="https://sports-isao.org/" target="_blank">Sports-ISAO</a> for our "Popup SOC".
+<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #ffcc00; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
+  <h3>Threat Hunter@<a href="https://www.cyberresilienceinstitute.org/">Cyber Resilience Institute</a></h3>
+  <p>As a <b>cyber intelligence threat hunter</b>, I focus on proactively identifying <b>advanced persistent threats</b> and attack patterns before they cause significant damage. I combine <b>technical expertise</b> with <b>intelligence analysis</b> to enhance defense capabilities across sectors.</p>
 </div>
+
+<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #28a745; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
+  <h3>Digital Sherlock@<a href="https://dfrlab.org/digital-sherlocks/">Atlantic Council's DFRLab</a></h3>
+  <p>Part of a global community working to combat <b>disinformation</b> and <b>online harm</b>. Through this program, I've developed skills in <b>OSINT techniques</b>, <b>geolocation</b>, <b>social media analysis</b>, and <b>digital forensics</b>. This training enables me to contribute to making the internet safer by investigating <b>foreign influence operations</b> and elevating standards for <b>open source research</b>.</p>
+</div>
+
+---
 
 ## [Github](https://github.com/christian-taillon)
 
 [![github](/image/github.png)](https://github.com/christian-taillon)
+
+---
+
 <h3 style="text-align: center;">⚒ Favorite Tools</h3>
 <div style="text-align: center; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px;">
 <a target="_blank"><img alt="Cloudflare" src="https://img.shields.io/badge/-Cloudflare-F38020?logo=cloudflare&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
@@ -135,6 +151,8 @@ I work on the Cyber Observable Threat Hunting team with <a href="https://sports-
 <a target="_blank"><img alt="VirusTotal" src="https://img.shields.io/badge/VirusTotal%20Graphs-white?logo=virustotal&logoColor=blue&style=for-the-badge" style="border-radius: 8px; border: 1px solid black;"/></a>
 </div>
 
+---
+
 <h3 style="text-align: center;">💻 Favorite OS Flavors</h3>
 <div style="text-align: center; margin-bottom: 30px;">
 <a target="_blank"><img alt="Debian" src="https://img.shields.io/badge/Debian-white?logo=Debian&logoColor=red&style=for-the-badge" style="border-radius: 8px; border: 1px solid black;"/></a>
@@ -142,6 +160,8 @@ I work on the Cyber Observable Threat Hunting team with <a href="https://sports-
 <a target="_blank"><img alt="Android" src="https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 <a target="_blank"><img alt="Arch" src="https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 </div>
+
+---
 
 <h3 style="text-align: center;">☁ Cloud Experience</h3>
 <div style="text-align: center; margin-bottom: 30px;">
@@ -152,9 +172,10 @@ I work on the Cyber Observable Threat Hunting team with <a href="https://sports-
 <a target="_blank"><img alt="AWS" src="https://img.shields.io/badge/AWS-orange?logo=amazonwebservices&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
 </div>
 
+---
+
 <h3 style="text-align: center;">Previous Presentations</h3>
 <div style="text-align: left; padding: 0 20px; margin-bottom: 30px;">
-I love to share what little knowledge I've collected as others doing the same has been a big part of what's allowed me to enjoy a successful career in Cyber and IT. Please reach out if I can share on any of the following topics:
 </div>
 
 <div style="text-align: center; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 40px;">
