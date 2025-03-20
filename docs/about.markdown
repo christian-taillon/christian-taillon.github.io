@@ -19,46 +19,56 @@ permalink: /about/
 At my core, I am guided by my personal relationship with **Jesus Christ**, whom I follow to the best of my ability. Supported by my **best friend** and **wonderful wife**, we navigate the joys of new parenthood with our **beautiful baby girl**. I am **highly curious** and motivated by interest, the responsibility of providing for my family, and a concern but also an optimism for the future.
 
 <div class="contact-container" style="display: flex; flex-wrap: wrap; gap: 20px; margin: 30px 0;">
-  <!-- Contact Me Box -->
-  <div class="contact-box" style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-    <h3 style="margin-top: 0; color: #333; text-align: center; border-bottom: 2px solid #007bff; padding-bottom: 10px;">Contact Me</h3>
-    
-    <div style="display: flex; align-items: center; margin: 15px 0;">
-      <div style="background: #007bff; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 15px;">
-        <span style="color: white; font-size: 20px;">✉️</span>
-      </div>
-      <div>
-        <p style="margin: 0; font-weight: bold;">Email:</p>
-        <code style="background: #e9ecef; padding: 4px 8px; border-radius: 4px;">public(AT)christiant.io</code>
-      </div>
-    </div>
-    
-    <div style="display: flex; align-items: center; margin: 15px 0;">
-      <div style="background: #fcc72a; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 15px;">
-        <span style="color: white; font-size: 20px;">🔒</span>
-      </div>
-      <div>
-        <a href="/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc" style="display: inline-block; text-decoration: none; color: #333; font-weight: bold;">
-          <span style="display: block; margin-bottom: 5px;">Encrypt your message</span>
-          <span style="font-size: 0.9em; color: #6c757d;">Download my PGP public key</span>
-        </a>
-      </div>
-    </div>
-  </div>
+<!-- Contact Me Box -->
+<div class="contact-box" style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<h3 style="margin-top: 0; color: #333; text-align: center; border-bottom: 2px solid #007bff; padding-bottom: 10px;">Contact Me</h3>
+<div style="display: flex; align-items: center; margin: 15px 0;">
+<div style="background: #007bff; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 15px;">
+<span style="color: white; font-size: 20px;">✉️</span>
+</div>
+<div>
+<p style="margin: 0; font-weight: bold;">Email:</p>
+<code style="background: #e9ecef; padding: 4px 8px; border-radius: 4px;">public(AT)christiant.io</code>
+</div>
+</div>
+<div style="display: flex; align-items: center; margin: 15px 0;">
+<div style="background: #fcc72a; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 15px;">
+<span style="color: white; font-size: 20px;">🔒</span>
+</div>
+<div>
+<a href="/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc" style="display: inline-block; text-decoration: none; color: #333; font-weight: bold;">
+<span style="display: block; margin-bottom: 5px;">Encrypt your message</span>
+<span style="font-size: 0.9em; color: #6c757d;">Download my PGP public key</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Follow Me Box -->
+<div class="follow-box" style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<h3 style="margin-top: 0; color: #333; text-align: center; border-bottom: 2px solid #dc3545; padding-bottom: 10px;">Follow Me</h3>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px;">
+<a href="https://www.linkedin.com/in/christiantaillon/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/Linkedin-white?&style=for-the-badge&logo=linkedin&logoColor=blue" style="border-radius: 8px; border: 1px solid black;" /></a>
+<a href="https://github.com/christian-taillon" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-black?&style=for-the-badge&logo=Github&logoColor=white" style="border-radius: 8px;" /></a>
+<a href="https://medium.com/@christiantaillon" target="_blank"><img alt="Medium" src="https://img.shields.io/badge/Medium-white?&style=for-the-badge&logo=medium&logoColor=black" style="border-radius: 8px; border: 1px solid black;" /></a>
+<a href="https://www.virustotal.com/gui/user/christianblueteam/graphs" target="_blank"><img alt="VirusTotal" src="https://img.shields.io/badge/VirusTotal-white?&style=for-the-badge&logo=virustotal&logoColor=blue" style="border-radius: 8px; border: 1px solid black;" /></a>
+<a href="https://twitter.com/christian_tail" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/Twitter-white?&style=for-the-badge&logo=twitter&logoColor=blue" style="border-radius: 8px; border: 1px solid black;" /></a>
+<a href="https://otx.alienvault.com/user/tufteam67/pulses" target="_blank"><img alt="OTX" src="https://img.shields.io/badge/OpenThreatExchange-black?&style=for-the-badge&logo=atom&logoColor=white" style="border-radius: 8px;" /></a>
+</div>
+</div>
 
-  <!-- Follow Me Box -->
-  <div class="follow-box" style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-    <h3 style="margin-top: 0; color: #333; text-align: center; border-bottom: 2px solid #dc3545; padding-bottom: 10px;">Follow Me</h3>
-    
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px;">
-      <a href="https://www.linkedin.com/in/christiantaillon/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/Linkedin-white?&style=for-the-badge&logo=linkedin&logoColor=blue" style="border-radius: 8px; border: 1px solid black;" /></a>      
-      <a href="https://github.com/christian-taillon" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-black?&style=for-the-badge&logo=Github&logoColor=white" style="border-radius: 8px;" /></a>
-      <a href="https://medium.com/@christiantaillon" target="_blank"><img alt="Medium" src="https://img.shields.io/badge/Medium-white?&style=for-the-badge&logo=medium&logoColor=black" style="border-radius: 8px; border: 1px solid black;" /></a>
-      <a href="https://www.virustotal.com/gui/user/christianblueteam/graphs" target="_blank"><img alt="VirusTotal" src="https://img.shields.io/badge/VirusTotal-white?&style=for-the-badge&logo=virustotal&logoColor=blue" style="border-radius: 8px; border: 1px solid black;" /></a>
-      <a href="https://twitter.com/christian_tail" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/Twitter-white?&style=for-the-badge&logo=twitter&logoColor=blue" style="border-radius: 8px; border: 1px solid black;" /></a>
-      <a href="https://otx.alienvault.com/user/tufteam67/pulses" target="_blank"><img alt="OTX" src="https://img.shields.io/badge/OpenThreatExchange-black?&style=for-the-badge&logo=atom&logoColor=white" style="border-radius: 8px;" /></a>
-    </div>
-  </div>
+<!-- Signal Box -->
+<div class="signal-box" style="flex-basis: 100%; background-color: #f8f9fa; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<h3 style="margin-top: 0; color: #333; text-align: center; border-bottom: 2px solid #3A76F0; padding-bottom: 10px;">Secure Communication</h3>
+<div style="display: flex; align-items: center; margin: 15px 0;">
+<div style="background: #3A76F0; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 15px;">
+<span style="color: white; font-size: 20px;">🔐</span>
+</div>
+<div>
+<p style="margin: 0; font-weight: bold;">Email me your <a href="https://signal.org/" target="_blank" style="color: #3A76F0; text-decoration: none;">Signal</a> username or number</p>
+<p style="margin: 5px 0 0 0; color: #6c757d;">For secure and private end-to-end encrypted communication</p>
+</div>
+</div>
+</div>
 </div>
 
 ### Professional Life
