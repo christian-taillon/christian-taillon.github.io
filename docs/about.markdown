@@ -73,6 +73,19 @@ At my core, I am guided by my personal relationship with **Jesus Christ**, whom 
 
 ---
 
+## TL;DR ☕
+
+🔒 Cybersecurity professional<br>
+🏢 Threat Response Engineer at Grand Canyon Education<br>
+🌐 Leader at Arizona Cyber Threat Response Alliance (ACTRA)<br>
+🛠️ Experienced in SOC Leadership, SIEM, EDR, NTA, and vulnerability management<br>
+🐧 Linux enthusiast and advocate <br>
+🐍 Python enthusiast and open-source contributor<br>
+🎓 Educator and presenter on various cybersecurity topics<br>
+🤝 Passionate about community involvement and knowledge sharing<br>
+
+---
+
 ### Professional Life
 Professionally, I serve as a as a senior member of the IT Security team as a **Threat Response Engineer** on reporting to the CISO at [Grand Canyon Education](https://www.gce.com/), where my focus lies on deploying, maintaining, and enhancing our Detection, Prevention, and Response tools. This includes working with [SIEM](https://christiant.io/spl), [EDR](https://christiant.io/logscale_beg_guide), and [NTA](https://christiant.io/snort-suricata-guide) systems to bolster the capabilities of our SOC.
 
