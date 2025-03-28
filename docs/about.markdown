@@ -9,6 +9,7 @@ permalink: /about/
 <div style="display: flex; flex-direction: row; align-items: flex-start; margin-bottom: 20px;">
   <img src="/image/professional_circle.png" alt="christian" style="width: 200px; margin-right: 20px;">
   <div>
+    <h1></h1>
     <h1>Hello world! ☕</h1>
     <h2>My name is Christian Taillon</h2>
   </div>
@@ -78,7 +79,7 @@ At my core, I am guided by my personal relationship with **Jesus Christ**, whom 
 🔒 Cybersecurity professional<br>
 🏢 Threat Response Engineer at Grand Canyon Education<br>
 🌐 Leader at Arizona Cyber Threat Response Alliance (ACTRA)<br>
-🛠️ Experienced in SOC Leadership, SIEM, EDR, NTA, and vulnerability management<br>
+🛠️ Experienced in SOC Leadership, SIEM, EDR, NTA, Firewalls and WAFs, Cloud [ AWS Azure GCP ], and vulnerability management<br>
 🐧 Linux enthusiast and advocate <br>
 🐍 Python enthusiast and open-source contributor<br>
 🎓 Educator and presenter on various cybersecurity topics<br>
