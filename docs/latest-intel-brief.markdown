@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Latest Intel Brief
-permalink: /latest-intel-brief/
 ---
 
 {% assign latest_brief = site.briefs | sort: 'date' | reverse | first %}

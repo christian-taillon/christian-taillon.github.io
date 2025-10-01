@@ -63,7 +63,7 @@ On this website, you'll find resources, blogs, and articles on a variety of topi
 </div>
 <br>
 
-### [Latest Intel Brief](/latest-intel-brief/)
+### [Latest Intel Brief](/docs/latest-intel-brief.html)
 
 **Contact me**: Public Email: <b>public(AT)christiant.io</b> | Encrypt your Email: 
 [PGP Public Key][1]
