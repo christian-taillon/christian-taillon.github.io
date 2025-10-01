@@ -62,6 +62,9 @@ From the very start of my career, I have always found myself the beneficiary of 
 On this website, you'll find resources, blogs, and articles on a variety of topics related to Information Security and Artificial Intelligence. Whether you're just getting started or are already on your journey in these domains, I hope you'll find this platform to be useful to you.
 </div>
 <br>
+
+### [Latest Intel Brief](/latest-intel-brief/)
+
 **Contact me**: Public Email: <b>public(AT)christiant.io</b> | Encrypt your Email: 
 [PGP Public Key][1]
 
