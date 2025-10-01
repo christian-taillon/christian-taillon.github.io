@@ -31,22 +31,21 @@ layout: home
 </div>
 
 ---
+<div style="display: flex; flex-direction: row; align-items: flex-start; margin-bottom: 20px;">
+  <img src="/image/professional_circle.png" alt="christian" style="width: 200px; margin-right: 20px;">
+  <div>
+    <h1></h1>
+    <h1>Hello world! ☕</h1>
+    <h2>My name is Christian Taillon</h2>
+  </div>
+</div>
 
-# 🌵🌵 CactusCon - Local LLMs Talk 🌵🌵
-If you're looking for the slides from my **DIY AI: Build Your Own Digital InfoSec Team with BYOLLM** presentation at [CactusCon(https://www.cactuscon.com/), you can find them [here](https://docs.google.com/presentation/d/1qBTwoOPRWc1KeV2cMZUj9Dnpb5EjsZqcCZi7aIon2JA/edit?usp=sharing) with video support for the demos.
-
-Here is my [OpenWebUI community profile](https://openwebui.com/u/christiant/) with all my **models**, **filters**, and **manifold pipes**. Here is the [CLI tool from the demo](https://github.com/christian-taillon/chat-cli). Here is the [LLM Security Guide](https://christiant.io/llm_security) along with the list of scanned **models** [here](https://christiant.io/models). You can find my original [local LLM page](https://christiant.io/localllm) and my guide to running models through [vLLM](https://christiant.io/vLLM). You can find other **GitHub Projects**, **Slides** to other presentations, and other **resources** under the Machine Learning and AI tab on this site.  
-
-![CACTUSCON_CHRISTIAN](/image/cactuscon.png)
-
-I hope you enjoy it!
-
-🌵 Thanks to all who make CactusCon possible!🌵 
-
----
 <br><br>
 <link rel="shortcut icon" type="image/png" href="{{ "image/favicon.png" }}">
 <h1 align = "center"> Welcome ☕</h1>
+<div class="justify-text" align = "center">
+<img src="/image/coffee.png" alt="Coffee" width="200"/>
+</div>
 <div class="justify-text" align = "justify">
 We have a lot to protect and it is hard work. My wife is my biggest supporter and my daughter is my biggest motivation. I thank God for my girls daily.
 </div>
@@ -72,3 +71,43 @@ On this website, you'll find resources, blogs, and articles on a variety of topi
 
 [1]:/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc
 
+---
+
+<h3 style="text-align: center;">⚒ Favorite Tools</h3>
+<div style="text-align: center; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px;">
+<a target="_blank"><img alt="Cloudflare" src="https://img.shields.io/badge/-Cloudflare-F38020?logo=cloudflare&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="Ollama" src="https://img.shields.io/badge/-Ollama-000000?logo=ollama&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/-Hugging%20Face-FFD21E?logo=huggingface&logoColor=black&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="Obsidian" src="https://img.shields.io/badge/-Obsidian-7C3AED?logo=obsidian&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="Visual Studio" src="https://img.shields.io/badge/VSCodium-2F80ED?logo=vscodium&style=for-the-badge&logoColor=white" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="Vim" src="https://img.shields.io/badge/Vim-00AB42?logo=vim&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="Splunk Enterprise" src="https://img.shields.io/badge/Splunk-FF375F?logo=splunk&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="Kali" src="https://img.shields.io/badge/Katoolin-000911?logo=kali-linux&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="ELK" src="https://img.shields.io/badge/ELK-white?logo=elastic&logoColor=pink&style=for-the-badge" style="border-radius: 8px; border: 1px solid black;"/></a> 
+<a target="_blank"><img alt="Podman" src="https://img.shields.io/badge/Podman-white?logo=podman&logoColor=purple&style=for-the-badge" style="border-radius: 8px; border: 1px solid black;"/></a>
+<a target="_blank"><img alt="Slack" src="https://img.shields.io/badge/Slack-purple?logo=slack&logoColor=yellow&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="IBM Threat Exchange" src="https://img.shields.io/badge/XForce-004BA8?logo=IBM&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="VirusTotal" src="https://img.shields.io/badge/VirusTotal%20Graphs-white?logo=virustotal&logoColor=blue&style=for-the-badge" style="border-radius: 8px; border: 1px solid black;"/></a>
+</div>
+
+---
+
+<h3 style="text-align: center;">💻 Favorite OS Flavors</h3>
+<div style="text-align: center; margin-bottom: 30px;">
+<a target="_blank"><img alt="Debian" src="https://img.shields.io/badge/Debian-white?logo=Debian&logoColor=red&style=for-the-badge" style="border-radius: 8px; border: 1px solid black;"/></a>
+<a target="_blank"><img alt="Fedora" src="https://img.shields.io/badge/Fedora-blue?logo=Fedora&logoColor=light-blue&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="Android" src="https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="Arch" src="https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+</div>
+
+---
+
+<h3 style="text-align: center;">☁ Cloud Experience</h3>
+<div style="text-align: center; margin-bottom: 30px;">
+<a target="_blank"><img alt="Cloudflare Workers" src="https://img.shields.io/badge/cloudflareworkers-F38020?logo=cloudflareworkers&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="DigitalOcean" src="https://img.shields.io/badge/DigitalOcean-white?logo=digitalocean&logoColor=blue&style=for-the-badge" style="border-radius: 8px; border: 1px solid black;"/></a>
+<a target="_blank"><img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="GitHub Pages" src="https://img.shields.io/badge/GitHub_Pages-222222?logo=github-pages&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+<a target="_blank"><img alt="AWS" src="https://img.shields.io/badge/AWS-orange?logo=amazonwebservices&logoColor=white&style=for-the-badge" style="border-radius: 8px;"/></a>
+</div>
