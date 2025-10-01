@@ -88,21 +88,17 @@ navbar-links:
   # Resume: resume
 
 # Build settings
-theme: jekyll-theme-minimal
-lsi: false
-safe: true
-source: [your repo's source directory]
-incremental: false
+# theme: minima
+# remote_theme: mmistakes/minimal-mistakes
+remote_theme: daattali/beautiful-jekyll
+plugins:
+#  - jekyll-feed
+  - jekyll-remote-theme
+  - jekyll-include-cache
+# markdown processor
+timezone: "America/Phoenix"
 highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
-
-collections:
-  briefs:
-    output: true
+markdown: kramdown
 
 # Collections
 #collections:
@@ -200,3 +196,7 @@ prose:
     - /css
     - /img
     - /js
+
+collections:
+  briefs:
+    output: true
