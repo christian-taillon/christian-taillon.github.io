@@ -63,7 +63,9 @@ On this website, you'll find resources, blogs, and articles on a variety of topi
 </div>
 <br>
 
-### [Latest Intel Brief](/docs/latest-intel-brief.html)
+<div align="center">
+  <a href="/cactuscon-2025">Missed CactusCon?</a> | <a href="/docs/latest-intel-brief.html">Latest Intel Brief</a>
+</div>
 
 **Contact me**: Public Email: <b>public(AT)christiant.io</b> | Encrypt your Email: 
 [PGP Public Key][1]
