@@ -46,10 +46,10 @@ On this website, you'll find resources, blogs, and articles on a variety of topi
 <br>
 <div align="center">
 <h3>OpenWebUI Community Profile</h3>
-  Check out my <a href="https://openwebui.com/u/christiant/">OpenWebUI community profile</a> with all my models, filters, and manifold pipes, along with the <a href="https://github.com/christian-taillon/open-webui-pipelines">GitHub Repo</a>.
+Check out my <a href="https://openwebui.com/u/christiant/"><b>OpenWebUI community profile</b></a> with all my models, filters, and manifold pipes, along with the <a href="https://github.com/christian-taillon/open-webui-pipelines"><b>GitHub Repo</b></a>.
 </div>
 <div align="center">
-  <a href="/cactuscon-2025">Missed CactusCon?</a> | <a href="/docs/latest-intel-brief.html">Latest Intel Brief</a>
+<a href="/cactuscon-2025"><b>Missed CactusCon?</b></a> | <a href="/docs/latest-intel-brief.html"><b>Latest Public Taillon Intel Brief</b></a>
 </div>
 <div align="center">
 <h3>Contact me: </h3>
