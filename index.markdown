@@ -20,26 +20,14 @@ layout: home
   </div>
 </div>
 
-# 🌵🌵 CactusCon - Local LLMs Talk 🌵🌵
-If you're looking for the slides from my **DIY AI: Build Your Own Digital InfoSec Team with BYOLLM** presentation at [CactusCon](https://www.cactuscon.com/), you can find them [here](https://docs.google.com/presentation/d/1qBTwoOPRWc1KeV2cMZUj9Dnpb5EjsZqcCZi7aIon2JA/edit?usp=sharing) with video support for the demos.  
-
-Here is my [OpenWebUI community profile](https://openwebui.com/u/christiant/) with all my **models**, **filters**, and **manifold pipes**. Here is the [CLI tool from the demo](https://github.com/christian-taillon/chat-cli). Here is the [LLM Security Guide](https://christiant.io/llm_security) along with the list of scanned **models** [here](https://christiant.io/models). You can find my original [local LLM page](https://christiant.io/localllm) and my guide to running models through [vLLM](https://christiant.io/vLLM). You can find other **GitHub Projects**, **Slides** to other presentations, and other **resources** under the Machine Learning and AI tab on this site.  
-
-![CACTUSCON_CHRISTIAN](/image/cactuscon.png)
-
-I hope you enjoy it!
-
-🌵 Thanks to all who make CactusCon possible!🌵 
-
 ---
 <br><br>
 <link rel="shortcut icon" type="image/png" href="{{ "image/favicon.png" }}">
 <h1 align = "center"> Welcome ☕</h1>
 <div class="justify-text" align = "center">
-<img src="/image/coffee.png" alt="Coffee" width="200"/>
 </div>
 <div class="justify-text" align = "justify">
-We have a lot to protect and it is hard work. My wife is my biggest supporter and my daughter is my biggest motivation. I thank God for my girls daily.
+We have a lot to protect and it is hard work. My wife is my biggest supporter and my daughters, my biggest motivation. I thank God for my girls daily. Inspired to build a safer world where crime is less profitable.
 </div>
 ![MOTIVATION](/image/motivation.png)
 
@@ -48,7 +36,10 @@ We have a lot to protect and it is hard work. My wife is my biggest supporter an
 It is recommended that you brew a cup of coffee to enjoy while accessing this site. It dramatically improves the experience on the web. 😉 In the rapidly evolving landscape of Cybersecurity, our work demands persistence, proactivity, and collaboration. I truly believe that you don’t need to work at the same company to be on the same team. <br><br>
 </div>
 <div class="justify-text" align = "justify">
-From the very start of my career, I have always found myself the beneficiary of those taking time to create collections of resources, cheatsheets, and guides for various technologies I've worked with. I want to do the same for others through this simple site.
+From the very start of my career, I have always found myself the beneficiary of those taking time to create collections of resources, cheatsheets, and guides for various technologies I've worked with. I want to do the same for others through this simple site. 
+<br>
+
+I hope it can be of benefit to you the way I benefit from so many others resources. 
 
 On this website, you'll find resources, blogs, and articles on a variety of topics related to Information Security and Artificial Intelligence. Whether you're just getting started or are already on your journey in these domains, I hope you'll find this platform to be useful to you.
 </div>
@@ -56,9 +47,11 @@ On this website, you'll find resources, blogs, and articles on a variety of topi
 
 <div align="center">
   <a href="/cactuscon-2025">Missed CactusCon?</a> | <a href="/docs/latest-intel-brief.html">Latest Intel Brief</a>
-</div>
-
-**Contact me**: Public Email: <b>public(AT)christiant.io</b> | Encrypt your Email: 
+  <br>
+**Contact me**: <br> 
+Public Email: <b>public(AT)christiant.io</b> | Encrypt your Email: 
 [PGP Public Key][1]
 
 [1]:/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc
+</div>
+
