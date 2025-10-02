@@ -196,3 +196,7 @@ prose:
     - /css
     - /img
     - /js
+
+collections:
+  briefs:
+    output: true

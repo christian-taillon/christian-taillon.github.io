@@ -11,6 +11,14 @@ layout: home
 </div>
 
 ---
+<div style="display: flex; flex-direction: row; align-items: flex-start; margin-bottom: 20px;">
+  <img src="/image/professional_circle.png" alt="christian" style="width: 200px; margin-right: 20px;">
+  <div>
+    <h1></h1>
+    <h1>Hello world! ☕</h1>
+    <h2>My name is Christian Taillon</h2>
+  </div>
+</div>
 
 # 🌵🌵 CactusCon - Local LLMs Talk 🌵🌵
 If you're looking for the slides from my **DIY AI: Build Your Own Digital InfoSec Team with BYOLLM** presentation at [CactusCon](https://www.cactuscon.com/), you can find them [here](https://docs.google.com/presentation/d/1qBTwoOPRWc1KeV2cMZUj9Dnpb5EjsZqcCZi7aIon2JA/edit?usp=sharing) with video support for the demos.  
@@ -27,6 +35,9 @@ I hope you enjoy it!
 <br><br>
 <link rel="shortcut icon" type="image/png" href="{{ "image/favicon.png" }}">
 <h1 align = "center"> Welcome ☕</h1>
+<div class="justify-text" align = "center">
+<img src="/image/coffee.png" alt="Coffee" width="200"/>
+</div>
 <div class="justify-text" align = "justify">
 We have a lot to protect and it is hard work. My wife is my biggest supporter and my daughter is my biggest motivation. I thank God for my girls daily.
 </div>
@@ -42,6 +53,11 @@ From the very start of my career, I have always found myself the beneficiary of 
 On this website, you'll find resources, blogs, and articles on a variety of topics related to Information Security and Artificial Intelligence. Whether you're just getting started or are already on your journey in these domains, I hope you'll find this platform to be useful to you.
 </div>
 <br>
+
+<div align="center">
+  <a href="/cactuscon-2025">Missed CactusCon?</a> | <a href="/docs/latest-intel-brief.html">Latest Intel Brief</a>
+</div>
+
 **Contact me**: Public Email: <b>public(AT)christiant.io</b> | Encrypt your Email: 
 [PGP Public Key][1]
 
