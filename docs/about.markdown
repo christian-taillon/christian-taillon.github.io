@@ -42,7 +42,11 @@ permalink: /about/
 
 
 ### Personal Life
-At my core, I am guided by my personal relationship with **Jesus Christ**, whom I follow to the best of my ability. Supported by my **best friend** and **wonderful wife**, we navigate the joys of new parenthood with our **beautiful baby girl**. I am **highly curious** and motivated by interest, the responsibility of providing for my family, and a concern but also an optimism for the future.
+I am guided by my personal relationship with **Jesus Christ**, striving to follow His teachings in all that I do. 
+
+Supported by my **best friend** and **wonderful wife**, we are navigating the joys of raising our two **beautiful daughters**. I owe every achievement to her constant support and encouragement. 
+
+My curiosity, my responsibility to provide for my family, and a cautious optimism for the future are what drive me.
 
 <div class="contact-container" style="display: flex; flex-wrap: wrap; gap: 20px; margin: 30px 0;">
 <!-- Contact Me Box -->
