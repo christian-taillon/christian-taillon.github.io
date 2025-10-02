@@ -45,13 +45,21 @@ On this website, you'll find resources, blogs, and articles on a variety of topi
 </div>
 <br>
 
+### OpenWebUI Community Profile
+<div align="center">
+  Check out my <a href="https://openwebui.com/u/christiant/">OpenWebUI community profile</a> with all my models, filters, and manifold pipes, along with the <a href="https://github.com/christian-taillon/open-webui-pipelines">GitHub Repo</a>.
+</div>
+<br>
+
 <div align="center">
   <a href="/cactuscon-2025">Missed CactusCon?</a> | <a href="/docs/latest-intel-brief.html">Latest Intel Brief</a>
-  <br>
-**Contact me**: <br> 
+</div>
+
+<br>
+<div align="center">
+<h3>Contact me: </h3>
 Public Email: <b>public(AT)christiant.io</b> | Encrypt your Email: 
 [PGP Public Key][1]
 
 [1]:/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc
 </div>
-
