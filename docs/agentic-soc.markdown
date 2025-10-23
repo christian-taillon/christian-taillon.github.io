@@ -59,3 +59,4 @@ Want to implement these solutions yourself? Check out the code and community res
 * [📦 GitHub Repository - Open WebUI Security Pipelines](https://github.com/christian-taillon/open-webui-pipelines)
 * [🛠️ OpenWebUI Community Profile](https://openwebui.com/u/christiant)
 * [🔗 MCP-to-OpenAPI Proxy](https://github.com/christian-taillon/MCP-to-OpenAPI-Proxy)
+* [📊 Slides: Building a Private GenAI Team with Open-Source Models](https://christiant.io/download/Building%20a%20Private%20GenAI%20Team%20with%20Open-Source%20Models.pdf) - Earlier deck from Agentic AI talks given to various groups in the valley
