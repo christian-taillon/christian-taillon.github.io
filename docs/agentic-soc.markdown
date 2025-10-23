@@ -9,13 +9,17 @@ permalink: /agentic-soc/
 
 An **Agentic System** is fundamentally about combining LLM capabilities with context engineering, tool access, and iterative processing (LLM + Context + Tools + Looping). Rather than just chatting with knowledge scraped from training data, agentic systems can call remote APIs, use data processing tools, reference knowledge bases, SOPs, and standards to provide contextual, actionable responses. This allows even weaker models to add significant value by having them operate with curated expertise and real-time data access.
 
+I've conducted workshops, spoken at local professional organizations, and presented at conferences like Cactus Con on this subject. It's important to note that this doesn't replace every tool and workflow for me. While I'm somewhat trying to escape it as my go-to topic (along with what seems like every other security professional suddenly becoming an "AI evangelist" 🙄), it keeps following me—probably because the rapid development and pace of AI starting to affect our industry is undeniable.
+
+**Congratulation Note:** [Dataminr to Acquire ThreatConnect](https://www.dataminr.com/press/announcement/dataminr-to-acquire-threatconnect/) - Congratulations to the ThreatConnect team on this exciting development!
+
+*Future resource note: After the contract is complete, I'll share the slides from my latest keynote at the CyberShare Summit.*
+
 <div class="video-container" style="text-align: center; margin: 40px 0; max-width: 100%;">
     <iframe style="width: 100%; max-width: 800px; height: 450px;" src="https://www.youtube.com/embed/0WHKTPB-6HA?si=wKnx9u5oim-NHN2X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## 🔐 Tools Demonstrated
-
-**Congratulations to ThreatConnect on their recent acquisition by Dataminr!**
 
 ### ThreatConnect TIP
 IOC enrichment and threat intelligence operations through the Threat Intelligence Platform that brings together all sources of open source, commercial, and internal intelligence for comprehensive security context.
