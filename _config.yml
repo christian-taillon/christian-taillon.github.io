@@ -61,6 +61,7 @@ navbar-links:
     - Detect-AutoIT: "https://github.com/christian-taillon/detect-autoit"
     - SigmaGUI: "https://github.com/christian-taillon/SigmaGUI"
   Machine Learning and AI:
+    - Agentic SOC: "agentic-soc"
     - Llama Guard: "llama_guard"
     - Token Guard: "token_guard"
     - OpenWebUI Community: "https://openwebui.com/u/christiant/"
