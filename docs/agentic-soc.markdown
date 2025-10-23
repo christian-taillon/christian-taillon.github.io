@@ -5,28 +5,34 @@ description: "Security operations automation with AI agents for threat intellige
 permalink: /agentic-soc/
 ---
 
-## Agentic SOC Mentors & Helpers
+## 🚀 Agentic Systems for Security Operations
 
-<div class="video-container" style="text-align: center; margin-bottom: 40px;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/0WHKTPB-6HA?si=wKnx9u5oim-NHN2X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+An **Agentic System** is fundamentally about combining LLM capabilities with context engineering, tool access, and iterative processing (LLM + Context + Tools + Looping). Rather than just chatting with knowledge scraped from training data, agentic systems can call remote APIs, use data processing tools, reference knowledge bases, SOPs, and standards to provide contextual, actionable responses. This allows even weaker models to add significant value by having them operate with curated expertise and real-time data access.
+
+<div class="video-container" style="text-align: center; margin: 40px 0; max-width: 100%;">
+    <iframe style="width: 100%; max-width: 800px; height: 450px;" src="https://www.youtube.com/embed/0WHKTPB-6HA?si=wKnx9u5oim-NHN2X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## 🔐 Tools Demonstrated
 
-### ThreatConnect by Dataminr
-**Congratulations to ThreatConnect on their recent acquisition by Dataminr!** This integration demonstrates IOC enrichment and threat intelligence operations through a unified platform that brings together all sources of open source, commercial, and internal intelligence for comprehensive security context.
+**Congratulations to ThreatConnect on their recent acquisition by Dataminr!**
+
+### ThreatConnect TIP
+IOC enrichment and threat intelligence operations through the Threat Intelligence Platform that brings together all sources of open source, commercial, and internal intelligence for comprehensive security context.
 
 ### Polarity by ThreatConnect  
-Unified threat intelligence, context, and Knowledge at the point of analysis and decision-making. This integration shows federated search, correlation, and analysis capabilities that put intelligence and security data where analysts need it most.
+Unified threat intelligence, context, and knowledge at the point of analysis and decision-making. This integration shows federated search, correlation, and analysis capabilities that put intelligence and security data where analysts need it most.
 
-### Armis
+### Armis MCP
 Asset intelligence and vulnerability management platform providing real-time security insights through comprehensive asset discovery and continuous monitoring capabilities.
 
-## 🤖 Technical Implementation
+*All tool implementations except Armis are available as open source: [OpenWebUI Security Pipelines](https://github.com/christian-taillon/open-webui-pipelines)*
 
-For **ThreatConnect** and **Polarity**, I built OpenWebUI-compatible pipelines that enable LLMs to understand what actions are possible with each tool and how to properly call functions. These pipelines provide structured tool definitions that allow agents to intelligently interact with these platforms.
+## 🛠️ Technical Implementation
 
-For **Armis**, they developed their own MCP (Model Context Protocol) service, which is demonstrated in the video being accessed through an OpenAI-MCP proxy for security and authentication purposes: [MCP-to-OpenAPI-Proxy](https://github.com/christian-taillon/MCP-to-OpenAPI-Proxy).
+For **ThreatConnect TIP** and **Polarity**, I built OpenWebUI-compatible pipelines that enable LLMs to understand what actions are possible with each tool and how to properly call functions. These pipelines provide structured tool definitions that allow agents to intelligently interact with these platforms.
+
+For **Armis MCP**, they developed their own MCP (Model Context Protocol) service, which is demonstrated in the video being accessed through an OpenAI-MCP proxy for security and authentication purposes: [MCP-to-OpenAPI-Proxy](https://github.com/christian-taillon/MCP-to-OpenAPI-Proxy).
 
 ## 🧠 The Evolution of LLM Tool Use
 
