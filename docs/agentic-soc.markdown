@@ -46,11 +46,29 @@ Open source models are starting to become increasingly reliable at using tools, 
 
 Many vendors will tell/sell you on these tools replacing humans for ~$2k a month of processing. I really don't see these effective for simple replacement. Automation (SOAR) capabilities have existed for years, and LLMs certainly give us the ability to have machines operate with direction in a way that can be more dynamically variability tolerant; however, I believe that a great strength of LLMs is the ability for humans to interact extremely natively with computer systems in natural language, creating charts and visualizations or dynamically generated user interfaces when that level of input is needed from the human. I've even been able to recently speak to my LLMs to task them with data retrieval, enrichment, and processing tasks - all while running offline local models for LLMs, text to speech and speech to text (albeit local models are slow for the latter and not the most powerful for the former).
 
-Still I see LLMs as offering the potential to help bridge the skills gap as juniors enter the field without the same advanced tool experience. If LLMs can help someone without query syntax knowledge obtain the right answers, or iterate though 10 searches for an information request that a human can process in twice the amount of time, or help guide a junior through the SOP contextualizing the data returned from tools with SOP - I think we can provide more entry level contributors with a direct path to creating significant value with less resource drain from existing team members on training (a real factor to consider for enterprises) while reducing cyber risk by improving security operations. Of course there is value to be derived from other team members; however, the focus so far has been to give every analyst an expert at __using__ tools informed with actual expert guidance and team documentation on processes and procedures.
+Still I see LLMs as offering the potential to help bridge the skills gap as juniors enter the field without the same advanced tool experience. If LLMs can help someone without query syntax knowledge obtain the right answers, or iterate though 10 searches for an information request that a human can process in twice the amount of time, or help guide a junior through the SOP contextualizing the data returned from tools with SOP - I think we can provide more entry level contributors with a direct path to creating significant value with less resource drain from existing team members on training (a real factor to consider for enterprises) while reducing cyber risk by improving security operations.
 
-This is still in its experimental phase. We are exploring its efficacy. I have personally found use out of this. Though I don't think we will be automating away an entire SOC or Vibe-Triaging anytime soon, I do hope we as an industry can hire more analysts that make a bigger dent in the fight with AI assisted triage.
+## 🎯 Beyond Model Intelligence: The Agentic Advantage
+
+**Our value shouldn't be that we are the best at using a tool that is challenging for others—it should be in our outcomes.**
+
+Agentic systems/environments can improve the performance of LLMs to a greater degree than model-intelligence. It isn't just about bigger and more costly models and I don't see fine-tuning as the guiding tool to most significantly improve the consistent reliability of using LLMs to accomplish tasks in a way that meaningfully adds value to most workflows.
+
+Developers have rapidly understood and executed on the findings that given the proper context and tooling, models can more reliably plan and iteratively engage in task execution with the ability to use tools and testing to correct their mistakes along the way.
+
+While the open source community and private vendors have flooded the developer tooling market with agentic tools and environments, I believe this problem may be easier to accomplish than the application of Agentic LLM use in other applications such as Security Operations where we lack tried and true tools and methods to reliably verify mistakes in analysis.
+
+Still, for me at least, the potential for LLMs to operate very dynamically with natural language understanding on large contexts—larger than I have time to often consume—and make calls to tools that I potentially lack the proper knowledge or polished skill to use quickly, is exciting.
+
+Instead of replacing Junior contributors across industries, I believe this can help close the skill gap as we look to humans for critical thinking, self-driven directives from their roles, creativity and resourcefulness that these systems do not currently emulate—and perhaps the prob and stats nature of these models never will.
+
+**Our value to an organization shouldn't be derived from the fact that we maybe the best at using a complex tool in a very mature and advanced way that our colleges with less awareness of a system can't engage with to accomplish task at speeds and in ways juniors dream of achieving.**
+
+**Our value should be in our ability to execute reliably and consistently on tasks. If, one day, we can find how to use these Agentic systems in Security Operations to the degree of reliability that developers are beginning to accomplish I think juniors may require less ramp-up time and be more readily effective.**
 
 ## 🎯 The Power of Threat Intelligence Automation
+
+This is still in its experimental phase. We are exploring its efficacy. I have personally found use out of this. Though I don't think we will be automating away an entire SOC or Vibe-Triaging anytime soon, I do hope we as an industry can hire more analysts that make a bigger dent in the fight with AI assisted triage.
 
 LLMs allow us to automate and process larger amounts of unstructured data in ways that can drive decision-making. AgenticLLMs potentially offer a dynamic way to guide and work with people at different skill levels to execute on many intelligently directed tasks given by a human thinker or allow someone without the advanced skills typically required for tool access to process then.
 
