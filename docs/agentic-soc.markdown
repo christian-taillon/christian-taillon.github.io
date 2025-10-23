@@ -8,7 +8,7 @@ permalink: /agentic-soc/
 # Agentic SOC Mentors & Helpers
 
 <div class="video-container" style="text-align: center; margin-bottom: 40px;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/0WHKTPB-HA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0WHKTPB-6HA?si=wKnx9u5oim-NHN2X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## 📚 Resources & Implementation
