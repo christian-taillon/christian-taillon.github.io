@@ -106,8 +106,8 @@ My curiosity, my responsibility to provide for my family, and a cautious optimis
 ## TL;DR ☕
 
 🔒 Cybersecurity professional<br>
-🏢 Threat Response Engineer at Grand Canyon Education<br>
-🌐 Leader at Arizona Cyber Threat Response Alliance (ACTRA)<br>
+🏢 Security Engineer at Grand Canyon Education<br>
+🌐 Director of Threat Intelligence at Arizona Cyber Threat Response Alliance (ACTRA)<br>
 🛠️ Experienced in SOC Leadership, SIEM, EDR, NTA, Firewalls and WAFs, Cloud [ AWS Azure GCP ], and vulnerability management<br>
 🐧 Linux enthusiast and advocate <br>
 🐍 Python enthusiast and open-source contributor<br>
@@ -149,8 +149,8 @@ In Cybersecurity, we don't have the luxury of time. Our work demands persistence
 </div>
 
 <div class="role-card" style="background: #f8f9fa; border-left: 4px solid #ff0000; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
-  <h3>Threat Intelligence Lead@<a href="https://www.actraaz.org/">ACTRA</a></h3>
-  <p>I lead and support a team of <b>threat intelligence analysts</b> at ACTRA's <b>Global Watch Center</b>. I regularly organize and present at <b>threat intelligence exchanges</b>, develop <b>operational tools</b> and <b>automation</b>, and provide instruction on <b>emerging threats</b> and methodologies to protect <b>critical infrastructure</b>.</p>
+  <h3>Director of Threat Intelligence@<a href="https://www.actraaz.org/">ACTRA</a></h3>
+  <p>Leads ACTRA's threat intelligence operations, analyzing emerging cyber threats and providing strategic insights to protect critical infrastructure and member organizations. Oversees the collection, analysis, and dissemination of actionable intelligence to stakeholders while developing frameworks and fostering information-sharing partnerships across public and private sectors.</p>
 </div>
 
 <div class="role-card" style="background: #f8f9fa; border-left: 4px solid #007bff; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
