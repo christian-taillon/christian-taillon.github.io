@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Christian Taillon - Cybersecurity & AI Expert
+title: Christian Taillon 
 description: Christian Taillon's resource hub for cybersecurity professionals. Expert guides on Splunk, threat hunting, AI security, and comprehensive information security tutorials.
 image: /image/professional_circle.png
 ---
