@@ -1,0 +1,50 @@
+<!-- Structured Data for SEO -->
+{% if page.title == site.title %}
+  <!-- Homepage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Christian Taillon",
+    "url": "{{ site.url }}",
+    "sameAs": [
+      "https://www.linkedin.com/in/christiantaillon/",
+      "https://github.com/christian-taillon",
+      "https://medium.com/@christiantaillon",
+      "https://twitter.com/christian_tail"
+    ],
+    "jobTitle": "Cybersecurity Professional",
+    "knowsAbout": [
+      "Cybersecurity", "Threat Hunting", "Splunk", "SIEM", "AI Security", 
+      "Information Security", "Open Source Intelligence", "Log Analysis"
+    ],
+    "image": "{{ site.url }}/image/professional_circle.png",
+    "description": "{{ site.description }}"
+  }
+  </script>
+{% elsif page.layout == "page" %}
+  <!-- Page Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ page.title | escape }}",
+    "description": "{{ page.description | default: site.description | escape }}",
+    "url": "{{ site.url }}{{ page.url }}",
+    "author": {
+      "@type": "Person",
+      "name": "Christian Taillon",
+      "url": "{{ site.url }}"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Christian Taillon",
+      "url": "{{ site.url }}"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}{{ page.url }}"
+    }
+  }
+  </script>
+{% endif %}

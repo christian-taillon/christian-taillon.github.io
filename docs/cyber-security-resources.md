@@ -1,151 +1,322 @@
 ---
 layout: page
-title: "Cyber Security Resources"
+title: "2025 Cybersecurity Resources"
 permalink: /cyberresources
 ---
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-# General Infosec
 
-### MITRE Att&ck Framework
-Mittre Att&ck is a knowledge base of adversary tactics and techniques. This resource attempts to comprehensively categorize all known methods of accomplishing adversarial tactics.
+# 🚀 2025 Comprehensive Cybersecurity Resources
 
-It is a great resource to know how to use. Not something you need to or perhaps even can memorize. I found value in reading through all the different techniques, Googling what I did not understand.
+Welcome to the ultimate collection of cybersecurity resources for 2025. This curated list includes training platforms, threat intelligence sources, open-source tools, community resources, career development, hands-on labs, and research materials. All resources are actively maintained and current as of 2025.
+
+## 📚 Free Training Platforms
+
+### **SANS Institute**
+- **Free Training Events**: Regular webcasts, workshops, and local chapters
+- **Course Previews**: 70+ free course demos through SANS OnDemand
+- **Internet Storm Center**: Daily security analysis and handler diaries
+- **Open Source Tools**: 150+ instructor-developed security tools
+- **Website**: [sans.org](https://www.sans.org/)
+- **Notable Free Resources**: Security posters, cheat sheets, policy templates
+
+### **Coursera Cybersecurity Programs**
+- **Google Cybersecurity Certificate**: Complete career path with hands-on labs
+- **IBM Cybersecurity Analyst Certificate**: Professional certificate program
+- **Google IT Support Certificate**: Foundational security knowledge
+- **University of Colorado Boulder MS in Computer Security**: Degree program
+- **Website**: [Coursera Cybersecurity](https://www.coursera.org/browse/information-technology/cybersecurity)
+- **Cost**: Free to audit, certificates require subscription
+
+### **TryHackMe**
+- **Interactive Learning Paths**: Guided cybersecurity training from beginner to advanced
+- **Free Rooms**: 30+ free hands-on labs and challenges
+- **Competitions**: Regular CTF events and monthly competitions
+- **Discord Community**: Active learning community with 200k+ members
+- **Website**: [tryhackme.com](https://tryhackme.com/)
+- **Pricing**: Free tier available, premium from $14.99/month
+
+### **Hack The Box**
+- **HTB Academy**: Structured learning paths for beginners to experts
+- **Labs**: 100+ active and retired machines
+- **Pro Labs**: Enterprise-focused challenge environments
+- **CTF Events**: Regular competitive events and seasons
+- **Website**: [hackthebox.com](https://www.hackthebox.com/)
+- **Pricing**: Free tier, starting from $10/month
+
+### **RangeForce**
+- **Cloud-Based Cyber Range**: Team-based training scenarios
+- **Free Edition**: Individual exercises and labs
+- **Battle Scenarios**: Real-time attack/defense simulations
+- **Skills Tracking**: Personalized learning paths and analytics
+- **Website**: [rangeforce.com](https://www.rangeforce.com/)
+- **Free Plan**: Individual user access to limited content
+
+### **Immersive Labs**
+- **Hands-on Cyber Labs**: 400+ interactive labs across security domains
+- **Live Attack Scenarios**: Real-world threat simulations
+- **Enterprise Platform**: Team training and skill assessment
+- **Website**: [immersivelabs.com](https://www.immersivelabs.com/)
+- **Free Trial**: 14-day enterprise trial available
+
+## 🕵️ Threat Intelligence Sources
+
+### **Major Security Vendor Research Blogs**
+
+#### **CrowdStrike**
+- **Falcon Blog**: Threat research, vulnerability analysis, attack trends
+- **2025 APJ eCrime Report**: Regional threat landscape analysis
+- **Adversary Updates**: APT group tracking and TTP analysis
+- **Website**: [crowdstrike.com/blog](https://www.crowdstrike.com/blog/)
+- **RSS**: Available for regular updates
+
+#### **Mandiant (Google Cloud)**
+- **Blog**: Incident reports, malware analysis, threat actor profiles
+- **Threat Intelligence Reports**: In-depth threat research publications
+- **Annual Reports**: M-Trends and frontline threat intelligence
+- **Website**: [mandiant.com/blog](https://www.mandiant.com/blog/)
+
+#### **Elastic Security**
+- **Security Blog**: SIEM, endpoint detection, and threat hunting insights
+- **Elastic Security Labs**: Research on malware and attack techniques
+- **Open Source Tools**: Security tools and detection rules
+- **Website**: [elastic.co/blog/category/security](https://www.elastic.co/blog/category/security)
+
+#### **Splunk**
+- **Splunk Blog**: Security operations, threat detection, incident response
+- **Phantom Blog**: SOAR automation and security orchestration
+- **Research Papers**: Academic and practical security research
+- **Website**: [splunk.com/en_us/blog/security.html](https://www.splunk.com/en_us/blog/security.html)
+
+#### **Cisco Talos**
+- **Talos Intelligence Blog**: Daily malware analysis, vulnerability research
+- **Threat Source Newsletter**: Weekly threat intelligence roundup
+- **Vulnerability Roundups**: Monthly patch analysis and research
+- **Website**: [blog.talosintelligence.com](https://blog.talosintelligence.com/)
+
+#### **Kaspersky Securelist**
+- **GReAT Research**: Global research and analysis team publications
+- **APT Reports**: Advanced persistent threat actor tracking
+- **Virus Watch**: Monthly malware and threat trends
+- **Website**: [securelist.com](https://securelist.com/)
+
+#### **Google TAG (Threat Analysis Group)**
+- **Blog**: Government-backed attack group research
+- **Threat Reports**: Nation-state cyber activity analysis
+- **Security Bulletins**: Product and platform security updates
+- **Website**: [blog.google/threat-analysis-group/](https://blog.google/threat-analysis-group/)
+
+#### **Microsoft Threat Intelligence**
+- **Microsoft Security Blog**: Enterprise threat research and analysis
+- **Defender Research**: Endpoint protection threat insights
+- **Digital Crime Report**: Annual cybercrime analysis
+- **Website**: [microsoft.com/security/blog](https://www.microsoft.com/security/blog)
+
+#### **Palo Alto Networks Unit 42**
+- **Unit 42 Blog**: Threat intelligence, malware analysis, APT research
+- **Cloud Threat Reports**: SaaS and IaaS security research
+- **IoT Security Research**: Connected device vulnerability analysis
+- **Website**: [unit42.paloaltonetworks.com](https://unit42.paloaltonetworks.com/)
+
+### **Government Threat Intelligence**
+- **CISA Alerts**: US-CERT security warnings and bulletins
+- **NCSC UK**: National Cyber Security Centre advisories
+- **ENISA Publications**: European Union Agency for Cybersecurity reports
+- **DHS CISA**: Department of Homeland Security cyber resources
+
+## 🔧 Open Source Security Tools (2025 Essential Tools)
+
+### **SIEM Solutions**
+- **Wazuh**: Open source SIEM with EDR capabilities
+- **ELK Stack**: Elasticsearch, Logstash, Kibana for log management
+- **Graylog**: Centralized log management platform
+- **OSSIM**: Open source SIM and SIEM solution
+
+### **Endpoint Detection & Response (EDR)**
+- **Osquery**: Operating system instrumentation framework
+- **OSSEC**: Host-based intrusion detection system
+- **Wazuh Agent**: Open source endpoint security agent
+- **Velociraptor**: Digital forensics and incident response platform
+
+### **Threat Hunting Tools**
+- **TheHive**: Scalable, Open Source and Free Security Incident Response Platform
+- **Cortex**: Powerful Observable Analysis and Active Response Engine
+- **GRR**: Remote live forensics for incident response
+- **MISP**: Threat Intelligence and Open Source Threat Sharing Platform
+
+### **Network Security**
+- **Suricata**: High performance Network IDS, IPS and Network Security Monitoring engine
+- **Zeek**: Network security monitoring platform
+- **Security Onion**: Linux distro for intrusion detection and security monitoring
+- **Moloch**: Full packet capture and indexing system
+
+### **Digital Forensics**
+- **Autopsy**: Digital forensics platform
+- **Volatility**: Memory forensics framework
+- **Sleuth Kit**: File system analysis tools
+- **Hashcat**: Password recovery tool
+
+### **Vulnerability Management**
+- **OpenVAS**: Open vulnerability assessment system
+- **Nuclei**: Fast and customizable vulnerability scanner
+- **Nikto**: Web server scanner
+- **OpenSCAP**: Security compliance and vulnerability scanner
+
+## 👥 Community Resources
+
+### **Discord Communities**
+- **Cyber Security Discord**: 50k+ members general security discussion
+- **TryHackMe Discord**: Learning platform community
+- **Hack The Box Discord**: CTF and ethical hacking community
+- **Security Community Discord**: Professional security discussions
+
+### **Reddit Communities**
+- **r/cybersecurity**: 400k+ members, general cybersecurity news and discussion
+- **r/netsecstudents**: Learning and career advice for security professionals
+- **r/netsec**: 300k+ members, technical security discussions
+- **r/AskNetsec**: Q&A for security questions
+- **r/compsci**: Computer science fundamentals and theory
+- **r/HowToHack**: Ethical hacking learning resources
+
+### **Twitter/X Security Accounts**
+- **@briankrebs**: Brian Krebs - Cybercrime investigation
+- **@malwaretrafficmn**: Malware Traffic Analysis
+- **@craigclontz**: Security news and trends
+- **@SecurityWeek**: Cybersecurity industry news
+- **@threatpost**: Threat intelligence and news
+- **@sansinstitute**: SANS training and research
+- **@thecyberwire**: Daily cyber security news
+
+### **Weekly/Monthly Newsletters**
+- **The Hacker Newsletter**: Weekly curated security news
+- **SANS NewsBites**: Bi-weekly security news digest
+- **Security Weekly**: Weekly security podcast and newsletter
+- **Threat Source Newsletter**: Cisco Talos weekly roundup
+- **BreachWatch**: Weekly data breach notifications
+- **Dense Discovery**: Security-focused weekly newsletter
+
+## 📈 Career Development
+
+### **Certification Paths for 2025**
+#### **Entry Level**
+- **CompTIA Security+**: Foundation security certification
+- **Google Cybersecurity Certificate**: Industry-recognized entry certificate
+- **(ISC)² SSCP**: Systems Security Certified Practitioner
+- **GIAC GSEC**: SANS Security Essentials Certification
+
+#### **Intermediate Level**
+- **CompTIA CySA+**: Cybersecurity Analyst certification
+- **GIAC GCIH**: SANS GIAC Certified Incident Handler
+- **CompTIA PenTest+**: Penetration testing certification
+- **CISM**: Certified Information Security Manager
+
+#### **Advanced Level**
+- **CISSP**: Certified Information Systems Security Professional
+- **OSCP**: Offensive Security Certified Professional
+- **GIAC GCFA**: SANS GIAC Certified Forensic Analyst
+- **GIAC GXPN**: GIAC Exploit Researcher and Advanced Penetration Tester
+
+### **Interview Resources**
+- **CyberInterview**: SOC and security interview preparation
+- **InfosecInterview**: Technical interview questions and answers
+- **TryHackMe Interview Paths**: Interview preparation learning paths
+- **Cybrary Interview Prep**: Mock interviews and questions
+- **GitHub Interview Questions**: Community-curated interview resources
+
+### **Job Boards**
+- **CyberSecurityJobsite**: Specialized cybersecurity job board
+- **InfoSec-Jobs**: Reddit job postings and discussions
+- **LinkedIn Cybersecurity Jobs**: Professional network job listings
+- **Dice Cybersecurity**: Technology-focused job board
+- **Cyber Seek**: NIST cybersecurity career tracker
+
+### **Salary Guides 2025**
+- **ISC² Cybersecurity Workforce Study**: Industry salary data
+- **CompTIA Cyberstates Report**: Regional salary information
+- **Cyber Seek Interactive Map**: Real-time demand and salary data
+- **Glassdoor Cybersecurity**: Self-reported salary database
+- **Payscale Security**: Career salary calculator and data
+
+## 🎯 Hands-on Labs & Training Environments
+
+### **Free Cyber Ranges**
+- **Cyberbit Live Fire**: Free enterprise cyber range access
+- **National Cyber Range**: US government training environments
+- **Cyber Range Alliance**: Member access to training facilities
+- **Project Ares**: Free basic cyber range access
+
+### **Paid Premium Training**
+- **AttackIQ Adversary Emulation**: Enterprise attack simulation
+- **Picus Security Security Validation Platform**: Automated security testing
+- **XM Cyber Continuous Attack Simulation**: Automated red teaming
+- **SafeBreach Breach and Attack Simulation**: Continuous security testing
+
+### **Cloud Security Labs**
+- **AWS Security Hub**: Hands-on AWS security training
+- **Microsoft Learn Security Path**: Azure security modules
+- **Google Cloud Security Training**: GCP security hands-on labs
+- **Cloud Security Alliance Labs**: Multi-cloud security training
+
+### **CTF Competition Platforms**
+- **CTFtime**: Global CTF calendar and archive
+- **PicoCTF**: Beginner-friendly competition from CMU
+- **HackTheBox CTF**: Regular competitive events
+- **RootTheBox**: Open source CTF platform
+- **CTFlearn**: Learn through challenges platform
+
+## 📊 Research & Academic Resources
+
+### **2025 Research Papers**
+- **IEEE Security & Privacy**: Peer-reviewed security research
+- **USENIX Security Symposium**: Annual security conference papers
+- **ACM CCS**: Computer and Communications Security proceedings
+- **NDSS Symposium**: Network and Distributed System Security
+- **SANS Reading Room**: White papers and technical documentation
+
+### **Conference Presentations**
+- **Black Hat USA 2025**: Latest security research presentations
+- **DEF CON 33**: Hacker conference presentations and videos
+- **RSA Conference 2025**: Enterprise security presentations
+- **SANS DFIRCON**: Digital forensics and incident response
+- **ShmooCon**: Regional security conference content
+
+### **YouTube Channels 2025**
+- **SANS Institute**: Security training videos and presentations
+- **John Hammond**: CTF walkthroughs and security tutorials
+- **LiveOverflow**: Binary exploitation and reverse engineering
+- **The Cyber Mentor**: Ethical hacking tutorials and tools
+- **Professor Messer**: Certification training videos
+- **David Bombal**: Network security and ethical hacking
+- **IppSec**: HackTheBox machine walkthroughs
+
+### **Academic Resources**
+- **MIT OpenCourseWare**: Computer science and security courses
+- **Stanford Crypto**: Cryptography and security lectures available via iTunes University, offering deep insights into modern cryptographic techniques and security principles. The courses provide comprehensive learning materials from prestigious academic institutions, covering complex security topics with detailed explanations and expert instruction.
+
+---
+
+## 🛠️ Essential Security Frameworks & Standards
+
+### **MITRE ATT&CK v15**
+- **Knowledge Base**: Comprehensive adversary tactics and techniques
+- **Framework Mapping**: Essential for threat hunting and detection engineering
+- **Navigator Tool**: Interactive ATT&CK matrix exploration
+- **Website**: [attack.mitre.org](https://attack.mitre.org/)
+
+### **NIST Cybersecurity Framework 2.0**
+- **Core Functions**: Identify, Protect, Detect, Respond, Recover
+- **Implementation Tiers**: Risk-based approach to cybersecurity
+- **Compliance Guidance**: Regulatory alignment and best practices
+
+### **CIS Controls**
+- **Top 18 Controls**: Critical security controls for defense
+- **Implementation Guides**: Step-by-step security improvement
+- **Assessment Tools**: Security controls measurement
+
+---
+
+*This resource list is continuously updated. Last updated: October 2025*
+
+**Have a resource to suggest?** Feel free to share recommendations for emerging tools, communities, or training platforms that should be included in the next update.<br>
 
 
-# Threat Intelligence Resources
 
-### Threat Intelligence Research Groups
-You will find many threat research publications and blogs. The groups specified bellow generally offer information relevant to an operational level of understanding. Tactical Intelligence sources are provided bellow in Threat Intel Content Development. <br>
-
-## Security Vendors Threat Blogs
-[CrowdStrike](https://www.crowdstrike.com/blog/)<br>
-[RiskIQ Articles](https://community.riskiq.com/research)<br>
-[PaloAlto's Unit42](https://blog.paloaltonetworks.com/author/unit-42/)<br>
-[Cisco Talos](https://blog.talosintelligence.com/)<br>
-[Intel471](https://intel471.com/blog/)<br>
-[digital_shadows](https://www.digitalshadows.com/blog-and-research/)<br>
-[ThreatConnect Blog](https://threatconnect.com/blog/)<br>
-[DomainTools Blog](https://www.domaintools.com/)
-<br> <br>
-
-### Federal Agency Threat Blogs
-[CISA Cybersecurity Blog](https://www.cisa.gov/blog-list/Cybersecurity)<br>
-[CERT Alerts](https://us-cert.cisa.gov/ncas/alerts) & [CERT Current Activity](https://us-cert.cisa.gov/ncas/current-activity)
-<br><br>
-
-### Meet the Adversaries
-###### Resources to learn about the adversaries that are prolific enough to be identified, named, and tracked. <br>
-[APT Groups and Operations Matrix](https://apt.threattracking.com) <br>
-[Crowdstrike Classifications](https://www.crowdstrike.com/blog/meet-the-adversaries/)
-<br><br>
-
-
-## Basic Web Resources for Operations or Research
-### Sandboxes
-[HybridAnalysis](https://www.hybrid-analysis.com/)<br>
-tags: #windows #macos #linux <br>
-[JoesSandbox Cloud](https://www.joesandbox.com/#windows)<br>
-tags: #windows #macos #adnroid #linux #ios
-<br><br>
-
-### Threat Intell Content Development
-[VirusTotal](https://www.virustotal.com/gui/home/url)<br>
-tags: #file #url #domain #host <br>
-[IBM X-Force Exchange](https://exchange.xforce.ibmcloud.com/)<br>
-tags: #ip #url #domain #email #cve #cidr #filehash #filepath #mutex #yara #tag <br>
-[Open Threat Exchange](https://otx.alienvault.com/)<br>
-tags: #ip #url #domain #email #cve #cidr #filehash #filepath #mutex #yara  <br>
-[PassiveTotal](https://community.riskiq.com/search) <br>
-tags: #domains #host #ips #sslcert #contactemail <br>
-[DomainTools](https://whois.domaintools.com/) <br>
-tags: #domain #ip<br>
-[Talos](https://talosintelligence.com/)<br>
-tags: #domain #ip #contactemail <br>
-[ThreatCrowd](https://www.threatcrowd.org/)<br>
-tags: #doamin #ip #email #organization<br>
-[ThreatMiner](https://www.threatminer.org/)<br>
-tags: #domain #ip #filehash #email #ssl #ua #filename #registry #mutex
-<br><br>
-
-### Email Analysis Tools
-[Google Admin Toolsbox - Messageheader](https://toolbox.googleapps.com/apps/messageheader/)
-<br><br>
-
-
-
-### External Research Tools
-[DNSDumpster](https://dnsdumpster.com/)<br>
-[Shodan](https://www.shodan.io/)
-<br><br>
-
-### Other Favored Blogs
-[Splunk Blogs](https://www.splunk.com/en_us/blog)<br>
-
-
-## Train Hard, Train Smart
-The InfoSec profession does require a good deal of knowledge; but high performing security practitioners are those with an equally impressive skill set through which they can act on that knowledge. Simulations are a great way to strengthen and develop these skills.
-
-Capture the Flag or CTF exercises are a great way to understand some of the tools and thought process of an adversary. Typically, CTF style exercises involve compromising systems to find hidden flags which prove the accomplishment of some gained level of access. While they primary simulate activity of an adversary, you can also attempt to monitor the exercise environment and then review the generated artifacts to practice finding attacks in audit data. This can include system logs from a compromised device, a firewall or IDS such as Suricata and Snort, a network traffic analysis tool such as Zeek, or even simply a packet capture from the exercise.
-
-[VulnHub](https://www.vulnhub.com/) is a created repository of community contributed VMs made vulnerable by design for various training purposes. While you can attempt to detect your self in logs, nothing prohibits you from attempting to secure the VMs from the same attacks you used to gain access.
-
-### My home lab consists of the following networks ###
-The following is just some details on what my current home lab looks like. At most, it contains some recommendations. It certainly is not optimal.
-1. A class B network for community made CTF targets such as those from VulnHub.
-2. A class B "Attack Targets" network
-3. Security monitoring controls and domain resources share a VLAN.
-4. A class C client network for my laptops or attacking VMs.
-5. A class B network for log collection (Logstash and Splunk Universal Forwarder)
-6. A Pfsense Firewall that connects to an interface on my home WiFi + Router Combo. This Firewall will be your edge.
-
-The Attack Targets network consists of multiple operating systems both server and client with multiple versions. This network contains various services designed to mimic what might be found in a typical environment. It has grown organically over the years. I advise creating several snapshots of "golden images" that contain configuration for security monitoring software such as Sysmon, Splunk UF, or Logstash. Another alternative is to use something like Ansible or Puppet to automate this configuration.
-
-*Pro Tip: I use KVM; however, if you use ESXi, you can take various partial snapshots before major security updates or periodically. This can allow you to restore or create new VMs from snapshots to test attacks on vulnerabilities you may have patched in your environment. I have found this to save on storage requirement*
-
-### Security Monitoring for Attack Targets ###
-
-**Windows Monitoring**
-1. Sysmon
-2. Windows Event Logs (System, Security, and Application)
-3. Periodic output of various admin tools (netstat, pslist, etc)
-Splunk UF is used to Collect Logs + run scripts
-
-**Linux Monitoring**
-1. /var/log/messages
-2. /var/log/secure
-3. /var/log/syslog (syslog-ng)
-4. /var/log/auth.log
-5. /var/log/faillog
-6. Periodic output of various admin tools (netstat, pslist, etc
-
-  A simple $30 TP link switch allows me to select one network interface to use as a mirror for the rest of my networking interfaces. This allows me to use Corelight with a home client to send Zeek and Suricata logs to my Splunk and ELK stack.
-
-  *Note: I had also performed packet captures with this device in the past; however, am unaware if that would interfere with Corelight currently.*
-
-**File Extension Cheat Sheet**
-- 7zip : 7-zip archive format
-- bzip2 : bzip2 archive format
-- cab : cab file format
-- dat : data file format
-- dmp : memory dump
-- docx : microsoft word
-- dwg : drawings
-- dxf : cad file format for autodesk
-- ese : database file format
-- idw : image file format for autodesk
-- jar : java archive
-- macho : binary executable format
-- ole : object linking and embedding
-- ooxml : office open xml
-- pdf : pdf
-- pe : pe
-- pptx : microsoft powerpoint
-- rar : rar archive format
-- rtf : rich text format
-- script : script file
-- sld : slide format for autocad
-- tar : tar archive format
-- vsdx : microsoft visio
-- xar : xar archive format
-- xlsx : microsoft excel
-- zip : zip archive

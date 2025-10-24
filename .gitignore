@@ -7,3 +7,9 @@ vendor
 .env
 *template*
 GEMINI.md
+AGENTS.md
+tasks.md
+thoughts.md
+.opencode/
+temp-thoughts.md
+ai-notes.md

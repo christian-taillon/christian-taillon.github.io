@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Splunk Cheatsheet"
+title: "Splunk Cheatsheet | Splunk Commands Reference"
+description: "Comprehensive Splunk SPL cheatsheet with essential commands for log analysis, threat hunting, and SIEM operations. Quick reference for cybersecurity professionals."
 permalink: /spl
 ---
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -19,7 +20,7 @@ permalink: /spl
 **Event Frequency**
 ```
 | stats count by signature
-    `comment("define varriables")`
+    `comment("define variables")`
 | eval days = 10
 | eval events_perShift = round(count / ((days * 24)/4),3)
 | eval events_perDay = round(count / days,2)
@@ -89,14 +90,14 @@ eval mytime=strftime(_time,"%Y-%m-%d %H:%M:%S")
 |rex field=dest "^(?<dest>.*?)[\.|$]"
 ```
 
-**Normalize User Field from WinEventlog
+**Normalize User Field from WinEventlog**
 ```
 | eval user=lower(if(match(user,".*\\\\.*"), replace(user,".*\\\\",""), user)),
 ```
 
 **Get current user context**
 ```
-| rest /services/authentication/current-context splunk_server=loacal
+| rest /services/authentication/current-context splunk_server=local
 ```
 
 **Group By Octet** <br>
@@ -164,7 +165,7 @@ Incident Review is used as an example
 | where (time >= yesterday AND time <= info_max_time)
 ```
 
-**Find hosts that haven not checked in in a specified amount of time**
+**Find hosts that have not checked in in a specified amount of time**
 ```
 | stats latest(_time) as lastTime earliest(_time) as firstTime by hostnames
     `comment("change the "-30d" to choose a date that we haven't seen assets check in by")`

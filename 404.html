@@ -3,23 +3,213 @@ permalink: /404.html
 layout: default
 ---
 
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
 <style type="text/css" media="screen">
   .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 0 20px;
   }
-  h1 {
-    margin: 30px 0;
+
+  .error-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .error-code {
     font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
+    font-weight: bold;
+    color: #dc3545;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .error-message {
+    font-size: 1.3em;
+    color: #333;
+    margin: 20px 0;
+    line-height: 1.4;
+  }
+
+  .fun-element {
+    font-size: 1.1em;
+    color: #6c757d;
+    font-style: italic;
+    margin: 15px 0;
+  }
+
+
+
+  .navigation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .nav-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .nav-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  .nav-card h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 8px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-link {
+    color: #007bff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+  }
+
+  .nav-link:hover {
+    background-color: #e3f2fd;
+    color: #0056b3;
+  }
+
+  .home-link {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .home-link:hover {
+    background: #218838;
+  }
+
+  .coffee-tip {
+    background: linear-gradient(135deg, #fcc624, #ff8c00);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .coffee-tip .emoji {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 10px;
+    }
+
+    .navigation-grid {
+      grid-template-columns: 1fr;
+    }
+
+
   }
 </style>
 
 <div class="container">
-  <h1>404</h1>
+  <div class="error-card">
+    <div class="error-code">404</div>
+    <div class="error-message">
+      <strong>Page Not Found</strong><br>
+      The page you're looking for seems to have gone on a coffee break ☕
+    </div>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  </div>
+
+
+
+  <div class="navigation-grid">
+    <div class="nav-card">
+      <h3>🛡️ Security Operations</h3>
+      <div class="nav-links">
+        <a href="/docs/splunk-cheatsheet.markdown" class="nav-link">Splunk Cheatsheet</a>
+        <a href="/docs/splunk-entry-cheatsheet.markdown" class="nav-link">Splunk Beginner Guide</a>
+        <a href="/docs/kql-guide.markdown" class="nav-link">KQL Guide</a>
+        <a href="/docs/logscale.markdown" class="nav-link">LogScale Cheatsheet</a>
+        <a href="/docs/sigma-guide.markdown" class="nav-link">Sigma Rules</a>
+      </div>
+    </div>
+
+    <div class="nav-card">
+      <h3>🤖 AI & Security Innovation</h3>
+      <div class="nav-links">
+        <a href="/docs/ai-infosec-ally.markdown" class="nav-link">AI Security Ally</a>
+        <a href="/docs/llm-security.md" class="nav-link">LLM Security</a>
+        <a href="/docs/agentic-soc.markdown" class="nav-link">Agentic SOC</a>
+        <a href="/docs/vLLM.markdown" class="nav-link">vLLM Guide</a>
+        <a href="/docs/llm-models.markdown" class="nav-link">LLM Models</a>
+      </div>
+    </div>
+
+    <div class="nav-card">
+      <h3>🎯 Threat Hunting & Rules</h3>
+      <div class="nav-links">
+        <a href="/docs/yara-rule-guide.markdown" class="nav-link">YARA Rules</a>
+        <a href="/docs/snort-suricata-rule-guide.markdown" class="nav-link">Snort/Suricata Rules</a>
+        <a href="/docs/threathunter-interview.markdown" class="nav-link">Threat Hunter Interview</a>
+        <a href="/docs/epforensics.markdown" class="nav-link">Endpoint Forensics</a>
+        <a href="/docs/recon-ng.markdown" class="nav-link">Recon-ng Guide</a>
+      </div>
+    </div>
+
+    <div class="nav-card">
+      <h3>📈 Career & Learning</h3>
+      <div class="nav-links">
+        <a href="/docs/interview.markdown" class="nav-link">SOC Interview Prep</a>
+        <a href="/docs/securityengineer.markdown" class="nav-link">Security Engineer</a>
+        <a href="/docs/infosec.markdown" class="nav-link">InfoSec Resources</a>
+        <a href="/docs/program-concept.markdown" class="nav-link">Programming Basics</a>
+        <a href="/docs/git.md" class="nav-link">Git Guide</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin: 40px 0;">
+    <a href="/" class="home-link">🏠 Take Me Home</a>
+  </div>
+
+  <div class="coffee-tip">
+    <div class="emoji">☕</div>
+    <div>Pro Tip: This site works best with a fresh cup of coffee!</div>
+    <div style="font-size: 0.9em; margin-top: 10px; opacity: 0.9;">
+      While you're here, explore our cybersecurity resources and guides
+    </div>
+    <div style="font-size: 0.9em; margin-top: 15px; opacity: 0.9;">
+      Want to learn more about Christian's speaking? <a href="/about/">Visit the About page</a> to see conference presentations and events.
+    </div>
+  </div>
 </div>
+
+

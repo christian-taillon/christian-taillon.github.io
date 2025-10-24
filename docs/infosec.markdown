@@ -6,8 +6,8 @@ permalink: /infosec
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 # General Infosec
 
-### MITRE Att&ck Framework
-Mittre Att&ck is a knowledge base of adversary tactics and techniques. This resource attempts to comprehensively categorize all known methods of accomplishing adversarial tactics.
+### MITRE ATT&CK Framework
+MITRE ATT&CK is a knowledge base of adversary tactics and techniques. This resource attempts to comprehensively categorize all known methods of accomplishing adversarial tactics.
 
 It is a great resource to know how to use. Not something you need to or perhaps even can memorize. I found value in reading through all the different techniques, Googling what I did not understand.
 
@@ -45,7 +45,7 @@ You will find many threat research publications and blogs. The groups specified 
 [HybridAnalysis](https://www.hybrid-analysis.com/)<br>
 tags: #windows #macos #linux <br>
 [JoesSandbox Cloud](https://www.joesandbox.com/#windows)<br>
-tags: #windows #macos #adnroid #linux #ios
+tags: #windows #macos #android #linux #ios
 <br><br>
 
 ### Threat Intell Content Development

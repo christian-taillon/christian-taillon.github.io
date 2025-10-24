@@ -5,7 +5,7 @@ title: Christian Taillon
 author: Christian Taillon
 email: public@christiant.io@pm.me
 description: >- # this means to ignore newlines until "baseurl:"
-  # write desc
+  Christian Taillon's cybersecurity and AI resource hub. Expert guides on Splunk, threat hunting, SOC operations, LLM security, and open-source intelligence. Comprehensive cheatsheets, tutorials, and tools for information security professionals and AI developers.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://christiant.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: christian_tail
@@ -14,7 +14,7 @@ github_username:  christian-taillon
 # Navigation Bar
 navbar-links:
   Information Security:
-    - Phoenix2025 : "2025"
+    - Phoenix Cyber Events: "phoenix-cybersecurity-events"
     - Splunk Cheatsheet: "spl"
     - Splunk Beginner Guide: "spl-beginner"
     - KQL Beginner Guide: "kql-guide"
@@ -93,9 +93,10 @@ navbar-links:
 # remote_theme: mmistakes/minimal-mistakes
 remote_theme: daattali/beautiful-jekyll
 plugins:
-#  - jekyll-feed
+  - jekyll-feed
   - jekyll-remote-theme
   - jekyll-include-cache
+  - jekyll-sitemap
 # markdown processor
 timezone: "America/Phoenix"
 highlighter: rouge
@@ -125,7 +126,24 @@ share-links-active:
 # --- Google Analytics --- #
 gtag: "G-R34BHCHXE0"
 
-keywords: "cyber,infosec,splunk,christian,christian-taillon,taillon,ai,llm,information,security,information security"
+keywords: "cybersecurity,information security,Splunk,threat hunting,SOC,SIEM,LLM security,AI,open source intelligence,OSINT,pentesting,security engineering,cyber defense,Christian Taillon,infosec guides,security cheatsheets"
+
+# Social media and Open Graph settings
+twitter:
+  username: christian_tail
+  card: summary_large_image
+
+social:
+  name: Christian Taillon
+  links:
+    - https://twitter.com/christian_tail
+    - https://linkedin.com/in/christiantaillon
+    - https://github.com/christian-taillon
+    - https://medium.com/christiantaillon
+
+# Additional SEO meta tags
+lang: en
+timezone: America/Phoenix
 
 ######################################
 # --- Colours / background image --- #

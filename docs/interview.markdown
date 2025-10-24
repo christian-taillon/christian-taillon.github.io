@@ -16,10 +16,12 @@ Lists of interview questions for those in cyber security are intended to help bo
 
 ## Professional Skills to Assess
 1. Inquisitiveness
+2. Communication
 3. Collaboration
 4. Fundamental IT / Cyber Knowledge
 5. Critical Thinking
 6. Ability to work under pressure
+7. Adaptability
 
 ## General Open-ended Questions
 What makes you want to pursue a career in Cybersecurity?
@@ -45,3 +47,6 @@ How do you keep up-to-date outside regular work hours?
 Tell us about some cyber-attacks that have happened recently.
 
 How comfortable are you on the command line?
+
+What cybersecurity frameworks or methodologies are you familiar with? (e.g., NIST, MITRE ATT&CK, ISO 27001)
+
