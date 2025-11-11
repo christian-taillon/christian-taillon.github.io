@@ -6,6 +6,9 @@ image: /image/professional_circle.png
 ---
 
 ---
+<div class="notice" align="center">
+For those following along that want to take a walkthrough for themselves, go to <a href="/docs/splunkbotsv2.html"><b>BOTS V2 Walkthrough</b></a>.
+</div>
 <div style="display: flex; flex-direction: row; align-items: flex-start; margin-bottom: 20px;">
   <img src="/image/professional_circle.png" alt="Christian Taillon - Cybersecurity Professional" style="width: 200px; margin-right: 20px;">
   <div>
