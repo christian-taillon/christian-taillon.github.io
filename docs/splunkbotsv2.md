@@ -92,12 +92,12 @@ To see a list of websites Amber visited, we'd need to narrow in on Amber's IP ad
 index="botsv2" sourcetype="pan:traffic" amber
 ```
 
-![Q1_1](./images/Q1_1.png)
+![Q1_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q1_1.png)
 
 
 When we examine the `src_ip` field, we notice that there's several hits for one specific value (and no other values observed). Based on this, this is likely the IP address that belongs to Amber.
 
-![Q1_2](./images/Q1_2.png)
+![Q1_2](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q1_2.png)
 
 We can now run the below SPL query to put the values of the `site` field in a table. It's important to consider that the same site may have been visited multiple times, thus there are multiple hits/counts. We can omit duplicate values by applying the `dedup` command to the field `site` as well.
 
@@ -111,7 +111,7 @@ We are then presented with a table of 107 different values. We know that Amber's
 
 **Answer: www.berkbeer.com**
 
-![Q1_3](./images/Q1_3.png)
+![Q1_3](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q1_3.png)
 
 
 ### Q102: Amber found the executive contact information and sent him an email. What image file displayed the executive's contact information? Answer example: /path/image.ext
@@ -122,9 +122,9 @@ Now that we know what the site is, we can run the below SPL query and take a clo
 index="botsv2" sourcetype="stream:http" src_ip="10.0.2.101" site="www.berkbeer.com"
 ```
 
-![Q2_1](./images/Q2_1.png)
+![Q2_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q2_1.png)
 
-![Q2_2](./images/Q2_2.png)
+![Q2_2](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q2_2.png)
 
 When examining the values for `url_path`, we can keep in mind for any possible path names that reference the CEO or contact information. `/images/ceoberk.png` seems to be the most relevant path name that may suggest being related to the CEO and possibly containing contact information.
 
@@ -139,11 +139,11 @@ We know that "ceoberk" might hint that berk is part of the name and will keep th
 index="botsv2" sourcetype="stream:smtp" amber
 ```
 
-![Q3_1](./images/Q3_1.png)
+![Q3_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q3_1.png)
 
 Examining the results show us that the fields `sender`, `sender_alias`, and `sender_email` is of interest to us, and we've identified the email assocaited with Amber (`aturing@froth.ly`).
 
-![Q3_2](./images/Q3_2.png)
+![Q3_2](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q3_2.png)
 
 With this information, we can revise our SPL query to now include Amber's email and toss in the keyword "berk" and see if anything comes up.
 
@@ -151,17 +151,17 @@ With this information, we can revise our SPL query to now include Amber's email 
 index="botsv2" sourcetype="stream:smtp" aturing@froth.ly berk
 ```
 
-![Q3_3](./images/Q3_3.png)
+![Q3_3](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q3_3.png)
 
 Examining the single result we get back, we can identify the CEO's email, but it doesn't seem to provide the first/last name. At least we know the first name likely starts with an M based on the email naming convention.
 
-![Q3_4](./images/Q3_4.png)
+![Q3_4](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q3_4.png)
 
 If we try to view as raw data for this result, we can try to see if there's any content in the raw data that would provide the first/last name. We know it probably starts with an M so we can keep that in mind. Ctrl+F `berk` or ctrl+F `mberk@berkbeer.com` and cycling through all the results is likely the best way to sift through the raw data to identify the first/last name within approximate location of the name berk or the email.
 
 After sifting through the raw data, we've identified that the CEO's full name is Martin Berk.
 
-![Q3_5](./images/Q3_5.png)
+![Q3_5](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q3_5.png)
 
 **Answer: Martin Berk**
 
@@ -180,11 +180,11 @@ From prior solutions, we learned that Berk Beer is the competitor company and th
 index="botsv2" sourcetype="stream:smtp" aturing@froth.ly berk
 ```
 
-![Q5_1](./images/Q5_1.png)
+![Q5_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q5_1.png)
 
 When examining the events, we can see that there is the field `receiver_email` with the value of `hbernhard@berkbeer.com`, which appears to be the employee's email.
 
-![Q5_2](./images/Q5_2.png)
+![Q5_2](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q5_2.png)
 
 **Answer: hbernhard@berkbeer[.]com**
 
@@ -204,9 +204,9 @@ When examining the event data associated to `hbernhard@berkbeer.com`, we see tha
 
 When reading the raw data or viewing the values for the field `content_body`, we see what appears to be an encoded message. Interestingly enough, if we expand and view the values for the field `content_transfer_encoding`, it has a value of `base64`. Based on this information, we can copy the value from `content_body` and paste it into https://gchq.github.io/CyberChef and use the **From Base64** recipe.
 
-![Q7_1](./images/Q7_1.png)
+![Q7_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q7_1.png)
 
-![Q7_2](./images/Q7_2.png)
+![Q7_2](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q7_2.png)
 
 After pasting in the encoded string into the Input box, we can see under the Output box the email conversation thread in cleartext where Amber's personal email is `ambersthebest@yeastiebeastie.com`. Yikes, looks like there's a potential insider threat/risk situation on our hands.
 
@@ -224,12 +224,12 @@ We can build the generic SPL query below to check for events matching both `tor`
 index="botsv2" tor amber
 ```
 
-![Q200-1_1](./images/Q200-1_1.png)
+![Q200-1_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q200-1_1.png)
 
 If we examine the Interesting Fields section, we see that there is a field called `Image`. Typically, images may contain information of a specific version/firmware of a particular application. If we expand the field `Image`, we can see that there is a value that references a TOR install as 7.0.4, which is likely the version of the TOR browser Amber installed.
 
 
-![Q200-1_2](./images/Q200-1_2.png)
+![Q200-1_2](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q200-1_2.png)
 
 **Answer: 7.0.4**
 
@@ -243,7 +243,7 @@ index="botsv2" sourcetype="stream:http" www.brewertalk.com (dest_port=80 OR dest
 | stats count by dest_ip
 ```
 
-![Q200-2_1](./images/Q200-2_1.png)
+![Q200-2_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q200-2_1.png)
 
 Right away, we see that 172.31.4.249 has a really high count number, but this address is in the private address space so we know this cannot be the answer. The only other address is a public IP address, which is likely the public address of the server running www.brewertalk[.]com.
 
@@ -259,7 +259,7 @@ index="botsv2" sourcetype="stream:http" www.brewertalk.com
 | top src_ip
 ```
 
-![Q200-3_1](./images/Q200-3_1.png)
+![Q200-3_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q200-3_1.png)
 
 Right away, we see that the IP address `45.77.65.211` has a substantial amount of hits and represents approximately 90% of source IPs. This is likely the IP address that is conducting web vulnerability scanning activity.
 
@@ -275,7 +275,7 @@ index="botsv2" sourcetype="stream:http" www.brewertalk.com src_ip="45.77.65.211"
 | top uri_path
 ```
 
-![Q200_4-1](./images/Q200_4-1.png)
+![Q200_4-1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q200_4-1.png)
 
 
 
@@ -296,7 +296,7 @@ index="botsv2" sourcetype="stream:http" www.brewertalk.com src_ip="45.77.65.211"
 | dedup form_data
 ```
 
-![Q200_5-1](./images/Q200_5-1.png)
+![Q200_5-1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q200_5-1.png)
 
 Based on the strings observed, it looks like there is a SQL function of `updatexml`, which is used to modify data within an XML document stored inside of the SQL database.
 
@@ -311,7 +311,7 @@ index="botsv2" sourcetype="stream:http" www.brewertalk.com kevin
 | table cookie
 ```
 
-![Q200-6_1](./images/Q200-6_1.png)
+![Q200-6_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q200-6_1.png)
 
 
 We notice that there seems to be the cookie value of `1502408189` associated with multiple potential login attempts.
@@ -327,10 +327,10 @@ We can modify the prior question's SPL query to simply review the `table` comman
 ```
 index="botsv2" sourcetype="stream:http" www.brewertalk.com kevin
 ```
-![Q200-7_1](./images/Q200-7_1.png)
+![Q200-7_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q200-7_1.png)
 
 
-![Q200-7_1](./images/Q200-7_2.png)
+![Q200-7_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q200-7_2.png)
 
 **Answer: kIagerfield**
 
@@ -349,7 +349,7 @@ index="botsv2" mallory
 | dedup host
 ```
 
-![Q300-1_1](./images/Q300-1_1.png)
+![Q300-1_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-1_1.png)
 
 The value `MACLORY-AIR13` seems to be Mallory's hostname, a play on "Macbook Air 13" and Mallory. 
 
@@ -358,7 +358,7 @@ The question states that Mallory's PowerPoint presentation was encrypted - so we
 ```
 index="botsv2" host="MACLORY-AIR13" (*.pptx OR *.pptm OR *.ppt)
 ```
-![Q300-1_2](./images/Q300-1_2.png)
+![Q300-1_2](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-1_2.png)
 
 Interestingly, on 08/19/2017 we see that there's a file called `Frothly_marketing_campaign_Q317.pptx.crypt`, which is likely the name of Mallory's PowerPoint file after it became encrypted.
 
@@ -373,7 +373,7 @@ This should be a relatively straightforward query. We know that the Game of Thro
 index="botsv2" host="MACLORY-AIR13" *.crypt (GOT OR *Thrones")
 ```
 
-![Q300-2_1](./images/Q300-2_1.png)
+![Q300-2_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-2_1.png)
 
 When viewing the events, we see that there is a file named "GoT.S07E02.BOTS.BOTS.BOTS.mkv.crypt". "GOT" stands for Game of Thrones. S07E02 stands for Season 07 Episode 02. .mkv is a movie/video media file extension. .crypt is the file extension we've observed for the encrypted files. This is the movie file that was encrypted.
 
@@ -387,16 +387,16 @@ We can try to run the general SPL query below and see if we can find anything in
 ```
 index="botsv2" kutekitten usb vendor
 ```
-![Q300-3_1](./images/Q300-3_1.png)
+![Q300-3_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-3_1.png)
 
-![Q300-3_2](./images/Q300-3_2.png)
+![Q300-3_2](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-3_2.png)
 
 If we expand the `columns` field within our events, we're presented with additional fields; interestingly one is named `vendor_id` and our events show us two distinct values: `058f` and `13fe`. When we search these two vendor IDs up, we get Alcor Micro Corp and Phison Electronics Corp. Based on the answer formatting, the answer is Alcor Micro Corp.
 
 
-![Q300-3_3](./images/Q300-3_3.png)
+![Q300-3_3](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-3_3.png)
 
-![Q300-3_4](./images/Q300-3_4.png)
+![Q300-3_4](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-3_4.png)
 
 **Answer: Alcor Micro Corp**
 
@@ -418,31 +418,31 @@ index="botsv2" sourcetype="osquery_results" host=kutekitten columns.path="/Users
 ```
 
 
-![Q300-4_1](./images/Q300-4_1.png)
+![Q300-4_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-4_1.png)
 
 Examining the values, we can tell right away that Mallory's username is `mkraeusen`
 
 With this new information, we can now revise our SPL query to include any subdirectories within `mkraeusen`. Additionally, we'll want to include some additional useful fields that may not initially display with our results, such as `columns.sha1`, `columns.sha256`, and `columns.target_path`.
 
-![Q300-4_2](./images/Q300-4_2.png)
+![Q300-4_2](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-4_2.png)
 
 
 
 Taking a closer look at the singular value for `columns.target_path`, it seems to be referencing an "important" and seemingly urgent file from HR housed in the Downloads subfolder. Notice how the file name addresses Mallory by her username? I don't know about you, but I don't think your employer's HR department knows what your pesonal laptop's username is. Could this be caused by a malicious script which inserts the host machine's username as part of the filename?
 
-![Q300-4_3](./images/Q300-4_3.png)
+![Q300-4_3](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-4_3.png)
 
 
 We can revise the SPL query to now include this specific path and display the values the fields `columns.sha1` and `columns.sha256` in a table. If we see any values in the table, it'll be associated to this "important" file and we'll run the hash through VirusTotal.
 
 
-![Q300-4_4](./images/Q300-4_4.png)
+![Q300-4_4](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-4_4.png)
 
 
 Let's pick the sha256 hash value and run it through VirusTotal. The results will come back indicating that most of the security vendors/engines have associated this sha256 hash value as being associated to the malware "fpsaud" and that it is written in Perl.
 
 
-![Q300-4_5](./images/Q300-4_5.png)
+![Q300-4_5](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-4_5.png)
 
 
 **Answer: Perl**
@@ -452,7 +452,7 @@ Let's pick the sha256 hash value and run it through VirusTotal. The results will
 
 Checking the details tab of the VirusTotal page will indicate the first seen in the wild date of 2017-01-17.
 
-![Q300-4_6](./images/Q300-4_6.png)
+![Q300-4_6](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-4_6.png)
 
 **Answer: 2017-01-17**
 
@@ -465,7 +465,7 @@ Checking the relations tab of the VirusTotal page will indicate that there are 2
 **Answer: eidk.duckdns.org**
 
 
-![Q300-6_1](./images/Q300-6_1.png)
+![Q300-6_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q300-6_1.png)
 
 
 
@@ -486,7 +486,7 @@ See solution to Q306. The other domain destionation is eidk.hopto.org.
 
 Logs and details related to emails can be found within the sourcetype `stream:smtp`. We know that the threat actor likes to attach zip files. With this information, we can build the below SPL query and see if anything interesting returns.
 
-![Q401_1](./images/Q401_1.png)
+![Q401_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q401_1.png)
 
 We can see that there's only one value for the field `attach_filename{}`, which is `invoice.zip`, which is likely the malicious attachment.
 
@@ -497,7 +497,7 @@ See SPL query to Q401.
 By going through the results and examining the `content_body` and ctrl+f for "password", we can see that there's a string referencing password and the value 912345678.
 
 
-![Q402_1](./images/Q402_1.png)
+![Q402_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q402_1.png)
 
 
 **Answer: 912345678**
@@ -513,7 +513,7 @@ index=botsv2 sourcetype:"stream:tcp" 45.77.65.211
 | table ssl_issuer
 ```
 
-![Q403_1](./images/Q403_1.png)
+![Q403_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q403_1.png)
 
 The table shows us that there is only one unique value for the SSL issuer: C = US.
 
@@ -529,7 +529,7 @@ index=botsv2 winsys32.dll
 ```
 
 
-![Q404_1](./images/Q404_1.png)
+![Q404_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q404_1.png)
 
 Interestingly, when we view the values for the field `process`, it looks like winsys32.dll is associated with executing FTP. We can invesigate further by revising our SPL query to search through the sourcetype `stream:ftp` and filtering for only downloads.
 
@@ -537,7 +537,7 @@ Interestingly, when we view the values for the field `process`, it looks like wi
 index=botsv2 sourcetype="stream:ftp" loadway=Download
 ```
 
-![Q404_2](./images/Q404_2.png)
+![Q404_2](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q404_2.png)
 
 We immediately see an event that has Korean characters for it's filename. Definitely not normal for an American company.
 
@@ -552,7 +552,7 @@ Use CyberChef to encode/decode unicode characters as needed to submit the answer
 
 Examining the VirusTotal page provided to us in the lab, we can see that the name "Ryan Kovar" is associated with the malware.
 
-![Q405_1](./images/Q405_1.png)
+![Q405_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q405_1.png)
 
 **Answer: Ryan Kovar**
 
@@ -565,7 +565,7 @@ The lab gives us the query hint of `index="botsv2" schtasks.exe"` to help us get
 index=botsv2 Account_Domain=Frothly schtasks.exe
 ```
 
-![Q406_2](./images/Q406_2.png)
+![Q406_2](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q406_2.png)
 
 When examining the interesting fields, we see that there is a field called `tag` and there is a single count for the value `privileged` -- this looks interesting. Let's add this into our query and see what events are returned.
 
@@ -577,7 +577,7 @@ indeex=botsv2 Account_Domain=Frothly schtasks.exe tag=privileged
  
 We see the one singular event and within it we can see a very interesting string for the Process Command Line. The value references "schtasks.exe" which is mentioned in the lab hint, and it seems to be something that is done daily based on the `SC DAILY` string. We also know that it appears to run a PowerShell script based on the string referencing powershell.exe. Even more interestingly, the string subsuquent to calling powershell.exe appears suspicious and seems to be encoded in Base64.
 
-![Q406_3](./images/Q406_3.png)
+![Q406_3](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q406_3.png)
 
 
 
@@ -589,9 +589,9 @@ There are 4 events and each appear to contain a base64 string in the data field.
 index=botsv2 sourcetype=WinRegistry \\Software\\Microsoft\\Network
 ```
 
-![Q406_4](./images/Q406_4.png)
+![Q406_4](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q406_4.png)
 
-![Q406_1](./images/Q406_1.png)
+![Q406_1](https://github.com/chan2git/splunk-bots/blob/be77ecab1714e0f1f15cc0561fc31678ad34e0a3/botsv2/images/Q406_1.png)
 
 
 **Answer: process.php**
