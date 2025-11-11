@@ -17,7 +17,7 @@ image: /image/professional_circle.png
 ---
 <br><br>
 <div class="notice" align="center">
-For those following along that want to take a walkthrough for themselves, go to <a href="/docs/splunkbotsv2.html"><b>BOTS V2 Walkthrough</b></a>.
+For those following along that want to take a walkthrough for themselves, go to <a href="/splunkbotsv2.html"><b>BOTS V2 Walkthrough</b></a>.
 </div>
 <link rel="shortcut icon" type="image/png" href="{{ "image/favicon.png" }}">
 <h1 align = "center"> Welcome ☕</h1>
