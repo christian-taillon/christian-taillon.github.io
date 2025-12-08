@@ -1,6 +1,5 @@
 ###########################################################
 ### Welcome to Beautiful Jekyll!
-
 title: Christian Taillon
 author: Christian Taillon
 email: public@christiant.io@pm.me
@@ -38,7 +37,6 @@ navbar-links:
     - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
     - "Prophet Spider Exploits Citrix ShareFile to Deploy Webshell" : https://christiantaillon.medium.com/prophet-spider-exploits-citrix-sharefile-to-deploy-webshell-d2689abd4301
     - "QakBot Detection: DUCK HUNT" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-aa0cadb398a7
-    - "QakBot Hunting: Autumn Spice" : https://christiantaillon.medium.com/qakbot-part-3-6497bd412d39
     - "QakBot Detection: DUCK HUNT Part 2 — The .LNK" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-part-2-a93ea2498211
     - Log4j: https://github.com/christian-taillon/log4shell-hunting
     - Sunburst: https://github.com/christian-taillon/sunburst-hunting
@@ -57,12 +55,10 @@ navbar-links:
     - Splunk Windows Forwarder: "https://github.com/christian-taillon/splunk_win_uf"
     - Programing Basics: "program-concept"
     - Python3 Virtual Environments: "pyhon3virt"
-    - File Arramgeent and Sorting Tool: "https://github.com/christian-taillon/fast"
-    - APTTracker.md: "https://github.com/christian-taillon/apt-tracker-md"
-    - Detect-AutoIT: "https://github.com/christian-taillon/detect-autoit"
-    - SigmaGUI: "https://github.com/christian-taillon/SigmaGUI"
+    - File Arrangement and Sorting Tool: "https://github.com/christian-taillon/fast"
   Machine Learning and AI:
     - Agentic SOC: "agentic-soc"
+    - Agentic Prompting: "agentic-prompting"
     - Llama Guard: "llama_guard"
     - Token Guard: "token_guard"
     - OpenWebUI Community: "https://openwebui.com/u/christiant/"
@@ -105,24 +101,24 @@ markdown: kramdown
 
 # Collections
 #collections:
-#   - medium_posts
-#   - infosecresources
-# - spl-cheat
-# - "Splunk SPL Cheat Sheet"
-# - spl
-
+#  - medium_posts
+#  - infosecresources
+#  - spl-cheat
+#  - "Splunk SPL Cheat Sheet"
+#  - spl
+# 
 # General
 share-links-active:
   twitter: true
   facebook: true
   linkedin: true
 
-  url-pretty: "christiant.io"
+# url-pretty: "christiant.io"
 
-  excerpt_length: 50
-  feed_show_excerpt: true
-  feed_show_tags: true
-  post_search: true
+excerpt_length: 50
+feed_show_excerpt: true
+feed_show_tags: true
+post_search: true
 
 # --- Google Analytics --- #
 gtag: "G-R34BHCHXE0"
@@ -144,12 +140,8 @@ social:
 
 # Additional SEO meta tags
 lang: en
-timezone: America/Phoenix
 
-######################################
 # --- Colours / background image --- #
-######################################
-
 navbar-col: "#0e0e0e"
 navbar-text-col: "#FFFFFF"
 navbar-border-col: "#0e0e0e"
@@ -162,10 +154,7 @@ footer-text-col: "#FFFFFF"
 footer-link-col: "#fcc624"
 footer-hover-col: "#fcc624"
 
-################
 # --- Logo --- #
-################
-
 # avatar: "/image/coffee_logo.jpeg"
 
 # --- Footer options --- #
@@ -176,24 +165,18 @@ social-network-links:
   github: christian-taillon
   twitter_username: christian_tail
   medium: christiantaillon
-  linkedin: christiantaillon
   #stackoverflow: 15532834
 
-
-  #rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  # If you want your website to generate an RSS feed, provide a description
-  # The URL for the feed will be https://<your_website>/feed.xml
-  #rss-description: This website is a virtual proof that I'm awesome
+# rss: true  # remove this line if you don't want to show an RSS link at the bottom
+# If you want your website to generate an RSS feed, provide a description
+# The URL for the feed will be https://<your_website>/feed.xml
+# rss-description: This website is a virtual proof that I'm awesome
 
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
+#  internal "default list".
 #
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-
 exclude:
   - .sass-cache/
   - .jekyll-cache/

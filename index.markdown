@@ -161,6 +161,15 @@ image: /image/professional_circle.png
     <h2>Knowledge Base & Resources</h2>
     <p>Explore the core domains of this site.</p>
   </div>
+
+  <!-- Recent Resource Hero Card -->
+  <div class="hero-card">
+    <div class="hero-text">
+      <h2>🤖 Latest: Mastering Agentic Prompting</h2>
+      <p>Advanced techniques for building AI systems that can reason, plan, and execute complex tasks autonomously. Combining insights from Cerebras GLM 4.6 and Google Gemini 3.</p>
+    </div>
+    <a href="/agentic-prompting/" class="hero-btn">Explore Guide &rarr;</a>
+  </div>
   
   <div class="resource-grid">
     <!-- Row 1: Spans Full Width -->
