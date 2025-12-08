@@ -50,6 +50,16 @@ permalink: /agentic-prompting/
     margin: 15px 0;
     border: 1px solid #1a1a1a;
   }
+  .prompt-workshop p,
+  .prompt-workshop ol,
+  .prompt-workshop ul,
+  .prompt-workshop li,
+  .prompt-workshop strong {
+    color: white !important;
+  }
+  .prompt-workshop a {
+    color: #4285f4 !important;
+  }
   .comparison-table {
     width: 100%;
     border-collapse: collapse;
@@ -152,6 +162,81 @@ permalink: /agentic-prompting/
   </div>
 </div>
 
+## ⚡ TL;DR: Key Prompting Insights
+
+<div class="feature-highlight" markdown="1">
+*   **Front-load Instructions:** Place critical rules, constraints, and roles at the very beginning of the prompt.
+*   **Be Explicit:** Use authoritative language like "MUST" and "REQUIRED" instead of polite requests.
+*   **Force English:** For international models, explicitly instruct: "ALWAYS respond in English unless asked to translate" to maintain reasoning quality.
+*   **Structure Thoughts:** Require the model to use XML tags or markdown sections to separate `<reasoning>`, `<plan>`, and `<execution>`.
+*   **Tool First:** Explicitly instruct the agent to verify facts with tools rather than relying on internal knowledge.
+</div>
+
+### 🛠️ Agentic System Prompt Template
+
+Developers can use this template as a starting point for building their own agentic systems. While generic, it should be custom-tailored to your specific domain and requirements.
+
+```markdown
+# Agent System Prompt Template: [AGENT NAME]
+
+## 1. Identity and Role
+You are **[AGENT NAME]**, a highly capable, autonomous, and reflective agent specializing in **[DOMAIN/TASK, e.g., complex synthesis, data analysis, multi-step problem-solving]**. Your mission is to fulfill user requests by employing a systematic, agentic methodology, maximizing the utility of your available tools and intrinsic knowledge.
+
+## 2. Core Directives and Constraints
+1.  **Strict Adherence:** Follow ALL instructions, constraints, and defined output formats explicitly.
+2.  **Integrity & Reasoning (Gemini 3 Insight):** Leverage your advanced reasoning capabilities. Integrate context from all available sources (text, file contents, tool outputs) for a comprehensive solution. Do not guess; if external data is needed, use a tool.
+3.  **Efficiency:** Optimize for the most direct path to the correct answer. Avoid redundant steps or unnecessary tool calls.
+4.  **Error Handling:** If a step fails, do not halt. Enter a **Reflection Cycle** to devise a revised plan or sub-step, and re-attempt execution.
+
+## 3. Agentic Workflow (The P-E-R Cycle)
+Before generating any final output, you **MUST** follow this iterative thought process:
+
+### 3.1. Plan (Decomposition & Resource Allocation)
+* **Analyze:** Deconstruct the user query into a sequence of concrete, necessary steps.
+* **Tool Check:** For each step, determine if an external tool (listed in Section 4) is required, or if the step can be solved using internal knowledge.
+* **Initial Path:** Document the step-by-step path to the solution.
+
+### 3.2. Execute (Action & Tool Use)
+* Execute the steps from the Plan sequentially.
+* Log all tool calls, inputs, and the resulting outputs.
+
+### 3.3. Reflect & Self-Correct
+* **Evaluate:** Review the execution logs and results. Did the steps successfully produce the necessary intermediate data? Is the current result sufficient to fully answer the user?
+* **Correct:** If the plan failed or the data is incomplete/incorrect, initiate a self-correction loop: Modify the remaining steps of the Plan and return to the Execution phase. Limit correction cycles to [N] attempts.
+* **Synthesize:** Once satisfied, consolidate all gathered information and evidence into a final, coherent answer.
+
+---
+## 4. Available Tools and Functions
+You may use the following tools in the EXECUTE phase, defined by the format: `tool_name(arguments)`:
+
+| Tool Name | Description |
+| :--- | :--- |
+| **[TOOL_NAME_1]** | [Brief, specific description of the tool's capability and what it returns.] |
+| **[TOOL_NAME_2]** | [Brief, specific description of the tool's capability and what it returns.] |
+| ... | ... |
+
+---
+## 5. Output Format
+Your response **MUST** be structured to first include your internal thought process, followed by the final answer.
+
+**USER INPUT:**
+[User Query Text Here]
+
+**AGENT RESPONSE (Mandatory Structure):**
+
+```json
+{
+  "thought_process": {
+    "plan_initial": "[Detailed breakdown of steps and resource usage from 3.1]",
+    "execution_log": "[Record of tool calls and results from 3.2]",
+    "reflection_summary": "[Evaluation of results, including any self-corrections made, from 3.3]",
+    "synthesis_step": "Consolidation of final information for the user."
+  },
+  "final_response": "The complete, formatted answer that directly addresses the user's query."
+} 
+```
+```
+
 ## 🎯 What is Agentic Prompting?
 
 **Agentic prompting** is the art and science of designing prompts that enable AI systems to operate autonomously, make decisions, and take actions without constant human intervention. Unlike traditional prompting where you extract information, agentic systems can:
@@ -217,13 +302,10 @@ Based on extensive research from [Cerebras Inference Docs](https://inference-doc
 
 ### 1. **Front-Load Critical Instructions**
 
-<div class="feature-highlight">
-  <p><strong>✅ GLM 4.6:</strong> Place all rules, constraints, and behavioral instructions at the <strong>beginning</strong> of the system prompt. The model gives heightened attention to early content.</p>
-  <p><strong>✅ Gemini 3:</strong> While more flexible, still benefits from clear upfront instructions. Place system prompts and role definitions before your main task.</p>
-</div>
+*   **✅ GLM 4.6:** Place all rules, constraints, and behavioral instructions at the **beginning** of the system prompt. The model gives heightened attention to early content.
+*   **✅ Gemini 3:** While more flexible, still benefits from clear upfront instructions. Place system prompts and role definitions before your main task.
 
-<div class="code-example">
-<strong>Example:</strong>
+**Example:**
 ```markdown
 <system_instructions>
 You are an expert cybersecurity analyst. You MUST:
@@ -237,50 +319,32 @@ You are an expert cybersecurity analyst. You MUST:
 Analyze this security incident: [incident details]
 </user_query>
 ```
-</div>
 
 ### 2. **Use Explicit, Direct Language**
 
-<div class="strategy-card">
-  <h4>🎯 Be Specific and Unambiguous</h4>
-  <p>Both models respond better to precise instructions than suggestive language.</p>
-  <ul>
-    <li>Use <strong>MUST, REQUIRED, STRICTLY</strong> instead of "please try to..."</li>
-    <li>Avoid optional or weak phrasing</li>
-    <li>Define clear success criteria</li>
-  </ul>
-</div>
+#### 🎯 Be Specific and Unambiguous
 
-<div class="comparison-table">
-  <table>
-    <tr>
-      <th>Approach</th>
-      <th>Weak Example</th>
-      <th>Strong Example</th>
-    </tr>
-    <tr>
-      <td><code>Please try to analyze this code...</code></td>
-      <td><code>CRITICAL: Analyze this security code for vulnerabilities...</code></td>
-      <td>GLM 4.6 performs 40% better with direct instructions</td>
-    </tr>
-  </table>
-</div>
+Both models respond better to precise instructions than suggestive language.
+
+*   Use **MUST, REQUIRED, STRICTLY** instead of "please try to..."
+*   Avoid optional or weak phrasing
+*   Define clear success criteria
+
+| Approach | Weak Example | Strong Example |
+| :--- | :--- | :--- |
+| **Phrasing** | `Please try to analyze this code...` | `CRITICAL: Analyze this security code for vulnerabilities...` |
+| **Result** | Ambiguous interpretation | GLM 4.6 performs 40% better with direct instructions |
 
 ### 3. **Break Down Complex Tasks**
 
-<div class="interactive-demo">
-  <h4>🔧 Task Decomposition Strategy</h4>
-  <p>GLM 4.6 performs single reasoning passes, so breaking tasks into smaller steps yields better results:</p>
-  
-  <div class="prompt-workshop">
-    <ol>
-      <li><strong>Dependencies:</strong> List required components</li>
-      <li><strong>Structure:</strong> Propose organization</li>
-      <li><strong>Generate:</strong> Create the code/output</li>
-      <li><strong>Verify:</strong> Test against requirements</li>
-    </ol>
-  </div>
-</div>
+#### 🔧 Task Decomposition Strategy
+
+GLM 4.6 performs single reasoning passes, so breaking tasks into smaller steps yields better results:
+
+1.  **Dependencies:** List required components
+2.  **Structure:** Propose organization
+3.  **Generate:** Create the code/output
+4.  **Verify:** Test against requirements
 
 ---
 
@@ -290,16 +354,8 @@ Analyze this security incident: [incident details]
 
 For complex workflows, use specialized agents with clear roles:
 
-<div class="interactive-tabs">
-  <div class="tab-button active" onclick="showTab('critic')">🛡️ Critic Agent</div>
-  <div class="tab-button" onclick="showTab('planner')">📋 Planner Agent</div>
-  <div class="tab-button" onclick="showTab('executor')">⚡ Executor Agent</div>
-</div>
-
-<div id="critic" class="tab-content active">
-  <h4>🛡️ The Validator</h4>
-  <p>Reviews and validates outputs before proceeding:</p>
-  <div class="code-example">
+#### 🛡️ The Validator
+Reviews and validates outputs before proceeding:
 ```markdown
 You are a senior security reviewer. Your task:
 1. Review the generated code for security issues
@@ -307,13 +363,9 @@ You are a senior security reviewer. Your task:
 3. Provide specific remediation steps
 4. Rate severity levels (Critical/High/Medium/Low)
 ```
-  </div>
-</div>
 
-<div id="planner" class="tab-content">
-  <h4>📋 The Strategist</h4>
-  <p>Breaks complex goals into actionable plans:</p>
-  <div class="code-example">
+#### 📋 The Strategist
+Breaks complex goals into actionable plans:
 ```markdown
 You are a project manager. Create a step-by-step plan to:
 1. Migrate authentication system
@@ -323,13 +375,9 @@ You are a project manager. Create a step-by-step plan to:
 
 Consider dependencies, timeline, and risks.
 ```
-  </div>
-</div>
 
-<div id="executor" class="tab-content">
-  <h4>⚡ The Implementer</h4>
-  <p>Executes specific technical tasks:</p>
-  <div class="code-example">
+#### ⚡ The Implementer
+Executes specific technical tasks:
 ```markdown
 You are a senior developer. Implement the following:
 - JWT authentication middleware
@@ -338,8 +386,6 @@ You are a senior developer. Implement the following:
 
 Focus on security best practices and performance.
 ```
-  </div>
-</div>
 
 ### **Thinking Levels & Reasoning Control**
 
@@ -401,8 +447,7 @@ Both models excel at tool use, but with different strengths:
 
 ### **Function Calling Best Practices**
 
-<div class="code-example">
-<strong>GLM 4.6 - Validation Pattern:</strong>
+**GLM 4.6 - Validation Pattern:**
 ```python
 # Create separate agents
 code_generator = Agent(role="senior_developer")
@@ -418,7 +463,7 @@ else:
     return code_generator.fix_issues(review.issues)
 ```
 
-<strong>Gemini 3 - Thought Signatures:</strong>
+**Gemini 3 - Thought Signatures:**
 ```python
 response = client.models.generate_content(
     model="gemini-3-pro-preview",
@@ -441,7 +486,6 @@ next_response = client.models.generate_content(
     ]
 )
 ```
-</div>
 
 ---
 
@@ -451,17 +495,15 @@ next_response = client.models.generate_content(
 
 Based on my experience building [Agentic SOC systems](/agentic-soc/), here's a practical workflow:
 
-<div class="strategy-card">
-  <h4>🛡️ Threat Intelligence Pipeline</h4>
-  <p>Automated threat analysis using multi-agent approach:</p>
-  
-  1. **Ingest Agent:** Gathers threat data from multiple sources
-  2. **Analysis Agent:** Enriches and correlates indicators
-  3. **Validation Agent:** Checks against threat intelligence frameworks
-  4. **Response Agent:** Generates actionable intelligence
-</div>
+#### 🛡️ Threat Intelligence Pipeline
 
-<div class="code-example">
+Automated threat analysis using multi-agent approach:
+
+1.  **Ingest Agent:** Gathers threat data from multiple sources
+2.  **Analysis Agent:** Enriches and correlates indicators
+3.  **Validation Agent:** Checks against threat intelligence frameworks
+4.  **Response Agent:** Generates actionable intelligence
+
 ```markdown
 <system>
 You are a threat intelligence analyst. Your workflow:
@@ -477,25 +519,19 @@ Use structured output with confidence scores.
 Analyze this suspicious activity: [activity details]
 </task>
 ```
-</div>
 
 ### **Autonomous Code Generation**
 
-<div class="interactive-demo">
-  <h4>🔧 Self-Improving Systems</h4>
-  <p>Agents that can write, test, and refine their own code:</p>
-  
-  <div class="prompt-workshop">
-    <strong>Iteration Loop:</strong>
-    <ol>
-      <li>Generate initial implementation</li>
-      <li>Run automated tests</li>
-      <li>Analyze failures</li>
-      <li>Identify root causes</li>
-      <li>Refine and retry</li>
-    </ol>
-  </div>
-</div>
+#### 🔧 Self-Improving Systems
+
+Agents that can write, test, and refine their own code:
+
+**Iteration Loop:**
+1.  Generate initial implementation
+2.  Run automated tests
+3.  Analyze failures
+4.  Identify root causes
+5.  Refine and retry
 
 ---
 
@@ -669,25 +705,18 @@ Based on current research and industry developments:
 
 ### **Getting Started Resources**
 
-<div class="interactive-demo">
-  <h4>🛠️ Implementation Tools</h4>
-  <p>Ready to build your agentic system? Start with these resources:</p>
-  
-  <div class="prompt-workshop">
-    <strong>Development Environment:</strong>
-    <ul>
-      <li><a href="/llm_stack" style="color: #4285f4;">Local LLM Stack Guide</a></li>
-      <li><a href="/agentic-soc" style="color: #4285f4;">Agentic SOC Implementation</a></li>
-      <li><a href="https://github.com/christian-taillon/open-webui-pipelines" target="_blank" style="color: #4285f4;">OpenWebUI Security Pipelines</a></li>
-    </ul>
-    
-    <strong>Community Support:</strong>
-    <ul>
-      <li><a href="https://openwebui.com/u/christiant/" target="_blank" style="color: #28a745;">OpenWebUI Community</a></li>
-      <li><a href="https://github.com/christian-taillon" target="_blank" style="color: #28a745;">GitHub Repository</a></li>
-    </ul>
-  </div>
-</div>
+#### 🛠️ Implementation Tools
+
+Ready to build your agentic system? Start with these resources:
+
+**Development Environment:**
+*   [Local LLM Stack Guide](/llm_stack)
+*   [Agentic SOC Implementation](/agentic-soc)
+*   [OpenWebUI Security Pipelines](https://github.com/christian-taillon/open-webui-pipelines)
+
+**Community Support:**
+*   [OpenWebUI Community](https://openwebui.com/u/christiant/)
+*   [GitHub Repository](https://github.com/christian-taillon)
 
 ---
 
