@@ -233,8 +233,7 @@ Your response **MUST** be structured to first include your internal thought proc
     "synthesis_step": "Consolidation of final information for the user."
   },
   "final_response": "The complete, formatted answer that directly addresses the user's query."
-} 
-```
+}
 ```
 
 ## 🎯 What is Agentic Prompting?
