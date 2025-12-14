@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Al Qaeda's Resurgent Threat: Cyber Risks and Implications for U.S. Organizations"
+description: "Analysis of Al Qaeda's resurgent cyber threat, hybrid attack tactics, and implications for U.S. organizations and critical infrastructure."
 date: 2025-09-30
 ---
 
