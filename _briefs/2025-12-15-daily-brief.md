@@ -33,7 +33,7 @@ index=web_logs url="*/wfs*" OR url="*/wms*" method=POST
 #### Threat Name/Identifier: Sierra Wireless AirLink Routers (CVE-2018-4063) Added to KEV
 
 > **Summary:**
-> CISA has added the older Sierra Wireless AirLink vulnerability (CVE-2018-4063) to its Known Exploited Vulnerabilities (KEV) catalog after confirming active exploitation by a new threat cluster, "Chaya_005". This flaw allows unauthenticated attackers to overwrite system files and execute arbitrary code by uploading malicious templates. The resurgence of this 2018 vulnerability highlights the risk of neglected OT/IoT firmware updates.
+> CISA has added the older Sierra Wireless AirLink vulnerability (CVE-2018-4063) to its Known Exploited Vulnerabilities (KEV) catalog after confirming active exploitation by a new threat cluster, "Chaya_005". **Note:** This is a legacy vulnerability from 2018, originally disclosed by Talos. GreyNoise and other threat intelligence firms have been tracking opportunistic scanning for this flaw for years, but recent targeted activity has escalated it to CISA's KEV list. This highlights the critical risk of neglected OT/IoT firmware updates.
 
 **Tactical Intelligence:**
 
@@ -55,4 +55,4 @@ index=firewall_logs url="/cgi-bin/upload.cgi" method=POST
 
 - CSO Online: [CISA orders immediate patching as GeoServer flaw faces active exploitation](https://www.csoonline.com/article/4106332/cisa-orders-immediate-patching-as-geoserver-flaw-faces-active-exploitation.html)
 - The Hacker News: [CISA Adds Actively Exploited Sierra Wireless Router Flaw](https://thehackernews.com/2025/12/cisa-adds-actively-exploited-sierra.html)
-- GreyNoise: [Active Exploitation of PAN-OS CVE-2025-0108](https://www.greynoise.io/blog/greynoise-observes-active-exploitation-of-pan-os-authentication-bypass-vulnerability-cve-2025-0108)
+- GreyNoise: [Active Exploitation of PAN-OS CVE-2025-0108](https://www.greynoise.io/blog/greynoise-observes-active-exploitation-of-pan-os-authentication-bypass-vulnerability-cve-2025-0108) (Note: GreyNoise escalated tracking on this earlier this year).

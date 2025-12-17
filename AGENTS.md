@@ -239,6 +239,7 @@ Located in `/github/agents/` directory:
 2. **Tool Permissions:** Respect tool access levels defined in configurations
 3. **Context Management:** Maintain project-specific configurations in `.opencode/`
 4. **Security Considerations:** Never commit sensitive configuration data
+5. **Content Preservation:** Do not delete old security briefs in `_briefs/`. New briefs should be added as new files to maintain historical context.
 
 ### Agent Development
 When creating new agents:
