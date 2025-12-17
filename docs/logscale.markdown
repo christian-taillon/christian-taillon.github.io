@@ -88,9 +88,9 @@ count(distinct(User))
 **Timechart**
 Visualize data over time. Defaults to `count()`.
 ```
-timechart()
-| timechart(function=count(), series=User)
-| timechart(function=avg(ResponseTime), series=Host)
+timeChart()
+| timeChart(function=count(), series=User)
+| timeChart(function=avg(ResponseTime), series=Host)
 ```
 
 **Bucket (Binning)**
