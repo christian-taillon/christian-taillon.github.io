@@ -93,7 +93,7 @@ My curiosity, my responsibility to provide for my family, and a cautious optimis
 ---
 
 ### Professional Life
-Professionally, I serve as a as a senior member of the IT Security team as a **Threat Response Engineer** on reporting to the CISO at **[Grand Canyon Education](https://www.gce.com/)**, where my focus lies on deploying, maintaining, and enhancing our Detection, Prevention, and Response tools. This includes working with **[SIEM](https://christiant.io/spl)**, **[EDR](https://christiant.io/logscale_beg_guide)**, and **[NTA](https://christiant.io/snort-suricata-guide)** systems to bolster the capabilities of our SOC.
+Professionally, I serve as a senior member of the IT Security team as a **Threat Response Engineer** reporting to the CISO at **[Grand Canyon Education](https://www.gce.com/)**, where my focus lies on deploying, maintaining, and enhancing our Detection, Prevention, and Response tools. This includes working with **[SIEM](https://christiant.io/spl)**, **[EDR](https://christiant.io/logscale)**, and **[NTA](https://christiant.io/snort-suricata-guide)** systems to bolster the capabilities of our SOC.
 
 I lead security efforts in several **Vulnerability** areas: **Code Security**, **Cloud Security**, and **Host Vulnerability Detection**. We maintain an ad-hoc **[Threat Hunting](https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339)** practice and rely on a growing **Threat Intelligence** program.
 
