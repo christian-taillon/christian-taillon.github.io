@@ -2,6 +2,7 @@
 layout: page
 title: Zero Data Retention (ZDR) Endpoints
 description: Live catalog of OpenRouter ZDR-compliant AI model endpoints that don't store your data
+permalink: /zdr-endpoints/
 ---
 
 <style>
