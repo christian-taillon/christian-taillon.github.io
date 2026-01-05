@@ -162,6 +162,15 @@ image: /image/professional_circle.png
     <p>Explore the core domains of this site.</p>
   </div>
 
+  <!-- ZDR Hero Card -->
+  <div class="hero-card" style="border-color: #28a745;">
+    <div class="hero-text">
+      <h2>🔒 Zero Data Retention Endpoints</h2>
+      <p>Real-time catalog of OpenRouter ZDR-compliant AI models that guarantee no data storage. Perfect for sensitive and confidential prompts.</p>
+    </div>
+    <a href="/zdr-endpoints/" class="hero-btn" style="background: #28a745;">View ZDR Models &rarr;</a>
+  </div>
+  
   <!-- Recent Resource Hero Card -->
   <div class="hero-card">
     <div class="hero-text">
