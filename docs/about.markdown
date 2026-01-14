@@ -191,14 +191,14 @@ In Cybersecurity, we don't have the luxury of time. Our work demands persistence
 <div style="text-align: left; padding: 0 20px; margin-bottom: 30px;">
   <strong>Conference Presentations:</strong>
   <ul>
+    <li><strong>CyberShare Summit 2025</strong> - Closing conference keynote.</li>
     <li><strong>Agentic SOC: Next-Generation Security Operations (2025)</strong> - Implementing AI agents for automated security response and orchestration</li>
     <li><strong>Advanced Cybersecurity Defense Strategies (2025)</strong> - Keynote address on multi-layered defense frameworks</li>
     <li><strong>DIY AI: Build Your Own Digital InfoSec Team with BYOLLM (2024-2025)</strong> - Building AI-powered security teams using open-source LLMs for threat detection and analysis</li>
-    <li><strong>Building a Private GenAI Team with Open-Source Models (2024)</strong> - Strategies for local LLM deployment and team integration</li>
     <li><strong>ISSA GenAI Limitations and Uses (Q4 2024)</strong> - Practical applications and limitations of Generative AI in cybersecurity operations</li>
+    <li><strong>Building a Private GenAI Team with Open-Source Models (2024)</strong> - Strategies for local LLM deployment and team integration</li>
     <li><strong>Threat Hunting: Becoming the Predator and No Longer the Prey (2023-2024)</strong> - Developing repeatable, scalable threat hunting processes with measurable ROI</li>
     <li><strong>Can Ducks Teach us to Share: What hunting Qakbot and other threats teach us about CTI (2023)</strong> - Improving cyber threat intelligence sharing based on adversary tactics and botnet hunting</li>
-    <li><strong>CyberShare Summit 2025</strong> - Closing conference keynote.</li>
   </ul>
   
   <p><strong>View more speaking events and topics:</strong> <a href="https://sessionize.com/christian-taillon" target="_blank" style="color: #007bff; text-decoration: none;"><strong>Christian Taillon on Sessionize</strong></a></p>
