@@ -63,12 +63,12 @@ permalink: /agentic-prompting/
 
 <div class="hero-card">
   <div class="hero-content">
-    <h1>🤖 Mastering Agentic Prompting</h1>
+    <h1>Mastering Agentic Prompting</h1>
     <p>Advanced strategies for designing AI systems that reason, plan, and execute. Based on Google's Gemini API prompting strategies.</p>
   </div>
 </div>
 
-## ⚡ TL;DR: Key Prompting Insights
+## TL;DR: Key Prompting Insights
 
 <div class="feature-highlight" markdown="1">
 *   **Front-load Instructions:** Place critical rules, constraints, and roles at the very beginning of the prompt.
@@ -78,7 +78,7 @@ permalink: /agentic-prompting/
 *   **Tool First:** Explicitly instruct the agent to verify facts with tools rather than relying on internal knowledge.
 </div>
 
-### 🛠️ Agentic System Prompt Template
+### Agentic System Prompt Template
 
 Developers can use this template as a starting point for building their own agentic systems. While generic, it should be custom-tailored to your specific domain and requirements.
 
@@ -143,7 +143,7 @@ Your response **MUST** be structured to first include your internal thought proc
 ```
 
 <div class="strategy-card">
-  <h4>❓ Prompts for Clarification</h4>
+  <h4>Prompts for Clarification</h4>
   <p>If the user's request is ambiguous, use these patterns to clarify <strong>BEFORE</strong> acting:</p>
   <ul>
     <li>"To ensure accuracy, could you specify [Missing Detail]?"</li>
@@ -153,7 +153,7 @@ Your response **MUST** be structured to first include your internal thought proc
 </div>
 
 <div class="strategy-card">
-  <h4>🧰 Applying Tools to Challenges</h4>
+  <h4>Applying Tools to Challenges</h4>
   <ul>
     <li><strong>Verify, Don't Guess:</strong> If a user asks for "recent news" or "current status", you <strong>MUST</strong> use a tool (search/fetch).</li>
     <li><strong>Input Validation:</strong> Check if tool arguments match required formats (e.g., dates, IDs).</li>
@@ -163,11 +163,11 @@ Your response **MUST** be structured to first include your internal thought proc
 
 ---
 
-## 📚 References
+## References
 *   [Google Gemini API: Prompting Strategies](https://ai.google.dev/gemini-api/docs/prompting-strategies)
 *   [Cerebras: Migrate to GLM 4.6](https://inference-docs.cerebras.ai/resources/glm-migration)
 
-## ⚡ Core Prompting Principles
+## Core Prompting Principles
 
 To build effective agentic systems, Google's documentation emphasizes several foundational strategies. These apply across both standard interactions and complex agentic workflows.
 
@@ -181,7 +181,7 @@ To build effective agentic systems, Google's documentation emphasizes several fo
 
 ---
 
-## 🧠 Designing Agentic Workflows
+## Designing Agentic Workflows
 
 Agentic workflows require specific instructions to control how the model reasons, plans, and executes tasks. You must configure the trade-off between computational cost (latency/tokens) and task accuracy.
 
@@ -221,7 +221,7 @@ When designing prompts for agents, consider steering these three key dimensions:
 
 ---
 
-## 🛠️ The Agentic System Prompt Template
+## The Agentic System Prompt Template
 
 This comprehensive system instruction, evaluated by researchers, encourages the agent to act as a strong reasoner and planner. It enforces specific behaviors across the dimensions listed above.
 
@@ -267,7 +267,7 @@ Before taking any action (either tool calls *or* responses to the user), you mus
 
 ---
 
-## 🚀 Enhancing Reasoning and Planning
+## Enhancing Reasoning and Planning
 
 Beyond the system prompt, you can use specific techniques to improve performance on complex tasks.
 
@@ -292,7 +292,7 @@ Before returning your final response, review your generated output against the u
 
 ---
 
-## 🔍 Structured Prompting (XML & Markdown)
+## Structured Prompting (XML & Markdown)
 
 Using tags or Markdown helps the model distinguish between instructions, context, and tasks.
 
@@ -328,7 +328,7 @@ Return a single code block.
 
 ---
 
-## 💡 Optimization Tips for Gemini 3
+## Optimization Tips for Gemini 3
 
 *   **Temperature:** Keep at default `1.0`. Lowering it (e.g., to 0.0) can degrade performance in complex reasoning or cause loops.
 *   **Long Contexts:** Supply all context (documents, code) *first*, then place specific instructions or questions at the very *end*.
@@ -337,6 +337,6 @@ Return a single code block.
 ---
 
 <div class="feature-highlight">
-  <h4>🎯 Ready to Build?</h4>
+  <h4>Ready to Build?</h4>
   <p>Start by adapting the <strong>System Instruction Template</strong> above to your specific domain. Adjust the "Reasoning" and "Risk Assessment" sections to match your application's safety profile and autonomy level.</p>
 </div>
