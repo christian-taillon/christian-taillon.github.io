@@ -180,6 +180,15 @@ image: /image/professional_circle.png
     <a href="/agentic-prompting/" class="hero-btn">Explore Guide &rarr;</a>
   </div>
   
+  <!-- Secure Package Management Hero Card -->
+  <div class="hero-card">
+    <div class="hero-text">
+      <h2>Secure Package Management</h2>
+      <p>Hardening NPM and Python dependencies against supply chain attacks. Protect your builds from Shai-Hulud, TeamPCP, and other emerging threats.</p>
+    </div>
+    <a href="/secure-pkg/" class="hero-btn">View Security Guide &rarr;</a>
+  </div>
+  
   <div class="resource-grid">
     <!-- Row 1: Spans Full Width -->
     <div class="resource-card span-full">
