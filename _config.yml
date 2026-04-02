@@ -46,6 +46,7 @@ navbar-links:
     - Splunk Docker: "splunkdocker"
     - Splunk BOTSv2 Walkthrough: "splunkbotsv2"
     - Git CheatSheet: "git-cheatsheet"
+    - Secure Package Management: "secure-pkg"
     - RC Files: "rc-files"
     - AutoIT-Seeker: "https://github.com/christian-taillon/AutoIT-Seeker"
     - Container Device Interface: "cdi"
