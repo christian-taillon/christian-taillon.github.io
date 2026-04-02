@@ -58,6 +58,7 @@ permalink: /zdr-endpoints/
     --card-accent: #28a745;
     background: #ffffff;
     padding: 25px;
+    border-radius: 16px;
     border: 1px solid color-mix(in srgb, var(--card-accent) 22%, #d9dfe6);
     border-top: 4px solid var(--card-accent);
     border-left: 4px solid var(--card-accent);
