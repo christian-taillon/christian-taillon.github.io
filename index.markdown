@@ -63,6 +63,37 @@ image: /image/professional_circle.png
     background-color: #ffdb4d;
     text-decoration: none;
   }
+  .flash-notice {
+    background: #ffffff;
+    color: #333333;
+    padding: 20px 22px;
+    border-radius: 16px;
+    border: 1px solid color-mix(in srgb, #dc3545 22%, #d9dfe6);
+    border-top: 4px solid #dc3545;
+    border-left: 4px solid #dc3545;
+    box-shadow: 0 12px 28px -6px color-mix(in srgb, #dc3545 30%, rgba(0,0,0,0.12));
+    margin: 0 0 30px;
+    transform: translateY(-2px);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  }
+  .flash-notice:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 38px -8px color-mix(in srgb, #dc3545 45%, rgba(0,0,0,0.18));
+    border-color: color-mix(in srgb, #dc3545 55%, #cfd6de);
+  }
+  .flash-notice h2 {
+    margin: 0 0 10px;
+    color: #333333;
+    font-size: 1.2rem;
+  }
+  .flash-notice p {
+    margin: 0;
+    color: #444444;
+    line-height: 1.6;
+  }
+  .flash-notice .pill-container {
+    margin-top: 16px;
+  }
   .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -254,6 +285,15 @@ image: /image/professional_circle.png
     <p>View my Dark Roast Cyber company website.</p>
   </div>
   <a href="https://darkroastcyber.io" target="_blank" class="hero-btn">Visit darkroastcyber.io &rarr;</a>
+</div>
+
+<div class="flash-notice">
+  <h2>Flash Notice: Axios npm compromise</h2>
+  <p>Malicious versions <code>axios@1.14.1</code> and <code>axios@0.30.4</code> were briefly published on npm on March 31, 2026 with a trojanized dependency. This repository's checked-in <code>package-lock.json</code> currently has an empty <code>packages</code> object and does not show an Axios install, but any machine that installed those versions should be treated as potentially compromised.</p>
+  <div class="pill-container">
+    <a href="/secure-pkg/" class="pill-link is-filled" style="--theme-color: #dc3545;">Review Remediation Notes</a>
+    <a href="https://github.com/axios/axios/issues/10636" target="_blank" class="pill-link" style="--theme-color: #dc3545;">Axios Post-Mortem</a>
+  </div>
 </div>
 
 <h1 align="center">Welcome ☕</h1>

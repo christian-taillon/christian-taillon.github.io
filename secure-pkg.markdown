@@ -30,6 +30,12 @@ permalink: /secure-pkg/
     max-width: 800px;
     margin: 0 auto;
   }
+  .pkg-hero .hero-subnote {
+    margin-top: 18px;
+    color: #333;
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
   .attack-timeline {
     background: #f8f9fa;
     border-radius: 12px;
@@ -122,6 +128,51 @@ permalink: /secure-pkg/
     margin: 0;
     line-height: 1.6;
   }
+  .notice-box-critical {
+    background: #fff4d6;
+    border-left: 4px solid #dc3545;
+    border-top: 4px solid #dc3545;
+    padding: 18px 20px;
+    border-radius: 12px;
+    margin: 24px 0 30px;
+    color: #333;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.08);
+  }
+  .notice-box-critical h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.25rem;
+  }
+  .notice-box-critical p,
+  .notice-box-critical ul {
+    margin: 12px 0;
+    line-height: 1.7;
+  }
+  .notice-box-critical .pill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .notice-box-critical .pill-link {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: 1px solid var(--theme-color, #dc3545);
+    color: var(--theme-color, #dc3545) !important;
+    background: white;
+  }
+  .notice-box-critical .pill-link:hover {
+    background-color: var(--theme-color, #dc3545);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
   .content-section {
     margin: 30px 0;
   }
@@ -157,11 +208,41 @@ permalink: /secure-pkg/
 <div class="pkg-hero">
   <h1>Secure Package Management</h1>
   <p>Hardening NPM and Python dependencies against supply chain attacks. Protect your builds from malicious packages and compromised maintainers.</p>
+  <p class="hero-subnote">Most of this is free and straightforward: lockfiles, package-manager policy, and stricter install settings can materially reduce risk without buying an expensive vendor platform.</p>
+</div>
+
+<div class="notice-box-critical">
+  <h2>Recent Notice: Axios npm compromise</h2>
+  <p>Axios maintainers confirmed that <code>axios@1.14.1</code> and <code>axios@0.30.4</code> were malicious npm releases published through a compromised maintainer account on March 31, 2026. Those versions pulled in <code>plain-crypto-js</code> and were live for roughly three hours before removal.</p>
+  <p>If your lockfile or install logs show either affected Axios version or <code>plain-crypto-js</code>, treat that workstation or CI runner as potentially compromised, not merely out of date.</p>
+  <div class="code-block">
+    <h3>Quick Check</h3>
+    <pre><code>grep -E "axios@(1\\.14\\.1|0\\.30\\.4)|plain-crypto-js" package-lock.json yarn.lock 2>/dev/null</code></pre>
+  </div>
+  <ul>
+    <li>Downgrade or repin to <code>axios@1.14.0</code> or <code>axios@0.30.3</code>.</li>
+    <li>Remove <code>node_modules/plain-crypto-js/</code> and reinstall from a known-good lockfile.</li>
+    <li>Rotate credentials, tokens, and secrets exposed to that machine or CI job.</li>
+    <li>Review network and EDR telemetry for connections to <code>sfrclak[.]com</code> or <code>142.11.206.73:8000</code>.</li>
+    <li>Prefer delaying newly published packages in CI and on developer workstations so short-lived malicious releases are less likely to land.</li>
+  </ul>
+  <p>This repository's current <code>package-lock.json</code> has an empty <code>packages</code> object and does not show an Axios install, but the broader guidance still matters for any Node environment you operate elsewhere.</p>
+  <div class="pill-container">
+    <a href="https://github.com/axios/axios/issues/10636" target="_blank" class="pill-link" style="--theme-color: #dc3545;">Axios Post-Mortem</a>
+    <a href="https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan" target="_blank" class="pill-link" style="--theme-color: #dc3545;">StepSecurity Analysis</a>
+    <a href="https://socket.dev/blog/axios-npm-package-compromised" target="_blank" class="pill-link" style="--theme-color: #dc3545;">Socket Analysis</a>
+  </div>
 </div>
 
 <div class="attack-timeline">
   <h2>Notable Supply Chain Attacks</h2>
   <p style="color: #555; margin-bottom: 20px;">Real-world incidents that demonstrate why supply chain security is critical:</p>
+
+  <div class="attack-item" style="--card-accent: #dc3545;">
+    <div class="date">March 31, 2026</div>
+    <div class="name">Axios npm compromise</div>
+    <div class="impact">Compromised maintainer account led to malicious publication of <code>axios@1.14.1</code> and <code>axios@0.30.4</code>, which pulled in <code>plain-crypto-js</code> and dropped a cross-platform trojan. <a href="https://github.com/axios/axios/issues/10636">Post-mortem</a></div>
+  </div>
   
   <div class="attack-item">
     <div class="date">Late February to March 2026</div>
