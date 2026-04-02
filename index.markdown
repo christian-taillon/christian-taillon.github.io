@@ -10,19 +10,20 @@ image: /image/professional_circle.png
     background: #000000;
     color: white;
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    border-radius: 16px;
+    box-shadow: 0 18px 36px rgba(0,0,0,0.18);
     margin-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid #1a1a1a;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    border: 1px solid #222222;
+    transform: translateY(-2px);
   }
   .hero-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 42px rgba(0,0,0,0.28);
     border-color: #fcc624;
   }
   .hero-text {
@@ -69,32 +70,126 @@ image: /image/professional_circle.png
     margin-top: 30px;
   }
   .resource-card {
-    background: #f8f9fa;
+    --card-accent: #fcc624;
+    --card-bg: #ffffff;
+    --card-title: #333333;
+    --card-body: #555555;
+    background: #ffffff;
     padding: 25px;
-    border-radius: 10px;
-    border: 1px solid #e9ecef;
-    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 16px;
+    border: 1px solid color-mix(in srgb, var(--card-accent) 22%, #d9dfe6);
+    border-top: 4px solid var(--card-accent);
+    border-left: 4px solid var(--card-accent);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 12px 28px -6px color-mix(in srgb, var(--card-accent) 30%, rgba(0,0,0,0.12));
+    transform: translateY(-2px);
+    background-color: var(--card-bg);
   }
   .resource-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    border-color: #fcc624;
+    transform: translateY(-6px);
+    box-shadow: 0 22px 38px -8px color-mix(in srgb, var(--card-accent) 45%, rgba(0,0,0,0.18));
+    border-color: color-mix(in srgb, var(--card-accent) 55%, #cfd6de);
   }
   .resource-card h3 {
     margin-top: 0;
     font-size: 1.25rem;
-    color: #333;
-    border-bottom: 2px solid #fcc624;
+    color: var(--card-title);
+    border-bottom: 2px solid var(--card-accent);
     padding-bottom: 10px;
     margin-bottom: 15px;
   }
   .resource-card p {
     flex-grow: 1;
-    color: #555;
+    color: var(--card-body);
     margin-bottom: 20px;
+  }
+  .intro-copy {
+    max-width: 900px;
+    margin: 0 auto 30px;
+  }
+  .page-subtitle {
+    text-align: left;
+    max-width: 760px;
+    margin: -10px 0 30px;
+    color: #555;
+    font-size: 1.05rem;
+  }
+  .site-overview-card {
+    --card-accent: #fcc624;
+    background: #151515;
+    color: white;
+    border-color: #2b2b2b;
+    border-top-color: #fcc624;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
+  .site-overview-card:hover {
+    border-color: #fcc624;
+  }
+  .site-overview-card h3 {
+    color: #fcc624;
+    border-bottom-color: #fcc624;
+  }
+  .site-overview-card p {
+    color: #dddddd;
+  }
+  .site-overview-card .pill-link {
+    background: #fcc624;
+    border-color: #fcc624;
+    color: #000000 !important;
+    box-shadow: 0 8px 18px rgba(252,198,36,0.22);
+  }
+  .site-overview-card .pill-link:visited {
+    color: #000000 !important;
+  }
+  .site-overview-card .pill-link:hover {
+    background: #fcc624;
+    border-color: #fcc624;
+    color: #000000 !important;
+  }
+  .featured-card {
+    background: #ffffff;
+  }
+  .featured-zdr {
+    --card-accent: #28a745;
+  }
+  .featured-agentic {
+    --card-accent: #fcc624;
+  }
+  .featured-packages {
+    --card-accent: #007bff;
+  }
+  .accent-green {
+    --card-accent: #28a745;
+  }
+  .accent-yellow {
+    --card-accent: #fcc624;
+  }
+  .accent-blue {
+    --card-accent: #007bff;
+  }
+  .accent-pink {
+    --card-accent: #d63384;
+  }
+  .accent-cyan {
+    --card-accent: #0dcaf0;
+  }
+  .accent-purple {
+    --card-accent: #6610f2;
+  }
+  .accent-red {
+    --card-accent: #dc3545;
+  }
+  .section-header {
+    text-align: left;
+    margin: 40px 0 20px;
+  }
+  .section-header p {
+    color: #555;
+    max-width: 760px;
+    margin: 10px 0 0;
   }
   
   /* Pill Styles */
@@ -122,16 +217,33 @@ image: /image/professional_circle.png
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   }
+  .pill-link.is-filled {
+    background: var(--theme-color, #007bff);
+    color: white !important;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.14);
+  }
+  .pill-link.is-filled:hover {
+    background: var(--theme-color, #007bff);
+    color: white !important;
+  }
 
   .span-full {
     grid-column: 1 / -1;
+  }
+  .span-two {
+    grid-column: span 2;
   }
   .domain-section {
     margin-top: 50px;
   }
   .domain-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 30px;
+  }
+  @media (max-width: 900px) {
+    .span-two {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -139,14 +251,14 @@ image: /image/professional_circle.png
 <div class="hero-card">
   <div class="hero-text">
     <h2>☕ Dark Roast Cyber LLC</h2>
-    <p>My professional company website.</p>
+    <p>View my Dark Roast Cyber company website.</p>
   </div>
   <a href="https://darkroastcyber.io" target="_blank" class="hero-btn">Visit darkroastcyber.io &rarr;</a>
 </div>
 
 <h1 align="center">Welcome ☕</h1>
 
-<div class="justify-text" align="justify">
+<div class="justify-text intro-copy" align="justify">
   <p>We have a lot to protect and it is hard work. It is recommended that you brew a cup of coffee to enjoy while accessing this site. It dramatically improves the experience on the web. 😉</p>
   
   <p>In the rapidly evolving landscape of Cybersecurity, our work demands persistence, proactivity, and collaboration. I truly believe that you don’t need to work at the same company to be on the same team.</p>
@@ -158,75 +270,50 @@ image: /image/professional_circle.png
 
 <div class="domain-section">
   <div class="domain-header">
-    <h2>Knowledge Base & Resources</h2>
-    <p>Explore the core domains of this site.</p>
+    <h2>What This Site Is About</h2>
   </div>
+</div>
 
-  <!-- ZDR Hero Card -->
-  <div class="hero-card" style="border-color: #28a745;">
-    <div class="hero-text">
-      <h2>🔒 Zero Data Retention Endpoints</h2>
-      <p>Real-time catalog of OpenRouter ZDR-compliant AI models that guarantee no data storage. Perfect for sensitive and confidential prompts.</p>
-    </div>
-    <a href="/zdr-endpoints/" class="hero-btn" style="background: #28a745;">View ZDR Models &rarr;</a>
+<div class="domain-section">
+  <div class="domain-header">
+    <h2>Featured Resources</h2>
+    <p>The best entry points for secure AI usage, agentic systems, and software supply chain defense.</p>
   </div>
-  
-  <!-- Recent Resource Hero Card -->
-  <div class="hero-card">
-    <div class="hero-text">
-      <h2>🤖 Latest: Mastering Agentic Prompting</h2>
-      <p>Advanced techniques for building AI systems that can reason, plan, and execute complex tasks autonomously. Combining insights from Cerebras GLM 4.6 and Google Gemini 3.</p>
-    </div>
-    <a href="/agentic-prompting/" class="hero-btn">Explore Guide &rarr;</a>
-  </div>
-  
-  <!-- Secure Package Management Hero Card -->
-  <div class="hero-card">
-    <div class="hero-text">
-      <h2>Secure Package Management</h2>
-      <p>Hardening NPM and Python dependencies against supply chain attacks. Protect your builds from Shai-Hulud, TeamPCP, and other emerging threats.</p>
-    </div>
-    <a href="/secure-pkg/" class="hero-btn">View Security Guide &rarr;</a>
-  </div>
-  
   <div class="resource-grid">
-    <!-- Row 1: Spans Full Width -->
-    <div class="resource-card span-full">
-      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🛡️ Information Security</h3>
-      <p>Comprehensive technical guides and cheatsheets for Splunk, LogScale, and KQL. Dive into rule creation with Sigma, YARA, and Snort/Suricata to build robust defenses.</p>
+    <div class="resource-card featured-card featured-packages accent-blue span-two">
+      <h3 style="color: #007bff; border-bottom-color: #007bff;">Secure Package Management</h3>
+      <p>Hardening NPM and Python dependencies against supply chain attacks. Protect your builds from Shai-Hulud, TeamPCP, and other emerging threats.</p>
+      <div class="pill-container">
+        <a href="/secure-pkg/" class="pill-link" style="--theme-color: #007bff;">View Security Guide &rarr;</a>
+      </div>
     </div>
 
-    <!-- Row 2+ -->
-    <div class="resource-card">
-      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🐺 Threat Hunting & Intel</h3>
-      <p>In-depth research on APTs and malware analysis. Strategies for proactive threat hunting, including deep dives into Qakbot and other adversaries.</p>
+    <div class="resource-card featured-card featured-zdr accent-green">
+      <h3 style="color: #28a745; border-bottom-color: #28a745;">🔒 Zero Data Retention Endpoints</h3>
+      <p>Real-time catalog of OpenRouter ZDR-compliant AI models that guarantee no data storage. Perfect for sensitive and confidential prompts.</p>
+      <div class="pill-container">
+        <a href="/zdr-endpoints/" class="pill-link" style="--theme-color: #28a745;">View ZDR Models &rarr;</a>
+      </div>
     </div>
 
-    <div class="resource-card">
-      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">💻 Dev & Projects</h3>
-      <p>A collection of scripts, tools, and open-source projects. From Python automation and Docker integrations to fun projects like ParetoPi.</p>
-    </div>
-
-    <div class="resource-card">
-      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🤖 Machine Learning & AI</h3>
-      <p>Navigating the intersection of AI and Security. Resources for securing LLMs, deploying local AI stacks, and building Agentic SOC architectures.</p>
-    </div>
-
-    <div class="resource-card">
-      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🎓 Interview Resources</h3>
-      <p>Guidance for professionals at every stage. Cheatsheets and interview prep for Security Engineering, SOC roles, and Threat Hunting positions.</p>
+    <div class="resource-card featured-card featured-agentic accent-yellow">
+      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🤖 Latest: Mastering Agentic Prompting</h3>
+      <p>Advanced techniques for building AI systems that can reason, plan, and execute complex tasks autonomously. Combining insights from Cerebras GLM 4.6 and Google Gemini 3.</p>
+      <div class="pill-container">
+        <a href="/agentic-prompting/" class="pill-link" style="--theme-color: #fcc624;">Explore Guide &rarr;</a>
+      </div>
     </div>
   </div>
 </div>
 
-<br>
-<hr>
-
 <div style="margin-top: 40px;">
-  <h3>Recent Highlights & Research</h3>
+  <div class="section-header">
+    <h3>Recent Highlights & Research</h3>
+    <p>A more opinionated collection of current projects, experiments, and conference material.</p>
+  </div>
   <div class="resource-grid">
     
-    <div class="resource-card">
+    <div class="resource-card accent-pink">
         <h3 style="color: #d63384; border-bottom-color: #d63384;">🤖 DIY Agentic Security</h3>
         <p>Building your own security tools with AI. Guides on Agentic SOC architecture, LLM stacks, and pipelines.</p>
         <div class="pill-container">
@@ -236,16 +323,16 @@ image: /image/professional_circle.png
         </div>
     </div>
 
-    <div class="resource-card">
-        <h3 style="color: #fd7e14; border-bottom-color: #fd7e14;">🛡️ GenAI Inference Security</h3>
+    <div class="resource-card accent-yellow">
+        <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🛡️ GenAI Inference Security</h3>
         <p>Protecting your AI infrastructure. Implementing guardrails for LLM inputs and outputs.</p>
         <div class="pill-container">
-            <a href="/llama_guard" class="pill-link" style="--theme-color: #fd7e14;">Llama Guard</a>
-            <a href="/token_guard" class="pill-link" style="--theme-color: #fd7e14;">Token Guard</a>
+            <a href="/llama_guard" class="pill-link" style="--theme-color: #fcc624;">Llama Guard</a>
+            <a href="/token_guard" class="pill-link" style="--theme-color: #fcc624;">Token Guard</a>
         </div>
     </div>
 
-    <div class="resource-card">
+    <div class="resource-card accent-cyan">
         <h3 style="color: #0dcaf0; border-bottom-color: #0dcaf0;">💻 Secure Local Models</h3>
         <p>Best practices for running LLMs locally and securely on your own hardware.</p>
         <div class="pill-container">
@@ -255,7 +342,7 @@ image: /image/professional_circle.png
         </div>
     </div>
 
-    <div class="resource-card">
+    <div class="resource-card accent-purple">
         <h3 style="color: #6610f2; border-bottom-color: #6610f2;">🦠 AutoIT Evasion & Malware</h3>
         <p>Research on detecting AutoIT malware and emulating evasion techniques.</p>
         <div class="pill-container">
@@ -264,7 +351,7 @@ image: /image/professional_circle.png
         </div>
     </div>
 
-    <div class="resource-card">
+    <div class="resource-card accent-green">
       <h3 style="color: #28a745; border-bottom-color: #28a745;">🌍 OpenWebUI Community</h3>
       <p>Check out my models, filters, and manifold pipes for the OpenWebUI community.</p>
       <div class="pill-container">
@@ -272,7 +359,7 @@ image: /image/professional_circle.png
       </div>
     </div>
     
-    <div class="resource-card">
+    <div class="resource-card accent-red">
       <h3 style="color: #dc3545; border-bottom-color: #dc3545;">🌵 CactusCon 2025</h3>
       <p>Did you miss the event? Catch up on the materials and presentation decks.</p>
       <div class="pill-container">
@@ -282,6 +369,42 @@ image: /image/professional_circle.png
 
   </div>
 </div>
+
+<div class="domain-section">
+  <div class="domain-header">
+    <h2>Knowledge Base & Resources</h2>
+    <p>Explore the broader collection of guides, cheat sheets, research, and project write-ups across the site.</p>
+  </div>
+  <div class="resource-grid">
+    <div class="resource-card accent-yellow span-two">
+      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🛡️ Information Security</h3>
+      <p>Comprehensive technical guides and cheatsheets for Splunk, LogScale, and KQL. Dive into rule creation with Sigma, YARA, and Snort/Suricata to build robust defenses.</p>
+    </div>
+
+    <div class="resource-card accent-yellow">
+      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🐺 Threat Hunting & Intel</h3>
+      <p>In-depth research on APTs and malware analysis. Strategies for proactive threat hunting, including deep dives into Qakbot and other adversaries.</p>
+    </div>
+
+    <div class="resource-card accent-yellow">
+      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">💻 Dev & Projects</h3>
+      <p>A collection of scripts, tools, and open-source projects. From Python automation and Docker integrations to fun projects like ParetoPi.</p>
+    </div>
+
+    <div class="resource-card accent-yellow">
+      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🤖 Machine Learning & AI</h3>
+      <p>Navigating the intersection of AI and Security. Resources for securing LLMs, deploying local AI stacks, and building Agentic SOC architectures.</p>
+    </div>
+
+    <div class="resource-card accent-yellow">
+      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🎓 Interview Resources</h3>
+      <p>Guidance for professionals at every stage. Cheatsheets and interview prep for Security Engineering, SOC roles, and Threat Hunting positions.</p>
+    </div>
+  </div>
+</div>
+
+<br>
+<hr>
 
 <br><br>
 
