@@ -8,24 +8,24 @@ permalink: /secure-pkg/
 <style>
   .pkg-hero {
     --card-accent: #fcc624;
-    background: #000000;
-    color: white;
+    background: #f8f9fa;
+    color: #333;
     padding: 40px;
     border-radius: 16px;
     text-align: center;
     margin-bottom: 30px;
-    border: 1px solid #222222;
+    border: 1px solid #e9ecef;
     border-top: 4px solid var(--card-accent);
     border-left: 4px solid var(--card-accent);
     box-shadow: 0 18px 36px rgba(0,0,0,0.22);
   }
   .pkg-hero h1 {
-    color: #fcc624;
+    color: #333;
     margin-bottom: 15px;
     font-size: 2.5rem;
   }
   .pkg-hero p {
-    color: #e0e0e0;
+    color: #555;
     font-size: 1.1rem;
     max-width: 800px;
     margin: 0 auto;
