@@ -265,7 +265,7 @@ image: /image/professional_circle.png
 </div>
 
 <div style="text-align: center; margin: 30px 0;">
-  <img src="/image/motivation.png" alt="Christian Taillon's motivation" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <img src="/image/family_beach.png" alt="Christian Taillon's motivation" >
 </div>
 
 <div class="domain-section">
