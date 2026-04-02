@@ -7,12 +7,17 @@ permalink: /secure-pkg/
 
 <style>
   .pkg-hero {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    --card-accent: #fcc624;
+    background: #000000;
     color: white;
     padding: 40px;
-    border-radius: 12px;
+    border-radius: 16px;
     text-align: center;
     margin-bottom: 30px;
+    border: 1px solid #222222;
+    border-top: 4px solid var(--card-accent);
+    border-left: 4px solid var(--card-accent);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.22);
   }
   .pkg-hero h1 {
     color: #fcc624;
@@ -39,17 +44,22 @@ permalink: /secure-pkg/
     margin-top: 0;
   }
   .attack-item {
-    background: white;
+    --card-accent: #dc3545;
+    background: #ffffff;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 16px;
     margin: 15px 0;
-    border: 1px solid #e9ecef;
-    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid color-mix(in srgb, var(--card-accent) 22%, #d9dfe6);
+    border-top: 4px solid var(--card-accent);
+    border-left: 4px solid var(--card-accent);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    box-shadow: 0 12px 28px -6px color-mix(in srgb, var(--card-accent) 30%, rgba(0,0,0,0.12));
+    transform: translateY(-2px);
   }
   .attack-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    border-color: #fcc624;
+    transform: translateY(-6px);
+    box-shadow: 0 22px 38px -8px color-mix(in srgb, var(--card-accent) 45%, rgba(0,0,0,0.18));
+    border-color: color-mix(in srgb, var(--card-accent) 55%, #cfd6de);
   }
   .attack-item .date {
     color: #dc3545;

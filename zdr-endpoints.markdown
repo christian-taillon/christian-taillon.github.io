@@ -7,14 +7,17 @@ permalink: /zdr-endpoints/
 
 <style>
   .zdr-hero {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    --card-accent: #28a745;
+    background: #000000;
     color: white;
     padding: 40px;
-    border-radius: 12px;
+    border-radius: 16px;
     text-align: center;
     margin-bottom: 30px;
-    border: 2px solid #28a745;
-    box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);
+    border: 1px solid #222222;
+    border-top: 4px solid var(--card-accent);
+    border-left: 4px solid var(--card-accent);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.22);
   }
   .zdr-hero h1 {
     color: #28a745;
@@ -52,11 +55,21 @@ permalink: /zdr-endpoints/
   .error { background: #dc3545; }
   
   .zdr-info {
-    background: #f8f9fa;
+    --card-accent: #28a745;
+    background: #ffffff;
     padding: 25px;
-    border-radius: 10px;
-    border-left: 4px solid #28a745;
+    border: 1px solid color-mix(in srgb, var(--card-accent) 22%, #d9dfe6);
+    border-top: 4px solid var(--card-accent);
+    border-left: 4px solid var(--card-accent);
     margin-bottom: 30px;
+    box-shadow: 0 12px 28px -6px color-mix(in srgb, var(--card-accent) 30%, rgba(0,0,0,0.12));
+    transform: translateY(-2px);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  }
+  .zdr-info:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 34px -8px color-mix(in srgb, var(--card-accent) 45%, rgba(0,0,0,0.18));
+    border-color: color-mix(in srgb, var(--card-accent) 55%, #cfd6de);
   }
   .zdr-info h3 {
     color: #333;
@@ -434,9 +447,14 @@ permalink: /zdr-endpoints/
   <p><a href="https://openrouter.ai/docs/guides/features/zdr" target="_blank" style="color: #28a745;">Read OpenRouter's official ZDR policy &rarr;</a></p>
 </div>
 
-<div class="zdr-info" style="background: #fff3cd; border-left-color: #ffc107;">
+<div class="zdr-info" style="--card-accent: #ffc107; background: #fff3cd;">
   <h3 style="color: #856404;">⚠️ Disclaimer</h3>
   <p style="color: #856404;"><strong>I have not personally audited this list.</strong> This catalog relies on OpenRouter's research and public documentation. While I strive to maintain accurate information, always verify ZDR compliance directly with providers before handling sensitive data.</p>
+</div>
+
+<div class="zdr-info" style="--card-accent: #007bff; background: #e7f3ff;">
+  <h3 style="color: #004085;">🌍 About <a href="https://opencode.ai/go" style="color: #007bff;">OpenCode Go</a></h3>
+  <p style="color: #004085;"><strong>OpenCode Go uses ZDR policy providers.</strong> This plan is designed primarily for international users, with models hosted in the US, EU, and Singapore for stable global access. Our providers follow a zero-retention policy and do not use your data for model training. <a href="https://opencode.ai/go#privacy" style="color: #007bff;">See the privacy section &rarr;</a></p>
 </div>
 
 <div class="filter-bar">

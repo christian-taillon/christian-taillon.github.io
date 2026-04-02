@@ -7,14 +7,17 @@ permalink: /agentic-prompting/
 
 <style>
   .hero-card {
+    --card-accent: #fcc624;
     background: #000000;
     color: white;
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border-radius: 16px;
+    box-shadow: 0 18px 36px rgba(0,0,0,0.22);
     margin-bottom: 40px;
     text-align: center;
-    border: 1px solid #1a1a1a;
+    border: 1px solid #222222;
+    border-top: 4px solid var(--card-accent);
+    border-left: 4px solid var(--card-accent);
   }
   .hero-content h1 {
     color: #fcc624;
@@ -38,17 +41,22 @@ permalink: /agentic-prompting/
     border: 1px solid #1a1a1a;
   }
   .strategy-card {
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
+    --card-accent: #fcc624;
+    background: #ffffff;
+    border: 1px solid color-mix(in srgb, var(--card-accent) 22%, #d9dfe6);
+    border-top: 4px solid var(--card-accent);
+    border-left: 4px solid var(--card-accent);
+    border-radius: 16px;
     padding: 20px;
     margin: 15px 0;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    box-shadow: 0 12px 28px -6px color-mix(in srgb, var(--card-accent) 30%, rgba(0,0,0,0.12));
+    transform: translateY(-2px);
   }
   .strategy-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    border-color: #fcc624;
+    transform: translateY(-6px);
+    box-shadow: 0 22px 38px -8px color-mix(in srgb, var(--card-accent) 45%, rgba(0,0,0,0.18));
+    border-color: color-mix(in srgb, var(--card-accent) 55%, #cfd6de);
   }
   .code-example {
     background: #1e1e1e;
