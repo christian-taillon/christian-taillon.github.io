@@ -2,7 +2,7 @@
 layout: page
 title: "Developer AI: OpenCode Go vs Claude Plans"
 description: "A practical comparison of OpenCode Go and Claude subscription tiers for developer workflows, including benchmark model mapping and 5-hour plan limits."
-permalink: /developer-ai/
+permalink: /glm5-vs-opus/
 ---
 
 <style>
