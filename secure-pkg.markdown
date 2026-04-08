@@ -306,9 +306,9 @@ permalink: /secure-pkg/
   
   <p>Open-source supply chain attacks are a significant and evolving threat to modern software development. Attackers frequently target build tools and local developer environments rather than waiting to exploit application code in production. By compromising maintainer accounts, using typosquatting, or exploiting dependency confusion, malicious code is injected directly into public registries.</p>
   
-  <p>In both NPM and PyPI, the risky path is any install flow that executes dependency-controlled code: Node lifecycle scripts such as <code>preinstall</code> and <code>postinstall</code>, and Python source builds that invoke PEP 517 backends or legacy <code>setup.py</code>. This includes npm lifecycle hooks such as preinstall, install, and postinstall. These scripts execute arbitrary code with developer or CI privileges. That code often runs with access to developer secrets, CI tokens, and internal package infrastructure.</p>
+<p>In both NPM and PyPI, the risky path is any install flow that executes dependency-controlled code: Node lifecycle scripts such as <code>preinstall</code> and <code>postinstall</code>, and Python source builds that invoke PEP 517 backends or legacy <code>setup.py</code>. This includes npm lifecycle hooks such as preinstall, install, and postinstall. Dependency install and build scripts execute arbitrary code with developer or CI privileges. These scripts typically have access to developer secrets, CI tokens, and internal package infrastructure.</p>
   
-  <p>Effective hardening combines strict lockfiles, delayed adoption of newly published releases, explicit approval of dependency build steps, and extra isolation for higher-risk installs.</p>
+<p>Effective hardening combines strict lockfiles, delayed adoption of newly published releases, explicit approval of dependency install and build scripts, and extra isolation for higher-risk installs. Controls must be enforced in CI and shared config, not only local developer environments. These attacks typically result in credential theft, CI compromise, or unauthorized package publishing.</p>
 
   <h3>1. JavaScript/TypeScript: Using pnpm</h3>
   
