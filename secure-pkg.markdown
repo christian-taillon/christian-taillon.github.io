@@ -306,7 +306,7 @@ permalink: /secure-pkg/
   
   <p>Open-source supply chain attacks are a significant and evolving threat to modern software development. Attackers frequently target build tools and local developer environments rather than waiting to exploit application code in production. By compromising maintainer accounts, using typosquatting, or exploiting dependency confusion, malicious code is injected directly into public registries.</p>
   
-  <p>In both NPM and PyPI, the risky path is any install flow that executes dependency-controlled code: Node lifecycle scripts such as <code>preinstall</code> and <code>postinstall</code>, and Python source builds that invoke PEP 517 backends or legacy <code>setup.py</code>. That code often runs with access to developer secrets, CI tokens, and internal package infrastructure.</p>
+  <p>In both NPM and PyPI, the risky path is any install flow that executes dependency-controlled code: Node lifecycle scripts such as <code>preinstall</code> and <code>postinstall</code>, and Python source builds that invoke PEP 517 backends or legacy <code>setup.py</code>. This includes npm lifecycle hooks such as preinstall, install, and postinstall. These scripts execute arbitrary code with developer or CI privileges. That code often runs with access to developer secrets, CI tokens, and internal package infrastructure.</p>
   
   <p>Effective hardening combines strict lockfiles, delayed adoption of newly published releases, explicit approval of dependency build steps, and extra isolation for higher-risk installs.</p>
 
@@ -336,7 +336,7 @@ minimumReleaseAge: 1440
 # Block git/tarball transitive dependencies
 blockExoticSubdeps: true
 
-# Fail installs when unreviewed dependency build scripts appear
+# Fail installs when unreviewed dependency install and build scripts appear
 strictDepBuilds: true
 
 # Approve only the dependency builds you trust
@@ -348,7 +348,7 @@ allowBuilds:
   </div>
   
   <div class="note-box">
-    <strong>Approving dependency builds:</strong> Use <code>pnpm approve-builds</code> to review pending scripts, then commit the resulting <code>allowBuilds</code> policy. Avoid relying on global <code>ignore-scripts=true</code> as the main pnpm workflow in v10; it is broader than necessary and also disables your project's own scripts.
+    <strong>Approving dependency install and build scripts:</strong> Use <code>pnpm approve-builds</code> to review pending scripts, then commit the resulting <code>allowBuilds</code> policy. Avoid relying on global <code>ignore-scripts=true</code> as the main pnpm workflow in v10; it is broader than necessary and also disables your project's own scripts.
   </div>
 
   <h3>2. Python: Using uv</h3>
