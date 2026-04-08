@@ -372,6 +372,14 @@ image: /image/professional_circle.png
         </div>
     </div>
 
+    <div class="resource-card accent-blue">
+        <h3 style="color: #007bff; border-bottom-color: #007bff;">💻 Developer AI</h3>
+        <p>A practical look at developer AI plan economics, including a quick OpenCode Go vs Claude comparison focused on throughput, model mapping, and subscription value.</p>
+        <div class="pill-container">
+            <a href="/developer-ai/" class="pill-link" style="--theme-color: #007bff;">OpenCode vs Claude &rarr;</a>
+        </div>
+    </div>
+
     <div class="resource-card accent-cyan">
         <h3 style="color: #0dcaf0; border-bottom-color: #0dcaf0;">💻 Secure Local Models</h3>
         <p>Best practices for running LLMs locally and securely on your own hardware.</p>
