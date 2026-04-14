@@ -220,6 +220,7 @@ permalink: /secure-pkg/
     <pre><code>grep -E '"version": "(1\.14\.1|0\.30\.4)"|plain-crypto-js' package-lock.json 2>/dev/null
 grep -E 'axios@.*(1\.14\.1|0\.30\.4)|plain-crypto-js' yarn.lock pnpm-lock.yaml 2>/dev/null</code></pre>
   </div>
+  <p>The Axios post-mortem recommends a simpler <code>grep axios@...</code> pattern, which works well for yarn.lock and for catching plain-crypto-js broadly. This page uses lockfile-type-specific patterns because npm's <code>package-lock.json</code> stores resolved versions in a <code>packages</code> object's <code>version</code> field, not in <code>axios@1.14.1</code> strings, so the generic pattern can miss a compromised Axios entry in npm lockfiles.</p>
   <ul>
     <li>Downgrade or repin to <code>axios@1.14.0</code> or <code>axios@0.30.3</code>.</li>
     <li>Remove <code>node_modules/plain-crypto-js/</code> and reinstall from a known-good lockfile.</li>
