@@ -217,7 +217,8 @@ permalink: /secure-pkg/
   <p>If your lockfile or install logs show either affected Axios version or <code>plain-crypto-js</code>, treat that workstation or CI runner as potentially compromised, not merely out of date.</p>
   <div class="code-block">
     <h3>Quick Check</h3>
-    <pre><code>grep -E "axios@(1\\.14\\.1|0\\.30\\.4)|plain-crypto-js" package-lock.json yarn.lock 2>/dev/null</code></pre>
+    <pre><code>grep -E '"version": "(1\.14\.1|0\.30\.4)"|plain-crypto-js' package-lock.json 2>/dev/null
+grep -E 'axios@.*(1\.14\.1|0\.30\.4)|plain-crypto-js' yarn.lock pnpm-lock.yaml 2>/dev/null</code></pre>
   </div>
   <ul>
     <li>Downgrade or repin to <code>axios@1.14.0</code> or <code>axios@0.30.3</code>.</li>
@@ -355,11 +356,11 @@ allowBuilds:
   
   <p>Standard <code>pip</code> workflows can execute arbitrary code when an installation falls back to a source distribution. That execution path now commonly runs through PEP 517 build backends, not just legacy <code>setup.py</code> files.</p>
   
-  <p><code>uv</code> is a fast Python package installer and resolver that acts as a drop-in replacement for <code>pip</code>. It simplifies dependency locking and strongly prefers wheels, but a high-trust workflow should still refuse source builds unless you explicitly allow them. See the <a href="https://docs.astral.sh/uv/pip/compile/">uv compile guide</a> and the <a href="https://docs.astral.sh/uv/reference/cli/#uv-pip-sync">uv CLI reference</a>.</p>
+  <p><code>uv</code> is a fast Python package manager and resolver. Its native workflow uses <code>pyproject.toml</code> to declare dependencies, <code>uv.lock</code> to lock them, and <code>uv sync</code> to reproduce that environment. The pip-compatible subcommands are still useful for existing <code>requirements.txt</code>-based repositories or for export paths, but they are not the primary <code>uv</code> model. A high-trust workflow should still refuse source builds unless you explicitly allow them. See the <a href="https://docs.astral.sh/uv/concepts/projects/">uv projects guide</a>, the <a href="https://docs.astral.sh/uv/concepts/locking-and-syncing/">locking and syncing guide</a>, and the <a href="https://docs.astral.sh/uv/reference/cli/#uv-sync">uv CLI reference</a>.</p>
   
-  <h4>Action: Enforce Hashed, Wheel-Only Installs</h4>
+  <h4>Action: Prefer Native Locks, Export When Needed</h4>
   
-  <p>For the strictest workflow, combine hash enforcement with <code>--no-build</code> so the install fails rather than building from an sdist.</p>
+  <p>For the default workflow, commit <code>pyproject.toml</code> and <code>uv.lock</code>, then use <code>uv sync</code> to reproduce that environment. If another tool still requires <code>requirements.txt</code>, export from the lockfile rather than treating hand-maintained requirements files as the source of truth. For stricter installs, combine that with <code>--no-build</code> so the sync fails rather than building from an sdist.</p>
   
   <div class="code-block">
     <h3>Install uv</h3>
@@ -370,74 +371,26 @@ curl -LsSf https://astral.sh/uv/install.sh | sh</code></pre>
   <h4>Workflow for Secure Python Management</h4>
   
   <div class="code-block">
-    <h3>Virtual Environment and Lockfile</h3>
+    <h3>Native uv Project Workflow</h3>
     <pre><code># Create an isolated virtual environment
 uv venv
 source .venv/bin/activate
 
-# Generate a strictly hashed lockfile
-# Input: requirements.in (e.g., requests==2.31.0)
-uv pip compile requirements.in --generate-hashes -o requirements.txt
+# Add direct dependencies to pyproject.toml
+uv add requests==2.31.0
 
-# Install exactly what is locked
-# --require-hashes rejects unhashed entries
+# Resolve and write uv.lock
+uv lock
+
+# Reproduce exactly what is locked
+# --locked refuses to update the lockfile
 # --no-build fails if a wheel is unavailable and a source build would be required
-uv pip sync requirements.txt --require-hashes --no-build</code></pre>
-  </div>
-  
-  <p>Instead of relying on a loose <code>requirements.txt</code>, use <code>uv pip compile</code> to lock exact versions and their cryptographic hashes. If a package is altered in PyPI without a version bump, the hash check will fail and the installation will be blocked. If a dependency is only available as an sdist, treat it as an exception and isolate that install path deliberately.</p>
-
-  <h3>3. Dedicated Linux Isolation with bubblewrap</h3>
-  
-  <p>For Linux users, <code>bubblewrap</code> (<code>bwrap</code>) adds an extra boundary between install-time code and your workstation. The goal is to expose only the project directory and the cache or store paths you need, while hiding the rest of your real home directory from package scripts.</p>
-  
-  <p>This is an advanced defense, not a transparent replacement for every install command. It is most useful for higher-risk dependency reviews, or for strict installs that already run from a warm cache or controlled internal registry.</p>
-  
-  <div class="code-block">
-    <h3>Example Wrapper (~/bin/safe-install)</h3>
-    <pre><code>#!/bin/bash
-set -eu
-
-bwrap \
-  --ro-bind /usr /usr \
-  --ro-bind /bin /bin \
-  --ro-bind /lib /lib \
-  --ro-bind /lib64 /lib64 \
-  --ro-bind /etc /etc \
-  --proc /proc \
-  --dev /dev \
-  --tmpfs /tmp \
-  --dir /work \
-  --bind "$PWD" /work \
-  --chdir /work \
-  --dir /sandbox-home \
-  --dir /sandbox-home/.cache \
-  --dir /sandbox-home/.local \
-  --dir /sandbox-home/.local/share \
-  --dir /sandbox-home/.local/share/pnpm \
-  --setenv HOME /sandbox-home \
-  --setenv XDG_CACHE_HOME /sandbox-home/.cache \
-  --ro-bind-try "$HOME/.cache/uv" /sandbox-home/.cache/uv \
-  --ro-bind-try "$HOME/.cache/pnpm" /sandbox-home/.cache/pnpm \
-  --ro-bind-try "$HOME/.local/share/pnpm/store" /sandbox-home/.local/share/pnpm/store \
-  --unshare-ipc \
-  --unshare-pid \
-  --new-session \
-  "$@"</code></pre>
-  </div>
-  
-  <div class="code-block">
-    <h3>Usage</h3>
-    <pre><code>safe-install uv pip sync requirements.txt --require-hashes --no-build
-# or
-safe-install pnpm install --frozen-lockfile</code></pre>
+uv sync --locked --no-build</code></pre>
   </div>
 
-  <div class="note-box">
-    <strong>Network caveat:</strong> Add <code>--unshare-net</code> only when you already have a warm cache or an internal mirror reachable inside the sandbox. Otherwise dependency resolution and downloads will fail. For normal online installs, bubblewrap reduces host exposure but does not replace your package manager policy.
-  </div>
+  <p>If you need a <code>requirements.txt</code> for a scanner, legacy deploy target, or another downstream tool, export it from the locked state instead of maintaining a separate primary workflow. If a dependency is only available as an sdist, treat it as an exception and isolate that install path deliberately.</p>
 
-  <h3>4. Scaling to Enterprise Environments (CI/CD)</h3>
+  <h3>3. Scaling to Enterprise Environments (CI/CD)</h3>
   
   <p>Securing local developer machines is only part of the process; build pipelines require the same level of strictness.</p>
   
@@ -453,13 +406,13 @@ safe-install pnpm install --frozen-lockfile</code></pre>
   <h4>Enforce Configurations in CI Pipelines</h4>
   
   <div class="code-block">
-    <h3>GitHub Action: Enforcing uv Hashes and Wheel-Only Installs</h3>
+    <h3>GitHub Action: Enforcing uv Lockfile Sync</h3>
     <pre><code>steps:
   - uses: actions/checkout@v4
   - name: Install uv
     uses: astral-sh/setup-uv@v2
   - name: Install dependencies strictly
-    run: uv pip sync requirements.txt --require-hashes --no-build</code></pre>
+    run: uv sync --locked --no-build</code></pre>
   </div>
   
   <div class="code-block">
@@ -477,5 +430,5 @@ safe-install pnpm install --frozen-lockfile</code></pre>
   
   <h2>Summary</h2>
   
-  <p>Supply chain attacks exploit default configurations and implicit trust in package registries. Moving to <code>pnpm</code> with a committed build policy, using <code>uv</code> with hashed wheel-only installs, delaying newly published package versions, and adding optional Linux isolation with <code>bwrap</code> will significantly reduce exposure while preserving practical developer workflows.</p>
+  <p>Supply chain attacks exploit default configurations and implicit trust in package registries. Moving to <code>pnpm</code> with a committed build policy, using <code>uv</code> with committed native locks and strict sync behavior, and delaying newly published package versions will significantly reduce exposure while preserving practical developer workflows.</p>
 </div>
