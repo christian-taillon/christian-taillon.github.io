@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "GPT-5.5 and the New Value Frontier"
-description: "A practical look at GPT-5.5's intelligence, cost, token efficiency, and why low-reasoning frontier models may change the economics of agentic AI."
-permalink: /gpt-55-value/
+title: "OpenAI's New Value Play: GPT-5.5 Low Reasoning"
+description: "A practical look at GPT-5.5's intelligence, cumulative cost, token efficiency, and why low-reasoning frontier models may change the economics of agentic AI."
+permalink: /openai-value/
 ---
 
 <style>
@@ -100,9 +100,9 @@ permalink: /gpt-55-value/
 </style>
 
 <div class="analysis-hero">
-  <h1>GPT-5.5 and the New Value Frontier</h1>
+  <h1>OpenAI's New Value Play: GPT-5.5 Low Reasoning</h1>
   <p>
-    For years, the value story in large language models was easy to summarize: frontier American models delivered the best capability, while open and international models competed on cost. GPT-5.5 complicates that pattern. The interesting story is not simply that it is intelligent. The interesting story is that GPT-5.5 low reasoning appears to land in the same value cluster as models that previously defined the affordable performance frontier.
+    For years, the large language model market had a familiar split: American frontier labs sold the best capability, while open and international models competed on value. GPT-5.5 complicates that story. The important detail is not just that GPT-5.5 is intelligent. It is that GPT-5.5 low reasoning appears to land in the same cost-performance cluster that previously belonged to the affordable model challengers.
   </p>
 </div>
 
@@ -113,22 +113,22 @@ permalink: /gpt-55-value/
 <div class="takeaway-grid">
   <div class="takeaway">
     <strong>The historical pattern</strong>
-    <span>Open and international models often won the value argument by offering near-frontier performance at much lower cost.</span>
+    <span>Open and international models often won the value argument by offering capable, near-frontier performance at much lower total cost.</span>
   </div>
   <div class="takeaway">
     <strong>The new pressure point</strong>
-    <span>GPT-5.5 low reasoning appears to compete in that value band while retaining frontier-model quality.</span>
+    <span>GPT-5.5 low reasoning appears to compete in that value band without looking like a heavily discounted compromise.</span>
   </div>
   <div class="takeaway">
     <strong>The practical implication</strong>
-    <span>Output token efficiency matters as much as published per-million-token pricing for agentic workflows.</span>
+    <span>For agents and coding workflows, output token efficiency can matter as much as the published per-million-token price.</span>
   </div>
 </div>
 
 <figure class="chart-figure">
   <img src="/image/Intelligence%20vs%20Cost%20to%20Run%20Artificial%20Analysis%20Intelligence%20Index%20(29%20Apr%20%2726).png" alt="Artificial Analysis chart comparing model intelligence against cost to run the Artificial Analysis Intelligence Index">
   <figcaption>
-    <strong>Intelligence vs Cost.</strong> The low-cost, strong-performance cluster was originally shaped by models like GLM-5 and MiniMax M2.7, then reinforced by DeepSeek V4 and Qwen3.6. GPT-5.5 low reasoning is notable because it appears in that same region rather than only in the premium frontier-model region.
+    <strong>Intelligence vs Cost.</strong> The low-cost, strong-performance cluster was originally shaped by models like GLM-5 and MiniMax M2.7, then reinforced by DeepSeek V4 and Qwen3.6. GPT-5.5 low reasoning is notable because it appears in that same region instead of only showing up where I would normally expect premium frontier models to sit.
   </figcaption>
 </figure>
 
@@ -141,17 +141,17 @@ permalink: /gpt-55-value/
     That value lane mattered. It gave builders access to capable models at prices that sometimes looked dramatically better than American frontier offerings. The models were often a little behind on raw intelligence, but the economics were compelling enough that the tradeoff made sense.
   </p>
   <p>
-    GPT-5.5 changes the shape of that conversation. Looking at the cost-to-run data, GPT-5.5 low reasoning appears cheaper than DeepSeek V4 Pro while nearly matching its performance. It also appears cheaper than GLM-5 while slightly exceeding its average intelligence score, and it lands around Qwen3.6 with a lower cumulative cost and higher intelligence rating in this view.
+    GPT-5.5 changes the shape of that conversation. Looking at the cost-to-run data, GPT-5.5 low reasoning appears cheaper than DeepSeek V4 Pro while nearly matching its performance. It also appears cheaper than GLM-5 while slightly exceeding its average intelligence score, and it lands near Qwen3.6 with lower cumulative cost and higher intelligence in this view. That is a different kind of OpenAI story: not just best-in-class capability, but credible value.
   </p>
 </div>
 
 <div class="analysis-card">
   <h2>Why Cumulative Cost Matters</h2>
   <p>
-    We usually talk about models in two incomplete ways. First, we talk about benchmark scores, either individually or as an average across multiple benchmarks. Second, we talk about price per million input or output tokens. Both are useful, but neither fully captures what it feels like to run these models in real workflows.
+    We usually talk about models in two incomplete ways. First, we talk about benchmark scores, either individually or as an average across multiple benchmarks. Second, we talk about price per million input or output tokens. Both are useful, but neither fully captures what it feels like to operate these models in real workflows.
   </p>
   <p>
-    A model can look inexpensive on a per-token basis and still be expensive to operate if it burns a large number of output tokens to reach its answer. This is especially important as reasoning modes become more common. Low, medium, high, and even extended reasoning settings can improve benchmark scores, but they often do so by spending more tokens.
+    A model can look inexpensive on a per-token basis and still be expensive to operate if it burns a large number of output tokens to reach its answer. This is especially important as reasoning modes become more common. Low, medium, high, and extended reasoning settings can improve benchmark scores, but they often do so by spending more tokens.
   </p>
   <p>
     That is why I find the cumulative cost of running a benchmark suite more useful than token price alone. It captures not just what each token costs, but how many tokens the model tends to spend while solving the task. For agents, RAG systems, code assistants, and long-running workflows, that is closer to the bill we actually feel.
@@ -161,7 +161,7 @@ permalink: /gpt-55-value/
 <figure class="chart-figure">
   <img src="/image/Intelligence%20vs%20Output%20Tokens%20Used%20in%20Artificial%20Analysis%20Intelligence%20Index%20(29%20Apr%20%2726).png" alt="Artificial Analysis chart comparing model intelligence against output tokens used in the Artificial Analysis Intelligence Index">
   <figcaption>
-    <strong>Intelligence vs Output Tokens.</strong> This is the chart that makes GPT-5.5 more interesting. The model family appears to reach high scores with much lower output token usage than many competitors. In token-priced developer tools and agentic systems, fewer generated tokens can mean lower cost, less latency, and less context-window pollution.
+    <strong>Intelligence vs Output Tokens.</strong> This is the chart that makes GPT-5.5 more interesting. The model family appears to reach high scores with much lower output token usage than many competitors. In token-priced developer tools and agentic systems, fewer generated tokens can mean lower cost, lower latency, and less context-window pollution.
   </figcaption>
 </figure>
 
@@ -181,10 +181,10 @@ permalink: /gpt-55-value/
     People who describe themselves as agentic engineers or context engineers will probably appreciate the token reduction more than anyone. Extra reasoning tokens do not only increase the bill. They also increase context-window pressure.
   </p>
   <p>
-    One way to improve benchmark scores is to let models think longer, explain more, and generate more intermediate text until they stumble into a better answer. It can work. The problem is that long agent runs already suffer from context-window bloat. Even when a system advertises very large context windows, model performance can degrade as the context becomes crowded, stale, or noisy.
+    One way to improve benchmark scores is to let models think longer, explain more, and generate more intermediate text until they stumble into a better answer. It can work. The problem is that long agent runs already suffer from context-window bloat. Even when a system advertises a very large context window, model performance can degrade as the context becomes crowded, stale, or noisy.
   </p>
   <p>
-    That is why so much attention is moving toward context minimization strategies: progressive disclosure, skill-based context loading, focused subagents, small task-specific toolsets, and avoiding the old pattern of giving one model thirty tools and ten knowledge articles all at once. A model that achieves stronger results with fewer output tokens naturally helps with that same problem.
+    That is why so much attention is moving toward context minimization strategies: progressive disclosure, skill-based context loading, focused subagents, small task-specific toolsets, and avoiding the old pattern of giving one model thirty tools and ten knowledge articles all at once. A model that achieves stronger results with fewer output tokens helps with that same problem by default.
   </p>
 </div>
 
