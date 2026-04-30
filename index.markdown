@@ -374,8 +374,9 @@ image: /image/professional_circle.png
 
     <div class="resource-card accent-blue">
         <h3 style="color: #007bff; border-bottom-color: #007bff;">💻 Developer AI</h3>
-        <p>A practical look at developer AI plan economics, including a quick OpenCode Go vs Claude comparison focused on throughput, model mapping, and subscription value.</p>
+        <p>Practical looks at developer AI economics, including token efficiency, model value, throughput, model mapping, and subscription tradeoffs.</p>
         <div class="pill-container">
+            <a href="/gpt-55-value/" class="pill-link" style="--theme-color: #007bff;">GPT-5.5 Value &rarr;</a>
             <a href="/glm5-vs-opus/" class="pill-link" style="--theme-color: #007bff;">OpenCode vs Claude &rarr;</a>
             <a href="https://github.com/christian-taillon/opencode-containment" class="pill-link" style="--theme-color: #007bff;">Securing OpenCode &rarr;</a>
         </div>
