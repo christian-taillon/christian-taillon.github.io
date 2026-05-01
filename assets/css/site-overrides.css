@@ -1,0 +1,33 @@
+/* Beautiful Jekyll defaults make page titles very large on desktop. */
+.intro-header .page-heading h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.intro-header .page-heading .page-subheading,
+.intro-header .post-heading .post-subheading {
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+}
+
+@media (min-width: 1200px) {
+  .container-md {
+    max-width: min(1368px, calc(100% - 48px));
+  }
+
+  .container-md > .row > .col-xl-8.offset-xl-2 {
+    flex: 0 0 80%;
+    max-width: 80%;
+    margin-left: 10%;
+  }
+
+  .intro-header .page-heading h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container-md > .row > .col-lg-10.offset-lg-1 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+}

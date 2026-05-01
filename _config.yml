@@ -145,6 +145,9 @@ social:
 lang: en
 
 # --- Colours / background image --- #
+site-css:
+  - "/assets/css/site-overrides.css"
+
 navbar-col: "#0e0e0e"
 navbar-text-col: "#FFFFFF"
 navbar-border-col: "#0e0e0e"

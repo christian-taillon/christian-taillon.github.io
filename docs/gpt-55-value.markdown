@@ -6,31 +6,26 @@ permalink: /openai-value/
 ---
 
 <style>
-  .analysis-hero {
-    --card-accent: #fcc624;
-    background: #000000;
-    color: #ffffff;
-    padding: 34px;
-    border-radius: 16px;
-    border: 1px solid #1a1a1a;
-    border-left: 5px solid var(--card-accent);
-    box-shadow: 0 14px 32px rgba(0,0,0,0.28);
-    margin-bottom: 30px;
+  .lead-copy {
+    color: #333333;
+    line-height: 1.75;
+    margin: 0 0 18px;
   }
-  .analysis-hero h1 {
-    color: #fcc624;
-    margin-top: 0;
-  }
-  .analysis-hero p {
-    color: #e0e0e0;
-    line-height: 1.7;
-    margin-bottom: 0;
-    max-width: 920px;
+  .thesis-callout {
+    background: #fff8dc;
+    border: 3px solid #fcc624;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px -8px rgba(252, 198, 36, 0.5);
+    color: #111827;
+    font-size: 1.22rem;
+    font-weight: 700;
+    line-height: 1.55;
+    margin: 28px 0;
+    padding: 20px 24px;
   }
   .analysis-card {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-left: 4px solid #fcc624;
+    border: 3px solid #fcc624;
     border-radius: 14px;
     padding: 22px;
     margin: 24px 0;
@@ -67,8 +62,7 @@ permalink: /openai-value/
   }
   .source-note {
     background: #fff8dc;
-    border: 1px solid #f6d365;
-    border-left: 4px solid #fcc624;
+    border: 3px solid #fcc624;
     border-radius: 12px;
     padding: 16px;
     color: #333333;
@@ -77,14 +71,13 @@ permalink: /openai-value/
   }
   .takeaway-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
     margin: 24px 0;
   }
   .takeaway {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-top: 4px solid #fcc624;
+    border: 3px solid #fcc624;
     border-radius: 14px;
     padding: 18px;
   }
@@ -97,32 +90,51 @@ permalink: /openai-value/
     color: #475569;
     line-height: 1.6;
   }
+  .takeaway-wide {
+    grid-column: 1 / -1;
+  }
+  @media (max-width: 767.98px) {
+    .takeaway-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 
-<div class="analysis-hero">
-  <h1>OpenAI's New Value Play: GPT-5.5 Low Reasoning</h1>
-  <p>
-    For years, the large language model market had a familiar split: American frontier labs sold the best capability, while open and international models competed on value. GPT-5.5 complicates that story. The important detail is not just that GPT-5.5 is intelligent. It is that GPT-5.5 low reasoning appears to land in the same cost-performance cluster that previously belonged to the affordable model challengers.
-  </p>
-</div>
+<p class="lead-copy">
+  We've been calculating model cost and value wrong, and it has never mattered more. Models are getting more expensive, people can burn through a $20 Anthropic plan in a couple of Opus-heavy sessions, and GitHub Copilot, where many enterprises pay for developer AI consumption, is moving toward token-based pricing.
+</p>
 
-<div class="source-note">
-  Charts and model comparison context are based on Artificial Analysis data captured on April 29, 2026. Readers should review the live data directly because model pricing, reasoning settings, benchmark scores, and token usage can change quickly: <a href="https://artificialanalysis.ai/?models=gpt-5-4-mini-medium%2Cgpt-5-5-high%2Cgpt-5-5%2Cgpt-5-4-low%2Cgpt-5-4%2Cgpt-5-5-medium%2Cgpt-5-4-mini%2Cgpt-5-5-low%2Cclaude-opus-4-7%2Cclaude-sonnet-4-6-adaptive%2Cclaude-opus-4-7-non-reasoning%2Cclaude-sonnet-4-6%2Cdeepseek-v4-flash-high%2Cdeepseek-v4-pro%2Cdeepseek-v4-flash%2Cdeepseek-v4-flash-non-reasoning%2Cdeepseek-v4-pro-high%2Cdeepseek-v4-pro-non-reasoning%2Cminimax-m2-7%2Ckimi-k2-6-non-reasoning%2Ckimi-k2-6%2Cmimo-v2-5-pro%2Cmimo-v2-5-0424%2Cmimo-v2-pro%2Cglm-5-1%2Cglm-5-1-non-reasoning%2Cglm-5-non-reasoning%2Cglm-5%2Cqwen3-6-plus%2Cqwen3-6-max%2Cminimax-m2-5&amp;intelligence=artificial-analysis-intelligence-index&amp;intelligence-efficiency=intelligence-efficiency-output-token-breakdown&amp;output-tokens=intelligence-vs-output-tokens&amp;price=intelligence-vs-price&amp;cost=intelligence-vs-cost#intelligence-efficiency-tabs" target="_blank" rel="noopener">Artificial Analysis model comparison</a>.
+<p class="lead-copy">
+  For years, the large language model market had a familiar split: US frontier labs sold the best capability, while open-weight and international models competed on value. GPT-5.5 complicates that story. The important detail is not just that GPT-5.5 is intelligent. It is that GPT-5.5 low reasoning appears to land in the same cost-performance cluster that previously belonged to the affordable model challengers.
+</p>
+
+<div class="thesis-callout">
+  The real cost metric is not price per million tokens. It is cost per completed task.
 </div>
 
 <div class="takeaway-grid">
   <div class="takeaway">
     <strong>The historical pattern</strong>
-    <span>Open and international models often won the value argument by offering capable, near-frontier performance at much lower total cost.</span>
+    <span>Open-weight and international models often won the value argument by offering capable, near-frontier performance at much lower total cost.</span>
   </div>
   <div class="takeaway">
     <strong>The new pressure point</strong>
     <span>GPT-5.5 low reasoning appears to compete in that value band without looking like a heavily discounted compromise.</span>
   </div>
-  <div class="takeaway">
+  <div class="takeaway takeaway-wide">
     <strong>The practical implication</strong>
     <span>For agents and coding workflows, output token efficiency can matter as much as the published per-million-token price.</span>
   </div>
+</div>
+
+<div class="analysis-card">
+  <h2>How To Read The Charts</h2>
+  <p>
+    Price per million tokens is still useful, but it is only the sticker price. The realized cost depends on how many tokens the model needs to solve the task, how often it needs retries, and whether higher reasoning settings burn extra output tokens to reach a better answer.
+  </p>
+  <p>
+    The first chart is useful because it compares intelligence against cumulative benchmark cost rather than list price alone. The second chart is useful because output token usage is a proxy for token bloat, latency, and future context-window pressure in agentic systems.
+  </p>
 </div>
 
 <figure class="chart-figure">
@@ -135,7 +147,7 @@ permalink: /openai-value/
 <div class="analysis-card">
   <h2>Why This Surprised Me</h2>
   <p>
-    As someone who has spent a lot of time around open-source and locally hosted models, the old tradeoff felt stable. If you wanted the strongest model, you usually paid for a closed frontier model. If you wanted something dramatically cheaper and still good enough, you looked toward the open model ecosystem, often including models created by Chinese labs and hosted across a wide set of providers.
+    As someone who has spent a lot of time around open-weight and locally hosted models, the old tradeoff felt stable. If you wanted the strongest model, you usually paid for a closed frontier model. If you wanted something dramatically cheaper and still good enough, you looked toward the open-weight model ecosystem, often including models created by Chinese labs and self-hosted or at providers in the US, EU, and Singapore.
   </p>
   <p>
     That value lane mattered. It gave builders access to capable models at prices that sometimes looked dramatically better than American frontier offerings. The models were often a little behind on raw intelligence, but the economics were compelling enough that the tradeoff made sense.
@@ -171,7 +183,7 @@ permalink: /openai-value/
     In a world where GitHub Copilot and other developer tools are moving toward token-sensitive economics, token bloat matters. Agents and RAG systems can burn through millions of tokens quickly. If a model needs to ramble its way into the right answer, the cost problem is obvious. The less obvious problem is that every extra token also competes for context.
   </p>
   <p>
-    GPT-5.5 low reasoning is interesting because it appears to compete with strong value models on both price and performance while using far fewer output tokens. For example, in this Artificial Analysis view, GPT-5.5 low edges out DeepSeek V4 Pro in intelligence while using roughly 22% of the output tokens. That is not just a pricing detail. That is an architectural advantage for systems that run many iterative steps.
+    GPT-5.5 low reasoning is interesting because it appears to compete with strong value models on both price and performance while using far fewer output tokens. For example, in this Artificial Analysis benchmark view, GPT-5.5 low edges out DeepSeek V4 Pro in intelligence while using roughly 22% of the output tokens. That is not a universal runtime guarantee, but it is not just a pricing detail either. It is an architectural advantage for systems that run many iterative steps.
   </p>
 </div>
 
@@ -191,7 +203,7 @@ permalink: /openai-value/
 <div class="analysis-card">
   <h2>The Bigger Shift</h2>
   <p>
-    The value frontier may no longer be defined only by open or China-based models. GPT-5.5 suggests that an American frontier model can compete in the same economic conversation when the right reasoning mode is selected. That does not erase the value of open models, local deployment, or model sovereignty. Those still matter for privacy, control, resilience, and cost negotiation.
+    The value frontier may no longer be defined only by open-weight or China-based models. GPT-5.5 suggests that a US frontier model can compete in the same economic conversation when the right reasoning mode is selected. That does not erase the value of open-weight models, local deployment, or model sovereignty. Those still matter for privacy, control, resilience, and cost negotiation.
   </p>
   <p>
     But it does mean the model-selection conversation should change. The best value model is not always the model with the cheapest listed token price. It is the model that can complete the work reliably with the lowest total operational cost, the least unnecessary context growth, and the fewest retries.
@@ -199,4 +211,15 @@ permalink: /openai-value/
   <p>
     For agentic systems, that may make GPT-5.5 low reasoning one of the more important data points to watch.
   </p>
+</div>
+
+<div class="analysis-card">
+  <h2>Operator Takeaway</h2>
+  <p>
+    When choosing models for agents, compare cost per successful task, output tokens, latency, retries, and context growth, not just benchmark rank or token price. A model that costs more per token can still be cheaper in production if it finishes the work with fewer tokens, fewer retries, and less context pollution.
+  </p>
+</div>
+
+<div class="source-note">
+  Charts and model comparison context are based on Artificial Analysis data captured on April 29, 2026. Readers should review the live data directly because model pricing, reasoning settings, benchmark scores, and token usage can change quickly: <a href="https://artificialanalysis.ai/?models=gpt-5-4-mini-medium%2Cgpt-5-5-high%2Cgpt-5-5%2Cgpt-5-4-low%2Cgpt-5-4%2Cgpt-5-5-medium%2Cgpt-5-4-mini%2Cgpt-5-5-low%2Cclaude-opus-4-7%2Cclaude-sonnet-4-6-adaptive%2Cclaude-opus-4-7-non-reasoning%2Cclaude-sonnet-4-6%2Cdeepseek-v4-flash-high%2Cdeepseek-v4-pro%2Cdeepseek-v4-flash%2Cdeepseek-v4-flash-non-reasoning%2Cdeepseek-v4-pro-high%2Cdeepseek-v4-pro-non-reasoning%2Cminimax-m2-7%2Ckimi-k2-6-non-reasoning%2Ckimi-k2-6%2Cmimo-v2-5-pro%2Cmimo-v2-5-0424%2Cmimo-v2-pro%2Cglm-5-1%2Cglm-5-1-non-reasoning%2Cglm-5-non-reasoning%2Cglm-5%2Cqwen3-6-plus%2Cqwen3-6-max%2Cminimax-m2-5&amp;intelligence=artificial-analysis-intelligence-index&amp;intelligence-efficiency=intelligence-efficiency-output-token-breakdown&amp;output-tokens=intelligence-vs-output-tokens&amp;price=intelligence-vs-price&amp;cost=intelligence-vs-cost#intelligence-efficiency-tabs" target="_blank" rel="noopener">Artificial Analysis model comparison</a>.
 </div>
