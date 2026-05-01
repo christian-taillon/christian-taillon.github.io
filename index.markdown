@@ -320,7 +320,7 @@ image: /image/professional_circle.png
     <p>The best entry points for secure AI usage, agentic systems, and software supply chain defense.</p>
   </div>
   <div class="resource-grid">
-    <div class="resource-card featured-card featured-packages accent-blue span-two">
+    <div class="resource-card featured-card featured-packages accent-blue">
       <h3 style="color: #007bff; border-bottom-color: #007bff;">Secure Package Management</h3>
       <p>Hardening NPM and Python dependencies against supply chain attacks. Protect your builds from Shai-Hulud, TeamPCP, and other emerging threats.</p>
       <div class="pill-container">
@@ -409,14 +409,6 @@ image: /image/professional_circle.png
       </div>
     </div>
     
-    <div class="resource-card accent-red">
-      <h3 style="color: #dc3545; border-bottom-color: #dc3545;">🌵 CactusCon 2025</h3>
-      <p>Did you miss the event? Catch up on the materials and presentation decks.</p>
-      <div class="pill-container">
-        <a href="/cactuscon-2025" class="pill-link" style="--theme-color: #dc3545;">View Materials &rarr;</a>
-      </div>
-    </div>
-
   </div>
 </div>
 
