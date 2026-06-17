@@ -287,14 +287,7 @@ image: /image/professional_circle.png
   <a href="https://darkroastcyber.io" target="_blank" class="hero-btn">Visit darkroastcyber.io &rarr;</a>
 </div>
 
-<div class="flash-notice">
-  <h2>Flash Notice: Axios npm compromise</h2>
-  <p>Malicious versions <code>axios@1.14.1</code> and <code>axios@0.30.4</code> were briefly published on npm on March 31, 2026 with a trojanized dependency. This repository's checked-in <code>package-lock.json</code> currently has an empty <code>packages</code> object and does not show an Axios install, but any machine that installed those versions should be treated as potentially compromised.</p>
-  <div class="pill-container">
-    <a href="/secure-pkg/" class="pill-link is-filled" style="--theme-color: #dc3545;">Review Remediation Notes</a>
-    <a href="https://github.com/axios/axios/issues/10636" target="_blank" class="pill-link" style="--theme-color: #dc3545;">Axios Post-Mortem</a>
-  </div>
-</div>
+
 
 <h1 align="center">Welcome ☕</h1>
 

@@ -56,6 +56,7 @@ navbar-links:
     - Programing Basics: "program-concept"
     - Python3 Virtual Environments: "pyhon3virt"
     - File Arrangement and Sorting Tool: "https://github.com/christian-taillon/fast"
+    - Vector Robot: "vector-robot"
   Machine Learning and AI:
     - OpenAI Value Play: "openai-value"
     - AI Security Code Review: "ai-security-code-review"

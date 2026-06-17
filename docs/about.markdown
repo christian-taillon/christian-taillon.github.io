@@ -82,7 +82,8 @@ My curiosity, my responsibility to provide for my family, and a cautious optimis
 ## TL;DR ☕
 
 🔒 Cybersecurity professional<br>
-🏢 Security Engineer at Grand Canyon Education<br>
+🏢 Manager Cyber Security Consulting at Grand Canyon Education<br>
+🌐 Owner & Principal Consultant at Dark Roast Cyber<br>
 🌐 Director of Threat Intelligence at Arizona Cyber Threat Response Alliance (ACTRA)<br>
 🛠️ Experienced in SOC Leadership, SIEM, EDR, NTA, Firewalls and WAFs, Cloud [ AWS Azure GCP ], and vulnerability management<br>
 🐧 Linux enthusiast and advocate <br>
@@ -93,9 +94,9 @@ My curiosity, my responsibility to provide for my family, and a cautious optimis
 ---
 
 ### Professional Life
-Professionally, I serve as a senior member of the IT Security team as a **Threat Response Engineer** reporting to the CISO at **[Grand Canyon Education](https://www.gce.com/)**, where my focus lies on deploying, maintaining, and enhancing our Detection, Prevention, and Response tools. This includes working with **[SIEM](https://christiant.io/spl)**, **[EDR](https://christiant.io/logscale)**, and **[NTA](https://christiant.io/snort-suricata-guide)** systems to bolster the capabilities of our SOC.
+Professionally, I serve as **Manager of Cyber Security Consulting** at **[Grand Canyon Education](https://www.gce.com/)**, where I lead the security services and consulting team. My focus is on helping organizations build security programs and improve security operations, tackling difficult problems to solve. My decade at GCE has included various **technical and leadership roles** in **security architecture**, **threat detection**, and **incident response**.
 
-I lead security efforts in several **Vulnerability** areas: **Code Security**, **Cloud Security**, and **Host Vulnerability Detection**. We maintain an ad-hoc **[Threat Hunting](https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339)** practice and rely on a growing **Threat Intelligence** program.
+I am also the **Owner and Principal Consultant** at **[Dark Roast Cyber](https://darkroastcyber.io)**, where I perform **open-source development** and provide **independent consulting services**.
 
 I am an advocate for **Threat Intelligence** sharing, including **Sigma**, **YARA**, and **Snort/Suricata rules** within our security community. I'm also a big advocate of **Linux** as a primary workstation and **open-source** solutions.
 
@@ -120,8 +121,13 @@ I'm a strong believer in the efficacy and efficiency of **open-source** software
 In Cybersecurity, we don't have the luxury of time. Our work demands persistence, proactivity, and collaboration. I believe that you don't need to work at the same company to be on the same team.
 
 <div class="role-card" style="background: #f8f9fa; border-left: 4px solid #522398; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
-  <h3>Security Engineer@<a href="https://www.gce.com/">GCE</a></h3>
-  <p>Security Engineer reporting directly to the <b>CISO</b>. My decade at GCE has included various <b>technical and leadership roles</b> in <b>security architecture</b>, <b>threat detection</b>, and <b>incident response</b>. I've developed security programs, implemented detection systems, and built resilient infrastructure. See my <strong><a href="https://www.linkedin.com/in/christiantaillon/">LinkedIn profile</a></strong> for details on my roles and responsibilities.</p>
+  <h3>Manager Cyber Security Consulting@<a href="https://www.gce.com/">GCE</a></h3>
+  <p>Lead the security services and consulting team at GCE, helping organizations build security programs and improve security operations. My decade at GCE has included various <b>technical and leadership roles</b> in <b>security architecture</b>, <b>threat detection</b>, and <b>incident response</b>. I've developed security programs, implemented detection systems, and built resilient infrastructure. See my <strong><a href="https://www.linkedin.com/in/christiantaillon/">LinkedIn profile</a></strong> for details on my roles and responsibilities.</p>
+</div>
+
+<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #000000; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
+  <h3>Owner & Principal Consultant@<a href="https://darkroastcyber.io">Dark Roast Cyber</a></h3>
+  <p>Owner and Principal Consultant performing <b>open-source development</b> and <b>independent consulting services</b>. Focused on building security tools and providing expert guidance to organizations seeking to strengthen their security posture.</p>
 </div>
 
 <div class="role-card" style="background: #f8f9fa; border-left: 4px solid #ff0000; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
@@ -191,7 +197,11 @@ In Cybersecurity, we don't have the luxury of time. Our work demands persistence
 <div style="text-align: left; padding: 0 20px; margin-bottom: 30px;">
   <strong>Conference Presentations:</strong>
   <ul>
+    <li><strong>INTERFACE Phoenix 2026</strong> - The New CyberSec Workforce: Leading Through Change, Strengthening Collective Defense</li>
+    <li><strong>ElevateIT 2026</strong> - Keynote Panel Moderator: Leading Through the Unknown: CyberSecurity Strategy in a Quantum-Ready World</li>
+    <li><strong>Critical Infrastructure Executive Briefing (May 12, 2026)</strong> - Panel Member: Changes in the Professional Cybersecurity Workspace and Collective Defense</li>
     <li><strong>CyberShare Summit 2025</strong> - Closing conference keynote.</li>
+    <li><strong>10th Annual Cyber Southwest Symposium (2025)</strong> - Keynote address</li>
     <li><strong>Agentic SOC: Next-Generation Security Operations (2025)</strong> - Implementing AI agents for automated security response and orchestration</li>
     <li><strong>Advanced Cybersecurity Defense Strategies (2025)</strong> - Keynote address on multi-layered defense frameworks</li>
     <li><strong>DIY AI: Build Your Own Digital InfoSec Team with BYOLLM (2024-2025)</strong> - Building AI-powered security teams using open-source LLMs for threat detection and analysis</li>
@@ -199,6 +209,12 @@ In Cybersecurity, we don't have the luxury of time. Our work demands persistence
     <li><strong>Building a Private GenAI Team with Open-Source Models (2024)</strong> - Strategies for local LLM deployment and team integration</li>
     <li><strong>Threat Hunting: Becoming the Predator and No Longer the Prey (2023-2024)</strong> - Developing repeatable, scalable threat hunting processes with measurable ROI</li>
     <li><strong>Can Ducks Teach us to Share: What hunting Qakbot and other threats teach us about CTI (2023)</strong> - Improving cyber threat intelligence sharing based on adversary tactics and botnet hunting</li>
+  </ul>
+  
+  <strong>Podcasts & Media:</strong>
+  <ul>
+    <li><strong>TechTables Podcast (May 11, 2026)</strong></li>
+    <li><strong>TechTables Podcast (2023)</strong></li>
   </ul>
   
   <p><strong>View more speaking events and topics:</strong> <a href="https://sessionize.com/christian-taillon" target="_blank" style="color: #007bff; text-decoration: none;"><strong>Christian Taillon on Sessionize</strong></a></p>
