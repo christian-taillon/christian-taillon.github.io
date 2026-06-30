@@ -351,6 +351,7 @@ image: /image/professional_circle.png
         <p>Building your own security tools with AI. Guides on Agentic SOC architecture, LLM stacks, and pipelines.</p>
         <div class="pill-container">
             <a href="/agentic-soc" class="pill-link" style="--theme-color: #d63384;">Agentic SOC</a>
+            <a href="/ai-agent-sandboxing/" class="pill-link" style="--theme-color: #d63384;">Agent Sandboxing</a>
             <a href="/llm_stack" class="pill-link" style="--theme-color: #d63384;">LLM Stack</a>
             <a href="https://github.com/christian-taillon/open-webui-pipelines" target="_blank" class="pill-link" style="--theme-color: #d63384;">OpenWebUI Pipelines</a>
         </div>
@@ -367,20 +368,21 @@ image: /image/professional_circle.png
 
     <div class="resource-card accent-blue">
         <h3 style="color: #007bff; border-bottom-color: #007bff;">💻 Developer AI</h3>
-        <p>Practical looks at developer AI economics, including token efficiency, model value, throughput, model mapping, and subscription tradeoffs.</p>
+        <p>Developer AI with the parts that matter in practice: throughput, model value, filesystem access, shell access, and isolation.</p>
         <div class="pill-container">
             <a href="/openai-value/" class="pill-link" style="--theme-color: #007bff;">OpenAI Value &rarr;</a>
             <a href="/glm5-vs-opus/" class="pill-link" style="--theme-color: #007bff;">OpenCode vs Claude &rarr;</a>
-            <a href="https://github.com/christian-taillon/opencode-containment" class="pill-link" style="--theme-color: #007bff;">Securing OpenCode &rarr;</a>
+            <a href="/ai-agent-sandboxing/" class="pill-link" style="--theme-color: #007bff;">Agent Sandboxing &rarr;</a>
+            <a href="https://github.com/christian-taillon/opencode-containment" class="pill-link" style="--theme-color: #007bff;">opencode-containment &rarr;</a>
         </div>
     </div>
 
     <div class="resource-card accent-cyan">
         <h3 style="color: #0dcaf0; border-bottom-color: #0dcaf0;">💻 Secure Local Models</h3>
-        <p>Best practices for running LLMs locally and securely on your own hardware.</p>
+        <p>Practical local LLM deployment notes: model loading, OpenWebUI, vLLM, containers, GPU access, and where isolation actually matters.</p>
         <div class="pill-container">
-            <a href="/models" class="pill-link" style="--theme-color: #0dcaf0;">Scanned Models</a>
             <a href="/llm_security" class="pill-link" style="--theme-color: #0dcaf0;">LLM Security</a>
+            <a href="/llm_stack" class="pill-link" style="--theme-color: #0dcaf0;">Local Stack</a>
             <a href="/vLLM" class="pill-link" style="--theme-color: #0dcaf0;">vLLM Guide</a>
         </div>
     </div>

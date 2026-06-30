@@ -610,7 +610,7 @@ security_context = {
 - [OpenWebUI Security Pipelines](https://github.com/christian-taillon/open-webui-pipelines) - My production implementations
 - [vLLM Security Guide](/vLLM) - Secure model deployment
 - [Agentic SOC Implementation](/agentic-soc) - Real-world use cases
-- [Secure LLM Models Catalog](/models) - Verified security models
+- [LLM Security Guide](/llm_security) - Model format, loading, and inference security notes
 
 ### **Learning Resources**
 - [Prompt Injection Defense Guide](https://gandalf.lakera.ai/)

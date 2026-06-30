@@ -73,7 +73,6 @@ docker run --runtime nvidia --gpus all \
     --env "HUGGING_FACE_HUB_TOKEN=$HF_TOKEN" \
     vllm/vllm-openai:latest \
     --model meta-llama/Llama-3.1-8B-Instruct \
-    --trust-remote-code \
     --safetensors \
     --max-model-len 8192 \
     --gpu-memory-utilization 0.9
@@ -90,7 +89,6 @@ docker run --runtime nvidia --gpus all \
     vllm/vllm-openai:latest \
     --model meta-llama/Llama-3.3-70B-Instruct \
     --tensor-parallel-size 2 \  # Use 2 GPUs
-    --trust-remote-code \
     --safetensors \
     --max-model-len 4096 \
     --gpu-memory-utilization 0.85 \
@@ -104,7 +102,7 @@ from vllm import LLM, SamplingParams
 # Initialize LLM with SafeTensors
 llm = LLM(
     model="meta-llama/Llama-3.1-8B-Instruct",
-    trust_remote_code=True,
+    trust_remote_code=False,
     tensor_parallel_size=1,
     gpu_memory_utilization=0.9,
     enforce_eager=False  # Use CUDA graphs
@@ -158,9 +156,10 @@ docker run --runtime nvidia --gpus all \
     vllm/vllm-openai:latest \
     --model meta-llama/Llama-3.1-8B-Instruct \
     --safetensors-only \  # Reject pickle files
-    --trust-remote-code \
     --enforce-eager
 ```
+
+Use `--trust-remote-code` only for a model repository you reviewed and pinned to a specific revision. It changes the risk from "load weights" to "run repository code."
 
 ---
 
@@ -173,7 +172,7 @@ from vllm import LLM, SamplingParams
 # High-performance configuration for security operations
 llm = LLM(
     model="Qwen/Qwen2.5-14B-Instruct",  # Great for security analysis
-    trust_remote_code=True,
+    trust_remote_code=False,
     tensor_parallel_size=2,
     
     # Memory optimization
@@ -315,7 +314,7 @@ llms = {}
 for name, model_path in security_models.items():
     llms[name] = LLM(
         model=model_path,
-        trust_remote_code=True,
+        trust_remote_code=False,
         safetensors_only=True
     )
 ```
@@ -467,6 +466,7 @@ class SecurityAgentOrchestrator:
 2. **Verify model integrity** - Check SHA-256 hashes
 3. **Limit model access** - Use API authentication
 4. **Monitor inference** - Detect unusual patterns
+5. **Avoid remote code by default** - only enable `--trust-remote-code` for reviewed, pinned model repos
 
 ### ⚡ **Performance**
 1. **Use tensor parallelism** for large models
@@ -488,6 +488,7 @@ class SecurityAgentOrchestrator:
 - [SafeTensors Security Guide](https://huggingface.co/docs/safetensors/index)
 - [OpenAI API Compatibility](https://docs.vllm.ai/en/latest/getting_started/quickstart.html#openai-compatible-server)
 - [Performance Tuning Guide](https://docs.vllm.ai/en/latest/performance_tuning/)
+- [Hugging Face Transformers custom models and remote code](https://huggingface.co/docs/transformers/custom_models)
 
 ---
 

@@ -260,6 +260,20 @@ permalink: /glm5-vs-opus/
 </div>
 
 <div class="section-card">
+  <h2>Sandboxing belongs in the comparison</h2>
+  <p class="muted">Throughput is only useful if the agent can work safely. A coding agent with shell, filesystem, browser, MCP, or cloud access is a local automation surface, not just a model subscription.</p>
+  <ul style="color: #555555; line-height: 1.8; margin-top: 16px; margin-bottom: 0; padding-left: 20px;">
+    <li><strong style="color: #1e293b;">Codex:</strong> use approval modes and the documented sandboxing / agent security controls before giving it broad command execution.</li>
+    <li><strong style="color: #1e293b;">Claude Code:</strong> use permission rules, sandboxed Bash, dev containers, Docker, or VMs depending on the repo and credential risk.</li>
+    <li><strong style="color: #1e293b;">OpenCode workflows:</strong> <a href="https://github.com/christian-taillon/opencode-containment">opencode-containment</a> is my experiment to preserve the normal no-isolation feel while adding filesystem, credential, network, and process controls.</li>
+  </ul>
+  <div class="callout">
+    Practical rule: benchmark the model, but threat-model the tool loop. The risk is usually not text generation; it is what the agent can touch after it decides what to do.
+  </div>
+  <p class="muted" style="margin-top: 12px;">See also: <a href="/ai-agent-sandboxing/">AI Agent Sandboxing</a>, <a href="https://developers.openai.com/codex/concepts/sandboxing">Codex sandboxing</a>, and <a href="https://code.claude.com/docs/en/sandbox-environments.md">Claude Code sandbox environments</a>.</p>
+</div>
+
+<div class="section-card">
   <h2>Direct Visualization</h2>
   <p class="muted">Raw 5-hour plan capacity only.</p>
 

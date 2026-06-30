@@ -36,7 +36,7 @@ Based on the [MLCommons taxonomy](https://mlcommons.org/2024/04/mlc-aisafety-v0-
 ![llama-guard](/video/LlamaGuard-hq.gif)
 In this demonstration, we see LLamaGuard's privacy protection capabilities.
 
-**No LlamaGuard Filter**: Initially, a user sends sensitive personal information to an external model hosted on CloudFlare. Although the model recognizes this information is sensative and rejects the users request, the damage is done and the sensative information has left the users systems. 
+**No LlamaGuard Filter**: Initially, a user sends sensitive personal information to an external model hosted on CloudFlare. Although the model recognizes this information is sensitive and rejects the user's request, the damage is done and the sensitive information has left the user's system. 
 
 This is seen in the CloudFlare AI Gateway logs. 
 **LlamaGaurd Filter Enabled**: Then the user sends the same prompt through LlamaGaurd Model configured to use the LlamaGaurd Filter.
@@ -44,7 +44,7 @@ This is seen in the CloudFlare AI Gateway logs.
 With LLamaGuard enabled, the system intercepts and blocks the request. Instead of processing potentially sensitive data, the system returns a privacy violation notice. 
 
 #### Other Categories
-A second example shows permitted content (how to adopt a Llama) vs. blocked content (how to steal a Llama) triggering a seperate LlamaGaurd unsafe category. 
+A second example shows permitted content (how to adopt a Llama) vs. blocked content (how to steal a Llama) triggering a separate LlamaGuard unsafe category. 
 
 ### Demo 2: Customizable Security Controls
 ------------------------------------
@@ -52,10 +52,10 @@ A second example shows permitted content (how to adopt a Llama) vs. blocked cont
 
 The second demonstration showcases the OpenWebUI Filter Installation process and configuration options.
 
-Not everyone will require the same use cases. Personally, I was primarily interested in LlamaGaurd for the probabilitic Privacy features as a second layer of preventing privacy related details from being sent to third party inference providers if my [TokenGuard](https://github.com/christian-taillon/open-webui-pipelines/blob/main/function/tokenGuard.py) fails to properly sanitize the data. 
+Not everyone will require the same use cases. Personally, I was primarily interested in LlamaGuard for the probabilistic privacy features as a second layer of preventing privacy-related details from being sent to third-party inference providers if my [TokenGuard](https://github.com/christian-taillon/open-webui-pipelines/blob/main/function/tokenGuard.py) fails to properly sanitize the data. 
 
-The abilit to enable to disable certain filters therefore seemed to me to be a required feature. 
+The ability to enable or disable certain filters therefore seemed to me to be a required feature. 
 - Users can choose which LlamaGuard model they use (default= llama-guard3:8b).
 - Individual filter categories can be enabled or disabled
 
-__Note: Many OpenWeight Models are significantly less censored then closed source frontineir models.__
+__Note: Many open-weight models are significantly less censored than closed-source frontier models.__

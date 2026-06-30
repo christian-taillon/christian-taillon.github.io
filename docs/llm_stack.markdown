@@ -1,15 +1,81 @@
 ---
 layout: page
-title: OpenWebUI Full Stack
+title: Local LLM Stack Guide
 permalink: /llm_stack
 
 ---
 
-# Complete Guide: OpenWEBUI with SearXNG and OpenEDAI Speech
+# Local LLM Stack Guide: OpenWebUI, Ollama, SearXNG, and Speech
 
 ## Introduction
 
+This is the canonical local LLM stack page. It keeps the practical deployment notes in one place: OpenWebUI, Ollama, SearXNG search, OpenEDAI Speech, containers, GPU access, mounted volumes, API keys, and host-network tradeoffs.
+
 Running containers with Podman provides enhanced security through unprivileged containers and rootless execution. Using `systemctl --user` for systemd services allows for better process management without requiring root privileges. While this guide uses Podman, the commands can be adapted for Docker with minor modifications.
+
+Rootless containers reduce host risk, but they do not erase the risk of broad mounts, host networking, GPU passthrough, or API keys inside the service environment.
+
+## Quick OpenWebUI Options
+
+If you only need OpenWebUI quickly, these are the common shapes.
+
+### OpenWebUI with GPU support
+
+```bash
+docker run -d \
+  -p 3000:8080 \
+  --gpus all \
+  --add-host=host.docker.internal:host-gateway \
+  -v open-webui:/app/backend/data \
+  --name open-webui \
+  --restart always \
+  ghcr.io/open-webui/open-webui:cuda
+```
+
+GPU passthrough and mounted application state are meaningful access. Do not put secrets in the container environment unless you need them, and do not expose port `3000` beyond the host without authentication and a reverse proxy you trust.
+
+### OpenWebUI with bundled Ollama
+
+```bash
+docker run -d \
+  -p 3000:8080 \
+  --gpus=all \
+  -v ollama:/root/.ollama \
+  -v open-webui:/app/backend/data \
+  --name open-webui \
+  --restart always \
+  ghcr.io/open-webui/open-webui:ollama
+```
+
+This is convenient, but it couples model storage and the web app into one deployment shape. Fine for a lab box. For a shared system, split services and be explicit about volumes and credentials.
+
+### OpenWebUI with existing Ollama
+
+```bash
+docker run -d \
+  --network=host \
+  -v open-webui:/app/backend/data \
+  -e OLLAMA_BASE_URL=http://127.0.0.1:11434 \
+  --name open-webui \
+  --restart always \
+  ghcr.io/open-webui/open-webui:main
+```
+
+`--network=host` removes Docker's network namespace boundary. Use it when it solves a real connectivity problem. Prefer explicit port mappings when possible.
+
+### OpenAI API only
+
+```bash
+docker run -d \
+  -p 3000:8080 \
+  -e OPENAI_API_KEY=$OPENAI_API_KEY \
+  -v open-webui:/app/backend/data \
+  --name open-webui \
+  --restart always \
+  ghcr.io/open-webui/open-webui:main
+```
+
+Use scoped keys where possible. Assume any admin user of the OpenWebUI instance can route prompts through configured providers.
 
 ## Setting Up SearXNG
 
@@ -126,6 +192,8 @@ Environment=HOME=/home/christian
 [Install]
 WantedBy=default.target
 ```
+
+Security note: `--network=host` gives the container the host network namespace, and `--device nvidia.com/gpu=all` exposes GPU devices. That may be the right tradeoff for a single-user lab box. For shared systems, prefer explicit port mappings, separate service users, scoped API keys, and narrow volume mounts.
 
 ### 2. Enable and Start Open-WebUI
 
