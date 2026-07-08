@@ -5,6 +5,12 @@ gem "github-pages", group: :jekyll_plugins
 gem "minima", "~> 2.5"
 gem "webrick"
 
+gem "csv"
+gem "logger"
+gem "base64"
+gem "ostruct"
+gem "bigdecimal"
+
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jemoji"

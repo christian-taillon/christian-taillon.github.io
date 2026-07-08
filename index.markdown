@@ -304,6 +304,7 @@ image: /image/professional_circle.png
 <div class="domain-section">
   <div class="domain-header">
     <h2>What This Site Is About</h2>
+    <p>This site is a living notebook of practical cybersecurity work — threat hunting, detection engineering, secure AI usage, and open-source tooling — shared so we can all move faster together. It collects guides, cheatsheets, and experiments I use in the field, hosted openly for the community to reference, critique, and improve.</p>
   </div>
 </div>
 
