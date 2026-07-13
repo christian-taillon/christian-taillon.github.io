@@ -1,17 +1,10 @@
 ---
-layout: null
+layout: base
 title: "GPT-5.6 Value Map"
 description: "GPT-5.6 general-purpose and coding routing guidance using Artificial Analysis benchmark cost and index data."
 permalink: /gpt-5-6-value-analysis/
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GPT-5.6 general-purpose and coding routing guidance using Artificial Analysis benchmark cost and index data.">
-  <title>GPT-5.6 Value Map | General and Coding Routing</title>
-  <style>
+<style>
     :root {
       --yellow: #fcc624;
       --yellow-soft: #fff7d6;
@@ -46,51 +39,10 @@ permalink: /gpt-5-6-value-analysis/
     a { color: inherit; }
     button { font: inherit; }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255,255,255,.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,.08);
-    }
-
-    .topbar-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      min-height: 64px;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      font-weight: 800;
-      letter-spacing: -.02em;
-      text-decoration: none;
-    }
-
-    .navlinks {
-      display: flex;
-      gap: 18px;
-      color: #444;
-      font-size: .92rem;
-      font-weight: 650;
-    }
-
-    .navlinks a {
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-    }
-
-    .navlinks a:hover { border-bottom-color: var(--yellow); }
-
     .shell {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 34px 24px 70px;
+      padding: 110px 24px 70px;
     }
 
     .hero-card {
@@ -457,7 +409,7 @@ permalink: /gpt-5-6-value-analysis/
     .badge.exception { background: #e7f2ff; color: #005cae; }
     .badge.maximum { background: #f8e8f1; color: #92245c; }
 
-    .footer {
+    .analysis-footer {
       margin-top: 42px;
       padding-top: 24px;
       border-top: 1px solid #dfe3e8;
@@ -560,40 +512,24 @@ permalink: /gpt-5-6-value-analysis/
       .route-flow { grid-template-columns: 1fr; }
       .route-arrow { transform: rotate(90deg); justify-self: center; }
       .chart-wrap { min-height: 480px; }
-      .navlinks { display: none; }
     }
 
     @media (max-width: 620px) {
-      .shell { padding: 20px 14px 50px; }
-      .topbar-inner { padding: 0 14px; }
+      .shell { padding: 90px 14px 50px; }
       .hero-card { border-radius: 16px; }
       .chart-card { padding: 12px; }
       .chart-wrap { min-height: 430px; overflow-x: auto; }
       #valueChart { width: 760px; max-width: none; }
-      .footer { flex-direction: column; }
+      .analysis-footer { flex-direction: column; }
     }
 
     @media print {
-      .topbar, .chart-toolbar, .footer { display: none !important; }
+      .chart-toolbar, .analysis-footer { display: none !important; }
       body { background: white; }
       .shell { max-width: none; padding: 0; }
       .hero-card, .chart-card, .resource-card, .route-card, .table-card { box-shadow: none; break-inside: avoid; }
     }
-  </style>
-</head>
-<body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="#top">Christian Taillon</a>
-      <nav class="navlinks" aria-label="Page sections">
-        <a href="#chart">General</a>
-        <a href="#recommendations">Routing</a>
-        <a href="#coding">Coding</a>
-        <a href="#limitations">Limits</a>
-        <a href="#data">Data</a>
-      </nav>
-    </div>
-  </header>
+</style>
 
   <main class="shell" id="top">
     <section class="hero-card">
@@ -863,10 +799,10 @@ permalink: /gpt-5-6-value-analysis/
       </div>
     </section>
 
-    <footer class="footer">
+    <div class="analysis-footer">
       <span>Benchmark data, Intelligence Index, and Coding Agent Index from <a href="https://artificialanalysis.ai" target="_blank" rel="noopener">Artificial Analysis</a>.</span>
       <span>Interpretation: cost and index are useful routing signals&mdash;not a substitute for workload-specific evaluation.</span>
-    </footer>
+    </div>
   </main>
 
   <script>
@@ -1155,5 +1091,3 @@ permalink: /gpt-5-6-value-analysis/
 
     renderChart();
   </script>
-</body>
-</html>
