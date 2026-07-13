@@ -1098,7 +1098,7 @@ permalink: /gpt-5-6-value-analysis/
     }
 
     const tbody = document.getElementById("dataRows");
-    [...data].sort((a,b) => a.cost - b.cost || (b.index ?? -1) - (a.index ?? -1)).forEach(d => {
+    data.filter(d => d.index != null).sort((a,b) => a.cost - b.cost || b.index - a.index).forEach(d => {
       const a = assessment(d);
       const tr = document.createElement("tr");
       tr.innerHTML = `
