@@ -8,7 +8,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://christiant.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: christian_tail
-github_username:  christian-taillon
+github_username: christian-taillon
 
 # Navigation Bar
 navbar-links:
@@ -17,7 +17,7 @@ navbar-links:
     - Splunk Cheatsheet: "spl"
     - Splunk Beginner Guide: "spl-beginner"
     - KQL Beginner Guide: "kql-guide"
-    - Falcon LogScale (FQL) : "logscale"
+    - Falcon LogScale (FQL): "logscale"
     - Sigma Rule Guide: "sigma-rule-guide"
     - ClamAV Guide: "clamav-guide"
     - YARA Rule Guide: "yara-rule-guide"
@@ -25,7 +25,7 @@ navbar-links:
     - Cyber Security Resources: "cyberresources"
     - Gist/christian-taillon: https://gist.github.com/christian-taillon
     - Endpoint Forensics: "ep-forensics"
-    - "Sith CheatSheet: Kali" : "sith-cheatsheet"
+    - "Sith CheatSheet: Kali": "sith-cheatsheet"
     - Recon-ng Guide: "recon-ng"
     - DNS OSINT PDF: "https://christiant.io/download/dns-guide-awnsers.pdf"
   Threat Hunting and Intel:
@@ -33,15 +33,15 @@ navbar-links:
     - Detect-AutoIT: "https://github.com/christian-taillon/detect-autoit"
     - SigmaGUI: "https://github.com/christian-taillon/SigmaGUI"
     - Atomic Guide: "atomic"
-    - "Part-time Threat Hunting: Considering its Efficacy" : https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
-    - "Prophet Spider Exploits Citrix ShareFile to Deploy Webshell" : https://christiantaillon.medium.com/prophet-spider-exploits-citrix-sharefile-to-deploy-webshell-d2689abd4301
-    - "QakBot Detection: DUCK HUNT" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-aa0cadb398a7
-    - "QakBot Detection: DUCK HUNT Part 2 — The .LNK" : https://christiantaillon.medium.com/qakbot-detection-duck-hunt-part-2-a93ea2498211
+    - "Part-time Threat Hunting: Considering its Efficacy": https://christiantaillon.medium.com/part-time-threat-hunting-considering-its-efficacy-85598a9d339
+    - "Prophet Spider Exploits Citrix ShareFile to Deploy Webshell": https://christiantaillon.medium.com/prophet-spider-exploits-citrix-sharefile-to-deploy-webshell-d2689abd4301
+    - "QakBot Detection: DUCK HUNT": https://christiantaillon.medium.com/qakbot-detection-duck-hunt-aa0cadb398a7
+    - "QakBot Detection: DUCK HUNT Part 2 — The .LNK": https://christiantaillon.medium.com/qakbot-detection-duck-hunt-part-2-a93ea2498211
     - Log4j: https://github.com/christian-taillon/log4shell-hunting
     - Sunburst: https://github.com/christian-taillon/sunburst-hunting
     - Various Search Leads: https://github.com/christian-taillon/threat-hunting-searches
-    - "What do we actually know about the Darkside Ransomware operators?" : https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
-    - "GitHub Actions Abuse by Cryptominers" : https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
+    - "What do we actually know about the Darkside Ransomware operators?": https://christiantaillon.medium.com/what-do-we-actually-know-about-the-darkside-ransomware-operators-5a1523094899
+    - "GitHub Actions Abuse by Cryptominers": https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
   Dev and Projects:
     - Splunk Docker: "splunkdocker"
     - Splunk BOTSv2 Walkthrough: "splunkbotsv2"
@@ -58,7 +58,6 @@ navbar-links:
     - File Arrangement and Sorting Tool: "https://github.com/christian-taillon/fast"
     - Vector Robot: "vector-robot"
   Machine Learning and AI:
-    - OpenAI Value Play: "openai-value"
     - GPT-5.6 Value Map: "gpt-5-6-value-analysis"
     - Agent Sandboxing: "ai-agent-sandboxing"
     - AI Security Code Review: "ai-security-code-review"
@@ -110,7 +109,7 @@ markdown: kramdown
 #  - spl-cheat
 #  - "Splunk SPL Cheat Sheet"
 #  - spl
-# 
+#
 # General
 share-links-active:
   twitter: true
