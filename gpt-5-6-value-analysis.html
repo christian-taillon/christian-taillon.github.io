@@ -364,6 +364,9 @@ permalink: /gpt-5-6-value-analysis/
     .assessment-list li + li { margin-top: 7px; }
 
     .routing-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -550,6 +553,7 @@ permalink: /gpt-5-6-value-analysis/
     @media (max-width: 900px) {
       .hero-card { grid-template-columns: 1fr; }
       .recommendation-grid, .assessment-grid { grid-template-columns: 1fr; }
+      .routing-list { grid-template-columns: 1fr; }
       .route-flow { grid-template-columns: 1fr; }
       .route-arrow { transform: rotate(90deg); justify-self: center; }
       .chart-wrap { min-height: 480px; }
