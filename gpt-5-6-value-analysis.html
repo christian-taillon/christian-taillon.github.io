@@ -455,6 +455,7 @@ permalink: /gpt-5-6-value-analysis/
     .badge.dominated { background: #f0f1f3; color: #646b73; }
     .badge.unscored { background: #fde8eb; color: #9f2030; }
     .badge.exception { background: #e7f2ff; color: #005cae; }
+    .badge.maximum { background: #f8e8f1; color: #92245c; }
 
     .footer {
       margin-top: 42px;
@@ -811,7 +812,7 @@ permalink: /gpt-5-6-value-analysis/
       <div class="section-heading">
         <div>
           <h2>General-purpose source data</h2>
-          <p>Sorted by average Artificial Analysis benchmark task cost. “Efficient frontier” means no tested configuration is both cheaper and equal or better on the Intelligence Index. Coding values are summarized separately above because they come from a different benchmark suite.</p>
+          <p>Sorted by average Artificial Analysis benchmark task cost. “Pareto frontier” only means no tested configuration is both cheaper and equal or better on the Intelligence Index; it does not imply strong practical value. Coding values are summarized separately above because they come from a different benchmark suite.</p>
         </div>
       </div>
       <div class="table-card">
@@ -1060,7 +1061,7 @@ permalink: /gpt-5-6-value-analysis/
           tooltip.style.top = `${py}px`;
           tooltip.innerHTML = `<strong>${d.family} ${effortLabels[d.effort]}</strong>` +
             `<div>${d.cost}¢ per task · Index ${d.index}</div>` +
-            `<div class="status">${d.recommended ? "Recommended routing tier" : d.exception ? "Operational exception: output length may matter" : d.dominated ? "Strictly dominated on cost + index" : "Benchmark-efficient frontier"}</div>`;
+            `<div class="status">${d.recommended ? "Recommended routing tier" : d.exception ? "Operational exception: output length may matter" : key(d) === "Sol|max" ? "Maximum capability; weak marginal value" : d.dominated ? "Strictly dominated on cost + index" : "Pareto frontier"}</div>`;
           tooltip.style.opacity = 1;
         }
         function hideTip() { tooltip.style.opacity = 0; }
@@ -1090,8 +1091,9 @@ permalink: /gpt-5-6-value-analysis/
       if (d.index == null) return { label: "Unscored", cls: "unscored" };
       if (d.recommended) return { label: "Recommended", cls: "recommended" };
       if (d.exception) return { label: "Token-efficiency exception", cls: "exception" };
+      if (key(d) === "Sol|max") return { label: "Max capability; weak value", cls: "maximum" };
       if (d.dominated) return { label: "Strictly dominated", cls: "dominated" };
-      return { label: "Efficient frontier", cls: "frontier" };
+      return { label: "Pareto frontier", cls: "frontier" };
     }
 
     const tbody = document.getElementById("dataRows");
