@@ -1,7 +1,7 @@
 ---
 layout: base
 title: "GPT-5.6 Value Map"
-description: "GPT-5.6 general-purpose and coding routing guidance using Artificial Analysis benchmark cost and index data."
+description: "GPT-5.6 routing guidance using Artificial Analysis benchmarks, Claude comparisons, and OpenAI Codex credit economics."
 permalink: /gpt-5-6-value-analysis/
 ---
 <style>
@@ -21,6 +21,7 @@ permalink: /gpt-5-6-value-analysis/
       --purple: #6610f2;
       --red: #dc3545;
       --orange: #fd7e14;
+      --claude: #c95f3f;
       --shadow: 0 12px 28px -6px rgba(0,0,0,.14);
       --shadow-hover: 0 22px 38px -8px rgba(0,0,0,.20);
       --radius: 16px;
@@ -203,6 +204,7 @@ permalink: /gpt-5-6-value-analysis/
     .dot.luna { background: var(--yellow); border: 1px solid #8a6800; }
     .dot.terra { background: var(--blue); }
     .dot.sol { background: var(--pink); }
+    .diamond { width: 11px; height: 11px; display: inline-block; background: var(--claude); transform: rotate(45deg); border-radius: 2px; }
     .ring { width: 13px; height: 13px; border-radius: 50%; border: 3px solid var(--green); display: inline-block; }
     .faded { width: 13px; height: 13px; border-radius: 50%; background: #aeb5bd; opacity: .45; display: inline-block; }
 
@@ -305,6 +307,7 @@ permalink: /gpt-5-6-value-analysis/
     .accent-cyan { --card-accent: var(--cyan); }
     .accent-red { --card-accent: var(--red); }
     .accent-purple { --card-accent: var(--purple); }
+    .accent-orange { --card-accent: var(--claude); }
 
     .route-card {
       padding: clamp(22px, 4vw, 36px);
@@ -425,12 +428,30 @@ permalink: /gpt-5-6-value-analysis/
     .table-scroll { width: 100%; overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; min-width: 760px; }
     .data-table { display: table; table-layout: fixed; }
-    .data-table th:nth-child(1) { width: 17%; }
-    .data-table th:nth-child(2) { width: 14%; }
-    .data-table th:nth-child(3) { width: 13%; }
-    .data-table th:nth-child(4) { width: 10%; }
-    .data-table th:nth-child(5) { width: 14%; }
-    .data-table th:nth-child(6) { width: 32%; }
+    .data-table { min-width: 900px; }
+    .data-table th:nth-child(1) { width: 11%; }
+    .data-table th:nth-child(2) { width: 18%; }
+    .data-table th:nth-child(3) { width: 15%; }
+    .data-table th:nth-child(4) { width: 11%; }
+    .data-table th:nth-child(5) { width: 8%; }
+    .data-table th:nth-child(6) { width: 12%; }
+    .data-table th:nth-child(7) { width: 25%; }
+    .credit-table { display: table; table-layout: fixed; }
+    .credit-table th:nth-child(1) { width: 24%; }
+    .credit-table th:nth-child(2),
+    .credit-table th:nth-child(3),
+    .credit-table th:nth-child(4) { width: 19%; }
+    .credit-table th:nth-child(5) { width: 19%; }
+    .credit-table td:first-child { font-weight: 800; }
+    .credit-table tr:first-child td { background: #fffaf0; }
+    .comparison-table { display: table; table-layout: fixed; }
+    .comparison-table th:nth-child(1) { width: 13%; }
+    .comparison-table th:nth-child(2) { width: 22%; }
+    .comparison-table th:nth-child(3) { width: 19%; }
+    .comparison-table th:nth-child(4) { width: 11%; }
+    .comparison-table th:nth-child(5) { width: 10%; }
+    .comparison-table th:nth-child(6) { width: 25%; }
+    .comparison-table td:nth-child(2) { font-weight: 800; }
     th, td { padding: 12px 15px; border-bottom: 1px solid #e7eaee; text-align: left; }
     th { background: #111; color: white; font-size: .79rem; text-transform: uppercase; letter-spacing: .065em; }
     td { font-size: .9rem; }
@@ -449,6 +470,8 @@ permalink: /gpt-5-6-value-analysis/
     .badge.unscored { background: #fde8eb; color: #9f2030; }
     .badge.exception { background: #e7f2ff; color: #005cae; }
     .badge.maximum { background: #f8e8f1; color: #92245c; }
+    .badge.openai { background: #fff3c4; color: #725400; }
+    .badge.anthropic { background: #f9e6df; color: #8f3f27; }
 
     .analysis-footer {
       margin-top: 42px;
@@ -488,7 +511,8 @@ permalink: /gpt-5-6-value-analysis/
       padding: 0;
     }
     .sources-list li {
-      padding: 14px 16px;
+      padding: 0;
+      overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 12px;
       background: #fbfcfd;
@@ -500,12 +524,15 @@ permalink: /gpt-5-6-value-analysis/
     }
     .sources-list a {
       display: block;
+      height: 100%;
+      padding: 14px 16px;
       text-decoration: none;
       color: var(--ink);
       font-weight: 700;
       font-size: .9rem;
     }
     .sources-list a:hover { color: #8a6800; }
+    .sources-list a:focus-visible { outline: 3px solid var(--yellow); outline-offset: -3px; }
     .sources-list .source-label {
       display: block;
       margin-bottom: 4px;
@@ -514,14 +541,6 @@ permalink: /gpt-5-6-value-analysis/
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: .08em;
-    }
-    .sources-list .source-url {
-      display: block;
-      margin-top: 4px;
-      color: var(--blue);
-      font-size: .8rem;
-      font-weight: 600;
-      word-break: break-all;
     }
     .sources-list .source-index {
       display: inline-block;
@@ -577,7 +596,7 @@ permalink: /gpt-5-6-value-analysis/
       <div>
         <p class="eyebrow">Bottom line</p>
         <h1>Use Luna High by default.</h1>
-        <p class="hero-lede">And probably do not use Sol Max. General workloads favor Sol Medium for escalation. Coding gives Terra Max a much stronger high-end role.</p>
+        <p class="hero-lede">And probably do not use Sol Max. General workloads favor Sol Medium for escalation. Coding gives Terra Max a much stronger high-end role. Codex credit rates reinforce the Luna-first economics.</p>
       </div>
     </section>
 
@@ -585,7 +604,7 @@ permalink: /gpt-5-6-value-analysis/
       <div class="section-heading">
         <div>
           <h2>General-purpose value chart</h2>
-          <p>Higher means a stronger Artificial Analysis Intelligence Index score; farther left means a lower average benchmark task cost. The dashed line marks configurations that are not dominated on those two metrics. Green rings mark the recommended operating tiers.</p>
+          <p>Higher means a stronger Artificial Analysis Intelligence Index score; farther left means a lower average benchmark task cost. Add the selected Claude points for cross-provider context. The dashed line marks configurations that are not dominated on those two metrics.</p>
         </div>
       </div>
 
@@ -596,6 +615,7 @@ permalink: /gpt-5-6-value-analysis/
             <button type="button" data-scale="log">Log cost</button>
           </div>
           <div class="toolbar-group">
+            <button class="btn" id="toggleClaude" type="button" aria-pressed="false">Show Claude comparison</button>
             <button class="btn" id="toggleDominated" type="button" aria-pressed="true">Hide dominated</button>
             <button class="btn primary" id="downloadPng" type="button">Download chart PNG</button>
           </div>
@@ -605,6 +625,7 @@ permalink: /gpt-5-6-value-analysis/
           <span class="legend-item"><span class="dot luna"></span>Luna</span>
           <span class="legend-item"><span class="dot terra"></span>Terra</span>
           <span class="legend-item"><span class="dot sol"></span>Sol</span>
+          <span class="legend-item" id="claudeLegend" hidden><span class="diamond"></span>Claude / Anthropic</span>
           <span class="legend-item"><span class="ring"></span>Recommended stack</span>
           <span class="legend-item"><span class="faded"></span>Strictly dominated</span>
         </div>
@@ -616,7 +637,7 @@ permalink: /gpt-5-6-value-analysis/
           </svg>
           <div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
         </div>
-        <p class="chart-note">A configuration is “dominated” when another tested option costs no more and scores at least as high. Frontier status is not automatically a recommendation: latency, token use, behavior, and workload fit remain outside this chart.</p>
+        <p class="chart-note">A configuration is “dominated” when another displayed option costs no more and scores at least as high. Enabling Claude recalculates the displayed frontier across the selected points. Frontier status is not automatically a recommendation: latency, token use, behavior, and workload fit remain outside this chart.</p>
       </div>
     </section>
 
@@ -704,7 +725,7 @@ permalink: /gpt-5-6-value-analysis/
       <div class="section-heading">
         <div>
           <h2>Coding Changes the Model Mix</h2>
-          <p>The newer Artificial Analysis Coding Agent Index view strengthens Luna as the default family while making Terra Max the practical high-end escalation.</p>
+          <p>The Artificial Analysis Coding Agent Index strengthens Luna as the default family while making Terra Max the practical high-end escalation.</p>
         </div>
       </div>
 
@@ -715,7 +736,7 @@ permalink: /gpt-5-6-value-analysis/
 
       <div class="coding-view section" aria-labelledby="coding-view-title">
         <h3 id="coding-view-title">Coding benchmark view</h3>
-        <p>Approximate values transcribed from the supplied Artificial Analysis chart. They are intentionally shown as ranges or rounded figures rather than false precision.</p>
+        <p>Current values from the Artificial Analysis Claude Code versus Codex comparison. Costs are average pay-per-token API cost per benchmark task, not Codex subscription credits.</p>
         <div class="table-scroll">
           <table class="coding-table">
             <thead>
@@ -727,11 +748,11 @@ permalink: /gpt-5-6-value-analysis/
               </tr>
             </thead>
             <tbody>
-              <tr><td>Luna Medium</td><td>~$0.50</td><td>Below the attractive quadrant</td><td>High-volume worker</td></tr>
-              <tr class="recommended"><td>Luna High</td><td>Near Terra Medium</td><td>Materially above Terra Medium</td><td>Preferred coding default</td></tr>
-              <tr class="recommended"><td>Luna Max</td><td>~$1.55</td><td>~74&ndash;75</td><td>Premium-value step</td></tr>
-              <tr class="recommended"><td>Terra Max</td><td>~$2.75</td><td>~77&ndash;78</td><td>Difficult-task escalation</td></tr>
-              <tr class="maximum"><td>Sol Max</td><td>~$7.10</td><td>~80</td><td>Maximum capability</td></tr>
+              <tr><td>Luna Medium</td><td>$0.47</td><td>59</td><td>High-volume worker</td></tr>
+              <tr class="recommended"><td>Luna High</td><td>$0.96</td><td>68</td><td>Preferred coding default</td></tr>
+              <tr class="recommended"><td>Luna Max</td><td>$1.57</td><td>75</td><td>Premium-value step</td></tr>
+              <tr class="recommended"><td>Terra Max</td><td>$2.76</td><td>77</td><td>Difficult-task escalation</td></tr>
+              <tr class="maximum"><td>Sol Max</td><td>$7.08</td><td>80</td><td>Maximum capability</td></tr>
             </tbody>
           </table>
         </div>
@@ -741,8 +762,8 @@ permalink: /gpt-5-6-value-analysis/
         <article class="resource-card accent-yellow">
           <h3>Value tiers</h3>
           <p><strong>Luna Medium</strong> is the inexpensive worker for subagents, tests, documentation, small fixes, and well-scoped implementation. It is a volume choice, not the hardest-repository-work default.</p>
-          <p><strong>Luna High</strong> is the strongest general coding default: a meaningful score improvement over Luna Medium while remaining inexpensive, and more attractive than Terra Medium on measured score versus cost.</p>
-          <p><strong>Luna Max</strong> is the premium-value step. It appears to beat Luna Extra High and competes strongly with higher Terra efforts at lower cost.</p>
+          <p><strong>Luna High</strong> is the strongest general coding default: nine index points above Luna Medium for another $0.49 per task, and four points above Terra Medium for only $0.06 more.</p>
+          <p><strong>Luna Max</strong> is the premium-value step at index 75 and $1.57 per task. It also beats Terra High and Extra High on both displayed metrics.</p>
         </article>
 
         <article class="resource-card accent-purple">
@@ -758,12 +779,126 @@ permalink: /gpt-5-6-value-analysis/
         <ul class="assessment-list">
           <li><strong>None and Low:</strong> Luna None, Luna Low, Terra None, and Terra Low deliver substantially weaker coding results.</li>
           <li><strong>Sol None:</strong> expensive relative to its measured coding score.</li>
-          <li><strong>Luna Extra High:</strong> squeezed by Luna Max, which appears to cost roughly the same or less and score higher.</li>
+          <li><strong>Luna Extra High:</strong> a cheaper intermediate step, but Luna Max buys four more index points for about $0.31.</li>
           <li><strong>Terra Extra High:</strong> squeezed by Luna Max or Terra Max.</li>
-          <li><strong>Terra Medium:</strong> not necessarily bad, but less attractive than Luna High on measured coding score and cost.</li>
-          <li><strong>Terra High:</strong> reasonable, though Luna Max appears to be the stronger premium-value step.</li>
+          <li><strong>Terra Medium:</strong> not necessarily bad, but Luna High scores four points higher for only $0.06 more per task.</li>
+          <li><strong>Terra High and Extra High:</strong> both are beaten by Luna Max on the displayed score and task cost.</li>
         </ul>
         <p>Terra may still offer output-length or behavioral advantages that this two-axis view does not capture.</p>
+      </details>
+    </section>
+
+    <section class="section" id="claude-comparison">
+      <div class="section-heading">
+        <div>
+          <h2>What the Claude comparison adds</h2>
+          <p>Selected Anthropic maximum-effort points add useful cross-provider context without changing the default GPT-5.6 routing ladder.</p>
+        </div>
+      </div>
+
+      <article class="resource-card accent-orange">
+        <h3>Claude raises the general capability ceiling, but not the value floor</h3>
+        <p><strong>Claude Fable 5</strong> reaches an Intelligence Index of 60, one point above Sol Max, at a supplied average task cost of $2.75 versus $1.04. The selected Sonnet 5 and Opus 4.8 general points are both beaten by cheaper GPT-5.6 configurations on the two displayed metrics. In coding, each selected Claude Code point is matched or exceeded by a cheaper Codex configuration.</p>
+      </article>
+
+      <div class="table-card section">
+        <div class="table-scroll">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Workload</th>
+                <th>Claude model</th>
+                <th>Configuration</th>
+                <th>Cost / task</th>
+                <th>Index</th>
+                <th>Closest GPT-5.6 comparison</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>General</td><td>Claude Sonnet 5</td><td>Max reasoning</td><td>$1.53</td><td>53</td><td>Sol Medium scores 54 at $0.31</td></tr>
+              <tr><td>General</td><td>Claude Opus 4.8</td><td>Max reasoning</td><td>$1.80</td><td>56</td><td>Sol High scores 56 at $0.45</td></tr>
+              <tr><td>General</td><td>Claude Fable 5</td><td>Max, Opus 4.8 fallback</td><td>$2.75</td><td>60</td><td>Sol Max scores 59 at $1.04</td></tr>
+              <tr><td>Coding</td><td>Claude Code, Opus 4.8</td><td>Medium</td><td>$3.26</td><td>67</td><td>Luna High scores 68 at $0.96</td></tr>
+              <tr><td>Coding</td><td>Claude Code, Opus 4.8</td><td>Max</td><td>$7.70</td><td>73</td><td>Luna Max scores 75 at $1.57</td></tr>
+              <tr><td>Coding</td><td>Claude Code, Fable 5</td><td>Max with fallback</td><td>$11.75</td><td>77</td><td>Terra Max scores 77 at $2.76</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="chart-note">General Claude task costs are transcribed from the supplied comparison data. Coding values reflect the current Artificial Analysis Claude Code versus Codex comparison. These are selected configurations, not complete provider-family sweeps.</p>
+
+      <div class="recommendation-grid section">
+        <article class="resource-card accent-orange">
+          <h3>General-purpose interpretation</h3>
+          <p>Sonnet 5 Max and Opus 4.8 Max do not alter the recommended general stack. Fable 5 is the only selected Claude point that extends the measured ceiling, and it does so with sharply diminishing marginal value.</p>
+        </article>
+        <article class="resource-card accent-cyan">
+          <h3>Coding interpretation</h3>
+          <p>The comparison strengthens <strong>Luna High</strong> as the default and <strong>Terra Max</strong> as the escalation. Terra Max ties Fable 5's coding index at less than one quarter of the task cost; Sol Max scores three points higher while also costing less.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="codex-credits">
+      <div class="section-heading">
+        <div>
+          <h2>Codex subscription credit economics</h2>
+          <p>OpenAI meters GPT-5.6 Codex usage by input, cached input, and output tokens. These rates explain how model choice consumes included usage and how purchased credits are charged after a plan limit is reached.</p>
+        </div>
+      </div>
+
+      <aside class="callout">
+        <h3>The rate card strengthens the routing case; it does not replace cost per completed task.</h3>
+        <p>For the same token mix, Terra consumes <strong>2.5&times;</strong> as many credits as Luna, while Sol consumes <strong>5&times;</strong> as many as Luna and <strong>2&times;</strong> as many as Terra. Those family ratios are identical across input, cached input, and output, and they match the relative API prices. Translating dollars into credits therefore does not reorder the families by itself. A more capable model can still be cheaper when it succeeds with materially fewer tokens or retries, but it must overcome a substantial starting premium.</p>
+      </aside>
+
+      <div class="table-card section">
+        <div class="table-scroll">
+          <table class="credit-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Input</th>
+                <th>Cached input</th>
+                <th>Output</th>
+                <th>Family rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>GPT-5.6 Luna</td><td>25 credits</td><td>2.5 credits</td><td>150 credits</td><td>1&times; baseline</td></tr>
+              <tr><td>GPT-5.6 Terra</td><td>62.5 credits</td><td>6.25 credits</td><td>375 credits</td><td>2.5&times; Luna</td></tr>
+              <tr><td>GPT-5.6 Sol</td><td>125 credits</td><td>12.5 credits</td><td>750 credits</td><td>5&times; Luna</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="chart-note">Rates are credits per 1 million tokens, not credits per message. Approximate task usage is: uncached input &times; input rate + cached input &times; cached rate + output &times; output rate, with each token count divided by 1 million.</p>
+
+      <div class="assessment-grid section">
+        <article class="resource-card accent-pink">
+          <h3>Output is the expensive side</h3>
+          <p>For every GPT-5.6 family, one output token costs six times one uncached input token and 60 times one cached input token. Hidden reasoning tokens are billed as output tokens. Reasoning effort does not change the family's per-token rate, but higher effort can generate more billed output even when the visible answer stays short.</p>
+        </article>
+
+        <article class="resource-card accent-cyan">
+          <h3>Caching changes long sessions</h3>
+          <p>Cached input receives a 90% discount. Stable instructions and reusable context can therefore become relatively cheap, while new tool output, changing context, generated text, and retries continue to drive usage. Cache behavior should be measured rather than assumed.</p>
+        </article>
+
+        <article class="resource-card accent-purple">
+          <h3>The break-even bar is high</h3>
+          <p>If their input, cache, and output proportions are similar, Terra must finish with roughly 40% as many tokens as Luna, including retries, to tie its credit cost. Sol must use roughly 20% as many as Luna, or 50% as many as Terra. Otherwise the premium must be justified by reliability, speed, or the cost of failure.</p>
+        </article>
+      </div>
+
+      <details>
+        <summary>Subscription and API billing caveats</summary>
+        <ul class="assessment-list">
+          <li><strong>Included usage comes first:</strong> monthly ChatGPT plans provide an allowance. Purchased credits are used after the applicable included limit is reached, so credits are not a direct cash charge for every in-plan message.</li>
+          <li><strong>Messages are variable:</strong> OpenAI says GPT-5.6 usage averages 5&ndash;40 credits per Codex message, but model, context, reasoning, tools, retrieval, and caching can move a task outside a simple estimate.</li>
+          <li><strong>API usage is separate:</strong> Codex authenticated with an API key is billed at API token prices rather than ChatGPT subscription credits.</li>
+          <li><strong>Rates can change:</strong> plan eligibility, usage limits, speed modes, and credit rates are product terms, not stable model properties. Check the live rate card before making budget commitments.</li>
+        </ul>
       </details>
     </section>
 
@@ -777,6 +912,8 @@ permalink: /gpt-5-6-value-analysis/
       <div class="resource-card accent-blue">
         <ul class="assessment-list">
           <li>The Intelligence Index and Coding Agent Index use different task suites; their scores and absolute task costs should not be compared directly.</li>
+          <li>Artificial Analysis benchmark task cost and Codex subscription credits are different billing views. Their family price ratios align, but their displayed units are not interchangeable.</li>
+          <li>The Claude comparison includes selected configurations rather than every Anthropic effort level, so it supports point comparisons rather than a complete provider-wide frontier.</li>
           <li>Benchmark score per dollar is not the same as successfully completed production tasks per dollar.</li>
           <li>Output length, latency, retries, context growth, task failure, and downstream human review can change real-world economics.</li>
           <li>Operational role specialization can justify a model that is not the next point on a raw benchmark frontier.</li>
@@ -789,7 +926,7 @@ permalink: /gpt-5-6-value-analysis/
       <div class="section-heading">
         <div>
           <h2>General-purpose source data</h2>
-          <p>Sorted by average Artificial Analysis benchmark task cost. “Index / 1¢” is a simple raw benchmark ratio, not completed production tasks per dollar. “Pareto frontier” only means no tested configuration is both cheaper and equal or better on the Intelligence Index; it does not imply strong practical value.</p>
+          <p>GPT-5.6 configurations and the selected Claude comparison points, sorted by average Artificial Analysis benchmark task cost. “Index / 1¢” is a simple raw benchmark ratio, not completed production tasks per dollar. “Pareto frontier” only means no tested configuration is both cheaper and equal or better on the Intelligence Index; it does not imply strong practical value.</p>
         </div>
       </div>
       <div class="table-card">
@@ -797,6 +934,7 @@ permalink: /gpt-5-6-value-analysis/
           <table class="data-table">
             <thead>
               <tr>
+                <th>Provider</th>
                 <th>Model</th>
                 <th>Reasoning</th>
                 <th>Cost / task</th>
@@ -815,26 +953,38 @@ permalink: /gpt-5-6-value-analysis/
       <div class="section-heading">
         <div>
           <h2>Sources</h2>
-          <p>Benchmark data sourced from Artificial Analysis. Visit each model page for methodology, evaluation breakdowns, pricing, and current leaderboard context.</p>
+          <p>Benchmark and Claude comparison data is sourced from Artificial Analysis. Codex credit rates and reasoning-token billing are sourced from OpenAI. Review the live sources because benchmark results, pricing, and product terms can change.</p>
         </div>
       </div>
       <div class="sources-card">
-        <p>The Artificial Analysis Intelligence Index (v4.1) incorporates nine evaluations: GDPval-AA v2, &tau;&sup3;-Banking, Terminal-Bench v2.1, SciCode, Humanity&rsquo;s Last Exam, GPQA Diamond, CritPt, AA-Omniscience, and AA-LCR. See <a href="https://artificialanalysis.ai/methodology/intelligence-benchmarking" target="_blank" rel="noopener">Artificial Analysis methodology</a> for details. Coding Agent Index figures on this page are approximate values from the newer supplied chart and are kept separate from the general Intelligence Index data.</p>
+        <p>The Artificial Analysis Intelligence Index (v4.1) incorporates nine evaluations: GDPval-AA v2, &tau;&sup3;-Banking, Terminal-Bench v2.1, SciCode, Humanity&rsquo;s Last Exam, GPQA Diamond, CritPt, AA-Omniscience, and AA-LCR. See <a href="https://artificialanalysis.ai/methodology/intelligence-benchmarking" target="_blank" rel="noopener">Artificial Analysis methodology</a> for details. Coding Agent Index figures come from the live Claude Code versus Codex comparison and remain separate from the general Intelligence Index data.</p>
         <ul class="sources-list">
           <li>
-            <span class="source-label">GPT-5.6 Luna</span>
-            <a href="https://artificialanalysis.ai/models/gpt-5-6-luna" target="_blank" rel="noopener">Intelligence, Performance &amp; Price Analysis <span class="source-index">Max index: 51</span></a>
-            <span class="source-url">artificialanalysis.ai/models/gpt-5-6-luna</span>
+            <a href="https://artificialanalysis.ai/models/gpt-5-6-luna" target="_blank" rel="noopener"><span class="source-label">GPT-5.6 Luna</span>Intelligence, Performance &amp; Price Analysis <span class="source-index">Max index: 51</span></a>
           </li>
           <li>
-            <span class="source-label">GPT-5.6 Terra</span>
-            <a href="https://artificialanalysis.ai/models/gpt-5-6-terra" target="_blank" rel="noopener">Intelligence, Performance &amp; Price Analysis <span class="source-index">Max index: 55</span></a>
-            <span class="source-url">artificialanalysis.ai/models/gpt-5-6-terra</span>
+            <a href="https://artificialanalysis.ai/models/gpt-5-6-terra" target="_blank" rel="noopener"><span class="source-label">GPT-5.6 Terra</span>Intelligence, Performance &amp; Price Analysis <span class="source-index">Max index: 55</span></a>
           </li>
           <li>
-            <span class="source-label">GPT-5.6 Sol</span>
-            <a href="https://artificialanalysis.ai/models/gpt-5-6-sol" target="_blank" rel="noopener">Intelligence, Performance &amp; Price Analysis <span class="source-index">Max index: 59</span></a>
-            <span class="source-url">artificialanalysis.ai/models/gpt-5-6-sol</span>
+            <a href="https://artificialanalysis.ai/models/gpt-5-6-sol" target="_blank" rel="noopener"><span class="source-label">GPT-5.6 Sol</span>Intelligence, Performance &amp; Price Analysis <span class="source-index">Max index: 59</span></a>
+          </li>
+          <li>
+            <a href="https://artificialanalysis.ai/models/claude-sonnet-5" target="_blank" rel="noopener"><span class="source-label">Claude Sonnet 5</span>Intelligence, Performance &amp; Price Analysis <span class="source-index">Max index: 53</span></a>
+          </li>
+          <li>
+            <a href="https://artificialanalysis.ai/models/claude-opus-4-8" target="_blank" rel="noopener"><span class="source-label">Claude Opus 4.8</span>Intelligence, Performance &amp; Price Analysis <span class="source-index">Max index: 56</span></a>
+          </li>
+          <li>
+            <a href="https://artificialanalysis.ai/models/claude-fable-5" target="_blank" rel="noopener"><span class="source-label">Claude Fable 5</span>Intelligence, Performance &amp; Price Analysis <span class="source-index">Max index: 60</span></a>
+          </li>
+          <li>
+            <a href="https://artificialanalysis.ai/agents/coding-agents/comparisons/claude-code-vs-codex" target="_blank" rel="noopener"><span class="source-label">Coding Agent Comparison</span>Claude Code versus Codex model variants</a>
+          </li>
+          <li>
+            <a href="https://developers.openai.com/codex/pricing" target="_blank" rel="noopener"><span class="source-label">OpenAI Codex</span>Plans, usage limits, and credits per 1M tokens</a>
+          </li>
+          <li>
+            <a href="https://developers.openai.com/api/docs/guides/reasoning" target="_blank" rel="noopener"><span class="source-label">OpenAI API</span>Reasoning tokens and output-token billing</a>
           </li>
         </ul>
       </div>
@@ -867,22 +1017,31 @@ permalink: /gpt-5-6-value-analysis/
       { model: "GPT-5.6 Sol", family: "Sol", effort: "max", cost: 104, index: 59 }
     ];
 
+    const claudeGeneralData = [
+      { provider: "Anthropic", model: "Claude Sonnet 5", family: "Claude", effort: "sonnet_5_max", cost: 153, index: 53 },
+      { provider: "Anthropic", model: "Claude Opus 4.8", family: "Claude", effort: "opus_4_8_max", cost: 180, index: 56 },
+      { provider: "Anthropic", model: "Claude Fable 5", family: "Claude", effort: "fable_5_max", cost: 275, index: 60 }
+    ];
+
     const recommendedKeys = new Set(["Luna|medium", "Luna|high", "Sol|medium"]);
     const exceptionKeys = new Set(["Terra|medium"]);
-    const familyColors = { Luna: "#fcc624", Terra: "#007bff", Sol: "#d63384" };
+    const familyColors = { Luna: "#fcc624", Terra: "#007bff", Sol: "#d63384", Claude: "#c95f3f" };
     const effortLabels = {
       none: "None",
       low: "Low",
       medium: "Medium",
       high: "High",
       extra_high: "Extra High",
-      max: "Max"
+      max: "Max",
+      sonnet_5_max: "Max reasoning",
+      opus_4_8_max: "Max reasoning",
+      fable_5_max: "Max with Opus 4.8 fallback"
     };
 
     function key(d) { return `${d.family}|${d.effort}`; }
-    function isDominated(point) {
+    function isDominated(point, pool = data) {
       if (point.index == null) return false;
-      return data.some(other =>
+      return pool.some(other =>
         other !== point &&
         other.index != null &&
         other.cost <= point.cost &&
@@ -897,23 +1056,20 @@ permalink: /gpt-5-6-value-analysis/
       d.exception = exceptionKeys.has(key(d));
     });
 
-    const frontier = data
-      .filter(d => d.index != null && !d.dominated)
-      .sort((a,b) => a.cost - b.cost);
-
     const svg = document.getElementById("valueChart");
     const tooltip = document.getElementById("tooltip");
+    const toggleClaude = document.getElementById("toggleClaude");
     const toggleDominated = document.getElementById("toggleDominated");
     const scaleButtons = [...document.querySelectorAll("[data-scale]")];
     let scaleMode = "linear";
     let showDominated = true;
+    let showClaude = false;
 
     const NS = "http://www.w3.org/2000/svg";
     const W = 1120, H = 620;
     const margin = { top: 44, right: 54, bottom: 82, left: 82 };
     const plotW = W - margin.left - margin.right;
     const plotH = H - margin.top - margin.bottom;
-    const yMin = 25, yMax = 60;
 
     function el(name, attrs = {}, text = "") {
       const node = document.createElementNS(NS, name);
@@ -922,27 +1078,44 @@ permalink: /gpt-5-6-value-analysis/
       return node;
     }
 
-    function xScale(cost) {
+    function xScale(cost, xMax) {
       if (scaleMode === "log") {
-        const min = Math.log10(4), max = Math.log10(110);
+        const min = Math.log10(4), max = Math.log10(xMax);
         return margin.left + ((Math.log10(cost) - min) / (max - min)) * plotW;
       }
-      return margin.left + (cost / 110) * plotW;
+      return margin.left + (cost / xMax) * plotW;
     }
 
-    function yScale(index) {
+    function yScale(index, yMin, yMax) {
       return margin.top + ((yMax - index) / (yMax - yMin)) * plotH;
     }
 
     function tickValues() {
+      if (showClaude) return scaleMode === "log" ? [5, 10, 20, 50, 100, 200, 300] : [0, 50, 100, 150, 200, 250, 300];
       return scaleMode === "log" ? [5, 10, 20, 40, 80, 110] : [0, 20, 40, 60, 80, 100];
     }
 
+    function formatCost(cost) {
+      return cost >= 100 ? `$${(cost / 100).toFixed(2)}` : `${cost}¢`;
+    }
+
+    function displayName(d) {
+      return d.provider === "Anthropic" ? d.model : `${d.family} ${effortLabels[d.effort]}`;
+    }
+
     function renderChart() {
+      const rows = showClaude ? [...data, ...claudeGeneralData] : data;
+      const xMax = showClaude ? 300 : 110;
+      const yMin = 25;
+      const yMax = showClaude ? 62 : 60;
+      const frontier = rows
+        .filter(d => d.index != null && !isDominated(d, rows))
+        .sort((a,b) => a.cost - b.cost);
+
       svg.replaceChildren();
       svg.append(
-        el("title", { id: "chartTitle" }, "GPT-5.6 cost per task versus Artificial Analysis Intelligence Index"),
-        el("desc", { id: "chartDesc" }, "Scatter plot comparing Luna, Terra, and Sol configurations. Recommended configurations are Luna Medium, Luna High, and Sol Medium.")
+        el("title", { id: "chartTitle" }, `${showClaude ? "GPT-5.6 and selected Claude" : "GPT-5.6"} cost per task versus Artificial Analysis Intelligence Index`),
+        el("desc", { id: "chartDesc" }, `Scatter plot comparing Luna, Terra, and Sol configurations${showClaude ? " with selected Claude configurations" : ""}. Recommended GPT-5.6 configurations are Luna Medium, Luna High, and Sol Medium.`)
       );
 
       svg.append(el("rect", { x: 0, y: 0, width: W, height: H, rx: 12, fill: "#ffffff" }));
@@ -952,16 +1125,16 @@ permalink: /gpt-5-6-value-analysis/
       }));
 
       [25,30,35,40,45,50,55,60].forEach(t => {
-        const y = yScale(t);
+        const y = yScale(t, yMin, yMax);
         svg.append(el("line", { x1: margin.left, y1: y, x2: W - margin.right, y2: y, stroke: "#e6e9ed", "stroke-width": 1 }));
         svg.append(el("text", { x: margin.left - 16, y: y + 5, "text-anchor": "end", fill: "#687078", "font-size": 13 }, String(t)));
       });
 
       tickValues().forEach(t => {
-        const x = xScale(t || .01);
+        const x = xScale(t || .01, xMax);
         if (x < margin.left - 1 || x > W - margin.right + 1) return;
         svg.append(el("line", { x1: x, y1: margin.top, x2: x, y2: H - margin.bottom, stroke: "#edf0f2", "stroke-width": 1 }));
-        svg.append(el("text", { x, y: H - margin.bottom + 28, "text-anchor": "middle", fill: "#687078", "font-size": 13 }, `${t}¢`));
+        svg.append(el("text", { x, y: H - margin.bottom + 28, "text-anchor": "middle", fill: "#687078", "font-size": 13 }, formatCost(t)));
       });
 
       svg.append(el("text", {
@@ -974,8 +1147,7 @@ permalink: /gpt-5-6-value-analysis/
       }, "Artificial Analysis Intelligence Index");
       svg.append(yLabel);
 
-      const visibleFrontier = frontier.filter(d => showDominated || !d.dominated);
-      const pathData = visibleFrontier.map((d,i) => `${i ? "L" : "M"}${xScale(d.cost)},${yScale(d.index)}`).join(" ");
+      const pathData = frontier.map((d,i) => `${i ? "L" : "M"}${xScale(d.cost, xMax)},${yScale(d.index, yMin, yMax)}`).join(" ");
       svg.append(el("path", {
         d: pathData, fill: "none", stroke: "#b78b00", "stroke-width": 3,
         "stroke-dasharray": "7 7", opacity: .72
@@ -988,25 +1160,34 @@ permalink: /gpt-5-6-value-analysis/
         { k: "Sol|medium", dx: 16, dy: -19, anchor: "start", text: "Sol Medium" },
         { k: "Terra|medium", dx: 16, dy: 33, anchor: "start", text: "Terra Medium*" }
       ];
+      if (showClaude) {
+        labels.push(
+          { k: "Claude|sonnet_5_max", dx: 16, dy: 27, anchor: "start", text: "Sonnet 5 Max" },
+          { k: "Claude|opus_4_8_max", dx: 16, dy: -18, anchor: "start", text: "Opus 4.8 Max" },
+          { k: "Claude|fable_5_max", dx: -16, dy: 28, anchor: "end", text: "Fable 5 Max + fallback" }
+        );
+      }
       labels.forEach(label => {
-        const d = data.find(x => key(x) === label.k);
-        if (!d || d.index == null || (!showDominated && d.dominated && !d.exception)) return;
-        const x = xScale(d.cost), y = yScale(d.index);
+        const d = rows.find(x => key(x) === label.k);
+        const dominated = d ? isDominated(d, rows) : false;
+        if (!d || d.index == null || (!showDominated && dominated && !d.exception)) return;
+        const x = xScale(d.cost, xMax), y = yScale(d.index, yMin, yMax);
         svg.append(el("line", { x1: x, y1: y, x2: x + label.dx * .72, y2: y + label.dy * .72, stroke: "#89919a", "stroke-width": 1 }));
         svg.append(el("text", {
           x: x + label.dx, y: y + label.dy, "text-anchor": label.anchor,
-          fill: d.exception ? "#0069c7" : "#252525", "font-size": 13, "font-weight": 800,
+          fill: d.provider === "Anthropic" ? "#8f3f27" : d.exception ? "#0069c7" : "#252525", "font-size": 13, "font-weight": 800,
           stroke: "#fff", "stroke-width": 4, "paint-order": "stroke"
         }, label.text));
       });
 
-      data.filter(d => d.index != null).forEach(d => {
-        if (!showDominated && d.dominated && !d.exception) return;
-        const x = xScale(d.cost), y = yScale(d.index);
+      rows.filter(d => d.index != null).forEach(d => {
+        const dominated = isDominated(d, rows);
+        if (!showDominated && dominated && !d.exception) return;
+        const x = xScale(d.cost, xMax), y = yScale(d.index, yMin, yMax);
         const group = el("g", {
           tabindex: 0,
           role: "button",
-          "aria-label": `${d.family} ${effortLabels[d.effort]}, ${d.cost} cents per task, index ${d.index}`,
+          "aria-label": `${displayName(d)}, ${effortLabels[d.effort]}, ${formatCost(d.cost)} per task, index ${d.index}`,
           style: "cursor:pointer"
         });
 
@@ -1016,18 +1197,25 @@ permalink: /gpt-5-6-value-analysis/
           group.append(el("circle", { cx: x, cy: y, r: 14, fill: "none", stroke: "#007bff", "stroke-width": 3, "stroke-dasharray": "4 3", opacity: .9 }));
         }
 
-        const circle = el("circle", {
-          cx: x,
-          cy: y,
-          r: d.dominated ? 8 : 10,
-          fill: familyColors[d.family],
-          stroke: d.family === "Luna" ? "#745700" : "#ffffff",
-          "stroke-width": d.dominated ? 1.5 : 2.5,
-          opacity: d.dominated ? .35 : .96
-        });
-        group.append(circle);
+        if (d.provider === "Anthropic") {
+          group.append(el("rect", {
+            x: x - 8, y: y - 8, width: 16, height: 16, rx: 2,
+            fill: familyColors.Claude, stroke: "#fff", "stroke-width": dominated ? 1.5 : 2.5,
+            opacity: dominated ? .42 : .96, transform: `rotate(45 ${x} ${y})`
+          }));
+        } else {
+          group.append(el("circle", {
+            cx: x,
+            cy: y,
+            r: dominated ? 8 : 10,
+            fill: familyColors[d.family],
+            stroke: d.family === "Luna" ? "#745700" : "#ffffff",
+            "stroke-width": dominated ? 1.5 : 2.5,
+            opacity: dominated ? .35 : .96
+          }));
+        }
 
-        if (d.effort === "max") {
+        if (d.effort === "max" && d.provider !== "Anthropic") {
           group.append(el("text", { x, y: y + 4, "text-anchor": "middle", fill: d.family === "Luna" ? "#111" : "#fff", "font-size": 10, "font-weight": 900 }, "M"));
         }
 
@@ -1037,9 +1225,9 @@ permalink: /gpt-5-6-value-analysis/
           const py = ((y / H) * rect.height);
           tooltip.style.left = `${px}px`;
           tooltip.style.top = `${py}px`;
-          tooltip.innerHTML = `<strong>${d.family} ${effortLabels[d.effort]}</strong>` +
-            `<div>${d.cost}¢ per task · Index ${d.index}</div>` +
-            `<div class="status">${d.recommended ? "Recommended routing tier" : d.exception ? "Operational exception: output length may matter" : key(d) === "Sol|max" ? "Maximum capability; weak marginal value" : d.dominated ? "Strictly dominated on cost + index" : "Pareto frontier"}</div>`;
+          tooltip.innerHTML = `<strong>${displayName(d)}</strong>` +
+            `<div>${effortLabels[d.effort]} · ${formatCost(d.cost)} per task · Index ${d.index}</div>` +
+            `<div class="status">${d.provider === "Anthropic" ? dominated ? "Selected Claude point; dominated on cost + index" : "Selected Claude point; cross-provider frontier" : d.recommended ? "Recommended routing tier" : d.exception ? "Operational exception: output length may matter" : key(d) === "Sol|max" ? "Maximum capability; weak marginal value" : dominated ? "Strictly dominated on cost + index" : "Pareto frontier"}</div>`;
           tooltip.style.opacity = 1;
         }
         function hideTip() { tooltip.style.opacity = 0; }
@@ -1051,6 +1239,14 @@ permalink: /gpt-5-6-value-analysis/
         svg.append(group);
       });
     }
+
+    toggleClaude.addEventListener("click", () => {
+      showClaude = !showClaude;
+      toggleClaude.textContent = showClaude ? "Hide Claude comparison" : "Show Claude comparison";
+      toggleClaude.setAttribute("aria-pressed", String(showClaude));
+      document.getElementById("claudeLegend").hidden = !showClaude;
+      renderChart();
+    });
 
     scaleButtons.forEach(btn => btn.addEventListener("click", () => {
       scaleMode = btn.dataset.scale;
@@ -1067,6 +1263,11 @@ permalink: /gpt-5-6-value-analysis/
 
     function assessment(d) {
       if (d.index == null) return { label: "Unscored", cls: "unscored" };
+      if (d.provider === "Anthropic") {
+        return d.effort === "fable_5_max"
+          ? { label: "Overall maximum", cls: "maximum" }
+          : { label: "Comparison point", cls: "anthropic" };
+      }
       if (d.recommended) return { label: "Recommended", cls: "recommended" };
       if (d.exception) return { label: "Token-efficiency exception", cls: "exception" };
       if (key(d) === "Sol|max") return { label: "Max capability; weak value", cls: "maximum" };
@@ -1075,13 +1276,15 @@ permalink: /gpt-5-6-value-analysis/
     }
 
     const tbody = document.getElementById("dataRows");
-    data.filter(d => d.index != null).sort((a,b) => a.cost - b.cost || b.index - a.index).forEach(d => {
+    [...data, ...claudeGeneralData].filter(d => d.index != null).sort((a,b) => a.cost - b.cost || b.index - a.index).forEach(d => {
       const a = assessment(d);
       const tr = document.createElement("tr");
+      const provider = d.provider || "OpenAI";
       tr.innerHTML = `
-        <td><strong>${d.family}</strong></td>
+        <td><span class="badge ${provider.toLowerCase()}">${provider}</span></td>
+        <td><strong>${d.model}</strong></td>
         <td>${effortLabels[d.effort]}</td>
-        <td>${d.cost}¢</td>
+        <td>${formatCost(d.cost)}</td>
         <td>${d.index ?? "—"}</td>
         <td>${d.index == null ? "—" : (d.index / d.cost).toFixed(2)}</td>
         <td><span class="badge ${a.cls}">${a.label}</span></td>`;
@@ -1099,7 +1302,7 @@ permalink: /gpt-5-6-value-analysis/
       ctx.fillRect(0, 0, exportW, 210);
       ctx.fillStyle = "#fcc624";
       ctx.font = "800 28px Arial, sans-serif";
-      ctx.fillText("GPT-5.6 MODEL ECONOMICS", 74, 65);
+      ctx.fillText(showClaude ? "GPT-5.6 + CLAUDE MODEL ECONOMICS" : "GPT-5.6 MODEL ECONOMICS", 74, 65);
       ctx.fillStyle = "#fff";
       ctx.font = "800 58px Arial, sans-serif";
       ctx.fillText("Cost per completed task", 74, 135);
@@ -1123,7 +1326,7 @@ permalink: /gpt-5-6-value-analysis/
         ctx.fillText("Luna Medium for volume  →  Luna High by default  →  Sol Medium for escalation", 74, 955);
         URL.revokeObjectURL(url);
         const link = document.createElement("a");
-        link.download = "gpt-5-6-value-map.png";
+        link.download = showClaude ? "gpt-5-6-claude-value-map.png" : "gpt-5-6-value-map.png";
         link.href = canvas.toDataURL("image/png");
         link.click();
       };
