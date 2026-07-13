@@ -371,7 +371,7 @@ image: /image/professional_circle.png
         <h3 style="color: #007bff; border-bottom-color: #007bff;">💻 Developer AI</h3>
         <p>Developer AI with the parts that matter in practice: throughput, model value, filesystem access, shell access, and isolation.</p>
         <div class="pill-container">
-            <a href="/openai-value/" class="pill-link" style="--theme-color: #007bff;">OpenAI Value &rarr;</a>
+            <a href="/gpt-5-6-value-analysis/" class="pill-link" style="--theme-color: #007bff;">GPT-5.6 Value Map &rarr;</a>
             <a href="/glm5-vs-opus/" class="pill-link" style="--theme-color: #007bff;">OpenCode vs Claude &rarr;</a>
             <a href="/ai-agent-sandboxing/" class="pill-link" style="--theme-color: #007bff;">Agent Sandboxing &rarr;</a>
             <a href="https://github.com/christian-taillon/opencode-containment" class="pill-link" style="--theme-color: #007bff;">opencode-containment &rarr;</a>

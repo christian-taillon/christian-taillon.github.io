@@ -1,0 +1,1149 @@
+---
+layout: null
+title: "GPT-5.6 Value Map"
+description: "GPT-5.6 general-purpose and coding routing guidance using Artificial Analysis benchmark cost and index data."
+permalink: /gpt-5-6-value-analysis/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GPT-5.6 general-purpose and coding routing guidance using Artificial Analysis benchmark cost and index data.">
+  <title>GPT-5.6 Value Map | General and Coding Routing</title>
+  <style>
+    :root {
+      --yellow: #fcc624;
+      --yellow-soft: #fff7d6;
+      --black: #000000;
+      --ink: #222222;
+      --muted: #606770;
+      --line: #d9dfe6;
+      --panel: #ffffff;
+      --canvas: #f5f7fa;
+      --green: #28a745;
+      --blue: #007bff;
+      --pink: #d63384;
+      --cyan: #0dcaf0;
+      --purple: #6610f2;
+      --red: #dc3545;
+      --orange: #fd7e14;
+      --shadow: 0 12px 28px -6px rgba(0,0,0,.14);
+      --shadow-hover: 0 22px 38px -8px rgba(0,0,0,.20);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: "Open Sans", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+    button { font: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,.08);
+    }
+
+    .topbar-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      min-height: 64px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.02em;
+      text-decoration: none;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 18px;
+      color: #444;
+      font-size: .92rem;
+      font-weight: 650;
+    }
+
+    .navlinks a {
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+    }
+
+    .navlinks a:hover { border-bottom-color: var(--yellow); }
+
+    .shell {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 34px 24px 70px;
+    }
+
+    .hero-card {
+      background: var(--black);
+      color: white;
+      padding: clamp(28px, 5vw, 58px);
+      border-radius: 20px;
+      border: 1px solid #222;
+      box-shadow: 0 18px 36px rgba(0,0,0,.18);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 34px;
+      align-items: end;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      right: -190px;
+      top: -230px;
+      background: radial-gradient(circle, rgba(252,198,36,.22), rgba(252,198,36,0) 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--yellow);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      margin-bottom: 18px;
+      max-width: 760px;
+      font-size: clamp(2.15rem, 5vw, 4.6rem);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+    }
+
+    .hero-lede {
+      max-width: 760px;
+      margin: 0;
+      color: #dedede;
+      font-size: clamp(1rem, 1.5vw, 1.16rem);
+    }
+
+    .section { margin-top: 34px; }
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 0 0 16px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 4px;
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      letter-spacing: -.035em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .chart-card,
+    .resource-card,
+    .route-card,
+    .table-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .chart-card {
+      --card-accent: var(--yellow);
+      border-top: 4px solid var(--card-accent);
+      border-left: 4px solid var(--card-accent);
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .chart-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .toolbar-group { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+    .btn,
+    .segmented button {
+      border: 1px solid #cfd6de;
+      background: white;
+      color: #333;
+      padding: 8px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: .86rem;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .btn:hover,
+    .segmented button:hover { transform: translateY(-1px); border-color: var(--yellow); }
+    .segmented button.active { background: var(--black); color: white; border-color: var(--black); }
+    .btn.primary { background: var(--yellow); color: #000; border-color: var(--yellow); }
+
+    .legend {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      color: #555;
+      font-size: .83rem;
+      font-weight: 700;
+    }
+
+    .legend-item { display: inline-flex; align-items: center; gap: 7px; }
+    .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+    .dot.luna { background: var(--yellow); border: 1px solid #8a6800; }
+    .dot.terra { background: var(--blue); }
+    .dot.sol { background: var(--pink); }
+    .ring { width: 13px; height: 13px; border-radius: 50%; border: 3px solid var(--green); display: inline-block; }
+    .faded { width: 13px; height: 13px; border-radius: 50%; background: #aeb5bd; opacity: .45; display: inline-block; }
+
+    .chart-wrap {
+      position: relative;
+      min-height: 590px;
+    }
+
+    #valueChart {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+
+    .tooltip {
+      position: absolute;
+      z-index: 10;
+      min-width: 210px;
+      max-width: 300px;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, calc(-100% - 16px));
+      transition: opacity .1s ease;
+      background: #111;
+      color: white;
+      padding: 12px 14px;
+      border-radius: 12px;
+      box-shadow: 0 12px 28px rgba(0,0,0,.25);
+      font-size: .84rem;
+    }
+
+    .tooltip strong { display: block; color: var(--yellow); margin-bottom: 4px; }
+    .tooltip .status { margin-top: 6px; color: #d6d6d6; }
+
+    .chart-note {
+      margin: 6px 4px 0;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .recommendation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .assessment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .resource-card {
+      --card-accent: var(--yellow);
+      padding: 24px;
+      border-top: 4px solid var(--card-accent);
+      border-left: 4px solid var(--card-accent);
+      box-shadow: 0 12px 28px -6px color-mix(in srgb, var(--card-accent) 24%, rgba(0,0,0,.12));
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .resource-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .resource-card h3 {
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--card-accent);
+      color: color-mix(in srgb, var(--card-accent) 88%, #111);
+      font-size: 1.24rem;
+    }
+    .resource-card p { color: #50555b; }
+    .resource-card .metric {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 9px 0;
+      border-top: 1px solid #edf0f3;
+      font-size: .9rem;
+    }
+    .resource-card .metric strong { color: #111; }
+    .resource-card .role {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--card-accent) 13%, white);
+      color: color-mix(in srgb, var(--card-accent) 75%, #111);
+      font-size: .76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .accent-yellow { --card-accent: var(--yellow); }
+    .accent-green { --card-accent: var(--green); }
+    .accent-pink { --card-accent: var(--pink); }
+    .accent-blue { --card-accent: var(--blue); }
+    .accent-cyan { --card-accent: var(--cyan); }
+    .accent-red { --card-accent: var(--red); }
+    .accent-purple { --card-accent: var(--purple); }
+
+    .route-card {
+      padding: clamp(22px, 4vw, 36px);
+      background: #151515;
+      color: white;
+      border-color: #2b2b2b;
+      border-top: 4px solid var(--yellow);
+      box-shadow: 0 20px 40px rgba(0,0,0,.2);
+    }
+
+    .route-card h2 { color: var(--yellow); margin-bottom: 8px; }
+    .route-card > p { color: #d7d7d7; max-width: 850px; }
+    .route-flow {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 14px;
+      align-items: stretch;
+      margin-top: 24px;
+    }
+
+    .route-step {
+      padding: 18px;
+      border: 1px solid #353535;
+      border-radius: 14px;
+      background: #0b0b0b;
+    }
+    .route-step span { color: #aaa; font-size: .78rem; text-transform: uppercase; font-weight: 800; letter-spacing: .08em; }
+    .route-step strong { display: block; margin: 6px 0; color: var(--yellow); font-size: 1.28rem; }
+    .route-step p { color: #d6d6d6; margin-bottom: 0; font-size: .9rem; }
+    .route-arrow { align-self: center; color: var(--yellow); font-size: 1.8rem; font-weight: 900; }
+
+    .assessment-grid { grid-template-columns: 1.15fr 1fr 1fr; }
+    .assessment-list { margin: 0; padding-left: 19px; color: #4f555c; }
+    .assessment-list li + li { margin-top: 7px; }
+
+    .routing-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: route;
+    }
+    .routing-list li {
+      counter-increment: route;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      padding: 11px 0;
+      border-top: 1px solid #edf0f3;
+    }
+    .routing-list li::before {
+      content: counter(route);
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--black);
+      color: var(--yellow);
+      font-size: .76rem;
+      font-weight: 900;
+    }
+    .routing-list strong { color: #111; }
+    .routing-note { margin: 14px 0 0; font-size: .9rem; }
+
+    .coding-view {
+      padding: 22px 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--cyan);
+      border-left: 4px solid var(--cyan);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 28px -6px rgba(13,202,240,.16);
+    }
+    .coding-view h3 { margin-bottom: 6px; color: #087f96; }
+    .coding-view > p { color: var(--muted); }
+    .coding-table td:first-child { font-weight: 800; }
+    .coding-table tr.recommended td { background: #f2fbf5; }
+    .coding-table tr.maximum td { background: #fff7fb; }
+
+    details {
+      margin-top: 18px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 18px;
+    }
+    summary { cursor: pointer; font-weight: 800; color: #333; }
+    details .assessment-list { margin-top: 12px; }
+
+    .callout {
+      margin-top: 18px;
+      padding: 20px 22px;
+      background: white;
+      border: 1px solid color-mix(in srgb, var(--blue) 25%, var(--line));
+      border-top: 4px solid var(--blue);
+      border-left: 4px solid var(--blue);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 28px -6px rgba(0,123,255,.18);
+    }
+    .callout h3 { color: var(--blue); margin-bottom: 7px; }
+    .callout p:last-child { margin-bottom: 0; }
+
+    .table-card { overflow: hidden; }
+    .table-scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 760px; }
+    th, td { padding: 12px 15px; border-bottom: 1px solid #e7eaee; text-align: left; }
+    th { background: #111; color: white; font-size: .79rem; text-transform: uppercase; letter-spacing: .065em; }
+    td { font-size: .9rem; }
+    tr:hover td { background: #fffaf0; }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: .72rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .badge.recommended { background: #e5f6e9; color: #176a2a; }
+    .badge.frontier { background: #fff3c4; color: #725400; }
+    .badge.dominated { background: #f0f1f3; color: #646b73; }
+    .badge.unscored { background: #fde8eb; color: #9f2030; }
+    .badge.exception { background: #e7f2ff; color: #005cae; }
+
+    .footer {
+      margin-top: 42px;
+      padding-top: 24px;
+      border-top: 1px solid #dfe3e8;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #6a7077;
+      font-size: .82rem;
+    }
+
+    .sources-card {
+      margin-top: 34px;
+      padding: 22px 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .sources-card h2 {
+      margin: 0 0 12px;
+      font-size: 1.2rem;
+      letter-spacing: -.02em;
+    }
+    .sources-card p {
+      margin: 0 0 14px;
+      color: #50555b;
+      font-size: .92rem;
+    }
+    .sources-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .sources-list li {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fbfcfd;
+      transition: border-color .18s ease, box-shadow .18s ease;
+    }
+    .sources-list li:hover {
+      border-color: var(--yellow);
+      box-shadow: 0 6px 16px -4px rgba(252,198,36,.25);
+    }
+    .sources-list a {
+      display: block;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: .9rem;
+    }
+    .sources-list a:hover { color: #8a6800; }
+    .sources-list .source-label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .sources-list .source-url {
+      display: block;
+      margin-top: 4px;
+      color: var(--blue);
+      font-size: .8rem;
+      font-weight: 600;
+      word-break: break-all;
+    }
+    .sources-list .source-index {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #fff7d6;
+      color: #725400;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 900px) {
+      .hero-card { grid-template-columns: 1fr; }
+      .recommendation-grid, .assessment-grid { grid-template-columns: 1fr; }
+      .route-flow { grid-template-columns: 1fr; }
+      .route-arrow { transform: rotate(90deg); justify-self: center; }
+      .chart-wrap { min-height: 480px; }
+      .navlinks { display: none; }
+    }
+
+    @media (max-width: 620px) {
+      .shell { padding: 20px 14px 50px; }
+      .topbar-inner { padding: 0 14px; }
+      .hero-card { border-radius: 16px; }
+      .chart-card { padding: 12px; }
+      .chart-wrap { min-height: 430px; overflow-x: auto; }
+      #valueChart { width: 760px; max-width: none; }
+      .footer { flex-direction: column; }
+    }
+
+    @media print {
+      .topbar, .chart-toolbar, .footer { display: none !important; }
+      body { background: white; }
+      .shell { max-width: none; padding: 0; }
+      .hero-card, .chart-card, .resource-card, .route-card, .table-card { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">Christian Taillon</a>
+      <nav class="navlinks" aria-label="Page sections">
+        <a href="#chart">General</a>
+        <a href="#recommendations">Routing</a>
+        <a href="#coding">Coding</a>
+        <a href="#limitations">Limits</a>
+        <a href="#data">Data</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell" id="top">
+    <section class="hero-card">
+      <div>
+        <p class="eyebrow">Bottom line</p>
+        <h1>Use Luna High by default.</h1>
+        <p class="hero-lede">General workloads favor Sol Medium for escalation. Coding gives Terra Max a much stronger high-end role.</p>
+      </div>
+    </section>
+
+    <section class="section" id="chart">
+      <div class="section-heading">
+        <div>
+          <h2>General-purpose value chart</h2>
+          <p>Higher means a stronger Artificial Analysis Intelligence Index score; farther left means a lower average benchmark task cost. The dashed line marks configurations that are not dominated on those two metrics. Green rings mark the recommended operating tiers.</p>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-toolbar">
+          <div class="toolbar-group segmented" aria-label="Cost axis scale">
+            <button type="button" class="active" data-scale="linear">Linear cost</button>
+            <button type="button" data-scale="log">Log cost</button>
+          </div>
+          <div class="toolbar-group">
+            <button class="btn" id="toggleDominated" type="button" aria-pressed="true">Hide dominated</button>
+            <button class="btn primary" id="downloadPng" type="button">Download chart PNG</button>
+          </div>
+        </div>
+
+        <div class="legend" aria-label="Chart legend">
+          <span class="legend-item"><span class="dot luna"></span>Luna</span>
+          <span class="legend-item"><span class="dot terra"></span>Terra</span>
+          <span class="legend-item"><span class="dot sol"></span>Sol</span>
+          <span class="legend-item"><span class="ring"></span>Recommended stack</span>
+          <span class="legend-item"><span class="faded"></span>Strictly dominated</span>
+        </div>
+
+        <div class="chart-wrap">
+          <svg id="valueChart" viewBox="0 0 1120 620" role="img" aria-labelledby="chartTitle chartDesc">
+            <title id="chartTitle">GPT-5.6 cost per task versus Artificial Analysis Intelligence Index</title>
+            <desc id="chartDesc">Scatter plot comparing Luna, Terra, and Sol configurations. Recommended configurations are Luna Medium, Luna High, and Sol Medium.</desc>
+          </svg>
+          <div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+        </div>
+        <p class="chart-note">A configuration is “dominated” when another tested option costs no more and scores at least as high. Frontier status is not automatically a recommendation: latency, token use, behavior, and workload fit remain outside this chart.</p>
+      </div>
+    </section>
+
+    <section class="section" id="recommendations">
+      <div class="section-heading">
+        <div>
+          <h2>Choose the stack by workload</h2>
+          <p>The general-purpose and coding benchmarks support different escalation paths.</p>
+        </div>
+      </div>
+
+      <div class="recommendation-grid">
+        <article class="resource-card accent-yellow">
+          <span class="role">General workloads</span>
+          <h3>General-purpose routing</h3>
+          <ol class="routing-list">
+            <li><div><strong>Luna Medium &mdash; volume</strong><br>Routine work and high-volume subagents.</div></li>
+            <li><div><strong>Luna High &mdash; default</strong><br>Preferred general-purpose production tier.</div></li>
+            <li><div><strong>Sol Medium &mdash; escalation</strong><br>Harder analysis, architecture, planning, and difficult tasks.</div></li>
+          </ol>
+        </article>
+
+        <article class="resource-card accent-cyan">
+          <span class="role">Coding workloads</span>
+          <h3>Coding routing</h3>
+          <ol class="routing-list">
+            <li><div><strong>Luna Medium &mdash; volume</strong><br>Tests, documentation, small fixes, and scoped implementation.</div></li>
+            <li><div><strong>Luna High &mdash; default</strong><br>The strongest general coding default in the fuller chart.</div></li>
+            <li><div><strong>Terra Max &mdash; escalation</strong><br>Difficult debugging, refactors, and complex implementation.</div></li>
+          </ol>
+          <p class="routing-note"><strong>Luna Max</strong> is the premium-value intermediate step. <strong>Sol Max</strong> is the maximum-capability option.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="assessment">
+      <div class="section-heading">
+        <div>
+          <h2>General-purpose takeaways</h2>
+          <p>Use the chart to eliminate clearly inefficient tiers, then apply workload evidence to the remaining choices.</p>
+        </div>
+      </div>
+
+      <div class="assessment-grid">
+        <article class="resource-card accent-red">
+          <h3>Eliminate dominated tiers</h3>
+          <p>These configurations are beaten on both displayed metrics or lack a score needed for comparison.</p>
+          <ul class="assessment-list">
+            <li><strong>Luna None:</strong> same 5¢ cost as Luna Medium, but 11 index points lower.</li>
+            <li><strong>Terra None:</strong> no reported index, so it cannot be evaluated.</li>
+            <li><strong>Terra Low and Sol None:</strong> Luna High is cheaper and materially stronger.</li>
+            <li><strong>Sol Low and Terra High:</strong> Luna Extra High is cheaper at the same score.</li>
+            <li><strong>Terra Extra High and Max:</strong> beaten by cheaper, higher-scoring Sol tiers.</li>
+          </ul>
+        </article>
+
+        <article class="resource-card accent-yellow">
+          <h3>The economic center</h3>
+          <p><strong>Luna Medium</strong> owns the low-cost end. <strong>Luna High</strong> is the most compelling upgrade in the entire set.</p>
+          <ul class="assessment-list">
+            <li>Medium → High: +8 index for +4¢.</li>
+            <li>High → Extra High: +3 index for +5¢.</li>
+            <li>After that, every additional point gets progressively more expensive.</li>
+          </ul>
+        </article>
+
+        <article class="resource-card accent-purple">
+          <h3>Raw value versus role</h3>
+          <p>Luna Extra High, Luna Max, Sol High, Sol Extra High, and Sol Max remain on the two-metric frontier, but each asks you to pay more for smaller score gains.</p>
+          <ul class="assessment-list">
+            <li><strong>Luna Extra High/Max:</strong> credible intermediate escalation steps.</li>
+            <li><strong>Sol Medium:</strong> not the third-best point by raw index per dollar; it is the operational family-level escalation.</li>
+            <li><strong>Sol High/Max:</strong> maximum capability only when marginal gains justify the steep cost.</li>
+          </ul>
+        </article>
+      </div>
+
+      <aside class="callout">
+        <h3>Terra Medium is the important exception</h3>
+        <p>Terra Medium reaches approximately the same general Intelligence Index as Luna High but costs more on this benchmark. It produced materially fewer output tokens in the measured run, which may reduce future context growth, latency, storage, and downstream input cost in long-running agents. That advantage is workload-dependent and is not fully represented by this chart.</p>
+      </aside>
+    </section>
+
+    <section class="section" id="coding">
+      <div class="section-heading">
+        <div>
+          <h2>Coding Changes the Model Mix</h2>
+          <p>The newer Artificial Analysis Coding Agent Index view strengthens Luna as the default family while making Terra Max the practical high-end escalation.</p>
+        </div>
+      </div>
+
+      <aside class="callout">
+        <h3>General workloads favor Luna as the default family. Coding gives Terra a much stronger escalation role.</h3>
+        <p>The practical coding ladder is <strong>Luna Medium &rarr; Luna High &rarr; Luna Max &rarr; Terra Max &rarr; Sol Max</strong>. Most teams can simplify that to <strong>Luna Medium &rarr; Luna High &rarr; Terra Max</strong>.</p>
+      </aside>
+
+      <div class="coding-view section" aria-labelledby="coding-view-title">
+        <h3 id="coding-view-title">Coding benchmark view</h3>
+        <p>Approximate values transcribed from the supplied Artificial Analysis chart. They are intentionally shown as ranges or rounded figures rather than false precision.</p>
+        <div class="table-scroll">
+          <table class="coding-table">
+            <thead>
+              <tr>
+                <th>Configuration</th>
+                <th>Avg. coding task cost</th>
+                <th>Coding Agent Index</th>
+                <th>Operational role</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Luna Medium</td><td>~$0.50</td><td>Below the attractive quadrant</td><td>High-volume worker</td></tr>
+              <tr class="recommended"><td>Luna High</td><td>Near Terra Medium</td><td>Materially above Terra Medium</td><td>Preferred coding default</td></tr>
+              <tr class="recommended"><td>Luna Max</td><td>~$1.55</td><td>~74&ndash;75</td><td>Premium-value step</td></tr>
+              <tr class="recommended"><td>Terra Max</td><td>~$2.75</td><td>~77&ndash;78</td><td>Difficult-task escalation</td></tr>
+              <tr class="maximum"><td>Sol Max</td><td>~$7.10</td><td>~80</td><td>Maximum capability</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="recommendation-grid section">
+        <article class="resource-card accent-yellow">
+          <h3>Value tiers</h3>
+          <p><strong>Luna Medium</strong> is the inexpensive worker for subagents, tests, documentation, small fixes, and well-scoped implementation. It is a volume choice, not the hardest-repository-work default.</p>
+          <p><strong>Luna High</strong> is the strongest general coding default: a meaningful score improvement over Luna Medium while remaining inexpensive, and more attractive than Terra Medium on measured score versus cost.</p>
+          <p><strong>Luna Max</strong> is the premium-value step. It appears to beat Luna Extra High and competes strongly with higher Terra efforts at lower cost.</p>
+        </article>
+
+        <article class="resource-card accent-purple">
+          <h3>Capability tiers</h3>
+          <p><strong>Terra Max</strong> approaches Sol Max at far lower task cost. Use it for difficult debugging, larger refactors, unfamiliar repositories, complex implementation, and tasks that failed on Luna.</p>
+          <p><strong>Sol Max</strong> is the strongest measured GPT-5.6 coding configuration, not the routine value choice. Reserve it for repeated failures, exceptionally difficult work, or cases where failure costs much more than inference.</p>
+          <p>The jump from Terra Max to Sol Max costs more than 2.5&times; for roughly two or three additional index points: sharp diminishing returns for maximum capability.</p>
+        </article>
+      </div>
+
+      <details>
+        <summary>Coding configurations to de-emphasize</summary>
+        <ul class="assessment-list">
+          <li><strong>None and Low:</strong> Luna None, Luna Low, Terra None, and Terra Low deliver substantially weaker coding results.</li>
+          <li><strong>Sol None:</strong> expensive relative to its measured coding score.</li>
+          <li><strong>Luna Extra High:</strong> squeezed by Luna Max, which appears to cost roughly the same or less and score higher.</li>
+          <li><strong>Terra Extra High:</strong> squeezed by Luna Max or Terra Max.</li>
+          <li><strong>Terra Medium:</strong> not necessarily bad, but less attractive than Luna High on measured coding score and cost.</li>
+          <li><strong>Terra High:</strong> reasonable, though Luna Max appears to be the stronger premium-value step.</li>
+        </ul>
+        <p>Terra may still offer output-length or behavioral advantages that this two-axis view does not capture.</p>
+      </details>
+    </section>
+
+    <section class="section" id="limitations">
+      <div class="section-heading">
+        <div>
+          <h2>Benchmark limits</h2>
+          <p>Use benchmark charts as directional evidence, then validate routing against real repositories and production tasks.</p>
+        </div>
+      </div>
+      <div class="resource-card accent-blue">
+        <ul class="assessment-list">
+          <li>The Intelligence Index and Coding Agent Index use different task suites; their scores and absolute task costs should not be compared directly.</li>
+          <li>Benchmark score per dollar is not the same as successfully completed production tasks per dollar.</li>
+          <li>Output length, latency, retries, context growth, task failure, and downstream human review can change real-world economics.</li>
+          <li>Operational role specialization can justify a model that is not the next point on a raw benchmark frontier.</li>
+          <li>Intelligent routing uses the cheapest model that reliably completes the task, then escalates when evidence warrants it.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="data">
+      <div class="section-heading">
+        <div>
+          <h2>General-purpose source data</h2>
+          <p>Sorted by average Artificial Analysis benchmark task cost. “Efficient frontier” means no tested configuration is both cheaper and equal or better on the Intelligence Index. Coding values are summarized separately above because they come from a different benchmark suite.</p>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Reasoning</th>
+                <th>Cost / task</th>
+                <th>Index</th>
+                <th>Assessment</th>
+              </tr>
+            </thead>
+            <tbody id="dataRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sources">
+      <div class="section-heading">
+        <div>
+          <h2>Sources</h2>
+          <p>Benchmark data sourced from Artificial Analysis. Visit each model page for methodology, evaluation breakdowns, pricing, and current leaderboard context.</p>
+        </div>
+      </div>
+      <div class="sources-card">
+        <p>The Artificial Analysis Intelligence Index (v4.1) incorporates nine evaluations: GDPval-AA v2, &tau;&sup3;-Banking, Terminal-Bench v2.1, SciCode, Humanity&rsquo;s Last Exam, GPQA Diamond, CritPt, AA-Omniscience, and AA-LCR. See <a href="https://artificialanalysis.ai/methodology/intelligence-benchmarking" target="_blank" rel="noopener">Artificial Analysis methodology</a> for details. Coding Agent Index figures on this page are approximate values from the newer supplied chart and are kept separate from the general Intelligence Index data.</p>
+        <ul class="sources-list">
+          <li>
+            <span class="source-label">GPT-5.6 Luna</span>
+            <a href="https://artificialanalysis.ai/models/gpt-5-6-luna" target="_blank" rel="noopener">Intelligence, Performance &amp; Price Analysis <span class="source-index">Max index: 51</span></a>
+            <span class="source-url">artificialanalysis.ai/models/gpt-5-6-luna</span>
+          </li>
+          <li>
+            <span class="source-label">GPT-5.6 Terra</span>
+            <a href="https://artificialanalysis.ai/models/gpt-5-6-terra" target="_blank" rel="noopener">Intelligence, Performance &amp; Price Analysis <span class="source-index">Max index: 55</span></a>
+            <span class="source-url">artificialanalysis.ai/models/gpt-5-6-terra</span>
+          </li>
+          <li>
+            <span class="source-label">GPT-5.6 Sol</span>
+            <a href="https://artificialanalysis.ai/models/gpt-5-6-sol" target="_blank" rel="noopener">Intelligence, Performance &amp; Price Analysis <span class="source-index">Max index: 59</span></a>
+            <span class="source-url">artificialanalysis.ai/models/gpt-5-6-sol</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Benchmark data, Intelligence Index, and Coding Agent Index from <a href="https://artificialanalysis.ai" target="_blank" rel="noopener">Artificial Analysis</a>.</span>
+      <span>Interpretation: cost and index are useful routing signals&mdash;not a substitute for workload-specific evaluation.</span>
+    </footer>
+  </main>
+
+  <script>
+    const data = [
+      { model: "GPT-5.6 Luna", family: "Luna", effort: "none", cost: 5, index: 27 },
+      { model: "GPT-5.6 Luna", family: "Luna", effort: "medium", cost: 5, index: 38 },
+      { model: "GPT-5.6 Terra", family: "Terra", effort: "none", cost: 11, index: null },
+      { model: "GPT-5.6 Terra", family: "Terra", effort: "low", cost: 10, index: 40 },
+      { model: "GPT-5.6 Sol", family: "Sol", effort: "none", cost: 20, index: 40 },
+      { model: "GPT-5.6 Terra", family: "Terra", effort: "medium", cost: 13, index: 46 },
+      { model: "GPT-5.6 Luna", family: "Luna", effort: "high", cost: 9, index: 46 },
+      { model: "GPT-5.6 Luna", family: "Luna", effort: "extra_high", cost: 14, index: 49 },
+      { model: "GPT-5.6 Sol", family: "Sol", effort: "low", cost: 20, index: 49 },
+      { model: "GPT-5.6 Terra", family: "Terra", effort: "high", cost: 24, index: 49 },
+      { model: "GPT-5.6 Luna", family: "Luna", effort: "max", cost: 21, index: 51 },
+      { model: "GPT-5.6 Terra", family: "Terra", effort: "extra_high", cost: 33, index: 52 },
+      { model: "GPT-5.6 Sol", family: "Sol", effort: "medium", cost: 31, index: 54 },
+      { model: "GPT-5.6 Terra", family: "Terra", effort: "max", cost: 55, index: 55 },
+      { model: "GPT-5.6 Sol", family: "Sol", effort: "high", cost: 45, index: 56 },
+      { model: "GPT-5.6 Sol", family: "Sol", effort: "extra_high", cost: 68, index: 58 },
+      { model: "GPT-5.6 Sol", family: "Sol", effort: "max", cost: 104, index: 59 }
+    ];
+
+    const recommendedKeys = new Set(["Luna|medium", "Luna|high", "Sol|medium"]);
+    const exceptionKeys = new Set(["Terra|medium"]);
+    const familyColors = { Luna: "#fcc624", Terra: "#007bff", Sol: "#d63384" };
+    const effortLabels = {
+      none: "None",
+      low: "Low",
+      medium: "Medium",
+      high: "High",
+      extra_high: "Extra High",
+      max: "Max"
+    };
+
+    function key(d) { return `${d.family}|${d.effort}`; }
+    function isDominated(point) {
+      if (point.index == null) return false;
+      return data.some(other =>
+        other !== point &&
+        other.index != null &&
+        other.cost <= point.cost &&
+        other.index >= point.index &&
+        (other.cost < point.cost || other.index > point.index)
+      );
+    }
+
+    data.forEach(d => {
+      d.dominated = isDominated(d);
+      d.recommended = recommendedKeys.has(key(d));
+      d.exception = exceptionKeys.has(key(d));
+    });
+
+    const frontier = data
+      .filter(d => d.index != null && !d.dominated)
+      .sort((a,b) => a.cost - b.cost);
+
+    const svg = document.getElementById("valueChart");
+    const tooltip = document.getElementById("tooltip");
+    const toggleDominated = document.getElementById("toggleDominated");
+    const scaleButtons = [...document.querySelectorAll("[data-scale]")];
+    let scaleMode = "linear";
+    let showDominated = true;
+
+    const NS = "http://www.w3.org/2000/svg";
+    const W = 1120, H = 620;
+    const margin = { top: 44, right: 54, bottom: 82, left: 82 };
+    const plotW = W - margin.left - margin.right;
+    const plotH = H - margin.top - margin.bottom;
+    const yMin = 25, yMax = 60;
+
+    function el(name, attrs = {}, text = "") {
+      const node = document.createElementNS(NS, name);
+      Object.entries(attrs).forEach(([k,v]) => node.setAttribute(k, v));
+      if (text) node.textContent = text;
+      return node;
+    }
+
+    function xScale(cost) {
+      if (scaleMode === "log") {
+        const min = Math.log10(4), max = Math.log10(110);
+        return margin.left + ((Math.log10(cost) - min) / (max - min)) * plotW;
+      }
+      return margin.left + (cost / 110) * plotW;
+    }
+
+    function yScale(index) {
+      return margin.top + ((yMax - index) / (yMax - yMin)) * plotH;
+    }
+
+    function tickValues() {
+      return scaleMode === "log" ? [5, 10, 20, 40, 80, 110] : [0, 20, 40, 60, 80, 100];
+    }
+
+    function renderChart() {
+      svg.replaceChildren();
+      svg.append(
+        el("title", { id: "chartTitle" }, "GPT-5.6 cost per task versus Artificial Analysis Intelligence Index"),
+        el("desc", { id: "chartDesc" }, "Scatter plot comparing Luna, Terra, and Sol configurations. Recommended configurations are Luna Medium, Luna High, and Sol Medium.")
+      );
+
+      svg.append(el("rect", { x: 0, y: 0, width: W, height: H, rx: 12, fill: "#ffffff" }));
+      svg.append(el("rect", {
+        x: margin.left, y: margin.top, width: plotW, height: plotH,
+        rx: 10, fill: "#fbfcfd", stroke: "#e0e4e8"
+      }));
+
+      [25,30,35,40,45,50,55,60].forEach(t => {
+        const y = yScale(t);
+        svg.append(el("line", { x1: margin.left, y1: y, x2: W - margin.right, y2: y, stroke: "#e6e9ed", "stroke-width": 1 }));
+        svg.append(el("text", { x: margin.left - 16, y: y + 5, "text-anchor": "end", fill: "#687078", "font-size": 13 }, String(t)));
+      });
+
+      tickValues().forEach(t => {
+        const x = xScale(t || .01);
+        if (x < margin.left - 1 || x > W - margin.right + 1) return;
+        svg.append(el("line", { x1: x, y1: margin.top, x2: x, y2: H - margin.bottom, stroke: "#edf0f2", "stroke-width": 1 }));
+        svg.append(el("text", { x, y: H - margin.bottom + 28, "text-anchor": "middle", fill: "#687078", "font-size": 13 }, `${t}¢`));
+      });
+
+      svg.append(el("text", {
+        x: margin.left + plotW / 2, y: H - 25, "text-anchor": "middle", fill: "#333", "font-size": 15, "font-weight": 700
+      }, `Average benchmark cost per completed task (${scaleMode === "log" ? "log scale" : "linear scale"})`));
+
+      const yLabel = el("text", {
+        x: 22, y: margin.top + plotH / 2, transform: `rotate(-90 22 ${margin.top + plotH / 2})`,
+        "text-anchor": "middle", fill: "#333", "font-size": 15, "font-weight": 700
+      }, "Artificial Analysis Intelligence Index");
+      svg.append(yLabel);
+
+      const visibleFrontier = frontier.filter(d => showDominated || !d.dominated);
+      const pathData = visibleFrontier.map((d,i) => `${i ? "L" : "M"}${xScale(d.cost)},${yScale(d.index)}`).join(" ");
+      svg.append(el("path", {
+        d: pathData, fill: "none", stroke: "#b78b00", "stroke-width": 3,
+        "stroke-dasharray": "7 7", opacity: .72
+      }));
+
+      // Labels first so points sit on top
+      const labels = [
+        { k: "Luna|medium", dx: 18, dy: -21, anchor: "start", text: "Luna Medium" },
+        { k: "Luna|high", dx: -18, dy: -25, anchor: "end", text: "Luna High" },
+        { k: "Sol|medium", dx: 16, dy: -19, anchor: "start", text: "Sol Medium" },
+        { k: "Terra|medium", dx: 16, dy: 33, anchor: "start", text: "Terra Medium*" }
+      ];
+      labels.forEach(label => {
+        const d = data.find(x => key(x) === label.k);
+        if (!d || d.index == null || (!showDominated && d.dominated && !d.exception)) return;
+        const x = xScale(d.cost), y = yScale(d.index);
+        svg.append(el("line", { x1: x, y1: y, x2: x + label.dx * .72, y2: y + label.dy * .72, stroke: "#89919a", "stroke-width": 1 }));
+        svg.append(el("text", {
+          x: x + label.dx, y: y + label.dy, "text-anchor": label.anchor,
+          fill: d.exception ? "#0069c7" : "#252525", "font-size": 13, "font-weight": 800,
+          stroke: "#fff", "stroke-width": 4, "paint-order": "stroke"
+        }, label.text));
+      });
+
+      data.filter(d => d.index != null).forEach(d => {
+        if (!showDominated && d.dominated && !d.exception) return;
+        const x = xScale(d.cost), y = yScale(d.index);
+        const group = el("g", {
+          tabindex: 0,
+          role: "button",
+          "aria-label": `${d.family} ${effortLabels[d.effort]}, ${d.cost} cents per task, index ${d.index}`,
+          style: "cursor:pointer"
+        });
+
+        if (d.recommended) {
+          group.append(el("circle", { cx: x, cy: y, r: 15, fill: "none", stroke: "#28a745", "stroke-width": 4, opacity: .92 }));
+        } else if (d.exception) {
+          group.append(el("circle", { cx: x, cy: y, r: 14, fill: "none", stroke: "#007bff", "stroke-width": 3, "stroke-dasharray": "4 3", opacity: .9 }));
+        }
+
+        const circle = el("circle", {
+          cx: x,
+          cy: y,
+          r: d.dominated ? 8 : 10,
+          fill: familyColors[d.family],
+          stroke: d.family === "Luna" ? "#745700" : "#ffffff",
+          "stroke-width": d.dominated ? 1.5 : 2.5,
+          opacity: d.dominated ? .35 : .96
+        });
+        group.append(circle);
+
+        if (d.effort === "max") {
+          group.append(el("text", { x, y: y + 4, "text-anchor": "middle", fill: d.family === "Luna" ? "#111" : "#fff", "font-size": 10, "font-weight": 900 }, "M"));
+        }
+
+        function showTip(evt) {
+          const rect = svg.getBoundingClientRect();
+          const px = ((x / W) * rect.width);
+          const py = ((y / H) * rect.height);
+          tooltip.style.left = `${px}px`;
+          tooltip.style.top = `${py}px`;
+          tooltip.innerHTML = `<strong>${d.family} ${effortLabels[d.effort]}</strong>` +
+            `<div>${d.cost}¢ per task · Index ${d.index}</div>` +
+            `<div class="status">${d.recommended ? "Recommended routing tier" : d.exception ? "Operational exception: output length may matter" : d.dominated ? "Strictly dominated on cost + index" : "Benchmark-efficient frontier"}</div>`;
+          tooltip.style.opacity = 1;
+        }
+        function hideTip() { tooltip.style.opacity = 0; }
+        group.addEventListener("mouseenter", showTip);
+        group.addEventListener("mousemove", showTip);
+        group.addEventListener("mouseleave", hideTip);
+        group.addEventListener("focus", showTip);
+        group.addEventListener("blur", hideTip);
+        svg.append(group);
+      });
+    }
+
+    scaleButtons.forEach(btn => btn.addEventListener("click", () => {
+      scaleMode = btn.dataset.scale;
+      scaleButtons.forEach(b => b.classList.toggle("active", b === btn));
+      renderChart();
+    }));
+
+    toggleDominated.addEventListener("click", () => {
+      showDominated = !showDominated;
+      toggleDominated.textContent = showDominated ? "Hide dominated" : "Show dominated";
+      toggleDominated.setAttribute("aria-pressed", String(showDominated));
+      renderChart();
+    });
+
+    function assessment(d) {
+      if (d.index == null) return { label: "Unscored", cls: "unscored" };
+      if (d.recommended) return { label: "Recommended", cls: "recommended" };
+      if (d.exception) return { label: "Token-efficiency exception", cls: "exception" };
+      if (d.dominated) return { label: "Strictly dominated", cls: "dominated" };
+      return { label: "Efficient frontier", cls: "frontier" };
+    }
+
+    const tbody = document.getElementById("dataRows");
+    [...data].sort((a,b) => a.cost - b.cost || (b.index ?? -1) - (a.index ?? -1)).forEach(d => {
+      const a = assessment(d);
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><strong>${d.family}</strong></td>
+        <td>${effortLabels[d.effort]}</td>
+        <td>${d.cost}¢</td>
+        <td>${d.index ?? "—"}</td>
+        <td><span class="badge ${a.cls}">${a.label}</span></td>`;
+      tbody.append(tr);
+    });
+
+    document.getElementById("downloadPng").addEventListener("click", async () => {
+      const exportW = 1600, exportH = 980;
+      const canvas = document.createElement("canvas");
+      canvas.width = exportW;
+      canvas.height = exportH;
+      const ctx = canvas.getContext("2d");
+
+      ctx.fillStyle = "#000";
+      ctx.fillRect(0, 0, exportW, 210);
+      ctx.fillStyle = "#fcc624";
+      ctx.font = "800 28px Arial, sans-serif";
+      ctx.fillText("GPT-5.6 MODEL ECONOMICS", 74, 65);
+      ctx.fillStyle = "#fff";
+      ctx.font = "800 58px Arial, sans-serif";
+      ctx.fillText("Cost per completed task", 74, 135);
+      ctx.fillStyle = "#d8d8d8";
+      ctx.font = "28px Arial, sans-serif";
+      ctx.fillText("Artificial Analysis Intelligence Index vs. benchmark task cost", 74, 178);
+
+      const cloned = svg.cloneNode(true);
+      cloned.setAttribute("width", "1450");
+      cloned.setAttribute("height", "705");
+      const serialized = new XMLSerializer().serializeToString(cloned);
+      const blob = new Blob([serialized], { type: "image/svg+xml;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const img = new Image();
+      img.onload = () => {
+        ctx.fillStyle = "#f5f7fa";
+        ctx.fillRect(0, 210, exportW, exportH - 210);
+        ctx.drawImage(img, 74, 235, 1450, 705);
+        ctx.fillStyle = "#333";
+        ctx.font = "700 24px Arial, sans-serif";
+        ctx.fillText("Luna Medium for volume  →  Luna High by default  →  Sol Medium for escalation", 74, 955);
+        URL.revokeObjectURL(url);
+        const link = document.createElement("a");
+        link.download = "gpt-5-6-value-map.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      };
+      img.src = url;
+    });
+
+    renderChart();
+  </script>
+</body>
+</html>
