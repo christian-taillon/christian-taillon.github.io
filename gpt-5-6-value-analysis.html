@@ -812,7 +812,7 @@ permalink: /gpt-5-6-value-analysis/
       <div class="section-heading">
         <div>
           <h2>General-purpose source data</h2>
-          <p>Sorted by average Artificial Analysis benchmark task cost. “Pareto frontier” only means no tested configuration is both cheaper and equal or better on the Intelligence Index; it does not imply strong practical value. Coding values are summarized separately above because they come from a different benchmark suite.</p>
+          <p>Sorted by average Artificial Analysis benchmark task cost. “Index / 1¢” is a simple raw benchmark ratio, not completed production tasks per dollar. “Pareto frontier” only means no tested configuration is both cheaper and equal or better on the Intelligence Index; it does not imply strong practical value.</p>
         </div>
       </div>
       <div class="table-card">
@@ -824,6 +824,7 @@ permalink: /gpt-5-6-value-analysis/
                 <th>Reasoning</th>
                 <th>Cost / task</th>
                 <th>Index</th>
+                <th>Index / 1¢</th>
                 <th>Assessment</th>
               </tr>
             </thead>
@@ -1105,6 +1106,7 @@ permalink: /gpt-5-6-value-analysis/
         <td>${effortLabels[d.effort]}</td>
         <td>${d.cost}¢</td>
         <td>${d.index ?? "—"}</td>
+        <td>${d.index == null ? "—" : (d.index / d.cost).toFixed(2)}</td>
         <td><span class="badge ${a.cls}">${a.label}</span></td>`;
       tbody.append(tr);
     });
