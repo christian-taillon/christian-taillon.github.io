@@ -251,6 +251,7 @@ permalink: /gpt-5-6-value-analysis/
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
+    .callout + .recommendation-grid { margin-top: 18px; }
 
     .routing-comparison { grid-template-columns: 1fr; }
 
@@ -595,8 +596,8 @@ permalink: /gpt-5-6-value-analysis/
     <section class="hero-card">
       <div>
         <p class="eyebrow">Bottom line</p>
-        <h1>Use Luna High by default.</h1>
-        <p class="hero-lede">And probably do not use Sol Max. General workloads favor Sol Medium for escalation. Coding gives Terra Max a much stronger high-end role. Codex credit rates reinforce the Luna-first economics.</p>
+        <h1>Luna High is my cost-aware default.</h1>
+        <p class="hero-lede">And I would rarely use Sol Max. General workloads favor Sol Medium for escalation. Coding gives Terra Max a much stronger cost-efficient role, while Sol remains the quality-first flagship. Codex credit rates reinforce the Luna-first economics.</p>
       </div>
     </section>
 
@@ -649,13 +650,18 @@ permalink: /gpt-5-6-value-analysis/
         </div>
       </div>
 
+      <aside class="callout">
+        <h3>Official positioning versus this analysis</h3>
+        <p><a href="https://developers.openai.com/api/docs/models" target="_blank" rel="noopener">OpenAI positions</a> Luna for efficient, high-volume workloads, Terra for balancing intelligence and cost, and Sol for frontier capability. The routing recommendations here are cost-aware interpretations of third-party benchmark results, not universal model rankings. OpenAI also recommends <a href="https://developers.openai.com/api/docs/guides/latest-model" target="_blank" rel="noopener">starting with medium reasoning</a>, using high or xhigh only where evaluations show a measurable gain, and reserving max for the hardest quality-first workloads.</p>
+      </aside>
+
       <div class="recommendation-grid routing-comparison">
         <article class="resource-card accent-yellow">
           <span class="role">General workloads</span>
           <h3>General-purpose routing</h3>
           <ol class="routing-list">
             <li><div><strong>Luna Medium &mdash; volume</strong><br>Routine work and high-volume subagents.</div></li>
-            <li><div><strong>Luna High &mdash; default</strong><br>Preferred general-purpose production tier.</div></li>
+            <li><div><strong>Luna High &mdash; cost-aware default</strong><br>My preferred general-purpose production tier.</div></li>
             <li><div><strong>Sol Medium &mdash; escalation</strong><br>Harder analysis, architecture, planning, and difficult tasks.</div></li>
           </ol>
         </article>
@@ -665,10 +671,10 @@ permalink: /gpt-5-6-value-analysis/
           <h3>Coding routing</h3>
           <ol class="routing-list">
             <li><div><strong>Luna Medium &mdash; volume</strong><br>Tests, documentation, small fixes, and scoped implementation.</div></li>
-            <li><div><strong>Luna High &mdash; default</strong><br>The strongest general coding default in the fuller chart.</div></li>
-            <li><div><strong>Terra Max &mdash; escalation</strong><br>Difficult debugging, refactors, and complex implementation.</div></li>
+            <li><div><strong>Luna High &mdash; cost-aware default</strong><br>My preferred coding default in the benchmark view.</div></li>
+            <li><div><strong>Terra Max &mdash; cost-efficient escalation</strong><br>Difficult debugging, refactors, and complex implementation.</div></li>
           </ol>
-          <p class="routing-note"><strong>Luna Max</strong> is the premium-value intermediate step. <strong>Sol Max</strong> is the maximum-capability option.</p>
+          <p class="routing-note"><strong>Luna Max</strong> is the premium-value intermediate step. <strong>Sol Max</strong> is the quality-first, maximum-capability escalation.</p>
         </article>
       </div>
     </section>
@@ -689,8 +695,8 @@ permalink: /gpt-5-6-value-analysis/
             <li><strong>Luna None:</strong> same 5¢ cost as Luna Medium, but 11 index points lower.</li>
             <li><strong>Terra None:</strong> no reported index, so it cannot be evaluated.</li>
             <li><strong>Terra Low and Sol None:</strong> Luna High is cheaper and materially stronger.</li>
-            <li><strong>Sol Low and Terra High:</strong> Luna Extra High is cheaper at the same score.</li>
-            <li><strong>Terra Extra High and Max:</strong> beaten by cheaper, higher-scoring Sol tiers.</li>
+            <li><strong>Sol Low and Terra High:</strong> Luna xhigh is cheaper at the same score.</li>
+            <li><strong>Terra xhigh and Max:</strong> beaten by cheaper, higher-scoring Sol tiers.</li>
           </ul>
         </article>
 
@@ -699,16 +705,16 @@ permalink: /gpt-5-6-value-analysis/
           <p><strong>Luna Medium</strong> owns the low-cost end. <strong>Luna High</strong> is the most compelling upgrade in the entire set.</p>
           <ul class="assessment-list">
             <li>Medium → High: +8 index for +4¢.</li>
-            <li>High → Extra High: +3 index for +5¢.</li>
+            <li>High → xhigh: +3 index for +5¢.</li>
             <li>After that, every additional point gets progressively more expensive.</li>
           </ul>
         </article>
 
         <article class="resource-card accent-purple">
           <h3>Raw value versus role</h3>
-          <p>Luna Extra High, Luna Max, Sol High, Sol Extra High, and Sol Max remain on the two-metric frontier, but each asks you to pay more for smaller score gains.</p>
+          <p>Luna xhigh, Luna Max, Sol High, Sol xhigh, and Sol Max remain on the two-metric frontier, but each asks you to pay more for smaller score gains.</p>
           <ul class="assessment-list">
-            <li><strong>Luna Extra High/Max:</strong> credible intermediate escalation steps.</li>
+            <li><strong>Luna xhigh/Max:</strong> credible intermediate escalation steps.</li>
             <li><strong>Sol Medium:</strong> not the third-best point by raw index per dollar; it is the operational family-level escalation.</li>
             <li><strong>Sol High/Max:</strong> maximum capability only when marginal gains justify the steep cost.</li>
           </ul>
@@ -717,7 +723,7 @@ permalink: /gpt-5-6-value-analysis/
 
       <aside class="callout">
         <h3>Terra Medium is the important exception</h3>
-        <p>Terra Medium reaches approximately the same general Intelligence Index as Luna High but costs more on this benchmark. It produced materially fewer output tokens in the measured run, which may reduce future context growth, latency, storage, and downstream input cost in long-running agents. That advantage is workload-dependent and is not fully represented by this chart.</p>
+        <p>Terra Medium reaches approximately the same general Intelligence Index as Luna High but costs more on this benchmark. On this benchmark, it produced a relatively compact output. Where outputs are carried into future context, that may reduce context growth, latency, storage, and downstream input cost in long-running agents. That advantage is workload-dependent and is not fully represented by this chart.</p>
       </aside>
     </section>
 
@@ -725,12 +731,12 @@ permalink: /gpt-5-6-value-analysis/
       <div class="section-heading">
         <div>
           <h2>Coding Changes the Model Mix</h2>
-          <p>The Artificial Analysis Coding Agent Index strengthens Luna as the default family while making Terra Max the practical high-end escalation.</p>
+          <p>The Artificial Analysis Coding Agent Index supports Luna as my cost-aware default family while making Terra Max the practical cost-efficient escalation.</p>
         </div>
       </div>
 
       <aside class="callout">
-        <h3>General workloads favor Luna as the default family. Coding gives Terra a much stronger escalation role.</h3>
+        <h3>General workloads favor Luna as a cost-aware default family. Coding gives Terra a much stronger cost-efficient escalation role.</h3>
         <p>The practical coding ladder is <strong>Luna Medium &rarr; Luna High &rarr; Luna Max &rarr; Terra Max &rarr; Sol Max</strong>. Most teams can simplify that to <strong>Luna Medium &rarr; Luna High &rarr; Terra Max</strong>.</p>
       </aside>
 
@@ -749,10 +755,10 @@ permalink: /gpt-5-6-value-analysis/
             </thead>
             <tbody>
               <tr><td>Luna Medium</td><td>$0.47</td><td>59</td><td>High-volume worker</td></tr>
-              <tr class="recommended"><td>Luna High</td><td>$0.96</td><td>68</td><td>Preferred coding default</td></tr>
+              <tr class="recommended"><td>Luna High</td><td>$0.96</td><td>68</td><td>Cost-aware coding default</td></tr>
               <tr class="recommended"><td>Luna Max</td><td>$1.57</td><td>75</td><td>Premium-value step</td></tr>
-              <tr class="recommended"><td>Terra Max</td><td>$2.76</td><td>77</td><td>Difficult-task escalation</td></tr>
-              <tr class="maximum"><td>Sol Max</td><td>$7.08</td><td>80</td><td>Maximum capability</td></tr>
+              <tr class="recommended"><td>Terra Max</td><td>$2.76</td><td>77</td><td>Cost-efficient escalation</td></tr>
+              <tr class="maximum"><td>Sol Max</td><td>$7.08</td><td>80</td><td>Quality-first maximum</td></tr>
             </tbody>
           </table>
         </div>
@@ -762,14 +768,14 @@ permalink: /gpt-5-6-value-analysis/
         <article class="resource-card accent-yellow">
           <h3>Value tiers</h3>
           <p><strong>Luna Medium</strong> is the inexpensive worker for subagents, tests, documentation, small fixes, and well-scoped implementation. It is a volume choice, not the hardest-repository-work default.</p>
-          <p><strong>Luna High</strong> is the strongest general coding default: nine index points above Luna Medium for another $0.49 per task, and four points above Terra Medium for only $0.06 more.</p>
-          <p><strong>Luna Max</strong> is the premium-value step at index 75 and $1.57 per task. It also beats Terra High and Extra High on both displayed metrics.</p>
+          <p><strong>Luna High</strong> is my cost-aware general coding default: nine index points above Luna Medium for another $0.49 per task, and four points above Terra Medium for only $0.06 more.</p>
+          <p><strong>Luna Max</strong> is the premium-value step at index 75 and $1.57 per task. It also beats Terra High and xhigh on both displayed metrics.</p>
         </article>
 
         <article class="resource-card accent-purple">
           <h3>Capability tiers</h3>
-          <p><strong>Terra Max</strong> approaches Sol Max at far lower task cost. Use it for difficult debugging, larger refactors, unfamiliar repositories, complex implementation, and tasks that failed on Luna.</p>
-          <p><strong>Sol Max</strong> is the strongest measured GPT-5.6 coding configuration, not the routine value choice. Reserve it for repeated failures, exceptionally difficult work, or cases where failure costs much more than inference.</p>
+          <p><strong>Terra Max</strong> is the cost-efficient difficult-task escalation. It approaches Sol Max at far lower task cost for difficult debugging, larger refactors, unfamiliar repositories, complex implementation, and tasks that failed on Luna.</p>
+          <p><strong>Sol Max</strong> is the quality-first, maximum-capability escalation and the strongest measured GPT-5.6 coding configuration. Reserve it for repeated failures, exceptionally difficult work, or cases where failure costs much more than inference.</p>
           <p>The jump from Terra Max to Sol Max costs more than 2.5&times; for roughly two or three additional index points: sharp diminishing returns for maximum capability.</p>
         </article>
       </div>
@@ -779,10 +785,10 @@ permalink: /gpt-5-6-value-analysis/
         <ul class="assessment-list">
           <li><strong>None and Low:</strong> Luna None, Luna Low, Terra None, and Terra Low deliver substantially weaker coding results.</li>
           <li><strong>Sol None:</strong> expensive relative to its measured coding score.</li>
-          <li><strong>Luna Extra High:</strong> a cheaper intermediate step, but Luna Max buys four more index points for about $0.31.</li>
-          <li><strong>Terra Extra High:</strong> squeezed by Luna Max or Terra Max.</li>
+          <li><strong>Luna xhigh:</strong> a cheaper intermediate step, but Luna Max buys four more index points for about $0.31.</li>
+          <li><strong>Terra xhigh:</strong> squeezed by Luna Max or Terra Max.</li>
           <li><strong>Terra Medium:</strong> not necessarily bad, but Luna High scores four points higher for only $0.06 more per task.</li>
-          <li><strong>Terra High and Extra High:</strong> both are beaten by Luna Max on the displayed score and task cost.</li>
+          <li><strong>Terra High and xhigh:</strong> both are beaten by Luna Max on the displayed score and task cost.</li>
         </ul>
         <p>Terra may still offer output-length or behavioral advantages that this two-axis view does not capture.</p>
       </details>
@@ -834,7 +840,7 @@ permalink: /gpt-5-6-value-analysis/
         </article>
         <article class="resource-card accent-cyan">
           <h3>Coding interpretation</h3>
-          <p>The comparison strengthens <strong>Luna High</strong> as the default and <strong>Terra Max</strong> as the escalation. Terra Max ties Fable 5's coding index at less than one quarter of the task cost; Sol Max scores three points higher while also costing less.</p>
+          <p>The comparison strengthens <strong>Luna High</strong> as the cost-aware default and <strong>Terra Max</strong> as the cost-efficient escalation. Terra Max ties Fable 5's coding index at less than one quarter of the task cost; Sol Max scores three points higher while also costing less.</p>
         </article>
       </div>
     </section>
@@ -897,6 +903,7 @@ permalink: /gpt-5-6-value-analysis/
           <li><strong>Included usage comes first:</strong> monthly ChatGPT plans provide an allowance. Purchased credits are used after the applicable included limit is reached, so credits are not a direct cash charge for every in-plan message.</li>
           <li><strong>Messages are variable:</strong> OpenAI says GPT-5.6 usage averages 5&ndash;40 credits per Codex message, but model, context, reasoning, tools, retrieval, and caching can move a task outside a simple estimate.</li>
           <li><strong>API usage is separate:</strong> Codex authenticated with an API key is billed at API token prices rather than ChatGPT subscription credits.</li>
+          <li><strong>Pro and Priority are controls, not models:</strong> Pro is enabled with <code>reasoning.mode: "pro"</code> on the selected Luna, Terra, or Sol model, independently of reasoning effort. Priority processing is a paid service tier for lower and more consistent API latency, not a faster model variant.</li>
           <li><strong>Rates can change:</strong> plan eligibility, usage limits, speed modes, and credit rates are product terms, not stable model properties. Check the live rate card before making budget commitments.</li>
         </ul>
       </details>
@@ -986,6 +993,15 @@ permalink: /gpt-5-6-value-analysis/
           <li>
             <a href="https://developers.openai.com/api/docs/guides/reasoning" target="_blank" rel="noopener"><span class="source-label">OpenAI API</span>Reasoning tokens and output-token billing</a>
           </li>
+          <li>
+            <a href="https://developers.openai.com/api/docs/models" target="_blank" rel="noopener"><span class="source-label">OpenAI Models</span>Official Luna, Terra, and Sol positioning</a>
+          </li>
+          <li>
+            <a href="https://developers.openai.com/api/docs/guides/latest-model" target="_blank" rel="noopener"><span class="source-label">GPT-5.6 Model Guidance</span>Reasoning effort, Pro mode, and evaluation guidance</a>
+          </li>
+          <li>
+            <a href="https://developers.openai.com/api/docs/guides/priority-processing" target="_blank" rel="noopener"><span class="source-label">Priority Processing</span>Lower-latency API service tier</a>
+          </li>
         </ul>
       </div>
     </section>
@@ -1031,7 +1047,7 @@ permalink: /gpt-5-6-value-analysis/
       low: "Low",
       medium: "Medium",
       high: "High",
-      extra_high: "Extra High",
+      extra_high: "xhigh",
       max: "Max",
       sonnet_5_max: "Max reasoning",
       opus_4_8_max: "Max reasoning",
