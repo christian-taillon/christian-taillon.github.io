@@ -212,7 +212,43 @@ permalink: /secure-pkg/
 </div>
 
 <div class="notice-box-critical">
-  <h2>Recent Notice: Axios npm compromise</h2>
+  <h2>Active Campaign (May&ndash;June 2026): Shai-Hulud, Miasma, Hades, TeamPCP</h2>
+  <p>A sustained, overlapping wave of supply chain attacks is still in progress across npm and PyPI. Multiple named clusters&mdash;<strong>Shai-Hulud</strong> (self-replicating worm), <strong>Miasma</strong> (RedHat npm packages + GitHub Actions), <strong>Hades</strong> (PyPI credential stealer via Bun), and <strong>TeamPCP</strong> (APT activity through at least June 7)&mdash;have compromised well over 700 packages and 25,000+ repositories since mid-May 2026. FortiGuard Labs reported Shai-Hulud persistence leading to a Redshift breach on June 26, confirming the worm reaches cloud data stores.</p>
+  <p>This is <strong>not</strong> a historical notice. Treat any newly published package or unexpected version bump from May 2026 onward as suspect until reviewed. The Axios compromise below (March 31, 2026) is now part of the same broader pattern of maintainer-account and CI/CD exploitation.</p>
+  <div class="code-block">
+    <h3>Quick Check &mdash; npm and PyPI lockfiles</h3>
+    <pre><code># npm: look for packages published since mid-May 2026 and known-bad names
+grep -E '"integrity"|"version"' package-lock.json | less
+npm ls --all 2>/dev/null | grep -iE 'shai|hulud|miasma|hades|plain-crypto-js'
+
+# pnpm/yarn: same sweep across lockfiles
+grep -iE 'shai|hulud|miasma|hades|plain-crypto-js' pnpm-lock.yaml yarn.lock 2>/dev/null
+
+# PyPI: review uv.lock / requirements.txt for science-focused packages
+#       trojanized in the Hades wave (see BleepingComputer 2026-06-08)
+grep -iE 'shai|hulud|miasma|hades' uv.lock requirements*.txt 2>/dev/null</code></pre>
+  </div>
+  <ul>
+    <li>Pin and <code>--frozen-lockfile</code> / <code>uv sync --locked</code> everywhere; refuse fresh resolves in CI.</li>
+    <li>Delay newly published packages (pnpm <code>minimumReleaseAge: 1440</code> or proxy quarantine). Most of these waves rely on short-lived malicious releases.</li>
+    <li>Block unreviewed dependency install and build scripts (pnpm <code>strictDepBuilds: true</code>; uv <code>--no-build</code> for untrusted sdists).</li>
+    <li>If a runner or workstation installed anything from npm or PyPI between mid-May and late June 2026 and you cannot confirm integrity, rotate credentials, tokens, and secrets exposed to that job.</li>
+    <li>Review CI/CD logs and EDR for outbound connections to unfamiliar endpoints; the Redshift breach path shows persistence can reach cloud data stores.</li>
+  </ul>
+  <p>The Axios notice below remains relevant as a worked example of the same maintainer-compromise class, but the active campaign above is the priority for any environment still resolving dependencies today.</p>
+  <div class="pill-container">
+    <a href="https://www.bleepingcomputer.com/news/security/new-shai-hulud-malware-wave-compromises-600-npm-packages/" target="_blank" class="pill-link" style="--theme-color: #dc3545;">BC: 600 npm packages (May 19)</a>
+    <a href="https://www.bleepingcomputer.com/news/security/new-shai-hulud-attack-trojanizes-19-science-focused-pypi-packages/" target="_blank" class="pill-link" style="--theme-color: #dc3545;">BC: 19 PyPI packages (Jun 8)</a>
+    <a href="https://thehackernews.com/2026/06/hades-pypi-attack-19-packages-poisoned.html" target="_blank" class="pill-link" style="--theme-color: #dc3545;">THN: Hades PyPI (Jun 9)</a>
+    <a href="https://www.securityweek.com/over-100-npm-pypi-packages-hit-in-new-shai-hulud-supply-chain-attacks/" target="_blank" class="pill-link" style="--theme-color: #dc3545;">SecurityWeek: 100+ pkgs (Jun 9)</a>
+    <a href="https://www.wiz.io/blog/miasma-supply-chain-attack-targeting-redhat-npm-packages" target="_blank" class="pill-link" style="--theme-color: #dc3545;">Wiz: Miasma (Jun 1)</a>
+    <a href="https://thehackernews.com/2026/06/miasma-malware-targets-npm-packages-and.html" target="_blank" class="pill-link" style="--theme-color: #dc3545;">THN: Miasma (Jun 26)</a>
+    <a href="https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/" target="_blank" class="pill-link" style="--theme-color: #dc3545;">Krebs: Patch Tuesday (Jun 9)</a>
+  </div>
+</div>
+
+<div class="notice-box-critical" style="margin-top: 20px;">
+  <h2>Worked Example: Axios npm compromise (March 31, 2026)</h2>
   <p>Axios maintainers confirmed that <code>axios@1.14.1</code> and <code>axios@0.30.4</code> were malicious npm releases published through a compromised maintainer account on March 31, 2026. Those versions pulled in <code>plain-crypto-js</code> and were live for roughly three hours before removal.</p>
   <p>If your lockfile or install logs show either affected Axios version or <code>plain-crypto-js</code>, treat that workstation or CI runner as potentially compromised, not merely out of date.</p>
   <div class="code-block">
@@ -239,6 +275,36 @@ grep -E 'axios@.*(1\.14\.1|0\.30\.4)|plain-crypto-js' yarn.lock pnpm-lock.yaml 2
 <div class="attack-timeline">
   <h2>Notable Supply Chain Attacks</h2>
   <p style="color: #555; margin-bottom: 20px;">Real-world incidents that demonstrate why supply chain security is critical:</p>
+
+  <div class="attack-item" style="--card-accent: #dc3545;">
+    <div class="date">June 26, 2026</div>
+    <div class="name">Shai-Hulud &rarr; Redshift breach (FortiGuard) / Miasma &rarr; GitHub Actions (THN)</div>
+    <div class="impact">FortiGuard Labs documented Shai-Hulud persistence leading to an AWS Redshift data breach, confirming the worm reaches cloud data stores. Same day, THN reported Miasma targeting npm packages and GitHub Actions. <a href="https://thehackernews.com/2026/06/miasma-malware-targets-npm-packages-and.html">THN Miasma</a></div>
+  </div>
+
+  <div class="attack-item" style="--card-accent: #dc3545;">
+    <div class="date">June 8&ndash;9, 2026</div>
+    <div class="name">Hades PyPI / Shai-Hulud 100+ packages / TeamPCP ongoing</div>
+    <div class="impact">Hades trojanized 19 PyPI packages to auto-run a Bun credential stealer; SecurityWeek reported 100+ NPM/PyPI packages hit by Shai-Hulud; SANS ISC confirmed TeamPCP APT activity through 2026-06-07. <a href="https://thehackernews.com/2026/06/hades-pypi-attack-19-packages-poisoned.html">THN Hades</a> &middot; <a href="https://www.securityweek.com/over-100-npm-pypi-packages-hit-in-new-shai-hulud-supply-chain-attacks/">SecurityWeek</a> &middot; <a href="https://www.bleepingcomputer.com/news/security/new-shai-hulud-attack-trojanizes-19-science-focused-pypi-packages/">BC PyPI</a></div>
+  </div>
+
+  <div class="attack-item" style="--card-accent: #dc3545;">
+    <div class="date">June 1, 2026</div>
+    <div class="name">Miasma: RedHat npm supply chain attack (Wiz)</div>
+    <div class="impact">Wiz Security Research disclosed Miasma, a supply chain attack targeting RedHat npm packages. <a href="https://www.wiz.io/blog/miasma-supply-chain-attack-targeting-redhat-npm-packages">Wiz Research</a></div>
+  </div>
+
+  <div class="attack-item" style="--card-accent: #dc3545;">
+    <div class="date">May 28, 2026</div>
+    <div class="name">Mini Shai-Hulud worm &amp; new CI/CD exploitation era (Flashpoint)</div>
+    <div class="impact">Flashpoint Intel described the Mini Shai-Hulud worm and a new era of CI/CD exploitation, building on the September 2025 Shai-Hulud worm.</div>
+  </div>
+
+  <div class="attack-item" style="--card-accent: #dc3545;">
+    <div class="date">May 19, 2026</div>
+    <div class="name">Shai-Hulud wave compromises 600 npm packages (BleepingComputer)</div>
+    <div class="impact">A new Shai-Hulud malware wave compromised roughly 600 npm packages, dramatically expanding the September 2025 worm's footprint. <a href="https://www.bleepingcomputer.com/news/security/new-shai-hulud-malware-wave-compromises-600-npm-packages/">BleepingComputer</a></div>
+  </div>
 
   <div class="attack-item" style="--card-accent: #dc3545;">
     <div class="date">March 31, 2026</div>
