@@ -597,7 +597,7 @@ permalink: /gpt-5-6-value-analysis/
       <div>
         <p class="eyebrow">Bottom line</p>
         <h1>Luna High is my cost-aware default.</h1>
-        <p class="hero-lede">And I would rarely use Sol Max. General workloads favor Sol Medium for escalation. Coding gives Terra Max a much stronger cost-efficient role, while Sol remains the quality-first flagship. Codex credit rates reinforce the Luna-first economics.</p>
+        <p class="hero-lede">General workloads run Luna Medium &rarr; Luna High &rarr; Sol Medium. Coding workloads run Luna Medium &rarr; Luna High &rarr; Luna Max &rarr; Sol High. Sol xhigh is the high-stakes quality and review tier; Sol Max is a manual maximum-capability option for exceptional tasks. Codex credit rates reinforce the Luna-first economics.</p>
       </div>
     </section>
 
@@ -670,11 +670,12 @@ permalink: /gpt-5-6-value-analysis/
           <span class="role">Coding workloads</span>
           <h3>Coding routing</h3>
           <ol class="routing-list">
-            <li><div><strong>Luna Medium &mdash; volume</strong><br>Tests, documentation, small fixes, and scoped implementation.</div></li>
-            <li><div><strong>Luna High &mdash; cost-aware default</strong><br>My preferred coding default in the benchmark view.</div></li>
-            <li><div><strong>Terra Max &mdash; cost-efficient escalation</strong><br>Difficult debugging, refactors, and complex implementation.</div></li>
+            <li><div><strong>Luna Medium &mdash; volume</strong><br>Tests, documentation, small fixes, tool-heavy work, and scoped implementation.</div></li>
+            <li><div><strong>Luna High &mdash; cost-aware default</strong><br>Normal production coding and implementation.</div></li>
+            <li><div><strong>Luna Max &mdash; premium-value intermediate</strong><br>Harder debugging, refactoring, and implementation that warrants more reasoning before changing model families.</div></li>
+            <li><div><strong>Sol High &mdash; difficult-task escalation</strong><br>Complex implementation, unfamiliar repositories, larger refactors, and work that failed under Luna.</div></li>
           </ol>
-          <p class="routing-note"><strong>Luna Max</strong> is the premium-value intermediate step. <strong>Sol Max</strong> is the quality-first, maximum-capability escalation.</p>
+          <p class="routing-note"><strong>Sol xhigh</strong> for high-stakes quality and review: architecture, security-sensitive changes, consequential review, conflicting approaches, and exceptionally difficult work. <strong>Sol Max</strong> for exceptional maximum-capability work where marginal cost matters less than capability.</p>
         </article>
       </div>
     </section>
@@ -730,35 +731,66 @@ permalink: /gpt-5-6-value-analysis/
     <section class="section" id="coding">
       <div class="section-heading">
         <div>
-          <h2>Coding Changes the Model Mix</h2>
-          <p>The Artificial Analysis Coding Agent Index supports Luna as my cost-aware default family while making Terra Max the practical cost-efficient escalation.</p>
+          <h2>Coding changes the model mix</h2>
+          <p>The Artificial Analysis Coding Index and Coding Agent Index support Luna as the cost-aware coding family, with Luna Max as the premium-value reasoning step and Sol High as the standard difficult-task escalation.</p>
         </div>
       </div>
 
       <aside class="callout">
-        <h3>General workloads favor Luna as a cost-aware default family. Coding gives Terra a much stronger cost-efficient escalation role.</h3>
-        <p>The practical coding ladder is <strong>Luna Medium &rarr; Luna High &rarr; Luna Max &rarr; Terra Max &rarr; Sol Max</strong>. Most teams can simplify that to <strong>Luna Medium &rarr; Luna High &rarr; Terra Max</strong>.</p>
+        <h3>Luna remains the cost-aware family for routine and production coding.</h3>
+        <p>The practical coding ladder is <strong>Luna Medium &rarr; Luna High &rarr; Luna Max &rarr; Sol High</strong>. <strong>Sol xhigh</strong> handles high-stakes quality and review. <strong>Sol Max</strong> is a manual maximum-capability option for exceptional tasks. Terra remains benchmark comparison data rather than a recommended standard routing tier; teams may still select Terra when their own workload testing demonstrates a behavioral, output-length, latency, or reliability advantage.</p>
       </aside>
 
-      <div class="coding-view section" aria-labelledby="coding-view-title">
-        <h3 id="coding-view-title">Coding benchmark view</h3>
-        <p>Current values from the Artificial Analysis Claude Code versus Codex comparison. Costs are average pay-per-token API cost per benchmark task, not Codex subscription credits.</p>
+      <div class="coding-view section" aria-labelledby="coding-index-title">
+        <h3 id="coding-index-title">Artificial Analysis Coding Index</h3>
+        <p>The weighted coding component of the Artificial Analysis Intelligence Index, including Terminal-Bench v2.1 and SciCode. Higher is stronger. Do not compare these scores directly to the Coding Agent Index or the general Intelligence Index; they use different scales and task sets.</p>
         <div class="table-scroll">
           <table class="coding-table">
             <thead>
               <tr>
                 <th>Configuration</th>
-                <th>Avg. coding task cost</th>
-                <th>Coding Agent Index</th>
+                <th>Coding Index</th>
                 <th>Operational role</th>
+                <th>&nbsp;</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Luna Medium</td><td>$0.47</td><td>59</td><td>High-volume worker</td></tr>
-              <tr class="recommended"><td>Luna High</td><td>$0.96</td><td>68</td><td>Cost-aware coding default</td></tr>
-              <tr class="recommended"><td>Luna Max</td><td>$1.57</td><td>75</td><td>Premium-value step</td></tr>
-              <tr class="recommended"><td>Terra Max</td><td>$2.76</td><td>77</td><td>Cost-efficient escalation</td></tr>
-              <tr class="maximum"><td>Sol Max</td><td>$7.08</td><td>80</td><td>Quality-first maximum</td></tr>
+              <tr><td>Sol xhigh</td><td>78.3</td><td>High-stakes quality and review</td><td></td></tr>
+              <tr><td>Sol Max</td><td>77.4</td><td>Maximum-capability option</td><td></td></tr>
+              <tr><td>Sol High</td><td>77.2</td><td>Difficult-task escalation</td><td></td></tr>
+              <tr><td>Terra Max</td><td>76.7</td><td>Comparison data</td><td></td></tr>
+              <tr><td>Sol Medium</td><td>76.3</td><td>General escalation</td><td></td></tr>
+              <tr><td>Terra xhigh</td><td>70.6</td><td>Comparison data</td><td></td></tr>
+              <tr><td>Sol Low</td><td>69.7</td><td>Comparison data</td><td></td></tr>
+              <tr><td>Terra High</td><td>67.1</td><td>Comparison data</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="coding-view section" aria-labelledby="coding-agent-title">
+        <h3 id="coding-agent-title">Artificial Analysis Coding Agent Index</h3>
+        <p>The composite pass@1 result across DeepSWE, Terminal-Bench v2, and SWE-Atlas-QnA. Higher is stronger. This is a separate index from the Coding Index above; their scores are not directly comparable.</p>
+        <div class="table-scroll">
+          <table class="coding-table">
+            <thead>
+              <tr>
+                <th>Configuration</th>
+                <th>Coding Agent Index</th>
+                <th>Operational role</th>
+                <th>&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="maximum"><td>Sol Max</td><td>61</td><td>Maximum-capability option</td><td></td></tr>
+              <tr><td>Sol xhigh</td><td>59</td><td>High-stakes quality and review</td><td></td></tr>
+              <tr class="recommended"><td>Sol High</td><td>58</td><td>Difficult-task escalation</td><td></td></tr>
+              <tr><td>Terra Max</td><td>57</td><td>Comparison data</td><td></td></tr>
+              <tr><td>Sol Medium</td><td>55</td><td>General escalation</td><td></td></tr>
+              <tr><td>Terra xhigh</td><td>53</td><td>Comparison data</td><td></td></tr>
+              <tr><td>Terra High</td><td>51</td><td>Comparison data</td><td></td></tr>
+              <tr><td>Terra Medium</td><td>44</td><td>Comparison data</td><td></td></tr>
+              <tr><td>Terra Low</td><td>34</td><td>Comparison data</td><td></td></tr>
             </tbody>
           </table>
         </div>
@@ -766,46 +798,42 @@ permalink: /gpt-5-6-value-analysis/
 
       <div class="recommendation-grid section">
         <article class="resource-card accent-yellow">
-          <h3>Value tiers</h3>
-          <p><strong>Luna Medium</strong> is the inexpensive worker for subagents, tests, documentation, small fixes, and well-scoped implementation. It is a volume choice, not the hardest-repository-work default.</p>
-          <p><strong>Luna High</strong> is my cost-aware general coding default: nine index points above Luna Medium for another $0.49 per task, and four points above Terra Medium for only $0.06 more.</p>
-          <p><strong>Luna Max</strong> is the premium-value step at index 75 and $1.57 per task. It also beats Terra High and xhigh on both displayed metrics.</p>
+          <h3>Coding route line</h3>
+          <p><strong>Luna Medium &rarr; Luna High &rarr; Luna Max &rarr; Sol High</strong></p>
+          <p><strong>Sol xhigh</strong> for high-stakes quality and review. <strong>Sol Max</strong> for exceptional maximum-capability work.</p>
+          <p class="small">Luna Medium covers tests, documentation, small fixes, tool-heavy work, and scoped implementation. Luna High is the normal production coding default. Luna Max is the premium-value reasoning step before changing model families. Sol High is the standard difficult-task escalation.</p>
         </article>
 
         <article class="resource-card accent-purple">
-          <h3>Capability tiers</h3>
-          <p><strong>Terra Max</strong> is the cost-efficient difficult-task escalation. It approaches Sol Max at far lower task cost for difficult debugging, larger refactors, unfamiliar repositories, complex implementation, and tasks that failed on Luna.</p>
-          <p><strong>Sol Max</strong> is the quality-first, maximum-capability escalation and the strongest measured GPT-5.6 coding configuration. Reserve it for repeated failures, exceptionally difficult work, or cases where failure costs much more than inference.</p>
-          <p>The jump from Terra Max to Sol Max costs more than 2.5&times; for roughly two or three additional index points: sharp diminishing returns for maximum capability.</p>
+          <h3>Coding interpretation</h3>
+          <ul class="assessment-list">
+            <li>Luna remains the cost-aware family for routine and production coding.</li>
+            <li>Luna Max is the premium-value reasoning step.</li>
+            <li>Sol High is the standard difficult-task escalation.</li>
+            <li>Sol xhigh is the high-stakes quality and review tier.</li>
+            <li>Sol Max leads the Coding Agent Index, while Sol xhigh leads the broader Coding Index.</li>
+            <li>No single reasoning level wins every coding benchmark.</li>
+          </ul>
         </article>
       </div>
 
       <details>
-        <summary>Coding configurations to de-emphasize</summary>
+        <summary>Where Terra fits in coding</summary>
         <ul class="assessment-list">
-          <li><strong>None and Low:</strong> Luna None, Luna Low, Terra None, and Terra Low deliver substantially weaker coding results.</li>
-          <li><strong>Sol None:</strong> expensive relative to its measured coding score.</li>
-          <li><strong>Luna xhigh:</strong> a cheaper intermediate step, but Luna Max buys four more index points for about $0.31.</li>
-          <li><strong>Terra xhigh:</strong> squeezed by Luna Max or Terra Max.</li>
-          <li><strong>Terra Medium:</strong> not necessarily bad, but Luna High scores four points higher for only $0.06 more per task.</li>
-          <li><strong>Terra High and xhigh:</strong> both are beaten by Luna Max on the displayed score and task cost.</li>
+          <li><strong>Benchmark comparison, not standard routing:</strong> Terra Max, Terra xhigh, and Terra High appear in both coding tables as measured configurations, but they are not the recommended next step after Luna Max.</li>
+          <li><strong>Select Terra on evidence:</strong> teams may still select Terra when their own workload testing demonstrates a behavioral, output-length, latency, or reliability advantage.</li>
+          <li><strong>Terra Medium compact-output exception:</strong> retained from the general-purpose view only where compact output has been measured to reduce context growth, latency, or downstream cost in long-running agents.</li>
         </ul>
-        <p>Terra may still offer output-length or behavioral advantages that this two-axis view does not capture.</p>
       </details>
     </section>
 
     <section class="section" id="claude-comparison">
       <div class="section-heading">
         <div>
-          <h2>What the Claude comparison adds</h2>
-          <p>Selected Anthropic maximum-effort points add useful cross-provider context without changing the default GPT-5.6 routing ladder.</p>
+          <h2>Claude comparison data</h2>
+          <p>Optional cross-provider context. Claude stays behind the chart toggle and this comparison table; it does not change the GPT-5.6 routing ladder.</p>
         </div>
       </div>
-
-      <article class="resource-card accent-orange">
-        <h3>Claude raises the general capability ceiling, but not the value floor</h3>
-        <p><strong>Claude Fable 5</strong> reaches an Intelligence Index of 60, one point above Sol Max, at a supplied average task cost of $2.75 versus $1.04. The selected Sonnet 5 and Opus 4.8 general points are both beaten by cheaper GPT-5.6 configurations on the two displayed metrics. In coding, each selected Claude Code point is matched or exceeded by a cheaper Codex configuration.</p>
-      </article>
 
       <div class="table-card section">
         <div class="table-scroll">
@@ -831,18 +859,7 @@ permalink: /gpt-5-6-value-analysis/
           </table>
         </div>
       </div>
-      <p class="chart-note">General Claude task costs are transcribed from the supplied comparison data. Coding values reflect the current Artificial Analysis Claude Code versus Codex comparison. These are selected configurations, not complete provider-family sweeps.</p>
-
-      <div class="recommendation-grid section">
-        <article class="resource-card accent-orange">
-          <h3>General-purpose interpretation</h3>
-          <p>Sonnet 5 Max and Opus 4.8 Max do not alter the recommended general stack. Fable 5 is the only selected Claude point that extends the measured ceiling, and it does so with sharply diminishing marginal value.</p>
-        </article>
-        <article class="resource-card accent-cyan">
-          <h3>Coding interpretation</h3>
-          <p>The comparison strengthens <strong>Luna High</strong> as the cost-aware default and <strong>Terra Max</strong> as the cost-efficient escalation. Terra Max ties Fable 5's coding index at less than one quarter of the task cost; Sol Max scores three points higher while also costing less.</p>
-        </article>
-      </div>
+      <p class="chart-note">General Claude task costs are transcribed from the supplied comparison data. Coding values reflect the current Artificial Analysis Claude Code versus Codex comparison. These are selected configurations, not complete provider-family sweeps, and they do not alter the GPT-5.6 routing recommendations.</p>
     </section>
 
     <section class="section" id="codex-credits">
@@ -912,19 +929,25 @@ permalink: /gpt-5-6-value-analysis/
     <section class="section" id="limitations">
       <div class="section-heading">
         <div>
-          <h2>Benchmark limits</h2>
-          <p>Use benchmark charts as directional evidence, then validate routing against real repositories and production tasks.</p>
+          <h2>Benchmark limits and methodology</h2>
+          <p>Use benchmark charts as directional evidence, then validate routing against real repositories and production tasks. Keep the five measures separate: their scores and units are not interchangeable.</p>
         </div>
       </div>
       <div class="resource-card accent-blue">
         <ul class="assessment-list">
-          <li>The Intelligence Index and Coding Agent Index use different task suites; their scores and absolute task costs should not be compared directly.</li>
-          <li>Artificial Analysis benchmark task cost and Codex subscription credits are different billing views. Their family price ratios align, but their displayed units are not interchangeable.</li>
+          <li><strong>Artificial Analysis Intelligence Index:</strong> general-purpose weighted index. The chart and source table on this page use this index.</li>
+          <li><strong>Artificial Analysis Coding Index:</strong> the weighted coding component of the Intelligence Index, including Terminal-Bench v2.1 and SciCode.</li>
+          <li><strong>Artificial Analysis Coding Agent Index:</strong> composite pass@1 result across DeepSWE, Terminal-Bench v2, and SWE-Atlas-QnA.</li>
+          <li><strong>Benchmark task cost:</strong> average pay-per-token API cost per benchmark task, as reported by Artificial Analysis.</li>
+          <li><strong>Codex subscription credit usage:</strong> OpenAI ChatGPT/Codex credits per 1M tokens, separate from API task cost.</li>
+          <li>Do not compare absolute scores across these indexes as though they share the same scale. The Intelligence Index, Coding Index, and Coding Agent Index use different task suites and weighting.</li>
+          <li>Benchmark task cost and Codex subscription credits are different billing views. Their family price ratios align, but their displayed units are not interchangeable.</li>
           <li>The Claude comparison includes selected configurations rather than every Anthropic effort level, so it supports point comparisons rather than a complete provider-wide frontier.</li>
           <li>Benchmark score per dollar is not the same as successfully completed production tasks per dollar.</li>
           <li>Output length, latency, retries, context growth, task failure, and downstream human review can change real-world economics.</li>
           <li>Operational role specialization can justify a model that is not the next point on a raw benchmark frontier.</li>
           <li>Intelligent routing uses the cheapest model that reliably completes the task, then escalates when evidence warrants it.</li>
+          <li>Benchmark results, pricing, and product terms can change. Review the live sources before making budget commitments.</li>
         </ul>
       </div>
     </section>
@@ -1243,7 +1266,7 @@ permalink: /gpt-5-6-value-analysis/
           tooltip.style.top = `${py}px`;
           tooltip.innerHTML = `<strong>${displayName(d)}</strong>` +
             `<div>${effortLabels[d.effort]} · ${formatCost(d.cost)} per task · Index ${d.index}</div>` +
-            `<div class="status">${d.provider === "Anthropic" ? dominated ? "Selected Claude point; dominated on cost + index" : "Selected Claude point; cross-provider frontier" : d.recommended ? "Recommended routing tier" : d.exception ? "Operational exception: output length may matter" : key(d) === "Sol|max" ? "Maximum capability; weak marginal value" : dominated ? "Strictly dominated on cost + index" : "Pareto frontier"}</div>`;
+            `<div class="status">${d.provider === "Anthropic" ? dominated ? "Selected Claude point; dominated on cost + index" : "Selected Claude point; cross-provider frontier" : d.recommended ? "Recommended routing tier" : d.exception ? "Operational exception: output length may matter" : key(d) === "Sol|max" ? "Maximum-capability option; not a routine recommendation" : dominated ? "Strictly dominated on cost + index" : "Pareto frontier"}</div>`;
           tooltip.style.opacity = 1;
         }
         function hideTip() { tooltip.style.opacity = 0; }
@@ -1286,7 +1309,7 @@ permalink: /gpt-5-6-value-analysis/
       }
       if (d.recommended) return { label: "Recommended", cls: "recommended" };
       if (d.exception) return { label: "Token-efficiency exception", cls: "exception" };
-      if (key(d) === "Sol|max") return { label: "Max capability; weak value", cls: "maximum" };
+      if (key(d) === "Sol|max") return { label: "Maximum-capability option", cls: "maximum" };
       if (d.dominated) return { label: "Strictly dominated", cls: "dominated" };
       return { label: "Pareto frontier", cls: "frontier" };
     }
