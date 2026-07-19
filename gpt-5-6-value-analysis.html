@@ -353,6 +353,7 @@ permalink: /gpt-5-6-value-analysis/
       list-style: none;
       counter-reset: route;
     }
+    .routing-list-2up { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .routing-list li {
       counter-increment: route;
       display: grid;
@@ -669,7 +670,7 @@ permalink: /gpt-5-6-value-analysis/
         <article class="resource-card accent-cyan">
           <span class="role">Coding workloads</span>
           <h3>Coding routing</h3>
-          <ol class="routing-list">
+          <ol class="routing-list routing-list-2up">
             <li><div><strong>Luna Medium &mdash; volume</strong><br>Tests, documentation, small fixes, tool-heavy work, and scoped implementation.</div></li>
             <li><div><strong>Luna High &mdash; cost-aware default</strong><br>Normal production coding and implementation.</div></li>
             <li><div><strong>Luna Max &mdash; premium-value intermediate</strong><br>Harder debugging, refactoring, and implementation that warrants more reasoning before changing model families.</div></li>
