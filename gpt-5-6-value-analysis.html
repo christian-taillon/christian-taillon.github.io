@@ -436,8 +436,8 @@ permalink: /gpt-5-6-value-analysis/
     .data-table th:nth-child(3) { width: 15%; }
     .data-table th:nth-child(4) { width: 11%; }
     .data-table th:nth-child(5) { width: 8%; }
-    .data-table th:nth-child(6) { width: 12%; }
-    .data-table th:nth-child(7) { width: 25%; }
+    .data-table th:nth-child(6) { width: 25%; }
+    .data-table th:nth-child(7) { width: 12%; }
     .credit-table { display: table; table-layout: fixed; }
     .credit-table th:nth-child(1) { width: 24%; }
     .credit-table th:nth-child(2),
@@ -724,8 +724,8 @@ permalink: /gpt-5-6-value-analysis/
       </div>
 
       <aside class="callout">
-        <h3>Terra Medium is the important exception</h3>
-        <p>Terra Medium reaches approximately the same general Intelligence Index as Luna High but costs more on this benchmark. On this benchmark, it produced a relatively compact output. Where outputs are carried into future context, that may reduce context growth, latency, storage, and downstream input cost in long-running agents. That advantage is workload-dependent and is not fully represented by this chart.</p>
+        <h3>Where Terra may still matter</h3>
+        <p>Terra is generally squeezed between Luna and Sol on benchmark score per dollar, but it may offer a token-efficiency advantage in some workloads. On this benchmark, Terra Medium reached the same Intelligence Index (46) as Luna High while using roughly half as many total output tokens (about 4K versus 8K). It still cost more per task (13¢ versus 9¢), so its potential value is lower token usage, latency, or throughput&mdash;not lower benchmark cost. Much of the reduction is in hidden reasoning tokens, which affect cost, latency, and throughput but generally do not all become future conversation context. The result is benchmark-specific and may not carry over to every workload.</p>
       </aside>
     </section>
 
@@ -812,8 +812,7 @@ permalink: /gpt-5-6-value-analysis/
             <li>Luna Max is the premium-value reasoning step.</li>
             <li>Sol High is the standard difficult-task escalation.</li>
             <li>Sol xhigh is the high-stakes quality and review tier.</li>
-            <li>Sol Max leads the Coding Agent Index, while Sol xhigh leads the broader Coding Index.</li>
-            <li>No single reasoning level wins every coding benchmark.</li>
+            <li>Sol xhigh leads the displayed Coding Index, while Sol Max leads the Coding Agent Index. No single reasoning level wins every coding benchmark.</li>
           </ul>
         </article>
       </div>
@@ -823,7 +822,7 @@ permalink: /gpt-5-6-value-analysis/
         <ul class="assessment-list">
           <li><strong>Benchmark comparison, not standard routing:</strong> Terra Max, Terra xhigh, and Terra High appear in both coding tables as measured configurations, but they are not the recommended next step after Luna Max.</li>
           <li><strong>Select Terra on evidence:</strong> teams may still select Terra when their own workload testing demonstrates a behavioral, output-length, latency, or reliability advantage.</li>
-          <li><strong>Terra Medium compact-output exception:</strong> retained from the general-purpose view only where compact output has been measured to reduce context growth, latency, or downstream cost in long-running agents.</li>
+          <li><strong>Terra Medium token-efficiency option:</strong> a workload-specific exception, not a standard routing step. On the general benchmark, Terra Medium matched Luna High's Intelligence Index with roughly half the total output tokens, but at higher per-task cost. Consider it only where lower token usage, latency, or throughput outweighs benchmark cost.</li>
         </ul>
       </details>
     </section>
@@ -957,7 +956,7 @@ permalink: /gpt-5-6-value-analysis/
       <div class="section-heading">
         <div>
           <h2>General-purpose source data</h2>
-          <p>GPT-5.6 configurations and the selected Claude comparison points, sorted by average Artificial Analysis benchmark task cost. “Index / 1¢” is a simple raw benchmark ratio, not completed production tasks per dollar. “Pareto frontier” only means no tested configuration is both cheaper and equal or better on the Intelligence Index; it does not imply strong practical value.</p>
+          <p>GPT-5.6 configurations and the selected Claude comparison points, sorted by average Artificial Analysis benchmark task cost. “Index points / 1¢” is a simple raw benchmark-score-to-cost ratio, not completed production tasks per dollar. <strong>Pareto frontier does not mean recommended.</strong> It only means that no displayed configuration is both cheaper and equal or stronger on this benchmark.</p>
         </div>
       </div>
       <div class="table-card">
@@ -970,8 +969,8 @@ permalink: /gpt-5-6-value-analysis/
                 <th>Reasoning</th>
                 <th>Cost / task</th>
                 <th>Index</th>
-                <th>Index / 1¢</th>
                 <th>Assessment</th>
+                <th title="Simple average benchmark-score-to-cost ratio. It is not marginal value, task success per dollar, or a recommendation.">Index points / 1¢</th>
               </tr>
             </thead>
             <tbody id="dataRows"></tbody>
@@ -1301,16 +1300,30 @@ permalink: /gpt-5-6-value-analysis/
       renderChart();
     });
 
+    const assessmentLabels = {
+      "Luna|medium": "Recommended: volume",
+      "Luna|high": "Recommended: default",
+      "Luna|extra_high": "Pareto frontier",
+      "Luna|max": "Premium-value intermediate",
+      "Sol|medium": "General escalation",
+      "Sol|high": "Coding escalation",
+      "Sol|extra_high": "High-stakes quality",
+      "Sol|max": "Maximum-capability option",
+      "Terra|medium": "Token-efficiency exception"
+    };
+
     function assessment(d) {
       if (d.index == null) return { label: "Unscored", cls: "unscored" };
       if (d.provider === "Anthropic") {
         return d.effort === "fable_5_max"
-          ? { label: "Overall maximum", cls: "maximum" }
+          ? { label: "Highest displayed general index", cls: "maximum" }
           : { label: "Comparison point", cls: "anthropic" };
       }
-      if (d.recommended) return { label: "Recommended", cls: "recommended" };
-      if (d.exception) return { label: "Token-efficiency exception", cls: "exception" };
-      if (key(d) === "Sol|max") return { label: "Maximum-capability option", cls: "maximum" };
+      const roleLabel = assessmentLabels[key(d)];
+      if (roleLabel) {
+        const cls = d.dominated ? "dominated" : (key(d) === "Sol|max" ? "maximum" : key(d) === "Terra|medium" ? "exception" : "recommended");
+        return { label: roleLabel, cls };
+      }
       if (d.dominated) return { label: "Strictly dominated", cls: "dominated" };
       return { label: "Pareto frontier", cls: "frontier" };
     }
@@ -1326,8 +1339,8 @@ permalink: /gpt-5-6-value-analysis/
         <td>${effortLabels[d.effort]}</td>
         <td>${formatCost(d.cost)}</td>
         <td>${d.index ?? "—"}</td>
-        <td>${d.index == null ? "—" : (d.index / d.cost).toFixed(2)}</td>
-        <td><span class="badge ${a.cls}">${a.label}</span></td>`;
+        <td><span class="badge ${a.cls}">${a.label}</span></td>
+        <td>${d.index == null ? "—" : (d.index / d.cost).toFixed(2)}</td>`;
       tbody.append(tr);
     });
 
