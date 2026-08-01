@@ -5,67 +5,72 @@ description: Instructor reference for the DEF CON Airport Lab Linux discovery ex
 permalink: /defcon-flags-instructor/
 ---
 
-# DEF CON Airport Lab: Instructor Flag Guide
+# DEF CON Airport Lab: Instructor Cheatsheet
 
-This guide documents the airport-themed Linux easter eggs installed by `defcon-flags.sh`. It is intended for instructors and lab assistants who need to provide hints, confirm solutions, or repair a participant system.
-
-The exercises are discovery-only. Participants can find every flag using read-only Linux commands. They do not need to edit files, change permissions, stop services, or modify the operating system.
-
----
-
-## Kiosk Cheatsheet
-
-**Login credentials:**
+**Login**
 
 ```text
 user:   kiosk
 passwd: NotLimuEmu
 ```
 
-The `kiosk` user is intentionally in the sudoers file. Participants can make changes; a reset or redeploy restores a clean state.
+The `kiosk` user is in sudoers. Resets restore a clean state.
 
-**Reboot to get back to the kiosk screen:**
+**Get back to the kiosk screen**
 
 ```bash
 sudo reboot
 ```
 
-**Simple reset** (fixes most issues, keeps the OS):
+**Simple reset** (fixes most borks, keeps the OS)
 
 ```bash
 # Press Ctrl+Alt+Shift+O, then:
 kiosk reset --reboot
 ```
 
-**Full reset / redeploy** (when a simple reset is not enough):
+**Full reset / redeploy** (when a simple reset isn't enough)
 
 ```bash
 kiosk remove
 ./prepare-kiosk.sh --level 2 --browser firefox --user kiosk --reboot
-```
-
-Then reinstall the flags:
-
-```bash
 curl -fsSL https://christiant.io/defcon-flags.sh | sudo bash
 ```
 
-**WiFi** (switch if needed):
+**WiFi** (switch if needed)
 
 ```text
 BSSID:  ☕ demo
 passwd: demodemo
 ```
 
-**Participant hint command:**
+**Participant hint command**
 
 ```bash
 hint
 ```
 
-This prints one randomly selected investigation clue per invocation. It is installed at `/usr/local/bin/hint` and surfaced as a shell function via `/etc/profile.d/airport-lab-hints.sh` and a message in `/etc/bash.bashrc`. It never prints flag values.
+Prints one random investigation clue. Never reveals flag values. Installed at `/usr/local/bin/hint`.
+
+**Reinstall flags** (repair any time)
+
+```bash
+curl -fsSL https://christiant.io/defcon-flags.sh | sudo bash
+```
+
+Idempotent. Safe to run repeatedly. Replaces only its own airport-lab artifacts.
 
 ---
+
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+
+---
+
+# Appendix: Detailed Reference
+
+*Everything below is reference material for confirming solutions, customizing flags, and advanced troubleshooting.*
 
 ## Deployment and Recovery
 
