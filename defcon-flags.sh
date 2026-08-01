@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# You found the ultimate hint: the answers.
+#
+# You're welcome to read through this flag generation script, but that takes
+# the fun out of the hack. Enjoy the simple simulated flag generator script,
+# or go back to your Linux device and run 'hint' in the terminal.
+#
 # Airport-themed DEF CON workshop easter eggs.
 #
 # Streamed deployment:
