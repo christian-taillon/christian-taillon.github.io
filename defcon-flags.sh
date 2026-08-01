@@ -124,6 +124,35 @@ write_file() {
     forget_temp "$tmp"
 }
 
+append_bashrc_hint_message() {
+    local target marker
+    target="$(path /etc/bash.bashrc)"
+    marker="# BEGIN airport-lab hint message"
+
+    if [[ -e "$target" ]]; then
+        [[ -f "$target" ]] || die "/etc/bash.bashrc is not a regular file."
+        if ! grep -Fq -- "$marker" "$target"; then
+            cat >> "$target" <<'BASHRC'
+
+# BEGIN airport-lab hint message
+if [[ $- == *i* ]]; then
+    printf '\nAirport Operations Lab: type "hint" for a randomly selected investigation clue.\n\n'
+fi
+# END airport-lab hint message
+BASHRC
+        fi
+        return 0
+    fi
+
+    write_file /etc/bash.bashrc 0644 <<'BASHRC'
+# BEGIN airport-lab hint message
+if [[ $- == *i* ]]; then
+    printf '\nAirport Operations Lab: type "hint" for a randomly selected investigation clue.\n\n'
+fi
+# END airport-lab hint message
+BASHRC
+}
+
 verify_file_contains() {
     local rel="$1" expected="$2"
     grep -Fq -- "$expected" "$(path "$rel")" \
@@ -131,7 +160,7 @@ verify_file_contains() {
 }
 
 verify_deployment() {
-    local db archive recorder command_path hint_path profile_fragment
+    local db archive recorder command_path hint_path profile_fragment bashrc_file
 
     log "Verifying airport-lab deployment"
 
@@ -189,6 +218,12 @@ PY
     profile_fragment="$(path /etc/profile.d/airport-lab-hints.sh)"
     grep -Fq -- "hint()" "$profile_fragment" \
         || die "Verification failed for airport-lab-hints.sh."
+
+    bashrc_file="$(path /etc/bash.bashrc)"
+    grep -Fq -- "# BEGIN airport-lab hint message" "$bashrc_file" \
+        || die "Verification failed for /etc/bash.bashrc."
+    grep -Fq -- 'type "hint" for a randomly selected investigation clue.' "$bashrc_file" \
+        || die "Verification failed for the bashrc hint message."
 
     if [[ "$ENABLE_PROCESS_EGG" == "1" ]]; then
         verify_file_contains /etc/systemd/system/airport-beacon.service "$FLAG_PROCESS"
@@ -445,6 +480,8 @@ hint() {
     /usr/local/bin/hint "$@"
 }
 PROFILE
+
+append_bashrc_hint_message
 
 if [[ "$ENABLE_PROCESS_EGG" == "1" ]]; then
     log "Installing optional process-list egg"
