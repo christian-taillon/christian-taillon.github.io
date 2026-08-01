@@ -131,7 +131,7 @@ verify_file_contains() {
 }
 
 verify_deployment() {
-    local db archive recorder command_path
+    local db archive recorder command_path hint_path profile_fragment
 
     log "Verifying airport-lab deployment"
 
@@ -181,6 +181,15 @@ PY
     "$command_path" | grep -Fq -- "$FLAG_COMMAND" \
         || die "Verification failed for airport-status."
 
+    hint_path="$(path /usr/local/bin/hint)"
+    [[ -x "$hint_path" ]] || die "hint is not executable."
+    "$hint_path" | grep -Fq -- "[Airport Operations Hint]" \
+        || die "Verification failed for hint."
+
+    profile_fragment="$(path /etc/profile.d/airport-lab-hints.sh)"
+    grep -Fq -- "hint()" "$profile_fragment" \
+        || die "Verification failed for airport-lab-hints.sh."
+
     if [[ "$ENABLE_PROCESS_EGG" == "1" ]]; then
         verify_file_contains /etc/systemd/system/airport-beacon.service "$FLAG_PROCESS"
 
@@ -220,6 +229,7 @@ log "Deploying airport-themed workshop flags"
 
 install -d -m 0755 \
     "$(path /etc/airport-lab)" \
+    "$(path /etc/profile.d)" \
     "$(path /etc/systemd/system)" \
     "$(path /opt/airport-lab)" \
     "$(path /opt/airport-lab/.lost-and-found)" \
@@ -237,6 +247,9 @@ Everything can be discovered with read-only commands.
 
 Useful tools may include:
   find, grep, cat, readlink, base64, strings, tar, sqlite3, ps
+
+Need a clue?
+  hint
 TXT
 
 write_file /etc/airport-lab/crew_credentials.bak 0644 <<EOF_CREW
@@ -389,6 +402,49 @@ printf '%s\n' 'Runway: OPEN'
 printf '%s\n' 'Gate C12: MANUAL REVIEW'
 printf '%s\n' '$FLAG_COMMAND'
 EOF_COMMAND
+
+log "Installing hint command"
+write_file /usr/local/bin/hint 0755 <<'HINT'
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+if (($# != 0)); then
+    printf 'Usage: hint\n' >&2
+    exit 2
+fi
+
+hints=(
+    "Start with the operations README under /opt/airport-lab. It lists the tools the ground crew expects you to use."
+    "Backups can outlive the secrets they were meant to protect. Search /etc for files ending in .bak."
+    "Logs are a timeline. Search airport-related logs for warnings, access decisions, and unusual notes."
+    "A radio message may be encoded rather than encrypted. Base64-shaped text is meant to be decoded."
+    "Use ls -la around airport-lab directories. Lost items are sometimes hidden from an ordinary directory listing."
+    "A path may be a signpost rather than the real file. Try readlink or readlink -f on suspicious symbolic links."
+    "Baggage manifests are structured records. Use file first, then inspect any SQLite tables and interesting rows."
+    "Do not unpack a black box blindly. Use tar -tzf to list its contents and tar -xOzf to read a file directly."
+    "Binary-looking recorder data can still contain readable text. The strings command may recover it."
+    "Not every clue is stored in a file. Look through /usr/local/bin for airport-related commands that are safe to run."
+    "A process name and its full command line can reveal different information. Try ps auxww."
+    "Search for flight AZ815 across /opt, /etc, and /var. The same flight appears in more than one airport system."
+    "Recursive grep can find plaintext, but it will not automatically decode data, open archives, query databases, or inspect processes."
+    "Try searching filenames for words such as airport, baggage, radio, recorder, beacon, or black-box."
+    "When you do not recognize a file, identify its type before choosing a tool. Start with: file PATH"
+    "CTF flags often have a recognizable prefix. Grep can find visible ones, but some flags are deliberately stored in other formats."
+)
+
+index=$((RANDOM % ${#hints[@]}))
+
+printf '\n[Airport Operations Hint]\n%s\n\n' "${hints[$index]}"
+HINT
+
+write_file /etc/profile.d/airport-lab-hints.sh 0644 <<'PROFILE'
+# Airport Operations Lab
+# Type "hint" for a randomly selected investigation clue.
+
+hint() {
+    /usr/local/bin/hint "$@"
+}
+PROFILE
 
 if [[ "$ENABLE_PROCESS_EGG" == "1" ]]; then
     log "Installing optional process-list egg"
