@@ -11,6 +11,62 @@ This guide documents the airport-themed Linux easter eggs installed by `defcon-f
 
 The exercises are discovery-only. Participants can find every flag using read-only Linux commands. They do not need to edit files, change permissions, stop services, or modify the operating system.
 
+---
+
+## Kiosk Cheatsheet
+
+**Login credentials:**
+
+```text
+user:   kiosk
+passwd: NotLimuEmu
+```
+
+The `kiosk` user is intentionally in the sudoers file. Participants can make changes; a reset or redeploy restores a clean state.
+
+**Reboot to get back to the kiosk screen:**
+
+```bash
+sudo reboot
+```
+
+**Simple reset** (fixes most issues, keeps the OS):
+
+```bash
+# Press Ctrl+Alt+Shift+O, then:
+kiosk reset --reboot
+```
+
+**Full reset / redeploy** (when a simple reset is not enough):
+
+```bash
+kiosk remove
+./prepare-kiosk.sh --level 2 --browser firefox --user kiosk --reboot
+```
+
+Then reinstall the flags:
+
+```bash
+curl -fsSL https://christiant.io/defcon-flags.sh | sudo bash
+```
+
+**WiFi** (switch if needed):
+
+```text
+BSSID:  ☕ demo
+passwd: demodemo
+```
+
+**Participant hint command:**
+
+```bash
+hint
+```
+
+This prints one randomly selected investigation clue per invocation. It is installed at `/usr/local/bin/hint` and surfaced as a shell function via `/etc/profile.d/airport-lab-hints.sh` and a message in `/etc/bash.bashrc`. It never prints flag values.
+
+---
+
 ## Deployment and Recovery
 
 Deploy or fully repair all default flags:
@@ -39,11 +95,14 @@ The script manages only these locations:
 
 ```text
 /etc/airport-lab/
+/etc/bash.bashrc (appended, marker-guarded block)
+/etc/profile.d/airport-lab-hints.sh
 /etc/systemd/system/airport-beacon.service
 /opt/airport-lab/
 /var/lib/airport-lab/
 /var/log/airport-lab/
 /usr/local/bin/airport-status
+/usr/local/bin/hint
 ```
 
 ## General Participant Starting Point
@@ -59,6 +118,8 @@ It suggests these read-only tools:
 ```text
 find, grep, cat, readlink, base64, strings, tar, sqlite3, ps
 ```
+
+It also points participants to the `hint` command, which prints one randomly selected investigation clue and never reveals flag values.
 
 A broad search for default-format flags will find several, but not all, of the exercises:
 
@@ -511,6 +572,7 @@ tar -xOzf /opt/airport-lab/archives/black-box.tar.gz \
   flight-AZ815/maintenance-note.txt
 strings /opt/airport-lab/flight-recorder.dat
 airport-status
+hint
 ps auxww | grep '[a]irport-beacon'
 ```
 
