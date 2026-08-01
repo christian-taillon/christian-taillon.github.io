@@ -53,6 +53,27 @@ kiosk remove
 ./prepare-kiosk.sh --level 2 --browser firefox --user kiosk --reboot
 ```
 
+To hide the clickable Activities button and Settings gear (useful if a participant reaches the desktop), reset with that flag:
+
+```bash
+./prepare-kiosk.sh reset --disable-gnome-clickable --reboot
+```
+
+## Switching Kiosk Apps
+
+Two kiosk apps are available and both should work. If one is misbehaving, switch between them with `--app`:
+
+- Omit it to use `airline_kiosk.html`.
+- Pass a local HTML filename beside `prepare-kiosk.sh`, such as `--app airport-coffee-kiosk_touchscreen.html`.
+- Available local apps: `airline_kiosk.html` and `airport-coffee-kiosk_touchscreen.html`.
+- You can also pass an `http://` or `https://` URL.
+- The selection is saved during initial setup and reused by `kiosk reset`.
+
+```bash
+kiosk remove
+./prepare-kiosk.sh --level 2 --browser firefox --user kiosk --app airport-coffee-kiosk_touchscreen.html --reboot
+```
+
 After the kiosk is restored, redeploy the flags:
 
 ```bash
