@@ -23,6 +23,14 @@ The kiosks are intentionally breakable. The `kiosk` user has sudo access so the 
 | Reset kiosk | `kiosk reset --reboot` |
 | Repair flags | [Redeploy airport flags](#flags) |
 
+## Start and Check
+
+Power on the device. No setup is needed. GDM logs in as `kiosk`, GNOME autostart runs `~/Public/start-kiosk.sh`, and the kiosk app should open full screen after about five seconds.
+
+On Firefox 147 or newer, verify that `Ctrl+W`, `Ctrl+Shift+W`, and `Ctrl+Q` do nothing. Confirm that kiosk links can still open tabs or popups and that the email link launches Thunderbird.
+
+For a device configured with `--touchscreen`, press and hold a folder in Nautilus and confirm **Open > Open in Console** launches GNOME Console.
+
 ## Main Demonstration
 
 1. Find and click an email (`mailto:`) link in the kiosk.
@@ -46,17 +54,13 @@ For a normal reset, press `Ctrl+Alt+Shift+O`, then run:
 kiosk reset --reboot
 ```
 
+The reset restores the kiosk files and autostart configuration, reapplies GDM login and lockdown, and reboots. Run only one reset at a time per device.
+
 If the kiosk is damaged beyond a normal reset, run these commands from the Initial Escape Tactics directory:
 
 ```bash
 kiosk remove
 ./prepare-kiosk.sh --level 2 --browser firefox --user kiosk --reboot
-```
-
-To hide the clickable Activities button and Settings gear (useful if a participant reaches the desktop), reset with that flag:
-
-```bash
-./prepare-kiosk.sh reset --disable-gnome-clickable --reboot
 ```
 
 ## Switching Kiosk Apps
@@ -66,7 +70,7 @@ Two kiosk apps are available and both should work. If one is misbehaving, switch
 - Omit it to use `airline_kiosk.html`.
 - Pass a local HTML filename beside `prepare-kiosk.sh`, such as `--app airport-coffee-kiosk_touchscreen.html`.
 - Available local apps: `airline_kiosk.html` and `airport-coffee-kiosk_touchscreen.html`.
-- You can also pass an `http://` or `https://` URL.
+- You can also pass an `http://` or `https://` URL, but local files are preferred when the workshop must work without network access.
 - The selection is saved during initial setup and reused by `kiosk reset`.
 
 ```bash
@@ -74,10 +78,54 @@ kiosk remove
 ./prepare-kiosk.sh --level 2 --browser firefox --user kiosk --app airport-coffee-kiosk_touchscreen.html --reboot
 ```
 
+`kiosk reset` reuses the saved app and browser. To change either one, remove the saved kiosk configuration and run setup again:
+
+```bash
+kiosk remove
+./prepare-kiosk.sh --app airport-coffee-kiosk_touchscreen.html --browser chrome --user kiosk --reboot
+```
+
 After the kiosk is restored, redeploy the flags:
 
 ```bash
 curl -fsSL https://christiant.io/defcon-flags.sh | sudo bash
+```
+
+## Update the Kiosk Page
+
+From the cloned Initial Escape Tactics directory:
+
+```bash
+git pull
+./prepare-kiosk.sh reset --reboot
+```
+
+`kiosk reset --reboot` alone uses the already-installed app. URL apps load their remote content directly.
+
+## Touchscreen Console Access
+
+Add `--touchscreen` during setup to install GNOME Console for Nautilus's **Open > Open in Console** touch path. To enable it on an existing device from the updated repository:
+
+```bash
+./prepare-kiosk.sh reset --touchscreen --reboot
+```
+
+## Hide Activities and Settings
+
+`--disable-gnome-clickable` is optional. It hides the clickable Activities button and Settings gear if a participant reaches the desktop; it is not required for the standard kiosk.
+
+For initial setup:
+
+```bash
+./prepare-kiosk.sh --level 2 --browser firefox --user kiosk \
+  --disable-gnome-clickable --reboot
+```
+
+To toggle it during a reset:
+
+```bash
+kiosk reset --disable-gnome-clickable --reboot
+kiosk reset --no-disable-gnome-clickable --reboot
 ```
 
 ## Flags
@@ -112,7 +160,17 @@ curl -fsSL https://christiant.io/defcon-flags.sh \
 
 - [Initial Escape Tactics: current branch][playbook]
 - [Initial Escape Tactics: pinned workshop version][pinned-playbook]
+- [Protocol-handler escape walkthrough][protocol-handler]
+- [Next steps: persistence and enumeration][next-steps]
+- [Internal discovery and recon][internal-discovery]
+- [Post-exploitation][post-exploitation]
+- [Defensive recommendations][defensive-recommendations]
 - [`defcon-flags.sh`](/defcon-flags.sh)
 
 [playbook]: https://github.com/christian-taillon/CTRL-ESC-HOST/tree/main/2%20-%20Kiosk%20Playbook/4%20-%20Linux%20Kiosks/1%20-%20Initial%20Escape%20Tactics
 [pinned-playbook]: https://github.com/christian-taillon/CTRL-ESC-HOST/tree/01816693c7add6dbcaad0aed507a591d64db156d/2%20-%20Kiosk%20Playbook/4%20-%20Linux%20Kiosks/1%20-%20Initial%20Escape%20Tactics
+[protocol-handler]: https://github.com/christian-taillon/CTRL-ESC-HOST/tree/main/2%20-%20Kiosk%20Playbook/4%20-%20Linux%20Kiosks/1%20-%20Initial%20Escape%20Tactics/Protocol-Handler-Escape
+[next-steps]: https://github.com/christian-taillon/CTRL-ESC-HOST/tree/main/2%20-%20Kiosk%20Playbook/4%20-%20Linux%20Kiosks/2%20-%20Next%20Steps
+[internal-discovery]: https://github.com/christian-taillon/CTRL-ESC-HOST/tree/main/2%20-%20Kiosk%20Playbook/4%20-%20Linux%20Kiosks/3%20-%20Internal%20Discovery%20and%20Recon
+[post-exploitation]: https://github.com/christian-taillon/CTRL-ESC-HOST/tree/main/2%20-%20Kiosk%20Playbook/4%20-%20Linux%20Kiosks/4%20-%20Post-Exploitation%20-%20Moving%20from%20Kiosk%20to%20Domain%20and-or%20Network
+[defensive-recommendations]: https://github.com/christian-taillon/CTRL-ESC-HOST/tree/main/2%20-%20Kiosk%20Playbook/5%20-%20Defensive%20Recommendations
