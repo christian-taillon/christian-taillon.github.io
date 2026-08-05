@@ -269,7 +269,7 @@ body { background:#000000 !important; }
 }
 </style>
 </head>
-<body data-theme="dark-roast-oled" data-build="v4-clean">
+<body data-theme="dark-roast-oled" data-build="v5-zone-fix">
 <canvas id="particle-canvas" aria-hidden="true"></canvas>
 <header class="site-header">
   <div>
@@ -1056,7 +1056,10 @@ body { background:#000000 !important; }
       ctx.restore();
     }
     if(state.zones){
-      regionBox([-1,1],[-1,desirableY],[-1,1],t.zones.cheap,.018);
+      // Cheap sits directly below Desirable: low cost, lower intelligence.
+      // High-token points in the same low-cost corner are additionally identified
+      // by the Thinking brute force zone.
+      regionBox([-1,desirableX],[-1,desirableY],[-1,1],t.zones.cheap,.034);
       regionBox([sx,1],[-1,1],[-1,1],t.zones.expensive,.022);
       regionBox([-1,1],[-1,1],[-1,sz],t.zones.efficient,.022);
       regionBox([-1,desirableX],[-1,1],[sz,1],t.zones.bruteforce,.052);
@@ -1078,7 +1081,7 @@ body { background:#000000 !important; }
 
     if(state.zones){
       const desirableLabel=project([-1+(desirableX+1)*.45,desirableY+(1-desirableY)*.6,-1+(sz+1)*.4]);
-      const cheapLabel=project([.45,-1+(desirableY+1)*.34,.7]);
+      const cheapLabel=project([-1+(desirableX+1)*.43,-1+(desirableY+1)*.38,-1+(sz+1)*.48]);
       const expensiveLabel=project([sx+(1-sx)*.72,.72,.65]);
       const efficientLabel=project([.6,.35,-1+(sz+1)*.28]);
       const bruteForceLabel=project([-1+(desirableX+1)*.42,.05,sz+(1-sz)*.63]);
@@ -1097,11 +1100,11 @@ body { background:#000000 !important; }
     if(state.zones){
       zoneLegend.innerHTML=`
         <span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${t.zones.good}"></span>Desirable: ≥ ${fmtPct(desirablePerf)}, ≤ ${fmtMoney(desirableCost)}, ≤ ${fmtTokens(medTokens)}</span>
-        <span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${t.zones.cheap}"></span>Cheap zone: below ${fmtPct(desirablePerf)} intelligence</span>
+        <span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${t.zones.cheap}"></span>Cheap zone: ≤ ${fmtMoney(desirableCost)} and &lt; ${fmtPct(desirablePerf)} intelligence</span>
         <span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${t.zones.bruteforce}"></span>Thinking brute force: ≤ ${fmtMoney(desirableCost)} and &gt; ${fmtTokens(medTokens)}</span>
         <span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${t.zones.expensive}"></span>Expensive: &gt; ${fmtMoney(medCost)}</span>
         <span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${t.zones.efficient}"></span>Token efficient: ≤ ${fmtTokens(medTokens)}</span>
-        <span class="ca-zone-note">Thresholds recalculate from visible points. The desirable zone extends 10% deeper along cost and intelligence than the median split; zones may overlap.</span>`;
+        <span class="ca-zone-note">Thresholds recalculate from visible points. Cheap is the low-cost region beneath Desirable; Thinking brute force is the low-cost, high-token region. Zones may overlap.</span>`;
     } else zoneLegend.innerHTML='';
   }
 
