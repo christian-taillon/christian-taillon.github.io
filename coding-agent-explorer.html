@@ -267,6 +267,14 @@ body { background:#000000 !important; }
 #coding-agent-app .ca-legend-item, #coding-agent-app .ca-detail-cell {
   background:#050505 !important;
 }
+.ca-price-notice{margin:0 0 18px;padding:22px 26px;border:1px solid var(--color-yellow);border-left:4px solid var(--color-yellow);border-radius:1rem;background:rgba(255,255,0,.045);box-shadow:0 0 28px -14px var(--color-yellow)}
+.ca-price-notice::before{content:"// PRICE UPDATE NOTICE";display:block;margin-bottom:10px;color:var(--color-yellow);font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.ca-price-notice p{margin:0;color:#e7e9ee;font-size:13px;line-height:1.66}
+.ca-price-notice a{color:var(--color-yellow);text-decoration:underline;text-underline-offset:2px}
+.ca-price-notice strong{color:#fff;font-weight:600}
+.ca-chart-note{margin:14px 0 0;padding:12px 14px;border:1px solid var(--card-border);border-left:3px solid var(--color-yellow);border-radius:.6rem;background:#050505;color:var(--text-muted);font-family:'JetBrains Mono',monospace;font-size:10px;line-height:1.6;letter-spacing:.03em}
+.ca-chart-note a{color:var(--color-yellow);text-decoration:underline;text-underline-offset:2px}
+.ca-chart-note strong{color:var(--color-yellow);font-weight:600}
 </style>
 </head>
 <body data-theme="dark-roast-oled" data-build="v5-zone-fix">
@@ -281,6 +289,9 @@ body { background:#000000 !important; }
   <h1 id="page-title">Coding Agent Intelligence, Cost, and Token Explorer</h1>
   <p>Compare selected frontier coding-agent configurations across intelligence, cost, and token use.</p>
 </header>
+<aside class="ca-price-notice" role="note">
+  <p><strong>Pricing note:</strong> The costs shown below were calculated before OpenAI's July 30, 2026 price reduction. GPT-5.6 Luna now costs 80% less and Terra 20% less, while Sol is unchanged. These lower prices are not reflected in the per-task values, Pareto frontier, or rankings on this page. See <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">OpenAI's announcement</a> for current API pricing.</p>
+</aside>
 <main>
 <section id="coding-agent-app" aria-label="Coding agent intelligence, cost, and token utilization explorer">
 <style>
@@ -706,6 +717,7 @@ body { background:#000000 !important; }
       <div class="ca-empty" id="ca-empty">No configurations match the current filters.</div>
     </div>
     <div class="ca-zone-legend" id="ca-zone-legend" aria-live="polite"></div>
+    <p class="ca-chart-note">Graph costs reflect pre-reduction pricing. OpenAI cut GPT-5.6 Luna by 80% and Terra by 20% on July 30, 2026 (Sol unchanged) — <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">details</a>. The points, Pareto frontier, and rankings here have not been updated.</p>
   </div>
 
   <div class="ca-bottom">
@@ -722,7 +734,7 @@ body { background:#000000 !important; }
       <div class="ca-legend" id="ca-legend"></div>
     </div>
   </div>
-  <p class="ca-footer-note">Intelligence uses the Artificial Analysis Coding Agent Index. Cost and token utilization are per-task averages from the uploaded coding-agent dataset. Colors identify the model company; harness is shown in hover and selection details only. Current-generation models and all model companies are enabled by default; use “Include older models” to reveal earlier Opus, GPT, Kimi, GLM, Composer, and related generations.</p>
+  <p class="ca-footer-note">Intelligence uses the Artificial Analysis Coding Agent Index. Cost and token utilization are per-task averages from the uploaded coding-agent dataset. Colors identify the model company; harness is shown in hover and selection details only. Current-generation models and all model companies are enabled by default; use “Include older models” to reveal earlier Opus, GPT, Kimi, GLM, Composer, and related generations. GPT-5.6 per-task costs reflect pre-reduction pricing; OpenAI lowered Luna by 80% and Terra by 20% on July 30, 2026 (Sol unchanged).</p>
 </div>
 
 <script>
