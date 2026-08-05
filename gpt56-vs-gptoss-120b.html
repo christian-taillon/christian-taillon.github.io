@@ -1,0 +1,344 @@
+---
+layout: base
+title: "GPT-5.6 vs gpt-oss-120b Explorer"
+description: "Interactive 3D comparison of GPT-5.6 Sol and gpt-oss-120b reasoning configurations across price per task, intelligence, and output-token use."
+permalink: /gpt56-vs-gptoss-120b/
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Interactive 3D comparison of GPT-5.6 Sol and gpt-oss-120b reasoning configurations across price per task, intelligence, and output-token use.">
+<title>GPT-5.6 vs gpt-oss-120b: 3D Cost, Intelligence, and Token Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: dark;
+  --bg:#000;
+  --panel:#020202;
+  --panel-2:#060606;
+  --text:#fff;
+  --muted:#9ca3af;
+  --faint:#5d6470;
+  --border:rgba(255,255,255,.12);
+  --border-strong:rgba(255,255,255,.22);
+  --blue:#00bfff;
+  --pink:#ff1493;
+  --yellow:#ffff00;
+  --green:#00ff66;
+  --purple:#bf00ff;
+  --orange:#ff8a00;
+  --danger:#ff4057;
+  --shadow-blue:0 0 32px -12px rgba(0,191,255,.72);
+  --shadow-pink:0 0 32px -12px rgba(255,20,147,.70);
+}
+*{box-sizing:border-box}
+html{min-height:100%;background:var(--bg);scroll-behavior:smooth}
+body{min-height:100vh;margin:0;padding:24px 30px 72px;overflow-x:hidden;background:#000;color:var(--text);font-family:'Inter',system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,#000,transparent 88%)}
+::selection{background:var(--yellow);color:#000}
+a{color:inherit}
+button,input,select{font:inherit}
+#particle-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.shell{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto}
+.site-header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:0 8px 16px;margin-bottom:30px;border-bottom:1px solid #202020}
+.kicker,.nav,.eyebrow,.mono-label{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.18em}
+.kicker{margin:0 0 8px;color:var(--yellow);font-size:9px}
+.brand{font-family:'Doto',sans-serif;font-size:20px;font-weight:650;letter-spacing:-.02em}
+.nav{display:flex;align-items:center;gap:12px;color:#666;font-size:9px}
+.nav a{text-decoration:none;color:#777;transition:.2s ease}.nav a:hover{color:#fff}.nav i{font-style:normal;color:#292929}
+.hero{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,.65fr);gap:16px;margin-bottom:16px}
+.card{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:1.5rem;background:rgba(0,0,0,.93);transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.card:hover{transform:translateY(-2px)}
+.hero-main{min-height:390px;padding:42px}
+.hero-main:hover{border-color:var(--yellow);box-shadow:0 0 34px -12px rgba(255,255,0,.62)}
+.eyebrow{margin:0 0 24px;color:var(--yellow);font-size:9px;font-weight:600}
+h1{max-width:950px;margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(48px,7vw,96px);font-weight:700;letter-spacing:-.078em;line-height:.87}
+h1 span{color:var(--yellow);font-weight:400;font-style:italic}
+.hero-main>p{max-width:830px;margin:32px 0 0;color:var(--muted);font-size:14px;line-height:1.75}
+.axis-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.axis-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--border);border-radius:999px;background:#050505;color:#b4bac3;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.07em}
+.axis-dot{width:8px;height:8px;border-radius:2px;box-shadow:0 0 10px currentColor}
+.hero-meta{min-height:390px;padding:30px;display:flex;flex-direction:column;justify-content:space-between}
+.hero-meta:hover{border-color:var(--blue);box-shadow:var(--shadow-blue)}
+.radar{width:84px;height:84px;position:relative;border:1px solid var(--blue);border-radius:50%;box-shadow:0 0 30px -8px var(--blue)}
+.radar::before,.radar::after{content:"";position:absolute;inset:13px;border:1px solid rgba(0,191,255,.36);border-radius:50%}.radar::after{inset:32px;background:var(--blue);box-shadow:0 0 14px var(--blue)}
+.radar-line{position:absolute;left:42px;top:42px;width:40px;height:1px;transform-origin:left center;background:var(--blue);animation:radar 4.5s linear infinite}@keyframes radar{to{transform:rotate(360deg)}}
+.meta-copy{display:grid;gap:14px}.meta-copy small{color:var(--blue);font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.15em;text-transform:uppercase}.meta-copy strong{font-family:'Doto',sans-serif;font-size:24px;line-height:1.1}.meta-copy p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}
+.insight{padding:26px 28px;margin-bottom:16px;border-left:2px solid var(--yellow)}
+.insight:hover{border-color:var(--yellow);box-shadow:0 0 30px -14px rgba(255,255,0,.7)}
+.insight::before{content:"// COST AND TOKEN SIGNAL";display:block;margin-bottom:12px;color:var(--yellow);font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:600;letter-spacing:.18em}
+.insight strong{display:block;margin-bottom:9px;font-family:'Doto',sans-serif;font-size:21px}.insight p{max-width:1160px;margin:0;color:var(--muted);font-size:13px;line-height:1.72}.insight p+p{margin-top:7px}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:16px}
+.metric{min-height:150px;padding:23px;display:flex;flex-direction:column;justify-content:space-between}.metric::after{content:"";position:absolute;top:20px;right:20px;width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor}
+.metric:nth-child(1){color:var(--blue)}.metric:nth-child(2){color:var(--yellow)}.metric:nth-child(3){color:var(--green)}.metric:nth-child(4){color:var(--purple)}
+.metric:nth-child(1):hover{border-color:var(--blue);box-shadow:var(--shadow-blue)}.metric:nth-child(2):hover{border-color:var(--yellow);box-shadow:0 0 30px -12px rgba(255,255,0,.72)}.metric:nth-child(3):hover{border-color:var(--green);box-shadow:0 0 30px -12px rgba(0,255,102,.66)}.metric:nth-child(4):hover{border-color:var(--purple);box-shadow:0 0 30px -12px rgba(191,0,255,.72)}
+.metric-label{max-width:80%;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:8px;line-height:1.45;letter-spacing:.14em;text-transform:uppercase}.metric-value{margin-top:20px;overflow:hidden;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:clamp(25px,3vw,39px);font-weight:700;letter-spacing:-.055em;line-height:1;text-overflow:ellipsis;white-space:nowrap}.metric-detail{margin-top:8px;overflow:hidden;color:var(--muted);font-size:10px;line-height:1.45;text-overflow:ellipsis;white-space:nowrap}
+.panel{padding:28px;margin-bottom:16px}.panel:hover{border-color:rgba(255,255,255,.22)}
+.controls{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px;align-items:end}.span-2{grid-column:span 2}.span-3{grid-column:span 3}.span-4{grid-column:span 4}.field{min-width:0}.field label,.section-label{display:block;margin-bottom:9px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:500;letter-spacing:.13em;text-transform:uppercase}.field label span{color:var(--yellow)}
+select,input[type="search"]{width:100%;min-height:44px;padding:10px 13px;border:1px solid #252525;border-radius:.7rem;outline:none;background:#050505;color:var(--text);font-family:'JetBrains Mono',monospace;font-size:10px;transition:.25s ease}select:hover,input[type="search"]:hover,select:focus,input[type="search"]:focus{border-color:var(--blue);box-shadow:0 0 18px -8px var(--blue)}select option{background:#090909;color:#fff}
+input[type="range"]{width:100%;height:3px;appearance:none;border-radius:999px;background:linear-gradient(90deg,var(--yellow),#242424);accent-color:var(--yellow)}input[type="range"]::-webkit-slider-thumb{appearance:none;width:14px;height:14px;border:1px solid #000;border-radius:50%;background:var(--yellow);box-shadow:0 0 13px -2px var(--yellow);cursor:pointer}input[type="range"]::-moz-range-thumb{width:14px;height:14px;border:1px solid #000;border-radius:50%;background:var(--yellow);box-shadow:0 0 13px -2px var(--yellow);cursor:pointer}.range-row{display:flex;justify-content:space-between;gap:8px;margin-top:7px;color:#5f6369;font-family:'JetBrains Mono',monospace;font-size:8px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding-top:20px;border-top:1px solid #222}.filter-chip,.check,.legend-item,.status-chip{display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.055em}.filter-chip{padding:8px 10px;border:1px solid var(--border);border-radius:.55rem;background:#050505;color:var(--muted);cursor:pointer;transition:.25s ease}.filter-chip:hover{border-color:var(--chip-color);color:var(--chip-color);box-shadow:0 0 16px -8px var(--chip-color)}.filter-chip input,.check input{appearance:none;width:13px;height:13px;margin:0;border:1px solid currentColor;border-radius:3px;background:transparent;cursor:pointer}.filter-chip input:checked,.check input:checked{background:currentColor;box-shadow:inset 0 0 0 3px #000,0 0 10px -2px currentColor}.swatch{width:7px;height:7px;border-radius:50%;flex:none;box-shadow:0 0 8px currentColor}
+.display{margin-top:18px;padding-top:16px;border-top:1px solid #222}.display-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:2px 0;border:0;background:transparent;color:var(--text);font-family:'Doto',sans-serif;font-size:14px;font-weight:600;text-align:left;cursor:pointer}.display-toggle small{display:block;margin-top:3px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:400;letter-spacing:.06em;text-transform:uppercase}.chevron{color:var(--yellow);transition:transform .2s ease}.display-toggle[aria-expanded="true"] .chevron{transform:rotate(180deg)}.display-body{display:flex;flex-wrap:wrap;gap:12px 20px;padding-top:18px}.display-body[hidden]{display:none}.check{color:var(--muted);cursor:pointer}.check:hover{color:var(--yellow)}
+.chart-panel{padding:28px}.chart-panel:hover{border-color:var(--purple);box-shadow:0 0 34px -14px rgba(191,0,255,.64)}.chart-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}.view-title{margin:0 0 5px;font-family:'Space Grotesk',sans-serif;font-size:27px;font-weight:600;letter-spacing:-.04em}.view-title::before{content:"// ";color:var(--purple);font-family:'JetBrains Mono',monospace;font-size:12px}.view-help{margin:0;color:var(--muted);font-size:11px;line-height:1.5}.button{padding:10px 14px;border:1px solid var(--yellow);border-radius:.55rem;background:transparent;color:var(--yellow);font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;transition:.25s ease;white-space:nowrap}.button:hover{background:var(--yellow);color:#000;box-shadow:0 0 22px -8px var(--yellow);transform:scale(1.035)}
+.canvas-wrap{position:relative;width:100%;min-height:650px;overflow:hidden;border:1px solid #242424;border-radius:1.2rem;background:#000}.canvas-wrap::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.24;background-image:linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(circle at center,#000,transparent 80%)}canvas#chart{position:relative;z-index:1;display:block;width:100%;height:650px;touch-action:none;outline:none}.tooltip{position:absolute;z-index:5;display:none;max-width:350px;padding:13px 14px;border:1px solid var(--blue);border-radius:.75rem;background:#000;color:#fff;box-shadow:0 0 28px -10px var(--blue);font-family:'JetBrains Mono',monospace;font-size:9px;line-height:1.62;pointer-events:none}.tooltip strong{display:block;margin-bottom:5px;color:var(--blue);font-family:'Doto',sans-serif;font-size:14px}.empty{position:absolute;inset:0;z-index:2;display:none;align-items:center;justify-content:center;padding:20px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:9px;text-align:center;text-transform:uppercase;letter-spacing:.1em}.zone-legend{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px;color:var(--muted);font-size:9px}.zone-chip{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border:1px solid var(--border);border-radius:999px;background:#050505;font-family:'JetBrains Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.045em}.zone-dot{width:8px;height:8px;border-radius:2px;box-shadow:0 0 8px currentColor}.zone-note{flex-basis:100%;margin-top:3px;color:#62666c;font-family:'JetBrains Mono',monospace;font-size:8px;line-height:1.55;letter-spacing:.04em;text-transform:uppercase}
+.bottom{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(290px,.85fr);gap:16px;margin-bottom:16px}.bottom .card{padding:26px}.bottom .card:first-child:hover{border-color:var(--green);box-shadow:0 0 30px -14px rgba(0,255,102,.6)}.bottom .card:last-child:hover{border-color:var(--pink);box-shadow:var(--shadow-pink)}.detail-title{margin:0 0 16px;font-family:'Doto',sans-serif;font-size:19px;font-weight:600}.detail-title::before{content:"// ";color:var(--green);font-family:'JetBrains Mono',monospace;font-size:10px}.bottom .card:last-child .detail-title::before{color:var(--pink)}.detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.detail-cell{min-width:0;padding:12px;border:1px solid var(--border);border-radius:.65rem;background:#050505}.detail-cell span{display:block;margin-bottom:5px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.08em;text-transform:uppercase}.detail-cell strong{display:block;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:12px;overflow-wrap:anywhere}.source{color:var(--blue);font-family:'JetBrains Mono',monospace;font-size:9px;text-decoration:none}.source:hover{text-decoration:underline}.comparison{display:grid;gap:10px}.comparison-row{padding:12px;border:1px solid var(--border);border-radius:.65rem;background:#050505}.comparison-row span{display:block;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.08em;text-transform:uppercase}.comparison-row strong{display:block;margin-top:5px;font-family:'Space Grotesk',sans-serif;font-size:13px;line-height:1.4}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.legend-item{padding:7px 9px;border:1px solid var(--border);border-radius:.5rem;background:#050505;color:var(--muted)}
+.table-panel{padding:28px}.table-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}.table-head h2{margin:0;font-family:'Space Grotesk',sans-serif;font-size:26px;letter-spacing:-.04em}.table-head p{max-width:650px;margin:0;color:var(--muted);font-size:11px;line-height:1.55}.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:1rem}table{width:100%;border-collapse:collapse;min-width:980px;background:#020202}th,td{padding:13px 14px;border-bottom:1px solid #1c1c1c;text-align:left}th{position:sticky;top:0;z-index:1;background:#050505;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.09em;text-transform:uppercase}td{color:#d7dbe0;font-size:11px}tbody tr{cursor:pointer;transition:.18s ease}tbody tr:hover,tbody tr.active{background:#080808}.model-cell{display:flex;align-items:center;gap:9px}.model-cell strong{color:#fff;font-family:'Space Grotesk',sans-serif;font-size:12px}.reasoning-pill{display:inline-flex;padding:5px 7px;border:1px solid var(--border);border-radius:999px;background:#050505;font-family:'JetBrains Mono',monospace;font-size:8px;text-transform:uppercase}.status-chip{padding:5px 7px;border:1px solid var(--border);border-radius:999px}.status-chip.measured{color:var(--green)}.status-chip.extrapolated{color:var(--yellow)}
+.method{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:16px;margin-bottom:16px}.method .card{padding:28px}.method h2{margin:0 0 12px;font-family:'Space Grotesk',sans-serif;font-size:25px;letter-spacing:-.04em}.method p,.method li{color:var(--muted);font-size:12px;line-height:1.72}.method ul{margin:12px 0 0;padding-left:19px}.formula{display:block;margin:9px 0;padding:10px 12px;border:1px solid var(--border);border-radius:.65rem;background:#050505;color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;overflow-wrap:anywhere}.caveat{border-left:2px solid var(--pink)}.caveat::before{content:"// IMPORTANT CAVEAT";display:block;margin-bottom:12px;color:var(--pink);font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:600;letter-spacing:.16em}.footer-note{margin:0;padding:20px 4px 0;border-top:1px solid #202020;color:#616161;font-family:'JetBrains Mono',monospace;font-size:8px;line-height:1.7;letter-spacing:.045em;text-transform:uppercase}
+@media(max-width:980px){body{padding:18px 18px 50px}.hero,.method{grid-template-columns:1fr}.hero-meta{min-height:245px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.controls{grid-template-columns:repeat(2,minmax(0,1fr))}.span-2,.span-3,.span-4{grid-column:span 1}.bottom{grid-template-columns:1fr}.canvas-wrap{min-height:540px}canvas#chart{height:540px}.detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.site-header{align-items:flex-start;margin-bottom:22px}.nav{display:none}.hero-main{min-height:330px;padding:28px 23px}h1{font-size:clamp(43px,16vw,68px)}.hero-main>p{margin-top:24px}.metrics{gap:10px}.metric{min-height:130px;padding:18px 16px}.panel,.chart-panel,.table-panel{padding:21px 17px}.controls{grid-template-columns:1fr}.detail-grid{grid-template-columns:1fr 1fr}.chart-head,.table-head{align-items:flex-start;flex-direction:column}.canvas-wrap{min-height:470px}canvas#chart{height:470px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<div class="shell">
+  <header class="site-header">
+    <div><p class="kicker">christiant.io</p><a class="brand" href="/" rel="home" style="color:var(--text);text-decoration:none">Christian Taillon</a></div>
+    <nav class="nav" aria-label="Page sections"><a href="#explorer">Explorer</a><i>/</i><a href="#rankings">Rankings</a><i>/</i><a href="#methodology">Methodology</a></nav>
+  </header>
+
+  <section class="hero" aria-labelledby="page-title">
+    <article class="card hero-main">
+      <p class="eyebrow">Open-weight efficiency versus proprietary reasoning depth</p>
+      <h1 id="page-title">GPT-5.6 vs <span>gpt-oss-120b</span></h1>
+      <p>Rotate one model space that combines price per benchmark task, Artificial Analysis Intelligence Index, and output tokens per task. The comparison includes gpt-oss-120b Low and High alongside every supplied GPT-5.6 Sol reasoning setting: None, Low, Medium, High, Xhigh, and Max.</p>
+      <div class="axis-strip" aria-label="Visualization axes">
+        <span class="axis-chip"><span class="axis-dot" style="background:var(--pink);color:var(--pink)"></span>X: price per task</span>
+        <span class="axis-chip"><span class="axis-dot" style="background:var(--green);color:var(--green)"></span>Y: intelligence</span>
+        <span class="axis-chip"><span class="axis-dot" style="background:var(--purple);color:var(--purple)"></span>Z: output tokens</span>
+      </div>
+    </article>
+    <aside class="card hero-meta">
+      <div class="radar" aria-hidden="true"><span class="radar-line"></span></div>
+      <div class="meta-copy">
+        <small>Dataset snapshot</small>
+        <strong>8 configurations<br>2 model families</strong>
+        <p>Generated August 4, 2026. Sol None through Xhigh use explicit per-task extrapolations. Sol Max and both gpt-oss settings use measured per-task metrics.</p>
+      </div>
+    </aside>
+  </section>
+
+  <aside class="card insight">
+    <strong>Cheap can still be token-heavy.</strong>
+    <p id="headline-insight">gpt-oss-120b High costs less per task than GPT-5.6 Sol None, but the token path is dramatically longer and the intelligence score is lower.</p>
+    <p>The 3D view makes that tradeoff visible instead of compressing the comparison into a single value score.</p>
+  </aside>
+
+  <section class="metrics" aria-live="polite">
+    <article class="card metric"><div class="metric-label">Configurations shown</div><div class="metric-value" id="metric-count">8</div><div class="metric-detail" id="metric-count-detail">All reasoning settings visible</div></article>
+    <article class="card metric"><div class="metric-label">Highest intelligence</div><div class="metric-value" id="metric-intelligence">58.9</div><div class="metric-detail" id="metric-intelligence-detail">GPT-5.6 Sol Max</div></article>
+    <article class="card metric"><div class="metric-label">Lowest price per task</div><div class="metric-value" id="metric-cost">$0.0203</div><div class="metric-detail" id="metric-cost-detail">gpt-oss-120b Low</div></article>
+    <article class="card metric"><div class="metric-label">Token range per task</div><div class="metric-value" id="metric-tokens">626–36.9K</div><div class="metric-detail" id="metric-tokens-detail">Output tokens across visible settings</div></article>
+  </section>
+
+  <section id="explorer" class="card panel" aria-label="Explorer controls">
+    <div class="controls">
+      <div class="field span-3"><label for="view">Visualization</label><select id="view"><option value="scatter3d">3D reasoning space</option><option value="bubble">2D token bubble</option><option value="frontier">Cost-intelligence frontier</option><option value="trajectory">Reasoning trajectory</option></select></div>
+      <div class="field span-3"><label for="search">Search setting</label><input id="search" type="search" placeholder="Family or reasoning level"></div>
+      <div class="field span-2"><label for="min-intel">Minimum intelligence: <span id="min-intel-value">0</span></label><input id="min-intel" type="range" min="0" max="60" value="0" step="1"><div class="range-row"><span>0</span><span>60</span></div></div>
+      <div class="field span-2"><label for="max-cost">Maximum cost: <span id="max-cost-value">$1.25</span></label><input id="max-cost" type="range" min="0.02" max="1.25" value="1.25" step="0.01"><div class="range-row"><span>$0.02</span><span>$1.25</span></div></div>
+      <div class="field span-2"><label for="max-tokens">Maximum tokens: <span id="max-tokens-value">40K</span></label><input id="max-tokens" type="range" min="1000" max="40000" value="40000" step="500"><div class="range-row"><span>1K</span><span>40K</span></div></div>
+    </div>
+    <div class="filters" id="family-filters" aria-label="Model family filters"></div>
+    <div class="display">
+      <button class="display-toggle" id="display-toggle" type="button" aria-expanded="false" aria-controls="display-body"><span>Display options <small id="display-summary">Log cost and token axes, reasoning trails, and zone shading</small></span><span class="chevron" aria-hidden="true">▼</span></button>
+      <div class="display-body" id="display-body" hidden>
+        <label class="check"><input id="log-scale" type="checkbox" checked> Log price and tokens</label>
+        <label class="check"><input id="labels" type="checkbox" checked> Show point labels</label>
+        <label class="check"><input id="trails" type="checkbox" checked> Connect reasoning levels</label>
+        <label class="check"><input id="zones" type="checkbox" checked> Highlight decision zones</label>
+      </div>
+    </div>
+  </section>
+
+  <section class="card chart-panel">
+    <div class="chart-head"><div><h2 class="view-title" id="view-title">3D reasoning space</h2><p class="view-help" id="view-help">Drag to rotate, scroll to zoom, and select a point for a direct comparison.</p></div><button class="button" id="reset" type="button">Reset view</button></div>
+    <div class="canvas-wrap" id="canvas-wrap"><canvas id="chart" role="img" aria-label="Interactive comparison of price per task, intelligence, and output tokens" tabindex="0"></canvas><div class="tooltip" id="tooltip"></div><div class="empty" id="empty">No configurations match the current filters.</div></div>
+    <div class="zone-legend" id="zone-legend" aria-live="polite"></div>
+  </section>
+
+  <section class="bottom">
+    <article class="card" id="detail" aria-live="polite"><h3 class="detail-title" id="detail-title">Select a configuration</h3><div class="detail-grid" id="detail-grid"><div class="detail-cell"><span>Intelligence</span><strong>Hover or click a point</strong></div><div class="detail-cell"><span>Price per task</span><strong>--</strong></div><div class="detail-cell"><span>Output tokens</span><strong>--</strong></div></div></article>
+    <aside class="card"><h3 class="detail-title">Closest cross-family comparison</h3><div class="comparison" id="comparison"><div class="comparison-row"><span>How to use</span><strong>Select any point or table row to compare it with the nearest reasoning level in the other family.</strong></div></div><div class="legend" id="legend"></div></aside>
+  </section>
+
+  <section id="rankings" class="card table-panel">
+    <div class="table-head"><div><p class="kicker">All supplied configurations</p><h2>Reasoning economics table</h2></div><p>Rows are ordered by intelligence. Click a row to select the same point in the visualization. Measured and extrapolated per-task values are labeled separately.</p></div>
+    <div class="table-wrap"><table><thead><tr><th>Configuration</th><th>Reasoning</th><th>Intelligence</th><th>Price / task</th><th>Output tokens / task</th><th>Intel / $</th><th>Speed</th><th>Per-task status</th></tr></thead><tbody id="ranked-body"></tbody></table></div>
+  </section>
+
+  <section id="methodology" class="method">
+    <article class="card"><p class="kicker">Methodology</p><h2>Three axes, one explicit measurement caveat</h2><p>The x-axis is cost per Intelligence Index task, the y-axis is the Artificial Analysis Intelligence Index, and the z-axis is output tokens per task. Direct per-task measurements are available for GPT-5.6 Sol Max and both gpt-oss-120b settings.</p><p>For GPT-5.6 Sol None through Xhigh, the supplied dataset preserves total benchmark cost and total output tokens, then applies the measured Sol Max total-to-task ratios:</p><code class="formula">cost_per_task = total_benchmark_cost × 0.000436427191014</code><code class="formula">output_tokens_per_task = total_output_tokens × 0.000240619515594</code><p>The site does not merge measured and extrapolated labels. Selection details and the table expose the status of each point.</p></article>
+    <aside class="card caveat"><h2>Hosted price is not self-hosted cost</h2><p>The gpt-oss values use the Artificial Analysis hosted-provider cost basis. Since gpt-oss-120b is open weight, actual self-hosted economics depend on hardware utilization, energy, serving software, batching, and operations.</p><p>Use this explorer as a benchmark economics comparison, not as a universal infrastructure cost estimate.</p></aside>
+  </section>
+
+  <p class="footer-note">Source snapshot: uploaded GPT-5.6 Sol versus gpt-oss-120b dataset, generated August 4, 2026. Intelligence is the Artificial Analysis Intelligence Index. Price and output-token values are per task. GPT-5.6 Sol None through Xhigh are extrapolated from the measured Sol Max total-to-task ratios. Sol Max and gpt-oss Low and High are measured.</p>
+</div>
+
+<script>
+(() => {
+  const DATA = [{"key":"gpt-5-6-sol-non-reasoning","family":"GPT-5.6 Sol","name":"GPT-5.6 Sol (Non-reasoning)","level":"None","levelKey":"non-reasoning","order":0,"intelligence":41.0,"cost":0.13060956545477628,"tokens":625.6107405443333,"speed":52.5,"value":313.91268975775205,"tokenEfficiency":65.53595925211673,"costPerPoint":0.003185599157433568,"benchmarkCostPer1k":0.2087712965751437,"totalCost":299.27,"totalTokens":2600000.0,"costStatus":"Extrapolated from Sol Max total-to-task ratio","tokenStatus":"Extrapolated from Sol Max total-to-task ratio","source":"https://artificialanalysis.ai/models/gpt-5-6-sol-non-reasoning","snapshot":"2026-07-30","intelligenceRank":6,"costRank":3,"valueRank":3},{"key":"gpt-5-6-sol-low","family":"GPT-5.6 Sol","name":"GPT-5.6 Sol (low)","level":"Low","levelKey":"low","order":1,"intelligence":49.0,"cost":0.17475417582584798,"tokens":1588.0888029202308,"speed":56.7,"value":280.3938719543455,"tokenEfficiency":30.854697741018736,"costPerPoint":0.003566411751547918,"benchmarkCostPer1k":0.11004055661402823,"totalCost":400.42,"totalTokens":6600000.0,"costStatus":"Extrapolated from Sol Max total-to-task ratio","tokenStatus":"Extrapolated from Sol Max total-to-task ratio","source":"https://artificialanalysis.ai/models/gpt-5-6-sol-low","snapshot":"2026-07-30","intelligenceRank":5,"costRank":4,"valueRank":4},{"key":"gpt-5-6-sol-medium","family":"GPT-5.6 Sol","name":"GPT-5.6 Sol (medium)","level":"Medium","levelKey":"medium","order":2,"intelligence":54.0,"cost":0.30429885893455,"tokens":2887.4341871276924,"speed":54.6,"value":177.45712287279582,"tokenEfficiency":18.70172495731136,"costPerPoint":0.005635164054343518,"benchmarkCostPer1k":0.10538728823366005,"totalCost":697.25,"totalTokens":12000000.0,"costStatus":"Extrapolated from Sol Max total-to-task ratio","tokenStatus":"Extrapolated from Sol Max total-to-task ratio","source":"https://artificialanalysis.ai/models/gpt-5-6-sol-medium","snapshot":"2026-07-30","intelligenceRank":4,"costRank":5,"valueRank":5},{"key":"gpt-5-6-sol-high","family":"GPT-5.6 Sol","name":"GPT-5.6 Sol (high)","level":"High","levelKey":"high","order":3,"intelligence":56.0,"cost":0.5060155066212463,"tokens":5053.009827473462,"speed":60.4,"value":110.66854526637287,"tokenEfficiency":11.08250367840673,"costPerPoint":0.009035991189665112,"benchmarkCostPer1k":0.10014140559751442,"totalCost":1159.45,"totalTokens":21000000.0,"costStatus":"Extrapolated from Sol Max total-to-task ratio","tokenStatus":"Extrapolated from Sol Max total-to-task ratio","source":"https://artificialanalysis.ai/models/gpt-5-6-sol-high","snapshot":"2026-07-30","intelligenceRank":3,"costRank":6,"valueRank":6},{"key":"gpt-5-6-sol-xhigh","family":"GPT-5.6 Sol","name":"GPT-5.6 Sol (xhigh)","level":"Xhigh","levelKey":"xhigh","order":4,"intelligence":58.0,"cost":0.8129067430704198,"tokens":8421.683045789103,"speed":60.7,"value":71.34889763729716,"tokenEfficiency":6.886984428724183,"costPerPoint":0.014015633501214134,"benchmarkCostPer1k":0.09652544968156675,"totalCost":1862.64,"totalTokens":35000000.0,"costStatus":"Extrapolated from Sol Max total-to-task ratio","tokenStatus":"Extrapolated from Sol Max total-to-task ratio","source":"https://artificialanalysis.ai/models/gpt-5-6-sol-xhigh","snapshot":"2026-07-30","intelligenceRank":2,"costRank":7,"valueRank":7},{"key":"gpt-5-6-sol","family":"GPT-5.6 Sol","name":"GPT-5.6 Sol (max)","level":"Max","levelKey":"max","order":5,"intelligence":58.889831189723,"cost":1.232549465224083,"tokens":16863.99247769395,"speed":68.8787810280106,"value":47.77887853694907,"tokenEfficiency":3.492045627250886,"costPerPoint":0.020929750354576972,"benchmarkCostPer1k":0.0730876432051532,"totalCost":2824.1811935690976,"totalTokens":70085722.0,"costStatus":"Measured","tokenStatus":"Measured","source":"https://artificialanalysis.ai/models/gpt-5-6-sol","snapshot":"2026-08-04 snapshot","intelligenceRank":1,"costRank":8,"valueRank":8},{"key":"gpt-oss-120b-low","family":"gpt-oss-120b","name":"gpt-oss-120b (low)","level":"Low","levelKey":"low","order":1,"intelligence":14.9110137509579,"cost":0.020254885405540154,"tokens":2764.6100859758667,"speed":259.638454175388,"value":736.168753977715,"tokenEfficiency":5.393532283846289,"costPerPoint":0.0013583841946520207,"benchmarkCostPer1k":0.007326489007722215,"totalCost":24.198467315,"totalTokens":7119557.0,"costStatus":"Measured","tokenStatus":"Measured","source":"https://artificialanalysis.ai/models/gpt-oss-120b-low","snapshot":"2026-08-04 snapshot","intelligenceRank":8,"costRank":1,"valueRank":1},{"key":"gpt-oss-120b","family":"gpt-oss-120b","name":"gpt-oss-120b (high)","level":"High","levelKey":"high","order":3,"intelligence":23.8309678073278,"cost":0.07504775053603582,"tokens":36911.3939029723,"speed":191.678785154265,"value":317.54406543984067,"tokenEfficiency":0.6456263307197619,"costPerPoint":0.0031491692298354474,"benchmarkCostPer1k":0.0020331865746742385,"totalCost":96.276024,"totalTokens":87384498.0,"costStatus":"Measured","tokenStatus":"Measured","source":"https://artificialanalysis.ai/models/gpt-oss-120b","snapshot":"2026-08-04 snapshot","intelligenceRank":7,"costRank":2,"valueRank":2}];
+  const META = {"title":"GPT-5.6 Sol vs gpt-oss-120b","scope":"GPT-5.6 Sol is used because the current gpt-5.6 alias routes to Sol. gpt-oss-120b includes Low and High reasoning configurations.","generated_at":"2026-08-04","x_axis":"cost_per_task_usd","y_axis":"intelligence_index","z_axis":"output_tokens_per_task","methodology":"Measured total benchmark cost, total output tokens, and intelligence are used. Direct measured per-task metrics are used for Sol Max and gpt-oss Low/High. Sol None through Xhigh per-task metrics are extrapolated by applying the measured Sol Max total-to-task ratios.","cost_factor_sol":0.0004364271910140552,"token_factor_sol":0.00024061951559397436,"source_urls":["https://artificialanalysis.ai/models/gpt-5-6-sol","https://artificialanalysis.ai/models/gpt-oss-120b-low","https://artificialanalysis.ai/models/gpt-oss-120b","https://developers.openai.com/api/docs/models/gpt-5.6-sol"]};
+  const FAMILY_COLORS = {'GPT-5.6 Sol':'#00bfff','gpt-oss-120b':'#ff1493'};
+  const LEVEL_COLORS = {'None':'#ffffff','Low':'#00ff66','Medium':'#ffff00','High':'#ff8a00','Xhigh':'#bf00ff','Max':'#ff4057'};
+  const viewCopy = {
+    scatter3d:['3D reasoning space','Drag to rotate, scroll to zoom, and select a point for a direct comparison.'],
+    bubble:['2D token bubble','Price is horizontal, intelligence is vertical, and bubble size represents output tokens per task.'],
+    frontier:['Cost-intelligence frontier','The line connects points that improve intelligence as price per task rises. Token use remains visible through bubble size.'],
+    trajectory:['Reasoning trajectory','Reasoning level is ordered horizontally, intelligence is vertical, and bubble size represents output tokens per task.']
+  };
+
+  const root = document.documentElement;
+  const canvas = document.getElementById('chart');
+  const ctx = canvas.getContext('2d');
+  const wrap = document.getElementById('canvas-wrap');
+  const tooltip = document.getElementById('tooltip');
+  const empty = document.getElementById('empty');
+  const zoneLegend = document.getElementById('zone-legend');
+  const detailTitle = document.getElementById('detail-title');
+  const detailGrid = document.getElementById('detail-grid');
+  const comparison = document.getElementById('comparison');
+  const legend = document.getElementById('legend');
+  const rankedBody = document.getElementById('ranked-body');
+  const viewTitle = document.getElementById('view-title');
+  const viewHelp = document.getElementById('view-help');
+  const displayToggle = document.getElementById('display-toggle');
+  const displayBody = document.getElementById('display-body');
+  const displaySummary = document.getElementById('display-summary');
+  const controls = {
+    view:document.getElementById('view'), search:document.getElementById('search'),
+    minIntel:document.getElementById('min-intel'), maxCost:document.getElementById('max-cost'), maxTokens:document.getElementById('max-tokens'),
+    log:document.getElementById('log-scale'), labels:document.getElementById('labels'), trails:document.getElementById('trails'), zones:document.getElementById('zones'), reset:document.getElementById('reset')
+  };
+
+  const families=[...new Set(DATA.map(d=>d.family))];
+  const state={families:new Set(families),view:'scatter3d',search:'',minIntel:0,maxCost:1.25,maxTokens:40000,log:true,labels:true,trails:true,zones:true,yaw:-.72,pitch:.42,zoom:1,dragging:false,moved:false,lastX:0,lastY:0,selected:null,hovered:null,hitItems:[]};
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const transform=(v,log)=>log?Math.log10(Math.max(v,1e-9)):v;
+  const untransform=(v,log)=>log?10**v:v;
+  const norm=(v,ex)=>ex[1]===ex[0]?.5:(v-ex[0])/(ex[1]-ex[0]);
+  const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmtMoney=v=>v<.1?`$${v.toFixed(4)}`:v<1?`$${v.toFixed(3)}`:`$${v.toFixed(2)}`;
+  const fmtInt=v=>v.toFixed(v<30?1:v%1?1:0);
+  const fmtTokens=v=>v>=1e6?`${(v/1e6).toFixed(v>=1e7?1:2)}M`:v>=1e3?`${(v/1e3).toFixed(v>=1e4?1:2)}K`:Math.round(v).toLocaleString();
+  const fmtSpeed=v=>`${v.toFixed(v>=100?0:1)} tok/s`;
+  const fmtMultiple=v=>`${v.toFixed(v>=10?1:2)}×`;
+  const median=arr=>{const a=[...arr].sort((x,y)=>x-y),n=a.length;return n?(n%2?a[(n-1)/2]:(a[n/2-1]+a[n/2])/2):0};
+  const familyColor=d=>FAMILY_COLORS[d.family]||'#fff';
+  const levelColor=d=>LEVEL_COLORS[d.level]||familyColor(d);
+
+  function extent(data,accessor,log=false,pad=.07){const vals=data.map(accessor).filter(Number.isFinite).map(v=>transform(v,log));let lo=Math.min(...vals),hi=Math.max(...vals);if(!Number.isFinite(lo)||!Number.isFinite(hi))return[0,1];if(lo===hi){const p=Math.abs(lo||1)*.08||.08;lo-=p;hi+=p}const p=(hi-lo)*pad;return[lo-p,hi+p]}
+  const ALL_EXTENTS=()=>({cost:extent(DATA,d=>d.cost,state.log,.08),intel:extent(DATA,d=>d.intelligence,false,.08),tokens:extent(DATA,d=>d.tokens,state.log,.08)});
+
+  function buildFamilyFilters(){
+    const box=document.getElementById('family-filters'); box.innerHTML=''; legend.innerHTML='';
+    families.forEach(family=>{
+      const count=DATA.filter(d=>d.family===family).length, color=FAMILY_COLORS[family];
+      const label=document.createElement('label'); label.className='filter-chip'; label.style.setProperty('--chip-color',color); label.style.color=color;
+      const input=document.createElement('input'); input.type='checkbox'; input.checked=true; input.addEventListener('change',()=>{input.checked?state.families.add(family):state.families.delete(family);state.selected=null;update()});
+      const sw=document.createElement('span'); sw.className='swatch'; sw.style.background=color; sw.style.color=color;
+      const text=document.createElement('span'); text.textContent=`${family} (${count})`; label.append(input,sw,text); box.append(label);
+      const item=document.createElement('span'); item.className='legend-item'; const lsw=sw.cloneNode(); item.append(lsw,document.createTextNode(family)); legend.append(item);
+    });
+    const measured=document.createElement('span');measured.className='legend-item';measured.innerHTML='<span class="swatch" style="background:var(--green);color:var(--green)"></span>Measured per-task';legend.append(measured);
+    const extrap=document.createElement('span');extrap.className='legend-item';extrap.innerHTML='<span class="swatch" style="background:var(--yellow);color:var(--yellow)"></span>Extrapolated per-task';legend.append(extrap);
+  }
+
+  function filteredData(){const q=state.search.trim().toLowerCase();return DATA.filter(d=>state.families.has(d.family)).filter(d=>d.intelligence>=state.minIntel&&d.cost<=state.maxCost&&d.tokens<=state.maxTokens).filter(d=>!q||`${d.family} ${d.name} ${d.level}`.toLowerCase().includes(q)).sort((a,b)=>b.intelligence-a.intelligence||a.cost-b.cost)}
+
+  function updateHeadline(){
+    const oss=DATA.find(d=>d.key==='gpt-oss-120b'), sol=DATA.find(d=>d.key==='gpt-5-6-sol-non-reasoning');
+    const savings=(1-oss.cost/sol.cost)*100, tokenMultiple=oss.tokens/sol.tokens, gap=sol.intelligence-oss.intelligence;
+    document.getElementById('headline-insight').textContent=`gpt-oss-120b High is ${savings.toFixed(1)}% cheaper per task than GPT-5.6 Sol None, but uses ${tokenMultiple.toFixed(1)}× as many output tokens and scores ${gap.toFixed(1)} Intelligence Index points lower.`;
+  }
+
+  function updateMetrics(data){
+    document.getElementById('metric-count').textContent=data.length;
+    document.getElementById('metric-count-detail').textContent=data.length?`${new Set(data.map(d=>d.family)).size} model families visible`:'No matching settings';
+    const hi=data.reduce((a,d)=>!a||d.intelligence>a.intelligence?d:a,null),lo=data.reduce((a,d)=>!a||d.cost<a.cost?d:a,null);
+    document.getElementById('metric-intelligence').textContent=hi?fmtInt(hi.intelligence):'--';document.getElementById('metric-intelligence-detail').textContent=hi?hi.name:'No matching settings';
+    document.getElementById('metric-cost').textContent=lo?fmtMoney(lo.cost):'--';document.getElementById('metric-cost-detail').textContent=lo?lo.name:'No matching settings';
+    if(data.length){const t=data.map(d=>d.tokens),min=Math.min(...t),max=Math.max(...t);document.getElementById('metric-tokens').textContent=`${fmtTokens(min)}–${fmtTokens(max)}`;document.getElementById('metric-tokens-detail').textContent='Output tokens across visible settings'}else{document.getElementById('metric-tokens').textContent='--';document.getElementById('metric-tokens-detail').textContent='No matching settings'}
+  }
+
+  function closestOtherFamily(d){const other=DATA.filter(x=>x.family!==d.family);return other.reduce((best,x)=>{const score=Math.abs((x.order??0)-(d.order??0))*10+Math.abs(x.intelligence-d.intelligence)/10;return!best||score<best.score?{d:x,score}:best},null)?.d||null}
+  function statusClass(d){return d.costStatus==='Measured'&&d.tokenStatus==='Measured'?'measured':'extrapolated'}
+  function statusLabel(d){return statusClass(d)==='measured'?'Measured':'Extrapolated'}
+
+  function showDetail(d){
+    document.querySelectorAll('#ranked-body tr').forEach(tr=>tr.classList.toggle('active',d&&tr.dataset.key===d.key));
+    if(!d){detailTitle.textContent='Select a configuration';detailGrid.innerHTML='<div class="detail-cell"><span>Intelligence</span><strong>Hover or click a point</strong></div><div class="detail-cell"><span>Price per task</span><strong>--</strong></div><div class="detail-cell"><span>Output tokens</span><strong>--</strong></div>';comparison.innerHTML='<div class="comparison-row"><span>How to use</span><strong>Select any point or table row to compare it with the nearest reasoning level in the other family.</strong></div>';return}
+    detailTitle.textContent=d.name;
+    detailGrid.innerHTML=`<div class="detail-cell"><span>Intelligence Index</span><strong>${fmtInt(d.intelligence)} · rank #${d.intelligenceRank}</strong></div><div class="detail-cell"><span>Price per task</span><strong>${fmtMoney(d.cost)} · cost rank #${d.costRank}</strong></div><div class="detail-cell"><span>Output tokens per task</span><strong>${fmtTokens(d.tokens)}</strong></div><div class="detail-cell"><span>Reasoning level</span><strong>${escapeHtml(d.level)}</strong></div><div class="detail-cell"><span>Intelligence per dollar</span><strong>${d.value.toFixed(1)} · value rank #${d.valueRank}</strong></div><div class="detail-cell"><span>Output speed</span><strong>${fmtSpeed(d.speed)}</strong></div><div class="detail-cell"><span>Price status</span><strong><span class="status-chip ${statusClass(d)}">${escapeHtml(d.costStatus)}</span></strong></div><div class="detail-cell"><span>Token status</span><strong><span class="status-chip ${statusClass(d)}">${escapeHtml(d.tokenStatus)}</span></strong></div><div class="detail-cell"><span>Source snapshot</span><strong><a class="source" href="${escapeHtml(d.source)}" target="_blank" rel="noreferrer">${escapeHtml(d.snapshot)}</a></strong></div>`;
+    const peer=closestOtherFamily(d); if(!peer)return;
+    const costRatio=d.cost/peer.cost,tokenRatio=d.tokens/peer.tokens,intelGap=d.intelligence-peer.intelligence;
+    comparison.innerHTML=`<div class="comparison-row"><span>Compared with</span><strong>${escapeHtml(peer.name)}</strong></div><div class="comparison-row"><span>Intelligence difference</span><strong>${intelGap>=0?'+':''}${intelGap.toFixed(1)} points</strong></div><div class="comparison-row"><span>Price ratio</span><strong>${fmtMultiple(costRatio)} the peer price</strong></div><div class="comparison-row"><span>Token ratio</span><strong>${fmtMultiple(tokenRatio)} the peer output tokens</strong></div>`;
+  }
+
+  function buildTable(){rankedBody.innerHTML='';[...DATA].sort((a,b)=>b.intelligence-a.intelligence).forEach(d=>{const tr=document.createElement('tr');tr.dataset.key=d.key;tr.innerHTML=`<td><div class="model-cell"><span class="swatch" style="background:${familyColor(d)};color:${familyColor(d)}"></span><strong>${escapeHtml(d.name)}</strong></div></td><td><span class="reasoning-pill" style="color:${levelColor(d)}">${escapeHtml(d.level)}</span></td><td>${fmtInt(d.intelligence)}</td><td>${fmtMoney(d.cost)}</td><td>${fmtTokens(d.tokens)}</td><td>${d.value.toFixed(1)}</td><td>${fmtSpeed(d.speed)}</td><td><span class="status-chip ${statusClass(d)}">${statusLabel(d)}</span></td>`;tr.addEventListener('click',()=>{state.selected=d;showDetail(d);render();document.getElementById('explorer').scrollIntoView({behavior:'smooth',block:'start'})});rankedBody.append(tr)})}
+
+  function theme(){const s=getComputedStyle(root);return{text:s.getPropertyValue('--text').trim(),muted:s.getPropertyValue('--muted').trim(),border:s.getPropertyValue('--border').trim(),panel:'#000',card:'#050505',blue:s.getPropertyValue('--blue').trim(),pink:s.getPropertyValue('--pink').trim(),yellow:s.getPropertyValue('--yellow').trim(),green:s.getPropertyValue('--green').trim(),purple:s.getPropertyValue('--purple').trim(),orange:s.getPropertyValue('--orange').trim(),danger:s.getPropertyValue('--danger').trim()}}
+  function resizeCanvas(){const dpr=Math.min(window.devicePixelRatio||1,2),w=Math.max(320,Math.round(canvas.clientWidth)),h=Math.max(380,Math.round(canvas.clientHeight));if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}render()}
+  function clear(){const t=theme();ctx.clearRect(0,0,canvas.clientWidth,canvas.clientHeight);ctx.fillStyle=t.panel;ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight);return t}
+  function roundRect(x,y,w,h,r){const rr=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+rr,y);ctx.arcTo(x+w,y,x+w,y+h,rr);ctx.arcTo(x+w,y+h,x,y+h,rr);ctx.arcTo(x,y+h,x,y,rr);ctx.arcTo(x,y,x+w,y,rr);ctx.closePath()}
+  function drawChip(text,x,y,t,color=t.text,align='left'){ctx.save();ctx.font='600 10px JetBrains Mono, monospace';const padX=6,w=ctx.measureText(text).width+padX*2,h=20;let bx=align==='right'?x-w:align==='center'?x-w/2:x,by=y-h/2;bx=clamp(bx,4,canvas.clientWidth-w-4);by=clamp(by,4,canvas.clientHeight-h-4);ctx.fillStyle=t.card;ctx.globalAlpha=.94;roundRect(bx,by,w,h,6);ctx.fill();ctx.globalAlpha=1;ctx.strokeStyle=t.border;ctx.lineWidth=1;ctx.stroke();ctx.fillStyle=color;ctx.textBaseline='middle';ctx.fillText(text,bx+padX,by+h/2+.2);ctx.restore();return{bx,by,w,h}}
+  function drawPoint(x,y,r,d,t,alpha=.9){const color=familyColor(d),active=state.selected===d||state.hovered===d;ctx.save();ctx.globalAlpha=active?1:alpha;ctx.fillStyle=color;ctx.strokeStyle=levelColor(d);ctx.lineWidth=active?3:2;ctx.shadowColor=color;ctx.shadowBlur=active?17:8;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;ctx.stroke();if(statusClass(d)==='extrapolated'){ctx.setLineDash([2.5,2.5]);ctx.strokeStyle=t.yellow;ctx.lineWidth=1;ctx.beginPath();ctx.arc(x,y,r+3,0,Math.PI*2);ctx.stroke()}ctx.restore();if(active){ctx.save();ctx.strokeStyle=t.text;ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(x,y,r+6,0,Math.PI*2);ctx.stroke();ctx.restore()}}
+  function drawLabels(points,t){if(!state.labels)return;ctx.save();ctx.font='9px JetBrains Mono, monospace';ctx.textBaseline='middle';const placed=[];for(const p of [...points].sort((a,b)=>(state.selected===b.d)-(state.selected===a.d)||(state.hovered===b.d)-(state.hovered===a.d)||a.y-b.y)){const text=`${p.d.family==='GPT-5.6 Sol'?'Sol':'oss'} · ${p.d.level}`,w=Math.min(150,ctx.measureText(text).width+10),h=18,r=p.r||6,candidates=[[p.x+r+8,p.y-h-3],[p.x+r+8,p.y+3],[p.x-w-r-8,p.y-h-3],[p.x-w-r-8,p.y+3],[p.x-w/2,p.y-r-h-7],[p.x-w/2,p.y+r+7]];let chosen=null,best=Infinity;for(const [cx0,cy0] of candidates){const cx=clamp(cx0,4,canvas.clientWidth-w-4),cy=clamp(cy0,4,canvas.clientHeight-h-4),box={x:cx,y:cy,w,h};let overlap=0;for(const b of placed){const ox=Math.max(0,Math.min(box.x+box.w,b.x+b.w)-Math.max(box.x,b.x)),oy=Math.max(0,Math.min(box.y+box.h,b.y+b.h)-Math.max(box.y,b.y));overlap+=ox*oy}const score=overlap*40+Math.hypot(cx+w/2-p.x,cy+h/2-p.y);if(score<best){best=score;chosen=box}if(!overlap)break}placed.push(chosen);const active=state.selected===p.d||state.hovered===p.d;ctx.strokeStyle=active?t.text:t.border;ctx.globalAlpha=active?.9:.42;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(clamp(p.x,chosen.x,chosen.x+chosen.w),clamp(p.y,chosen.y,chosen.y+chosen.h));ctx.stroke();ctx.globalAlpha=.95;ctx.fillStyle=t.card;roundRect(chosen.x,chosen.y,chosen.w,chosen.h,5);ctx.fill();ctx.globalAlpha=1;ctx.strokeStyle=active?t.text:t.border;ctx.stroke();ctx.fillStyle=active?t.text:familyColor(p.d);ctx.fillText(text,chosen.x+5,chosen.y+h/2+.3,chosen.w-10)}ctx.restore()}
+
+  function render3D(data,t){
+    const W=canvas.clientWidth,H=canvas.clientHeight,ex=ALL_EXTENTS(),cp=Math.cos(state.pitch),sp=Math.sin(state.pitch),cy=Math.cos(state.yaw),sy=Math.sin(state.yaw);
+    function project([x,y,z]){const x1=x*cy-z*sy,z1=x*sy+z*cy,y1=y*cp-z1*sp,z2=y*sp+z1*cp,persp=4.3/(5.3-z2),scale=Math.min(W,H)*.285*state.zoom*persp;return{x:W*.51+x1*scale,y:H*.52-y1*scale,z:z2,p:persp}}
+    const cube=[[-1,-1,-1],[1,-1,-1],[-1,1,-1],[1,1,-1],[-1,-1,1],[1,-1,1],[-1,1,1],[1,1,1]],edges=[[0,1],[0,2],[0,4],[1,3],[1,5],[2,3],[2,6],[3,7],[4,5],[4,6],[5,7],[6,7]],faces=[[0,1,3,2],[4,5,7,6],[0,1,5,4],[2,3,7,6],[0,2,6,4],[1,3,7,5]],projected=cube.map(project);
+    function regionBox(xr,yr,zr,color,alpha){const c=[[xr[0],yr[0],zr[0]],[xr[1],yr[0],zr[0]],[xr[0],yr[1],zr[0]],[xr[1],yr[1],zr[0]],[xr[0],yr[0],zr[1]],[xr[1],yr[0],zr[1]],[xr[0],yr[1],zr[1]],[xr[1],yr[1],zr[1]]].map(project),fs=faces.map(f=>({pts:f.map(i=>c[i]),z:f.reduce((s,i)=>s+c[i].z,0)/4})).sort((a,b)=>a.z-b.z);ctx.save();ctx.fillStyle=color;ctx.strokeStyle=color;ctx.lineWidth=.7;for(const f of fs){ctx.globalAlpha=alpha;ctx.beginPath();f.pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.closePath();ctx.fill();ctx.globalAlpha=Math.min(.24,alpha*3);ctx.stroke()}ctx.restore()}
+    const wx=v=>norm(transform(v,state.log),ex.cost)*2-1,wy=v=>norm(v,ex.intel)*2-1,wz=v=>norm(transform(v,state.log),ex.tokens)*2-1;
+    if(state.zones){regionBox([-1,wx(.08)],[-1,1],[-1,1],t.pink,.025);regionBox([-1,wx(.22)],[wy(40),1],[-1,wz(5000)],t.green,.095);regionBox([-1,1],[-1,1],[wz(10000),1],t.purple,.04);regionBox([wx(.5),1],[-1,1],[-1,1],t.yellow,.025)}
+    ctx.save();ctx.strokeStyle=t.border;ctx.lineWidth=1.1;edges.map(e=>({e,z:(projected[e[0]].z+projected[e[1]].z)/2})).sort((a,b)=>a.z-b.z).forEach(({e})=>{ctx.globalAlpha=.75;ctx.beginPath();ctx.moveTo(projected[e[0]].x,projected[e[0]].y);ctx.lineTo(projected[e[1]].x,projected[e[1]].y);ctx.stroke()});ctx.restore();
+    const origin=project([-1,-1,-1]),axes=[{end:project([1,-1,-1]),name:'X · price per task',min:fmtMoney(untransform(ex.cost[0],state.log)),max:fmtMoney(untransform(ex.cost[1],state.log)),color:t.pink},{end:project([-1,1,-1]),name:'Y · intelligence',min:fmtInt(ex.intel[0]),max:fmtInt(ex.intel[1]),color:t.green},{end:project([-1,-1,1]),name:'Z · output tokens',min:fmtTokens(untransform(ex.tokens[0],state.log)),max:fmtTokens(untransform(ex.tokens[1],state.log)),color:t.purple}];
+    ctx.save();ctx.lineWidth=1.8;ctx.font='9px JetBrains Mono, monospace';for(const a of axes){ctx.strokeStyle=a.color;ctx.fillStyle=t.muted;ctx.beginPath();ctx.moveTo(origin.x,origin.y);ctx.lineTo(a.end.x,a.end.y);ctx.stroke();ctx.fillText(a.max,a.end.x+5,a.end.y-5);drawChip(a.name,a.end.x+(a.end.x-origin.x)*.07,a.end.y+(a.end.y-origin.y)*.07,t,a.color,a.end.x<origin.x?'right':'left')}ctx.restore();
+    if(state.zones){const b=project([wx(.03),wy(22),wz(3000)]),balanced=project([wx(.16),wy(49),wz(2300)]),flood=project([wx(.16),wy(28),wz(25000)]),premium=project([wx(.85),wy(56),wz(8000)]);drawChip('Budget',b.x,b.y,t,t.pink,'center');drawChip('Balanced corridor',balanced.x,balanced.y,t,t.green,'center');drawChip('Token flood',flood.x,flood.y,t,t.purple,'center');drawChip('Premium reasoning',premium.x,premium.y,t,t.yellow,'center')}
+    const points=data.map(d=>{const world=[wx(d.cost),wy(d.intelligence),wz(d.tokens)];return{...project(world),d}}).sort((a,b)=>a.z-b.z);
+    if(state.trails){ctx.save();families.forEach(f=>{const seq=points.filter(p=>p.d.family===f).sort((a,b)=>a.d.order-b.d.order);if(seq.length<2)return;ctx.strokeStyle=FAMILY_COLORS[f];ctx.lineWidth=2;ctx.globalAlpha=.55;ctx.setLineDash(f==='gpt-oss-120b'?[6,5]:[]);ctx.beginPath();seq.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke()});ctx.restore()}
+    state.hitItems=[];for(const p of points){const r=clamp(5.3*p.p,4.4,8.4);p.r=r;drawPoint(p.x,p.y,r,p.d,t,.88);state.hitItems.push({x:p.x,y:p.y,r:Math.max(9,r+4),d:p.d})}drawLabels(points,t);
+    zoneLegend.innerHTML=state.zones?`<span class="zone-chip"><span class="zone-dot" style="background:${t.green};color:${t.green}"></span>Balanced corridor: intelligence ≥ 40, price ≤ $0.22, tokens ≤ 5K</span><span class="zone-chip"><span class="zone-dot" style="background:${t.pink};color:${t.pink}"></span>Budget: price ≤ $0.08</span><span class="zone-chip"><span class="zone-dot" style="background:${t.purple};color:${t.purple}"></span>Token flood: tokens &gt; 10K</span><span class="zone-chip"><span class="zone-dot" style="background:${t.yellow};color:${t.yellow}"></span>Premium: price &gt; $0.50</span><span class="zone-note">Axes use fixed full-dataset extents. Log scaling is enabled by default so the lowest-cost and highest-token settings remain legible together.</span>`:'';
+  }
+
+  function draw2DAxes(plot,xEx,yEx,t,xFormatter=fmtMoney,yFormatter=fmtInt,xLabel='Price per task',yLabel='Intelligence Index',xLog=state.log){ctx.save();ctx.strokeStyle=t.border;ctx.fillStyle=t.muted;ctx.lineWidth=1;ctx.font='9px JetBrains Mono, monospace';for(let i=0;i<=5;i++){const x=plot.l+(plot.r-plot.l)*i/5,y=plot.b-(plot.b-plot.t)*i/5;ctx.globalAlpha=i===0?1:.55;ctx.beginPath();ctx.moveTo(x,plot.t);ctx.lineTo(x,plot.b);ctx.stroke();ctx.beginPath();ctx.moveTo(plot.l,y);ctx.lineTo(plot.r,y);ctx.stroke();ctx.globalAlpha=1;ctx.textAlign='center';ctx.fillText(xFormatter(untransform(xEx[0]+(xEx[1]-xEx[0])*i/5,xLog)),x,plot.b+18);ctx.textAlign='right';ctx.fillText(yFormatter(yEx[0]+(yEx[1]-yEx[0])*i/5),plot.l-8,y+3)}ctx.fillStyle=t.text;ctx.font='600 11px JetBrains Mono, monospace';ctx.textAlign='center';ctx.fillText(xLabel,(plot.l+plot.r)/2,canvas.clientHeight-8);ctx.save();ctx.translate(15,(plot.t+plot.b)/2);ctx.rotate(-Math.PI/2);ctx.fillText(yLabel,0,0);ctx.restore();ctx.restore()}
+  function renderBubble(data,t,frontier=false){const W=canvas.clientWidth,H=canvas.clientHeight,plot={l:72,r:W-30,t:30,b:H-62},ex=ALL_EXTENTS(),tokEx=ex.tokens;draw2DAxes(plot,ex.cost,ex.intel,t);const points=data.map(d=>{const tokenNorm=clamp(norm(transform(d.tokens,state.log),tokEx),0,1);return{d,x:plot.l+norm(transform(d.cost,state.log),ex.cost)*(plot.r-plot.l),y:plot.b-norm(d.intelligence,ex.intel)*(plot.b-plot.t),r:5+Math.pow(tokenNorm,1.45)*22}});if(state.trails||frontier){ctx.save();families.forEach(f=>{const seq=points.filter(p=>p.d.family===f).sort((a,b)=>a.d.cost-b.d.cost);if(seq.length<2)return;ctx.strokeStyle=FAMILY_COLORS[f];ctx.lineWidth=frontier?2.6:1.8;ctx.globalAlpha=frontier?.8:.4;ctx.setLineDash(f==='gpt-oss-120b'?[6,5]:[]);ctx.beginPath();seq.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke()});ctx.restore()}state.hitItems=[];[...points].sort((a,b)=>b.r-a.r).forEach(p=>{drawPoint(p.x,p.y,p.r,p.d,t,.74);state.hitItems.push({x:p.x,y:p.y,r:Math.max(10,p.r+3),d:p.d})});drawLabels(points,t);zoneLegend.innerHTML=`<span class="zone-chip"><span class="zone-dot" style="background:${t.blue};color:${t.blue}"></span>Bubble area represents output tokens per task</span><span class="zone-chip"><span class="zone-dot" style="background:${t.yellow};color:${t.yellow}"></span>Outer dashed ring marks extrapolated per-task values</span><span class="zone-note">Family color identifies GPT-5.6 Sol or gpt-oss-120b. Reasoning level is shown by the point outline and label.</span>`}
+  function renderTrajectory(data,t){const W=canvas.clientWidth,H=canvas.clientHeight,plot={l:72,r:W-30,t:30,b:H-62},xEx=[-.2,5.2],yEx=ALL_EXTENTS().intel,tokEx=ALL_EXTENTS().tokens;draw2DAxes(plot,xEx,yEx,t,v=>['None','Low','Medium','High','Xhigh','Max'][Math.max(0,Math.min(5,Math.round(v)))]||'',fmtInt,'Reasoning level','Intelligence Index',false);const points=data.map(d=>{const tokenNorm=clamp(norm(transform(d.tokens,state.log),tokEx),0,1);return{d,x:plot.l+norm(d.order,xEx)*(plot.r-plot.l),y:plot.b-norm(d.intelligence,yEx)*(plot.b-plot.t),r:5+Math.pow(tokenNorm,1.45)*21}});if(state.trails){ctx.save();families.forEach(f=>{const seq=points.filter(p=>p.d.family===f).sort((a,b)=>a.d.order-b.d.order);if(seq.length<2)return;ctx.strokeStyle=FAMILY_COLORS[f];ctx.lineWidth=2.4;ctx.globalAlpha=.7;ctx.setLineDash(f==='gpt-oss-120b'?[6,5]:[]);ctx.beginPath();seq.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke()});ctx.restore()}state.hitItems=[];[...points].sort((a,b)=>b.r-a.r).forEach(p=>{drawPoint(p.x,p.y,p.r,p.d,t,.8);state.hitItems.push({x:p.x,y:p.y,r:Math.max(10,p.r+3),d:p.d})});drawLabels(points,t);zoneLegend.innerHTML=`<span class="zone-chip"><span class="zone-dot" style="background:${t.blue};color:${t.blue}"></span>Solid trail: GPT-5.6 Sol</span><span class="zone-chip"><span class="zone-dot" style="background:${t.pink};color:${t.pink}"></span>Dashed trail: gpt-oss-120b</span><span class="zone-chip"><span class="zone-dot" style="background:${t.purple};color:${t.purple}"></span>Bubble area: output tokens per task</span><span class="zone-note">gpt-oss-120b has Low and High records only. GPT-5.6 Sol spans all six supplied reasoning settings.</span>`}
+
+  function render(){const t=clear(),data=filteredData();updateMetrics(data);empty.style.display=data.length?'none':'flex';if(!data.length){state.hitItems=[];zoneLegend.innerHTML='';return}if(state.view==='scatter3d')render3D(data,t);else if(state.view==='trajectory')renderTrajectory(data,t);else renderBubble(data,t,state.view==='frontier');canvas.setAttribute('aria-label',`${viewCopy[state.view][0]} showing ${data.length} configurations. Intelligence ranges from ${fmtInt(Math.min(...data.map(d=>d.intelligence)))} to ${fmtInt(Math.max(...data.map(d=>d.intelligence)))}.`)}
+  function updateDisplaySummary(){const enabled=[];if(state.log)enabled.push('log cost and token axes');if(state.labels)enabled.push('labels');if(state.trails)enabled.push('reasoning trails');if(state.zones&&state.view==='scatter3d')enabled.push('zone shading');displaySummary.textContent=enabled.length?enabled.join(', '):'No optional display settings enabled'}
+  function update(){state.view=controls.view.value;state.search=controls.search.value;state.minIntel=Number(controls.minIntel.value);state.maxCost=Number(controls.maxCost.value);state.maxTokens=Number(controls.maxTokens.value);state.log=controls.log.checked;state.labels=controls.labels.checked;state.trails=controls.trails.checked;state.zones=controls.zones.checked;document.getElementById('min-intel-value').textContent=fmtInt(state.minIntel);document.getElementById('max-cost-value').textContent=fmtMoney(state.maxCost);document.getElementById('max-tokens-value').textContent=fmtTokens(state.maxTokens);viewTitle.textContent=viewCopy[state.view][0];viewHelp.textContent=viewCopy[state.view][1];controls.reset.textContent=state.view==='scatter3d'?'Reset view':'Clear selection';controls.zones.disabled=state.view!=='scatter3d';updateDisplaySummary();const visible=filteredData();if(state.selected&&!visible.includes(state.selected))state.selected=null;showDetail(state.selected);render()}
+  function nearestHit(x,y){let best=null,dist=Infinity;for(const h of state.hitItems){const d=Math.hypot(x-h.x,y-h.y)-h.r;if(d<dist){dist=d;best=h}}return dist<=8?best:null}
+  function localPos(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+  function showTooltip(hit,pos){if(!hit){tooltip.style.display='none';return}const d=hit.d;tooltip.innerHTML=`<strong>${escapeHtml(d.name)}</strong>${escapeHtml(d.family)} · ${escapeHtml(d.level)} reasoning<br>Intelligence ${fmtInt(d.intelligence)}<br>Price ${fmtMoney(d.cost)} per task<br>Output tokens ${fmtTokens(d.tokens)}<br>${statusLabel(d)} per-task metrics`;tooltip.style.display='block';const pad=10;let left=pos.x+14,top=pos.y+14,tw=tooltip.offsetWidth,th=tooltip.offsetHeight;if(left+tw>wrap.clientWidth-pad)left=pos.x-tw-14;if(top+th>wrap.clientHeight-pad)top=pos.y-th-14;tooltip.style.left=`${Math.max(pad,left)}px`;tooltip.style.top=`${Math.max(pad,top)}px`}
+
+  displayToggle.addEventListener('click',()=>{const expanded=displayToggle.getAttribute('aria-expanded')==='true';displayToggle.setAttribute('aria-expanded',String(!expanded));displayBody.hidden=expanded});
+  canvas.addEventListener('pointerdown',e=>{const p=localPos(e);state.lastX=p.x;state.lastY=p.y;state.moved=false;if(state.view==='scatter3d'){state.dragging=true;canvas.setPointerCapture(e.pointerId)}});
+  canvas.addEventListener('pointermove',e=>{const p=localPos(e);if(state.dragging&&state.view==='scatter3d'){const dx=p.x-state.lastX,dy=p.y-state.lastY;if(Math.abs(dx)+Math.abs(dy)>2)state.moved=true;state.yaw+=dx*.009;state.pitch=clamp(state.pitch+dy*.009,-1.25,1.25);state.lastX=p.x;state.lastY=p.y;tooltip.style.display='none';render();return}const hit=nearestHit(p.x,p.y),next=hit?hit.d:null;if(state.hovered!==next){state.hovered=next;render()}showTooltip(hit,p);canvas.style.cursor=hit?'pointer':state.view==='scatter3d'?'grab':'default'});
+  canvas.addEventListener('pointerup',e=>{if(state.dragging){state.dragging=false;try{canvas.releasePointerCapture(e.pointerId)}catch{}}if(!state.moved){const p=localPos(e),hit=nearestHit(p.x,p.y);state.selected=hit?hit.d:null;showDetail(state.selected);render()}});
+  canvas.addEventListener('pointerleave',()=>{if(!state.dragging){state.hovered=null;tooltip.style.display='none';render()}});
+  canvas.addEventListener('wheel',e=>{if(state.view!=='scatter3d')return;e.preventDefault();state.zoom=clamp(state.zoom*Math.exp(-e.deltaY*.001),.55,2.2);render()},{passive:false});
+  canvas.addEventListener('dblclick',()=>{state.yaw=-.72;state.pitch=.42;state.zoom=1;render()});
+  controls.reset.addEventListener('click',()=>{state.selected=null;state.hovered=null;if(state.view==='scatter3d'){state.yaw=-.72;state.pitch=.42;state.zoom=1}showDetail(null);render()});
+  [controls.view,controls.log,controls.labels,controls.trails,controls.zones].forEach(el=>el.addEventListener('change',update));
+  [controls.search,controls.minIntel,controls.maxCost,controls.maxTokens].forEach(el=>el.addEventListener('input',update));
+  new ResizeObserver(resizeCanvas).observe(wrap);
+  buildFamilyFilters();buildTable();updateHeadline();update();resizeCanvas();
+})();
+</script>
+<script>
+(() => {
+  const bg=document.getElementById('particle-canvas'),ctx=bg.getContext('2d');let particles=[],mouse={x:null,y:null};const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,palette=['#ff1493','#00bfff','#ffff00','#00ff66','#bf00ff'];
+  function resize(){const dpr=Math.min(devicePixelRatio||1,1.5);bg.width=Math.round(innerWidth*dpr);bg.height=Math.round(innerHeight*dpr);bg.style.width=innerWidth+'px';bg.style.height=innerHeight+'px';ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.min(115,Math.max(25,Math.round(innerWidth*innerHeight/17500)));particles=Array.from({length:count},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*2+.6,vx:(Math.random()-.5)*.16,vy:(Math.random()-.5)*.16,c:palette[Math.floor(Math.random()*palette.length)]}))}
+  function frame(){ctx.clearRect(0,0,innerWidth,innerHeight);for(let i=0;i<particles.length;i++){const p=particles[i];if(!reduce){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>innerWidth)p.vx*=-1;if(p.y<0||p.y>innerHeight)p.vy*=-1;if(mouse.x!==null){const dx=mouse.x-p.x,dy=mouse.y-p.y,dist=Math.hypot(dx,dy)||1;if(dist<140){p.x+=dx/dist*.11;p.y+=dy/dist*.11}}}ctx.globalAlpha=.20;ctx.fillStyle=p.c;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();for(let j=i+1;j<particles.length;j++){const q=particles[j],dist=Math.hypot(p.x-q.x,p.y-q.y);if(dist<100){ctx.globalAlpha=.038*(1-dist/100);ctx.strokeStyle=p.c;ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}}ctx.globalAlpha=1;requestAnimationFrame(frame)}
+  addEventListener('resize',resize);addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY});addEventListener('mouseleave',()=>{mouse.x=null;mouse.y=null});resize();frame();window.__GPT_MODEL_EXPLORER_READY__=true;
+})();
+</script>
+</body>
+</html>

@@ -60,6 +60,7 @@ navbar-links:
   Machine Learning and AI:
     - GPT-5.6 Value Map: "gpt-5-6-value-analysis"
     - Coding Agent Explorer: "coding-agent-explorer"
+    - GPT-5.6 vs gpt-oss-120b: "gpt56-vs-gptoss-120b"
     - Agent Sandboxing: "ai-agent-sandboxing"
     - AI Security Code Review: "ai-security-code-review"
     - Agentic SOC: "agentic-soc"
