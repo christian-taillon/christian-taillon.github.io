@@ -1,0 +1,1226 @@
+---
+layout: base
+title: "Coding Agent Explorer"
+description: "Compare frontier coding-agent configurations across intelligence, cost, and token utilization."
+permalink: /coding-agent-explorer/
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coding Agent Intelligence, Cost, and Token Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: dark;
+  --bg-color:#000000;
+  --text-main:#ffffff;
+  --text-muted:#9ca3af;
+  --card-border:rgba(255,255,255,.10);
+  --card-bg-hover:#050505;
+  --panel-gray:#050505;
+  --border-gray:#202020;
+  --color-pink:#ff1493;
+  --color-blue:#00bfff;
+  --color-yellow:#ffff00;
+  --color-green:#00ff00;
+  --color-purple:#bf00ff;
+  --viz-panel:#000000;
+  --viz-card:#000000;
+  --viz-chip-card:#050505;
+  --viz-text:var(--text-main);
+  --viz-muted:var(--text-muted);
+  --viz-border:var(--card-border);
+  --viz-accent:var(--color-yellow);
+  --viz-accent-text:#000000;
+  --viz-accent-bg:rgba(255,255,0,.10);
+  --viz-accent-bg-subtle:rgba(255,255,0,.035);
+  --viz-series-1:var(--color-blue);
+  --viz-series-2:var(--color-yellow);
+  --viz-series-3:var(--color-green);
+  --viz-series-4:var(--color-purple);
+  --viz-series-5:var(--color-pink);
+  --viz-series-6:#ffffff;
+}
+* { box-sizing:border-box; }
+html { min-height:100%; background:var(--bg-color); }
+body {
+  min-height:100vh;
+  margin:0;
+  padding:24px 32px 64px;
+  overflow-x:hidden;
+  background:var(--bg-color);
+  color:var(--text-main);
+  font-family:'Inter',sans-serif;
+  transition:background-color .3s ease,color .3s ease;
+}
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.17;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:52px 52px;
+  mask-image:linear-gradient(to bottom,black,transparent 82%);
+}
+::selection { background:var(--color-yellow); color:#000; }
+#particle-canvas {
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+  pointer-events:none;
+}
+main {
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:1280px;
+  margin-inline:auto;
+}
+.site-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:24px;
+  margin-bottom:44px;
+  padding:0 8px 16px;
+  border-bottom:1px solid var(--border-gray);
+  background:transparent;
+}
+.site-kicker,
+.hero-label,
+.header-nav,
+.header-status {
+  font-family:'JetBrains Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:.20em;
+}
+ .site-kicker { margin:0 0 9px; color:var(--color-yellow); font-size:10px; }
+ .site-brand {
+   font-family:'Doto',sans-serif;
+   font-size:20px;
+   font-weight:600;
+   letter-spacing:-.025em;
+   color:var(--text-main);
+   text-decoration:none;
+   transition:color .3s ease;
+ }
+ .site-brand:hover { color:var(--color-yellow); }
+ .site-brand:visited { color:var(--text-main); }
+.header-actions { display:flex; align-items:center; gap:22px; }
+.header-nav { display:flex; align-items:center; gap:14px; color:#6b7280; font-size:10px; }
+.header-nav span:nth-child(1) { color:var(--color-blue); }
+.header-nav span:nth-child(3) { color:var(--color-purple); }
+.header-nav span:nth-child(5) { color:var(--color-green); }
+.header-nav span:nth-child(7) { color:var(--color-pink); }
+.header-nav i { color:#262626; font-style:normal; }
+.theme-toggle-btn {
+  display:grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  padding:0;
+  border:1px solid var(--card-border);
+  border-radius:999px;
+  background:transparent;
+  color:var(--text-muted);
+  cursor:pointer;
+  transition:all .3s ease;
+}
+.theme-toggle-btn:hover { border-color:var(--text-main); color:var(--text-main); transform:rotate(12deg); }
+.theme-toggle-btn svg { width:16px; height:16px; }
+.hero-intro {
+  display:grid;
+  grid-template-columns:minmax(0,1.55fr) minmax(280px,.65fr);
+  gap:22px;
+  margin-bottom:18px;
+}
+.hero-copy,
+.hero-meta {
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--card-border);
+  border-radius:1.5rem;
+  background:#000000;
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+  transition:all .4s cubic-bezier(.25,.46,.45,.94);
+}
+.hero-copy { min-height:340px; padding:42px; }
+.hero-copy:hover { border-color:var(--color-yellow); box-shadow:0 0 30px -5px var(--color-yellow); transform:scale(1.01); }
+.hero-label { margin:0 0 26px; color:var(--color-yellow); font-size:10px; font-weight:500; }
+.hero-copy h1 {
+  margin:0;
+  max-width:900px;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(48px,7vw,94px);
+  font-weight:700;
+  letter-spacing:-.075em;
+  line-height:.86;
+}
+.hero-copy h1 span { color:var(--color-yellow); font-weight:400; font-style:italic; }
+.hero-copy > p:last-child {
+  max-width:720px;
+  margin:34px 0 0;
+  color:var(--text-muted);
+  font-size:14px;
+  line-height:1.7;
+}
+.hero-meta {
+  min-height:340px;
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.hero-meta:hover { border-color:var(--color-blue); box-shadow:0 0 30px -5px var(--color-blue); transform:scale(1.01); }
+.meta-radar {
+  width:74px;
+  height:74px;
+  border:1px solid var(--color-blue);
+  border-radius:50%;
+  position:relative;
+  box-shadow:0 0 28px -8px var(--color-blue);
+}
+.meta-radar::before,
+.meta-radar::after { content:""; position:absolute; inset:12px; border:1px solid rgba(0,191,255,.35); border-radius:50%; }
+.meta-radar::after { inset:28px; background:var(--color-blue); box-shadow:0 0 12px var(--color-blue); }
+.meta-radar-line { position:absolute; width:36px; height:1px; left:36px; top:36px; transform-origin:left center; background:var(--color-blue); animation:radar 4s linear infinite; }
+@keyframes radar { to { transform:rotate(360deg); } }
+.meta-copy { display:grid; gap:15px; }
+.meta-copy small { color:var(--color-blue); font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.16em; text-transform:uppercase; }
+.meta-copy strong { font-family:'Doto',sans-serif; font-size:23px; font-weight:600; line-height:1.1; }
+.meta-copy p { margin:0; color:var(--text-muted); font-size:12px; line-height:1.65; }
+main { padding-bottom:20px; }
+@media (max-width:900px) {
+  body { padding:18px 18px 44px; }
+  .hero-intro { grid-template-columns:1fr; }
+  .hero-meta { min-height:230px; }
+}
+@media (max-width:680px) {
+  .site-header { align-items:flex-start; margin-bottom:24px; }
+  .header-nav { display:none; }
+  .hero-copy { min-height:290px; padding:28px 24px; }
+  .hero-copy h1 { font-size:clamp(43px,16vw,68px); }
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+}
+
+.app-header {
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:1280px;
+  margin:0 auto 18px;
+  padding:8px 6px 18px;
+  border-bottom:1px solid var(--border-gray);
+}
+.app-header h1 {
+  margin:0;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(24px,3vw,36px);
+  font-weight:600;
+  letter-spacing:-.045em;
+  line-height:1.08;
+}
+.app-header p {
+  margin:7px 0 0;
+  color:var(--text-muted);
+  font-size:13px;
+  line-height:1.5;
+}
+@media (max-width:680px) {
+  .app-header { margin-bottom:14px; padding:4px 2px 14px; }
+  .app-header h1 { font-size:24px; }
+}
+
+/* OLED DARK ROAST OVERRIDES: solid black surfaces, neon only as signal. */
+body { background:#000000 !important; }
+.hero-copy, .hero-meta, #coding-agent-app .ca-context-note, #coding-agent-app .ca-panel, #coding-agent-app .ca-metric {
+  background:#000000 !important;
+  border-color:rgba(255,255,255,.11);
+}
+#coding-agent-app .ca-context-note {
+  border-left:2px solid var(--color-yellow);
+  box-shadow:inset 20px 0 45px -42px var(--color-yellow);
+}
+#coding-agent-app .ca-controls-panel {
+  background:#000000 !important;
+}
+#coding-agent-app .ca-canvas-wrap {
+  background:#000000 !important;
+  border-color:rgba(255,255,255,.13);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.015);
+}
+#coding-agent-app select, #coding-agent-app input[type="search"],
+#coding-agent-app .ca-provider, #coding-agent-app .ca-zone-chip,
+#coding-agent-app .ca-legend-item, #coding-agent-app .ca-detail-cell {
+  background:#050505 !important;
+}
+</style>
+</head>
+<body data-theme="dark-roast-oled" data-build="v4-clean">
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<header class="site-header">
+  <div>
+    <p class="site-kicker">christiant.io</p>
+    <a class="site-brand" href="/" rel="home">Christian Taillon</a>
+  </div>
+</header>
+<header class="app-header" aria-labelledby="page-title">
+  <h1 id="page-title">Coding Agent Intelligence, Cost, and Token Explorer</h1>
+  <p>Compare selected frontier coding-agent configurations across intelligence, cost, and token use.</p>
+</header>
+<main>
+<section id="coding-agent-app" aria-label="Coding agent intelligence, cost, and token utilization explorer">
+<style>
+#coding-agent-app {
+  --ca-panel:var(--viz-panel);
+  --ca-card:var(--viz-card);
+  --ca-chip:var(--viz-chip-card);
+  --ca-text:var(--viz-text);
+  --ca-muted:var(--viz-muted);
+  --ca-border:var(--viz-border);
+  --ca-accent:var(--viz-accent);
+  --ca-accent-text:var(--viz-accent-text);
+  --ca-accent-bg:var(--viz-accent-bg);
+  --ca-accent-bg-subtle:var(--viz-accent-bg-subtle);
+  --ca-s1:var(--viz-series-1);
+  --ca-s2:var(--viz-series-2);
+  --ca-s3:var(--viz-series-3);
+  --ca-s4:var(--viz-series-4);
+  --ca-s5:var(--viz-series-5);
+  --ca-s6:var(--viz-series-6);
+  --ca-good:var(--color-green);
+  --ca-cheap:var(--color-pink);
+  --ca-expensive:var(--color-yellow);
+  --ca-efficient:var(--color-blue);
+  --ca-bruteforce:var(--color-purple);
+  width:100%;
+  color:var(--ca-text);
+}
+#coding-agent-app * { box-sizing:border-box; }
+#coding-agent-app button,
+#coding-agent-app input,
+#coding-agent-app select { font:inherit; }
+#coding-agent-app .ca-stack { display:grid; gap:16px; }
+#coding-agent-app .ca-context-note,
+#coding-agent-app .ca-panel,
+#coding-agent-app .ca-metric {
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--card-border);
+  border-radius:1.5rem;
+  background-color:#000000;
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+  transition:all .4s cubic-bezier(.25,.46,.45,.94);
+}
+#coding-agent-app .ca-context-note:hover,
+#coding-agent-app .ca-panel:hover,
+#coding-agent-app .ca-metric:hover { transform:scale(1.008); }
+#coding-agent-app .ca-context-note { padding:28px 30px; }
+#coding-agent-app .ca-context-note:hover { border-color:var(--color-yellow); box-shadow:0 0 30px -8px var(--color-yellow); }
+#coding-agent-app .ca-context-note::before {
+  content:"// COST SIGNAL";
+  display:block;
+  margin-bottom:13px;
+  color:var(--color-yellow);
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:.18em;
+}
+#coding-agent-app .ca-context-note strong {
+  display:block;
+  margin-bottom:10px;
+  font-family:'Doto',sans-serif;
+  font-size:20px;
+  font-weight:600;
+}
+#coding-agent-app .ca-context-note p { margin:0; max-width:1120px; color:var(--ca-muted); font-size:13px; line-height:1.7; }
+#coding-agent-app .ca-context-note p + p { margin-top:8px; }
+#coding-agent-app .ca-metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
+#coding-agent-app .ca-metric { min-height:144px; padding:24px; display:flex; flex-direction:column; justify-content:space-between; }
+#coding-agent-app .ca-metric:nth-child(1):hover { border-color:var(--color-blue); box-shadow:0 0 30px -9px var(--color-blue); }
+#coding-agent-app .ca-metric:nth-child(2):hover { border-color:var(--color-yellow); box-shadow:0 0 30px -9px var(--color-yellow); }
+#coding-agent-app .ca-metric:nth-child(3):hover { border-color:var(--color-green); box-shadow:0 0 30px -9px var(--color-green); }
+#coding-agent-app .ca-metric:nth-child(4):hover { border-color:var(--color-purple); box-shadow:0 0 30px -9px var(--color-purple); }
+#coding-agent-app .ca-metric::after {
+  content:"";
+  position:absolute;
+  top:21px;
+  right:21px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:currentColor;
+  box-shadow:0 0 12px currentColor;
+}
+#coding-agent-app .ca-metric:nth-child(1) { color:var(--color-blue); }
+#coding-agent-app .ca-metric:nth-child(2) { color:var(--color-yellow); }
+#coding-agent-app .ca-metric:nth-child(3) { color:var(--color-green); }
+#coding-agent-app .ca-metric:nth-child(4) { color:var(--color-purple); }
+#coding-agent-app .ca-metric-label {
+  max-width:80%;
+  color:var(--ca-muted);
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;
+  line-height:1.4;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+#coding-agent-app .ca-metric-value {
+  margin-top:20px;
+  color:var(--ca-text);
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(24px,3vw,38px);
+  font-weight:700;
+  letter-spacing:-.055em;
+  line-height:1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#coding-agent-app .ca-metric-detail { margin-top:8px; color:var(--ca-muted); font-size:10px; line-height:1.4; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+#coding-agent-app .ca-panel { padding:28px; }
+#coding-agent-app .ca-panel:hover { border-color:var(--color-blue); box-shadow:0 0 30px -12px var(--color-blue); }
+#coding-agent-app .ca-chart-panel:hover { border-color:var(--color-purple); box-shadow:0 0 34px -12px var(--color-purple); }
+#coding-agent-app .ca-bottom .ca-panel:first-child:hover { border-color:var(--color-green); box-shadow:0 0 30px -12px var(--color-green); }
+#coding-agent-app .ca-bottom .ca-panel:last-child:hover { border-color:var(--color-pink); box-shadow:0 0 30px -12px var(--color-pink); }
+#coding-agent-app .ca-controls { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:18px; align-items:end; }
+#coding-agent-app .ca-field { min-width:0; }
+#coding-agent-app .ca-span-3 { grid-column:span 3; }
+#coding-agent-app .ca-span-4 { grid-column:span 4; }
+#coding-agent-app .ca-span-6 { grid-column:span 6; }
+#coding-agent-app .ca-field label,
+#coding-agent-app .ca-label {
+  display:block;
+  margin-bottom:9px;
+  color:var(--ca-muted);
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;
+  font-weight:500;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+#coding-agent-app .ca-field label span { color:var(--color-yellow); }
+#coding-agent-app select,
+#coding-agent-app input[type="search"] {
+  width:100%;
+  min-height:44px;
+  padding:10px 13px;
+  border:1px solid var(--border-gray);
+  border-radius:.7rem;
+  outline:none;
+  background:#050505;
+  color:var(--ca-text);
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  transition:all .3s ease;
+}
+#coding-agent-app select:hover,
+#coding-agent-app input[type="search"]:hover,
+#coding-agent-app select:focus,
+#coding-agent-app input[type="search"]:focus { border-color:var(--color-blue); box-shadow:0 0 18px -8px var(--color-blue); }
+#coding-agent-app select option { color:#fff; background:#0a0a0a; }
+#coding-agent-app input[type="range"] {
+  width:100%;
+  height:3px;
+  appearance:none;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--color-yellow),var(--border-gray));
+  accent-color:var(--color-yellow);
+}
+#coding-agent-app input[type="range"]::-webkit-slider-thumb {
+  appearance:none;
+  width:14px;
+  height:14px;
+  border:1px solid #000;
+  border-radius:50%;
+  background:var(--color-yellow);
+  box-shadow:0 0 13px -2px var(--color-yellow);
+  cursor:pointer;
+}
+#coding-agent-app input[type="range"]::-moz-range-thumb {
+  width:14px;
+  height:14px;
+  border:1px solid #000;
+  border-radius:50%;
+  background:var(--color-yellow);
+  box-shadow:0 0 13px -2px var(--color-yellow);
+  cursor:pointer;
+}
+#coding-agent-app .ca-range-row { display:flex; justify-content:space-between; gap:8px; margin-top:7px; color:#616161; font-family:'JetBrains Mono',monospace; font-size:8px; }
+#coding-agent-app .ca-providers { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; padding-top:20px; border-top:1px solid var(--border-gray); }
+#coding-agent-app .ca-provider,
+#coding-agent-app .ca-zone-chip,
+#coding-agent-app .ca-legend-item,
+#coding-agent-app .ca-check {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.055em;
+}
+#coding-agent-app .ca-provider {
+  padding:7px 10px;
+  border:1px solid var(--card-border);
+  border-radius:.5rem;
+  background:#050505;
+  color:var(--ca-muted);
+  cursor:pointer;
+  transition:all .3s ease;
+}
+#coding-agent-app .ca-provider:hover { border-color:var(--provider-color,var(--color-blue)); color:var(--provider-color,var(--color-blue)); box-shadow:0 0 16px -8px var(--provider-color,var(--color-blue)); }
+#coding-agent-app .ca-provider input,
+#coding-agent-app .ca-check input {
+  appearance:none;
+  width:13px;
+  height:13px;
+  margin:0;
+  border:1px solid currentColor;
+  border-radius:3px;
+  background:transparent;
+  cursor:pointer;
+}
+#coding-agent-app .ca-provider input:checked,
+#coding-agent-app .ca-check input:checked { background:currentColor; box-shadow:inset 0 0 0 3px #000,0 0 10px -2px currentColor; }
+#coding-agent-app .ca-swatch { width:7px; height:7px; border-radius:50%; flex:none; box-shadow:0 0 8px currentColor; }
+#coding-agent-app .ca-display { margin-top:18px; padding-top:16px; border-top:1px solid var(--border-gray); }
+#coding-agent-app .ca-display-toggle {
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:2px 0;
+  border:0;
+  background:transparent;
+  color:var(--ca-text);
+  font-family:'Doto',sans-serif;
+  font-size:14px;
+  font-weight:600;
+  text-align:left;
+  cursor:pointer;
+}
+#coding-agent-app .ca-display-toggle small { display:block; margin-top:3px; color:var(--ca-muted); font-family:'JetBrains Mono',monospace; font-size:8px; font-weight:400; letter-spacing:.06em; text-transform:uppercase; }
+#coding-agent-app .ca-chevron { color:var(--color-yellow); transition:transform .2s ease; }
+#coding-agent-app .ca-display-toggle[aria-expanded="true"] .ca-chevron { transform:rotate(180deg); }
+#coding-agent-app .ca-display-body { display:flex; flex-wrap:wrap; gap:12px 20px; padding-top:18px; }
+#coding-agent-app .ca-display-body[hidden] { display:none; }
+#coding-agent-app .ca-check { color:var(--ca-muted); cursor:pointer; }
+#coding-agent-app .ca-check:hover { color:var(--color-yellow); }
+#coding-agent-app .ca-chart-head { display:flex; align-items:flex-start; justify-content:space-between; gap:14px; margin-bottom:18px; }
+#coding-agent-app .ca-view-title {
+  margin:0 0 5px;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:26px;
+  font-weight:600;
+  letter-spacing:-.04em;
+}
+#coding-agent-app .ca-view-title::before { content:"// "; color:var(--color-purple); font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0; }
+#coding-agent-app .ca-view-help { margin:0; color:var(--ca-muted); font-size:11px; line-height:1.5; }
+#coding-agent-app .ca-button {
+  padding:9px 14px;
+  border:1px solid var(--color-yellow);
+  border-radius:.55rem;
+  background:transparent;
+  color:var(--color-yellow);
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all .3s ease;
+  white-space:nowrap;
+}
+#coding-agent-app .ca-button:hover { background:var(--color-yellow); color:#000; box-shadow:0 0 22px -8px var(--color-yellow); transform:scale(1.04); }
+#coding-agent-app .ca-canvas-wrap {
+  position:relative;
+  width:100%;
+  min-height:610px;
+  overflow:hidden;
+  border:1px solid var(--border-gray);
+  border-radius:1.25rem;
+  background:#000000;
+}
+#coding-agent-app .ca-canvas-wrap::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.23;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:32px 32px;
+  mask-image:radial-gradient(circle at center,black,transparent 78%);
+}
+#coding-agent-app canvas { position:relative; z-index:1; display:block; width:100%; height:610px; touch-action:none; outline:none; }
+#coding-agent-app canvas:focus-visible { box-shadow:inset 0 0 0 1px var(--color-blue); }
+#coding-agent-app .ca-tooltip {
+  position:absolute;
+  z-index:5;
+  display:none;
+  max-width:330px;
+  padding:13px 14px;
+  border:1px solid var(--color-blue);
+  border-radius:.75rem;
+  background:#000000;
+  color:#fff;
+  box-shadow:0 0 28px -10px var(--color-blue);
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  line-height:1.55;
+  pointer-events:none;
+}
+#coding-agent-app .ca-tooltip strong { display:block; margin-bottom:5px; color:var(--color-blue); font-family:'Doto',sans-serif; font-size:14px; }
+#coding-agent-app .ca-empty { position:absolute; inset:0; z-index:2; display:none; align-items:center; justify-content:center; padding:20px; color:var(--ca-muted); font-family:'JetBrains Mono',monospace; font-size:10px; text-align:center; text-transform:uppercase; letter-spacing:.1em; }
+#coding-agent-app .ca-zone-legend { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:16px; color:var(--ca-muted); font-size:10px; }
+#coding-agent-app .ca-zone-chip { padding:6px 9px; border:1px solid var(--card-border); border-radius:999px; background:#050505; }
+#coding-agent-app .ca-zone-dot { width:8px; height:8px; border-radius:2px; box-shadow:0 0 8px currentColor; }
+#coding-agent-app .ca-zone-note { flex-basis:100%; margin-top:4px; color:#6b7280; font-family:'JetBrains Mono',monospace; font-size:8px; line-height:1.55; letter-spacing:.04em; text-transform:uppercase; }
+#coding-agent-app .ca-bottom { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(260px,1fr); gap:16px; }
+#coding-agent-app .ca-detail-title { margin:0 0 16px; font-family:'Doto',sans-serif; font-size:18px; font-weight:600; }
+#coding-agent-app .ca-detail-title::before { content:"// "; color:var(--color-green); font-family:'JetBrains Mono',monospace; font-size:10px; }
+#coding-agent-app .ca-bottom .ca-panel:last-child .ca-detail-title::before { color:var(--color-pink); }
+#coding-agent-app .ca-detail-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; }
+#coding-agent-app .ca-detail-cell { min-width:0; padding:12px; border:1px solid var(--card-border); border-radius:.65rem; background:#050505; }
+#coding-agent-app .ca-detail-cell span { display:block; margin-bottom:5px; color:var(--ca-muted); font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:.08em; text-transform:uppercase; }
+#coding-agent-app .ca-detail-cell strong { color:var(--ca-text); font-family:'Space Grotesk',sans-serif; font-size:12px; overflow-wrap:anywhere; }
+#coding-agent-app .ca-source { color:var(--color-blue); font-family:'JetBrains Mono',monospace; font-size:9px; text-decoration:none; }
+#coding-agent-app .ca-source:hover { text-decoration:underline; }
+#coding-agent-app .ca-legend { display:flex; flex-wrap:wrap; gap:8px; }
+#coding-agent-app .ca-legend-item { padding:6px 8px; border:1px solid var(--card-border); border-radius:.5rem; background:#050505; color:var(--ca-muted); }
+#coding-agent-app .ca-footer-note {
+  margin:0;
+  padding:20px 4px 0;
+  border-top:1px solid var(--border-gray);
+  color:#616161;
+  font-family:'JetBrains Mono',monospace;
+  font-size:8px;
+  line-height:1.65;
+  letter-spacing:.045em;
+  text-transform:uppercase;
+}
+@media (max-width:900px) {
+  #coding-agent-app .ca-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  #coding-agent-app .ca-controls { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  #coding-agent-app .ca-span-3,#coding-agent-app .ca-span-4,#coding-agent-app .ca-span-6 { grid-column:span 1; }
+  #coding-agent-app .ca-bottom { grid-template-columns:1fr; }
+  #coding-agent-app .ca-canvas-wrap { min-height:520px; }
+  #coding-agent-app canvas { height:520px; }
+}
+@media (max-width:540px) {
+  #coding-agent-app .ca-context-note,#coding-agent-app .ca-panel { padding:22px 18px; }
+  #coding-agent-app .ca-metrics { grid-template-columns:1fr 1fr; gap:10px; }
+  #coding-agent-app .ca-metric { min-height:128px; padding:18px 16px; }
+  #coding-agent-app .ca-controls { grid-template-columns:1fr; }
+  #coding-agent-app .ca-detail-grid { grid-template-columns:1fr 1fr; }
+  #coding-agent-app .ca-chart-head { align-items:center; }
+}
+</style>
+
+<div class="ca-stack">
+  <aside class="ca-context-note" aria-label="Cost and token-use context">
+    <strong>Sticker price is not the whole cost story.</strong>
+    <p>A low sticker price can make a model such as DeepSeek V4 Pro (high) look like a value play. But some models, including Kimi K2.6 and GLM-5.1, brute-force their way to higher intelligence by producing far more tokens. Prompting can curb some of that verbosity, but doing so can also reduce the deep reasoning that produces their intelligence. That tradeoff is acceptable for many tasks. It is often unacceptable for agentic workloads such as coding, where long-running processes may require repeated context-window compression and careful context management.</p>
+    <p>Even when large token windows are unnecessary, some models complete the same work with far fewer tokens and can therefore deliver a lower effective expense per task.</p>
+  </aside>
+
+  <div class="ca-metrics" aria-live="polite">
+    <div class="ca-metric"><div class="ca-metric-label">Configurations shown</div><div class="ca-metric-value" id="ca-count">0</div><div class="ca-metric-detail" id="ca-count-detail">Requested model families</div></div>
+    <div class="ca-metric"><div class="ca-metric-label">Greatest Pareto outlier</div><div class="ca-metric-value" id="ca-best-perf">--</div><div class="ca-metric-detail" id="ca-best-perf-detail">--</div></div>
+    <div class="ca-metric"><div class="ca-metric-label">Lowest cost per task</div><div class="ca-metric-value" id="ca-low-cost">--</div><div class="ca-metric-detail" id="ca-low-cost-detail">--</div></div>
+    <div class="ca-metric"><div class="ca-metric-label">Median token use</div><div class="ca-metric-value" id="ca-med-tokens">--</div><div class="ca-metric-detail">Average total tokens per task</div></div>
+  </div>
+
+  <div class="ca-panel">
+    <div class="ca-controls">
+      <div class="ca-field ca-span-3">
+        <label for="ca-view">Visualization</label>
+        <select id="ca-view">
+          <option value="scatter3d">3D scatter cube</option>
+          <option value="bubble">Bubble projection</option>
+          <option value="frontier">Pareto frontier</option>
+        </select>
+      </div>
+      <div class="ca-field ca-span-3">
+        <label for="ca-search">Search</label>
+        <input id="ca-search" type="search" placeholder="Model company, model, or harness">
+      </div>
+      <div class="ca-field ca-span-3">
+        <label for="ca-perf">Minimum intelligence: <span id="ca-perf-value">20%</span></label>
+        <input id="ca-perf" type="range" min="20" max="67" value="20" step="1">
+        <div class="ca-range-row"><span>20%</span><span>67%</span></div>
+      </div>
+      <div class="ca-field ca-span-3">
+        <label for="ca-cost">Maximum cost: <span id="ca-cost-value">$12.00</span></label>
+        <input id="ca-cost" type="range" min="0.05" max="12" value="12" step="0.05">
+        <div class="ca-range-row"><span>$0.05</span><span>$12</span></div>
+      </div>
+    </div>
+
+    <div class="ca-providers" id="ca-providers" aria-label="Model company filters"></div>
+
+    <div class="ca-display">
+      <button class="ca-display-toggle" id="ca-display-toggle" type="button" aria-expanded="false" aria-controls="ca-display-body">
+        <span>Display options <small id="ca-display-summary">Log scales and zone shading enabled</small></span>
+        <span class="ca-chevron" aria-hidden="true">▼</span>
+      </button>
+      <div class="ca-display-body" id="ca-display-body" hidden>
+        <label class="ca-check"><input id="ca-log" type="checkbox" checked> Log cost and tokens</label>
+        <label class="ca-check"><input id="ca-labels" type="checkbox"> Show every point name</label>
+        <label class="ca-check"><input id="ca-zones" type="checkbox" checked> Highlight 3D zones</label>
+        <label class="ca-check"><input id="ca-older-models" type="checkbox"> Include older models</label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ca-panel ca-chart-panel">
+    <div class="ca-chart-head">
+      <div>
+        <h2 class="ca-view-title" id="ca-view-title">3D scatter cube</h2>
+        <p class="ca-view-help" id="ca-view-help">Drag to rotate, scroll to zoom, and select a point for details.</p>
+      </div>
+      <button class="ca-button" id="ca-reset" type="button">Reset view</button>
+    </div>
+    <div class="ca-canvas-wrap" id="ca-canvas-wrap">
+      <canvas id="ca-canvas" role="img" aria-label="Interactive visualization of coding agent intelligence, cost, and token utilization" tabindex="0"></canvas>
+      <div class="ca-tooltip" id="ca-tooltip"></div>
+      <div class="ca-empty" id="ca-empty">No configurations match the current filters.</div>
+    </div>
+    <div class="ca-zone-legend" id="ca-zone-legend" aria-live="polite"></div>
+  </div>
+
+  <div class="ca-bottom">
+    <div class="ca-panel" id="ca-detail" aria-live="polite">
+      <h3 class="ca-detail-title" id="ca-detail-title">Select a configuration</h3>
+      <div class="ca-detail-grid" id="ca-detail-grid">
+        <div class="ca-detail-cell"><span>Intelligence</span><strong>Hover or click a point</strong></div>
+        <div class="ca-detail-cell"><span>Cost per task</span><strong>--</strong></div>
+        <div class="ca-detail-cell"><span>Tokens per task</span><strong>--</strong></div>
+      </div>
+    </div>
+    <div class="ca-panel">
+      <h3 class="ca-detail-title">Model company legend</h3>
+      <div class="ca-legend" id="ca-legend"></div>
+    </div>
+  </div>
+  <p class="ca-footer-note">Intelligence uses the Artificial Analysis Coding Agent Index. Cost and token utilization are per-task averages from the uploaded coding-agent dataset. Colors identify the model company; harness is shown in hover and selection details only. Current-generation models and all model companies are enabled by default; use “Include older models” to reveal earlier Opus, GPT, Kimi, GLM, Composer, and related generations.</p>
+</div>
+
+<script>
+(() => {
+  const DATA = [{"rank":1,"label":"Claude Code - Opus 5 (xhigh)","agent":"Claude Code","model":"Opus 5 (xhigh)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":66.74377366641141,"tokens":21823529.824506782,"cost":8.234594254641607,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":2,"label":"Codex - GPT-5.6 Sol (max)","agent":"Codex","model":"GPT-5.6 Sol (max)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":66.5698486709049,"tokens":13228192.3831776,"cost":7.0835100321910645,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":3,"label":"Claude Code - Fable 5 (max) (with fallback)","agent":"Claude Code","model":"Fable 5 (max) (with fallback)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":65.8470366292233,"tokens":13982074.357217016,"cost":11.710527040238846,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":4,"label":"Claude Code - Opus 5 (max)","agent":"Claude Code","model":"Opus 5 (max)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":65.5251281214741,"tokens":23891138.252336435,"cost":8.949660113613346,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":5,"label":"Codex - GPT-5.6 Sol (xhigh)","agent":"Codex","model":"GPT-5.6 Sol (xhigh)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":65.09235470126134,"tokens":9940685.693665624,"cost":5.235289045690551,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":6,"label":"Grok Build - Grok 4.5 (high)","agent":"Grok Build","model":"Grok 4.5 (high)","agentCreator":"xAI","modelCreator":"xAI","performance":64.43924859568592,"tokens":3577705.588785044,"cost":2.5940533333333353,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":7,"label":"Codex - GPT-5.6 Sol (high)","agent":"Codex","model":"GPT-5.6 Sol (high)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":64.10963694006797,"tokens":8084866.696780904,"cost":4.144239101765319,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":8,"label":"Claude Code - Opus 5 (high)","agent":"Claude Code","model":"Opus 5 (high)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":63.3730800659148,"tokens":9699126.034267921,"cost":3.7974520290226352,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":9,"label":"Codex - GPT-5.6 Terra (max)","agent":"Codex","model":"GPT-5.6 Terra (max)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":62.28044140547706,"tokens":9465877.399792325,"cost":2.757234841121493,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":10,"label":"Claude Code - Opus 5 (medium)","agent":"Claude Code","model":"Opus 5 (medium)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":61.9193752293952,"tokens":7936908.352024915,"cost":3.1436240575635868,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":11,"label":"Codex - GPT-5.5 (xhigh)","agent":"Codex","model":"GPT-5.5 (xhigh)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":61.4850913880317,"tokens":12260230.264797531,"cost":5.069575952232605,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":12,"label":"Kimi Code CLI - Kimi K3","agent":"Kimi Code CLI","model":"Kimi K3","agentCreator":"Moonshot AI","modelCreator":"Moonshot AI","performance":61.335370891465665,"tokens":10619290.22409137,"cost":3.1751868971339543,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":13,"label":"Codex - GPT-5.6 Sol (medium)","agent":"Codex","model":"GPT-5.6 Sol (medium)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":60.6144468762225,"tokens":5817518.553478712,"cost":2.991342449636553,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":14,"label":"Claude Code - Opus 4.8 (max)","agent":"Claude Code","model":"Opus 4.8 (max)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":60.54088936618197,"tokens":17913878.257009346,"cost":7.697531218302191,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":15,"label":"Codex - GPT-5.6 Luna (max)","agent":"Codex","model":"GPT-5.6 Luna (max)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":58.659810865063534,"tokens":15463935.66666667,"cost":1.5669569975077882,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":16,"label":"Claude Code - Opus 4.8 (xhigh)","agent":"Claude Code","model":"Opus 4.8 (xhigh)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":58.47285848713197,"tokens":13752846.079958476,"cost":5.66619238421601,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":17,"label":"Codex - GPT-5.6 Terra (xhigh)","agent":"Codex","model":"GPT-5.6 Terra (xhigh)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":57.0735665725674,"tokens":6460892.47975078,"cost":1.8951321370716503,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":18,"label":"Claude Code - Opus 5 (low)","agent":"Claude Code","model":"Opus 5 (low)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":56.79527147554554,"tokens":5159611.7154724775,"cost":2.1784609327668933,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":19,"label":"Claude Code - Opus 4.8 (high)","agent":"Claude Code","model":"Opus 4.8 (high)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":56.69800035343857,"tokens":9106820.641744535,"cost":3.716595523883698,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":20,"label":"Codex - GPT-5.6 Terra (high)","agent":"Codex","model":"GPT-5.6 Terra (high)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":55.79267279595571,"tokens":5540011.526998961,"cost":1.5897404480789192,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":21,"label":"Codex - GPT-5.6 Luna (xhigh)","agent":"Codex","model":"GPT-5.6 Luna (xhigh)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":54.67014667699793,"tokens":12310694.31568016,"cost":1.2563853698857719,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":22,"label":"Codex - GPT-5.5 (medium)","agent":"Codex","model":"GPT-5.5 (medium)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":54.35866007518876,"tokens":6962550.336448594,"cost":2.7545190841121476,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":23,"label":"Codex - GPT-5.6 Sol (low)","agent":"Codex","model":"GPT-5.6 Sol (low)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":53.605601849963804,"tokens":3165239.3431983376,"cost":1.7175155051921107,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":24,"label":"Claude Code - Opus 4.8 (medium)","agent":"Claude Code","model":"Opus 4.8 (medium)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":53.56028921544193,"tokens":7769574.429906539,"cost":3.263124304517135,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":25,"label":"Opencode - Muse Spark 1.1 (xhigh)","agent":"Opencode","model":"Muse Spark 1.1 (xhigh)","agentCreator":"SST","modelCreator":"Meta","performance":53.54216416163317,"tokens":12243521.204517122,"cost":1.4282406838058135,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":26,"label":"Codex - GPT-5.6 Luna (high)","agent":"Codex","model":"GPT-5.6 Luna (high)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":51.4166617577979,"tokens":9501375.00207686,"cost":0.9586630484942884,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":27,"label":"Claude Code - Opus 4.7 (max)","agent":"Claude Code","model":"Opus 4.7 (max)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":50.341430701122405,"tokens":15941370.5711319,"cost":5.632379174870198,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":28,"label":"Opencode - Opus 4.7 (medium)","agent":"Opencode","model":"Opus 4.7 (medium)","agentCreator":"Opencode","modelCreator":"Anthropic","performance":49.95702851826174,"tokens":7561039.665628259,"cost":2.9312448589044684,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":29,"label":"Codex - GPT-5.6 Terra (medium)","agent":"Codex","model":"GPT-5.6 Terra (medium)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":47.79765492012141,"tokens":3130307.8078920064,"cost":0.9012260285565921,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":30,"label":"Claude Code - Opus 4.8 (low)","agent":"Claude Code","model":"Opus 4.8 (low)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":47.41487643999776,"tokens":5166493.274143302,"cost":2.1509922458463144,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":31,"label":"Claude Code - Opus 4.6 (medium)","agent":"Claude Code","model":"Opus 4.6 (medium)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":46.4733742959549,"tokens":4476377.92628205,"cost":1.2777181349358966,"components":3,"evaluations":2,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":32,"label":"Cursor CLI - GPT-5.5 (medium)","agent":"Cursor CLI","model":"GPT-5.5 (medium)","agentCreator":"Cursor","modelCreator":"OpenAI","performance":46.08967068287653,"tokens":3989303.3560401546,"cost":2.0149947633091023,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":33,"label":"Cursor CLI - Opus 4.7 (medium)","agent":"Cursor CLI","model":"Opus 4.7 (medium)","agentCreator":"Cursor","modelCreator":"Anthropic","performance":45.35643673525487,"tokens":5656580.0716511,"cost":2.679868428478713,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":34,"label":"Codex - GPT-5.6 Sol (none)","agent":"Codex","model":"GPT-5.6 Sol (none)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":43.41743358300597,"tokens":3415816.0560747664,"cost":1.3982889177050872,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":35,"label":"Claude Code - GLM-5.2","agent":"Claude Code","model":"GLM-5.2","agentCreator":"Anthropic","modelCreator":"Z.ai","performance":43.17779252895107,"tokens":6517238.0312500205,"cost":6.5111001416041745,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":36,"label":"Codex - GPT-5.6 Luna (medium)","agent":"Codex","model":"GPT-5.6 Luna (medium)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":42.406924072639164,"tokens":4389586.230529595,"cost":0.47389570332294917,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":37,"label":"Claude Code - Opus 4.7 (medium)","agent":"Claude Code","model":"Opus 4.7 (medium)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":40.480948302815264,"tokens":4574240.579439249,"cost":1.6798828591381083,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":38,"label":"Codex - GPT-5.4 (medium)","agent":"Codex","model":"GPT-5.4 (medium)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":39.05103259941966,"tokens":5924972.105654764,"cost":2.4151032730654785,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":39,"label":"Cursor CLI - Composer 2.5 Fast","agent":"Cursor CLI","model":"Composer 2.5 Fast","agentCreator":"Cursor","modelCreator":"Cursor","performance":38.19077223302173,"tokens":4238246.973001041,"cost":0.5493899408099688,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":40,"label":"Cursor CLI - Composer 2.5","agent":"Cursor CLI","model":"Composer 2.5","agentCreator":"Cursor","modelCreator":"Cursor","performance":38.19077223302173,"tokens":3577610.0197300133,"cost":0.0822332840083074,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":41,"label":"Claude Code - Sonnet 4.6 (medium)","agent":"Claude Code","model":"Sonnet 4.6 (medium)","agentCreator":"Anthropic","modelCreator":"Anthropic","performance":37.60597492398807,"tokens":8481318.905503629,"cost":2.0058686946521287,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":42,"label":"Cursor CLI - GPT-5.4 (medium)","agent":"Cursor CLI","model":"GPT-5.4 (medium)","agentCreator":"Cursor","modelCreator":"OpenAI","performance":36.78955453149003,"tokens":4019701.7228915635,"cost":1.5458576141690654,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":43,"label":"Codex - GPT-5.6 Terra (low)","agent":"Codex","model":"GPT-5.6 Terra (low)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":36.72755174325257,"tokens":1529812.9345794397,"cost":0.4843241962616821,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":44,"label":"Claude Code - GLM-5.1","agent":"Claude Code","model":"GLM-5.1","agentCreator":"Anthropic","modelCreator":"Z.ai","performance":36.13153955717473,"tokens":25883374.202492192,"cost":4.331216886438215,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":45,"label":"Claude Code - Qwen3.7 Plus (thinking)","agent":"Claude Code","model":"Qwen3.7 Plus (thinking)","agentCreator":"Anthropic","modelCreator":"Alibaba Cloud","performance":35.9697734519316,"tokens":8695924.406022852,"cost":6.226261819189548,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":46,"label":"Claude Code - Kimi K2.6","agent":"Claude Code","model":"Kimi K2.6","agentCreator":"Anthropic","modelCreator":"Moonshot AI","performance":32.6185265237506,"tokens":11454355.889927303,"cost":1.188952092336449,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":47,"label":"Claude Code - DeepSeek V4 Pro (high)","agent":"Claude Code","model":"DeepSeek V4 Pro (high)","agentCreator":"Anthropic","modelCreator":"DeepSeek","performance":31.440020420893976,"tokens":9823145.160955353,"cost":0.27193461309864964,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":48,"label":"Gemini CLI - Gemini 3.1 Pro (high)","agent":"Gemini CLI","model":"Gemini 3.1 Pro (high)","agentCreator":"Google","modelCreator":"Google","performance":30.33847027566694,"tokens":4704372.036863967,"cost":1.996407103219105,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":49,"label":"Cursor CLI - Composer 2","agent":"Cursor CLI","model":"Composer 2","agentCreator":"Cursor","modelCreator":"Cursor","performance":27.47482505547023,"tokens":2954430.6674528313,"cost":0.04363878773584906,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":50,"label":"Codex - GPT-5.6 Luna (low)","agent":"Codex","model":"GPT-5.6 Luna (low)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":25.083413008049032,"tokens":1504521.291796471,"cost":0.2085558115264794,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":51,"label":"Codex - GPT-5.6 Terra (none)","agent":"Codex","model":"GPT-5.6 Terra (none)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":23.702812555224767,"tokens":1116050.1651090332,"cost":0.3699857113187954,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"},{"rank":52,"label":"Codex - GPT-5.6 Luna (none)","agent":"Codex","model":"GPT-5.6 Luna (none)","agentCreator":"OpenAI","modelCreator":"OpenAI","performance":20.4214603657938,"tokens":3566156.750778814,"cost":0.3519618591900316,"components":3,"evaluations":3,"source":"https://artificialanalysis.ai/agents/coding-agents"}];
+  const DEFAULT_COMPANIES = new Set(DATA.map(d=>d.modelCreator||'Unknown'));
+  const viewCopy = {
+    scatter3d:['3D scatter cube','Drag to rotate, scroll to zoom, and select a point for details.'],
+    bubble:['Bubble projection','Cost is horizontal, intelligence is vertical, and both bubble size and bubble color represent token use.'],
+    frontier:['Pareto frontier','The line connects configurations that are not dominated on both cost and intelligence.']
+  };
+
+  const root = document.getElementById('coding-agent-app');
+  const canvas = document.getElementById('ca-canvas');
+  const ctx = canvas.getContext('2d');
+  const wrap = document.getElementById('ca-canvas-wrap');
+  const tooltip = document.getElementById('ca-tooltip');
+  const empty = document.getElementById('ca-empty');
+  const providerBox = document.getElementById('ca-providers');
+  const legend = document.getElementById('ca-legend');
+  const zoneLegend = document.getElementById('ca-zone-legend');
+  const detailTitle = document.getElementById('ca-detail-title');
+  const detailGrid = document.getElementById('ca-detail-grid');
+  const viewTitle = document.getElementById('ca-view-title');
+  const viewHelp = document.getElementById('ca-view-help');
+  const displayToggle = document.getElementById('ca-display-toggle');
+  const displayBody = document.getElementById('ca-display-body');
+  const displaySummary = document.getElementById('ca-display-summary');
+
+  const controls = {
+    view:document.getElementById('ca-view'), search:document.getElementById('ca-search'),
+    perf:document.getElementById('ca-perf'), cost:document.getElementById('ca-cost'),
+    log:document.getElementById('ca-log'), labels:document.getElementById('ca-labels'),
+    zones:document.getElementById('ca-zones'), olderModels:document.getElementById('ca-older-models'),
+    reset:document.getElementById('ca-reset')
+  };
+
+  const companyCounts = DATA.reduce((m,d)=>{const c=d.modelCreator||'Unknown';m[c]=(m[c]||0)+1;return m;},{});
+  const companies = Object.keys(companyCounts).sort((a,b)=>{
+    const order={'OpenAI':0,'Anthropic':1,'xAI':2,'Moonshot AI':3,'Z.ai':4,'Google':5,'Cursor':6,'Meta':7,'Alibaba Cloud':8,'DeepSeek':9};
+    return (order[a]??20)-(order[b]??20) || companyCounts[b]-companyCounts[a] || a.localeCompare(b);
+  });
+  const state = {
+    companies:new Set(DEFAULT_COMPANIES), view:'scatter3d', search:'', minPerf:20, maxCost:12,
+    log:true, labels:false, zones:true, olderModels:false,
+    yaw:-0.72, pitch:0.42, zoom:1, dragging:false, moved:false, lastX:0, lastY:0,
+    selected:null, hovered:null, hitItems:[]
+  };
+
+  const shapes=['circle','square','diamond','triangle'];
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const fmtPct=v=>`${v.toFixed(1)}%`;
+  const fmtMoney=v=>v<1?`$${v.toFixed(2)}`:`$${v.toFixed(2)}`;
+  const fmtTokens=v=>v>=1e6?`${(v/1e6).toFixed(v>=1e7?1:2)}M`:v>=1e3?`${(v/1e3).toFixed(0)}K`:v.toFixed(0);
+  const fmtCompany=c=>c||'Unknown';
+  const modelDisplay=d=>`${fmtCompany(d.modelCreator)} · ${d.model}`;
+  const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const median=arr=>{const a=[...arr].sort((x,y)=>x-y);const n=a.length;return n?a.length%2?a[(n-1)/2]:(a[n/2-1]+a[n/2])/2:0;};
+  const transform=(v,log)=>log?Math.log10(Math.max(v,1e-9)):v;
+  const untransform=(v,log)=>log?10**v:v;
+  const norm=(v,ex)=>ex[1]===ex[0]?.5:(v-ex[0])/(ex[1]-ex[0]);
+
+  function theme(){
+    const s=getComputedStyle(root);
+    return {
+      panel:s.getPropertyValue('--ca-panel').trim(), card:s.getPropertyValue('--ca-card').trim(),
+      chip:s.getPropertyValue('--ca-chip').trim(), text:s.getPropertyValue('--ca-text').trim(),
+      muted:s.getPropertyValue('--ca-muted').trim(), border:s.getPropertyValue('--ca-border').trim(),
+      accent:s.getPropertyValue('--ca-accent').trim(),
+      series:[1,2,3,4,5,6].map(i=>s.getPropertyValue(`--ca-s${i}`).trim()),
+      zones:{good:s.getPropertyValue('--ca-good').trim(),cheap:s.getPropertyValue('--ca-cheap').trim(),expensive:s.getPropertyValue('--ca-expensive').trim(),efficient:s.getPropertyValue('--ca-efficient').trim(),bruteforce:s.getPropertyValue('--ca-bruteforce').trim()}
+    };
+  }
+  function colorFor(company){
+    const t=theme();
+    const primary={
+      'OpenAI':t.series[0], 'Anthropic':t.series[1], 'xAI':t.series[2],
+      'Moonshot AI':t.series[3], 'Z.ai':t.series[4], 'Google':t.series[5]
+    };
+    if(primary[company]) return primary[company];
+    const extra={'Cursor':'#0d9488','Meta':'#c026d3','Alibaba Cloud':'#ea580c','DeepSeek':'#4f46e5','Unknown':'#64748b'};
+    return extra[company] || '#64748b';
+  }
+  const shapeFor=()=> 'circle';
+
+  function isCurrentModel(d){
+    const patterns={
+      'OpenAI':/^GPT-5\.6\b/i,
+      'Anthropic':/^(Opus 5|Fable 5|Sonnet 5)\b/i,
+      'Moonshot AI':/^Kimi K3\b/i,
+      'Z.ai':/^GLM-5\.2\b/i,
+      'Cursor':/^Composer 2\.5\b/i
+    };
+    return patterns[d.modelCreator]?patterns[d.modelCreator].test(d.model):true;
+  }
+
+  function buildCompanies(){
+    providerBox.innerHTML=''; legend.innerHTML='';
+    companies.forEach(company=>{
+      const label=document.createElement('label'); label.className='ca-provider'; label.style.setProperty('--provider-color',colorFor(company));
+      const input=document.createElement('input'); input.type='checkbox'; input.checked=state.companies.has(company);
+      input.addEventListener('change',()=>{input.checked?state.companies.add(company):state.companies.delete(company);state.selected=null;update();});
+      const sw=document.createElement('span'); sw.className='ca-swatch'; sw.style.background=colorFor(company); sw.style.color=colorFor(company);
+      const labelText=document.createElement('span'); labelText.textContent=`${fmtCompany(company)} (${companyCounts[company]})`;
+      label.append(input,sw,labelText); providerBox.append(label);
+      const item=document.createElement('span'); item.className='ca-legend-item';
+      const lsw=document.createElement('span'); lsw.className='ca-swatch'; lsw.style.background=colorFor(company); lsw.style.color=colorFor(company);
+      item.append(lsw,document.createTextNode(fmtCompany(company))); legend.append(item);
+    });
+  }
+
+  function filteredData(){
+    const q=state.search.trim().toLowerCase();
+    return DATA.filter(d=>state.companies.has(d.modelCreator||'Unknown'))
+      .filter(d=>state.olderModels || isCurrentModel(d))
+      .filter(d=>d.performance>=state.minPerf && d.cost<=state.maxCost)
+      .filter(d=>!q || `${d.modelCreator} ${d.model} ${d.agent} ${d.agentCreator}`.toLowerCase().includes(q))
+      .sort((a,b)=>b.performance-a.performance || a.cost-b.cost);
+  }
+
+
+  function paretoFrontier(data){
+    const sorted=[...data].sort((a,b)=>a.cost-b.cost||b.performance-a.performance);
+    let best=-Infinity;const frontier=[];
+    for(const d of sorted){if(d.performance>best){frontier.push(d);best=d.performance;}}
+    return frontier;
+  }
+
+  function greatestParetoOutlier(data){
+    const frontier=paretoFrontier(data);
+    if(!frontier.length)return null;
+    if(frontier.length<3)return{d:frontier[frontier.length-1],uplift:0,frontier};
+    let winner=null;
+    for(let i=1;i<frontier.length-1;i++){
+      const prev=frontier[i-1],d=frontier[i],next=frontier[i+1];
+      const x0=Math.log10(Math.max(prev.cost,1e-9)),x=Math.log10(Math.max(d.cost,1e-9)),x1=Math.log10(Math.max(next.cost,1e-9));
+      if(x1===x0)continue;
+      const expected=prev.performance+(next.performance-prev.performance)*((x-x0)/(x1-x0));
+      const uplift=d.performance-expected;
+      if(!winner||uplift>winner.uplift)winner={d,uplift,frontier};
+    }
+    if(winner&&winner.uplift>0)return winner;
+    const d=frontier.reduce((a,b)=>b.performance>a.performance?b:a,frontier[0]);
+    return{d,uplift:0,frontier};
+  }
+
+  function updateMetrics(data){
+    document.getElementById('ca-count').textContent=data.length;
+    document.getElementById('ca-count-detail').textContent=data.length?`${new Set(data.map(d=>d.modelCreator||'Unknown')).size} model companies visible`:'No matching configurations';
+    const outlier=greatestParetoOutlier(data);
+    const low=data.reduce((a,d)=>!a||d.cost<a.cost?d:a,null);
+    document.getElementById('ca-best-perf').textContent=outlier?outlier.d.model:'--';
+    document.getElementById('ca-best-perf-detail').textContent=outlier?`${fmtCompany(outlier.d.modelCreator)} · ${fmtPct(outlier.d.performance)} at ${fmtMoney(outlier.d.cost)}${outlier.uplift>0?` · +${outlier.uplift.toFixed(1)} pts vs neighboring frontier trend`:''}`:'No matching data';
+    document.getElementById('ca-low-cost').textContent=low?fmtMoney(low.cost):'--';
+    document.getElementById('ca-low-cost-detail').textContent=low?modelDisplay(low):'No matching data';
+    document.getElementById('ca-med-tokens').textContent=data.length?fmtTokens(median(data.map(d=>d.tokens))):'--';
+  }
+
+  function showDetail(d){
+    if(!d){
+      detailTitle.textContent='Select a configuration';
+      detailGrid.innerHTML='<div class="ca-detail-cell"><span>Intelligence</span><strong>Hover or click a point</strong></div><div class="ca-detail-cell"><span>Cost per task</span><strong>--</strong></div><div class="ca-detail-cell"><span>Tokens per task</span><strong>--</strong></div>';
+      return;
+    }
+    detailTitle.textContent=modelDisplay(d);
+    detailGrid.innerHTML=`
+      <div class="ca-detail-cell"><span>Intelligence</span><strong>${fmtPct(d.performance)}</strong></div>
+      <div class="ca-detail-cell"><span>Cost per task</span><strong>${fmtMoney(d.cost)}</strong></div>
+      <div class="ca-detail-cell"><span>Tokens per task</span><strong>${fmtTokens(d.tokens)}</strong></div>
+      <div class="ca-detail-cell"><span>Model company</span><strong>${escapeHtml(fmtCompany(d.modelCreator))}</strong></div>
+      <div class="ca-detail-cell"><span>Model</span><strong>${escapeHtml(d.model)}</strong></div>
+      <div class="ca-detail-cell"><span>Harness</span><strong>${escapeHtml(d.agent||'--')}</strong></div>
+      <div class="ca-detail-cell"><span>Performance rank</span><strong>${d.rank?`#${d.rank}`:'--'}</strong></div>
+      <div class="ca-detail-cell"><span>Evaluations</span><strong>${d.evaluations??'--'}</strong></div>
+      <div class="ca-detail-cell"><span>Source</span><strong><a class="ca-source" href="${escapeHtml(d.source)}" target="_blank" rel="noreferrer">Open source page</a></strong></div>`;
+  }
+
+  function extent(data,accessor,log){
+    const vals=data.map(accessor).filter(Number.isFinite).map(v=>transform(v,log));
+    let lo=Math.min(...vals),hi=Math.max(...vals);
+    if(!Number.isFinite(lo)||!Number.isFinite(hi)) return [0,1];
+    if(lo===hi){const p=Math.abs(lo||1)*.08||.08;lo-=p;hi+=p;}
+    const pad=(hi-lo)*.06; return [lo-pad,hi+pad];
+  }
+
+  function resizeCanvas(){
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    const w=Math.max(320,Math.round(canvas.clientWidth));
+    const h=Math.max(380,Math.round(canvas.clientHeight));
+    if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){
+      canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    render();
+  }
+
+  function clear(){
+    const t=theme(); ctx.clearRect(0,0,canvas.clientWidth,canvas.clientHeight); ctx.fillStyle=t.panel; ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight); return t;
+  }
+
+  function drawShape(x,y,r,color,shape,alpha=1,outline=null){
+    ctx.save();ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.strokeStyle=outline||color;ctx.lineWidth=1.2;ctx.beginPath();
+    if(shape==='square')ctx.rect(x-r,y-r,2*r,2*r);
+    else if(shape==='diamond'){ctx.moveTo(x,y-r*1.25);ctx.lineTo(x+r*1.25,y);ctx.lineTo(x,y+r*1.25);ctx.lineTo(x-r*1.25,y);ctx.closePath();}
+    else if(shape==='triangle'){ctx.moveTo(x,y-r*1.3);ctx.lineTo(x+r*1.2,y+r);ctx.lineTo(x-r*1.2,y+r);ctx.closePath();}
+    else ctx.arc(x,y,r,0,Math.PI*2);
+    ctx.fill();ctx.stroke();ctx.restore();
+  }
+  function drawSelected(x,y,r,t){ctx.save();ctx.strokeStyle=t.text;ctx.lineWidth=2;ctx.beginPath();ctx.arc(x,y,r+4,0,Math.PI*2);ctx.stroke();ctx.restore();}
+
+  function roundRect(x,y,w,h,r){
+    const rr=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+rr,y);ctx.arcTo(x+w,y,x+w,y+h,rr);ctx.arcTo(x+w,y+h,x,y+h,rr);ctx.arcTo(x,y+h,x,y,rr);ctx.arcTo(x,y,x+w,y,rr);ctx.closePath();
+  }
+
+  function drawChip(text,x,y,t,color=t.text,align='left'){
+    ctx.save();ctx.font='600 11px ui-sans-serif, system-ui, sans-serif';const padX=6,w=ctx.measureText(text).width+padX*2,h=20;
+    let bx=align==='right'?x-w:align==='center'?x-w/2:x;let by=y-h/2;
+    bx=clamp(bx,4,canvas.clientWidth-w-4);by=clamp(by,4,canvas.clientHeight-h-4);
+    ctx.fillStyle=t.card;ctx.globalAlpha=.92;roundRect(bx,by,w,h,6);ctx.fill();ctx.globalAlpha=1;ctx.strokeStyle=t.border;ctx.lineWidth=1;ctx.stroke();
+    ctx.fillStyle=color;ctx.textBaseline='middle';ctx.fillText(text,bx+padX,by+h/2+.3);ctx.restore();return{bx,by,w,h};
+  }
+
+  function drawAllLabels(points,t){
+    if(!state.labels) return;
+    ctx.save();ctx.font='10px ui-sans-serif, system-ui, sans-serif';ctx.textBaseline='middle';
+    const placed=[];
+    const ordered=[...points].sort((a,b)=>(state.selected===b.d)-(state.selected===a.d)||(state.hovered===b.d)-(state.hovered===a.d)||a.y-b.y);
+    for(const p of ordered){
+      const text=modelDisplay(p.d); const w=Math.min(210,ctx.measureText(text).width+10),h=18; const r=p.r||5;
+      const candidates=[
+        [p.x+r+7,p.y-h-3],[p.x+r+7,p.y+3],[p.x-w-r-7,p.y-h-3],[p.x-w-r-7,p.y+3],
+        [p.x-w/2,p.y-r-h-7],[p.x-w/2,p.y+r+7],
+        [p.x+r+12,p.y-h/2],[p.x-w-r-12,p.y-h/2]
+      ];
+      let chosen=null,bestScore=Infinity;
+      for(const [cx0,cy0] of candidates){
+        const cx=clamp(cx0,4,canvas.clientWidth-w-4),cy=clamp(cy0,4,canvas.clientHeight-h-4);
+        const box={x:cx,y:cy,w,h};
+        let overlap=0;
+        for(const b of placed){const ox=Math.max(0,Math.min(box.x+box.w,b.x+b.w)-Math.max(box.x,b.x));const oy=Math.max(0,Math.min(box.y+box.h,b.y+b.h)-Math.max(box.y,b.y));overlap+=ox*oy;}
+        const leader=Math.hypot((cx+w/2)-p.x,(cy+h/2)-p.y);
+        const score=overlap*50+leader;
+        if(score<bestScore){bestScore=score;chosen=box;} if(overlap===0)break;
+      }
+      placed.push(chosen);
+      const active=state.selected===p.d||state.hovered===p.d;
+      ctx.strokeStyle=active?t.text:t.border;ctx.lineWidth=active?1.4:.8;ctx.globalAlpha=active?.95:.55;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(clamp(p.x,chosen.x,chosen.x+chosen.w),clamp(p.y,chosen.y,chosen.y+chosen.h));ctx.stroke();
+      ctx.globalAlpha=.93;ctx.fillStyle=t.card;roundRect(chosen.x,chosen.y,chosen.w,chosen.h,5);ctx.fill();ctx.globalAlpha=1;ctx.strokeStyle=active?t.text:t.border;ctx.stroke();
+      ctx.fillStyle=t.text;ctx.font=`${active?'600 ':' '}10px ui-sans-serif, system-ui, sans-serif`;ctx.fillText(text,chosen.x+5,chosen.y+h/2+.3,chosen.w-10);
+    }
+    ctx.restore();
+  }
+
+  function draw2DAxes(plot,xEx,yEx,t){
+    ctx.save();ctx.strokeStyle=t.border;ctx.fillStyle=t.muted;ctx.lineWidth=1;ctx.font='10px ui-sans-serif, system-ui, sans-serif';
+    for(let i=0;i<=5;i++){
+      const x=plot.l+(plot.r-plot.l)*i/5,y=plot.b-(plot.b-plot.t)*i/5;
+      ctx.globalAlpha=i===0?1:.55;ctx.beginPath();ctx.moveTo(x,plot.t);ctx.lineTo(x,plot.b);ctx.stroke();ctx.beginPath();ctx.moveTo(plot.l,y);ctx.lineTo(plot.r,y);ctx.stroke();
+      ctx.globalAlpha=1;ctx.textAlign='center';ctx.fillText(fmtMoney(untransform(xEx[0]+(xEx[1]-xEx[0])*i/5,state.log)),x,plot.b+18);
+      ctx.textAlign='right';ctx.fillText(fmtPct(yEx[0]+(yEx[1]-yEx[0])*i/5),plot.l-8,y+3);
+    }
+    ctx.fillStyle=t.text;ctx.font='600 12px ui-sans-serif, system-ui, sans-serif';ctx.textAlign='center';ctx.fillText('Cost per task (lower is better)',(plot.l+plot.r)/2,canvas.clientHeight-8);
+    ctx.save();ctx.translate(14,(plot.t+plot.b)/2);ctx.rotate(-Math.PI/2);ctx.fillText('Intelligence (higher is better)',0,0);ctx.restore();ctx.restore();
+  }
+
+  function mixColor(a,b,t){return[Math.round(a[0]+(b[0]-a[0])*t),Math.round(a[1]+(b[1]-a[1])*t),Math.round(a[2]+(b[2]-a[2])*t)];}
+  function rgbCss(rgb){return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;}
+  function tokenColor(v,tokEx){
+    const n=clamp(norm(transform(v,state.log),tokEx),0,1);
+    const green=[22,163,74], yellow=[245,158,11], red=[220,38,38];
+    const rgb=n<.5?mixColor(green,yellow,n/.5):mixColor(yellow,red,(n-.5)/.5);
+    return rgbCss(rgb);
+  }
+  function bubbleLegend(tokEx){
+    return `<span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${rgbCss([22,163,74])}"></span>Lower token use</span>`+
+      `<span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${rgbCss([245,158,11])}"></span>Mid token use</span>`+
+      `<span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${rgbCss([220,38,38])}"></span>Higher token use</span>`+
+      `<span class="ca-zone-note">Bubble projection uses bubble size and fill color for tokens. Bubble outline color indicates model company. Harness is listed in details and is not encoded.</span>`;
+  }
+
+  function renderBubble(data,t,frontier=false){
+    const W=canvas.clientWidth,H=canvas.clientHeight,plot={l:68,r:W-26,t:28,b:H-62};
+    const costEx=extent(data,d=>d.cost,state.log),perfEx=extent(data,d=>d.performance,false),tokEx=extent(data,d=>d.tokens,state.log);
+    draw2DAxes(plot,costEx,perfEx,t);
+    const points=data.map(d=>{const tokenNorm=norm(transform(d.tokens,state.log),tokEx);return{d,x:plot.l+norm(transform(d.cost,state.log),costEx)*(plot.r-plot.l),y:plot.b-norm(d.performance,perfEx)*(plot.b-plot.t),r:4+Math.pow(tokenNorm,1.65)*22};});
+    if(frontier){
+      const pointByData=new Map(points.map(p=>[p.d,p]));
+      const f=paretoFrontier(data).map(d=>pointByData.get(d)).filter(Boolean);
+      ctx.save();ctx.strokeStyle=t.accent;ctx.lineWidth=2.5;ctx.beginPath();f.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke();ctx.restore();
+      if(f.length) drawChip('Pareto frontier',f[f.length-1].x-3,Math.max(plot.t+12,f[f.length-1].y-18),t,t.accent,'right');
+    }
+    state.hitItems=[];
+    points.sort((a,b)=>b.r-a.r).forEach(p=>{
+      const active=state.selected===p.d||state.hovered===p.d;
+      const companyColor=colorFor(p.d.modelCreator);
+      const fill=frontier?companyColor:tokenColor(p.d.tokens,tokEx);
+      const outline=frontier?t.panel:companyColor;
+      drawShape(p.x,p.y,p.r,fill,shapeFor(),active?.98:.78,outline);
+      if(active)drawSelected(p.x,p.y,p.r,t);state.hitItems.push({type:'point',x:p.x,y:p.y,r:Math.max(9,p.r),d:p.d});
+    });
+    drawAllLabels(points,t);
+    ctx.save();ctx.fillStyle=t.muted;ctx.font='10px ui-sans-serif, system-ui, sans-serif';ctx.textAlign='right';
+    ctx.fillText(frontier?'Bubble size = tokens per task (expanded scale)':'Bubble size and color = tokens per task',plot.r,plot.t-10);ctx.restore();
+    zoneLegend.innerHTML=frontier?'':bubbleLegend(tokEx);
+  }
+
+  function render3D(data,t){
+    const W=canvas.clientWidth,H=canvas.clientHeight;
+    const costEx=extent(data,d=>d.cost,state.log),perfEx=extent(data,d=>d.performance,false),tokEx=extent(data,d=>d.tokens,state.log);
+    const cp=Math.cos(state.pitch),sp=Math.sin(state.pitch),cy=Math.cos(state.yaw),sy=Math.sin(state.yaw);
+    function project([x,y,z]){
+      const x1=x*cy-z*sy,z1=x*sy+z*cy,y1=y*cp-z1*sp,z2=y*sp+z1*cp;
+      const persp=4.2/(5.2-z2);const scale=Math.min(W,H)*.285*state.zoom*persp;
+      return{x:W*.51+x1*scale,y:H*.51-y1*scale,z:z2,p:persp};
+    }
+    const cube=[[-1,-1,-1],[1,-1,-1],[-1,1,-1],[1,1,-1],[-1,-1,1],[1,-1,1],[-1,1,1],[1,1,1]];
+    const edges=[[0,1],[0,2],[0,4],[1,3],[1,5],[2,3],[2,6],[3,7],[4,5],[4,6],[5,7],[6,7]];
+    const faces=[[0,1,3,2],[4,5,7,6],[0,1,5,4],[2,3,7,6],[0,2,6,4],[1,3,7,5]];
+    const projected=cube.map(project);
+    const medPerf=median(data.map(d=>d.performance)),medCost=median(data.map(d=>d.cost)),medTokens=median(data.map(d=>d.tokens));
+    const sx=norm(transform(medCost,state.log),costEx)*2-1,sySplit=norm(medPerf,perfEx)*2-1,sz=norm(transform(medTokens,state.log),tokEx)*2-1;
+    const desirableExpansion=.10;
+    const desirableX=sx+(1-sx)*desirableExpansion,desirableY=sySplit-(sySplit+1)*desirableExpansion;
+    const desirableCost=untransform(costEx[0]+((desirableX+1)/2)*(costEx[1]-costEx[0]),state.log);
+    const desirablePerf=perfEx[0]+((desirableY+1)/2)*(perfEx[1]-perfEx[0]);
+
+    function regionBox(xr,yr,zr,color,alpha){
+      const c=[[xr[0],yr[0],zr[0]],[xr[1],yr[0],zr[0]],[xr[0],yr[1],zr[0]],[xr[1],yr[1],zr[0]],[xr[0],yr[0],zr[1]],[xr[1],yr[0],zr[1]],[xr[0],yr[1],zr[1]],[xr[1],yr[1],zr[1]]].map(project);
+      const fs=faces.map(f=>({pts:f.map(i=>c[i]),z:f.reduce((s,i)=>s+c[i].z,0)/4})).sort((a,b)=>a.z-b.z);
+      ctx.save();ctx.fillStyle=color;ctx.strokeStyle=color;ctx.lineWidth=.7;
+      for(const f of fs){ctx.globalAlpha=alpha;ctx.beginPath();f.pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.closePath();ctx.fill();ctx.globalAlpha=Math.min(.26,alpha*3);ctx.stroke();}
+      ctx.restore();
+    }
+    if(state.zones){
+      regionBox([-1,1],[-1,desirableY],[-1,1],t.zones.cheap,.018);
+      regionBox([sx,1],[-1,1],[-1,1],t.zones.expensive,.022);
+      regionBox([-1,1],[-1,1],[-1,sz],t.zones.efficient,.022);
+      regionBox([-1,desirableX],[-1,1],[sz,1],t.zones.bruteforce,.052);
+      regionBox([-1,desirableX],[desirableY,1],[-1,sz],t.zones.good,.09);
+    }
+
+    ctx.save();ctx.strokeStyle=t.border;ctx.lineWidth=1.15;
+    edges.map(e=>({e,z:(projected[e[0]].z+projected[e[1]].z)/2})).sort((a,b)=>a.z-b.z).forEach(({e})=>{ctx.globalAlpha=.72;ctx.beginPath();ctx.moveTo(projected[e[0]].x,projected[e[0]].y);ctx.lineTo(projected[e[1]].x,projected[e[1]].y);ctx.stroke();});ctx.restore();
+
+    const origin=project([-1,-1,-1]);
+    const axes=[
+      {end:project([1,-1,-1]),name:'X · Cost per task',min:fmtMoney(untransform(costEx[0],state.log)),max:fmtMoney(untransform(costEx[1],state.log))},
+      {end:project([-1,1,-1]),name:'Y · Intelligence',min:fmtPct(perfEx[0]),max:fmtPct(perfEx[1])},
+      {end:project([-1,-1,1]),name:'Z · Tokens per task',min:fmtTokens(untransform(tokEx[0],state.log)),max:fmtTokens(untransform(tokEx[1],state.log))}
+    ];
+    ctx.save();ctx.strokeStyle=t.text;ctx.lineWidth=1.75;ctx.fillStyle=t.muted;ctx.font='10px ui-sans-serif, system-ui, sans-serif';
+    for(const a of axes){ctx.beginPath();ctx.moveTo(origin.x,origin.y);ctx.lineTo(a.end.x,a.end.y);ctx.stroke();ctx.fillText(a.max,a.end.x+5,a.end.y-5);drawChip(a.name,a.end.x+(a.end.x-origin.x)*.07,a.end.y+(a.end.y-origin.y)*.07,t,t.text,a.end.x<origin.x?'right':'left');}
+    ctx.restore();
+
+    if(state.zones){
+      const desirableLabel=project([-1+(desirableX+1)*.45,desirableY+(1-desirableY)*.6,-1+(sz+1)*.4]);
+      const cheapLabel=project([.45,-1+(desirableY+1)*.34,.7]);
+      const expensiveLabel=project([sx+(1-sx)*.72,.72,.65]);
+      const efficientLabel=project([.6,.35,-1+(sz+1)*.28]);
+      const bruteForceLabel=project([-1+(desirableX+1)*.42,.05,sz+(1-sz)*.63]);
+      drawChip('Desirable',desirableLabel.x,desirableLabel.y,t,t.zones.good,'center');
+      drawChip('Cheap zone',cheapLabel.x,cheapLabel.y,t,t.zones.cheap,'center');
+      drawChip('Expensive',expensiveLabel.x,expensiveLabel.y,t,t.zones.expensive,'center');
+      drawChip('Token efficient',efficientLabel.x,efficientLabel.y,t,t.zones.efficient,'center');
+      drawChip('Thinking brute force',bruteForceLabel.x,bruteForceLabel.y,t,t.zones.bruteforce,'center');
+    }
+
+    const points=data.map(d=>{const world=[norm(transform(d.cost,state.log),costEx)*2-1,norm(d.performance,perfEx)*2-1,norm(transform(d.tokens,state.log),tokEx)*2-1];return{...project(world),d};}).sort((a,b)=>a.z-b.z);
+    state.hitItems=[];
+    for(const p of points){const r=clamp(4.7*p.p,3.7,7.6),active=state.selected===p.d||state.hovered===p.d;p.r=r;drawShape(p.x,p.y,r,colorFor(p.d.modelCreator),shapeFor(),active?1:.86);if(active)drawSelected(p.x,p.y,r,t);state.hitItems.push({type:'point',x:p.x,y:p.y,r:Math.max(8,r+3),d:p.d});}
+    drawAllLabels(points,t);
+
+    if(state.zones){
+      zoneLegend.innerHTML=`
+        <span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${t.zones.good}"></span>Desirable: ≥ ${fmtPct(desirablePerf)}, ≤ ${fmtMoney(desirableCost)}, ≤ ${fmtTokens(medTokens)}</span>
+        <span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${t.zones.cheap}"></span>Cheap zone: below ${fmtPct(desirablePerf)} intelligence</span>
+        <span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${t.zones.bruteforce}"></span>Thinking brute force: ≤ ${fmtMoney(desirableCost)} and &gt; ${fmtTokens(medTokens)}</span>
+        <span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${t.zones.expensive}"></span>Expensive: &gt; ${fmtMoney(medCost)}</span>
+        <span class="ca-zone-chip"><span class="ca-zone-dot" style="background:${t.zones.efficient}"></span>Token efficient: ≤ ${fmtTokens(medTokens)}</span>
+        <span class="ca-zone-note">Thresholds recalculate from visible points. The desirable zone extends 10% deeper along cost and intelligence than the median split; zones may overlap.</span>`;
+    } else zoneLegend.innerHTML='';
+  }
+
+  function render(){
+    const t=clear(),data=filteredData();updateMetrics(data);empty.style.display=data.length?'none':'flex';
+    if(!data.length){state.hitItems=[];zoneLegend.innerHTML='';return;}
+    if(state.view==='scatter3d')render3D(data,t);else renderBubble(data,t,state.view==='frontier');
+    canvas.setAttribute('aria-label',`${viewCopy[state.view][0]} showing ${data.length} configurations. Intelligence ranges from ${fmtPct(Math.min(...data.map(d=>d.performance)))} to ${fmtPct(Math.max(...data.map(d=>d.performance)))}.`);
+  }
+
+  function updateDisplaySummary(){
+    const enabled=[];if(state.log)enabled.push('log scales');if(state.labels)enabled.push('all labels');if(state.zones)enabled.push('zone shading');if(state.olderModels)enabled.push('older models');
+    displaySummary.textContent=enabled.length?enabled.join(', '):'No optional display settings enabled';
+  }
+
+  function update(){
+    state.view=controls.view.value;state.search=controls.search.value;state.minPerf=Number(controls.perf.value);state.maxCost=Number(controls.cost.value);
+    state.log=controls.log.checked;state.labels=controls.labels.checked;state.zones=controls.zones.checked;state.olderModels=controls.olderModels.checked;
+    document.getElementById('ca-perf-value').textContent=`${state.minPerf}%`;document.getElementById('ca-cost-value').textContent=fmtMoney(state.maxCost);
+    viewTitle.textContent=viewCopy[state.view][0];viewHelp.textContent=viewCopy[state.view][1];controls.reset.textContent=state.view==='scatter3d'?'Reset view':'Clear selection';
+    controls.zones.disabled=state.view!=='scatter3d';updateDisplaySummary();
+    const visible=filteredData();if(state.selected&&!visible.includes(state.selected))state.selected=null;showDetail(state.selected);render();
+  }
+
+  function nearestHit(x,y){let best=null,dist=Infinity;for(const h of state.hitItems){const d=Math.hypot(x-h.x,y-h.y)-h.r;if(d<dist){dist=d;best=h;}}return dist<=8?best:null;}
+  function localPos(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};}
+  function showTooltip(hit,pos){
+    if(!hit){tooltip.style.display='none';return;}
+    const d=hit.d;tooltip.innerHTML=`<strong>${escapeHtml(modelDisplay(d))}</strong>Harness ${escapeHtml(d.agent||'--')}<br>Intelligence ${fmtPct(d.performance)}<br>Cost ${fmtMoney(d.cost)}<br>Tokens ${fmtTokens(d.tokens)}`;
+    tooltip.style.display='block';const pad=10;let left=pos.x+14,top=pos.y+14;const tw=tooltip.offsetWidth,th=tooltip.offsetHeight;if(left+tw>wrap.clientWidth-pad)left=pos.x-tw-14;if(top+th>wrap.clientHeight-pad)top=pos.y-th-14;tooltip.style.left=`${Math.max(pad,left)}px`;tooltip.style.top=`${Math.max(pad,top)}px`;
+  }
+
+  displayToggle.addEventListener('click',()=>{const expanded=displayToggle.getAttribute('aria-expanded')==='true';displayToggle.setAttribute('aria-expanded',String(!expanded));displayBody.hidden=expanded;});
+  canvas.addEventListener('pointerdown',e=>{const p=localPos(e);state.lastX=p.x;state.lastY=p.y;state.moved=false;if(state.view==='scatter3d'){state.dragging=true;canvas.setPointerCapture(e.pointerId);}});
+  canvas.addEventListener('pointermove',e=>{const p=localPos(e);if(state.dragging&&state.view==='scatter3d'){const dx=p.x-state.lastX,dy=p.y-state.lastY;if(Math.abs(dx)+Math.abs(dy)>2)state.moved=true;state.yaw+=dx*.009;state.pitch=clamp(state.pitch+dy*.009,-1.25,1.25);state.lastX=p.x;state.lastY=p.y;tooltip.style.display='none';render();return;}const hit=nearestHit(p.x,p.y),next=hit?hit.d:null;if(state.hovered!==next){state.hovered=next;render();}showTooltip(hit,p);canvas.style.cursor=hit?'pointer':state.view==='scatter3d'?'grab':'default';});
+  canvas.addEventListener('pointerup',e=>{if(state.dragging){state.dragging=false;try{canvas.releasePointerCapture(e.pointerId);}catch{}}if(!state.moved){const p=localPos(e),hit=nearestHit(p.x,p.y);state.selected=hit?hit.d:null;showDetail(state.selected);render();}});
+  canvas.addEventListener('pointerleave',()=>{if(!state.dragging){state.hovered=null;tooltip.style.display='none';render();}});
+  canvas.addEventListener('wheel',e=>{if(state.view!=='scatter3d')return;e.preventDefault();state.zoom=clamp(state.zoom*Math.exp(-e.deltaY*.001),.55,2.2);render();},{passive:false});
+  canvas.addEventListener('dblclick',()=>{state.yaw=-.72;state.pitch=.42;state.zoom=1;render();});
+  controls.reset.addEventListener('click',()=>{state.selected=null;state.hovered=null;if(state.view==='scatter3d'){state.yaw=-.72;state.pitch=.42;state.zoom=1;}showDetail(null);render();});
+  [controls.view,controls.log,controls.labels,controls.zones,controls.olderModels].forEach(el=>el.addEventListener('change',update));
+  [controls.search,controls.perf,controls.cost].forEach(el=>el.addEventListener('input',update));
+  window.addEventListener('ca-theme-change',()=>{render();});
+  new ResizeObserver(resizeCanvas).observe(wrap);
+  buildCompanies();update();resizeCanvas();
+})();
+</script>
+</section>
+</main>
+<script>
+(() => {
+  const bg=document.getElementById('particle-canvas');
+  const bgctx=bg.getContext('2d');
+  let particles=[];
+  let mouse={x:null,y:null};
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function colors(){
+    const s=getComputedStyle(document.documentElement);
+    return ['--color-pink','--color-blue','--color-yellow','--color-green','--color-purple'].map(v=>s.getPropertyValue(v).trim());
+  }
+  function resize(){
+    const dpr=Math.min(window.devicePixelRatio||1,1.5);
+    bg.width=Math.round(innerWidth*dpr);
+    bg.height=Math.round(innerHeight*dpr);
+    bg.style.width=innerWidth+'px';
+    bg.style.height=innerHeight+'px';
+    bgctx.setTransform(dpr,0,0,dpr,0,0);
+    const count=Math.min(120,Math.max(28,Math.round(innerWidth*innerHeight/16500)));
+    const palette=colors();
+    particles=Array.from({length:count},()=>({
+      x:Math.random()*innerWidth,
+      y:Math.random()*innerHeight,
+      r:Math.random()*2.2+.7,
+      vx:(Math.random()-.5)*.18,
+      vy:(Math.random()-.5)*.18,
+      c:palette[Math.floor(Math.random()*palette.length)]
+    }));
+  }
+  function frame(){
+    bgctx.clearRect(0,0,innerWidth,innerHeight);
+    for(let i=0;i<particles.length;i++){
+      const p=particles[i];
+      if(!reduce){
+        p.x+=p.vx; p.y+=p.vy;
+        if(p.x<0||p.x>innerWidth)p.vx*=-1;
+        if(p.y<0||p.y>innerHeight)p.vy*=-1;
+        if(mouse.x!==null){
+          const dx=mouse.x-p.x,dy=mouse.y-p.y,dist=Math.hypot(dx,dy)||1;
+          if(dist<140){p.x+=dx/dist*.12;p.y+=dy/dist*.12;}
+        }
+      }
+      bgctx.globalAlpha=.22;
+      bgctx.fillStyle=p.c;
+      bgctx.beginPath();
+      bgctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      bgctx.fill();
+      for(let j=i+1;j<particles.length;j++){
+        const q=particles[j],dist=Math.hypot(p.x-q.x,p.y-q.y);
+        if(dist<105){
+          bgctx.globalAlpha=.045*(1-dist/105);
+          bgctx.strokeStyle=p.c;
+          bgctx.lineWidth=.7;
+          bgctx.beginPath();
+          bgctx.moveTo(p.x,p.y);
+          bgctx.lineTo(q.x,q.y);
+          bgctx.stroke();
+        }
+      }
+    }
+    bgctx.globalAlpha=1;
+    requestAnimationFrame(frame);
+  }
+  addEventListener('resize',resize);
+  addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY;});
+  addEventListener('mouseleave',()=>{mouse.x=null;mouse.y=null;});
+  resize();
+  frame();
+  window.__DRC_OLED_READY__=true;
+})();
+</script>
+</body>
+</html>
