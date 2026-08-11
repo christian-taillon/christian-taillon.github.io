@@ -270,11 +270,20 @@ body { background:#000000 !important; }
 .ca-price-notice{width:100%;max-width:1280px;margin:0 auto 18px;padding:22px 26px;border:1px solid var(--color-yellow);border-left:4px solid var(--color-yellow);border-radius:1rem;background:rgba(255,255,0,.045);box-shadow:0 0 28px -14px var(--color-yellow)}
 .ca-price-notice::before{content:"// PRICE UPDATE NOTICE";display:block;margin-bottom:10px;color:var(--color-yellow);font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
 .ca-price-notice p{margin:0;color:#e7e9ee;font-size:13px;line-height:1.66}
+.ca-price-notice .ca-estimate-highlight{color:var(--color-yellow)}
 .ca-price-notice a{color:var(--color-yellow);text-decoration:underline;text-underline-offset:2px}
 .ca-price-notice strong{color:#fff;font-weight:600}
+.ca-estimate-highlight{color:var(--color-yellow)!important;font-weight:600}
+.ca-estimated-cost{color:var(--color-yellow)!important}
 .ca-chart-note{margin:14px 0 0;padding:12px 14px;border:1px solid var(--card-border);border-left:3px solid var(--color-yellow);border-radius:.6rem;background:#050505;color:var(--text-muted);font-family:'JetBrains Mono',monospace;font-size:10px;line-height:1.6;letter-spacing:.03em}
 .ca-chart-note a{color:var(--color-yellow);text-decoration:underline;text-underline-offset:2px}
 .ca-chart-note strong{color:var(--color-yellow);font-weight:600}
+.ca-chart-panel>.ca-chart-note:first-child{margin:0}
+#coding-agent-app .ca-price-mode-control{margin:10px 0 22px;padding:12px 14px;border:1px solid rgba(255,255,0,.28);border-radius:.6rem;background:rgba(255,255,0,.035)}
+#coding-agent-app .ca-price-mode-control .ca-chart-price-toggle{width:100%;align-items:flex-start;color:var(--color-yellow);text-transform:none;letter-spacing:0}
+#coding-agent-app .ca-price-mode-control .ca-chart-price-toggle input{margin-top:2px;flex:none}
+#coding-agent-app .ca-price-mode-control .ca-chart-price-toggle strong{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase}
+#coding-agent-app .ca-price-mode-control .ca-chart-price-toggle small{display:block;margin-top:4px;color:var(--ca-muted);font-size:9px;line-height:1.5;letter-spacing:.02em}
 </style>
 </head>
 <body data-theme="dark-roast-oled" data-build="v5-zone-fix">
@@ -290,7 +299,7 @@ body { background:#000000 !important; }
   <p>Compare selected frontier coding-agent configurations across intelligence, cost, and token use.</p>
 </header>
 <aside class="ca-price-notice" role="note">
-  <p><strong>Pricing note:</strong> The costs shown below were calculated before OpenAI's July 30, 2026 price reduction. GPT-5.6 Luna now costs 80% less and Terra 20% less, while Sol is unchanged. These lower prices are not reflected in the per-task values, Pareto frontier, or rankings on this page. See <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">OpenAI's announcement</a> for current API pricing.</p>
+  <p><strong>Pricing note:</strong> The supplied costs were captured under OpenAI's initial GPT-5.6 pricing, before the July 30, 2026 reduction. <strong class="ca-estimate-highlight">The chart displays proportional post-reduction cost estimates by default.</strong> GPT-5.6 Luna is modeled at 20% of its supplied cost (80% less), GPT-5.6 Terra at 80% (20% less), and GPT-5.6 Sol is unchanged. The estimate can be disabled directly above the chart to compare against the original unmodified costs from before the price change. See <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">OpenAI's announcement</a> for current API pricing.</p>
 </aside>
 <main>
 <section id="coding-agent-app" aria-label="Coding agent intelligence, cost, and token utilization explorer">
@@ -656,7 +665,7 @@ body { background:#000000 !important; }
   <div class="ca-metrics" aria-live="polite">
     <div class="ca-metric"><div class="ca-metric-label">Configurations shown</div><div class="ca-metric-value" id="ca-count">0</div><div class="ca-metric-detail" id="ca-count-detail">Requested model families</div></div>
     <div class="ca-metric"><div class="ca-metric-label">Greatest Pareto outlier</div><div class="ca-metric-value" id="ca-best-perf">--</div><div class="ca-metric-detail" id="ca-best-perf-detail">--</div></div>
-    <div class="ca-metric"><div class="ca-metric-label">Lowest cost per task</div><div class="ca-metric-value" id="ca-low-cost">--</div><div class="ca-metric-detail" id="ca-low-cost-detail">--</div></div>
+    <div class="ca-metric"><div class="ca-metric-label" id="ca-low-cost-label">Lowest estimated cost per task</div><div class="ca-metric-value" id="ca-low-cost">--</div><div class="ca-metric-detail" id="ca-low-cost-detail">--</div></div>
     <div class="ca-metric"><div class="ca-metric-label">Median token use</div><div class="ca-metric-value" id="ca-med-tokens">--</div><div class="ca-metric-detail">Average total tokens per task</div></div>
   </div>
 
@@ -690,11 +699,10 @@ body { background:#000000 !important; }
 
     <div class="ca-display">
       <button class="ca-display-toggle" id="ca-display-toggle" type="button" aria-expanded="false" aria-controls="ca-display-body">
-        <span>Display options <small id="ca-display-summary">Log scales and zone shading enabled</small></span>
+        <span>Display options <small id="ca-display-summary">Zone shading enabled</small></span>
         <span class="ca-chevron" aria-hidden="true">▼</span>
       </button>
       <div class="ca-display-body" id="ca-display-body" hidden>
-        <label class="ca-check"><input id="ca-log" type="checkbox" checked> Log cost and tokens</label>
         <label class="ca-check"><input id="ca-labels" type="checkbox"> Show every point name</label>
         <label class="ca-check"><input id="ca-zones" type="checkbox" checked> Highlight 3D zones</label>
         <label class="ca-check"><input id="ca-older-models" type="checkbox"> Include older models</label>
@@ -704,6 +712,13 @@ body { background:#000000 !important; }
   </div>
 
   <div class="ca-panel ca-chart-panel">
+    <p class="ca-chart-note" id="ca-chart-note"><strong class="ca-estimate-highlight">Estimated post-reduction cost view is active.</strong> The source per-task costs were captured under OpenAI's initial GPT-5.6 pricing. This view proportionally applies the published price-only reductions: <strong class="ca-estimate-highlight">GPT-5.6 Luna ×0.20</strong>, <strong class="ca-estimate-highlight">GPT-5.6 Terra ×0.80</strong>, and GPT-5.6 Sol unchanged. Because the adjustment changes only the price input, not model behavior, intelligence, or token use, it provides a reasonable proportional estimate for cost comparison rather than a new benchmark measurement. The adjusted costs drive the filters, x-axis, Pareto frontier, zone thresholds, metrics, and detail values. <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">OpenAI pricing details</a>.</p>
+    <div class="ca-price-mode-control">
+      <label class="ca-check ca-chart-price-toggle">
+        <input id="ca-estimate-costs" type="checkbox" checked>
+        <span><strong>Use estimated post-reduction OpenAI costs</strong><small>Enabled by default. Turn off to compare against the original unmodified per-task costs from before the price change.</small></span>
+      </label>
+    </div>
     <div class="ca-chart-head">
       <div>
         <h2 class="ca-view-title" id="ca-view-title">3D scatter cube</h2>
@@ -717,7 +732,6 @@ body { background:#000000 !important; }
       <div class="ca-empty" id="ca-empty">No configurations match the current filters.</div>
     </div>
     <div class="ca-zone-legend" id="ca-zone-legend" aria-live="polite"></div>
-    <p class="ca-chart-note">Graph costs reflect pre-reduction pricing. OpenAI cut GPT-5.6 Luna by 80% and Terra by 20% on July 30, 2026 (Sol unchanged) — <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">details</a>. The points, Pareto frontier, and rankings here have not been updated.</p>
   </div>
 
   <div class="ca-bottom">
@@ -725,7 +739,7 @@ body { background:#000000 !important; }
       <h3 class="ca-detail-title" id="ca-detail-title">Select a configuration</h3>
       <div class="ca-detail-grid" id="ca-detail-grid">
         <div class="ca-detail-cell"><span>Intelligence</span><strong>Hover or click a point</strong></div>
-        <div class="ca-detail-cell"><span>Cost per task</span><strong>--</strong></div>
+        <div class="ca-detail-cell"><span>Estimated cost per task</span><strong>--</strong></div>
         <div class="ca-detail-cell"><span>Tokens per task</span><strong>--</strong></div>
       </div>
     </div>
@@ -734,7 +748,7 @@ body { background:#000000 !important; }
       <div class="ca-legend" id="ca-legend"></div>
     </div>
   </div>
-  <p class="ca-footer-note">Intelligence uses the Artificial Analysis Coding Agent Index. Cost and token utilization are per-task averages from the uploaded coding-agent dataset. Colors identify the model company; harness is shown in hover and selection details only. Current-generation models and all model companies are enabled by default; use “Include older models” to reveal earlier Opus, GPT, Kimi, GLM, Composer, and related generations. GPT-5.6 per-task costs reflect pre-reduction pricing; OpenAI lowered Luna by 80% and Terra by 20% on July 30, 2026 (Sol unchanged).</p>
+  <p class="ca-footer-note">Intelligence uses the Artificial Analysis Coding Agent Index. Cost and token utilization are per-task averages from the uploaded coding-agent dataset. Colors identify the model company; harness is shown in hover and selection details only. Current-generation models and all model companies are enabled by default; use “Include older models” to reveal earlier Opus, GPT, Kimi, GLM, Composer, and related generations. The cost axis uses the active price view; when enabled, the post-reduction estimate applies Luna ×0.20 and Terra ×0.80, with Sol and all other supplied costs unchanged.</p>
 </div>
 
 <script>
@@ -763,12 +777,14 @@ body { background:#000000 !important; }
   const displayToggle = document.getElementById('ca-display-toggle');
   const displayBody = document.getElementById('ca-display-body');
   const displaySummary = document.getElementById('ca-display-summary');
+  const chartNote = document.getElementById('ca-chart-note');
+  const lowCostLabel = document.getElementById('ca-low-cost-label');
 
   const controls = {
     view:document.getElementById('ca-view'), search:document.getElementById('ca-search'),
     perf:document.getElementById('ca-perf'), cost:document.getElementById('ca-cost'),
-    log:document.getElementById('ca-log'), labels:document.getElementById('ca-labels'),
-    zones:document.getElementById('ca-zones'), olderModels:document.getElementById('ca-older-models'),
+    labels:document.getElementById('ca-labels'), zones:document.getElementById('ca-zones'),
+    olderModels:document.getElementById('ca-older-models'), estimateCosts:document.getElementById('ca-estimate-costs'),
     reset:document.getElementById('ca-reset')
   };
 
@@ -779,7 +795,7 @@ body { background:#000000 !important; }
   });
   const state = {
     companies:new Set(DEFAULT_COMPANIES), view:'scatter3d', search:'', minPerf:20, maxCost:12,
-    log:true, labels:false, zones:true, olderModels:false,
+    log:true, labels:false, zones:true, olderModels:false, estimateCosts:true,
     yaw:-0.72, pitch:0.42, zoom:1, dragging:false, moved:false, lastX:0, lastY:0,
     selected:null, hovered:null, hitItems:[]
   };
@@ -796,6 +812,17 @@ body { background:#000000 !important; }
   const transform=(v,log)=>log?Math.log10(Math.max(v,1e-9)):v;
   const untransform=(v,log)=>log?10**v:v;
   const norm=(v,ex)=>ex[1]===ex[0]?.5:(v-ex[0])/(ex[1]-ex[0]);
+  const OPENAI_PRICE_FACTORS={luna:.2,terra:.8};
+  const priceFactorFor=d=>{
+    if(d.modelCreator!=='OpenAI')return 1;
+    const match=/\bGPT-5\.6\s+(Luna|Terra)\b/i.exec(d.model||'');
+    return match?OPENAI_PRICE_FACTORS[match[1].toLowerCase()]:1;
+  };
+  const isEstimatedOpenAICost=d=>state.estimateCosts&&priceFactorFor(d)!==1;
+  const costFor=d=>state.estimateCosts?d.cost*priceFactorFor(d):d.cost;
+  const costLabel=()=>state.estimateCosts?'Estimated cost per task':'Cost per task';
+  const costDetailLabel=d=>isEstimatedOpenAICost(d)?'Estimated cost per task':'Cost per task';
+  const costValueLabel=d=>isEstimatedOpenAICost(d)?'Estimated cost':'Cost';
 
   function theme(){
     const s=getComputedStyle(root);
@@ -850,14 +877,14 @@ body { background:#000000 !important; }
     const q=state.search.trim().toLowerCase();
     return DATA.filter(d=>state.companies.has(d.modelCreator||'Unknown'))
       .filter(d=>state.olderModels || isCurrentModel(d))
-      .filter(d=>d.performance>=state.minPerf && d.cost<=state.maxCost)
+      .filter(d=>d.performance>=state.minPerf && costFor(d)<=state.maxCost)
       .filter(d=>!q || `${d.modelCreator} ${d.model} ${d.agent} ${d.agentCreator}`.toLowerCase().includes(q))
-      .sort((a,b)=>b.performance-a.performance || a.cost-b.cost);
+      .sort((a,b)=>b.performance-a.performance || costFor(a)-costFor(b));
   }
 
 
   function paretoFrontier(data){
-    const sorted=[...data].sort((a,b)=>a.cost-b.cost||b.performance-a.performance);
+    const sorted=[...data].sort((a,b)=>costFor(a)-costFor(b)||b.performance-a.performance);
     let best=-Infinity;const frontier=[];
     for(const d of sorted){if(d.performance>best){frontier.push(d);best=d.performance;}}
     return frontier;
@@ -870,7 +897,7 @@ body { background:#000000 !important; }
     let winner=null;
     for(let i=1;i<frontier.length-1;i++){
       const prev=frontier[i-1],d=frontier[i],next=frontier[i+1];
-      const x0=Math.log10(Math.max(prev.cost,1e-9)),x=Math.log10(Math.max(d.cost,1e-9)),x1=Math.log10(Math.max(next.cost,1e-9));
+      const x0=Math.log10(Math.max(costFor(prev),1e-9)),x=Math.log10(Math.max(costFor(d),1e-9)),x1=Math.log10(Math.max(costFor(next),1e-9));
       if(x1===x0)continue;
       const expected=prev.performance+(next.performance-prev.performance)*((x-x0)/(x1-x0));
       const uplift=d.performance-expected;
@@ -885,10 +912,12 @@ body { background:#000000 !important; }
     document.getElementById('ca-count').textContent=data.length;
     document.getElementById('ca-count-detail').textContent=data.length?`${new Set(data.map(d=>d.modelCreator||'Unknown')).size} model companies visible`:'No matching configurations';
     const outlier=greatestParetoOutlier(data);
-    const low=data.reduce((a,d)=>!a||d.cost<a.cost?d:a,null);
+    const low=data.reduce((a,d)=>!a||costFor(d)<costFor(a)?d:a,null);
     document.getElementById('ca-best-perf').textContent=outlier?outlier.d.model:'--';
-    document.getElementById('ca-best-perf-detail').textContent=outlier?`${fmtCompany(outlier.d.modelCreator)} · ${fmtPct(outlier.d.performance)} at ${fmtMoney(outlier.d.cost)}${outlier.uplift>0?` · +${outlier.uplift.toFixed(1)} pts vs neighboring frontier trend`:''}`:'No matching data';
-    document.getElementById('ca-low-cost').textContent=low?fmtMoney(low.cost):'--';
+    document.getElementById('ca-best-perf-detail').textContent=outlier?`${fmtCompany(outlier.d.modelCreator)} · ${fmtPct(outlier.d.performance)} at ${fmtMoney(costFor(outlier.d))}${outlier.uplift>0?` · +${outlier.uplift.toFixed(1)} pts vs neighboring frontier trend`:''}`:'No matching data';
+    const lowCost=document.getElementById('ca-low-cost');
+    lowCost.textContent=low?fmtMoney(costFor(low)):'--';
+    lowCost.classList.toggle('ca-estimated-cost',Boolean(low&&isEstimatedOpenAICost(low)));
     document.getElementById('ca-low-cost-detail').textContent=low?modelDisplay(low):'No matching data';
     document.getElementById('ca-med-tokens').textContent=data.length?fmtTokens(median(data.map(d=>d.tokens))):'--';
   }
@@ -896,13 +925,14 @@ body { background:#000000 !important; }
   function showDetail(d){
     if(!d){
       detailTitle.textContent='Select a configuration';
-      detailGrid.innerHTML='<div class="ca-detail-cell"><span>Intelligence</span><strong>Hover or click a point</strong></div><div class="ca-detail-cell"><span>Cost per task</span><strong>--</strong></div><div class="ca-detail-cell"><span>Tokens per task</span><strong>--</strong></div>';
+      detailGrid.innerHTML=`<div class="ca-detail-cell"><span>Intelligence</span><strong>Hover or click a point</strong></div><div class="ca-detail-cell"><span>${costLabel()}</span><strong>--</strong></div><div class="ca-detail-cell"><span>Tokens per task</span><strong>--</strong></div>`;
       return;
     }
     detailTitle.textContent=modelDisplay(d);
+    const estimatedClass=isEstimatedOpenAICost(d)?' class="ca-estimated-cost"':'';
     detailGrid.innerHTML=`
       <div class="ca-detail-cell"><span>Intelligence</span><strong>${fmtPct(d.performance)}</strong></div>
-      <div class="ca-detail-cell"><span>Cost per task</span><strong>${fmtMoney(d.cost)}</strong></div>
+      <div class="ca-detail-cell"><span>${costDetailLabel(d)}</span><strong${estimatedClass}>${fmtMoney(costFor(d))}</strong></div>
       <div class="ca-detail-cell"><span>Tokens per task</span><strong>${fmtTokens(d.tokens)}</strong></div>
       <div class="ca-detail-cell"><span>Model company</span><strong>${escapeHtml(fmtCompany(d.modelCreator))}</strong></div>
       <div class="ca-detail-cell"><span>Model</span><strong>${escapeHtml(d.model)}</strong></div>
@@ -992,10 +1022,10 @@ body { background:#000000 !important; }
     for(let i=0;i<=5;i++){
       const x=plot.l+(plot.r-plot.l)*i/5,y=plot.b-(plot.b-plot.t)*i/5;
       ctx.globalAlpha=i===0?1:.55;ctx.beginPath();ctx.moveTo(x,plot.t);ctx.lineTo(x,plot.b);ctx.stroke();ctx.beginPath();ctx.moveTo(plot.l,y);ctx.lineTo(plot.r,y);ctx.stroke();
-      ctx.globalAlpha=1;ctx.textAlign='center';ctx.fillText(fmtMoney(untransform(xEx[0]+(xEx[1]-xEx[0])*i/5,state.log)),x,plot.b+18);
-      ctx.textAlign='right';ctx.fillText(fmtPct(yEx[0]+(yEx[1]-yEx[0])*i/5),plot.l-8,y+3);
+      ctx.globalAlpha=1;ctx.fillStyle=state.estimateCosts?t.accent:t.muted;ctx.textAlign='center';ctx.fillText(fmtMoney(untransform(xEx[0]+(xEx[1]-xEx[0])*i/5,state.log)),x,plot.b+18);
+      ctx.fillStyle=t.muted;ctx.textAlign='right';ctx.fillText(fmtPct(yEx[0]+(yEx[1]-yEx[0])*i/5),plot.l-8,y+3);
     }
-    ctx.fillStyle=t.text;ctx.font='600 12px ui-sans-serif, system-ui, sans-serif';ctx.textAlign='center';ctx.fillText('Cost per task (lower is better)',(plot.l+plot.r)/2,canvas.clientHeight-8);
+    ctx.fillStyle=state.estimateCosts?t.accent:t.text;ctx.font='600 12px ui-sans-serif, system-ui, sans-serif';ctx.textAlign='center';ctx.fillText(`${costLabel()} (lower is better)`,(plot.l+plot.r)/2,canvas.clientHeight-8);
     ctx.save();ctx.translate(14,(plot.t+plot.b)/2);ctx.rotate(-Math.PI/2);ctx.fillText('Intelligence (higher is better)',0,0);ctx.restore();ctx.restore();
   }
 
@@ -1016,9 +1046,9 @@ body { background:#000000 !important; }
 
   function renderBubble(data,t,frontier=false){
     const W=canvas.clientWidth,H=canvas.clientHeight,plot={l:68,r:W-26,t:28,b:H-62};
-    const costEx=extent(data,d=>d.cost,state.log),perfEx=extent(data,d=>d.performance,false),tokEx=extent(data,d=>d.tokens,state.log);
+    const costEx=extent(data,costFor,state.log),perfEx=extent(data,d=>d.performance,false),tokEx=extent(data,d=>d.tokens,state.log);
     draw2DAxes(plot,costEx,perfEx,t);
-    const points=data.map(d=>{const tokenNorm=norm(transform(d.tokens,state.log),tokEx);return{d,x:plot.l+norm(transform(d.cost,state.log),costEx)*(plot.r-plot.l),y:plot.b-norm(d.performance,perfEx)*(plot.b-plot.t),r:4+Math.pow(tokenNorm,1.65)*22};});
+    const points=data.map(d=>{const tokenNorm=norm(transform(d.tokens,state.log),tokEx);return{d,x:plot.l+norm(transform(costFor(d),state.log),costEx)*(plot.r-plot.l),y:plot.b-norm(d.performance,perfEx)*(plot.b-plot.t),r:4+Math.pow(tokenNorm,1.65)*22};});
     if(frontier){
       const pointByData=new Map(points.map(p=>[p.d,p]));
       const f=paretoFrontier(data).map(d=>pointByData.get(d)).filter(Boolean);
@@ -1042,7 +1072,7 @@ body { background:#000000 !important; }
 
   function render3D(data,t){
     const W=canvas.clientWidth,H=canvas.clientHeight;
-    const costEx=extent(data,d=>d.cost,state.log),perfEx=extent(data,d=>d.performance,false),tokEx=extent(data,d=>d.tokens,state.log);
+    const costEx=extent(data,costFor,state.log),perfEx=extent(data,d=>d.performance,false),tokEx=extent(data,d=>d.tokens,state.log);
     const cp=Math.cos(state.pitch),sp=Math.sin(state.pitch),cy=Math.cos(state.yaw),sy=Math.sin(state.yaw);
     function project([x,y,z]){
       const x1=x*cy-z*sy,z1=x*sy+z*cy,y1=y*cp-z1*sp,z2=y*sp+z1*cp;
@@ -1053,7 +1083,7 @@ body { background:#000000 !important; }
     const edges=[[0,1],[0,2],[0,4],[1,3],[1,5],[2,3],[2,6],[3,7],[4,5],[4,6],[5,7],[6,7]];
     const faces=[[0,1,3,2],[4,5,7,6],[0,1,5,4],[2,3,7,6],[0,2,6,4],[1,3,7,5]];
     const projected=cube.map(project);
-    const medPerf=median(data.map(d=>d.performance)),medCost=median(data.map(d=>d.cost)),medTokens=median(data.map(d=>d.tokens));
+    const medPerf=median(data.map(d=>d.performance)),medCost=median(data.map(costFor)),medTokens=median(data.map(d=>d.tokens));
     const sx=norm(transform(medCost,state.log),costEx)*2-1,sySplit=norm(medPerf,perfEx)*2-1,sz=norm(transform(medTokens,state.log),tokEx)*2-1;
     const desirableExpansion=.10;
     const desirableX=sx+(1-sx)*desirableExpansion,desirableY=sySplit-(sySplit+1)*desirableExpansion;
@@ -1083,12 +1113,12 @@ body { background:#000000 !important; }
 
     const origin=project([-1,-1,-1]);
     const axes=[
-      {end:project([1,-1,-1]),name:'X · Cost per task',min:fmtMoney(untransform(costEx[0],state.log)),max:fmtMoney(untransform(costEx[1],state.log))},
+      {end:project([1,-1,-1]),name:`X · ${costLabel()}`,min:fmtMoney(untransform(costEx[0],state.log)),max:fmtMoney(untransform(costEx[1],state.log))},
       {end:project([-1,1,-1]),name:'Y · Intelligence',min:fmtPct(perfEx[0]),max:fmtPct(perfEx[1])},
       {end:project([-1,-1,1]),name:'Z · Tokens per task',min:fmtTokens(untransform(tokEx[0],state.log)),max:fmtTokens(untransform(tokEx[1],state.log))}
     ];
     ctx.save();ctx.strokeStyle=t.text;ctx.lineWidth=1.75;ctx.fillStyle=t.muted;ctx.font='10px ui-sans-serif, system-ui, sans-serif';
-    for(const a of axes){ctx.beginPath();ctx.moveTo(origin.x,origin.y);ctx.lineTo(a.end.x,a.end.y);ctx.stroke();ctx.fillText(a.max,a.end.x+5,a.end.y-5);drawChip(a.name,a.end.x+(a.end.x-origin.x)*.07,a.end.y+(a.end.y-origin.y)*.07,t,t.text,a.end.x<origin.x?'right':'left');}
+     for(const a of axes){const axisColor=state.estimateCosts&&a.name.startsWith('X ·')?t.accent:t.muted;ctx.fillStyle=axisColor;ctx.beginPath();ctx.moveTo(origin.x,origin.y);ctx.lineTo(a.end.x,a.end.y);ctx.stroke();ctx.fillText(a.max,a.end.x+5,a.end.y-5);drawChip(a.name,a.end.x+(a.end.x-origin.x)*.07,a.end.y+(a.end.y-origin.y)*.07,t,axisColor,a.end.x<origin.x?'right':'left');}
     ctx.restore();
 
     if(state.zones){
@@ -1104,7 +1134,7 @@ body { background:#000000 !important; }
       drawChip('Thinking brute force',bruteForceLabel.x,bruteForceLabel.y,t,t.zones.bruteforce,'center');
     }
 
-    const points=data.map(d=>{const world=[norm(transform(d.cost,state.log),costEx)*2-1,norm(d.performance,perfEx)*2-1,norm(transform(d.tokens,state.log),tokEx)*2-1];return{...project(world),d};}).sort((a,b)=>a.z-b.z);
+    const points=data.map(d=>{const world=[norm(transform(costFor(d),state.log),costEx)*2-1,norm(d.performance,perfEx)*2-1,norm(transform(d.tokens,state.log),tokEx)*2-1];return{...project(world),d};}).sort((a,b)=>a.z-b.z);
     state.hitItems=[];
     for(const p of points){const r=clamp(4.7*p.p,3.7,7.6),active=state.selected===p.d||state.hovered===p.d;p.r=r;drawShape(p.x,p.y,r,colorFor(p.d.modelCreator),shapeFor(),active?1:.86);if(active)drawSelected(p.x,p.y,r,t);state.hitItems.push({type:'point',x:p.x,y:p.y,r:Math.max(8,r+3),d:p.d});}
     drawAllLabels(points,t);
@@ -1128,14 +1158,19 @@ body { background:#000000 !important; }
   }
 
   function updateDisplaySummary(){
-    const enabled=[];if(state.log)enabled.push('log scales');if(state.labels)enabled.push('all labels');if(state.zones)enabled.push('zone shading');if(state.olderModels)enabled.push('older models');
+    const enabled=[];if(state.labels)enabled.push('all labels');if(state.zones)enabled.push('zone shading');if(state.olderModels)enabled.push('older models');
     displaySummary.textContent=enabled.length?enabled.join(', '):'No optional display settings enabled';
   }
 
   function update(){
     state.view=controls.view.value;state.search=controls.search.value;state.minPerf=Number(controls.perf.value);state.maxCost=Number(controls.cost.value);
-    state.log=controls.log.checked;state.labels=controls.labels.checked;state.zones=controls.zones.checked;state.olderModels=controls.olderModels.checked;
+    state.labels=controls.labels.checked;state.zones=controls.zones.checked;state.olderModels=controls.olderModels.checked;state.estimateCosts=controls.estimateCosts.checked;
     document.getElementById('ca-perf-value').textContent=`${state.minPerf}%`;document.getElementById('ca-cost-value').textContent=fmtMoney(state.maxCost);
+    lowCostLabel.textContent=state.estimateCosts?'Lowest estimated cost per task':'Lowest cost per task';
+    chartNote.innerHTML=state.estimateCosts
+      ? '<strong class="ca-estimate-highlight">Estimated post-reduction cost view is active.</strong> The source per-task costs were captured under OpenAI\'s initial GPT-5.6 pricing. This view proportionally applies the published price-only reductions: <strong class="ca-estimate-highlight">GPT-5.6 Luna ×0.20</strong>, <strong class="ca-estimate-highlight">GPT-5.6 Terra ×0.80</strong>, and GPT-5.6 Sol unchanged. Because the adjustment changes only the price input, not model behavior, intelligence, or token use, it provides a reasonable proportional estimate for cost comparison rather than a new benchmark measurement. The adjusted costs drive the filters, x-axis, Pareto frontier, zone thresholds, metrics, and detail values. <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">OpenAI pricing details</a>.'
+      : '<strong>Supplied pre-reduction cost view is active.</strong> The chart uses the original per-task costs captured under OpenAI\'s initial GPT-5.6 pricing, without the July 30 modifiers, so GPT-5.6 Luna and Terra remain at their supplied values. Enable the estimate below to compare a proportional post-reduction scenario with Luna at ×0.20 and Terra at ×0.80; model behavior, intelligence, and token values remain unchanged. <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">OpenAI pricing details</a>.';
+    tooltip.style.display='none';
     viewTitle.textContent=viewCopy[state.view][0];viewHelp.textContent=viewCopy[state.view][1];controls.reset.textContent=state.view==='scatter3d'?'Reset view':'Clear selection';
     controls.zones.disabled=state.view!=='scatter3d';updateDisplaySummary();
     const visible=filteredData();if(state.selected&&!visible.includes(state.selected))state.selected=null;showDetail(state.selected);render();
@@ -1145,7 +1180,7 @@ body { background:#000000 !important; }
   function localPos(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};}
   function showTooltip(hit,pos){
     if(!hit){tooltip.style.display='none';return;}
-    const d=hit.d;tooltip.innerHTML=`<strong>${escapeHtml(modelDisplay(d))}</strong>Harness ${escapeHtml(d.agent||'--')}<br>Intelligence ${fmtPct(d.performance)}<br>Cost ${fmtMoney(d.cost)}<br>Tokens ${fmtTokens(d.tokens)}`;
+    const d=hit.d;const costMarkup=isEstimatedOpenAICost(d)?`<span class="ca-estimated-cost">${costValueLabel(d)} ${fmtMoney(costFor(d))}</span>`:`${costValueLabel(d)} ${fmtMoney(costFor(d))}`;tooltip.innerHTML=`<strong>${escapeHtml(modelDisplay(d))}</strong>Harness ${escapeHtml(d.agent||'--')}<br>Intelligence ${fmtPct(d.performance)}<br>${costMarkup}<br>Tokens ${fmtTokens(d.tokens)}`;
     tooltip.style.display='block';const pad=10;let left=pos.x+14,top=pos.y+14;const tw=tooltip.offsetWidth,th=tooltip.offsetHeight;if(left+tw>wrap.clientWidth-pad)left=pos.x-tw-14;if(top+th>wrap.clientHeight-pad)top=pos.y-th-14;tooltip.style.left=`${Math.max(pad,left)}px`;tooltip.style.top=`${Math.max(pad,top)}px`;
   }
 
@@ -1157,7 +1192,7 @@ body { background:#000000 !important; }
   canvas.addEventListener('wheel',e=>{if(state.view!=='scatter3d')return;e.preventDefault();state.zoom=clamp(state.zoom*Math.exp(-e.deltaY*.001),.55,2.2);render();},{passive:false});
   canvas.addEventListener('dblclick',()=>{state.yaw=-.72;state.pitch=.42;state.zoom=1;render();});
   controls.reset.addEventListener('click',()=>{state.selected=null;state.hovered=null;if(state.view==='scatter3d'){state.yaw=-.72;state.pitch=.42;state.zoom=1;}showDetail(null);render();});
-  [controls.view,controls.log,controls.labels,controls.zones,controls.olderModels].forEach(el=>el.addEventListener('change',update));
+  [controls.view,controls.labels,controls.zones,controls.olderModels,controls.estimateCosts].forEach(el=>el.addEventListener('change',update));
   [controls.search,controls.perf,controls.cost].forEach(el=>el.addEventListener('input',update));
   window.addEventListener('ca-theme-change',()=>{render();});
   new ResizeObserver(resizeCanvas).observe(wrap);
