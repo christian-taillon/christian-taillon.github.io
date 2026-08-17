@@ -44,6 +44,7 @@ navbar-links:
     - "GitHub Actions Abuse by Cryptominers": https://christiantaillon.medium.com/github-actions-abuse-by-cryptominers-8492e88e1400
   Dev and Projects:
     - Splunk Docker: "splunkdocker"
+    - "Podman vs Docker: Security Angle": "podman-security"
     - Splunk BOTSv2 Walkthrough: "splunkbotsv2"
     - Git CheatSheet: "git-cheatsheet"
     - Secure Package Management: "secure-pkg"
