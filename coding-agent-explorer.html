@@ -299,7 +299,7 @@ body { background:#000000 !important; }
   <p>Compare selected frontier coding-agent configurations across intelligence, cost, and token use.</p>
 </header>
 <aside class="ca-price-notice" role="note">
-  <p><strong>Pricing note:</strong> The supplied costs were captured under OpenAI's initial GPT-5.6 pricing, before the July 30, 2026 reduction. <strong class="ca-estimate-highlight">The chart displays proportional post-reduction cost estimates by default.</strong> GPT-5.6 Luna is modeled at 20% of its supplied cost (80% less), GPT-5.6 Terra at 80% (20% less), and GPT-5.6 Sol is unchanged. The estimate can be disabled directly above the chart to compare against the original unmodified costs from before the price change. See <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">OpenAI's announcement</a> for current API pricing.</p>
+  <p><strong>Pricing note:</strong> The supplied costs were captured under OpenAI's initial GPT-5.6 pricing. <strong class="ca-estimate-highlight">The chart shows these original costs by default; the toggle above the chart applies approximate proportional price reductions.</strong> On July 30, 2026, GPT-5.6 Luna API pricing was reduced 80% and GPT-5.6 Terra 20%. On August 21, 2026, GPT-5.6 Sol API and eligible purchased Codex/ChatGPT Work credit pricing was reduced by over 20% for a promotional period (available at least through November 21, 2026); included Plus, Pro, and Business subscription usage and limits are unchanged. Because the source benchmark does not retain enough input/cached-input/output token detail to reprice every historical task exactly, Sol is conservatively modeled at ×0.80 here; actual API-equivalent Sol cost could be somewhat lower depending on output-token share. These are estimated pay-per-token/API-equivalent task costs, not a representation of ChatGPT subscription quota usage. The approximate view multiplies the original costs by the published percentage reductions — it is not a retest measured at the new prices. Intelligence and token utilization are unchanged; only the derived cost view is adjusted. See <a href="https://developers.openai.com/api/docs/models/gpt-5.6-sol" target="_blank" rel="noreferrer">GPT-5.6 Sol model docs</a> and <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">OpenAI's announcement</a> for current API pricing.</p>
 </aside>
 <main>
 <section id="coding-agent-app" aria-label="Coding agent intelligence, cost, and token utilization explorer">
@@ -665,7 +665,7 @@ body { background:#000000 !important; }
   <div class="ca-metrics" aria-live="polite">
     <div class="ca-metric"><div class="ca-metric-label">Configurations shown</div><div class="ca-metric-value" id="ca-count">0</div><div class="ca-metric-detail" id="ca-count-detail">Requested model families</div></div>
     <div class="ca-metric"><div class="ca-metric-label">Greatest Pareto outlier</div><div class="ca-metric-value" id="ca-best-perf">--</div><div class="ca-metric-detail" id="ca-best-perf-detail">--</div></div>
-    <div class="ca-metric"><div class="ca-metric-label" id="ca-low-cost-label">Lowest estimated cost per task</div><div class="ca-metric-value" id="ca-low-cost">--</div><div class="ca-metric-detail" id="ca-low-cost-detail">--</div></div>
+    <div class="ca-metric"><div class="ca-metric-label" id="ca-low-cost-label">Lowest cost per task</div><div class="ca-metric-value" id="ca-low-cost">--</div><div class="ca-metric-detail" id="ca-low-cost-detail">--</div></div>
     <div class="ca-metric"><div class="ca-metric-label">Median token use</div><div class="ca-metric-value" id="ca-med-tokens">--</div><div class="ca-metric-detail">Average total tokens per task</div></div>
   </div>
 
@@ -712,11 +712,11 @@ body { background:#000000 !important; }
   </div>
 
   <div class="ca-panel ca-chart-panel">
-    <p class="ca-chart-note" id="ca-chart-note"><strong class="ca-estimate-highlight">Estimated post-reduction cost view is active.</strong> The source per-task costs were captured under OpenAI's initial GPT-5.6 pricing. This view proportionally applies the published price-only reductions: <strong class="ca-estimate-highlight">GPT-5.6 Luna ×0.20</strong>, <strong class="ca-estimate-highlight">GPT-5.6 Terra ×0.80</strong>, and GPT-5.6 Sol unchanged. Because the adjustment changes only the price input, not model behavior, intelligence, or token use, it provides a reasonable proportional estimate for cost comparison rather than a new benchmark measurement. The adjusted costs drive the filters, x-axis, Pareto frontier, zone thresholds, metrics, and detail values. <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">OpenAI pricing details</a>.</p>
+    <p class="ca-chart-note" id="ca-chart-note"><strong>Supplied original-cost view is active.</strong> The chart uses the original per-task costs captured under OpenAI's initial GPT-5.6 pricing. The toggle above can apply approximate proportional percentage reductions (Luna ×0.20, Terra ×0.80, Sol ×0.80) — a cost approximation derived from the published price changes, not a new benchmark measured at the new prices. Model behavior, intelligence, and token values remain unchanged. <a href="https://developers.openai.com/api/docs/models/gpt-5.6-sol" target="_blank" rel="noreferrer">GPT-5.6 Sol pricing</a>.</p>
     <div class="ca-price-mode-control">
       <label class="ca-check ca-chart-price-toggle">
-        <input id="ca-estimate-costs" type="checkbox" checked>
-        <span><strong>Use estimated post-reduction OpenAI costs</strong><small>Enabled by default. Turn off to compare against the original unmodified per-task costs from before the price change.</small></span>
+        <input id="ca-estimate-costs" type="checkbox">
+        <span><strong>Approximate price changes after Codex price reduction</strong><small>Off by default. When enabled, applies proportional percentage reductions to the supplied costs — an approximation of the reduced prices, not a retest with new pricing.</small></span>
       </label>
     </div>
     <div class="ca-chart-head">
@@ -748,7 +748,7 @@ body { background:#000000 !important; }
       <div class="ca-legend" id="ca-legend"></div>
     </div>
   </div>
-  <p class="ca-footer-note">Intelligence uses the Artificial Analysis Coding Agent Index. Cost and token utilization are per-task averages from the uploaded coding-agent dataset. Colors identify the model company; harness is shown in hover and selection details only. Current-generation models and all model companies are enabled by default; use “Include older models” to reveal earlier Opus, GPT, Kimi, GLM, Composer, and related generations. The cost axis uses the active price view; when enabled, the post-reduction estimate applies Luna ×0.20 and Terra ×0.80, with Sol and all other supplied costs unchanged.</p>
+  <p class="ca-footer-note">Intelligence uses the Artificial Analysis Coding Agent Index. Cost and token utilization are per-task averages from the uploaded coding-agent dataset. Colors identify the model company; harness is shown in hover and selection details only. Current-generation models and all model companies are enabled by default; use “Include older models” to reveal earlier Opus, GPT, Kimi, GLM, Composer, and related generations. The cost axis uses the active price view; when enabled, the approximate price-reduction view applies Luna ×0.20, Terra ×0.80, and Sol ×0.80 (conservative estimate); all other supplied costs are unchanged.</p>
 </div>
 
 <script>
@@ -795,7 +795,7 @@ body { background:#000000 !important; }
   });
   const state = {
     companies:new Set(DEFAULT_COMPANIES), view:'scatter3d', search:'', minPerf:20, maxCost:12,
-    log:true, labels:false, zones:true, olderModels:false, estimateCosts:true,
+    log:true, labels:false, zones:true, olderModels:false, estimateCosts:false,
     yaw:-0.72, pitch:0.42, zoom:1, dragging:false, moved:false, lastX:0, lastY:0,
     selected:null, hovered:null, hitItems:[]
   };
@@ -812,10 +812,10 @@ body { background:#000000 !important; }
   const transform=(v,log)=>log?Math.log10(Math.max(v,1e-9)):v;
   const untransform=(v,log)=>log?10**v:v;
   const norm=(v,ex)=>ex[1]===ex[0]?.5:(v-ex[0])/(ex[1]-ex[0]);
-  const OPENAI_PRICE_FACTORS={luna:.2,terra:.8};
+  const OPENAI_PRICE_FACTORS={sol:.8,luna:.2,terra:.8};
   const priceFactorFor=d=>{
     if(d.modelCreator!=='OpenAI')return 1;
-    const match=/\bGPT-5\.6\s+(Luna|Terra)\b/i.exec(d.model||'');
+    const match=/\bGPT-5\.6\s+(Sol|Luna|Terra)\b/i.exec(d.model||'');
     return match?OPENAI_PRICE_FACTORS[match[1].toLowerCase()]:1;
   };
   const isEstimatedOpenAICost=d=>state.estimateCosts&&priceFactorFor(d)!==1;
@@ -1168,8 +1168,8 @@ body { background:#000000 !important; }
     document.getElementById('ca-perf-value').textContent=`${state.minPerf}%`;document.getElementById('ca-cost-value').textContent=fmtMoney(state.maxCost);
     lowCostLabel.textContent=state.estimateCosts?'Lowest estimated cost per task':'Lowest cost per task';
     chartNote.innerHTML=state.estimateCosts
-      ? '<strong class="ca-estimate-highlight">Estimated post-reduction cost view is active.</strong> The source per-task costs were captured under OpenAI\'s initial GPT-5.6 pricing. This view proportionally applies the published price-only reductions: <strong class="ca-estimate-highlight">GPT-5.6 Luna ×0.20</strong>, <strong class="ca-estimate-highlight">GPT-5.6 Terra ×0.80</strong>, and GPT-5.6 Sol unchanged. Because the adjustment changes only the price input, not model behavior, intelligence, or token use, it provides a reasonable proportional estimate for cost comparison rather than a new benchmark measurement. The adjusted costs drive the filters, x-axis, Pareto frontier, zone thresholds, metrics, and detail values. <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">OpenAI pricing details</a>.'
-      : '<strong>Supplied pre-reduction cost view is active.</strong> The chart uses the original per-task costs captured under OpenAI\'s initial GPT-5.6 pricing, without the July 30 modifiers, so GPT-5.6 Luna and Terra remain at their supplied values. Enable the estimate below to compare a proportional post-reduction scenario with Luna at ×0.20 and Terra at ×0.80; model behavior, intelligence, and token values remain unchanged. <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noreferrer">OpenAI pricing details</a>.';
+      ? '<strong class="ca-estimate-highlight">Approximate price-reduction view is active.</strong> The source per-task costs were captured under OpenAI\'s initial GPT-5.6 pricing. This view applies proportional percentage reductions to those supplied costs: <strong class="ca-estimate-highlight">GPT-5.6 Luna ×0.20</strong>, <strong class="ca-estimate-highlight">GPT-5.6 Terra ×0.80</strong>, and <strong class="ca-estimate-highlight">GPT-5.6 Sol ×0.80</strong> (conservative estimate; see pricing note). These are cost approximations derived from the published price changes, not a retest measured at the new prices. Intelligence and token utilization are unchanged; only the derived cost view is adjusted. The adjusted costs drive the filters, x-axis, Pareto frontier, zone thresholds, metrics, and detail values. <a href="https://developers.openai.com/api/docs/models/gpt-5.6-sol" target="_blank" rel="noreferrer">GPT-5.6 Sol pricing</a>.'
+      : '<strong>Supplied original-cost view is active.</strong> The chart uses the original per-task costs captured under OpenAI\'s initial GPT-5.6 pricing, without the July 30 or August 21 modifiers, so GPT-5.6 Luna, Terra, and Sol remain at their supplied values. Enable the approximation above to apply proportional percentage reductions (Luna at ×0.20, Terra at ×0.80, Sol at ×0.80); model behavior, intelligence, and token values remain unchanged. <a href="https://developers.openai.com/api/docs/models/gpt-5.6-sol" target="_blank" rel="noreferrer">GPT-5.6 Sol pricing</a>.';
     tooltip.style.display='none';
     viewTitle.textContent=viewCopy[state.view][0];viewHelp.textContent=viewCopy[state.view][1];controls.reset.textContent=state.view==='scatter3d'?'Reset view':'Clear selection';
     controls.zones.disabled=state.view!=='scatter3d';updateDisplaySummary();
