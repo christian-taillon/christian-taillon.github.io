@@ -119,9 +119,9 @@ body::before {
 .theme-toggle-btn {
   display:inline-flex;
   align-items:center;
-  justify-content:center;
-  width:38px;
-  height:38px;
+  gap:7px;
+  min-height:38px;
+  padding:8px 15px;
   border:1px solid var(--border);
   border-radius:999px;
   background:var(--panel);
@@ -129,13 +129,16 @@ body::before {
   box-shadow:var(--shadow);
   cursor:pointer;
   transition:all .18s ease;
+  font:600 11px 'Inter',sans-serif;
+  letter-spacing:.02em;
 }
 .theme-toggle-btn:hover { border-color:color-mix(in srgb, var(--text) 18%, var(--border)); color:var(--text); box-shadow:var(--shadow-hover); }
 .theme-toggle-btn:focus-visible { outline:2px solid color-mix(in srgb, var(--blue) 75%, transparent); outline-offset:2px; }
-.theme-toggle-btn svg { width:16px; height:16px; }
-.theme-toggle-btn .sun-icon { display:none; }
-html.dark .theme-toggle-btn .sun-icon { display:block; }
-html.dark .theme-toggle-btn .moon-icon { display:none; }
+.theme-toggle-btn svg { width:15px; height:15px; flex:none; }
+.theme-label { line-height:1; }
+.theme-toggle-btn .moon-icon { display:none; }
+html.dark .theme-toggle-btn .moon-icon { display:block; }
+html.dark .theme-toggle-btn .sun-icon { display:none; }
 
 .app-header { padding:0 2px 8px; margin-bottom:18px; }
 .app-header h1 {
@@ -334,6 +337,7 @@ a { text-decoration-thickness:1px; }
     <button class="theme-toggle-btn" id="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle light and dark mode">
       <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
       <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+      <span class="theme-label" id="theme-label">Light</span>
     </button>
   </div>
 </header>
@@ -400,13 +404,17 @@ a { text-decoration-thickness:1px; }
   const saved=localStorage.getItem(storageKey);
   const prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   if(saved==='dark' || (!saved && prefersDark)) root.classList.add('dark');
+  const label=document.getElementById('theme-label');
+  const syncLabel=()=>{ if(label) label.textContent=root.classList.contains('dark')?'Dark':'Light'; };
   const toggle=()=>{
     root.classList.toggle('dark');
     localStorage.setItem(storageKey, root.classList.contains('dark') ? 'dark' : 'light');
+    syncLabel();
   };
   document.addEventListener('DOMContentLoaded',()=>{
     const btn=document.getElementById('theme-toggle');
     if(btn) btn.addEventListener('click',toggle);
+    syncLabel();
   });
 })();
 </script>
