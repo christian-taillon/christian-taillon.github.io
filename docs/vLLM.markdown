@@ -4,6 +4,8 @@ title: "vLLM Production Guide 2025"
 permalink: /vLLM
 ---
 
+> **Archived page:** This guide reflects vLLM-era assumptions from 2025 and is retained for reference only. For current deployment details, use the [official vLLM documentation](https://docs.vllm.ai/) and the [Local LLM Stack Guide](/llm_stack).
+
 # 🚀 vLLM Production Deployment Guide
 
 ## 🔥 **What is vLLM?**

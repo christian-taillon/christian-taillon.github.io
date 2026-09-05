@@ -331,10 +331,10 @@ image: /image/professional_circle.png
     </div>
 
     <div class="resource-card featured-card featured-agentic accent-yellow">
-      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🤖 Latest: Mastering Agentic Prompting</h3>
-      <p>Advanced techniques for building AI systems that can reason, plan, and execute complex tasks autonomously. Combining insights from Cerebras GLM 4.6 and Google Gemini 3.</p>
+      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🤖 Latest: Coding Agent Explorer</h3>
+      <p>Compare coding-agent configurations across benchmark performance, task cost, and token utilization.</p>
       <div class="pill-container">
-        <a href="/agentic-prompting/" class="pill-link" style="--theme-color: #fcc624;">Explore Guide &rarr;</a>
+        <a href="/coding-agent-explorer/" class="pill-link" style="--theme-color: #fcc624;">Explore Explorer &rarr;</a>
       </div>
     </div>
   </div>
@@ -359,12 +359,11 @@ image: /image/professional_circle.png
     </div>
 
     <div class="resource-card accent-yellow">
-        <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🛡️ GenAI Inference Security</h3>
-        <p>Protecting your AI infrastructure. Implementing guardrails for LLM inputs and outputs.</p>
-        <div class="pill-container">
-            <a href="/llama_guard" class="pill-link" style="--theme-color: #fcc624;">Llama Guard</a>
-            <a href="/token_guard" class="pill-link" style="--theme-color: #fcc624;">Token Guard</a>
-        </div>
+      <h3 style="color: #fcc624; border-bottom-color: #fcc624;">🛡️ GenAI Inference Security</h3>
+      <p>Protecting your AI infrastructure with deterministic input sanitization and practical inference controls.</p>
+      <div class="pill-container">
+          <a href="/token_guard" class="pill-link" style="--theme-color: #fcc624;">Token Guard</a>
+      </div>
     </div>
 
     <div class="resource-card accent-blue">
@@ -379,13 +378,12 @@ image: /image/professional_circle.png
     </div>
 
     <div class="resource-card accent-cyan">
-        <h3 style="color: #0dcaf0; border-bottom-color: #0dcaf0;">💻 Secure Local Models</h3>
-        <p>Practical local LLM deployment notes: model loading, OpenWebUI, vLLM, containers, GPU access, and where isolation actually matters.</p>
-        <div class="pill-container">
-            <a href="/llm_security" class="pill-link" style="--theme-color: #0dcaf0;">LLM Security</a>
-            <a href="/llm_stack" class="pill-link" style="--theme-color: #0dcaf0;">Local Stack</a>
-            <a href="/vLLM" class="pill-link" style="--theme-color: #0dcaf0;">vLLM Guide</a>
-        </div>
+      <h3 style="color: #0dcaf0; border-bottom-color: #0dcaf0;">💻 Secure Local Models</h3>
+      <p>Practical local LLM deployment notes: model loading, OpenWebUI, containers, GPU access, and where isolation actually matters.</p>
+      <div class="pill-container">
+          <a href="/llm_security" class="pill-link" style="--theme-color: #0dcaf0;">LLM Security</a>
+          <a href="/llm_stack" class="pill-link" style="--theme-color: #0dcaf0;">Local Stack</a>
+      </div>
     </div>
 
     <div class="resource-card accent-purple">

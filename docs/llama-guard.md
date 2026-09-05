@@ -4,6 +4,8 @@ title: "LlamaGuard Filter Pipeline"
 permalink: /llama_guard
 ---
 
+> **Archived page:** This OpenWebUI LlamaGuard demonstration is retained as a historical example. Implementation details and model references may no longer be current; see the active [OpenWebUI Security Pipelines](https://github.com/christian-taillon/open-webui-pipelines) project instead.
+
 ## Meta's LLamaGuard Filter
 -----------------------------------
 

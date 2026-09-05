@@ -5,6 +5,8 @@ description: "Comprehensive guide to agentic prompting strategies based on Googl
 permalink: /agentic-prompting/
 ---
 
+> **Archived page:** This general agentic-prompting guide is retained for reference. Use current model and tool documentation when designing a production workflow.
+
 <style>
   .hero-card {
     --card-accent: #fcc624;

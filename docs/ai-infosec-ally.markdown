@@ -5,6 +5,8 @@ permalink: /ai-infosec
 description: "Practical AI integration in security operations - realistic approaches and ethical considerations"
 ---
 
+> **Archived page:** This broad early-generation-AI article is retained for historical reference. Current material is maintained in [Agentic SOC](/agentic-soc/), [Agent Sandboxing](/ai-agent-sandboxing/), [LLM Security](/llm_security), and [Token Guard](/token_guard).
+
 # 🤖 AI as InfoSec Ally: Beyond the Hype
 
 > *"AI won't replace cybersecurity professionals - but cybersecurity professionals who effectively use AI will replace those who don't."*

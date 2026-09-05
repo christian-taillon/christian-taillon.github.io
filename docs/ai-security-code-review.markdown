@@ -5,6 +5,8 @@ permalink: /ai-security-code-review
 description: "System prompt for Sentinel, an AI agent specialized in Rust security code reviews"
 ---
 
+> **Archived page:** This standalone Rust code-review prompt is retained for reference but is no longer maintained as current guidance.
+
 # 🛡️ AI Security Code Review: Sentinel
 
 This page contains the system prompt for **Sentinel**, a specialized AI agent designed to perform security audits and code reviews for Rust projects. Sentinel focuses on identifying vulnerabilities, enforcing security best practices, and teaching developers about secure coding in Rust.
