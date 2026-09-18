@@ -2,19 +2,29 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
+const pageSchema = z
+  .object({
+    title: z.string(),
+    description: z.string().optional(),
+    permalink: z.string().optional(),
+    image: z.string().optional(),
+  })
+  .passthrough();
+
 const guides = defineCollection({
   loader: glob({
     pattern: 'docs/**/*.{md,markdown}',
     base: '.',
   }),
-  schema: z
-    .object({
-      title: z.string(),
-      description: z.string().optional(),
-      permalink: z.string().optional(),
-      image: z.string().optional(),
-    })
-    .passthrough(),
+  schema: pageSchema,
+});
+
+const rootGuides = defineCollection({
+  loader: glob({
+    pattern: '*.{md,markdown}',
+    base: '.',
+  }),
+  schema: pageSchema,
 });
 
 const briefs = defineCollection({
@@ -31,4 +41,4 @@ const briefs = defineCollection({
     .passthrough(),
 });
 
-export const collections = { guides, briefs };
+export const collections = { guides, rootGuides, briefs };
