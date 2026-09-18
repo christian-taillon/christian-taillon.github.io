@@ -1,0 +1,21 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page not found" description="The requested page could not be found.">
+  <section class="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6">
+    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-red">404</p>
+    <h1 class="mt-4 text-5xl font-bold tracking-tight md:text-7xl">Page not found.</h1>
+    <p class="mx-auto mt-5 max-w-xl text-lg leading-8 text-muted-foreground">
+      The page may have moved, or the link may be outdated.
+    </p>
+    <div class="mt-8 flex justify-center gap-3">
+      <a href="/" class="rounded-xl bg-primary px-5 py-3 font-semibold text-primary-foreground">
+        Back home
+      </a>
+      <a href="https://github.com/christian-taillon" class="rounded-xl border bg-card px-5 py-3 font-semibold hover:bg-muted">
+        GitHub
+      </a>
+    </div>
+  </section>
+</BaseLayout>
