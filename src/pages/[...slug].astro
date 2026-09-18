@@ -3,11 +3,16 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
+type GuideEntry = CollectionEntry<'guides'> | CollectionEntry<'rootGuides'>;
+
 export async function getStaticPaths() {
-  const entries = await getCollection('guides');
+  const entries: GuideEntry[] = [
+    ...(await getCollection('guides')),
+    ...(await getCollection('rootGuides')),
+  ];
 
   return entries
-    .filter((entry) => entry.data.permalink && entry.id !== 'docs/latest-intel-brief.markdown')
+    .filter((entry) => entry.data.permalink)
     .map((entry) => ({
       params: {
         slug: entry.data.permalink!.replace(/^\//, '').replace(/\/$/, ''),
@@ -17,7 +22,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  entry: CollectionEntry<'guides'>;
+  entry: GuideEntry;
 }
 
 const { entry } = Astro.props;
