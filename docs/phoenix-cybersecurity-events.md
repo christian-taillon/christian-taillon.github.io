@@ -72,23 +72,13 @@ Know of an Arizona cybersecurity event or community group that should be listed?
 
 ---
 
-## 🎤 Speaking & Community Engagement
+## 🎤 Share, Speak & Volunteer
 
-<img src="/image/ctaillon_presenting.jpg" alt="Christian Taillon Presenting" style="border-radius: 15px;">
+<img src="/image/ctaillon_presenting.jpg" alt="Cybersecurity community presentation" style="border-radius: 15px;">
 
-I am passionate about sharing knowledge and am happy to come speak at your event or organization!
+Strong security communities depend on practitioners sharing what they have learned. Consider reaching out to one of the groups above to volunteer, help organize an event, mentor others, or propose a talk.
 
-### Featured Speaking Highlights
-
-| Date | Event | Topic / Role |
-| :--- | :--- | :--- |
-| Feb 2026 | CactusCon 14 | DIY AI: Build Your Own Digital InfoSec Team |
-| Jan 2026 | CyberShare Scottsdale | Closing Keynote |
-| **Dec 4, 2025** | **10th Annual Cyber Southwest** | **Featured Keynote** |
-| Oct 2025 | ISSA Phoenix Q4 | Agentic SOC: Next-Gen Security Ops |
-| Feb 2025 | CactusCon 13 | CISO Village Workshop Presenter |
-| Feb 2024 | CactusCon 12 | Threat Hunting: Predator and No Longer Prey |
-| Feb 2023 | CactusCon 11 | Can Ducks Teach Us How to Share? (CTI) |
+Practical lessons, case studies, technical demonstrations, and lessons learned from real work can all make valuable community presentations. You do not need to wait until you are an expert to contribute something useful.
 
 ---
 
