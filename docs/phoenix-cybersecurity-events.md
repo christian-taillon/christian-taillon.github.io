@@ -1,60 +1,72 @@
 ---
 layout: page
 title: "Phoenix Cybersecurity Events & Community"
+description: "A practical directory of Phoenix and Arizona cybersecurity events, meetups, professional chapters, and free community training."
 permalink: /phoenix-cybersecurity-events
 ---
 
-# Phoenix Cybersecurity Events & Community
-
-Your quick reference for Phoenix, Arizona cybersecurity events and community groups.
+Your quick reference for Phoenix, Arizona cybersecurity events, community groups, professional chapters, and training.
 
 ---
 
-### 🎓 TISU Training
+### 🎓 TISU Cohort 9: Free Cybersecurity Training
+
 <img src="/image/tisu.jpg" alt="TISU Logo" style="border-radius: 15px;">
-Free Threat Intelligence Support Unit training cohort 8.
-[Register Here](https://www.eventcreate.com/e/tisu8)
+
+**Threat Intelligence Support Unit (TISU) Cohort 9** is underway and registration is open. TISU provides free cybersecurity training both in person at Grand Canyon University and remotely over Zoom.
+
+The cohort covers attack and defense fundamentals, MITRE ATT&CK, CIS Controls, SOC and incident response concepts, plus guest sessions on additional security topics. Sessions are also supported by a community Discord and recordings of most content.
+
+**[Register for TISU Cohort 9](https://www.eventcreate.com/e/tisu9)**
 
 ---
 
-## 📅 Upcoming Events 2026
+## 📅 Upcoming Cybersecurity Events
 
 | Date | Event | Location | Link |
 | :--- | :--- | :--- | :--- |
-| Jan 22 | ISSA Q1 Meeting | Phoenix, AZ | [Website](https://www.phoenixissa.org) |
-| Feb 6–7 | CactusCon 14 | Mesa, AZ | [Website](https://www.cactuscon.com) |
-| Mar 19 | Phoenix Technology Summit | Phoenix, AZ | [Website](https://eitevents.com/event_pages/phoenix-technology-summit-2026/) |
-| Apr 6-12 | Arizona Tech Week | Phoenix, AZ | [Website](https://www.azcommerce.com/az-tech-week/) |
-| Apr 23 | ISSA Q2 Meeting | Phoenix, AZ | [Website](https://www.phoenixissa.org) |
-| Apr 30 | Managed Security Services Forum | Phoenix, AZ | [Website](https://mssnetwork.com/phoenix) |
-| Jun 5-7 | Phoenix Fan Fusion (STEAM) | Phoenix, AZ | [Website](https://www.phoenixfanfusion.com) |
-| Jun 10 | SecureWorld Phoenix | Phoenix, AZ | [Website](https://www.secureworld.io/events) |
-| Jun 18 | Interface Phoenix | Phoenix, AZ | [Website](https://f2fevents.com/event/phx26/) |
-| Jul 23 | ISSA Q3 Meeting | Phoenix, AZ | [Website](https://www.phoenixissa.org) |
-| Aug 13 | Cyber Physical Convergence Forum | Phoenix, AZ | [Website](https://www.ctgintelligence.com/new-events/2026/8/13/tenth-annual-cyber-physical-convergence-forum-phoenix) |
-| Aug 26 | Arizona Technology Summit | Phoenix, AZ | [Website](https://technologysummit.net/arizona.html) |
-| Oct 22 | ISSA Q4 Meeting | Phoenix, AZ | [Website](https://www.phoenixissa.org) |
-| Oct 29 | FutureCon Phoenix | Phoenix, AZ | [Website](https://futureconevents.com/events/phoenix-az-2026/) |
+| Sep 23, 2026 | ISC2 Phoenix Happy Hour | Phoenix, AZ | [Website](https://isc2chapter-phoenix.org/index.php/events/list-of-events) |
+| Sep 24, 2026 | Phoenix Security & Audit Conference | Phoenix, AZ + Virtual | [Website](https://engage.isaca.org/phoenixchapter/events/eventdescription?CalendarEventKey=93145b8b-e46e-4428-baef-019bb3727f81&CommunityKey=826b54e0-d34d-4ad5-8914-acf4fd1d6a0a) |
+| Oct 20, 2026 | ISC2 Phoenix Membership Meeting | Phoenix, AZ | [Website](https://isc2chapter-phoenix.org/index.php/events/list-of-events) |
+| Oct 22, 2026 | ISSA Phoenix Q4 Education Meeting | Tempe, AZ | [Website](https://www.phoenixissa.org) |
+| Oct 29, 2026 | FutureCon Phoenix | Phoenix, AZ | [Website](https://futureconevents.com/events/phoenix-az-2026/) |
+| Nov 5, 2026 | ISACA Phoenix Chapter Meeting | Phoenix, AZ | [Website](https://engage.isaca.org/phoenixchapter/tools/donotdelete/chapterevents) |
+| Nov 20, 2026 | Scottsdale Cybersecurity Summit | Scottsdale, AZ | [Website](https://isc2chapter-phoenix.org/index.php/events/list-of-events-2/2026-scottsdale-cybersecurity-summit) |
+| Feb 5-6, 2027 | CactusCon 15 | Mesa, AZ | [Website](https://www.cactuscon.com) |
 
 ---
 
-## 🤝 Monthly Meetups
+## 🤝 Recurring Community Groups
 
 | Group | Frequency | Link |
 | :--- | :--- | :--- |
-| DC480 | 1st Tuesday | [dc480.io](https://dc480.io) |
+| DC480 | Typically 2nd Tuesday | [dc480.io](https://dc480.io) |
 | EVSec | 1st Thursday | [evsec.org](https://evsec.org) |
-| SWCSF | Monthly | [swcsf.org](https://swcsf.org/) |
+| Southwest CyberSec Forum | 1st Monday, 6-9 PM | [swcsf.org](https://swcsf.org/) |
 | Phoenix2600 | 1st Friday | [phx2600.org](https://www.phx2600.org/) |
-| Phoenix Linux Users Group | Varies | [phxlinux.org](https://phxlinux.org/) |
+| OWASP Phoenix | 1st Tuesday, 7:30-9 PM | [OWASP Phoenix](https://owasp.org/www-chapter-phoenix/) |
 
 ---
 
-## 🌟 Volunteer & Contact
+## 🛡️ Professional Chapters & Cyber Organizations
 
-**ISSA Phoenix** is seeking board members for Facilities, Sponsorship, Volunteer Coordination, and Social Media.
-*   **General**: `public(at)christiant.io`
-*   **Students**: `eduphxissa(at)christiant.io`
+| Organization | Focus | Link |
+| :--- | :--- | :--- |
+| ISSA Phoenix | Security education and professional community | [phoenixissa.org](https://www.phoenixissa.org/) |
+| ISC2 Phoenix Chapter | Professional development, networking, and CPEs | [isc2chapter-phoenix.org](https://isc2chapter-phoenix.org/) |
+| ISACA Phoenix | Security, audit, governance, risk, and compliance | [ISACA Phoenix](https://engage.isaca.org/phoenixchapter/) |
+| WiCyS Phoenix | Women in cybersecurity community and professional development | [WiCyS Phoenix](https://www.wicys.org/wicys-phoenix-az/) |
+| Cloud Security Alliance Arizona | Cloud security education and community | [securityaz.org](https://securityaz.org/) |
+| ACTRA | Collaborative cyber defense and threat intelligence | [actraaz.org](https://actraaz.org/) |
+
+---
+
+## 🌟 Community & Contact
+
+Know of an Arizona cybersecurity event or community group that should be listed? Send corrections or additions.
+
+* **General**: `public(at)christiant.io`
+* **Students / ISSA Phoenix**: `eduphxissa(at)christiant.io`
 
 ---
 
@@ -68,9 +80,9 @@ I am passionate about sharing knowledge and am happy to come speak at your event
 
 | Date | Event | Topic / Role |
 | :--- | :--- | :--- |
-| **Dec 4, 2025** | **10th Annual Cyber Southwest** | **Featured Keynote** |
 | Feb 2026 | CactusCon 14 | DIY AI: Build Your Own Digital InfoSec Team |
 | Jan 2026 | CyberShare Scottsdale | Closing Keynote |
+| **Dec 4, 2025** | **10th Annual Cyber Southwest** | **Featured Keynote** |
 | Oct 2025 | ISSA Phoenix Q4 | Agentic SOC: Next-Gen Security Ops |
 | Feb 2025 | CactusCon 13 | CISO Village Workshop Presenter |
 | Feb 2024 | CactusCon 12 | Threat Hunting: Predator and No Longer Prey |
@@ -78,4 +90,4 @@ I am passionate about sharing knowledge and am happy to come speak at your event
 
 ---
 
-*Last updated: January 2026*
+*Last updated: September 20, 2026*
