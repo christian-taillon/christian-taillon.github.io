@@ -83,12 +83,12 @@ The cohort covers attack and defense fundamentals, MITRE ATT&CK, CIS Controls, S
 
 | Date | Event | Location | Link |
 | :--- | :--- | :--- | :--- |
-| Sep 23, 2026 | ISC2 Phoenix Happy Hour | Phoenix, AZ | [Website](https://isc2chapter-phoenix.org/index.php/events/list-of-events) |
-| Sep 24, 2026 | Phoenix Security & Audit Conference | Phoenix, AZ + Virtual | [Website](https://engage.isaca.org/phoenixchapter/events/eventdescription?CalendarEventKey=93145b8b-e46e-4428-baef-019bb3727f81&CommunityKey=826b54e0-d34d-4ad5-8914-acf4fd1d6a0a) |
+| Sep 23, 2026 | ISC2 Phoenix Happy Hour | Phoenix, AZ | [Website](https://isc2chapter-phoenix.org/index.php/events/list-of-events/meet-and-greet/happy-hour-sept-2026) |
+| Sep 24, 2026 | Phoenix Security & Audit Conference | Phoenix, AZ + Virtual | [Website](https://engage.isaca.org/phoenixchapter/events/eventdescription?CalendarEventKey=93145b8b-e46e-4428-baef-019bb3727f81&CommunityKey=826b54e0-d34d-4ad5-8914-acf4fd1d6a0a&Home=%2Fphoenixchapter%2Ftools%2Fdonotdelete%2Fchapterevents) |
 | Oct 20, 2026 | ISC2 Phoenix Membership Meeting | Phoenix, AZ | [Website](https://isc2chapter-phoenix.org/index.php/events/list-of-events) |
 | Oct 22, 2026 | ISSA Phoenix Q4 Education Meeting | Tempe, AZ | [Website](https://www.phoenixissa.org) |
 | Oct 29, 2026 | FutureCon Phoenix | Phoenix, AZ | [Website](https://futureconevents.com/events/phoenix-az-2026/) |
-| Nov 5, 2026 | ISACA Phoenix Chapter Meeting | Phoenix, AZ | [Website](https://engage.isaca.org/phoenixchapter/tools/donotdelete/chapterevents) |
+| Nov 5, 2026 | ISACA Phoenix Chapter Meeting | Phoenix, AZ | [Website](https://engage.isaca.org/phoenixchapter/events/eventdescription?CalendarEventKey=ead60eff-7230-4c4f-ac4d-019bbe9becf0&CommunityKey=826b54e0-d34d-4ad5-8914-acf4fd1d6a0a&Home=%2Fphoenixchapter%2Ftools%2Fdonotdelete%2Fchapterevents) |
 | Nov 20, 2026 | Scottsdale Cybersecurity Summit | Scottsdale, AZ | [Website](https://isc2chapter-phoenix.org/index.php/events/list-of-events-2/2026-scottsdale-cybersecurity-summit) |
 | Feb 5-6, 2027 | CactusCon 15 | Mesa, AZ | [Website](https://www.cactuscon.com) |
 
@@ -103,8 +103,8 @@ The cohort covers attack and defense fundamentals, MITRE ATT&CK, CIS Controls, S
 | Group | Frequency | Link |
 | :--- | :--- | :--- |
 | DC480 | Typically 2nd Tuesday | [dc480.io](https://dc480.io) |
-| EVSec | 1st Thursday | [evsec.org](https://evsec.org) |
-| Southwest CyberSec Forum | 1st Monday, 6-9 PM | [swcsf.org](https://swcsf.org/) |
+| EVSec | 1st Thursday | [Meetup](https://www.meetup.com/evsecaz/) |
+| Southwest CyberSec Forum | 1st Monday, 6-9 PM | [swcsf.org](https://www.swcsf.org/about/) |
 | Phoenix2600 | 1st Friday | [phx2600.org](https://www.phx2600.org/) |
 | OWASP Phoenix | 1st Tuesday, 7:30-9 PM | [OWASP Phoenix](https://owasp.org/www-chapter-phoenix/) |
 
@@ -120,7 +120,7 @@ The cohort covers attack and defense fundamentals, MITRE ATT&CK, CIS Controls, S
 | :--- | :--- | :--- |
 | ISSA Phoenix | Security education and professional community | [phoenixissa.org](https://www.phoenixissa.org/) |
 | ISC2 Phoenix Chapter | Professional development, networking, and CPEs | [isc2chapter-phoenix.org](https://isc2chapter-phoenix.org/) |
-| ISACA Phoenix | Security, audit, governance, risk, and compliance | [ISACA Phoenix](https://engage.isaca.org/phoenixchapter/) |
+| ISACA Phoenix | Security, audit, governance, risk, and compliance | [ISACA Phoenix](https://engage.isaca.org/phoenixchapter/home) |
 | WiCyS Phoenix | Women in cybersecurity community and professional development | [WiCyS Phoenix](https://www.wicys.org/wicys-phoenix-az/) |
 | Cloud Security Alliance Arizona | Cloud security education and community | [securityaz.org](https://securityaz.org/) |
 | ACTRA | Collaborative cyber defense and threat intelligence | [actraaz.org](https://actraaz.org/) |
