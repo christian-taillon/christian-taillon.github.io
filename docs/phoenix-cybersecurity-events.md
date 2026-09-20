@@ -5,6 +5,60 @@ description: "A practical directory of Phoenix and Arizona cybersecurity events,
 permalink: /phoenix-cybersecurity-events
 ---
 
+<style>
+@media (max-width: 700px) {
+  .community-table table,
+  .community-table tbody,
+  .community-table tr,
+  .community-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .community-table table {
+    border: 0;
+  }
+
+  .community-table thead {
+    display: none;
+  }
+
+  .community-table tr {
+    margin: 0 0 1rem;
+    padding: 0.35rem 0;
+    border: 1px solid rgba(127, 127, 127, 0.35);
+    border-radius: 0.65rem;
+  }
+
+  .community-table td {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.45rem 0.75rem;
+    border: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .community-table td::before {
+    font-weight: 700;
+  }
+
+  .events-table td:nth-child(1)::before { content: "Date"; }
+  .events-table td:nth-child(2)::before { content: "Event"; }
+  .events-table td:nth-child(3)::before { content: "Location"; }
+  .events-table td:nth-child(4)::before { content: "Link"; }
+
+  .groups-table td:nth-child(1)::before { content: "Group"; }
+  .groups-table td:nth-child(2)::before { content: "Frequency"; }
+  .groups-table td:nth-child(3)::before { content: "Link"; }
+
+  .orgs-table td:nth-child(1)::before { content: "Organization"; }
+  .orgs-table td:nth-child(2)::before { content: "Focus"; }
+  .orgs-table td:nth-child(3)::before { content: "Link"; }
+}
+</style>
+
 Your quick reference for Phoenix, Arizona cybersecurity events, community groups, professional chapters, and training.
 
 ---
@@ -25,6 +79,8 @@ The cohort covers attack and defense fundamentals, MITRE ATT&CK, CIS Controls, S
 
 ## 📅 Upcoming Cybersecurity Events
 
+<div class="community-table events-table" markdown="1">
+
 | Date | Event | Location | Link |
 | :--- | :--- | :--- | :--- |
 | Sep 23, 2026 | ISC2 Phoenix Happy Hour | Phoenix, AZ | [Website](https://isc2chapter-phoenix.org/index.php/events/list-of-events) |
@@ -36,9 +92,13 @@ The cohort covers attack and defense fundamentals, MITRE ATT&CK, CIS Controls, S
 | Nov 20, 2026 | Scottsdale Cybersecurity Summit | Scottsdale, AZ | [Website](https://isc2chapter-phoenix.org/index.php/events/list-of-events-2/2026-scottsdale-cybersecurity-summit) |
 | Feb 5-6, 2027 | CactusCon 15 | Mesa, AZ | [Website](https://www.cactuscon.com) |
 
+</div>
+
 ---
 
 ## 🤝 Recurring Community Groups
+
+<div class="community-table groups-table" markdown="1">
 
 | Group | Frequency | Link |
 | :--- | :--- | :--- |
@@ -48,9 +108,13 @@ The cohort covers attack and defense fundamentals, MITRE ATT&CK, CIS Controls, S
 | Phoenix2600 | 1st Friday | [phx2600.org](https://www.phx2600.org/) |
 | OWASP Phoenix | 1st Tuesday, 7:30-9 PM | [OWASP Phoenix](https://owasp.org/www-chapter-phoenix/) |
 
+</div>
+
 ---
 
 ## 🛡️ Professional Chapters & Cyber Organizations
+
+<div class="community-table orgs-table" markdown="1">
 
 | Organization | Focus | Link |
 | :--- | :--- | :--- |
@@ -60,6 +124,8 @@ The cohort covers attack and defense fundamentals, MITRE ATT&CK, CIS Controls, S
 | WiCyS Phoenix | Women in cybersecurity community and professional development | [WiCyS Phoenix](https://www.wicys.org/wicys-phoenix-az/) |
 | Cloud Security Alliance Arizona | Cloud security education and community | [securityaz.org](https://securityaz.org/) |
 | ACTRA | Collaborative cyber defense and threat intelligence | [actraaz.org](https://actraaz.org/) |
+
+</div>
 
 ---
 
