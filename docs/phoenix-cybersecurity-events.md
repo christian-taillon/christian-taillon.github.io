@@ -13,7 +13,9 @@ Your quick reference for Phoenix, Arizona cybersecurity events, community groups
 
 <img src="/image/tisu.jpg" alt="TISU Logo" style="border-radius: 15px;">
 
-**Threat Intelligence Support Unit (TISU) Cohort 9** is underway and registration is open. TISU provides free cybersecurity training both in person at Grand Canyon University and remotely over Zoom.
+**Threat Intelligence Support Unit (TISU) Cohort 9** is underway and registration is open. TISU is a community program run by [ACTRA](https://actraaz.org/) and Grand Canyon University for individuals who want hands-on cybersecurity and threat intelligence training.
+
+Unlike ACTRA's organization-focused participation model, **TISU is designed for individual participants and does not require an NDA or organizational membership**. Training is free and available both in person at Grand Canyon University and remotely over Zoom.
 
 The cohort covers attack and defense fundamentals, MITRE ATT&CK, CIS Controls, SOC and incident response concepts, plus guest sessions on additional security topics. Sessions are also supported by a community Discord and recordings of most content.
 
