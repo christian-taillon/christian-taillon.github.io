@@ -13,3 +13,6 @@ thoughts.md
 .opencode/
 temp-thoughts.md
 ai-notes.md
+node_modules/
+dist/
+.astro/

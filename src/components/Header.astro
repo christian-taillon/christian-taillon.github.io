@@ -1,0 +1,62 @@
+---
+import ThemeToggle from '@/components/ThemeToggle.astro';
+import { NAV_ITEMS, SITE } from '@/data/site';
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 border-b bg-background/90 backdrop-blur">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
+    <a href="/" class="text-base font-bold tracking-tight">{SITE.name}</a>
+
+    <nav class="hidden items-center gap-2 lg:flex" aria-label="Primary navigation">
+      {NAV_ITEMS.map((item) => (
+        'children' in item ? (
+          <div class="group relative">
+            <button class="rounded-xl px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground">
+              {item.label}
+            </button>
+            <div class="absolute left-0 top-full hidden min-w-64 pt-2 group-hover:block group-focus-within:block">
+              <div class="rounded-xl border bg-card p-2 shadow-lg">
+                {item.children.map((child) => {
+                  const external = child.href.startsWith('http');
+                  return (
+                    <a
+                      href={child.href}
+                      target={external ? '_blank' : undefined}
+                      rel={external ? 'noopener noreferrer' : undefined}
+                      class="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+                    >
+                      {child.label}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <a
+            href={item.href}
+            class:list={[
+              'rounded-xl px-3 py-2 text-sm hover:bg-muted',
+              currentPath.startsWith(item.href) ? 'font-semibold text-foreground' : 'text-muted-foreground',
+            ]}
+          >
+            {item.label}
+          </a>
+        )
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <ThemeToggle />
+      <a
+        href={SITE.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground sm:inline-flex"
+      >
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>

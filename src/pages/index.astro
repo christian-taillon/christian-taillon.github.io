@@ -1,0 +1,89 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const sections = [
+  {
+    title: 'Information Security',
+    description: 'Practical references for detection engineering, SIEM work, threat hunting, endpoint forensics, and defensive operations.',
+    accent: 'text-blue',
+    links: [
+      ['/spl', 'Splunk Cheatsheet'],
+      ['/kql-guide', 'KQL Beginner Guide'],
+      ['/logscale', 'Falcon LogScale'],
+      ['/sigma-rule-guide', 'Sigma Rules'],
+    ],
+  },
+  {
+    title: 'AI and Machine Learning',
+    description: 'Model analysis, agent security, local inference, LLM application security, and hands-on AI engineering notes.',
+    accent: 'text-pink',
+    links: [
+      ['/gpt-5-6-value-analysis/', 'GPT-5.6 Value Map'],
+      ['/astra-model-explorer/', 'Astra Explorer'],
+      ['/coding-agent-explorer/', 'Coding Agent Explorer'],
+      ['/llm_security', 'LLM Security'],
+    ],
+  },
+  {
+    title: 'Threat Hunting and Intelligence',
+    description: 'Threat research, hunting workflows, intelligence resources, and projects focused on practical detection.',
+    accent: 'text-green',
+    links: [
+      ['https://github.com/christian-taillon/apt-tracker-md', 'APT Tracker'],
+      ['https://github.com/christian-taillon/detect-autoit', 'Detect AutoIT'],
+      ['/atomic', 'Atomic Guide'],
+      ['/ep-forensics', 'Endpoint Forensics'],
+    ],
+  },
+  {
+    title: 'Development and Projects',
+    description: 'Security-focused engineering notes, package hardening, containers, Git, Linux, and open-source projects.',
+    accent: 'text-purple',
+    links: [
+      ['/secure-pkg/', 'Secure Packages'],
+      ['/git-cheatsheet', 'Git Cheatsheet'],
+      ['/podman-security', 'Podman Security'],
+      ['/rc-files', 'RC Files'],
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Christian Taillon"
+  description="Christian Taillon's cybersecurity and AI resource hub."
+>
+  <section class="border-b">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary">christiant.io</p>
+      <h1 class="mt-5 max-w-4xl text-5xl font-bold tracking-tight md:text-7xl">
+        Cybersecurity, AI, and practical engineering notes.
+      </h1>
+      <p class="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">
+        A working collection of guides, tools, research, and reference material built from hands-on security and AI work.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/about" class="rounded-xl bg-primary px-5 py-3 font-semibold text-primary-foreground">About me</a>
+        <a href="https://github.com/christian-taillon" class="rounded-xl border bg-card px-5 py-3 font-semibold hover:bg-muted">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <div class="grid gap-5 md:grid-cols-2">
+      {sections.map((section) => (
+        <article class="click-card rounded-xl border bg-card p-7">
+          <h2 class:list={['text-2xl font-semibold tracking-tight', section.accent]}>{section.title}</h2>
+          <p class="mt-3 leading-7 text-muted-foreground">{section.description}</p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            {section.links.map(([href, label]) => (
+              <a href={href} class="rounded-full border px-3 py-1.5 text-sm font-semibold hover:bg-muted">
+                {label}
+              </a>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
