@@ -3,6 +3,7 @@ layout: page
 title: "Mastering Agentic Prompting"
 description: "Comprehensive guide to agentic prompting strategies based on Google's Gemini API documentation. Learn advanced system prompting, reasoning structures, and autonomous workflow design."
 permalink: /agentic-prompting/
+sitemap: false
 ---
 
 > **Archived page:** This general agentic-prompting guide is retained for reference. Use current model and tool documentation when designing a production workflow.

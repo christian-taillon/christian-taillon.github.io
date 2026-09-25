@@ -145,7 +145,6 @@ exclude:
   - Gemfile.lock
   - README.md
   - AGENTS.md
-  - ruby4_compat.rb
   - node_modules/
   - vendor/
 

@@ -1,322 +1,170 @@
 ---
 layout: page
-title: "2025 Cybersecurity Resources"
+title: "Cybersecurity Resources"
+description: "A maintained collection of practical cybersecurity frameworks, training, threat intelligence, detection engineering, DFIR, and career resources."
 permalink: /cyberresources
 ---
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-# 🚀 2025 Comprehensive Cybersecurity Resources
+# Cybersecurity Resources
 
-Welcome to the ultimate collection of cybersecurity resources for 2025. This curated list includes training platforms, threat intelligence sources, open-source tools, community resources, career development, hands-on labs, and research materials. All resources are actively maintained and current as of 2025.
+A practical set of resources I would point defenders, engineers, students, and security leaders toward today. This page intentionally avoids hard-coded pricing, resource counts, and other details that become stale quickly.
 
-## 📚 Free Training Platforms
+**Last reviewed: September 25, 2026.**
 
-### **SANS Institute**
-- **Free Training Events**: Regular webcasts, workshops, and local chapters
-- **Course Previews**: 70+ free course demos through SANS OnDemand
-- **Internet Storm Center**: Daily security analysis and handler diaries
-- **Open Source Tools**: 150+ instructor-developed security tools
-- **Website**: [sans.org](https://www.sans.org/)
-- **Notable Free Resources**: Security posters, cheat sheets, policy templates
+## Start Here: Frameworks and Live Reference Data
 
-### **Coursera Cybersecurity Programs**
-- **Google Cybersecurity Certificate**: Complete career path with hands-on labs
-- **IBM Cybersecurity Analyst Certificate**: Professional certificate program
-- **Google IT Support Certificate**: Foundational security knowledge
-- **University of Colorado Boulder MS in Computer Security**: Degree program
-- **Website**: [Coursera Cybersecurity](https://www.coursera.org/browse/information-technology/cybersecurity)
-- **Cost**: Free to audit, certificates require subscription
+- **[NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework)** - Risk-management framework with implementation guidance, profiles, mappings, and quick-start resources.
+- **[MITRE ATT&CK](https://attack.mitre.org/)** - Adversary behavior knowledge base for threat intelligence, detection engineering, hunting, and control validation.
+- **[CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)** - High-value input for vulnerability prioritization because entries represent vulnerabilities known to be exploited in the wild.
+- **[FIRST EPSS](https://www.first.org/epss/)** - Probability-oriented vulnerability prioritization signal that complements CVSS and KEV.
+- **[CIS Controls](https://www.cisecurity.org/controls)** - Prioritized defensive safeguards and implementation groups.
+- **[OWASP](https://owasp.org/)** - Application-security projects including the Top 10, ASVS, testing guidance, cheat sheets, and API security material.
 
-### **TryHackMe**
-- **Interactive Learning Paths**: Guided cybersecurity training from beginner to advanced
-- **Free Rooms**: 30+ free hands-on labs and challenges
-- **Competitions**: Regular CTF events and monthly competitions
-- **Discord Community**: Active learning community with 200k+ members
-- **Website**: [tryhackme.com](https://tryhackme.com/)
-- **Pricing**: Free tier available, premium from $14.99/month
+## Hands-on Learning
 
-### **Hack The Box**
-- **HTB Academy**: Structured learning paths for beginners to experts
-- **Labs**: 100+ active and retired machines
-- **Pro Labs**: Enterprise-focused challenge environments
-- **CTF Events**: Regular competitive events and seasons
-- **Website**: [hackthebox.com](https://www.hackthebox.com/)
-- **Pricing**: Free tier, starting from $10/month
+### Free or broadly accessible
 
-### **RangeForce**
-- **Cloud-Based Cyber Range**: Team-based training scenarios
-- **Free Edition**: Individual exercises and labs
-- **Battle Scenarios**: Real-time attack/defense simulations
-- **Skills Tracking**: Personalized learning paths and analytics
-- **Website**: [rangeforce.com](https://www.rangeforce.com/)
-- **Free Plan**: Individual user access to limited content
+- **[PortSwigger Web Security Academy](https://portswigger.net/web-security)** - Excellent web-security learning material paired with interactive labs.
+- **[CyLab Security Academy / picoCTF](https://picoctf.org/)** - Carnegie Mellon learning and CTF ecosystem for foundational through advanced practice.
+- **[OverTheWire](https://overthewire.org/wargames/)** - Command-line, Linux, web, and exploitation wargames.
+- **[Microsoft Learn Security](https://learn.microsoft.com/training/browse/?products=security)** - Microsoft security, identity, Azure, and Defender learning paths.
+- **[AWS Skill Builder](https://skillbuilder.aws/)** - AWS security and cloud learning paths.
+- **[Google Cloud Skills Boost](https://www.cloudskillsboost.google/)** - Google Cloud security and infrastructure labs.
 
-### **Immersive Labs**
-- **Hands-on Cyber Labs**: 400+ interactive labs across security domains
-- **Live Attack Scenarios**: Real-world threat simulations
-- **Enterprise Platform**: Team training and skill assessment
-- **Website**: [immersivelabs.com](https://www.immersivelabs.com/)
-- **Free Trial**: 14-day enterprise trial available
+### Structured lab platforms
 
-## 🕵️ Threat Intelligence Sources
+- **[TryHackMe](https://tryhackme.com/)** - Guided learning paths and hands-on labs.
+- **[Hack The Box Academy](https://academy.hackthebox.com/)** - Structured technical modules and practical exercises.
+- **[CyberDefenders](https://cyberdefenders.org/)** - Blue-team, DFIR, threat hunting, and SOC-oriented challenges.
 
-### **Major Security Vendor Research Blogs**
+## Detection Engineering and Security Operations
 
-#### **CrowdStrike**
-- **Falcon Blog**: Threat research, vulnerability analysis, attack trends
-- **2025 APJ eCrime Report**: Regional threat landscape analysis
-- **Adversary Updates**: APT group tracking and TTP analysis
-- **Website**: [crowdstrike.com/blog](https://www.crowdstrike.com/blog/)
-- **RSS**: Available for regular updates
+- **[Sigma](https://sigmahq.io/)** - Portable detection-rule format and community rule ecosystem.
+- **[YARA](https://yara.readthedocs.io/)** - Pattern-matching language widely used for malware identification and file analysis.
+- **[Suricata](https://suricata.io/)** - Network IDS/IPS and network-security monitoring.
+- **[Zeek](https://zeek.org/)** - Network telemetry and protocol analysis.
+- **[Security Onion](https://securityonionsolutions.com/software)** - Integrated network security monitoring and investigation platform.
+- **[osquery](https://www.osquery.io/)** - SQL-style endpoint instrumentation.
+- **[Velociraptor](https://docs.velociraptor.app/)** - Endpoint visibility, collection, DFIR, and threat hunting.
+- **[Volatility 3](https://volatility3.readthedocs.io/)** - Memory forensics framework.
+- **[Timesketch](https://timesketch.org/)** - Collaborative forensic timeline analysis.
 
-#### **Mandiant (Google Cloud)**
-- **Blog**: Incident reports, malware analysis, threat actor profiles
-- **Threat Intelligence Reports**: In-depth threat research publications
-- **Annual Reports**: M-Trends and frontline threat intelligence
-- **Website**: [mandiant.com/blog](https://www.mandiant.com/blog/)
+### christiant.io references
 
-#### **Elastic Security**
-- **Security Blog**: SIEM, endpoint detection, and threat hunting insights
-- **Elastic Security Labs**: Research on malware and attack techniques
-- **Open Source Tools**: Security tools and detection rules
-- **Website**: [elastic.co/blog/category/security](https://www.elastic.co/blog/category/security)
+- [Splunk Cheatsheet](/spl)
+- [Splunk Beginner Guide](/spl-beginner)
+- [KQL Beginner Guide](/kql-guide)
+- [Falcon LogScale / FQL](/logscale)
+- [Sigma Rule Guide](/sigma-rule-guide)
+- [YARA Rule Guide](/yara-rule-guide)
+- [Snort and Suricata Rule Guide](/snort-suricata-guide)
+- [Endpoint Forensics](/ep-forensics)
 
-#### **Splunk**
-- **Splunk Blog**: Security operations, threat detection, incident response
-- **Phantom Blog**: SOAR automation and security orchestration
-- **Research Papers**: Academic and practical security research
-- **Website**: [splunk.com/en_us/blog/security.html](https://www.splunk.com/en_us/blog/security.html)
+## Threat Intelligence and Vulnerability Research
 
-#### **Cisco Talos**
-- **Talos Intelligence Blog**: Daily malware analysis, vulnerability research
-- **Threat Source Newsletter**: Weekly threat intelligence roundup
-- **Vulnerability Roundups**: Monthly patch analysis and research
-- **Website**: [blog.talosintelligence.com](https://blog.talosintelligence.com/)
+Use a mix of government advisories, vendor research, and primary technical reporting rather than relying on a single feed.
 
-#### **Kaspersky Securelist**
-- **GReAT Research**: Global research and analysis team publications
-- **APT Reports**: Advanced persistent threat actor tracking
-- **Virus Watch**: Monthly malware and threat trends
-- **Website**: [securelist.com](https://securelist.com/)
+### Government and public-interest sources
 
-#### **Google TAG (Threat Analysis Group)**
-- **Blog**: Government-backed attack group research
-- **Threat Reports**: Nation-state cyber activity analysis
-- **Security Bulletins**: Product and platform security updates
-- **Website**: [blog.google/threat-analysis-group/](https://blog.google/threat-analysis-group/)
+- **[CISA Cybersecurity Advisories](https://www.cisa.gov/news-events/cybersecurity-advisories)**
+- **[CISA KEV Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)**
+- **[NIST National Vulnerability Database](https://nvd.nist.gov/)**
+- **[UK NCSC Guidance](https://www.ncsc.gov.uk/section/advice-guidance/all-topics)**
+- **[ENISA Publications](https://www.enisa.europa.eu/publications)**
 
-#### **Microsoft Threat Intelligence**
-- **Microsoft Security Blog**: Enterprise threat research and analysis
-- **Defender Research**: Endpoint protection threat insights
-- **Digital Crime Report**: Annual cybercrime analysis
-- **Website**: [microsoft.com/security/blog](https://www.microsoft.com/security/blog)
+### Research teams worth following
 
-#### **Palo Alto Networks Unit 42**
-- **Unit 42 Blog**: Threat intelligence, malware analysis, APT research
-- **Cloud Threat Reports**: SaaS and IaaS security research
-- **IoT Security Research**: Connected device vulnerability analysis
-- **Website**: [unit42.paloaltonetworks.com](https://unit42.paloaltonetworks.com/)
+- **[Google Threat Intelligence / Mandiant](https://cloud.google.com/security/resources)**  
+- **[Microsoft Threat Intelligence](https://www.microsoft.com/en-us/security/security-insider/intelligence-reports)**
+- **[Palo Alto Networks Unit 42](https://unit42.paloaltonetworks.com/)**
+- **[Cisco Talos](https://blog.talosintelligence.com/)**
+- **[CrowdStrike Counter Adversary Operations](https://www.crowdstrike.com/en-us/blog/category.counter-adversary-operations/)**
+- **[Elastic Security Labs](https://www.elastic.co/security-labs)**
+- **[SANS Internet Storm Center](https://isc.sans.edu/)**
 
-### **Government Threat Intelligence**
-- **CISA Alerts**: US-CERT security warnings and bulletins
-- **NCSC UK**: National Cyber Security Centre advisories
-- **ENISA Publications**: European Union Agency for Cybersecurity reports
-- **DHS CISA**: Department of Homeland Security cyber resources
+## Vulnerability Management
 
-## 🔧 Open Source Security Tools (2025 Essential Tools)
+A useful prioritization workflow generally combines:
 
-### **SIEM Solutions**
-- **Wazuh**: Open source SIEM with EDR capabilities
-- **ELK Stack**: Elasticsearch, Logstash, Kibana for log management
-- **Graylog**: Centralized log management platform
-- **OSSIM**: Open source SIM and SIEM solution
+1. **Exposure** - Is the affected product actually present and reachable?
+2. **Known exploitation** - Check CISA KEV and credible threat reporting.
+3. **Exploit likelihood** - Use signals such as EPSS.
+4. **Technical severity** - Use CVSS and vendor analysis as context, not the only decision point.
+5. **Business impact** - Identity, privilege, data, criticality, and blast radius.
+6. **Compensating controls** - EDR, segmentation, WAF, hardening, or feature disablement.
 
-### **Endpoint Detection & Response (EDR)**
-- **Osquery**: Operating system instrumentation framework
-- **OSSEC**: Host-based intrusion detection system
-- **Wazuh Agent**: Open source endpoint security agent
-- **Velociraptor**: Digital forensics and incident response platform
+Useful sources:
 
-### **Threat Hunting Tools**
-- **TheHive**: Scalable, Open Source and Free Security Incident Response Platform
-- **Cortex**: Powerful Observable Analysis and Active Response Engine
-- **GRR**: Remote live forensics for incident response
-- **MISP**: Threat Intelligence and Open Source Threat Sharing Platform
+- [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+- [FIRST EPSS](https://www.first.org/epss/)
+- [NVD](https://nvd.nist.gov/)
+- [CVE Program](https://www.cve.org/)
+- Vendor security advisory portals for the affected product
 
-### **Network Security**
-- **Suricata**: High performance Network IDS, IPS and Network Security Monitoring engine
-- **Zeek**: Network security monitoring platform
-- **Security Onion**: Linux distro for intrusion detection and security monitoring
-- **Moloch**: Full packet capture and indexing system
+## Software Supply Chain and Secure Development
 
-### **Digital Forensics**
-- **Autopsy**: Digital forensics platform
-- **Volatility**: Memory forensics framework
-- **Sleuth Kit**: File system analysis tools
-- **Hashcat**: Password recovery tool
+- **[OpenSSF](https://openssf.org/)** - Open-source software supply-chain security.
+- **[SLSA](https://slsa.dev/)** - Supply-chain integrity framework for software artifacts and build systems.
+- **[OWASP Software Component Verification Standard](https://scvs.owasp.org/)** - Guidance for software supply-chain controls.
+- **[GitHub Security Lab](https://securitylab.github.com/)** - Vulnerability research and secure-development material.
+- **[Secure Package Management on christiant.io](/secure-pkg/)** - Practical npm and Python hardening guidance.
 
-### **Vulnerability Management**
-- **OpenVAS**: Open vulnerability assessment system
-- **Nuclei**: Fast and customizable vulnerability scanner
-- **Nikto**: Web server scanner
-- **OpenSCAP**: Security compliance and vulnerability scanner
+## Cloud, Containers, and Infrastructure
 
-## 👥 Community Resources
+- **[Kubernetes Security Documentation](https://kubernetes.io/docs/concepts/security/)**  
+- **[CIS Benchmarks](https://www.cisecurity.org/cis-benchmarks)**  
+- **[AWS Security Documentation](https://docs.aws.amazon.com/security/)**  
+- **[Microsoft Security Documentation](https://learn.microsoft.com/security/)**  
+- **[Google Cloud Security](https://cloud.google.com/security)**  
+- [Podman vs Docker: Security Angle](/podman-security)
+- [Container Device Interface](/cdi)
+- [Local LLM Stack Guide](/llm_stack)
 
-### **Discord Communities**
-- **Cyber Security Discord**: 50k+ members general security discussion
-- **TryHackMe Discord**: Learning platform community
-- **Hack The Box Discord**: CTF and ethical hacking community
-- **Security Community Discord**: Professional security discussions
+## AI and Agent Security
 
-### **Reddit Communities**
-- **r/cybersecurity**: 400k+ members, general cybersecurity news and discussion
-- **r/netsecstudents**: Learning and career advice for security professionals
-- **r/netsec**: 300k+ members, technical security discussions
-- **r/AskNetsec**: Q&A for security questions
-- **r/compsci**: Computer science fundamentals and theory
-- **r/HowToHack**: Ethical hacking learning resources
+AI tooling changes quickly, so prefer current documentation and observed behavior over static model assumptions.
 
-### **Twitter/X Security Accounts**
-- **@briankrebs**: Brian Krebs - Cybercrime investigation
-- **@malwaretrafficmn**: Malware Traffic Analysis
-- **@craigclontz**: Security news and trends
-- **@SecurityWeek**: Cybersecurity industry news
-- **@threatpost**: Threat intelligence and news
-- **@sansinstitute**: SANS training and research
-- **@thecyberwire**: Daily cyber security news
+- [Agent Sandboxing](/ai-agent-sandboxing/)
+- [Agentic SOC](/agentic-soc/)
+- [LLM Security Guide](/llm_security)
+- [Token Guard](/token_guard)
+- [Model Family Explorer](/astra-model-explorer/)
+- [Coding Agent Explorer](/coding-agent-explorer/)
+- [Zero Data Retention Endpoints](/zdr-endpoints/)
 
-### **Weekly/Monthly Newsletters**
-- **The Hacker Newsletter**: Weekly curated security news
-- **SANS NewsBites**: Bi-weekly security news digest
-- **Security Weekly**: Weekly security podcast and newsletter
-- **Threat Source Newsletter**: Cisco Talos weekly roundup
-- **BreachWatch**: Weekly data breach notifications
-- **Dense Discovery**: Security-focused weekly newsletter
+The two benchmark explorers intentionally use Artificial Analysis source measurements directly for intelligence/performance, cost per task, and token utilization. They do not apply local GPT price modifiers.
 
-## 📈 Career Development
+## Career and Workforce
 
-### **Certification Paths for 2025**
-#### **Entry Level**
-- **CompTIA Security+**: Foundation security certification
-- **Google Cybersecurity Certificate**: Industry-recognized entry certificate
-- **(ISC)² SSCP**: Systems Security Certified Practitioner
-- **GIAC GSEC**: SANS Security Essentials Certification
+- **[NIST NICE Framework](https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center)** - Common language for cybersecurity work roles, tasks, knowledge, and skills.
+- **[CyberSeek](https://www.cyberseek.org/)** - U.S. cybersecurity career pathways and workforce data.
+- **[SANS / GIAC](https://www.sans.org/)** - Deep technical training and certifications.
+- **[ISC2](https://www.isc2.org/)** - Security certifications and professional development.
+- **[CompTIA Cybersecurity](https://www.comptia.org/content/it-careers-path-roadmap/cybersecurity-specialist)** - Foundational and intermediate certification paths.
+- **[OffSec](https://www.offsec.com/)** - Hands-on offensive-security training and certifications.
 
-#### **Intermediate Level**
-- **CompTIA CySA+**: Cybersecurity Analyst certification
-- **GIAC GCIH**: SANS GIAC Certified Incident Handler
-- **CompTIA PenTest+**: Penetration testing certification
-- **CISM**: Certified Information Security Manager
+For interview preparation on this site:
 
-#### **Advanced Level**
-- **CISSP**: Certified Information Systems Security Professional
-- **OSCP**: Offensive Security Certified Professional
-- **GIAC GCFA**: SANS GIAC Certified Forensic Analyst
-- **GIAC GXPN**: GIAC Exploit Researcher and Advanced Penetration Tester
+- [General Cyber Interview](/interview)
+- [SOC Interview](/socinterview)
+- [Security Engineer Interview](/securityengineer)
+- [Threat Hunter Interview](/th-interview)
+- [LLM / GenAI Developer Interview](/llmappdev)
 
-### **Interview Resources**
-- **CyberInterview**: SOC and security interview preparation
-- **InfosecInterview**: Technical interview questions and answers
-- **TryHackMe Interview Paths**: Interview preparation learning paths
-- **Cybrary Interview Prep**: Mock interviews and questions
-- **GitHub Interview Questions**: Community-curated interview resources
+## Research and Conference Material
 
-### **Job Boards**
-- **CyberSecurityJobsite**: Specialized cybersecurity job board
-- **InfoSec-Jobs**: Reddit job postings and discussions
-- **LinkedIn Cybersecurity Jobs**: Professional network job listings
-- **Dice Cybersecurity**: Technology-focused job board
-- **Cyber Seek**: NIST cybersecurity career tracker
+- **[USENIX Security](https://www.usenix.org/conference/usenixsecurity)**
+- **[IEEE Symposium on Security and Privacy](https://www.ieee-security.org/TC/SP-Index.html)**
+- **[ACM CCS](https://www.sigsac.org/ccs.html)**
+- **[NDSS Symposium](https://www.ndss-symposium.org/)**
+- **[Black Hat](https://www.blackhat.com/)**
+- **[DEF CON](https://defcon.org/)**
+- **[CTFtime](https://ctftime.org/)**
 
-### **Salary Guides 2025**
-- **ISC² Cybersecurity Workforce Study**: Industry salary data
-- **CompTIA Cyberstates Report**: Regional salary information
-- **Cyber Seek Interactive Map**: Real-time demand and salary data
-- **Glassdoor Cybersecurity**: Self-reported salary database
-- **Payscale Security**: Career salary calculator and data
+## Arizona and Phoenix Community
 
-## 🎯 Hands-on Labs & Training Environments
-
-### **Free Cyber Ranges**
-- **Cyberbit Live Fire**: Free enterprise cyber range access
-- **National Cyber Range**: US government training environments
-- **Cyber Range Alliance**: Member access to training facilities
-- **Project Ares**: Free basic cyber range access
-
-### **Paid Premium Training**
-- **AttackIQ Adversary Emulation**: Enterprise attack simulation
-- **Picus Security Security Validation Platform**: Automated security testing
-- **XM Cyber Continuous Attack Simulation**: Automated red teaming
-- **SafeBreach Breach and Attack Simulation**: Continuous security testing
-
-### **Cloud Security Labs**
-- **AWS Security Hub**: Hands-on AWS security training
-- **Microsoft Learn Security Path**: Azure security modules
-- **Google Cloud Security Training**: GCP security hands-on labs
-- **Cloud Security Alliance Labs**: Multi-cloud security training
-
-### **CTF Competition Platforms**
-- **CTFtime**: Global CTF calendar and archive
-- **PicoCTF**: Beginner-friendly competition from CMU
-- **HackTheBox CTF**: Regular competitive events
-- **RootTheBox**: Open source CTF platform
-- **CTFlearn**: Learn through challenges platform
-
-## 📊 Research & Academic Resources
-
-### **2025 Research Papers**
-- **IEEE Security & Privacy**: Peer-reviewed security research
-- **USENIX Security Symposium**: Annual security conference papers
-- **ACM CCS**: Computer and Communications Security proceedings
-- **NDSS Symposium**: Network and Distributed System Security
-- **SANS Reading Room**: White papers and technical documentation
-
-### **Conference Presentations**
-- **Black Hat USA 2025**: Latest security research presentations
-- **DEF CON 33**: Hacker conference presentations and videos
-- **RSA Conference 2025**: Enterprise security presentations
-- **SANS DFIRCON**: Digital forensics and incident response
-- **ShmooCon**: Regional security conference content
-
-### **YouTube Channels 2025**
-- **SANS Institute**: Security training videos and presentations
-- **John Hammond**: CTF walkthroughs and security tutorials
-- **LiveOverflow**: Binary exploitation and reverse engineering
-- **The Cyber Mentor**: Ethical hacking tutorials and tools
-- **Professor Messer**: Certification training videos
-- **David Bombal**: Network security and ethical hacking
-- **IppSec**: HackTheBox machine walkthroughs
-
-### **Academic Resources**
-- **MIT OpenCourseWare**: Computer science and security courses
-- **Stanford Crypto**: Cryptography and security lectures available via iTunes University, offering deep insights into modern cryptographic techniques and security principles. The courses provide comprehensive learning materials from prestigious academic institutions, covering complex security topics with detailed explanations and expert instruction.
+For local conferences, meetups, professional groups, and community events, see the maintained [Phoenix Cybersecurity Events & Community](/phoenix-cybersecurity-events) page.
 
 ---
 
-## 🛠️ Essential Security Frameworks & Standards
-
-### **MITRE ATT&CK v15**
-- **Knowledge Base**: Comprehensive adversary tactics and techniques
-- **Framework Mapping**: Essential for threat hunting and detection engineering
-- **Navigator Tool**: Interactive ATT&CK matrix exploration
-- **Website**: [attack.mitre.org](https://attack.mitre.org/)
-
-### **NIST Cybersecurity Framework 2.0**
-- **Core Functions**: Identify, Protect, Detect, Respond, Recover
-- **Implementation Tiers**: Risk-based approach to cybersecurity
-- **Compliance Guidance**: Regulatory alignment and best practices
-
-### **CIS Controls**
-- **Top 18 Controls**: Critical security controls for defense
-- **Implementation Guides**: Step-by-step security improvement
-- **Assessment Tools**: Security controls measurement
-
----
-
-*This resource list is continuously updated. Last updated: October 2025*
-
-**Have a resource to suggest?** Feel free to share recommendations for emerging tools, communities, or training platforms that should be included in the next update.<br>
-
-
-
+If a resource on this page becomes stale or materially changes, the goal is to replace or remove it rather than preserve outdated pricing, membership counts, or marketing claims.

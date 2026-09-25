@@ -1,10 +1,12 @@
 ---
 layout: page
 title: "Developer AI: OpenCode Go vs Claude Plans"
-description: "A practical comparison of OpenCode Go and Claude subscription tiers for developer workflows, including benchmark model mapping and 5-hour plan limits."
+description: "Archived OpenCode Go and Claude plan comparison retained for historical reference; current comparisons are maintained in the model and coding-agent explorers."
 permalink: /glm5-vs-opus/
+sitemap: false
 ---
 
+> **Archived page:** This OpenCode Go vs Claude comparison reflects an earlier model and subscription landscape and is no longer maintained. For current benchmark, cost-per-task, and token-efficiency data, use the [Model Family Explorer](/astra-model-explorer/) and [Coding Agent Explorer](/coding-agent-explorer/).
 <style>
   .hero-card {
     --card-accent: #fcc624;

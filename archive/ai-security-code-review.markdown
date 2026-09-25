@@ -3,6 +3,7 @@ layout: page
 title: "AI Security Code Review Prompt"
 permalink: /ai-security-code-review
 description: "System prompt for Sentinel, an AI agent specialized in Rust security code reviews"
+sitemap: false
 ---
 
 > **Archived page:** This standalone Rust code-review prompt is retained for reference but is no longer maintained as current guidance.

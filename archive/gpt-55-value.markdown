@@ -1,10 +1,12 @@
 ---
 layout: page
 title: "OpenAI's New Value Play: GPT-5.5 Low Reasoning"
-description: "A practical look at GPT-5.5's intelligence, cumulative cost, token efficiency, and why low-reasoning frontier models may change the economics of agentic AI."
+description: "Archived GPT-5.5 value analysis retained for historical reference; current model comparisons use Artificial Analysis source data directly."
 permalink: /openai-value/
+sitemap: false
 ---
 
+> **Archived page:** This GPT-5.5-era value analysis is retained for historical reference. For current Artificial Analysis intelligence, cost-per-task, and token-efficiency comparisons, use the [Model Family Explorer](/astra-model-explorer/) and [Coding Agent Explorer](/coding-agent-explorer/).
 <style>
   .lead-copy {
     color: #333333;

@@ -371,7 +371,7 @@ image: /image/professional_circle.png
         <p>Developer AI with the parts that matter in practice: throughput, model value, filesystem access, shell access, and isolation.</p>
         <div class="pill-container">
             <a href="/astra-model-explorer/" class="pill-link" style="--theme-color: #007bff;">Model Family Explorer &rarr;</a>
-            <a href="/glm5-vs-opus/" class="pill-link" style="--theme-color: #007bff;">OpenCode vs Claude &rarr;</a>
+            <a href="/coding-agent-explorer/" class="pill-link" style="--theme-color: #007bff;">Coding Agent Explorer &rarr;</a>
             <a href="/ai-agent-sandboxing/" class="pill-link" style="--theme-color: #007bff;">Agent Sandboxing &rarr;</a>
             <a href="https://github.com/christian-taillon/opencode-containment" class="pill-link" style="--theme-color: #007bff;">opencode-containment &rarr;</a>
         </div>
