@@ -148,6 +148,3 @@ exclude:
   - node_modules/
   - vendor/
 
-collections:
-  briefs:
-    output: true

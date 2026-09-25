@@ -6,9 +6,8 @@ This file is the operating guide for contributors and coding agents working in t
 
 - Public content source files live at the repository root.
 - Do not create a new `docs/` content directory.
-- `archive/` contains historical pages that remain reachable at their existing public permalinks but are no longer maintained.
+- `archive/` contains historical pages and unpublished source retained for reference.
 - `redirects/` contains compatibility pages for older URLs.
-- `_briefs/` is the Jekyll collection for historical intelligence briefs.
 - `_includes/` contains site-level template overrides.
 - `assets/`, `image/`, `video/`, and `download/` contain static assets.
 - `_config.yml` contains navigation, theme, plugin, SEO, and collection settings.
@@ -21,18 +20,17 @@ Public URLs are part of the site's compatibility contract.
 2. Moving a source file must not change its public permalink.
 3. Do not delete a published URL merely to reorganize source files.
 4. If a public URL changes intentionally, add a compatibility page under `redirects/`.
-5. Archived pages keep their historical permalink and should set `sitemap: false`.
+5. Archived public pages keep their historical permalink and should set `sitemap: false`. Material intentionally retired from the public site should use `published: false`.
 
 ## Archiving a page
 
 When material is no longer current but is still useful historically:
 
 1. Move the source file to `archive/`.
-2. Keep its existing `permalink`.
-3. Add `sitemap: false` to front matter.
-4. Add a visible archive notice explaining why the page is historical.
-5. Link to the current replacement when one exists.
-6. Remove the archived page from active navigation and homepage feature links.
+2. If the page should remain public, keep its existing `permalink`, add `sitemap: false`, and add a visible archive notice.
+3. If the page should be retired from the public site, add `published: false` and `sitemap: false` instead.
+4. Link to the current replacement when one exists.
+5. Remove archived material from active navigation and homepage feature links.
 
 Do not silently present model, pricing, benchmark, product, conference, or threat data as current when it is historical.
 

@@ -3,7 +3,11 @@ layout: page
 title: "Daily Tactical Threat Briefing - December 15, 2025"
 description: "Analysis of active exploitation of GeoServer CVE-2025-58360 and Sierra Wireless router vulnerabilities."
 date: 2025-12-15
+published: false
+sitemap: false
 ---
+
+> Archived source retained in the repository for historical reference. This brief is no longer published or maintained.
 
 ### 🚨 Daily Tactical Threat Briefing - December 15, 2025
 
