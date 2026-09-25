@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Latest Intel Brief
+permalink: /latest-intel-brief/
 ---
 
 > This page displays the latest intelligence brief.

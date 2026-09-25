@@ -1,17 +1,20 @@
 # Christian Taillon's Cybersecurity & AI Hub
 
-This repository hosts the source code for [christiant.io](https://christiant.io/), a resource hub for cybersecurity professionals and AI developers.
+This repository contains the source for [christiant.io](https://christiant.io/), a practical cybersecurity and AI resource hub.
 
-## Site Map
-The sitemap is available at:
-[https://christiant.io/sitemap.xml](https://christiant.io/sitemap.xml)
+## Repository structure
 
-## Project Structure
-- **`docs/`**: Contains the main content pages and guides.
-- **`_briefs/`**: Intelligence briefs and analysis.
-- **`_includes/`**: Custom HTML includes (overrides theme defaults).
-- **`_config.yml`**: Jekyll configuration.
-- **`AGENTS.md`**: Design system and agent guidelines.
+- Content pages live at the repository root and define stable public URLs with Jekyll front matter.
+- `_briefs/` contains intelligence briefs and analysis.
+- `_includes/` contains site-level include overrides.
+- `assets/`, `image/`, `video/`, and `download/` contain static site assets.
+- `archive/` contains historical pages that remain available at their original public permalinks but are no longer maintained.
+- `redirects/` contains compatibility redirects for older URLs.
+- `_config.yml` contains Jekyll, navigation, theme, SEO, and collection settings.
+- `AGENTS.md` contains repository design and contributor guidance.
+
+The legacy `docs/` content directory was retired in September 2026. Content source files now live at the repository root so new and existing pages follow the same structure.
 
 ## Theme
-This site uses the [Beautiful Jekyll](https://github.com/daattali/beautiful-jekyll) remote theme with custom SEO optimization.
+
+The site uses [Beautiful Jekyll](https://github.com/daattali/beautiful-jekyll) with local styling and SEO overrides.
