@@ -1,7 +1,7 @@
 ---
 layout: base
 title: "AI Model Family Explorer"
-description: "Compare GPT-6 Astra, GPT-5.6 Sol, Terra, and Luna, plus gpt-oss-120b, across Artificial Analysis Intelligence Index, cost per task, and token use."
+description: "Compare GPT-6 Astra, Sol, and Luna, GPT-5.6 Terra, Claude Opus 5.5, and gpt-oss-120b across Artificial Analysis Intelligence Index, cost per task, and token use."
 permalink: /astra-model-explorer/
 ---
 <style>
@@ -60,33 +60,33 @@ canvas{position:relative;z-index:1;display:block;width:100%;outline:none}#chart3
 </header>
 
 <header class="hero">
-  <p class="eyebrow">Artificial Analysis Intelligence Index v4.2 · September 5, 2026 snapshot</p>
+  <p class="eyebrow">Artificial Analysis Intelligence Index v4.3.2 · September 25, 2026 snapshot</p>
   <h1>Model reasoning family explorer</h1>
-  <p>Compare <strong>GPT-6 Astra</strong>, <strong>GPT-5.6 Sol, Terra, and Luna</strong>, and <strong>gpt-oss-120b</strong>. The 3D view combines Intelligence Index, task cost, and output-token use. The 2D view makes the cost/intelligence tradeoff explicit and now connects the <strong>cost-efficiency Pareto frontier</strong>.</p>
+  <p>Compare <strong>GPT-6 Astra, Sol, and Luna</strong>, <strong>GPT-5.6 Terra</strong>, <strong>Claude Opus 5.5</strong>, and <strong>gpt-oss-120b</strong>. The 3D view combines Intelligence Index, task cost, and output-token use. The 2D view makes the cost/intelligence tradeoff explicit and connects the <strong>cost-efficiency Pareto frontier</strong>.</p>
 </header>
 
 <aside class="notice">
-  <strong>All 25 supplied model variants are retained.</strong> Eighteen have complete cost + Intelligence + output-token data and are plotted. Seven Terra/Luna variants have published Intelligence scores but task cost or Intelligence Index output-token use is N/A, so the page preserves those missing values rather than inventing chart coordinates.
+  <strong>All 31 selected model variants are retained.</strong> Twenty-nine have complete cost + Intelligence + output-token data and are plotted. GPT-6 Astra non-reasoning currently has no published task-cost value, while gpt-oss-120b low has no published task-cost or total Intelligence Index output-token value. Those N/A fields are preserved rather than estimated.
 </aside>
 
 <main>
 <div class="stack">
   <section class="panel astra-takeaway" aria-label="Astra reasoning takeaway">
     <div>
-      <h2>Astra does not need Max to reach near-Max intelligence.</h2>
-      <p><strong>Medium reaches 52</strong> at $1.16 and 12M output tokens. <strong>High reaches 53</strong> at $1.41 and 19M. Max reaches 55 at $2.57 and 49M. That makes Medium and High much easier to spot as practical operating points instead of visually implying that Max is the default destination.</p>
+      <h2>Astra xHigh now matches Max intelligence at lower cost.</h2>
+      <p><strong>xHigh reaches 53</strong> at $2.31 and 38M output tokens, while <strong>Max also reaches 53</strong> at $3.26 and 60M. Medium reaches 50 at $1.54 and 19M. The updated v4.3.2 snapshot makes the diminishing return from xHigh to Max directly visible.</p>
     </div>
     <div class="takeaway-stats">
-      <div class="takeaway-stat"><span>Medium vs Max</span><b>95% intelligence</b><small>45% of task cost · 24% of output tokens</small></div>
-      <div class="takeaway-stat"><span>High vs Max</span><b>96% intelligence</b><small>55% of task cost · 39% of output tokens</small></div>
+      <div class="takeaway-stat"><span>Medium vs Max</span><b>94% intelligence</b><small>47% of task cost · 32% of output tokens</small></div>
+      <div class="takeaway-stat"><span>xHigh vs Max</span><b>100% intelligence</b><small>71% of task cost · 63% of output tokens</small></div>
     </div>
   </section>
 
   <section class="metrics" aria-label="summary metrics">
-    <div class="metric"><div class="metric-label">Selected variants</div><div class="metric-value" id="metricTotal">25</div><div class="metric-detail">Astra 6 · Sol 5 · Terra 6 · Luna 6 · oss 2</div></div>
-    <div class="metric"><div class="metric-label">Complete plotted points</div><div class="metric-value" id="metricPlotted">18</div><div class="metric-detail">Cost + Intelligence + token use available</div></div>
+    <div class="metric"><div class="metric-label">Selected variants</div><div class="metric-value" id="metricTotal">31</div><div class="metric-detail">Astra 6 · Sol 6 · Terra 6 · Luna 6 · Opus 5.5 5 · oss 2</div></div>
+    <div class="metric"><div class="metric-label">Complete plotted points</div><div class="metric-value" id="metricPlotted">29</div><div class="metric-detail">Cost + Intelligence + token use available</div></div>
     <div class="metric"><div class="metric-label">Visible Pareto points</div><div class="metric-value" id="metricPareto">--</div><div class="metric-detail">Lower cost / higher Intelligence frontier</div></div>
-    <div class="metric"><div class="metric-label">Astra High vs Max cost</div><div class="metric-value">55%</div><div class="metric-detail">53 vs 55 Intelligence · 19M vs 49M tokens</div></div>
+    <div class="metric"><div class="metric-label">Astra xHigh vs Max cost</div><div class="metric-value">71%</div><div class="metric-detail">53 vs 53 Intelligence · 38M vs 60M tokens</div></div>
   </section>
 
   <section class="panel controls" aria-label="chart controls">
@@ -129,16 +129,16 @@ canvas{position:relative;z-index:1;display:block;width:100%;outline:none}#chart3
   </section>
 
   <section class="insight-grid">
-    <article class="panel insight"><h3>The Pareto line shows Astra's practical curve</h3><p>Instead of treating the reasoning levels as a ladder where Max is automatically best, the frontier highlights settings that buy a real Intelligence increase for additional cost. With this snapshot, several Astra reasoning levels remain on that frontier, making the <strong>Medium / High tradeoff</strong> visually explicit.</p></article>
+    <article class="panel insight"><h3>The frontier now spans very different price tiers</h3><p>GPT-6 Luna and Sol add much cheaper operating points, while Astra and Claude Opus 5.5 occupy the higher-intelligence end. The frontier highlights where additional task cost actually buys a higher Intelligence score instead of treating reasoning levels as an automatic ladder.</p></article>
     <article class="panel insight"><h3>Tokens still matter after price</h3><p>The Pareto frontier uses cost and Intelligence only. Bubble area and the 3D Z axis add the second operational question: how much output-token budget is required to get there. That distinction is especially important when long reasoning loops consume context or increase latency.</p></article>
   </section>
 
   <section class="panel table-panel">
-    <div class="table-head"><div><h3>Complete 25-variant dataset</h3><p>All selected models are retained, including published N/A fields.</p></div><p>Artificial Analysis · Intelligence Index v4.2</p></div>
+    <div class="table-head"><div><h3>Current 31-variant dataset</h3><p>All selected models are retained, including published N/A fields.</p></div><p>Artificial Analysis · Intelligence Index v4.3.2</p></div>
     <div class="table-wrap"><table><thead><tr><th>Model</th><th>Intelligence</th><th>Cost / task</th><th>Output tokens</th><th>Output speed</th><th>Chart status</th><th>Source</th></tr></thead><tbody id="dataRows"></tbody></table></div>
   </section>
 
-  <p class="footer-note">Source: Artificial Analysis model pages and the supplied 25-model comparison, retrieved September 5, 2026. Cost is weighted average USD per Artificial Analysis Intelligence Index task. Token use is total output tokens generated while running the Intelligence Index evaluation; gpt-oss-120b values are converted from tokens to millions for the shared chart scale. Where Artificial Analysis currently publishes N/A for task cost or token use, this page preserves N/A rather than estimating a value.</p>
+  <p class="footer-note">Source: Artificial Analysis model pages, refreshed September 25, 2026. Cost is weighted average USD per Artificial Analysis Intelligence Index task. Token use is total output tokens generated while running the Intelligence Index evaluation, shown in millions. The snapshot uses Intelligence Index v4.3.2. Where Artificial Analysis currently publishes N/A for task cost or token use, this page preserves N/A rather than estimating a value.</p>
 </div>
 </main>
 
@@ -151,39 +151,47 @@ const FAMILY = {
   Sol:{color:'#00bfff',order:1},
   Terra:{color:'#ff7a00',order:2},
   Luna:{color:'#22c55e',order:3},
-  'gpt-oss-120b':{color:'#a33cff',order:4}
+  'Opus 5.5':{color:'#f59e0b',order:4},
+  'gpt-oss-120b':{color:'#a33cff',order:5}
 };
 
 const DATA = [
-  {family:'Astra',tier:'Non-reasoning',order:0,intelligence:48,cost:1.42,tokens:7.0,speed:null,url:'https://artificialanalysis.ai/models/gpt-6-astra-non-reasoning'},
-  {family:'Astra',tier:'Low',order:1,intelligence:49,cost:0.63,tokens:5.4,speed:58.6,url:'https://artificialanalysis.ai/models/gpt-6-astra-low'},
-  {family:'Astra',tier:'Medium',order:2,intelligence:52,cost:1.16,tokens:12,speed:56.3,url:'https://artificialanalysis.ai/models/gpt-6-astra-medium'},
-  {family:'Astra',tier:'High',order:3,intelligence:53,cost:1.41,tokens:19,speed:59.9,url:'https://artificialanalysis.ai/models/gpt-6-astra-high'},
-  {family:'Astra',tier:'xHigh',order:4,intelligence:54,cost:1.85,tokens:30,speed:57.2,url:'https://artificialanalysis.ai/models/gpt-6-astra-xhigh'},
-  {family:'Astra',tier:'Max',order:5,intelligence:55,cost:2.57,tokens:49,speed:63.4,url:'https://artificialanalysis.ai/models/gpt-6-astra'},
+  {family:'Astra',tier:'Non-reasoning',order:0,intelligence:45,cost:null,tokens:12,speed:null,url:'https://artificialanalysis.ai/models/gpt-6-astra-non-reasoning'},
+  {family:'Astra',tier:'Low',order:1,intelligence:46,cost:0.82,tokens:10,speed:55.0,url:'https://artificialanalysis.ai/models/gpt-6-astra-low'},
+  {family:'Astra',tier:'Medium',order:2,intelligence:50,cost:1.54,tokens:19,speed:48.4,url:'https://artificialanalysis.ai/models/gpt-6-astra-medium'},
+  {family:'Astra',tier:'High',order:3,intelligence:51,cost:1.73,tokens:26,speed:53.1,url:'https://artificialanalysis.ai/models/gpt-6-astra-high'},
+  {family:'Astra',tier:'xHigh',order:4,intelligence:53,cost:2.31,tokens:38,speed:49.4,url:'https://artificialanalysis.ai/models/gpt-6-astra-xhigh'},
+  {family:'Astra',tier:'Max',order:5,intelligence:53,cost:3.26,tokens:60,speed:52.3,url:'https://artificialanalysis.ai/models/gpt-6-astra'},
 
-  {family:'Sol',tier:'Low',order:1,intelligence:41,cost:0.23,tokens:7.4,speed:66.3,url:'https://artificialanalysis.ai/models/gpt-5-6-sol-low'},
-  {family:'Sol',tier:'Medium',order:2,intelligence:46,cost:0.37,tokens:14,speed:70.7,url:'https://artificialanalysis.ai/models/gpt-5-6-sol-medium'},
-  {family:'Sol',tier:'High',order:3,intelligence:48,cost:0.61,tokens:24,speed:71.9,url:'https://artificialanalysis.ai/models/gpt-5-6-sol-high'},
-  {family:'Sol',tier:'xHigh',order:4,intelligence:50,cost:0.89,tokens:40,speed:81.0,url:'https://artificialanalysis.ai/models/gpt-5-6-sol-xhigh'},
-  {family:'Sol',tier:'Max',order:5,intelligence:51,cost:1.25,tokens:76,speed:80.9,url:'https://artificialanalysis.ai/models/gpt-5-6-sol'},
+  {family:'Sol',tier:'Non-reasoning',order:0,intelligence:28,cost:0.33,tokens:8.3,speed:92.7,url:'https://artificialanalysis.ai/models/gpt-6-sol-non-reasoning'},
+  {family:'Sol',tier:'Low',order:1,intelligence:34,cost:0.13,tokens:8.9,speed:128.6,url:'https://artificialanalysis.ai/models/gpt-6-sol-low'},
+  {family:'Sol',tier:'Medium',order:2,intelligence:40,cost:0.25,tokens:16,speed:114.3,url:'https://artificialanalysis.ai/models/gpt-6-sol-medium'},
+  {family:'Sol',tier:'High',order:3,intelligence:43,cost:0.37,tokens:25,speed:94.4,url:'https://artificialanalysis.ai/models/gpt-6-sol-high'},
+  {family:'Sol',tier:'xHigh',order:4,intelligence:44,cost:0.53,tokens:40,speed:95.6,url:'https://artificialanalysis.ai/models/gpt-6-sol-xhigh'},
+  {family:'Sol',tier:'Max',order:5,intelligence:48,cost:1.06,tokens:77,speed:98.9,url:'https://artificialanalysis.ai/models/gpt-6-sol'},
 
-  {family:'Terra',tier:'Non-reasoning',order:0,intelligence:26,cost:null,tokens:null,speed:80.6,url:'https://artificialanalysis.ai/models/gpt-5-6-terra-non-reasoning'},
-  {family:'Terra',tier:'Low',order:1,intelligence:32,cost:null,tokens:null,speed:83.6,url:'https://artificialanalysis.ai/models/gpt-5-6-terra-low'},
-  {family:'Terra',tier:'Medium',order:2,intelligence:37,cost:null,tokens:null,speed:83.4,url:'https://artificialanalysis.ai/models/gpt-5-6-terra-medium'},
-  {family:'Terra',tier:'High',order:3,intelligence:41,cost:0.30,tokens:26,speed:86.7,url:'https://artificialanalysis.ai/models/gpt-5-6-terra-high'},
-  {family:'Terra',tier:'xHigh',order:4,intelligence:44,cost:0.50,tokens:41,speed:85.9,url:'https://artificialanalysis.ai/models/gpt-5-6-terra-xhigh'},
-  {family:'Terra',tier:'Max',order:5,intelligence:47,cost:0.81,tokens:100,speed:111.4,url:'https://artificialanalysis.ai/models/gpt-5-6-terra'},
+  {family:'Terra',tier:'Non-reasoning',order:0,intelligence:21,cost:0.14,tokens:5.8,speed:79.7,url:'https://artificialanalysis.ai/models/gpt-5-6-terra-non-reasoning'},
+  {family:'Terra',tier:'Low',order:1,intelligence:27,cost:0.14,tokens:11,speed:75.7,url:'https://artificialanalysis.ai/models/gpt-5-6-terra-low'},
+  {family:'Terra',tier:'Medium',order:2,intelligence:30,cost:0.18,tokens:17,speed:81.7,url:'https://artificialanalysis.ai/models/gpt-5-6-terra-medium'},
+  {family:'Terra',tier:'High',order:3,intelligence:34,cost:0.34,tokens:33,speed:90.5,url:'https://artificialanalysis.ai/models/gpt-5-6-terra-high'},
+  {family:'Terra',tier:'xHigh',order:4,intelligence:38,cost:0.63,tokens:52,speed:82.1,url:'https://artificialanalysis.ai/models/gpt-5-6-terra-xhigh'},
+  {family:'Terra',tier:'Max',order:5,intelligence:42,cost:1.40,tokens:120,speed:86.8,url:'https://artificialanalysis.ai/models/gpt-5-6-terra'},
 
-  {family:'Luna',tier:'Non-reasoning',order:0,intelligence:19,cost:null,tokens:null,speed:107.5,url:'https://artificialanalysis.ai/models/gpt-5-6-luna-non-reasoning'},
-  {family:'Luna',tier:'Low',order:1,intelligence:26,cost:null,tokens:null,speed:108.8,url:'https://artificialanalysis.ai/models/gpt-5-6-luna-low'},
-  {family:'Luna',tier:'Medium',order:2,intelligence:30,cost:null,tokens:null,speed:107.1,url:'https://artificialanalysis.ai/models/gpt-5-6-luna-medium'},
-  {family:'Luna',tier:'High',order:3,intelligence:37,cost:null,tokens:null,speed:123.1,url:'https://artificialanalysis.ai/models/gpt-5-6-luna-high'},
-  {family:'Luna',tier:'xHigh',order:4,intelligence:42,cost:0.06,tokens:72,speed:113.5,url:'https://artificialanalysis.ai/models/gpt-5-6-luna-xhigh'},
-  {family:'Luna',tier:'Max',order:5,intelligence:43,cost:0.10,tokens:130,speed:127.2,url:'https://artificialanalysis.ai/models/gpt-5-6-luna'},
+  {family:'Luna',tier:'Non-reasoning',order:0,intelligence:18,cost:0.01,tokens:6.9,speed:123.6,url:'https://artificialanalysis.ai/models/gpt-6-luna-non-reasoning'},
+  {family:'Luna',tier:'Low',order:1,intelligence:21,cost:0.0045,tokens:8.1,speed:124.2,url:'https://artificialanalysis.ai/models/gpt-6-luna-low'},
+  {family:'Luna',tier:'Medium',order:2,intelligence:29,cost:0.02,tokens:28,speed:142.8,url:'https://artificialanalysis.ai/models/gpt-6-luna-medium'},
+  {family:'Luna',tier:'High',order:3,intelligence:32,cost:0.03,tokens:47,speed:135.2,url:'https://artificialanalysis.ai/models/gpt-6-luna-high'},
+  {family:'Luna',tier:'xHigh',order:4,intelligence:34,cost:0.04,tokens:68,speed:153.2,url:'https://artificialanalysis.ai/models/gpt-6-luna-xhigh'},
+  {family:'Luna',tier:'Max',order:5,intelligence:37,cost:0.07,tokens:150,speed:133.5,url:'https://artificialanalysis.ai/models/gpt-6-luna'},
 
-  {family:'gpt-oss-120b',tier:'Low',order:1,intelligence:14.9110137509579,cost:0.020254885405540154,tokens:0.002764610085975867,speed:259.638454175388,url:'https://artificialanalysis.ai/models/gpt-oss-120b-low'},
-  {family:'gpt-oss-120b',tier:'High',order:3,intelligence:23.8309678073278,cost:0.07504775053603582,tokens:0.0369113939029723,speed:191.678785154265,url:'https://artificialanalysis.ai/models/gpt-oss-120b'}
+  {family:'Opus 5.5',tier:'Low',order:1,intelligence:42,cost:0.55,tokens:20,speed:82.8,url:'https://artificialanalysis.ai/models/claude-opus-5-5-low'},
+  {family:'Opus 5.5',tier:'Medium',order:2,intelligence:51,cost:1.34,tokens:38,speed:76.3,url:'https://artificialanalysis.ai/models/claude-opus-5-5-medium'},
+  {family:'Opus 5.5',tier:'High',order:3,intelligence:54,cost:1.82,tokens:53,speed:88.6,url:'https://artificialanalysis.ai/models/claude-opus-5-5-high'},
+  {family:'Opus 5.5',tier:'xHigh',order:4,intelligence:56,cost:3.46,tokens:100,speed:76.2,url:'https://artificialanalysis.ai/models/claude-opus-5-5-xhigh'},
+  {family:'Opus 5.5',tier:'Max',order:5,intelligence:58,cost:5.98,tokens:260,speed:null,url:'https://artificialanalysis.ai/models/claude-opus-5-5'},
+
+  {family:'gpt-oss-120b',tier:'Low',order:1,intelligence:10,cost:null,tokens:null,speed:171.0,url:'https://artificialanalysis.ai/models/gpt-oss-120b-low'},
+  {family:'gpt-oss-120b',tier:'High',order:3,intelligence:12,cost:0.11,tokens:84,speed:185.8,url:'https://artificialanalysis.ai/models/gpt-oss-120b'}
 ].map((d,i)=>({...d,id:i,color:FAMILY[d.family].color,complete:Number.isFinite(d.cost)&&Number.isFinite(d.tokens)}));
 
 const $ = id => document.getElementById(id);
@@ -242,7 +250,7 @@ function pareto(data){
 }
 function paretoIds(){return new Set(pareto(plotData()).map(d=>d.id))}
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r)}
-function displayName(d){return d.family==='Astra'?'GPT-6 Astra':d.family==='gpt-oss-120b'?'gpt-oss-120b':'GPT-5.6 '+d.family}
+function displayName(d){const names={Astra:'GPT-6 Astra',Sol:'GPT-6 Sol',Terra:'GPT-5.6 Terra',Luna:'GPT-6 Luna','Opus 5.5':'Claude Opus 5.5','gpt-oss-120b':'gpt-oss-120b'};return names[d.family]||d.family}
 function shortName(d){return d.family+' '+d.tier}
 
 function buildFilters(){
