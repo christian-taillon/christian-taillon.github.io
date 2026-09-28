@@ -4,3 +4,4 @@ node_modules
 src/content/pages
 public
 package-lock.json
+AGENTS.md
