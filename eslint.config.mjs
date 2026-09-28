@@ -14,6 +14,10 @@ export default defineConfig(
     languageOptions: { globals: globals.node },
   },
   {
+    files: ['src/components/Head.astro'],
+    rules: { 'prefer-rest-params': 'off' },
+  },
+  {
     rules: {
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/no-explicit-any': 'warn',
