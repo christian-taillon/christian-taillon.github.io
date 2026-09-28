@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://christiant.io/sitemap.xml
+Sitemap: https://christiant.io/sitemap-index.xml
 
 # Crawl-delay: 1
 # Disallow: /downloads/
