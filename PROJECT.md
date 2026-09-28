@@ -12,6 +12,8 @@ Maintain christiant.io as a fast, low-maintenance static resource hub for cybers
 - Brand language comes from the Dark Roast Cyber and Telltale ecosystem.
 - Primary palette: near-black, warm off-white, Dark Roast yellow, coffee brown.
 - Keep the homepage recognizable: coffee motif, Dark Roast callout, family image, featured resource cards, recent research cards, knowledge-base groupings.
+- Preserve the legacy navigation taxonomy as dropdown sections. Shorter labels are fine, but keep the underlying article/resource links.
+- Every user-facing page must render the shared AstroDeck navigation bar.
 - Dark mode must remain first-class.
 - Use semantic design tokens from `src/styles/globals.css`. Do not hardcode colors in Astro components.
 - Prefer quiet technical styling over generic SaaS gradients.
