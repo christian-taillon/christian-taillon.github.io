@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="Page not found" description="The requested page could not be found." noindex={true}>
+  <section class="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6">
+    <p class="font-mono text-sm font-semibold text-primary">404</p>
+    <h1 class="mt-4 text-5xl font-semibold tracking-tight md:text-7xl">Page not found.</h1>
+    <p class="mx-auto mt-5 max-w-xl text-lg leading-8 text-muted-foreground">The page may have moved, or the link may be outdated.</p>
+    <div class="mt-8 flex justify-center gap-3">
+      <a href="/" class="rounded-full bg-primary px-5 py-2.5 font-semibold text-primary-foreground">Back home</a>
+      <a href="/cyberresources" class="rounded-full border bg-card px-5 py-2.5 font-semibold hover:border-primary">Browse resources</a>
+    </div>
+  </section>
+</BaseLayout>

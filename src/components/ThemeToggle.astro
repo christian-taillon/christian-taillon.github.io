@@ -1,0 +1,36 @@
+<button
+  class="theme-toggle inline-flex h-9 w-9 items-center justify-center rounded-md text-ink-foreground/70 transition-colors hover:bg-ink-foreground/10 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+  type="button"
+  role="switch"
+  aria-checked="false"
+  aria-label="Toggle dark mode"
+>
+  <svg class="sun-icon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+  </svg>
+  <svg class="moon-icon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+  </svg>
+</button>
+<style>
+  .sun-icon { display: none; }
+  .moon-icon { display: block; }
+  :global(.dark) .sun-icon { display: block; }
+  :global(.dark) .moon-icon { display: none; }
+</style>
+<script>
+  function syncThemeButtons() {
+    const dark = document.documentElement.classList.contains('dark');
+    document.querySelectorAll<HTMLButtonElement>('.theme-toggle').forEach((button) => {
+      button.setAttribute('aria-checked', String(dark));
+      button.onclick = () => {
+        const nextDark = !document.documentElement.classList.contains('dark');
+        document.documentElement.classList.toggle('dark', nextDark);
+        localStorage.setItem('theme', nextDark ? 'dark' : 'light');
+        syncThemeButtons();
+      };
+    });
+  }
+  syncThemeButtons();
+  document.addEventListener('astro:after-swap', syncThemeButtons);
+</script>

@@ -1,9 +1,12 @@
----
-layout: base
-title: "AI Model Family Explorer"
-description: "Compare GPT-6 Astra, Sol, and Luna, GPT-5.6 Terra, Claude Opus 5.5, and gpt-oss-120b across Artificial Analysis Intelligence Index, cost per task, and token use."
-permalink: /astra-model-explorer/
----
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Model Family Explorer | Christian Taillon</title>
+<link rel="icon" href="/favicon.ico" />
+</head>
+<body>
 <style>
 :root{
   color-scheme:light;
@@ -428,3 +431,6 @@ if(localStorage.getItem('openai-family-theme')==='dark')document.documentElement
 buildFilters();buildLegend();buildTable();syncLabelButtons();new ResizeObserver(render3D).observe(w3);new ResizeObserver(render2D).observe(w2);renderAll();
 })();
 </script>
+
+</body>
+</html>
