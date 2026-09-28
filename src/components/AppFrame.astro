@@ -4,14 +4,14 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 interface Props {
   title: string;
   description: string;
-  src: string;
+  html: string;
 }
 
-const { title, description, src } = Astro.props;
+const { title, description, html } = Astro.props;
 ---
 <BaseLayout title={title} description={description} footer={false}>
   <iframe
-    src={src}
+    srcdoc={html}
     title={title}
     class="block w-full border-0 bg-background"
     style="height: calc(100vh - 3.5rem);"
