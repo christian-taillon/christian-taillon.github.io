@@ -1,0 +1,42 @@
+---
+import '@/styles/globals.css';
+import Footer from '@/components/Footer.astro';
+import Head from '@/components/Head.astro';
+import Header from '@/components/Header.astro';
+import { SITE } from '@/data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  grid?: boolean;
+  footer?: boolean;
+}
+
+const {
+  title,
+  description = SITE.description,
+  image,
+  type = 'website',
+  noindex = false,
+  grid = false,
+  footer = true,
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head><Head title={title} description={description} image={image} type={type} noindex={noindex} /></head>
+  <body class:list={['min-h-screen', grid && 'site-grid']}>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:font-semibold focus:text-primary-foreground"
+    >
+      Skip to content
+    </a>
+    <Header />
+    <main id="main-content"><slot /></main>
+    {footer && <Footer />}
+  </body>
+</html>

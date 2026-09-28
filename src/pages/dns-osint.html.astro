@@ -1,0 +1,25 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="DNS OSINT Guide"
+  description="DNS OSINT reference guide and downloadable PDF."
+  footer={false}
+>
+  <object
+    data="/download/dns-guide-awnsers.pdf"
+    type="application/pdf"
+    class="block w-full border-0 bg-background"
+    style="height: calc(100vh - 3.5rem);"
+    aria-label="DNS OSINT guide PDF"
+  >
+    <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+      <p class="text-muted-foreground">
+        Your browser cannot display the embedded PDF.
+        <a class="font-semibold text-coffee underline" href="/download/dns-guide-awnsers.pdf">
+          Open the DNS OSINT guide directly.
+        </a>
+      </p>
+    </div>
+  </object>
+</BaseLayout>

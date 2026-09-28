@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  variant?: 'brand' | 'green' | 'blue' | 'pink' | 'cyan' | 'purple';
+  featured?: boolean;
+  links?: { href: string; label: string; external?: boolean }[];
+}
+const { title, description, variant = 'brand', featured = false, links = [] } = Astro.props;
+const variants = {
+  brand: { border: 'border-primary/55', stripe: 'bg-primary', title: 'text-foreground', link: 'border-primary/55 text-foreground hover:bg-primary hover:text-primary-foreground' },
+  green: { border: 'border-signal-green/45', stripe: 'bg-signal-green', title: 'text-signal-green', link: 'border-signal-green/50 text-signal-green hover:bg-signal-green hover:text-primary-foreground' },
+  blue: { border: 'border-signal-blue/45', stripe: 'bg-signal-blue', title: 'text-signal-blue', link: 'border-signal-blue/50 text-signal-blue hover:bg-signal-blue hover:text-signal-foreground' },
+  pink: { border: 'border-signal-pink/45', stripe: 'bg-signal-pink', title: 'text-signal-pink', link: 'border-signal-pink/50 text-signal-pink hover:bg-signal-pink hover:text-signal-foreground' },
+  cyan: { border: 'border-signal-cyan/45', stripe: 'bg-signal-cyan', title: 'text-signal-cyan', link: 'border-signal-cyan/50 text-signal-cyan hover:bg-signal-cyan hover:text-primary-foreground' },
+  purple: { border: 'border-signal-purple/45', stripe: 'bg-signal-purple', title: 'text-signal-purple', link: 'border-signal-purple/50 text-signal-purple hover:bg-signal-purple hover:text-signal-foreground' },
+};
+const v = variants[variant];
+---
+<article class:list={['group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-card p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-xl', v.border, featured && 'ring-1 ring-primary/10']}>
+  <span class:list={['absolute inset-x-0 top-0 h-1', v.stripe]}></span>
+  <h3 class:list={['text-xl font-semibold tracking-tight', v.title]}>{title}</h3>
+  <p class="mt-3 flex-1 text-sm leading-6 text-muted-foreground">{description}</p>
+  {links.length > 0 && (
+    <div class="mt-5 flex flex-wrap gap-2">
+      {links.map((link) => <a href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noopener noreferrer' : undefined} class:list={['rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors', v.link]}>{link.label}</a>)}
+    </div>
+  )}
+</article>

@@ -1,0 +1,7 @@
+dist
+node_modules
+.astro
+src/content/pages
+public
+package-lock.json
+AGENTS.md

@@ -1,0 +1,144 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  --color-background: oklch(98.5% 0.006 86);
+  --color-foreground: oklch(17% 0.012 65);
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(17% 0.012 65);
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(17% 0.012 65);
+  --color-primary: #fac618;
+  --color-primary-foreground: oklch(14% 0.01 70);
+  --color-secondary: oklch(94.5% 0.014 83);
+  --color-secondary-foreground: oklch(20% 0.014 65);
+  --color-muted: oklch(95.5% 0.01 86);
+  --color-muted-foreground: oklch(44% 0.02 70);
+  --color-accent: oklch(93% 0.035 88);
+  --color-accent-foreground: oklch(20% 0.014 65);
+  --color-destructive: oklch(58% 0.2 27);
+  --color-destructive-foreground: oklch(98% 0.005 85);
+  --color-border: oklch(87.5% 0.018 82);
+  --color-input: oklch(87.5% 0.018 82);
+  --color-ring: oklch(76% 0.15 87);
+
+  --color-ink: oklch(10% 0.012 60);
+  --color-ink-foreground: oklch(97% 0.006 86);
+  --color-coffee: #fac618;
+  --color-coffee-soft: oklch(90% 0.035 62);
+  --color-signal-green: oklch(61% 0.17 145);
+  --color-signal-blue: oklch(59% 0.16 245);
+  --color-signal-pink: oklch(61% 0.2 345);
+  --color-signal-cyan: oklch(68% 0.12 210);
+  --color-signal-purple: oklch(58% 0.18 300);
+  --color-signal-foreground: oklch(98% 0.003 85);
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  --color-background: oklch(6% 0.008 60);
+  --color-foreground: oklch(96% 0.006 86);
+  --color-card: oklch(9% 0.01 60);
+  --color-card-foreground: oklch(96% 0.006 86);
+  --color-popover: oklch(9% 0.01 60);
+  --color-popover-foreground: oklch(96% 0.006 86);
+  --color-primary: #fac618;
+  --color-primary-foreground: oklch(12% 0.01 65);
+  --color-secondary: oklch(13% 0.012 60);
+  --color-secondary-foreground: oklch(95% 0.006 86);
+  --color-muted: oklch(13% 0.012 60);
+  --color-muted-foreground: oklch(70% 0.018 80);
+  --color-accent: oklch(17% 0.026 75);
+  --color-accent-foreground: oklch(96% 0.006 86);
+  --color-destructive: oklch(46% 0.18 27);
+  --color-destructive-foreground: oklch(98% 0.005 85);
+  --color-border: oklch(22% 0.014 65);
+  --color-input: oklch(22% 0.014 65);
+  --color-ring: oklch(82% 0.15 88);
+  --color-coffee: #fac618;
+  --color-coffee-soft: oklch(20% 0.035 54);
+  --color-signal-green: oklch(72% 0.18 145);
+  --color-signal-blue: oklch(72% 0.15 235);
+  --color-signal-pink: oklch(72% 0.2 345);
+  --color-signal-cyan: oklch(78% 0.12 210);
+  --color-signal-purple: oklch(72% 0.18 300);
+}
+
+* { border-color: var(--color-border); }
+html { scroll-behavior: smooth; background: var(--color-background); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--color-primary); color: var(--color-primary-foreground); }
+.site-grid {
+  background-image:
+    linear-gradient(color-mix(in oklch, var(--color-foreground) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklch, var(--color-foreground) 4%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.prose {
+  --tw-prose-body: var(--color-foreground);
+  --tw-prose-headings: var(--color-foreground);
+  --tw-prose-lead: var(--color-muted-foreground);
+  --tw-prose-links: var(--color-coffee);
+  --tw-prose-bold: var(--color-foreground);
+  --tw-prose-counters: var(--color-muted-foreground);
+  --tw-prose-bullets: var(--color-primary);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-quotes: var(--color-foreground);
+  --tw-prose-quote-borders: var(--color-primary);
+  --tw-prose-captions: var(--color-muted-foreground);
+  --tw-prose-code: var(--color-foreground);
+  --tw-prose-pre-code: var(--color-ink-foreground);
+  --tw-prose-pre-bg: var(--color-ink);
+  --tw-prose-th-borders: var(--color-border);
+  --tw-prose-td-borders: var(--color-border);
+}
+.prose :where(a):not(:where([class~='not-prose'] *)) {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.08em;
+}
+.prose :where(img):not(:where([class~='not-prose'] *)) { border-radius: 0.75rem; }
+
+/*
+ * Legacy Markdown pages contain a small amount of hand-authored HTML from the
+ * Jekyll site. Tailwind's typography/preflight rules make Shields.io badges
+ * block-level images with article-sized margins, which turns compact badge
+ * rows and cards into tall stacks. Keep normal article images untouched while
+ * restoring the original inline badge behavior.
+ */
+.legacy-content :where(a > img[src*='shields.io']) {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.legacy-content :where(a:has(> img[src*='shields.io'])) {
+  display: inline-block;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.legacy-content :where(.contact-box, .follow-box, .signal-box, .role-card) :where(h1, h2, h3, h4, p) {
+  margin-block: 0;
+}
+
+.legacy-content :where(.contact-box, .follow-box, .signal-box) :where(a > img[src*='shields.io']) {
+  margin: 0;
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

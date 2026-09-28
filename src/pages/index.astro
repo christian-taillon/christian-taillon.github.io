@@ -1,0 +1,184 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ResourceCard from '@/components/ResourceCard.astro';
+import { SITE } from '@/data/site';
+
+const featured = [
+  {
+    title: 'Secure Package Management',
+    description: 'Hardening NPM and Python dependencies against software supply chain attacks and malicious packages.',
+    variant: 'blue' as const,
+    links: [{ href: '/secure-pkg/', label: 'View security guide' }],
+  },
+  {
+    title: 'Zero Data Retention Endpoints',
+    description: 'A live catalog of OpenRouter ZDR-compliant AI endpoints for sensitive and confidential prompts.',
+    variant: 'green' as const,
+    links: [{ href: '/zdr-endpoints/', label: 'View ZDR models' }],
+  },
+  {
+    title: 'Coding Agent Explorer',
+    description: 'Compare coding-agent configurations across benchmark performance, task cost, and token utilization.',
+    variant: 'brand' as const,
+    links: [{ href: '/coding-agent-explorer/', label: 'Open explorer' }],
+  },
+];
+
+const highlights = [
+  {
+    title: 'DIY Agentic Security',
+    description: 'Hands-on notes for agentic SOC architecture, AI coding-agent isolation, local stacks, and practical automation.',
+    variant: 'pink' as const,
+    links: [
+      { href: '/agentic-soc/', label: 'Agentic SOC' },
+      { href: '/ai-agent-sandboxing/', label: 'Agent sandboxing' },
+      { href: '/llm_stack', label: 'LLM stack' },
+    ],
+  },
+  {
+    title: 'GenAI Inference Security',
+    description: 'Practical controls for deterministic input handling, model safety boundaries, and inference infrastructure.',
+    variant: 'brand' as const,
+    links: [{ href: '/token_guard', label: 'Token Guard' }],
+  },
+  {
+    title: 'Developer AI',
+    description: 'The parts of developer AI that matter in practice: model value, throughput, filesystem access, shell access, and isolation.',
+    variant: 'blue' as const,
+    links: [
+      { href: '/astra-model-explorer/', label: 'Model explorer' },
+      { href: '/coding-agent-explorer/', label: 'Coding agents' },
+      { href: '/ai-agent-sandboxing/', label: 'Sandboxing' },
+    ],
+  },
+  {
+    title: 'Secure Local Models',
+    description: 'Local LLM deployment notes covering model loading, OpenWebUI, containers, GPU access, and isolation boundaries.',
+    variant: 'cyan' as const,
+    links: [
+      { href: '/llm_security', label: 'LLM security' },
+      { href: '/llm_stack', label: 'Local stack' },
+    ],
+  },
+  {
+    title: 'AutoIT Evasion & Malware',
+    description: 'Research and tooling for detecting AutoIT malware and emulating common evasion techniques.',
+    variant: 'purple' as const,
+    links: [
+      { href: 'https://github.com/christian-taillon/detect-autoit', label: 'Detection', external: true },
+      { href: 'https://github.com/CroodSolutions/BypassIT/tree/main', label: 'Emulation', external: true },
+    ],
+  },
+  {
+    title: 'OpenWebUI Community',
+    description: 'Models, filters, and manifold pipes shared with the OpenWebUI community.',
+    variant: 'green' as const,
+    links: [{ href: 'https://openwebui.com/u/christiant/', label: 'Visit profile', external: true }],
+  },
+];
+
+const knowledge = [
+  { title: 'Information Security', description: 'Splunk, LogScale, KQL, Sigma, YARA, Snort, Suricata, DFIR, and practical defensive engineering.', href: '/cyberresources' },
+  { title: 'Threat Hunting & Intel', description: 'Threat hunting research, APT tracking, malware analysis, search leads, and practical intelligence workflows.', href: 'https://github.com/christian-taillon/apt-tracker-md', external: true },
+  { title: 'Dev & Projects', description: 'Scripts, containers, Git, Linux, package hardening, open-source projects, and engineering notes.', href: '/git-cheatsheet' },
+  { title: 'Machine Learning & AI', description: 'Local AI, agentic systems, LLM security, model analysis, and secure developer-agent workflows.', href: '/ai-agent-sandboxing/' },
+  { title: 'Interview Resources', description: 'Technical interview preparation for SOC, security engineering, threat hunting, and GenAI roles.', href: '/interview' },
+];
+---
+
+<BaseLayout title={SITE.name} description={SITE.description} image={SITE.defaultImage} grid={true}>
+  <section class="border-b bg-background/85">
+    <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-10">
+      <a href="https://darkroastcyber.io" target="_blank" rel="noopener noreferrer" class="group flex flex-col gap-5 rounded-2xl border border-primary/35 bg-ink p-6 text-ink-foreground shadow-xl transition hover:-translate-y-1 hover:border-primary md:flex-row md:items-center md:justify-between md:p-8">
+        <div>
+          <p class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-primary">Dark Roast Cyber LLC</p>
+          <h1 class="mt-2 text-2xl font-semibold tracking-tight md:text-3xl">Security work runs better with coffee.</h1>
+          <p class="mt-2 max-w-2xl text-sm leading-6 text-ink-foreground/65">Visit my Dark Roast Cyber company site for consulting, open-source projects, and applied security work.</p>
+        </div>
+        <span class="inline-flex w-fit rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition group-hover:translate-x-1">Visit darkroastcyber.io →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
+    <div class="grid items-center gap-10 lg:grid-cols-[1.2fr_.8fr]">
+      <div>
+        <p class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-coffee">Welcome ☕</p>
+        <h2 class="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.035em] sm:text-5xl md:text-6xl">Cybersecurity, AI, and practical engineering notes.</h2>
+        <div class="mt-6 max-w-3xl space-y-4 text-base leading-7 text-muted-foreground md:text-lg">
+          <p>We have a lot to protect and it is hard work. Brew a cup of coffee and stay a while.</p>
+          <p>Cybersecurity moves quickly, but the work still comes down to persistence, good judgment, useful tooling, and collaboration. You do not need to work at the same company to be on the same team.</p>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/cyberresources" class="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:-translate-y-0.5">Browse resources</a>
+          <a href="/about/" class="rounded-full border bg-card px-5 py-2.5 text-sm font-semibold transition hover:border-primary">About me</a>
+          <a href={SITE.github} target="_blank" rel="noopener noreferrer" class="rounded-full border bg-card px-5 py-2.5 text-sm font-semibold transition hover:border-primary">GitHub</a>
+        </div>
+      </div>
+      <figure class="relative mx-auto w-full max-w-xl overflow-hidden rounded-3xl border bg-card p-2 shadow-2xl">
+        <img src="/image/family_beach.png" alt="Christian Taillon with his family at the beach" class="aspect-[4/3] w-full rounded-[1.25rem] object-cover" loading="eager" />
+        <figcaption class="px-3 pb-2 pt-3 text-xs text-muted-foreground">The reason the work matters.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="border-y bg-card/70">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-16">
+      <div class="max-w-3xl">
+        <p class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-coffee">What this site is about</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight">A living notebook for practical security work.</h2>
+        <p class="mt-4 text-base leading-7 text-muted-foreground">Threat hunting, detection engineering, secure AI usage, open-source tooling, community resources, and the experiments that are useful enough to keep. The goal is to share material people can reference, critique, and improve.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
+    <div class="mb-8 max-w-3xl">
+      <p class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-coffee">Featured resources</p>
+      <h2 class="mt-3 text-3xl font-semibold tracking-tight">Good places to start.</h2>
+      <p class="mt-3 text-muted-foreground">Current work across software supply chain defense, secure AI usage, and coding-agent evaluation.</p>
+    </div>
+    <div class="grid gap-5 md:grid-cols-3">
+      {featured.map((item) => <ResourceCard {...item} featured={true} />)}
+    </div>
+  </section>
+
+  <section class="border-y bg-muted/45">
+    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
+      <div class="mb-8 max-w-3xl">
+        <p class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-coffee">Recent highlights & research</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight">Projects, experiments, and field notes.</h2>
+      </div>
+      <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {highlights.map((item) => <ResourceCard {...item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
+    <div class="mb-8 max-w-3xl">
+      <p class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-coffee">Knowledge base & resources</p>
+      <h2 class="mt-3 text-3xl font-semibold tracking-tight">The broader collection.</h2>
+      <p class="mt-3 text-muted-foreground">Guides, cheat sheets, research, community references, and project write-ups accumulated over time.</p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+      {knowledge.map((item) => (
+        <a href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noopener noreferrer' : undefined} class="group rounded-2xl border bg-card p-5 transition hover:-translate-y-1 hover:border-primary hover:shadow-lg">
+          <h3 class="font-semibold tracking-tight group-hover:text-coffee">{item.title}</h3>
+          <p class="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-t bg-card/70">
+    <div class="mx-auto max-w-4xl px-4 py-14 text-center sm:px-6 md:py-20">
+      <p class="text-lg leading-8 text-muted-foreground">From the start of my career I benefited from people who shared resources, cheat sheets, examples, and practical guides. This site is my attempt to keep that cycle going.</p>
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
+        <a href="/about/" class="rounded-full border px-4 py-2 text-sm font-semibold hover:border-primary">About me</a>
+        <a href={`mailto:${SITE.email}`} class="rounded-full border px-4 py-2 text-sm font-semibold hover:border-primary">public(AT)christiant.io</a>
+        <a href="/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc" class="rounded-full border px-4 py-2 text-sm font-semibold hover:border-primary">PGP key</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
