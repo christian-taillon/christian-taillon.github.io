@@ -111,4 +111,34 @@ body {
   text-decoration-thickness: 0.08em;
 }
 .prose :where(img):not(:where([class~='not-prose'] *)) { border-radius: 0.75rem; }
+
+/*
+ * Legacy Markdown pages contain a small amount of hand-authored HTML from the
+ * Jekyll site. Tailwind's typography/preflight rules make Shields.io badges
+ * block-level images with article-sized margins, which turns compact badge
+ * rows and cards into tall stacks. Keep normal article images untouched while
+ * restoring the original inline badge behavior.
+ */
+.legacy-content :where(a > img[src*='shields.io']) {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.legacy-content :where(a:has(> img[src*='shields.io'])) {
+  display: inline-block;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.legacy-content :where(.contact-box, .follow-box, .signal-box, .role-card) :where(h1, h2, h3, h4, p) {
+  margin-block: 0;
+}
+
+.legacy-content :where(.contact-box, .follow-box, .signal-box) :where(a > img[src*='shields.io']) {
+  margin: 0;
+}
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
