@@ -1,8 +1,9 @@
 ---
 import AppFrame from '@/components/AppFrame.astro';
+import appHtml from '@/apps/coding-agent-explorer.html?raw';
 ---
 <AppFrame
   title="Coding Agent Explorer"
   description="Compare current coding-agent configurations across benchmark performance, task cost, and token utilization."
-  src="/apps/coding-agent-explorer/"
+  html={appHtml}
 />
