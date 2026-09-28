@@ -24,57 +24,51 @@ Supported by my **best friend** and **wonderful wife**, we are navigating the jo
 
 My curiosity, my responsibility to provide for my family, and a cautious optimism for the future are what drive me.
 
-<div class="contact-container" style="display: flex; flex-wrap: wrap; gap: 20px; margin: 30px 0;">
-<!-- Contact Me Box -->
-<div class="contact-box" style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-<h3 style="margin-top: 0; color: #333; text-align: center; border-bottom: 2px solid #007bff; padding-bottom: 10px;">Contact Me</h3>
-<div style="display: flex; align-items: center; margin: 15px 0;">
-<div style="background: #007bff; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 15px;">
-<span style="color: white; font-size: 20px;">✉️</span>
-</div>
-<div>
-<p style="margin: 0; font-weight: bold;">Email:</p>
-<code style="background: #e9ecef; padding: 4px 8px; border-radius: 4px;">public(AT)christiant.io</code>
-</div>
-</div>
-<div style="display: flex; align-items: center; margin: 15px 0;">
-<div style="background: #fcc72a; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 15px;">
-<span style="color: white; font-size: 20px;">🔒</span>
-</div>
-<div>
-<a href="/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc" style="display: inline-block; text-decoration: none; color: #333; font-weight: bold;">
-<span style="display: block; margin-bottom: 5px;">Encrypt your message</span>
-<span style="font-size: 0.9em; color: #6c757d;">Download my PGP public key</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Follow Me Box -->
-<div class="follow-box" style="flex: 1; min-width: 300px; background-color: #f8f9fa; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-<h3 style="margin-top: 0; color: #333; text-align: center; border-bottom: 2px solid #dc3545; padding-bottom: 10px;">Follow Me</h3>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px;">
-<a href="https://www.linkedin.com/in/christiantaillon/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/Linkedin-white?&style=for-the-badge&logo=linkedin&logoColor=blue" style="border-radius: 8px; border: 1px solid black;" /></a>
-<a href="https://github.com/christian-taillon" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-black?&style=for-the-badge&logo=Github&logoColor=white" style="border-radius: 8px;" /></a>
-<a href="https://medium.com/@christiantaillon" target="_blank"><img alt="Medium" src="https://img.shields.io/badge/Medium-white?&style=for-the-badge&logo=medium&logoColor=black" style="border-radius: 8px; border: 1px solid black;" /></a>
-<a href="https://www.virustotal.com/gui/user/christianblueteam/graphs" target="_blank"><img alt="VirusTotal" src="https://img.shields.io/badge/VirusTotal-white?&style=for-the-badge&logo=virustotal&logoColor=blue" style="border-radius: 8px; border: 1px solid black;" /></a>
-<a href="https://twitter.com/christian_tail" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/Twitter-white?&style=for-the-badge&logo=twitter&logoColor=blue" style="border-radius: 8px; border: 1px solid black;" /></a>
-<a href="https://otx.alienvault.com/user/tufteam67/pulses" target="_blank"><img alt="OTX" src="https://img.shields.io/badge/OpenThreatExchange-black?&style=for-the-badge&logo=atom&logoColor=white" style="border-radius: 8px;" /></a>
-</div>
-</div>
+<div class="not-prose my-8 grid gap-5 md:grid-cols-2">
+  <section class="rounded-lg border bg-card p-6 text-card-foreground shadow-sm">
+    <h3 class="border-b pb-3 text-center text-lg font-semibold">Contact Me</h3>
+    <div class="mt-5 flex items-center gap-4">
+      <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-lg text-primary-foreground">✉️</div>
+      <div>
+        <p class="font-semibold">Email:</p>
+        <code class="mt-1 inline-block rounded-md bg-muted px-2 py-1 text-sm text-foreground">public(AT)christiant.io</code>
+      </div>
+    </div>
+    <div class="mt-5 flex items-center gap-4">
+      <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-lg text-primary-foreground">🔒</div>
+      <div>
+        <a href="/download/publickey.public@christiant.io-579bc0994c9c8556e77d3bcb83bac562e20e6130.asc" class="font-semibold text-foreground hover:text-primary">
+          Encrypt your message
+        </a>
+        <p class="mt-1 text-sm text-muted-foreground">Download my PGP public key</p>
+      </div>
+    </div>
+  </section>
 
-<!-- Signal Box -->
-<div class="signal-box" style="flex-basis: 100%; background-color: #f8f9fa; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-<h3 style="margin-top: 0; color: #333; text-align: center; border-bottom: 2px solid #3A76F0; padding-bottom: 10px;">Secure Communication</h3>
-<div style="display: flex; align-items: center; margin: 15px 0;">
-<div style="background: #3A76F0; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 15px;">
-<span style="color: white; font-size: 20px;">🔐</span>
-</div>
-<div>
-<p style="margin: 0; font-weight: bold;">Email me your <a href="https://signal.org/" target="_blank" style="color: #3A76F0; text-decoration: none;">Signal</a> username or number</p>
-<p style="margin: 5px 0 0 0; color: #6c757d;">For secure and private end-to-end encrypted communication</p>
-</div>
-</div>
-</div>
+  <section class="rounded-lg border bg-card p-6 text-card-foreground shadow-sm">
+    <h3 class="border-b pb-3 text-center text-lg font-semibold">Follow Me</h3>
+    <div class="mt-5 flex flex-wrap justify-center gap-2.5">
+      <a href="https://www.linkedin.com/in/christiantaillon/" target="_blank" rel="noopener noreferrer"><img alt="LinkedIn" src="https://img.shields.io/badge/Linkedin-white?&style=for-the-badge&logo=linkedin&logoColor=blue" /></a>
+      <a href="https://github.com/christian-taillon" target="_blank" rel="noopener noreferrer"><img alt="Github" src="https://img.shields.io/badge/GitHub-black?&style=for-the-badge&logo=Github&logoColor=white" /></a>
+      <a href="https://medium.com/@christiantaillon" target="_blank" rel="noopener noreferrer"><img alt="Medium" src="https://img.shields.io/badge/Medium-white?&style=for-the-badge&logo=medium&logoColor=black" /></a>
+      <a href="https://www.virustotal.com/gui/user/christianblueteam/graphs" target="_blank" rel="noopener noreferrer"><img alt="VirusTotal" src="https://img.shields.io/badge/VirusTotal-white?&style=for-the-badge&logo=virustotal&logoColor=blue" /></a>
+      <a href="https://twitter.com/christian_tail" target="_blank" rel="noopener noreferrer"><img alt="Twitter" src="https://img.shields.io/badge/Twitter-white?&style=for-the-badge&logo=twitter&logoColor=blue" /></a>
+      <a href="https://otx.alienvault.com/user/tufteam67/pulses" target="_blank" rel="noopener noreferrer"><img alt="OTX" src="https://img.shields.io/badge/OpenThreatExchange-black?&style=for-the-badge&logo=atom&logoColor=white" /></a>
+    </div>
+  </section>
+
+  <section class="rounded-lg border bg-card p-6 text-card-foreground shadow-sm md:col-span-2">
+    <h3 class="border-b pb-3 text-center text-lg font-semibold">Secure Communication</h3>
+    <div class="mt-5 flex items-center gap-4">
+      <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-lg text-primary-foreground">🔐</div>
+      <div>
+        <p class="font-semibold">
+          Email me your <a href="https://signal.org/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Signal</a> username or number
+        </p>
+        <p class="mt-1 text-sm text-muted-foreground">For secure and private end-to-end encrypted communication</p>
+      </div>
+    </div>
+  </section>
 </div>
 
 ---
@@ -120,35 +114,35 @@ I'm a strong believer in the efficacy and efficiency of **open-source** software
 ## Current Roles
 In Cybersecurity, we don't have the luxury of time. Our work demands persistence, proactivity, and collaboration. I believe that you don't need to work at the same company to be on the same team.
 
-<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #522398; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
-  <h3>Manager Cyber Security Consulting@<a href="https://www.gce.com/">GCE</a></h3>
-  <p>Lead the security services and consulting team at GCE, helping organizations build security programs and improve security operations. My decade at GCE has included various <b>technical and leadership roles</b> in <b>security architecture</b>, <b>threat detection</b>, and <b>incident response</b>. I've developed security programs, implemented detection systems, and built resilient infrastructure. See my <strong><a href="https://www.linkedin.com/in/christiantaillon/">LinkedIn profile</a></strong> for details on my roles and responsibilities.</p>
-</div>
+<section class="not-prose my-4 rounded-lg border bg-card p-5 text-card-foreground shadow-sm">
+  <h3 class="text-lg font-semibold">Manager Cyber Security Consulting @ <a href="https://www.gce.com/" class="text-primary hover:underline">GCE</a></h3>
+  <p class="mt-2 leading-7 text-muted-foreground">Lead the security services and consulting team at GCE, helping organizations build security programs and improve security operations. My decade at GCE has included various <strong class="text-foreground">technical and leadership roles</strong> in <strong class="text-foreground">security architecture</strong>, <strong class="text-foreground">threat detection</strong>, and <strong class="text-foreground">incident response</strong>. I've developed security programs, implemented detection systems, and built resilient infrastructure. See my <a href="https://www.linkedin.com/in/christiantaillon/" class="font-semibold text-primary hover:underline">LinkedIn profile</a> for details on my roles and responsibilities.</p>
+</section>
 
-<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #000000; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
-  <h3>Owner & Principal Consultant@<a href="https://darkroastcyber.io">Dark Roast Cyber</a></h3>
-  <p>Owner and Principal Consultant performing <b>open-source development</b> and <b>independent consulting services</b>. Focused on building security tools and providing expert guidance to organizations seeking to strengthen their security posture.</p>
-</div>
+<section class="not-prose my-4 rounded-lg border bg-card p-5 text-card-foreground shadow-sm">
+  <h3 class="text-lg font-semibold">Owner & Principal Consultant @ <a href="https://darkroastcyber.io" class="text-primary hover:underline">Dark Roast Cyber</a></h3>
+  <p class="mt-2 leading-7 text-muted-foreground">Owner and Principal Consultant performing <strong class="text-foreground">open-source development</strong> and <strong class="text-foreground">independent consulting services</strong>. Focused on building security tools and providing expert guidance to organizations seeking to strengthen their security posture.</p>
+</section>
 
-<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #ff0000; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
-  <h3>Director of Threat Intelligence@<a href="https://www.actraaz.org/">ACTRA</a></h3>
-  <p>Leads ACTRA's threat intelligence operations, analyzing emerging cyber threats and providing strategic insights to protect critical infrastructure and member organizations. Oversees the collection, analysis, and dissemination of actionable intelligence to stakeholders while developing frameworks and fostering information-sharing partnerships across public and private sectors.</p>
-</div>
+<section class="not-prose my-4 rounded-lg border bg-card p-5 text-card-foreground shadow-sm">
+  <h3 class="text-lg font-semibold">Director of Threat Intelligence @ <a href="https://www.actraaz.org/" class="text-primary hover:underline">ACTRA</a></h3>
+  <p class="mt-2 leading-7 text-muted-foreground">Leads ACTRA's threat intelligence operations, analyzing emerging cyber threats and providing strategic insights to protect critical infrastructure and member organizations. Oversees the collection, analysis, and dissemination of actionable intelligence to stakeholders while developing frameworks and fostering information-sharing partnerships across public and private sectors.</p>
+</section>
 
-<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #007bff; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
-  <h3>Board Member@<a href="https://www.phoenixissa.org/">Phoenix ISSA</a></h3>
-  <p>Board member for Phoenix ISSA, which was recognized as <b>ISSA Medium Chapter of the Year 2025</b>. I present on <b>security topics</b>, organize <b>educational events</b>, and help shape our chapter's direction to foster <b>professional development</b> and <b>community engagement</b>.</p>
-</div>
+<section class="not-prose my-4 rounded-lg border bg-card p-5 text-card-foreground shadow-sm">
+  <h3 class="text-lg font-semibold">Board Member @ <a href="https://www.phoenixissa.org/" class="text-primary hover:underline">Phoenix ISSA</a></h3>
+  <p class="mt-2 leading-7 text-muted-foreground">Board member for Phoenix ISSA, which was recognized as <strong class="text-foreground">ISSA Medium Chapter of the Year 2025</strong>. I present on <strong class="text-foreground">security topics</strong>, organize <strong class="text-foreground">educational events</strong>, and help shape our chapter's direction to foster <strong class="text-foreground">professional development</strong> and <strong class="text-foreground">community engagement</strong>.</p>
+</section>
 
-<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #ffcc00; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
-  <h3>Threat Hunter@<a href="https://www.cyberresilienceinstitute.org/">Cyber Resilience Institute</a></h3>
-  <p>As a <b>cyber intelligence threat hunter</b>, I focus on proactively identifying <b>advanced persistent threats</b> and attack patterns before they cause significant damage. I combine <b>technical expertise</b> with <b>intelligence analysis</b> to enhance defense capabilities across sectors.</p>
-</div>
+<section class="not-prose my-4 rounded-lg border bg-card p-5 text-card-foreground shadow-sm">
+  <h3 class="text-lg font-semibold">Threat Hunter @ <a href="https://www.cyberresilienceinstitute.org/" class="text-primary hover:underline">Cyber Resilience Institute</a></h3>
+  <p class="mt-2 leading-7 text-muted-foreground">As a <strong class="text-foreground">cyber intelligence threat hunter</strong>, I focus on proactively identifying <strong class="text-foreground">advanced persistent threats</strong> and attack patterns before they cause significant damage. I combine <strong class="text-foreground">technical expertise</strong> with <strong class="text-foreground">intelligence analysis</strong> to enhance defense capabilities across sectors.</p>
+</section>
 
-<div class="role-card" style="background: #f8f9fa; border-left: 4px solid #28a745; padding: 8px 15px; margin: 15px 0; border-radius: 5px;">
-  <h3>Digital Sherlock@<a href="https://dfrlab.org/digital-sherlocks/">Atlantic Council's DFRLab</a></h3>
-  <p>Part of a global community working to combat <b>disinformation</b> and <b>online harm</b>. Through this program, I've developed skills in <b>OSINT techniques</b>, <b>geolocation</b>, <b>social media analysis</b>, and <b>digital forensics</b>. This training enables me to contribute to making the internet safer by investigating <b>foreign influence operations</b> and elevating standards for <b>open source research</b>.</p>
-</div>
+<section class="not-prose my-4 rounded-lg border bg-card p-5 text-card-foreground shadow-sm">
+  <h3 class="text-lg font-semibold">Digital Sherlock @ <a href="https://dfrlab.org/digital-sherlocks/" class="text-primary hover:underline">Atlantic Council's DFRLab</a></h3>
+  <p class="mt-2 leading-7 text-muted-foreground">Part of a global community working to combat <strong class="text-foreground">disinformation</strong> and <strong class="text-foreground">online harm</strong>. Through this program, I've developed skills in <strong class="text-foreground">OSINT techniques</strong>, <strong class="text-foreground">geolocation</strong>, <strong class="text-foreground">social media analysis</strong>, and <strong class="text-foreground">digital forensics</strong>. This training enables me to contribute to making the internet safer by investigating <strong class="text-foreground">foreign influence operations</strong> and elevating standards for <strong class="text-foreground">open source research</strong>.</p>
+</section>
 
 ---
 
