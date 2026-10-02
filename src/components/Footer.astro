@@ -1,11 +1,28 @@
 ---
-import SiteLogo from '@/components/SiteLogo.astro';
 import { SITE } from '@/data/site';
 ---
 <footer class="mt-20 border-t border-ink-foreground/10 bg-ink text-ink-foreground">
   <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.3fr_1fr_1fr]">
     <div>
-      <SiteLogo />
+      <a href="/" class="inline-flex items-center gap-2 font-semibold leading-none tracking-tight text-ink-foreground no-underline">
+        <span class="inline-flex h-5 w-5 shrink-0 items-center justify-center text-primary" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            class="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 8h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8Z"></path>
+            <path d="M16 10h2a2 2 0 1 1 0 4h-2"></path>
+            <path d="M7 4c1 1 1 2 0 3"></path>
+            <path d="M11 3c1 1 1 2 0 3"></path>
+          </svg>
+        </span>
+        <span class="leading-none">christiant.io</span>
+      </a>
       <p class="mt-3 max-w-md text-sm leading-6 text-ink-foreground/60">Practical cybersecurity, AI, engineering notes, tools, and community resources.</p>
     </div>
     <div>
