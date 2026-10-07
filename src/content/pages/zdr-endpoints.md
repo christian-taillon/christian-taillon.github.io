@@ -464,21 +464,18 @@ permalink: /zdr-endpoints/
       <label for="search-input">🔍 Search Models</label>
       <input type="text" id="search-input" class="filter-input" placeholder="Search by name..." oninput="filter()" />
     </div>
-
     <div class="filter-group">
       <label for="company-select">🏭 Model Company</label>
       <select id="company-select" class="filter-select" onchange="filter()">
         <option value="">All Companies</option>
       </select>
     </div>
-
     <div class="filter-group">
       <label for="provider-select">🏢 Provider</label>
       <select id="provider-select" class="filter-select" onchange="filter()">
         <option value="">All Providers</option>
       </select>
     </div>
-
     <div class="filter-group">
       <label for="quant-select">📊 Quantization</label>
       <select id="quant-select" class="filter-select" onchange="filter()">
@@ -490,7 +487,6 @@ permalink: /zdr-endpoints/
         <option value="unknown">Unknown</option>
       </select>
     </div>
-
     <div class="filter-group">
       <label for="cache-select">💾 Caching</label>
       <select id="cache-select" class="filter-select" onchange="filter()">
@@ -499,7 +495,6 @@ permalink: /zdr-endpoints/
         <option value="not-cached">No Caching</option>
       </select>
     </div>
-
     <div class="filter-group">
       <label for="sort-select">🔄 Sort By</label>
       <select id="sort-select" class="filter-select" onchange="filter()">
@@ -510,7 +505,6 @@ permalink: /zdr-endpoints/
       </select>
     </div>
   </div>
-
   <div class="filter-sliders-row">
     <div class="slider-group">
       <label for="input-cost-slider">💰 Max Input Cost ($/1M)</label>
@@ -527,7 +521,6 @@ permalink: /zdr-endpoints/
       </div>
     </div>
   </div>
-
   <div class="filter-footer">
     <div class="results-count" id="results-count">Showing all endpoints</div>
     <button class="reset-btn" onclick="resetFilters()">Reset Filters</button>
