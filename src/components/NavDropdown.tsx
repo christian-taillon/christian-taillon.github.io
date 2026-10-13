@@ -35,7 +35,7 @@ export function NavDropdown({ label, items, currentPath }: Props) {
             'inline-flex items-center gap-1 py-2 transition-colors outline-none',
             active
               ? 'text-foreground font-medium'
-              : 'text-foreground/60 hover:text-foreground/80',
+              : 'text-muted-foreground hover:text-foreground/80 dark:text-foreground/60 dark:hover:text-foreground/80',
           ].join(' ')}
         >
           <span>{label}</span>
