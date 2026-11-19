@@ -63,36 +63,32 @@ canvas{position:relative;z-index:1;display:block;width:100%;outline:none}#chart3
 </header>
 
 <header class="hero">
-  <p class="eyebrow">Artificial Analysis Intelligence Index v4.3.2 · September 25, 2026 snapshot</p>
+  <p class="eyebrow" id="snapshotEyebrow">Artificial Analysis Intelligence Index v5.0.1 · November 2026 snapshot</p>
   <h1>Model reasoning family explorer</h1>
-  <p>Compare <strong>GPT-6 Astra, Sol, and Luna</strong>, <strong>GPT-5.6 Terra</strong>, <strong>Claude Opus 5.5</strong>, and <strong>gpt-oss-120b</strong>. The 3D view combines Intelligence Index, task cost, and output-token use. The 2D view makes the cost/intelligence tradeoff explicit and connects the <strong>cost-efficiency Pareto frontier</strong>.</p>
+  <p>Compare <strong>GPT-6.2 Astra</strong> and <strong>GPT-6.2 Sol</strong> against <strong>GPT-6.1 Sol</strong> across reasoning effort. The 3D and 2D views use the same Artificial Analysis Intelligence Index v5.0.1 snapshot for intelligence, cost per task, and total evaluation output tokens. The September 2026 v4.3.2 dataset remains available from the snapshot selector below.</p>
 </header>
 
-<aside class="notice">
-  <strong>All 31 selected model variants are retained.</strong> Twenty-nine have complete cost + Intelligence + output-token data and are plotted. GPT-6 Astra non-reasoning currently has no published task-cost value, while gpt-oss-120b low has no published task-cost or total Intelligence Index output-token value. Those N/A fields are preserved rather than estimated.
-</aside>
+<aside class="notice" id="snapshotNotice"><strong>15 comparable model variants from Intelligence Index v5.0.1.</strong> Each variant has a published intelligence score, cost per task, and total evaluation output tokens. Earlier v4.3.2 values are isolated in a separate historical snapshot, not mixed into the current Pareto frontier.</aside>
 
 <main>
 <div class="stack">
   <section class="panel astra-takeaway" aria-label="Astra reasoning takeaway">
     <div>
-      <h2>Astra xHigh now matches Max intelligence at lower cost.</h2>
-      <p><strong>xHigh reaches 53</strong> at $2.31 and 38M output tokens, while <strong>Max also reaches 53</strong> at $3.26 and 60M. Medium reaches 50 at $1.54 and 19M. The updated v4.3.2 snapshot makes the diminishing return from xHigh to Max directly visible.</p>
+      <h2 id="takeawayTitle">GPT-6.2 Sol High leads GPT-6.1 Sol xHigh on intelligence and cost.</h2>
+      <p id="takeawayDescription"><strong>GPT-6.2 Sol High scores 55 at $0.56 per task</strong>, compared with <strong>GPT-6.1 Sol xHigh at 53 and $0.76</strong>. GPT-6.2 Astra xHigh and Max both round to 62, but xHigh costs $2.52 versus $4.00 for Max. Scores are rounded to the published index display precision.</p>
     </div>
-    <div class="takeaway-stats">
-      <div class="takeaway-stat"><span>Medium vs Max</span><b>94% intelligence</b><small>47% of task cost · 32% of output tokens</small></div>
-      <div class="takeaway-stat"><span>xHigh vs Max</span><b>100% intelligence</b><small>71% of task cost · 63% of output tokens</small></div>
-    </div>
+    <div class="takeaway-stats" id="takeawayStats"><div class="takeaway-stat"><span>Sol 6.2 High vs 6.1 xHigh</span><b>+2 index points</b><small>26% lower task cost · 32% fewer output tokens</small></div><div class="takeaway-stat"><span>Astra 6.2 xHigh vs Max</span><b>Same rounded 62</b><small>37% lower task cost · 59% fewer output tokens</small></div></div>
   </section>
 
   <section class="metrics" aria-label="summary metrics">
-    <div class="metric"><div class="metric-label">Selected variants</div><div class="metric-value" id="metricTotal">31</div><div class="metric-detail">Astra 6 · Sol 6 · Terra 6 · Luna 6 · Opus 5.5 5 · oss 2</div></div>
-    <div class="metric"><div class="metric-label">Complete plotted points</div><div class="metric-value" id="metricPlotted">29</div><div class="metric-detail">Cost + Intelligence + token use available</div></div>
+    <div class="metric"><div class="metric-label">Selected variants</div><div class="metric-value" id="metricTotal">15</div><div class="metric-detail" id="metricTotalDetail">Astra 6.2 · Sol 6.2 · Sol 6.1 · 5 efforts each</div></div>
+    <div class="metric"><div class="metric-label">Complete plotted points</div><div class="metric-value" id="metricPlotted">15</div><div class="metric-detail">Cost + Intelligence + token use available</div></div>
     <div class="metric"><div class="metric-label">Visible Pareto points</div><div class="metric-value" id="metricPareto">--</div><div class="metric-detail">Lower cost / higher Intelligence frontier</div></div>
-    <div class="metric"><div class="metric-label">Astra xHigh vs Max cost</div><div class="metric-value">71%</div><div class="metric-detail">53 vs 53 Intelligence · 38M vs 60M tokens</div></div>
+    <div class="metric"><div class="metric-label" id="metricCompareLabel">Astra 6.2 xHigh vs Max cost</div><div class="metric-value" id="metricCompareValue">63%</div><div class="metric-detail" id="metricCompareDetail">62 vs 62 Intelligence · 27.1M vs 65.8M tokens</div></div>
   </section>
 
   <section class="panel controls" aria-label="chart controls">
+    <div class="control-row" style="margin-top:0;padding-top:0;border-top:0;margin-bottom:14px"><label for="snapshotSelect" class="control-label" style="margin:0">Benchmark snapshot</label><select id="snapshotSelect" class="button" aria-label="Benchmark snapshot"><option value="latest" selected>Current: Intelligence Index v5.0.1</option><option value="archive">Archive: September 2026 v4.3.2</option></select></div>
     <div class="controls-grid">
       <div class="field"><label>Cost axis</label><div class="segmented"><input id="costLinear" name="costScale" type="radio" value="linear" checked><label for="costLinear">Linear</label><input id="costLog" name="costScale" type="radio" value="log"><label for="costLog">Log</label></div></div>
       <div class="field"><label>Token axis / bubble scaling</label><div class="segmented"><input id="tokenLinear" name="tokenScale" type="radio" value="linear"><label for="tokenLinear">Linear</label><input id="tokenLog" name="tokenScale" type="radio" value="log" checked><label for="tokenLog">Log</label></div></div>
@@ -137,11 +133,11 @@ canvas{position:relative;z-index:1;display:block;width:100%;outline:none}#chart3
   </section>
 
   <section class="panel table-panel">
-    <div class="table-head"><div><h3>Current 31-variant dataset</h3><p>All selected models are retained, including published N/A fields.</p></div><p>Artificial Analysis · Intelligence Index v4.3.2</p></div>
+    <div class="table-head"><div><h3 id="tableTitle">Current 15-variant comparison</h3><p id="tableDescription">All values come from the same Intelligence Index version.</p></div><p id="tableVersion">Artificial Analysis · Intelligence Index v5.0.1</p></div>
     <div class="table-wrap"><table><thead><tr><th>Model</th><th>Intelligence</th><th>Cost / task</th><th>Output tokens</th><th>Output speed</th><th>Chart status</th><th>Source</th></tr></thead><tbody id="dataRows"></tbody></table></div>
   </section>
 
-  <p class="footer-note">Source: Artificial Analysis model pages, refreshed September 25, 2026. Cost is weighted average USD per Artificial Analysis Intelligence Index task. Token use is total output tokens generated while running the Intelligence Index evaluation, shown in millions. The snapshot uses Intelligence Index v4.3.2. Where Artificial Analysis currently publishes N/A for task cost or token use, this page preserves N/A rather than estimating a value.</p>
+  <p class="footer-note" id="footerSource">Source: <a href="https://artificialanalysis.ai/models/gpt-6-2-astra" target="_blank" rel="noreferrer">GPT-6.2 Astra</a>, <a href="https://artificialanalysis.ai/models/gpt-6-2-sol" target="_blank" rel="noreferrer">GPT-6.2 Sol</a>, and <a href="https://artificialanalysis.ai/models/gpt-6-1-sol" target="_blank" rel="noreferrer">GPT-6.1 Sol</a> model evaluations. Intelligence Index v5.0.1. Cost is average USD per index task; output tokens are totals across index evaluation tasks (millions), not tokens per task. Costs rounded to cents and published intelligence scores rounded to integer. Earlier v4.3.2 observations appear only in the archive snapshot.</p>
 </div>
 </main>
 
@@ -150,6 +146,9 @@ canvas{position:relative;z-index:1;display:block;width:100%;outline:none}#chart3
 'use strict';
 
 const FAMILY = {
+  '6.2 Astra':{color:'#ff1493',order:0},
+  '6.2 Sol':{color:'#00bfff',order:1},
+  '6.1 Sol':{color:'#64748b',order:2},
   Astra:{color:'#ff1493',order:0},
   Sol:{color:'#00bfff',order:1},
   Terra:{color:'#ff7a00',order:2},
@@ -158,7 +157,7 @@ const FAMILY = {
   'gpt-oss-120b':{color:'#a33cff',order:5}
 };
 
-const DATA = [
+const ARCHIVE_DATA = [
   {family:'Astra',tier:'Non-reasoning',order:0,intelligence:45,cost:null,tokens:12,speed:null,url:'https://artificialanalysis.ai/models/gpt-6-astra-non-reasoning'},
   {family:'Astra',tier:'Low',order:1,intelligence:46,cost:0.82,tokens:10,speed:55.0,url:'https://artificialanalysis.ai/models/gpt-6-astra-low'},
   {family:'Astra',tier:'Medium',order:2,intelligence:50,cost:1.54,tokens:19,speed:48.4,url:'https://artificialanalysis.ai/models/gpt-6-astra-medium'},
@@ -197,10 +196,164 @@ const DATA = [
   {family:'gpt-oss-120b',tier:'High',order:3,intelligence:12,cost:0.11,tokens:84,speed:185.8,url:'https://artificialanalysis.ai/models/gpt-oss-120b'}
 ].map((d,i)=>({...d,id:i,color:FAMILY[d.family].color,complete:Number.isFinite(d.cost)&&Number.isFinite(d.tokens)}));
 
+const LIVE_DATA = [
+  {
+    "family": "6.2 Astra",
+    "tier": "Low",
+    "order": 1,
+    "intelligence": 46,
+    "cost": 0.66,
+    "tokens": 6.31,
+    "speed": 46,
+    "url": "https://artificialanalysis.ai/models/gpt-6-2-astra"
+  },
+  {
+    "family": "6.2 Astra",
+    "tier": "Medium",
+    "order": 2,
+    "intelligence": 57,
+    "cost": 1.62,
+    "tokens": 12.4,
+    "speed": 48,
+    "url": "https://artificialanalysis.ai/models/gpt-6-2-astra"
+  },
+  {
+    "family": "6.2 Astra",
+    "tier": "High",
+    "order": 3,
+    "intelligence": 60,
+    "cost": 2.07,
+    "tokens": 20,
+    "speed": 49,
+    "url": "https://artificialanalysis.ai/models/gpt-6-2-astra"
+  },
+  {
+    "family": "6.2 Astra",
+    "tier": "xHigh",
+    "order": 4,
+    "intelligence": 62,
+    "cost": 2.52,
+    "tokens": 27.1,
+    "speed": 49,
+    "url": "https://artificialanalysis.ai/models/gpt-6-2-astra"
+  },
+  {
+    "family": "6.2 Astra",
+    "tier": "Max",
+    "order": 5,
+    "intelligence": 62,
+    "cost": 4,
+    "tokens": 65.8,
+    "speed": 49,
+    "url": "https://artificialanalysis.ai/models/gpt-6-2-astra"
+  },
+  {
+    "family": "6.2 Sol",
+    "tier": "Low",
+    "order": 1,
+    "intelligence": 41,
+    "cost": 0.18,
+    "tokens": 7.21,
+    "speed": 65,
+    "url": "https://artificialanalysis.ai/models/gpt-6-2-sol"
+  },
+  {
+    "family": "6.2 Sol",
+    "tier": "Medium",
+    "order": 2,
+    "intelligence": 53,
+    "cost": 0.41,
+    "tokens": 14.6,
+    "speed": 69,
+    "url": "https://artificialanalysis.ai/models/gpt-6-2-sol"
+  },
+  {
+    "family": "6.2 Sol",
+    "tier": "High",
+    "order": 3,
+    "intelligence": 55,
+    "cost": 0.56,
+    "tokens": 22.7,
+    "speed": 72,
+    "url": "https://artificialanalysis.ai/models/gpt-6-2-sol"
+  },
+  {
+    "family": "6.2 Sol",
+    "tier": "xHigh",
+    "order": 4,
+    "intelligence": 56,
+    "cost": 0.65,
+    "tokens": 33.3,
+    "speed": null,
+    "url": "https://artificialanalysis.ai/models/gpt-6-2-sol"
+  },
+  {
+    "family": "6.2 Sol",
+    "tier": "Max",
+    "order": 5,
+    "intelligence": 57,
+    "cost": 1.01,
+    "tokens": 60.9,
+    "speed": 77,
+    "url": "https://artificialanalysis.ai/models/gpt-6-2-sol"
+  },
+  {
+    "family": "6.1 Sol",
+    "tier": "Low",
+    "order": 1,
+    "intelligence": 35,
+    "cost": 0.16,
+    "tokens": 8.18,
+    "speed": null,
+    "url": "https://artificialanalysis.ai/models/gpt-6-1-sol"
+  },
+  {
+    "family": "6.1 Sol",
+    "tier": "Medium",
+    "order": 2,
+    "intelligence": 46,
+    "cost": 0.36,
+    "tokens": 15.1,
+    "speed": null,
+    "url": "https://artificialanalysis.ai/models/gpt-6-1-sol"
+  },
+  {
+    "family": "6.1 Sol",
+    "tier": "High",
+    "order": 3,
+    "intelligence": 50,
+    "cost": 0.59,
+    "tokens": 24.7,
+    "speed": null,
+    "url": "https://artificialanalysis.ai/models/gpt-6-1-sol"
+  },
+  {
+    "family": "6.1 Sol",
+    "tier": "xHigh",
+    "order": 4,
+    "intelligence": 53,
+    "cost": 0.76,
+    "tokens": 33.3,
+    "speed": null,
+    "url": "https://artificialanalysis.ai/models/gpt-6-1-sol"
+  },
+  {
+    "family": "6.1 Sol",
+    "tier": "Max",
+    "order": 5,
+    "intelligence": 55,
+    "cost": 1.27,
+    "tokens": 63.7,
+    "speed": null,
+    "url": "https://artificialanalysis.ai/models/gpt-6-1-sol"
+  }
+].map((d,i)=>({...d,id:i,color:FAMILY[d.family].color,complete:Number.isFinite(d.cost)&&Number.isFinite(d.tokens)}));
+let DATA = LIVE_DATA;
+
 const $ = id => document.getElementById(id);
 const isMobile = matchMedia('(max-width: 700px)').matches;
 const state = {
-  families:new Set(Object.keys(FAMILY)),
+  families:new Set(LIVE_DATA.map(d=>d.family)),
   labelMode:isMobile?'selected':'all',
   showIncomplete:true,
   showPareto:true,
@@ -253,12 +406,12 @@ function pareto(data){
 }
 function paretoIds(){return new Set(pareto(plotData()).map(d=>d.id))}
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r)}
-function displayName(d){const names={Astra:'GPT-6 Astra',Sol:'GPT-6 Sol',Terra:'GPT-5.6 Terra',Luna:'GPT-6 Luna','Opus 5.5':'Claude Opus 5.5','gpt-oss-120b':'gpt-oss-120b'};return names[d.family]||d.family}
+function displayName(d){const names={Astra:'GPT-6 Astra',Sol:'GPT-6 Sol',Terra:'GPT-5.6 Terra',Luna:'GPT-6 Luna','Opus 5.5':'Claude Opus 5.5','gpt-oss-120b':'gpt-oss-120b','6.2 Astra':'GPT-6.2 Astra','6.2 Sol':'GPT-6.2 Sol','6.1 Sol':'GPT-6.1 Sol'};return names[d.family]||d.family}
 function shortName(d){return d.family+' '+d.tier}
 
 function buildFilters(){
-  const row=$('familyFilters');
-  Object.keys(FAMILY).forEach(f=>{
+  const row=$('familyFilters');row.innerHTML='<span class="family-title">Families</span>';
+  [...new Set(DATA.map(d=>d.family))].forEach(f=>{
     const n=DATA.filter(d=>d.family===f).length,c=DATA.filter(d=>d.family===f&&d.complete).length;
     const label=document.createElement('label');label.className='family-filter';label.style.setProperty('--family-color',FAMILY[f].color);
     const input=document.createElement('input');input.type='checkbox';input.checked=true;input.dataset.family=f;
@@ -269,7 +422,7 @@ function buildFilters(){
 }
 function buildLegend(){
   const l=$('legend');l.innerHTML='';
-  Object.keys(FAMILY).forEach(f=>{const e=document.createElement('span');e.className='legend-item';e.innerHTML='<span class="swatch" style="background:'+FAMILY[f].color+'"></span>'+f;l.append(e)});
+  [...new Set(DATA.map(d=>d.family))].forEach(f=>{const e=document.createElement('span');e.className='legend-item';e.innerHTML='<span class="swatch" style="background:'+FAMILY[f].color+'"></span>'+f;l.append(e)});
 }
 function buildTable(){
   const body=$('dataRows');body.innerHTML='';
@@ -427,6 +580,53 @@ $('labelToggle3d').addEventListener('click',toggleLabels);$('labelToggle2d').add
 document.querySelectorAll('input[name="costScale"],input[name="tokenScale"],input[name="lineMode"]').forEach(el=>el.addEventListener('change',syncState));
 $('themeToggle').addEventListener('click',()=>{document.documentElement.classList.toggle('dark');localStorage.setItem('openai-family-theme',document.documentElement.classList.contains('dark')?'dark':'light');render2D()});
 if(localStorage.getItem('openai-family-theme')==='dark')document.documentElement.classList.add('dark');
+
+
+const snapshotCopy = {
+  archive:{
+    eyebrow:'Artificial Analysis Intelligence Index v4.3.2 · September 25, 2026 archive',
+    notice:'<strong>Historical v4.3.2 data:</strong> all 31 original variants retained; 29 have complete intelligence, cost, and token fields. These values are not mixed with the newer v5.0.1 series.',
+    title:'Astra xHigh matches Max intelligence at lower cost in this archive.',
+    desc:'<strong>GPT-6 Astra xHigh scores 53</strong> at $2.31 and 38M output tokens, versus <strong>Max at 53</strong> and $3.26 with 60M output tokens. Scores and costs reflect September 2026 v4.3.2, not the current evaluation.',
+    stats:'<div class="takeaway-stat"><span>Medium vs Max</span><b>94% intelligence</b><small>47% of task cost · 32% of output tokens</small></div><div class="takeaway-stat"><span>xHigh vs Max</span><b>100% intelligence</b><small>71% of task cost · 63% of output tokens</small></div>',
+    total:'Astra 6 · Sol 6 · Terra 6 · Luna 6 · Opus 5.5 5 · oss 2',
+    compare:['Astra xHigh vs Max cost','71%','53 vs 53 Intelligence · 38M vs 60M tokens'],
+    table:['Historical 31-variant dataset','Original September 2026 snapshot, including N/A fields','Artificial Analysis · Intelligence Index v4.3.2'],
+    footer:'Source: Artificial Analysis model pages, September 25, 2026. Intelligence Index v4.3.2 archived comparison. The historical chart is separate from current v5.0.1 metrics; N/A data is never estimated.'
+  },
+  latest:{
+    eyebrow:'Artificial Analysis Intelligence Index v5.0.1 · November 2026 snapshot',
+    notice:'<strong>15 comparable model variants from Intelligence Index v5.0.1.</strong> Each has intelligence, average task cost, and total evaluation output tokens. Historical v4.3.2 data is isolated in the archive selector.',
+    title:'GPT-6.2 Sol High leads GPT-6.1 Sol xHigh on intelligence and cost.',
+    desc:'<strong>GPT-6.2 Sol High scores 55 at $0.56 per task</strong>, versus <strong>GPT-6.1 Sol xHigh at 53 and $0.76</strong>. GPT-6.2 Astra xHigh and Max both round to 62 but cost $2.52 and $4.00 per task, respectively.',
+    stats:'<div class="takeaway-stat"><span>Sol 6.2 High vs 6.1 xHigh</span><b>+2 index points</b><small>26% lower task cost · 32% fewer output tokens</small></div><div class="takeaway-stat"><span>Astra 6.2 xHigh vs Max</span><b>Same rounded 62</b><small>37% lower task cost · 59% fewer output tokens</small></div>',
+    total:'Astra 6.2 · Sol 6.2 · Sol 6.1 · 5 efforts each',
+    compare:['Astra 6.2 xHigh vs Max cost','63%','62 vs 62 Intelligence · 27.1M vs 65.8M tokens'],
+    table:['Current 15-variant comparison','All values come from the same Intelligence Index version','Artificial Analysis · Intelligence Index v5.0.1'],
+    footer:'Source: <a href="https://artificialanalysis.ai/models/gpt-6-2-astra" target="_blank" rel="noreferrer">GPT-6.2 Astra</a>, <a href="https://artificialanalysis.ai/models/gpt-6-2-sol" target="_blank" rel="noreferrer">GPT-6.2 Sol</a>, and <a href="https://artificialanalysis.ai/models/gpt-6-1-sol" target="_blank" rel="noreferrer">GPT-6.1 Sol</a>. Intelligence Index v5.0.1. Cost is average USD per index task; output tokens are totals for the full index evaluation, not per task. Scores and costs are rounded for display.'
+  }
+};
+function switchSnapshot(){
+  const archive=$('snapshotSelect').value==='archive',copy=archive?snapshotCopy.archive:snapshotCopy.latest;
+  DATA=archive?ARCHIVE_DATA:LIVE_DATA;
+  state.families=new Set(DATA.map(d=>d.family));
+  $('snapshotEyebrow').textContent=copy.eyebrow;
+  $('snapshotNotice').innerHTML=copy.notice;
+  $('takeawayTitle').textContent=copy.title;
+  $('takeawayDescription').innerHTML=copy.desc;
+  $('takeawayStats').innerHTML=copy.stats;
+  $('metricTotal').textContent=DATA.length;
+  $('metricTotalDetail').textContent=copy.total;
+  $('metricCompareLabel').textContent=copy.compare[0];
+  $('metricCompareValue').textContent=copy.compare[1];
+  $('metricCompareDetail').textContent=copy.compare[2];
+  $('tableTitle').textContent=copy.table[0];
+  $('tableDescription').textContent=copy.table[1];
+  $('tableVersion').textContent=copy.table[2];
+  $('footerSource').innerHTML=copy.footer;
+  clearInteraction();buildFilters();buildLegend();renderAll();
+}
+$('snapshotSelect').addEventListener('change',switchSnapshot);
 
 buildFilters();buildLegend();buildTable();syncLabelButtons();new ResizeObserver(render3D).observe(w3);new ResizeObserver(render2D).observe(w2);renderAll();
 })();
