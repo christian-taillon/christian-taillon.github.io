@@ -53,6 +53,27 @@ canvas{position:relative;z-index:1;display:block;width:100%;outline:none}#chart3
 @media(max-width:900px){body{padding:20px 18px 44px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.controls-grid{grid-template-columns:1fr}.legend{margin-left:0}.astra-takeaway{grid-template-columns:1fr}.insight-grid{grid-template-columns:1fr}#chart3d{height:520px}#chart2d{height:490px}}
 @media(max-width:620px){body{padding:16px 12px 34px}.site-header{margin-bottom:24px}.header-actions .pill-button:first-child{display:none}.hero h1{font-size:34px}.hero p{font-size:13px}.metrics{grid-template-columns:1fr 1fr;gap:10px}.metric{min-height:102px;padding:14px}.metric-value{font-size:25px}.metric-detail{font-size:9px}.chart-panel,.controls,.table-panel,.insight,.astra-takeaway{padding:15px}.chart-head{flex-direction:column;margin-bottom:11px}.chart-actions{width:100%;justify-content:flex-start}.chart-actions .button{flex:1}.control-row{align-items:flex-start;flex-direction:column}.legend{width:100%}.takeaway-stats{grid-template-columns:1fr 1fr}.takeaway-stat{padding:10px}#chart3d{height:455px}#chart2d{height:440px}.chart-tooltip{min-width:210px;font-size:9px}.chart-head h2{font-size:21px}}
 @media(max-width:390px){.metrics{grid-template-columns:1fr}.takeaway-stats{grid-template-columns:1fr}.chart-actions .button{flex:1 1 45%}#chart3d{height:430px}#chart2d{height:420px}}
+
+/* Comparison and decision tools */
+.decision-panel{padding:22px}.decision-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:15px}
+.decision-head h2{margin:0;font-size:19px;letter-spacing:-.02em}.decision-head p{margin:0;max-width:720px;color:var(--muted);font-size:11px;line-height:1.55}
+.decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.decision-card{min-width:0;padding:15px;border:1px solid var(--border-soft);border-radius:13px;background:var(--panel-soft)}
+.decision-card .decision-tag{display:block;color:var(--muted);font:700 10px ui-monospace,monospace;letter-spacing:.04em;text-transform:uppercase}
+.decision-card b{display:block;margin-top:9px;font-size:14px;line-height:1.3}.decision-card .decision-metrics{margin-top:7px;color:var(--text);font-size:12px}
+.decision-card small{display:block;margin-top:8px;color:var(--muted);font-size:10px;line-height:1.45}
+.compare-selectors{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.compare-selectors label{display:block;min-width:0;color:var(--muted);font-size:11px;font-weight:700}
+.compare-selectors select{display:block;width:100%;min-height:43px;margin-top:7px;padding:9px 12px;border:1px solid var(--border);border-radius:10px;background:var(--panel-soft);color:var(--text);font:500 12px Inter,system-ui,sans-serif}
+.compare-result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.compare-result{min-width:0;padding:13px 14px;border:1px solid var(--border-soft);border-radius:12px;background:var(--panel-soft)}
+.compare-result span{display:block;color:var(--muted);font-size:10px}
+.compare-result strong{display:block;margin-top:6px;font-size:15px;letter-spacing:-.02em}
+.compare-result small{display:block;margin-top:6px;color:var(--muted);font-size:10px;line-height:1.45}
+@media(max-width:900px){.decision-head{display:block}.decision-head p{margin-top:7px}.decision-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.decision-panel{padding:15px}.decision-grid,.compare-selectors{grid-template-columns:1fr}.compare-result-grid{grid-template-columns:1fr 1fr}.compare-result{padding:11px}}
+@media(max-width:390px){.compare-result-grid{grid-template-columns:1fr}}
+
 </style>
 <header class="site-header">
   <a class="home-link" href="https://christiant.io/">&larr; christiant.io</a>
@@ -65,32 +86,44 @@ canvas{position:relative;z-index:1;display:block;width:100%;outline:none}#chart3
 <header class="hero">
   <p class="eyebrow" id="snapshotEyebrow">Artificial Analysis Intelligence Index v5.0.1 · November 2026 snapshot</p>
   <h1>Model reasoning family explorer</h1>
-  <p>Compare <strong>GPT-6.2 Astra</strong> and <strong>GPT-6.2 Sol</strong> against <strong>GPT-6.1 Sol</strong> across reasoning effort. The 3D and 2D views use the same Artificial Analysis Intelligence Index v5.0.1 snapshot for intelligence, cost per task, and total evaluation output tokens. The September 2026 v4.3.2 dataset remains available from the snapshot selector below.</p>
+  <p>Compare <strong>GPT-6.2 Astra and Sol</strong> with GPT-6.1 Sol, Claude Fable 5.2, Claude Opus 5.5, Gemini 4, Grok, Meta, Kimi, DeepSeek, and older OpenAI baselines. The default chart uses the Artificial Analysis Intelligence Index v5.0.1 only. Switch to the separate September archive without mixing methodology versions.</p>
 </header>
 
-<aside class="notice" id="snapshotNotice"><strong>15 comparable model variants from Intelligence Index v5.0.1.</strong> Each variant has a published intelligence score, cost per task, and total evaluation output tokens. Earlier v4.3.2 values are isolated in a separate historical snapshot, not mixed into the current Pareto frontier.</aside>
+<aside class="notice" id="snapshotNotice"><strong>25 comparable model variants from Intelligence Index v5.0.1.</strong> Each variant has a published intelligence score, cost per task, and total evaluation output tokens; comparisons include Anthropic, Google, Meta, xAI, Kimi, DeepSeek, and prior OpenAI models. Earlier v4.3.2 values are isolated in a separate historical snapshot, not mixed into the current Pareto frontier.</aside>
 
 <main>
 <div class="stack">
   <section class="panel astra-takeaway" aria-label="Astra reasoning takeaway">
     <div>
-      <h2 id="takeawayTitle">GPT-6.2 Sol High leads GPT-6.1 Sol xHigh on intelligence and cost.</h2>
-      <p id="takeawayDescription"><strong>GPT-6.2 Sol High scores 55 at $0.56 per task</strong>, compared with <strong>GPT-6.1 Sol xHigh at 53 and $0.76</strong>. GPT-6.2 Astra xHigh and Max both round to 62, but xHigh costs $2.52 versus $4.00 for Max. Scores are rounded to the published index display precision.</p>
+      <h2 id="takeawayTitle">The highest score and the best value are different models.</h2>
+      <p id="takeawayDescription"><strong>Claude Fable 5.2 Max reaches 65 at $26.54/task</strong>, while <strong>GPT-6.2 Astra xHigh reaches 62 at $2.52</strong> and <strong>GPT-6.2 Sol High reaches 55 at $0.56</strong>. Compare absolute performance, task cost, and output-token use rather than treating the highest score as the default choice.</p>
     </div>
     <div class="takeaway-stats" id="takeawayStats"><div class="takeaway-stat"><span>Sol 6.2 High vs 6.1 xHigh</span><b>+2 index points</b><small>26% lower task cost · 32% fewer output tokens</small></div><div class="takeaway-stat"><span>Astra 6.2 xHigh vs Max</span><b>Same rounded 62</b><small>37% lower task cost · 59% fewer output tokens</small></div></div>
   </section>
 
   <section class="metrics" aria-label="summary metrics">
-    <div class="metric"><div class="metric-label">Selected variants</div><div class="metric-value" id="metricTotal">15</div><div class="metric-detail" id="metricTotalDetail">Astra 6.2 · Sol 6.2 · Sol 6.1 · 5 efforts each</div></div>
+    <div class="metric"><div class="metric-label">Selected variants</div><div class="metric-value" id="metricTotal">15</div><div class="metric-detail" id="metricTotalDetail">3 GPT reasoning families plus 10 outside baselines</div></div>
     <div class="metric"><div class="metric-label">Complete plotted points</div><div class="metric-value" id="metricPlotted">15</div><div class="metric-detail">Cost + Intelligence + token use available</div></div>
     <div class="metric"><div class="metric-label">Visible Pareto points</div><div class="metric-value" id="metricPareto">--</div><div class="metric-detail">Lower cost / higher Intelligence frontier</div></div>
     <div class="metric"><div class="metric-label" id="metricCompareLabel">Astra 6.2 xHigh vs Max cost</div><div class="metric-value" id="metricCompareValue">63%</div><div class="metric-detail" id="metricCompareDetail">62 vs 62 Intelligence · 27.1M vs 65.8M tokens</div></div>
   </section>
 
+
+  <section class="panel decision-panel" aria-label="Best configurations by budget">
+    <div class="decision-head"><h2>Practical shortlist</h2><p>Highest Intelligence Index score in this selected benchmark snapshot at common task-cost ceilings. This is not a prediction of success in your own workload.</p></div>
+    <div class="decision-grid" id="valueShortlist" aria-live="polite"></div>
+  </section>
+
+  <section class="panel decision-panel" aria-label="Compare two model configurations">
+    <div class="decision-head"><h2>Compare two configurations</h2><p>Compare intelligence, average API task cost, and total evaluation output tokens using the <strong>same benchmark version</strong>.</p></div>
+    <div class="compare-selectors"><label for="compareA">Configuration A<select id="compareA" aria-label="First model configuration"></select></label><label for="compareB">Configuration B<select id="compareB" aria-label="Second model configuration"></select></label></div>
+    <div class="compare-result-grid" id="compareResults" aria-live="polite"></div>
+  </section>
+
   <section class="panel controls" aria-label="chart controls">
-    <div class="control-row" style="margin-top:0;padding-top:0;border-top:0;margin-bottom:14px"><label for="snapshotSelect" class="control-label" style="margin:0">Benchmark snapshot</label><select id="snapshotSelect" class="button" aria-label="Benchmark snapshot"><option value="latest" selected>Current: Intelligence Index v5.0.1</option><option value="archive">Archive: September 2026 v4.3.2</option></select></div>
+    <div class="control-row" style="margin-top:0;padding-top:0;border-top:0;margin-bottom:14px"><label for="snapshotSelect" class="control-label" style="margin:0">Benchmark snapshot</label><select id="snapshotSelect" class="button" aria-label="Benchmark snapshot"><option value="latest" selected>Current: Intelligence Index v5.0.1</option><option value="archive">Archive: September 2026 v4.3.2</option></select><label for="budgetCeiling" class="control-label" style="margin:0">Max cost per evaluated task</label><select id="budgetCeiling" class="button" aria-label="Maximum task cost"><option value="all">No limit</option><option value="0.5">$0.50</option><option value="1">$1</option><option value="3">$3</option><option value="10">$10</option><option value="30">$30</option></select></div>
     <div class="controls-grid">
-      <div class="field"><label>Cost axis</label><div class="segmented"><input id="costLinear" name="costScale" type="radio" value="linear" checked><label for="costLinear">Linear</label><input id="costLog" name="costScale" type="radio" value="log"><label for="costLog">Log</label></div></div>
+      <div class="field"><label>Cost axis</label><div class="segmented"><input id="costLinear" name="costScale" type="radio" value="linear"><label for="costLinear">Linear</label><input id="costLog" name="costScale" type="radio" value="log" checked><label for="costLog">Log</label></div></div>
       <div class="field"><label>Token axis / bubble scaling</label><div class="segmented"><input id="tokenLinear" name="tokenScale" type="radio" value="linear"><label for="tokenLinear">Linear</label><input id="tokenLog" name="tokenScale" type="radio" value="log" checked><label for="tokenLog">Log</label></div></div>
       <div class="field"><label>Family trajectories</label><div class="segmented"><input id="lineOn" name="lineMode" type="radio" value="on" checked><label for="lineOn">Connected</label><input id="lineOff" name="lineMode" type="radio" value="off"><label for="lineOff">Points only</label></div></div>
     </div>
@@ -133,11 +166,11 @@ canvas{position:relative;z-index:1;display:block;width:100%;outline:none}#chart3
   </section>
 
   <section class="panel table-panel">
-    <div class="table-head"><div><h3 id="tableTitle">Current 15-variant comparison</h3><p id="tableDescription">All values come from the same Intelligence Index version.</p></div><p id="tableVersion">Artificial Analysis · Intelligence Index v5.0.1</p></div>
+    <div class="table-head"><div><h3 id="tableTitle">Current 25-variant comparison</h3><p id="tableDescription">All values come from the same Intelligence Index version.</p></div><p id="tableVersion">Artificial Analysis · Intelligence Index v5.0.1</p></div>
     <div class="table-wrap"><table><thead><tr><th>Model</th><th>Intelligence</th><th>Cost / task</th><th>Output tokens</th><th>Output speed</th><th>Chart status</th><th>Source</th></tr></thead><tbody id="dataRows"></tbody></table></div>
   </section>
 
-  <p class="footer-note" id="footerSource">Source: <a href="https://artificialanalysis.ai/models/gpt-6-2-astra" target="_blank" rel="noreferrer">GPT-6.2 Astra</a>, <a href="https://artificialanalysis.ai/models/gpt-6-2-sol" target="_blank" rel="noreferrer">GPT-6.2 Sol</a>, and <a href="https://artificialanalysis.ai/models/gpt-6-1-sol" target="_blank" rel="noreferrer">GPT-6.1 Sol</a> model evaluations. Intelligence Index v5.0.1. Cost is average USD per index task; output tokens are totals across index evaluation tasks (millions), not tokens per task. Costs rounded to cents and published intelligence scores rounded to integer. Earlier v4.3.2 observations appear only in the archive snapshot.</p>
+  <p class="footer-note" id="footerSource">Source: <a href="https://artificialanalysis.ai/models/gpt-6-2-astra" target="_blank" rel="noreferrer">GPT-6.2 Astra</a>, <a href="https://artificialanalysis.ai/models/gpt-6-2-sol" target="_blank" rel="noreferrer">GPT-6.2 Sol</a>, and <a href="https://artificialanalysis.ai/models/gpt-6-1-sol" target="_blank" rel="noreferrer">GPT-6.1 Sol</a> model evaluations. Other model-family sources are linked in the table for each data point. Intelligence Index v5.0.1. Cost is average USD per index task; output tokens are totals across index evaluation tasks (millions), not tokens per task. Costs rounded to cents and published intelligence scores rounded to integer. Earlier v4.3.2 observations appear only in the archive snapshot.</p>
 </div>
 </main>
 
@@ -149,6 +182,16 @@ const FAMILY = {
   '6.2 Astra':{color:'#ff1493',order:0},
   '6.2 Sol':{color:'#00bfff',order:1},
   '6.1 Sol':{color:'#64748b',order:2},
+  'Claude Fable 5.2':{color:'#eab308',order:3},
+  'Claude Opus 5.5':{color:'#d97706',order:4},
+  'Gemini 4 Carbon':{color:'#22c55e',order:5},
+  'Gemini 4 Hydrogen':{color:'#0d9488',order:6},
+  'Grok 4.7':{color:'#a855f7',order:7},
+  'Kimi K3.1 Pro':{color:'#ef873c',order:8},
+  'DeepSeek V4 Pro':{color:'#7c6cff',order:9},
+  'Muse Wonder':{color:'#ec4899',order:10},
+  'GPT-6 Astra':{color:'#f87171',order:11},
+  'GPT-6.1 Terra':{color:'#f59e0b',order:12},
   Astra:{color:'#ff1493',order:0},
   Sol:{color:'#00bfff',order:1},
   Terra:{color:'#ff7a00',order:2},
@@ -346,18 +389,118 @@ const LIVE_DATA = [
     "tokens": 63.7,
     "speed": null,
     "url": "https://artificialanalysis.ai/models/gpt-6-1-sol"
+  },
+  {
+    "family": "Claude Fable 5.2",
+    "tier": "Max",
+    "order": 5,
+    "intelligence": 65,
+    "cost": 26.54,
+    "tokens": 275,
+    "speed": 109,
+    "url": "https://artificialanalysis.ai/models/claude-fable-5-2"
+  },
+  {
+    "family": "Claude Opus 5.5",
+    "tier": "Max",
+    "order": 5,
+    "intelligence": 59,
+    "cost": 10.04,
+    "tokens": 218,
+    "speed": 115,
+    "url": "https://artificialanalysis.ai/models/claude-opus-5-5"
+  },
+  {
+    "family": "Gemini 4 Carbon",
+    "tier": "High",
+    "order": 3,
+    "intelligence": 60,
+    "cost": 7.76,
+    "tokens": 205,
+    "speed": 55,
+    "url": "https://artificialanalysis.ai/models/gemini-4-carbon"
+  },
+  {
+    "family": "Gemini 4 Hydrogen",
+    "tier": "xHigh",
+    "order": 4,
+    "intelligence": 54,
+    "cost": 3.16,
+    "tokens": 304,
+    "speed": 169,
+    "url": "https://artificialanalysis.ai/models/gemini-4-hydrogen"
+  },
+  {
+    "family": "Grok 4.7",
+    "tier": "xHigh",
+    "order": 4,
+    "intelligence": 35,
+    "cost": 7.77,
+    "tokens": 148,
+    "speed": 70,
+    "url": "https://artificialanalysis.ai/models/grok-4-7"
+  },
+  {
+    "family": "Kimi K3.1 Pro",
+    "tier": "Default",
+    "order": 3,
+    "intelligence": 46,
+    "cost": 3.68,
+    "tokens": 113,
+    "speed": 31,
+    "url": "https://artificialanalysis.ai/models/kimi-k3-1-pro"
+  },
+  {
+    "family": "DeepSeek V4 Pro",
+    "tier": "Max",
+    "order": 5,
+    "intelligence": 23,
+    "cost": 1.77,
+    "tokens": 119,
+    "speed": 87,
+    "url": "https://artificialanalysis.ai/models/deepseek-v4-pro"
+  },
+  {
+    "family": "Muse Wonder",
+    "tier": "Max",
+    "order": 5,
+    "intelligence": 44,
+    "cost": 6.95,
+    "tokens": 113,
+    "speed": 116,
+    "url": "https://artificialanalysis.ai/models/muse-wonder"
+  },
+  {
+    "family": "GPT-6 Astra",
+    "tier": "Max",
+    "order": 5,
+    "intelligence": 57,
+    "cost": 6.24,
+    "tokens": 54.3,
+    "speed": 42,
+    "url": "https://artificialanalysis.ai/models/gpt-6-astra"
+  },
+  {
+    "family": "GPT-6.1 Terra",
+    "tier": "Max",
+    "order": 5,
+    "intelligence": 51,
+    "cost": 0.96,
+    "tokens": 99.4,
+    "speed": 65,
+    "url": "https://artificialanalysis.ai/models/gpt-6-1-terra"
   }
 ].map((d,i)=>({...d,id:i,color:FAMILY[d.family].color,complete:Number.isFinite(d.cost)&&Number.isFinite(d.tokens)}));
 let DATA = LIVE_DATA;
 
 const $ = id => document.getElementById(id);
-const isMobile = matchMedia('(max-width: 700px)').matches;
 const state = {
   families:new Set(LIVE_DATA.map(d=>d.family)),
-  labelMode:isMobile?'selected':'all',
+  labelMode:'selected',
   showIncomplete:true,
   showPareto:true,
-  logCost:false,
+  logCost:true,
+  budget:Infinity,
   logTokens:true,
   line:true,
   yaw:-0.72,
@@ -393,8 +536,9 @@ function extent(data,fn,log=false,pad=.08,zeroFloor=false){
   if(zeroFloor&&!log)lo=Math.max(0,lo);
   return[lo,hi];
 }
-function plotData(){return DATA.filter(d=>state.families.has(d.family)&&d.complete)}
-function tableData(){return DATA.filter(d=>state.families.has(d.family)&&(state.showIncomplete||d.complete)).sort((a,b)=>FAMILY[a.family].order-FAMILY[b.family].order||b.order-a.order)}
+const withinBudget=d=>!Number.isFinite(state.budget)||Number.isFinite(d.cost)&&d.cost<=state.budget;
+function plotData(){return DATA.filter(d=>state.families.has(d.family)&&d.complete&&withinBudget(d))}
+function tableData(){return DATA.filter(d=>state.families.has(d.family)&&(state.showIncomplete||d.complete)&&withinBudget(d)).sort((a,b)=>FAMILY[a.family].order-FAMILY[b.family].order||b.order-a.order)}
 function pareto(data){
   const sorted=[...data].sort((a,b)=>a.cost-b.cost||b.intelligence-a.intelligence);
   let best=-Infinity;
@@ -406,7 +550,7 @@ function pareto(data){
 }
 function paretoIds(){return new Set(pareto(plotData()).map(d=>d.id))}
 function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r)}
-function displayName(d){const names={Astra:'GPT-6 Astra',Sol:'GPT-6 Sol',Terra:'GPT-5.6 Terra',Luna:'GPT-6 Luna','Opus 5.5':'Claude Opus 5.5','gpt-oss-120b':'gpt-oss-120b','6.2 Astra':'GPT-6.2 Astra','6.2 Sol':'GPT-6.2 Sol','6.1 Sol':'GPT-6.1 Sol'};return names[d.family]||d.family}
+function displayName(d){const names={Astra:'GPT-6 Astra',Sol:'GPT-6 Sol',Terra:'GPT-5.6 Terra',Luna:'GPT-6 Luna','Opus 5.5':'Claude Opus 5.5','gpt-oss-120b':'gpt-oss-120b','6.2 Astra':'GPT-6.2 Astra','6.2 Sol':'GPT-6.2 Sol','6.1 Sol':'GPT-6.1 Sol','GPT-6 Astra':'GPT-6 Astra','GPT-6.1 Terra':'GPT-6.1 Terra'};return names[d.family]||d.family}
 function shortName(d){return d.family+' '+d.tier}
 
 function buildFilters(){
@@ -549,7 +693,7 @@ function syncLabelButtons(){
   document.querySelectorAll('.label-toggle').forEach(btn=>{const all=state.labelMode==='all';btn.textContent=all?'Names: all':'Names: selected only';btn.setAttribute('aria-pressed',all?'true':'false')});
 }
 function renderAll(){
-  buildTable();render3D();render2D();$('metricPlotted').textContent=plotData().length;$('metricPareto').textContent=pareto(plotData()).length;syncLabelButtons();
+  buildTable();renderShortlist();render3D();render2D();$('metricPlotted').textContent=plotData().length;$('metricPareto').textContent=pareto(plotData()).length;syncLabelButtons();
 }
 function syncState(){
   state.showIncomplete=$('showIncomplete').checked;state.showPareto=$('showPareto').checked;state.logCost=document.querySelector('input[name="costScale"]:checked').value==='log';state.logTokens=document.querySelector('input[name="tokenScale"]:checked').value==='log';state.line=document.querySelector('input[name="lineMode"]:checked').value==='on';clearInteraction();renderAll();
@@ -582,6 +726,52 @@ $('themeToggle').addEventListener('click',()=>{document.documentElement.classLis
 if(localStorage.getItem('openai-family-theme')==='dark')document.documentElement.classList.add('dark');
 
 
+
+function renderShortlist(){
+  const rows=DATA.filter(d=>d.complete);
+  const best=ceiling=>rows.filter(d=>d.cost<=ceiling).sort((a,b)=>b.intelligence-a.intelligence||a.cost-b.cost)[0];
+  const highest=[...rows].sort((a,b)=>b.intelligence-a.intelligence||a.cost-b.cost)[0];
+  const items=[['Under $1 / task',best(1)],['Under $3 / task',best(3)],['Highest index score',highest]];
+  $('valueShortlist').innerHTML=items.map(([tag,d])=>d
+    ?'<div class="decision-card"><span class="decision-tag">'+escapeHtml(tag)+'</span><b>'+escapeHtml(displayName(d)+' · '+d.tier)+'</b><div class="decision-metrics">'+fmtIndex(d.intelligence)+' index · '+fmtCost(d.cost)+'/task</div><small>'+fmtTokens(d.tokens)+' output tokens across the Index evaluations. <a href="'+d.url+'" target="_blank" rel="noreferrer">View source</a></small></div>'
+    :'<div class="decision-card"><span class="decision-tag">'+escapeHtml(tag)+'</span><b>No qualifying data</b></div>').join('');
+}
+function renderComparison(){
+  const a=DATA.find(d=>String(d.id)===$('compareA').value),b=DATA.find(d=>String(d.id)===$('compareB').value);
+  if(!a||!b){$('compareResults').textContent='Select two comparable configurations.';return}
+  const delta=(v1,v2,unit='',lower=false)=>{
+    if(!Number.isFinite(v1)||!Number.isFinite(v2))return 'Not comparable';
+    const diff=v1-v2;
+    if(Math.abs(diff)<1e-10)return 'Same reported value';
+    const favorable=lower?diff<0:diff>0;
+    return (diff>0?'+':'')+((Math.round(diff*100)/100).toLocaleString())+unit+' for A vs B'+(favorable?' (A favorable)':' (B favorable)');
+  };
+  const fields=[
+    ['Intelligence Index',fmtIndex(a.intelligence),fmtIndex(b.intelligence),delta(a.intelligence,b.intelligence,' points')],
+    ['Cost per task',fmtCost(a.cost),fmtCost(b.cost),a.cost&&b.cost?Math.abs((1-a.cost/b.cost)*100).toFixed(0)+'% '+(a.cost<=b.cost?'lower':'higher')+' cost for A vs B':'Not comparable'],
+    ['Evaluation output tokens',fmtTokens(a.tokens),fmtTokens(b.tokens),a.tokens&&b.tokens?Math.abs((1-a.tokens/b.tokens)*100).toFixed(0)+'% '+(a.tokens<=b.tokens?'fewer':'more')+' for A vs B':'Not comparable']
+  ];
+  $('compareResults').innerHTML=fields.map(([title,va,vb,note])=>'<div class="compare-result"><span>'+escapeHtml(title)+'</span><strong>A '+va+' / B '+vb+'</strong><small>'+escapeHtml(note)+'</small></div>').join('');
+}
+function populateComparison(){
+  const rows=DATA.filter(d=>d.complete).sort((a,b)=>b.intelligence-a.intelligence||a.cost-b.cost);
+  const opts=rows.map(d=>'<option value="'+d.id+'">'+escapeHtml(displayName(d)+' · '+d.tier)+'</option>').join('');
+  $('compareA').innerHTML=opts;$('compareB').innerHTML=opts;
+  const latest=$('snapshotSelect').value==='latest';
+  const a=rows.find(d=>d.family===(latest?'6.2 Sol':'Astra')&&d.tier===(latest?'High':'xHigh'))||rows[0];
+  const b=rows.find(d=>d.family===(latest?'6.1 Sol':'Astra')&&d.tier===(latest?'xHigh':'Max'))||rows[1]||rows[0];
+  if(a)$('compareA').value=String(a.id);
+  if(b)$('compareB').value=String(b.id);
+  renderComparison();
+}
+$('compareA').addEventListener('change',renderComparison);
+$('compareB').addEventListener('change',renderComparison);
+$('budgetCeiling').addEventListener('change',()=>{
+  const selected=$('budgetCeiling').value;
+  state.budget=selected==='all'?Infinity:Number(selected);
+  clearInteraction();renderAll();
+});
+
 const snapshotCopy = {
   archive:{
     eyebrow:'Artificial Analysis Intelligence Index v4.3.2 · September 25, 2026 archive',
@@ -596,13 +786,13 @@ const snapshotCopy = {
   },
   latest:{
     eyebrow:'Artificial Analysis Intelligence Index v5.0.1 · November 2026 snapshot',
-    notice:'<strong>15 comparable model variants from Intelligence Index v5.0.1.</strong> Each has intelligence, average task cost, and total evaluation output tokens. Historical v4.3.2 data is isolated in the archive selector.',
-    title:'GPT-6.2 Sol High leads GPT-6.1 Sol xHigh on intelligence and cost.',
-    desc:'<strong>GPT-6.2 Sol High scores 55 at $0.56 per task</strong>, versus <strong>GPT-6.1 Sol xHigh at 53 and $0.76</strong>. GPT-6.2 Astra xHigh and Max both round to 62 but cost $2.52 and $4.00 per task, respectively.',
+    notice:'<strong>25 comparable model variants from Intelligence Index v5.0.1.</strong> Each has intelligence, average task cost, and total evaluation output tokens; comparator families include Anthropic, Google, Meta, xAI, Kimi, DeepSeek, and prior OpenAI models. Historical v4.3.2 data is isolated in the archive selector.',
+    title:'The highest score and the best value are different models.',
+    desc:'<strong>Claude Fable 5.2 Max scores 65 at $26.54/task</strong>, versus <strong>GPT-6.2 Astra xHigh at 62 and $2.52</strong> or <strong>GPT-6.2 Sol High at 55 and $0.56</strong>. Higher scores are not automatically the best value.',
     stats:'<div class="takeaway-stat"><span>Sol 6.2 High vs 6.1 xHigh</span><b>+2 index points</b><small>26% lower task cost · 32% fewer output tokens</small></div><div class="takeaway-stat"><span>Astra 6.2 xHigh vs Max</span><b>Same rounded 62</b><small>37% lower task cost · 59% fewer output tokens</small></div>',
-    total:'Astra 6.2 · Sol 6.2 · Sol 6.1 · 5 efforts each',
+    total:'3 GPT reasoning families plus 10 outside baselines',
     compare:['Astra 6.2 xHigh vs Max cost','63%','62 vs 62 Intelligence · 27.1M vs 65.8M tokens'],
-    table:['Current 15-variant comparison','All values come from the same Intelligence Index version','Artificial Analysis · Intelligence Index v5.0.1'],
+    table:['Current 25-variant comparison','All values come from the same Intelligence Index version','Artificial Analysis · Intelligence Index v5.0.1'],
     footer:'Source: <a href="https://artificialanalysis.ai/models/gpt-6-2-astra" target="_blank" rel="noreferrer">GPT-6.2 Astra</a>, <a href="https://artificialanalysis.ai/models/gpt-6-2-sol" target="_blank" rel="noreferrer">GPT-6.2 Sol</a>, and <a href="https://artificialanalysis.ai/models/gpt-6-1-sol" target="_blank" rel="noreferrer">GPT-6.1 Sol</a>. Intelligence Index v5.0.1. Cost is average USD per index task; output tokens are totals for the full index evaluation, not per task. Scores and costs are rounded for display.'
   }
 };
@@ -624,11 +814,12 @@ function switchSnapshot(){
   $('tableDescription').textContent=copy.table[1];
   $('tableVersion').textContent=copy.table[2];
   $('footerSource').innerHTML=copy.footer;
-  clearInteraction();buildFilters();buildLegend();renderAll();
+  $('budgetCeiling').value='all';state.budget=Infinity;
+  clearInteraction();buildFilters();buildLegend();populateComparison();renderAll();
 }
 $('snapshotSelect').addEventListener('change',switchSnapshot);
 
-buildFilters();buildLegend();buildTable();syncLabelButtons();new ResizeObserver(render3D).observe(w3);new ResizeObserver(render2D).observe(w2);renderAll();
+buildFilters();buildLegend();buildTable();populateComparison();syncLabelButtons();new ResizeObserver(render3D).observe(w3);new ResizeObserver(render2D).observe(w2);renderAll();
 })();
 </script>
 
